@@ -1,2 +1,2 @@
-# template-latex.github.io
+# Template-Latex
 Web del proyecto.
