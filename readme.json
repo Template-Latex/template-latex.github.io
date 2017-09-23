@@ -3,12 +3,12 @@
         "NAME": "Template-Latex",
         "ICON": {
             "IMAGE": "http://latex.ppizarror.com/icon.png",
-            "ALT": "Template-Informe",
+            "ALT": "Template-Latex",
             "WIDTH": 200,
             "HEIGHT": 200
         },
-        "URL": "http://latex.ppizarror.com/Template-Informe/",
-        "URL_TITLE": "Template-Informe"
+        "URL": "",
+        "URL_TITLE": ""
     },
     "AUTHOR": {
         "NAME": "Pablo Pizarro R.",
@@ -20,7 +20,7 @@
             "SHOW": true
         }
     },
-    "DESCRIPTION": "Template de informe en LaTeX para tareas y trabajos",
+    "DESCRIPTION": "Familia de templates en LaTeX para múltiples propósitos",
     "BADGES": {
         "0": {
             "IMAGE": "http://ppizarror.com/badges/autor.svg",

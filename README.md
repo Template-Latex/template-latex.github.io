@@ -1,10 +1,8 @@
 <h1 align="center">
-  <a href="http://latex.ppizarror.com/Template-Informe/" title="Template-Informe">
-    <img alt="Template-Informe" src="http://latex.ppizarror.com/icon.png" width="200px" height="200px" />
-  </a>
+  <img alt="Template-Latex" src="http://latex.ppizarror.com/icon.png" width="200px" height="200px" />
   <br /><br />
   Template-Latex</h1>
-<p align="center">Template de informe en LaTeX para tareas y trabajos</p>
+<p align="center">Familia de templates en LaTeX para múltiples propósitos</p>
 <div align="center"><a href="http://ppizarror.com"><img alt="@ppizarror" src="http://ppizarror.com/badges/autor.svg" /></a>
 <a href="https://opensource.org/licenses/MIT/"><img alt="Licencia MIT" src="http://ppizarror.com/badges/licenciamit.svg" /></a>
 <br><a href="https://github.com/Template-Latex/Template-Auxiliares/"><img alt="Template-Auxiliares" src="http://latex.ppizarror.com/badges/auxiliares.svg" /></a>
