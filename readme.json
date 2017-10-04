@@ -32,13 +32,13 @@
             "HREF": "https://opensource.org/licenses/MIT/",
             "ALT": "Licencia MIT"
         },
-        "2": {
-            "NEWLINE": true
-        },
-		"3": {
-            "IMAGE": "http://ppizarror.com/badges/chat.svg",
+		"2": {
+            "IMAGE": "http://latex.ppizarror.com/badges/chat.svg",
             "HREF": "https://gitter.im/Template-Latex/Lobby",
             "ALT": "Chat"
+        },
+        "3": {
+            "NEWLINE": true
         },
         "4": {
             "IMAGE": "http://latex.ppizarror.com/badges/tesis.svg",
