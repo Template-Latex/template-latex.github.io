@@ -35,6 +35,11 @@
         "2": {
             "NEWLINE": true
         },
+		"3": {
+            "IMAGE": "http://ppizarror.com/badges/chat.svg",
+            "HREF": "https://gitter.im/Template-Latex/Lobby",
+            "ALT": "Chat"
+        },
         "4": {
             "IMAGE": "http://latex.ppizarror.com/badges/tesis.svg",
             "HREF": "https://github.com/Template-Latex/Template-Tesis/",
