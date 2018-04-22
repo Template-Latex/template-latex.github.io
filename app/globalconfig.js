@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017,2018 Pablo Pizarro R.
+ Copyright 2017-2018 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -42,9 +42,9 @@ var update_downloads_version = true;
  * Aviso inicial
  */
 var initial_popup = {
-    content: 'La web de Template-Informe se encuentra en proceso de actualización a modo de preparación para la versión 5.0.0, es posible que existan algunos errores en el funcionamiento',
+    content: 'La web de Template-Informe se encuentra en proceso de actualización a modo de preparación para la versión <b>5.0.0</b>, es posible que existan algunos errores en el funcionamiento. <br><br>Saludos!<br>--<br>Pablo Pizarro <a href="http://ppizarror.com">@ppizarror</a>',
     display: true,
-    title: 'Aviso importante'
+    title: 'Nueva versión 5.0.0'
 };
 
 /**

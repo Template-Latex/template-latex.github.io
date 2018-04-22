@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017,2018 Pablo Pizarro R.
+ Copyright 2017-2018 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -183,18 +183,31 @@ function afterDocumentReady() {
         }
     }
 
+    // Función que muestra u oculta contenedor de códigos
+    let triggerShowContainer = function (trigger, container) {
+        $(container).attr('show', 'off');
+        $(trigger).on('click', function () {
+            let $container = $(container);
+            if ($container.attr('show') === 'off') {
+                $container.fadeIn();
+                $container.attr('show', 'on');
+            } else {
+                $container.fadeOut();
+                $container.attr('show', 'off');
+            }
+        })
+    };
+
     // Mostrar funciones deprecadas
-    $('#showDeprecatedImageContainer').attr('show', 'off');
-    $('#showDeprecatedImageTrigger').on('click', function () {
-        let $container = $('#showDeprecatedImageContainer');
-        if ($container.attr('show') === 'off') {
-            $container.fadeIn();
-            $container.attr('show', 'on');
-        } else {
-            $container.fadeOut();
-            $container.attr('show', 'off');
-        }
-    })
+    triggerShowContainer('#showDeprecatedImageTrigger', '#showDeprecatedImageContainer');
+
+    // Código imageleft,right
+    triggerShowContainer('#showCodeImageLeft', '#codeImageLeftContainer');
+    triggerShowContainer('#showCodeImageRight', '#codeImageRightContainer');
+
+    // Código gather,align
+    triggerShowContainer('#showCodeGatherEqn', '#codeGatherEqnContainer');
+    triggerShowContainer('#showCodeAlignEqn', '#codeAlignEqnContainer');
 }
 
 function afterJSONLoad() {

@@ -57,7 +57,6 @@
     <meta name="msapplication-config" content="res/favicon-informe/browserconfig.xml">
 
     <!-- Hojas de estilo -->
-    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap-4.0.0-beta.min.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="css/font-awesome-v5/css/fontawesome-all.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/normalize.min.css" media="screen">
@@ -194,6 +193,8 @@
                     <li><a href="#config-portraithf" class="menu-little-entry">Estilo de portada y header-footer</a>
                     </li>
                     <li><a href="#config-pagemargin" class="menu-little-entry">Márgenes de la página</a></li>
+                    <li><a href="#config-default-placement-objects" class="menu-little-entry">Posición por defecto de
+                        objetos</a></li>
                     <li><a href="#config-caption" class="menu-little-entry">Configuración de las leyendas - caption</a>
                     </li>
                     <li><a href="#config-index" class="menu-little-entry">Configuración del índice</a></li>
@@ -390,7 +391,7 @@
                 <p>
                     Las funciones para añadir imágenes requieren del nombre de la imagen (el archivo almacenado en el
                     directorio definido por la configuración <a href="#config-otros">\defaultimagefolder</a>, por
-                    defecto la carpeta <strong>images/</strong>),
+                    defecto la carpeta <strong>img/</strong>),
                     sus parámetros y la leyenda (la cual es opcional).
                 </p>
                 <p>
@@ -427,102 +428,162 @@
                 <hr class="style1">
                 <ul>
                     <li>
-                        <strong>\insertimageleft</strong><b>[</b><em>Label</em>
-                        (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho de la imagen (en
-                        textwidth)</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta una imagen alineada
-                        a la izquierda de un párrafo.
+                        <strong>\begin{images}</strong><b>[</b><em>Label</em>
+                        (opcional)<b>]</b><b>{</b><em>Leyenda</em><b>}</b>: Permite insertar múltiples imágenes dentro
+                        de un objeto, para ello se hace uso de las instrucciones <strong>\addimage</strong> y <strong>\addimageboxed</strong>.
                         <blockquote>
                             <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertimageleft</span><b>[</b><span class="pl-c1">\label</span>{img-left-1}<b>]</b><b>{</b>ejemplos/test-image-wrap.jpg<b>}</b><b>{</b>0.25<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        <pre>
+<span class="pl-c1">\begin</span>{<span class="pl-e">images</span>}[\<span class="pl-c1">label</span>{imagenmultiple}]{Ejemplo de imagen múltiple.}
+    \<span class="pl-e">addimage</span>{ejemplos/test-image}{width=6.5cm}{Ciudad}
+    \<span class="pl-e">addimage</span>{ejemplos/test-image-wrap}{width=5cm}{Apolo}
+    \<span class="pl-e">addimage</span>{ejemplos/test-image}{width=12cm}{Ciudad más grande}
+\<span class="pl-c1">end</span>{<span class="pl-e">images</span>}
+</pre>
                             </div>
                         </blockquote>
-                    </li>
-                    <li>
-                        <strong>\insertimageleftline</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
-                        de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una imagen alineada a la izquierda de un párrafo con un número de líneas fijo.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertimageleftline</span><b>[]</b><b>{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>0.25<b>}</b><b>{</b>15<b>}</b><b>{</b>Descripción<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li>
-                        <strong>\insertimageleftboxed</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
-                        de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Ancho de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una imagen alineada a la izquierda de un párrafo, encerrada en un recuadro.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertimageleftboxed</span><b>{</b>ejemplos/test-image-wrap.jpg<b>}</b><b>{</b>0.25<b>}</b><b>{</b>0.5<b>}</b><b>{</b>Descripción<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\insertimageleftlineboxed</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
-                        de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a usar</em><b>}</b><b>{</b><em>Ancho
-                        de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una imagen alineada a la izquierda de un párrafo con un número de líneas fijo, encerrada
-                        en un recuadro.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertimageleftlineboxed</span><b>[</b><span class="pl-c1">\label</span>{img-leftbox-1}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b>0.25<b>}</b><b>{</b>15<b>}</b><b>{</b>0.7<b>}</b><b>{</b><b>}</b></pre>
-                            </div>
-                        </blockquote>
+                        <ul>
+                            <li>
+                                <strong>\addimage</strong><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                Añade una imagen dentro de un objeto <b>images</b>.
+                            </li>
+                            <li>
+                                <strong>\addimageboxed</strong><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Ancho
+                                de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                Añade una imagen encerrada en un recuadro dentro del objeto <b>images</b>.
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <hr class="style1">
                 <ul>
                     <li>
-                        <strong>\insertimageright</strong><b>[</b><em>Label</em>
-                        (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho de la imagen (en
-                        textwidth)</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta una imagen alineada
-                        a la derecha de un párrafo.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                        <strong><a id="showCodeImageLeft" class="javascripthref">\insertimageleft</a></strong>: Añadir
+                        una imagen alineada a la izquierda de un párrafo.
+                        <div class="codeFunContainer" id="codeImageLeftContainer">
+                            <ul>
+                                <li>
+                                    <strong>\insertimageleft</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho de la imagen (en
+                                    textwidth)</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta una imagen alineada
+                                    a la izquierda de un párrafo.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                            <pre><span class="pl-e">\insertimageleft</span><b>[</b><span class="pl-c1">\label</span>{img-left-1}<b>]</b><b>{</b>ejemplos/test-image-wrap.jpg<b>}</b><b>{</b>0.25<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertimageleftline</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
+                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a
+                                    usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la izquierda de un párrafo con un número de líneas
+                                    fijo.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                            <pre><span class="pl-e">\insertimageleftline</span><b>[]</b><b>{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>0.25<b>}</b><b>{</b>15<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertimageleftboxed</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
+                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Ancho de la
+                                    línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la izquierda de un párrafo, encerrada en un recuadro.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                            <pre><span class="pl-e">\insertimageleftboxed</span><b>{</b>ejemplos/test-image-wrap.jpg<b>}</b><b>{</b>0.25<b>}</b><b>{</b>0.5<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertimageleftlineboxed</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
+                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a
+                                    usar</em><b>}</b><b>{</b><em>Ancho
+                                    de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la izquierda de un párrafo con un número de líneas
+                                    fijo, encerrada
+                                    en un recuadro.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                            <pre><span class="pl-e">\insertimageleftlineboxed</span><b>[</b><span
+                                                    class="pl-c1">\label</span>{img-leftbox-1}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b>0.25<b>}</b><b>{</b>15<b>}</b><b>{</b>0.7<b>}</b><b>{</b><b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <strong><a id="showCodeImageRight" class="javascripthref">\insertimageright</a></strong>: Añadir
+                        una imagen alineada a la derecha de un párrafo.
+                        <div class="codeFunContainer" id="codeImageRightContainer">
+                            <ul>
+                                <li>
+                                    <strong>\insertimageright</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho de la imagen (en
+                                    textwidth)</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta una imagen alineada
+                                    a la derecha de un párrafo.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
                                 <pre><span
                                         class="pl-e">\insertimageright</span><b>[]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>0.21<b>}</b><b>{</b>Descripción<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\insertimagerightline</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
-                        de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una imagen alineada a la derecha de un párrafo con un número de líneas fijo.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertimagerightline</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
+                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a
+                                    usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la derecha de un párrafo con un número de líneas fijo.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertimagerightline</span><b>[</b><span
                                         class="pl-c1">\label</span>{img-right-1}<b>]{</b>ejemplos/test-image<b>}</b><b>{</b>0.21<b>}</b><b>{</b>22<b>}</b><b>{</b>Descripción<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li>
-                        <strong>\insertimagerightboxed</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
-                        de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Ancho de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una imagen alineada a la derecha de un párrafo, encerrada en un recuadro.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertimagerightboxed</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
+                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Ancho de la
+                                    línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la derecha de un párrafo, encerrada en un recuadro.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertimagerightboxed</span><b>[</b><span
                                         class="pl-c1">\label</span>{img-box-r}<b>]{</b>ejemplos/test-image<b>}</b><b>{</b>0.21<b>}</b><b>{</b>1.0<b>}</b><b>{</b><b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\insertimagerightlineboxed</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
-                        de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a usar</em><b>}</b><b>{</b><em>Ancho
-                        de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una imagen alineada a la derecha de un párrafo con un número de líneas fijo, encerrada
-                        en un recuadro.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertimagerightlineboxed</span><b>[]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>0.21<b>}</b><b>{</b>22<b>}</b><b>{</b>0.6<b>}</b><b>{</b>Descripción<b>}</b></pre>
-                            </div>
-                        </blockquote>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertimagerightlineboxed</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
+                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a
+                                    usar</em><b>}</b><b>{</b><em>Ancho
+                                    de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la derecha de un párrafo con un número de líneas fijo,
+                                    encerrada
+                                    en un recuadro.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                            <pre><span class="pl-e">\insertimagerightlineboxed</span><b>[]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>0.21<b>}</b><b>{</b>22<b>}</b><b>{</b>0.6<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -564,86 +625,114 @@
                 <hr class="style1">
                 <ul>
                     <li>
-                        <strong>\insertgather</strong><b>{</b><em>Fórmula</em><b>}</b>: Inserta una fórmula con el
+                        <strong><a id="showCodeGatherEqn" class="javascripthref">\insertgather</a></strong>: Inserta una
+                        fórmula con el
                         entorno <b>gather</b>, permite insertar nuevas líneas con <b>\\</b> y centra todas las fórmulas.
-                        Cada nueva línea tiene un propio
-                        número de ecuación. No se pueden usar <i>\label</i>.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                        <div class="codeFunContainer" id="codeGatherEqnContainer">
+                            <ul>
+                                <li>
+                                    <strong>\insertgather</strong><b>{</b><em>Fórmula</em><b>}</b>: Inserta una fórmula
+                                    con el
+                                    entorno <b>gather</b>, permite insertar nuevas líneas con <b>\\</b> y centra todas
+                                    las fórmulas.
+                                    Cada nueva línea tiene un propio
+                                    número de ecuación. No se pueden usar <i>\label</i>.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertgather</span><b>{</b><span class="pl-c1">\Delta</span> = <span
                                         class="pl-c1">\begin</span>{bmatrix}y&amp;x\\z&amp;w<span
                                         class="pl-c1">\end</span>{bmatrix}<span class="pl-c1">\cdot</span> f(x)<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/insertequationgathered.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li style="margin-bottom:20px">
-                        <strong>\insertgathercaptioned</strong><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una fórmula con leyenda en el entorno <b>gather</b>.
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li>
-                        <strong>\insertgathered</strong><b>[</b><em>Label</em>
-                        (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta una
-                        fórmula con leyenda en el entorno <b>gathered</b>, permite insertar
-                        nuevas líneas con <b>\\</b> y centra todas las fórmulas. Todas las líneas tienen sólo 1 número
-                        de ecuación por lo que esta puede tener etiqueta o un <i>\label</i>.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                        </div>
+                                        <p><img src="res/images/insertequationgathered.png" alt=""></p>
+                                    </blockquote>
+                                </li>
+                                <li style="margin-bottom:20px">
+                                    <strong>\insertgathercaptioned</strong><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una fórmula con leyenda en el entorno <b>gather</b>.
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertgathered</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una
+                                    fórmula con leyenda en el entorno <b>gathered</b>, permite insertar
+                                    nuevas líneas con <b>\\</b> y centra todas las fórmulas. Todas las líneas tienen
+                                    sólo 1 número
+                                    de ecuación por lo que esta puede tener etiqueta o un <i>\label</i>.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertgathered</span><b>[</b><span class="pl-c1">\label</span>{formula-4}<b>]</b><b>{</b><span
                                         class="pl-c1">\iint_</span>{a}^{b} f(y) \dy<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/insertequationgathered2.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li style="margin-bottom: 20px">
-                        <strong>\insertgatheredcaptioned</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una fórmula con leyenda en el entorno <b>gathered</b>.
+                                        </div>
+                                        <p><img src="res/images/insertequationgathered2.png" alt=""></p>
+                                    </blockquote>
+                                </li>
+                                <li style="margin-bottom: 20px">
+                                    <strong>\insertgatheredcaptioned</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una fórmula con leyenda en el entorno <b>gathered</b>.
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
-                <hr class="style1">
                 <ul>
                     <li>
-                        <strong>\insertalign</strong><b>{</b><em>Fórmula</em><b>}</b>: Inserta una fórmula con el
+                        <strong><a id="showCodeAlignEqn" class="javascripthref">\insertalign</a></strong>: Inserta una
+                        fórmula con el
                         entorno <b>align</b> el cual permite insertar nuevas líneas con <b>\\</b> y ajusta un alineado
-                        especial con respecto a los <b>=</b> de cada fórmula. Cada nueva línea tiene un propio número de
-                        ecuación. No se pueden usar <i>\label</i>.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                        especial con respecto a los <b>=</b> de cada fórmula.
+                        <div class="codeFunContainer" id="codeAlignEqnContainer">
+                            <ul>
+                                <li>
+                                    <strong>\insertalign</strong><b>{</b><em>Fórmula</em><b>}</b>: Inserta una fórmula
+                                    con el
+                                    entorno <b>align</b> el cual permite insertar nuevas líneas con <b>\\</b> y ajusta
+                                    un alineado
+                                    especial con respecto a los <b>=</b> de cada fórmula. Cada nueva línea tiene un
+                                    propio número de
+                                    ecuación. No se pueden usar <i>\label</i>.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertalign</span><b>{</b>F(<span class="pl-c1">\vec</span>{f},y, y') = <span
                                         class="pl-c1">\widehat</span>{&lt;<span
                                         class="pl-c1">\vec</span>{f},y&gt;} <span class="pl-c1">\times</span> y'<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/insertequationalign.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li style="margin-bottom:20px">
-                        <strong>\insertaligncaptioned</strong><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una fórmula con leyenda en el entorno <b>align</b>.
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li>
-                        <strong>\insertaligned</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b>:
-                        Inserta una fórmula con el entorno <b>aligned</b> el cual permite insertar nuevas líneas, y
-                        ajusta un alineado especial
-                        con respecto a los
-                        <b>=</b> de cada fórmula. Todas las líneas tienen sólo 1 número de ecuación por lo que esta
-                        puede tener etiqueta o un <i>\label</i>.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                        </div>
+                                        <p><img src="res/images/insertequationalign.png" alt=""></p>
+                                    </blockquote>
+                                </li>
+                                <li style="margin-bottom:20px">
+                                    <strong>\insertaligncaptioned</strong><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una fórmula con leyenda en el entorno <b>align</b>.
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertaligned</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b>:
+                                    Inserta una fórmula con el entorno <b>aligned</b> el cual permite insertar nuevas
+                                    líneas, y
+                                    ajusta un alineado especial
+                                    con respecto a los
+                                    <b>=</b> de cada fórmula. Todas las líneas tienen sólo 1 número de ecuación por lo
+                                    que esta
+                                    puede tener etiqueta o un <i>\label</i>.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertaligned</span><b>[</b><span class="pl-c1">\label</span>{formula-5}<b>]</b><b>{</b><span
                                         class="pl-c1">\sqrt</span>[a]{b} + c<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/insertequationaligned.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\insertalignedcaptioned</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una fórmula con leyenda en el entorno <b>aligned</b>.
+                                        </div>
+                                        <p><img src="res/images/insertequationaligned.png" alt=""></p>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertalignedcaptioned</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una fórmula con leyenda en el entorno <b>aligned</b>.
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -732,17 +821,21 @@
                 <strong class="functtitlstyle">Añadir código fuente<a id="hlp-srccode"></a></strong>
                 <p>
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
-                    lenguajes de programación <i>C, Python, Matlab</i>:
+                    lenguajes de programación C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>), DOCKER (<b>docker</b>),
+                    HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Matlab (<b>matlab</b>),
+                    LaTeX (<b>latex</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Python (<b>python</b>), Ruby
+                    (<b>ruby</b>), SQL (<b>sql</b>) y XML (<b>xml</b>):
                 </p>
                 <ul>
                     <li>
                         <strong>\begin{sourcecode}</strong><b>[</b><em>Label</em>
                         (opcional)<b>]</b><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta un
-                        código fuente de un lenguaje definido (Python, Matlab, C), con leyenda.
+                        código fuente de un lenguaje definido (<i>c, cpp, csharp, docker, html5, java, js, json, matlab,
+                        latex, perl, php, python, ruby, sql, xml</i>) con leyenda (opcional).
                         <blockquote>
                             <div class="highlight highlight-text-tex">
                                         <pre>
-<span class="pl-c1">\begin</span>{<span class="pl-e">sourcecode</span>}<b>[</b><span class="pl-c1">\label</span>{codigo-python}<b>]{</b>Python<b>}{</b>Ejemplo en Python.<b>}</b><span
+<span class="pl-c1">\begin</span>{<span class="pl-e">sourcecode</span>}<b>[</b><span class="pl-c1">\label</span>{codigo-python}<b>]{</b>python<b>}{</b>Ejemplo en Python.<b>}</b><span
                                                 class="pl-srccode">
 import numpy as np
 
@@ -1093,9 +1186,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         izquierdo/derecho de los <i>caption</i> medido en centímetros.
                     </li>
                     <li>
-                        <a id="showDeprecatedImageTrigger" class="javascripthref"><b>Inserción múltiple de imágenes</b>
-                            (FUNCIONES DEPRECADAS)</a>
-                        <div id="showDeprecatedImageContainer" style="display: none;">
+                        <a id="showDeprecatedImageTrigger" class="javascripthref"><b>Inserción múltiple de imágenes</b></a>
+                        (FUNCIONES DEPRECADAS).
+                        <div id="showDeprecatedImageContainer" class="codeFunContainer">
                             <ul>
                                 <li>
                                     <strong>\insertdoubleimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
@@ -1280,6 +1373,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         helvet).
                     </li>
                     <li>
+                        <strong>\importtikz</strong>: Importa la librería tikz al compilar el documento.
+                    </li>
+                    <li>
                         <strong>\numberedequation</strong>: Muestra el número en las ecuaciones insertadas con <i>\insert...</i>.
                     </li>
                     <li>
@@ -1333,6 +1429,22 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </li>
 
             <li class="config-parent">
+                <strong class="functtitlstyle">Posición por defecto de objetos<a
+                        id="config-default-placement-objects"></a></strong>
+                <ul>
+                    <li>
+                        <strong>\imagedefaultplacement</strong>: Ubicación por defecto de las imágenes.
+                    </li>
+                    <li>
+                        <strong>\tabledefaultplacement</strong>: Ubicación por defecto de las tablas.
+                    </li>
+                    <li>
+                        <strong>\tikzdefaultplacement</strong>: Ubicación por defecto de las figuras hechas con tikz.
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
                 <strong class="functtitlstyle">Configuración de las leyendas - caption<a
                         id="config-caption"></a></strong>
                 <ul>
@@ -1346,6 +1458,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li>
                         <strong>\captionlrmargin</strong>: Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
                         las leyendas, en centímetros.
+                    </li>
+                    <li>
+                        <strong>\captionmarginmultimg</strong>: Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>)
+                        de las imágenes múltiples insertadas con <b>images</b>.
                     </li>
                     <li>
                         <strong>\captiontbmarginfigure</strong>: Margen superior/inferior de la leyenda en las figuras,

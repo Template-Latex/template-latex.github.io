@@ -587,6 +587,7 @@ a:hover {
 
 .main-content p {
     margin-bottom: 1em;
+    text-align: justify;
 }
 
 .main-content code {
@@ -1145,4 +1146,12 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 
 #preloadresources {
     display: none;
+}
+
+.codeFunContainer {
+    background-color: #eeeeee;
+    display: none;
+    margin-bottom: 2px;
+    margin-top: 0;
+    padding: 10px 10px 5px;
 }

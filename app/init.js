@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017,2018 Pablo Pizarro R.
+ Copyright 2017-2018 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -50,8 +50,8 @@ $(function () {
      * Se comprueba que wallpaper.db se cargó
      */
     try {
-        if (wallpaper_db) {
-        }
+        // noinspection JSUnusedLocalSymbols
+        let $s = wallpaper_db.color + wallpaper_db.image + wallpaper_db.position;
     } catch ($e) {
         wallpaper_db = {
             color: getRandomColor(),
@@ -270,20 +270,20 @@ $(function () {
     /**
      * Se aplica paralaje o carga la imagen
      */
-    if (!is_movile_browser && enableparallax) {
-        $('#background-page-header').parallax({
-            imageSrc: wallpaper_db.image,
-            speed: 0.20,
-            positionY: 'bottom',
-            positionX: 'center',
-            zIndex: 1
-        });
-        console.log('Se activó el parallax');
-    } else {
-        try {
-            if (wallpaper_db.image !== null) {
+    if (wallpaper_db.image !== null) {
+        console.log(String.format('Cargando fondo {0} - ID {1} (wallpaper.db)', wallpaper_db.image, wallpaper_db.index));
+        if (!is_movile_browser && enableparallax) {
+            $('#background-page-header').parallax({
+                imageSrc: wallpaper_db.image,
+                speed: 0.20,
+                positionY: 'bottom',
+                positionX: 'center',
+                zIndex: 1
+            });
+            console.log('Se activó el parallax');
+        } else {
+            try {
                 let back_img = new Image();
-                console.log(String.format('Cargando fondo {0} - ID {1} (wallpaper.db)', wallpaper_db.image, wallpaper_db.index));
                 back_img.onload = function () {
                     let $bgheader = $('#background-page-header');
                     $bgheader.css({
@@ -300,10 +300,10 @@ $(function () {
                     wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);
                 };
                 back_img.src = wallpaper_db.image;
+            } catch (e) {
+                console.log('Error crítico al obtener la imagen del wallpaper (wallpaper.db)');
+            } finally {
             }
-        } catch (e) {
-            console.log('Error crítico al obtener la imagen del wallpaper (wallpaper.db)');
-        } finally {
         }
     }
 
@@ -340,7 +340,7 @@ $(function () {
     /**
      * Muestra un botón para subir al hacer scroll
      */
-    $(window).scroll(function () {
+    let $scrollBTtop = function () {
         location.pathname.replace(/^\//, '');
         // noinspection JSValidateTypes
         if ($(window).scrollTop() > amountScrolled) {
@@ -348,7 +348,8 @@ $(function () {
         } else {
             $('a.back-to-top').fadeOut('slow');
         }
-    });
+    };
+    $(window).on('scroll', $scrollBTtop);
 
     /**
      * Smooth scrolling al clickear un anchor
@@ -456,7 +457,7 @@ $(function () {
      */
     if (initial_popup.display) {
         $.confirm({
-            boxWidth: '25%',
+            boxWidth: '35%',
             content: initial_popup.content,
             title: initial_popup.title,
             useBootstrap: false,
@@ -467,6 +468,5 @@ $(function () {
                 }
             }
         });
-        console.log(String.format('{0}: {1}', initial_popup.title, initial_popup.content));
     }
 });
