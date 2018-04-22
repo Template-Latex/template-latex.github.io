@@ -1,25 +1,25 @@
-/*
-The MIT License (MIT)
+/**
+ The MIT License (MIT)
 
-Copyright 2017,2018 Pablo Pizarro R.
+ Copyright 2017,2018 Pablo Pizarro R.
 
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the "Software"),
-to deal in the Software without restriction, including without limitation
-the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the Software
-is furnished to do so, subject to the following conditions:
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software
+ is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 var last_version = '$VERSION';
 var last_version_link = '$VERSION_LINK';
@@ -31,27 +31,30 @@ var version_entries = [];
 
 jQuery(document).ready(function ($) {
 
+    $.confirm({
+        title: 'Aviso importante',
+        content: 'La web de Template-Informe se encuentra en proceso de actualización a modo de preparación para la versión 5.0.0, es posible que existan algunos errores en el funcionamiento.',
+        useBootstrap: false,
+        buttons: {
+            close: {
+                text: 'Entendido', // text for button
+            }
+        },
+        boxWidth: '25%'
+    });
+
     // Escribe el acerca-de
     printAboutInfo();
 
     // Se escriben los badges
     writeBadges();
 
-    // Se crean colores de elementos a partir de color base wallpaper
-    try {
-        acolor = shadeColor2(wallpaper_db.color, 0.3);
-    } catch (e) {
-        wallpaper_db.color = '#000000';
-        acolor = shadeColor2(wallpaper_db.color, 0.3);
-        console.log('Error crítico al obtener el color del wallpaper (wallpaper.db)');
-    } finally {
-    }
-    backgroundmaincolor = shadeColor2(wallpaper_db.color, 0.98);
-    bgprecolor = shadeColor2(wallpaper_db.color, 0.9);
-    codebarcolor = shadeColor2(wallpaper_db.color, 0.4);
-    codeprecolor = shadeColor2(wallpaper_db.color, 0.2);
-    hrcolor = shadeColor2(wallpaper_db.color, 0.7);
-    pacecolor = shadeColor2(wallpaper_db.color, 0.15);
+    let backgroundmaincolor = shadeColor2(wallpaper_db.color, 0.98);
+    let bgprecolor = shadeColor2(wallpaper_db.color, 0.9);
+    let codebarcolor = shadeColor2(wallpaper_db.color, 0.4);
+    let codeprecolor = shadeColor2(wallpaper_db.color, 0.2);
+    let hrcolor = shadeColor2(wallpaper_db.color, 0.7);
+    let pacecolor = shadeColor2(wallpaper_db.color, 0.15);
 
     // Aplica tema de color a página
     var $head = $('head');

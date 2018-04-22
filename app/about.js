@@ -1,5 +1,5 @@
 /**
- * The MIT License (MIT)
+ The MIT License (MIT)
 
  Copyright 2017,2018 Pablo Pizarro R.
 
