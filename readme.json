@@ -2,7 +2,7 @@
     "PROJECT": {
         "NAME": "Template-Latex",
         "ICON": {
-            "IMAGE": "http://latex.ppizarror.com/icon.png",
+            "IMAGE": "http://latex.ppizarror.com/res/favicon-informe/icon.png",
             "ALT": "Template-Latex",
             "WIDTH": 200,
             "HEIGHT": 200
@@ -33,7 +33,7 @@
             "ALT": "Licencia MIT"
         },
 		"2": {
-            "IMAGE": "http://latex.ppizarror.com/badges/chat.svg",
+            "IMAGE": "http://ppizarror.com/badges/chat.svg",
             "HREF": "https://gitter.im/Template-Latex/Lobby",
             "ALT": "Chat"
         },
