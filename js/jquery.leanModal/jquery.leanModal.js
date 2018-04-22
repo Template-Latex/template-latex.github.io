@@ -1,39 +1,50 @@
-(function($) {
+(function ($) {
     $.fn.extend({
-        leanModal: function(options) {
+        leanModal: function (options) {
+            // noinspection ES6ConvertVarToLetConst
             var defaults = {
                 overlay: 0.7,
+                onopen: function () {
+                },
                 closeButton: null
             };
+            // noinspection ES6ConvertVarToLetConst
             var overlay = $("<div id='lean_overlay'></div>");
             $('body').append(overlay);
             options = $.extend(defaults, options);
 
-            return this.each(function() {
+            return this.each(function () {
+                // noinspection ES6ConvertVarToLetConst
                 var o = options;
-                $(this).click(function(e) {
-                    var modal_id = $(this).attr('content');
+                $(this).on('click', function (e) {
+                    let modal_id = $(this).attr('content');
+                    let $overlay = $('#lean_overlay');
 
                     function onDocumentKeyUp(event) {
-                        if (event.keyCode == 27 || event.keyCode == 8) {
+                        if (event.keyCode === 27 || event.keyCode === 8) {
                             close_modal(modal_id);
                         }
                     }
 
-                    $('#lean_overlay').click(function() {
+                    // Eventos elementos
+                    $overlay.off();
+                    $overlay.on('click', function () {
                         close_modal(modal_id);
                     });
                     document.addEventListener('keyup', onDocumentKeyUp, false);
-                    $(o.closeButton).click(function() {
+                    $(o.closeButton).off();
+                    $(o.closeButton).on('click', function () {
                         close_modal(modal_id);
                     });
-                    var modal_height = ($(window).height() - $(modal_id).height()) / 2;
-                    var modal_width = $(modal_id).outerWidth();
-                    $('#lean_overlay').css({
+
+                    // Aplica estilos
+                    let modal_height = ($(window).height() - $(modal_id).height()) / 2;
+                    let modal_width = $(modal_id).outerWidth();
+                    $overlay.css({
                         'display': 'block',
                         opacity: 0
                     });
-                    $('#lean_overlay').fadeTo(200, o.overlay);
+                    $overlay.fadeTo(200, o.overlay);
                     $(modal_id).css({
                         'display': 'block',
                         'position': 'fixed',
@@ -54,14 +65,21 @@
                     $('a.back-to-top').fadeOut(otherdownloadsfadetime);
                     $(modal_id).fadeTo(otherdownloadsfadetime, 1);
                     $('html').css('overflow-y', 'hidden');
+                    // noinspection JSValidateTypes
                     $('#downloadother-contents').scrollTop(0);
-                    $(window).resize(function() {
+                    $(window).off('w.resizelean');
+                    $(window).on('w.resizelean', function () {
                         modal_width = $(modal_id).outerWidth();
                         $(modal_id).css({
                             'top': ($(window).height() - $(modal_id).height()) / 2 + 'px',
                             'margin-left': -(modal_width / 2) + 'px'
                         });
                     });
+
+                    // Aplica función onopen
+                    o.onopen();
+
+                    // Previene callback inicial
                     e.preventDefault();
                 });
             });

@@ -39,31 +39,13 @@ var stats_href = 'http://latex.ppizarror.com/stats/?template=';
 var update_downloads_version = true;
 
 /**
- * Escribe los badges de la suite Template-Latex.
- * @return
+ * Aviso inicial
  */
-function writeBadges() {
-    let $badgediv = $('#badgeslistdiv');
-    $badgediv.html('');
-
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/Template-Tesis/" id="aimg"><img src="res/badges/tesis.svg" style="display: none" /></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/Template-Apunte/" id="aimg"><img src="res/badges/apunte.svg" style="display: none" /></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/Template-Tareas/" id="aimg"><img src="res/badges/tareas.svg" style="display: none" /></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/Template-Auxiliares/" id="aimg"><img src="res/badges/auxiliares.svg" /></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/Template-Controles/" id="aimg"><img src="res/badges/controles.svg" /></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/Template-Pautas/" id="aimg"><img src="res/badges/pauta.svg" style="display: none" /></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/Template-Informe/" id="aimg"><img src="res/badges/informe.svg" /></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/Professional-CV/" id="aimg"><img src="res/badges/professionalcv.svg" /></a>');
-    $badgediv.fadeIn('slow');
-}
+var initial_popup = {
+    content: 'La web de Template-Informe se encuentra en proceso de actualización a modo de preparación para la versión 5.0.0, es posible que existan algunos errores en el funcionamiento',
+    display: true,
+    title: 'Aviso importante'
+};
 
 /**
  * Mensajes de error

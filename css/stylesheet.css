@@ -506,13 +506,13 @@ a:hover {
 
 @media screen and (min-width: 64em) {
     .page-header {
-        padding: 5rem 6rem;
+        padding: 6rem 6rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .page-header {
-        padding: 5rem 4rem;
+        padding: 6rem 4rem;
     }
 }
 
@@ -1141,4 +1141,8 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
     display: block;
     float: left;
     width: 13%;
+}
+
+#preloadresources {
+    display: none;
 }

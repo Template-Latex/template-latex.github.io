@@ -36,19 +36,6 @@ var version_entries = [];
  */
 $(function () {
 
-    $.confirm({
-        title: 'Aviso importante',
-        content: 'La web de Template-Informe se encuentra en proceso de actualización a modo de preparación para la versión 5.0.0, es posible que existan algunos errores en el funcionamiento.',
-        useBootstrap: false,
-        buttons: {
-            close: {
-                keys: ['enter'],
-                text: 'Entendido',
-            }
-        },
-        boxWidth: '25%'
-    });
-
     /**
      * Escribe el acerca-de
      */
@@ -150,7 +137,11 @@ $(function () {
 
             // Si es Template-Informe se muestra botón otras descargas
             $('a[name*=leanModal]').leanModal({
-                closeButton: '.modal_close'
+                closeButton: '.modal_close',
+                onopen: function () {
+                    $('#download-button-1file').tooltipster('close');
+                    $('#autorbanner').tooltipster('close');
+                }
             });
             let normal_link = String.format('{0}download/{1}/Template-Informe.zip', href_github_project, last_version);
             // noinspection HtmlUnknownTarget
@@ -431,7 +422,7 @@ $(function () {
     $('#download-button-1file').tooltipster({
         animation: 'grow',
         content: 'Seleccionar entre distintas versiones',
-        delay: 400,
+        delay: 600,
         maxWidth: 200,
         side: 'bottom',
         theme: 'tooltipster-borderless'
@@ -459,4 +450,23 @@ $(function () {
      * Se llama a la función de cada template después de cargar
      */
     afterDocumentReady();
+
+    /**
+     * Popup inicial
+     */
+    if (initial_popup.display) {
+        $.confirm({
+            boxWidth: '25%',
+            content: initial_popup.content,
+            title: initial_popup.title,
+            useBootstrap: false,
+            buttons: {
+                close: {
+                    keys: ['enter'],
+                    text: 'Cerrar',
+                }
+            }
+        });
+        console.log(String.format('{0}: {1}', initial_popup.title, initial_popup.content));
+    }
 });

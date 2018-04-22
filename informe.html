@@ -69,6 +69,7 @@
     <link rel="stylesheet" type="text/css" href="css/hover/hover.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/tooltipster/tooltipster.bundle.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-borderless.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-light.min.css" media="screen">
 
     <!-- Librerías javascript -->
     <script src="js/photoswipe/photoswipe.min.js"></script>
@@ -174,15 +175,15 @@
             <li>
                 <a href="#funciones-template" class="menu-big-entry">Funciones propias del template</a>
                 <ul>
-                    <li><a href="#hlp-parrafo" class="menu-little-entry">Insertar párrafos</a></li>
                     <li><a href="#hlp-imagen" class="menu-little-entry">Añadir una imagen</a></li>
                     <li><a href="#hlp-formulae" class="menu-little-entry">Insertar una fórmula en el documento</a></li>
                     <li><a href="#hlp-title" class="menu-little-entry">Insertar secciones sin número y sin aparecer en
                         el índice</a></li>
-                    <li><a href="#hlp-math" class="menu-little-entry">Expresiones matemáticas</a></li>
+                    <li><a href="#hlp-parrafo" class="menu-little-entry">Insertar párrafos</a></li>
+                    <li><a href="#hlp-srccode" class="menu-little-entry">Añadir código fuente</a></li>
                     <li><a href="#hlp-annex" class="menu-little-entry">Insertar anexos</a></li>
                     <li><a href="#hlp-ref" class="menu-little-entry">Añadir referencias</a></li>
-                    <li><a href="#hlp-srccode" class="menu-little-entry">Añadir código fuente</a></li>
+                    <li><a href="#hlp-math" class="menu-little-entry">Expresiones matemáticas</a></li>
                     <li><a href="#hlp-other" class="menu-little-entry">Otras funciones</a></li>
                 </ul>
             </li>
@@ -240,8 +241,8 @@
         <p>
             Existe además una versión <b>compacta</b> en donde se encuentra todo el código en un sólo archivo si es que
             no prefieres los archivos por separado. Para ver más información sobre cómo utilizar las funciones
-            exclusivas del template, o cómo
-            configurar a gusto el template, visita el resto de las secciones de este manual.
+            exclusivas del template, o cómo configurar a gusto el template, visita el resto de las secciones de este
+            manual.
         </p>
         <p>
             <b>ATENCIÓN:</b> Para compilar el template es necesario utilizar <a
@@ -385,51 +386,6 @@
         </p>
         <ul>
             <li class="li-code-parent">
-                <strong class="functtitlstyle">Insertar párrafos<a id="hlp-parrafo"></a></strong>
-                <p>
-                    Para esto existen las siguientes funciones:
-                </p>
-                <ul>
-                    <li>
-                        <strong>\newp</strong>: Sencilla forma de añadir un nuevo párrafo.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre>Este es un parrafo. <br><span class="pl-e">\newp</span> Este es otro.</pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\newpar</strong><b><b>{</b></b><em>Párrafo</em><b>}</b>: Inserta un nuevo párrafo con un
-                        salto de linea al terminar.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\newpar</span><b>{</b>Este es un parrafo.<b>}</b><br><span
-                                        class="pl-e">\newpar</span><b>{</b>Este es otro.<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\newparnl</strong><b>{</b><em>Párrafo</em><b>}</b>: Inserta un nuevo párrafo sin un
-                        salto de linea al terminar.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span
-                                        class="pl-e">\newparnl</span><b>{</b>Este es un parrafo sin salto de línea.<b>}</b><br><span
-                                        class="pl-e">\newparnl</span><b>{</b>Este es otro párrafo sin salto de línea.<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\quotes</strong><b>{</b><em>Texto</em><b>}</b>: Función simplificada para insertar
-                        "citas".
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre>Así se insertan las <span class="pl-e">\quotes</span><b>{</b>cítas<b>}</b> de manera sencilla.</pre>
-                            </div>
-                        </blockquote>
-                </ul>
-            </li>
-            <li class="li-code-parent">
                 <strong class="functtitlstyle">Añadir una imagen <a id="hlp-imagen"></a></strong>
                 <p>
                     Las funciones para añadir imágenes requieren del nombre de la imagen (el archivo almacenado en el
@@ -464,124 +420,6 @@
                                 <pre><span class="pl-e">\insertimageboxed</span><b>[</b><span
                                         class="pl-c1">\label</span>{img-1}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b><span
                                         class="pl-v">scale</span>=0.5<b>}</b><b>{</b>0.5<b>}</b><b>{</b><b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li>
-                        <strong>\insertdoubleimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                        de la imagen 1</em><b>}</b><b>{</b><em>Parámetros 1</em><b>}</b><b>{</b><em>Leyenda
-                        1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Parámetros
-                        2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
-                        Inserta dos imágenes en un sólo elemento.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertdoubleimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-double-1}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b><span
-                                        class="pl-v">scale</span>=0.4<b>}</b><b>{</b>Descripción A<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-wrap<b>}</b><b>{</b><span
-                                        class="pl-v">width</span>=5cm<b>}</b><b>{</b>Descripción B<b>}</b><b>{</b>Descripción general de las imágenes<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\insertdoubleeqimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                        de la imagen 1</em><b>}</b><b>{</b><em>Leyenda 1</em><b>}</b><b>{</b><em>Dirección de la imagen
-                        2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Parámetros generales</em><b>}</b><b>{</b><em>Leyenda
-                        general</em><b>}</b>:
-                        Inserta dos imágenes en un sólo elemento utilizando los mismos parámetros (estilos de imagen).
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertdoubleeqimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-equal}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b>Descripción A<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>Descripción B<b>}</b><b>{</b><span
-                                        class="pl-v">height</span>=5cm<b>}</b><b>{</b>Descripción general de las imágenes<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li>
-                        <strong>\inserttripleimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                        de la imagen 1</em><b>}</b><b>{</b><em>Parámetros 1</em><b>}</b><b>{</b><em>Dirección de la
-                        imagen 2</em><b>}</b><b>{</b><em>Parámetros 2</em><b>}</b><b>{</b><em>Dirección de la imagen
-                        3</em><b>}</b><b>{</b><em>Parámetros 3</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
-                        Inserta tres imágenes en un sólo elemento.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\inserttripleimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-triple-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b><span
-                                        class="pl-v">scale</span>=0.4<b>}</b><b>{</b>ejemplos/test-<span
-                                        class="newline_br"></span>image-2.png<b>}</b><b>{</b><span
-                                        class="pl-v">height</span>=6cm<b>}</b><b>{</b>ejemplos/test-image-3.pdf<b>}</b><b>{</b><span
-                                        class="pl-v">width</span>=3cm<b>}</b><b>{</b>Descripción general<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\inserttripleeqimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                        de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
-                        de la imagen 3</em><b>}</b><b>{</b><em>Parámetros generales</em><b>}</b><b>{</b><em>Leyenda
-                        general</em><b>}</b>:
-                        Inserta tres imágenes en un sólo elemento utilizando los mismos parámetros (estilos de imagen).
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\inserttripleeqimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-triple}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.png<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.pdf<b>}</b><b>{</b><span
-                                        class="pl-v">scale</span>=0.6<b>}</b><b>{</b>Descripción general<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li>
-                        <strong>\insertquadimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                        de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
-                        de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Parámetros
-                        globales</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
-                        Inserta cuatro imágenes en un sólo elemento.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertquadimage</span><b>[</b><span class="pl-c1">\label</span>{img-quad-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b><span
-                                        class="pl-v">width</span>=6cm<b>}</b><b>{</b>Descripción general<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\insertpentaimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                        de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
-                        de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Dirección
-                        de la imagen 5</em><b>}</b><b>{</b><em>Parámetros globales</em><b>}</b><b>{</b><em>Leyenda
-                        general</em><b>}</b>:
-                        Inserta cinco imágenes en un sólo elemento.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertpentaimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-penta-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b>ejemplos/test-image-5.jpg<b>}</b><b>{</b><span
-                                        class="pl-v">scale</span>=0.7<b>}</b><span class="newline_br"></span><b>{</b>Descripción general<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\inserthexaimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                        de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
-                        de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Dirección
-                        de la imagen 5</em><b>}</b><b>{</b><em>Dirección de la imagen 6</em><b>}</b><b>{</b><em>Parámetros
-                        globales</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
-                        Inserta seis imágenes en un sólo elemento.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\inserthexaimage</span><b>[</b><span class="pl-c1">\label</span>{img-hexa-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b>ejemplos/test-image-5.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-6.jpg<b>}</b><b>{</b><span
-                                        class="pl-v">width</span>=4cm, <span class="pl-v">height</span>=5cm<b>}{</b>Descripción general<b>}</b></pre>
                             </div>
                         </blockquote>
                     </li>
@@ -846,6 +684,173 @@
                 </ul>
             </li>
             <li class="li-code-parent">
+                <strong class="functtitlstyle">Insertar párrafos<a id="hlp-parrafo"></a></strong>
+                <p>
+                    Para esto existen las siguientes funciones:
+                </p>
+                <ul>
+                    <li>
+                        <strong>\newp</strong>: Sencilla forma de añadir un nuevo párrafo.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre>Este es un parrafo. <br><span class="pl-e">\newp</span> Este es otro.</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <strong>\newpar</strong><b><b>{</b></b><em>Párrafo</em><b>}</b>: Inserta un nuevo párrafo con un
+                        salto de linea al terminar.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\newpar</span><b>{</b>Este es un parrafo.<b>}</b><br><span
+                                        class="pl-e">\newpar</span><b>{</b>Este es otro.<b>}</b></pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <strong>\newparnl</strong><b>{</b><em>Párrafo</em><b>}</b>: Inserta un nuevo párrafo sin un
+                        salto de linea al terminar.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre><span
+                                        class="pl-e">\newparnl</span><b>{</b>Este es un parrafo sin salto de línea.<b>}</b><br><span
+                                        class="pl-e">\newparnl</span><b>{</b>Este es otro párrafo sin salto de línea.<b>}</b></pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <strong>\quotes</strong><b>{</b><em>Texto</em><b>}</b>: Función simplificada para insertar
+                        "citas".
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre>Así se insertan las <span class="pl-e">\quotes</span><b>{</b>cítas<b>}</b> de manera sencilla.</pre>
+                            </div>
+                        </blockquote>
+                </ul>
+            </li>
+            <li class="li-code-parent">
+                <strong class="functtitlstyle">Añadir código fuente<a id="hlp-srccode"></a></strong>
+                <p>
+                    Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
+                    lenguajes de programación <i>C, Python, Matlab</i>:
+                </p>
+                <ul>
+                    <li>
+                        <strong>\begin{sourcecode}</strong><b>[</b><em>Label</em>
+                        (opcional)<b>]</b><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta un
+                        código fuente de un lenguaje definido (Python, Matlab, C), con leyenda.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                        <pre>
+<span class="pl-c1">\begin</span>{<span class="pl-e">sourcecode</span>}<b>[</b><span class="pl-c1">\label</span>{codigo-python}<b>]{</b>Python<b>}{</b>Ejemplo en Python.<b>}</b><span
+                                                class="pl-srccode">
+import numpy as np
+
+def incmatrix(genl1, genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None # Comentario 1
+    VT = np.zeros((n*m, 1), int) # Comentario 2
+</span><span class="pl-c1">\end</span>{<span class="pl-e">sourcecode</span>}
+</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                </ul>
+            </li>
+            <li class="li-code-parent">
+                <strong class="functtitlstyle">Insertar anexos<a id="hlp-annex"></a></strong>
+                <p>
+                    Para insertar anexos existe el ambiente <b>anexo</b>, dentro de él se pueden crear secciones,
+                    sub-secciones, etc.
+                </p>
+                <blockquote>
+                    <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-c1">\begin</span>{<span class="pl-e">anexo</span>}
+    <span class="pl-c1">\section</span>{Cálculos realizados}
+        <span class="pl-c1">\lipsum</span>[69]
+        <span class="pl-comment">% Imagen, se numerará automáticamente con la letra del anexo</span>
+        <span class="pl-c1">\insertimage</span>{ejemplos/test-image.png}{<span class="pl-v">scale</span>=0.15}{Imagen en anexo.}
+
+    <span class="pl-c1">\newpage</span>
+    <span class="pl-c1">\section</span>{Otros anexos}
+        <span class="pl-c1">\lipsum</span>[1]
+<span class="pl-c1">\end</span>{<span class="pl-e">anexo</span>}</pre>
+                    </div>
+                </blockquote>
+            </li>
+            <li class="li-code-parent">
+                <strong class="functtitlstyle">Añadir referencias<a id="hlp-ref"></a></strong>
+                <p>
+                    Para añadir referencias el template ofrece 3 alternativas distintas: el uso de <b>bibtex</b>, <b>apacite</b>
+                    y <b>natbib</b>. Para usar cada uno de ellos es necesario cambiar la configuración <a
+                        onclick="bounceStyleReferences();"
+                        class="javascripthref">\stylecitereferences</a>.
+                </p>
+                <ul>
+                    <li><b>Bibtex</b>: Es el sistema más sencillo, para insertar referencias existe el ambiente <b>references</b>:
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                        <pre>
+<span class="pl-c1">\begin</span>{<span class="pl-e">references</span>}
+    <span class="pl-c1">\bibitem</span>{ref1}
+    Template Informe en <span class="pl-c1">\LaTeX</span>.
+    <span class="pl-c1">\textit</span>{¡Revisa el manual online de este template!} \\
+    <span class="pl-c1">\url</span>{http://ppizarror.com/Template-Informe/}
+
+    <span class="pl-c1">\bibitem</span>{ref2}
+    Excel2Latex.
+    <span class="pl-c1">\textit</span>{Importa de forma sencilla tus tablas de Excel a \LaTeX.} \\
+    <span class="pl-c1">\url</span>{https://www.ctan.org/tex-archive/support/excel2latex/}
+<span class="pl-c1">\end</span>{<span class="pl-e">references</span>}</pre>
+                            </div>
+                        </blockquote>
+                        <b>-</b> Para citar se usa <span class="pl-c1">\cite</span>{ref1}
+                        <br/>
+                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
+                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={bibtex}
+                    </li>
+                </ul>
+                <hr class="style1">
+                <ul>
+                    <li><b>Apacite</b>: Es un sistema de referencias más complejo, para ello se deben guardar las
+                        referencias en un archivo <i>.bib</i> como <a href="res/references.bib" download>este ejemplo
+                            <i>(references.bib)</i></a>,
+                        luego para insertar
+                        las referencias y citar se realiza lo siguiente:
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                        <pre>
+Para citar de forma abreviada se usa <span class="pl-c1">\shortcite</span>{braas}.
+Para usar citas extensas se utiliza <span class="pl-c1">\fullcite</span>{braas}
+
+<span class="pl-comment">% La siguiente línea importa el archivo .bib donde están guardadas las referencias</span>
+<span class="pl-e">\bibliography</span>{references}</pre>
+                            </div>
+                        </blockquote>
+                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
+                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={apacite}
+                    </li>
+                </ul>
+                <hr class="style1">
+                <ul>
+                    <li><b>Natbib</b>: El uso de natbib es el mismo que el de <i>Apacite</i>:
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                        <pre>
+Para citar de forma abreviada se usa <span class="pl-c1">\shortcite</span>{baggio}.
+Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
+
+<span class="pl-comment">% La siguiente línea importa el archivo .bib donde están guardadas las referencias</span>
+<span class="pl-e">\bibliography</span>{references}</pre>
+                            </div>
+                        </blockquote>
+                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
+                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={natbib}
+                    </li>
+                </ul>
+            </li>
+            <li class="li-code-parent">
                 <strong class="functtitlstyle">Expresiones matemáticas <a id="hlp-math"></a></strong>
                 <p>
                     Existen varias funciones para añadir expresiones matemáticas de forma sencilla, estas se pueden usar
@@ -1022,128 +1027,6 @@
                 </ul>
             </li>
             <li class="li-code-parent">
-                <strong class="functtitlstyle">Insertar anexos<a id="hlp-annex"></a></strong>
-                <p>
-                    Para insertar anexos existe el ambiente <b>anexo</b>, dentro de él se pueden crear secciones,
-                    sub-secciones, etc.
-                </p>
-                <blockquote>
-                    <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-c1">\begin</span>{<span class="pl-e">anexo</span>}
-    <span class="pl-c1">\section</span>{Cálculos realizados}
-        <span class="pl-c1">\lipsum</span>[69]
-        <span class="pl-comment">% Imagen, se numerará automáticamente con la letra del anexo</span>
-        <span class="pl-c1">\insertimage</span>{ejemplos/test-image.png}{<span class="pl-v">scale</span>=0.15}{Imagen en anexo.}
-
-    <span class="pl-c1">\newpage</span>
-    <span class="pl-c1">\section</span>{Otros anexos}
-        <span class="pl-c1">\lipsum</span>[1]
-<span class="pl-c1">\end</span>{<span class="pl-e">anexo</span>}</pre>
-                    </div>
-                </blockquote>
-            </li>
-            <li class="li-code-parent">
-                <strong class="functtitlstyle">Añadir referencias<a id="hlp-ref"></a></strong>
-                <p>
-                    Para añadir referencias el template ofrece 3 alternativas distintas: el uso de <b>bibtex</b>, <b>apacite</b>
-                    y <b>natbib</b>. Para usar cada uno de ellos es necesario cambiar la configuración <a
-                        onclick="bounceStyleReferences();"
-                        class="javascripthref">\stylecitereferences</a>.
-                </p>
-                <ul>
-                    <li><b>Bibtex</b>: Es el sistema más sencillo, para insertar referencias existe el ambiente <b>references</b>:
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                        <pre>
-<span class="pl-c1">\begin</span>{<span class="pl-e">references</span>}
-    <span class="pl-c1">\bibitem</span>{ref1}
-    Template Informe en <span class="pl-c1">\LaTeX</span>.
-    <span class="pl-c1">\textit</span>{¡Revisa el manual online de este template!} \\
-    <span class="pl-c1">\url</span>{http://ppizarror.com/Template-Informe/}
-
-    <span class="pl-c1">\bibitem</span>{ref2}
-    Excel2Latex.
-    <span class="pl-c1">\textit</span>{Importa de forma sencilla tus tablas de Excel a \LaTeX.} \\
-    <span class="pl-c1">\url</span>{https://www.ctan.org/tex-archive/support/excel2latex/}
-<span class="pl-c1">\end</span>{<span class="pl-e">references</span>}</pre>
-                            </div>
-                        </blockquote>
-                        <b>-</b> Para citar se usa <span class="pl-c1">\cite</span>{ref1}
-                        <br/>
-                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
-                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={bibtex}
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li><b>Apacite</b>: Es un sistema de referencias más complejo, para ello se deben guardar las
-                        referencias en un archivo <i>.bib</i> como <a href="res/references.bib" download>este ejemplo
-                            <i>(references.bib)</i></a>,
-                        luego para insertar
-                        las referencias y citar se realiza lo siguiente:
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                        <pre>
-Para citar de forma abreviada se usa <span class="pl-c1">\shortcite</span>{braas}.
-Para usar citas extensas se utiliza <span class="pl-c1">\fullcite</span>{braas}
-
-<span class="pl-comment">% La siguiente línea importa el archivo .bib donde están guardadas las referencias</span>
-<span class="pl-e">\bibliography</span>{references}</pre>
-                            </div>
-                        </blockquote>
-                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
-                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={apacite}
-                    </li>
-                </ul>
-                <hr class="style1">
-                <ul>
-                    <li><b>Natbib</b>: El uso de natbib es el mismo que el de <i>Apacite</i>:
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                        <pre>
-Para citar de forma abreviada se usa <span class="pl-c1">\shortcite</span>{baggio}.
-Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
-
-<span class="pl-comment">% La siguiente línea importa el archivo .bib donde están guardadas las referencias</span>
-<span class="pl-e">\bibliography</span>{references}</pre>
-                            </div>
-                        </blockquote>
-                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
-                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={natbib}
-                    </li>
-                </ul>
-
-                <strong class="functtitlstyle">Añadir código fuente<a id="hlp-srccode"></a></strong>
-                <p>
-                    Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
-                    lenguajes de programación <i>C, Python, Matlab</i>:
-                </p>
-                <ul>
-                    <li>
-                        <strong>\begin{sourcecode}</strong><b>[</b><em>Label</em>
-                        (opcional)<b>]</b><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta un
-                        código fuente de un lenguaje definido (Python, Matlab, C), con leyenda.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                        <pre>
-<span class="pl-c1">\begin</span>{<span class="pl-e">sourcecode</span>}<b>[</b><span class="pl-c1">\label</span>{codigo-python}<b>]{</b>Python<b>}{</b>Ejemplo en Python.<b>}</b><span
-                                                class="pl-srccode">
-import numpy as np
-
-def incmatrix(genl1, genl2):
-    m = len(genl1)
-    n = len(genl2)
-    M = None # Comentario 1
-    VT = np.zeros((n*m, 1), int) # Comentario 2
-</span><span class="pl-c1">\end</span>{<span class="pl-e">sourcecode</span>}
-</pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                </ul>
-                <a href="#" class="menu-little-entry"></a>
-            </li>
-            <li>
                 <strong class="functtitlstyle">Otras funciones<a id="hlp-other"></a></strong>
                 <ul>
                     <li>
@@ -1208,6 +1091,147 @@ def incmatrix(genl1, genl2):
                     <li>
                         <strong>\setcaptionmargincm</strong><b>{</b><em>Margen</em><b>}</b>: Modifica el margen
                         izquierdo/derecho de los <i>caption</i> medido en centímetros.
+                    </li>
+                    <li>
+                        <a id="showDeprecatedImageTrigger" class="javascripthref"><b>Inserción múltiple de imágenes</b>
+                            (FUNCIONES DEPRECADAS)</a>
+                        <div id="showDeprecatedImageContainer" style="display: none;">
+                            <ul>
+                                <li>
+                                    <strong>\insertdoubleimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
+                                    de la imagen 1</em><b>}</b><b>{</b><em>Parámetros 1</em><b>}</b><b>{</b><em>Leyenda
+                                    1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Parámetros
+                                    2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Leyenda
+                                    general</em><b>}</b>:
+                                    Inserta dos imágenes en un sólo elemento.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\insertdoubleimage</span><b>[</b><span
+                                        class="pl-c1">\label</span>{img-double-1}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b><span
+                                        class="pl-v">scale</span>=0.4<b>}</b><b>{</b>Descripción A<b>}</b><span
+                                        class="newline_br"></span><b>{</b>ejemplos/test-image-wrap<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=5cm<b>}</b><b>{</b>Descripción B<b>}</b><b>{</b>Descripción general de las imágenes<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertdoubleeqimage</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Dirección
+                                    de la imagen 1</em><b>}</b><b>{</b><em>Leyenda 1</em><b>}</b><b>{</b><em>Dirección
+                                    de la
+                                    imagen
+                                    2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Parámetros
+                                    generales</em><b>}</b><b>{</b><em>Leyenda
+                                    general</em><b>}</b>:
+                                    Inserta dos imágenes en un sólo elemento utilizando los mismos parámetros (estilos
+                                    de
+                                    imagen).
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\insertdoubleeqimage</span><b>[</b><span
+                                        class="pl-c1">\label</span>{img-equal}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b>Descripción A<b>}</b><span
+                                        class="newline_br"></span><b>{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>Descripción B<b>}</b><b>{</b><span
+                                        class="pl-v">height</span>=5cm<b>}</b><b>{</b>Descripción general de las imágenes<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\inserttripleimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
+                                    de la imagen 1</em><b>}</b><b>{</b><em>Parámetros 1</em><b>}</b><b>{</b><em>Dirección
+                                    de
+                                    la
+                                    imagen 2</em><b>}</b><b>{</b><em>Parámetros 2</em><b>}</b><b>{</b><em>Dirección de
+                                    la
+                                    imagen
+                                    3</em><b>}</b><b>{</b><em>Parámetros 3</em><b>}</b><b>{</b><em>Leyenda
+                                    general</em><b>}</b>:
+                                    Inserta tres imágenes en un sólo elemento.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\inserttripleimage</span><b>[</b><span
+                                        class="pl-c1">\label</span>{img-triple-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b><span
+                                        class="pl-v">scale</span>=0.4<b>}</b><b>{</b>ejemplos/test-<span
+                                        class="newline_br"></span>image-2.png<b>}</b><b>{</b><span
+                                        class="pl-v">height</span>=6cm<b>}</b><b>{</b>ejemplos/test-image-3.pdf<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=3cm<b>}</b><b>{</b>Descripción general<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\inserttripleeqimage</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Dirección
+                                    de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
+                                    de la imagen 3</em><b>}</b><b>{</b><em>Parámetros generales</em><b>}</b><b>{</b><em>Leyenda
+                                    general</em><b>}</b>:
+                                    Inserta tres imágenes en un sólo elemento utilizando los mismos parámetros (estilos
+                                    de
+                                    imagen).
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\inserttripleeqimage</span><b>[</b><span
+                                        class="pl-c1">\label</span>{img-triple}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.png<b>}</b><span
+                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.pdf<b>}</b><b>{</b><span
+                                        class="pl-v">scale</span>=0.6<b>}</b><b>{</b>Descripción general<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertquadimage</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Dirección
+                                    de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
+                                    de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Parámetros
+                                    globales</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
+                                    Inserta cuatro imágenes en un sólo elemento.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\insertquadimage</span><b>[</b><span class="pl-c1">\label</span>{img-quad-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
+                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=6cm<b>}</b><b>{</b>Descripción general<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertpentaimage</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Dirección
+                                    de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
+                                    de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Dirección
+                                    de la imagen 5</em><b>}</b><b>{</b><em>Parámetros globales</em><b>}</b><b>{</b><em>Leyenda
+                                    general</em><b>}</b>:
+                                    Inserta cinco imágenes en un sólo elemento.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\insertpentaimage</span><b>[</b><span
+                                        class="pl-c1">\label</span>{img-penta-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
+                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b>ejemplos/test-image-5.jpg<b>}</b><b>{</b><span
+                                        class="pl-v">scale</span>=0.7<b>}</b><span class="newline_br"></span><b>{</b>Descripción general<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\inserthexaimage</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Dirección
+                                    de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
+                                    de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Dirección
+                                    de la imagen 5</em><b>}</b><b>{</b><em>Dirección de la imagen 6</em><b>}</b><b>{</b><em>Parámetros
+                                    globales</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
+                                    Inserta seis imágenes en un sólo elemento.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\inserthexaimage</span><b>[</b><span class="pl-c1">\label</span>{img-hexa-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
+                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b>ejemplos/test-image-5.jpg<b>}</b><span
+                                        class="newline_br"></span><b>{</b>ejemplos/test-image-6.jpg<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=4cm, <span class="pl-v">height</span>=5cm<b>}{</b>Descripción general<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1997,8 +2021,10 @@ def incmatrix(genl1, genl2):
                 </div>
             </div>
         </div>
-
     </section>
+    <div id="preloadresources">
+        <img src="https://avatars0.githubusercontent.com/u/12925256" class="autor_photo" alt=""/>
+    </div>
 </div>
 </body>
 
