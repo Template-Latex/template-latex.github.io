@@ -29,7 +29,10 @@ var total_downloads = 0;
 var total_downloads_l30 = 0;
 var version_entries = [];
 
-jQuery(document).ready(function ($) {
+/**
+ * Inicio de la aplicación
+ */
+$(function () {
 
     $.confirm({
         title: 'Aviso importante',
@@ -37,7 +40,7 @@ jQuery(document).ready(function ($) {
         useBootstrap: false,
         buttons: {
             close: {
-                text: 'Entendido', // text for button
+                text: 'Entendido',
             }
         },
         boxWidth: '25%'
@@ -70,7 +73,7 @@ jQuery(document).ready(function ($) {
         total_downloads = 0;
         for (i = 0; i < json.length; i++) {
             try {
-                for (j = 0; j < json[i].assets.length; j++) {
+                for (let j = 0; j < json[i].assets.length; j++) {
                     total_downloads += parseInt(json[i].assets[j].download_count);
                     version_entries.push(json[i].tag_name);
                 }
@@ -83,14 +86,6 @@ jQuery(document).ready(function ($) {
         try {
             last_version = json[0].tag_name;
             last_version_link = json[0].assets[0].browser_download_url;
-            last_version_link_1 = json[0].assets[1].browser_download_url;
-            if (last_version_link.includes('-Single')) {
-                normal_link = last_version_link_1;
-                compact_link = last_version_link;
-            } else {
-                normal_link = last_version_link;
-                compact_link = last_version_link_1;
-            }
             console.log(String.format('Última versión template: {0}', last_version));
         } catch (err) {
             throwError(errors.cantGetVersion);
@@ -98,14 +93,14 @@ jQuery(document).ready(function ($) {
 
         // Se actualiza total de descargas
         total_downloads_l30 = total_downloads;
-        if (total_downloads == 0) {
+        if (total_downloads === 0) {
             total_downloads = nan_value;
         } else {
             updateDownloadCounter(total_downloads, update_download_counter);
-            j = '';
+            let j = '';
             for (var i = 0; i < download_list_counter.length; i++) {
                 j = download_list_counter[i][1];
-                if (version_entries.indexOf(j) == -1) {
+                if (version_entries.indexOf(j) === -1) {
                     if (Array.isArray(download_list_counter[i][0])) {
                         total_downloads += download_list_counter[i][0][0] + download_list_counter[i][0][1];
                     } else {
@@ -119,29 +114,44 @@ jQuery(document).ready(function ($) {
         // Se añade link estadísticas a banner descargas
         $('#main-content-section #templatestats').attr('href', stats_href + stats_name);
 
-        if (update_download_counter == 'Template-Informe') {
+        if (update_download_counter === 'Template-Informe') {
+
+            // Se carga los elementos
+            let $dlbutton = $('#download-button');
+
             // Si es Template-Informe se muestra botón otras descargas
             $('a[name*=leanModal]').leanModal({
                 closeButton: '.modal_close'
             });
-            normal_link = String.format('{0}download/{1}/Template-Informe.zip', href_github_project, last_version);
-            $('#download-button-1file').append(String.format(' <font id="buttonfile1text">(v{0}) <img src="{1}/zip.png" class="iconbutton" /></font>', last_version, href_resources_folder));
-            $('#download-button').attr('href', normal_link);
-            $('#download-button').append(String.format(' <font id="buttonfilectext">(v{0}) <img src="{1}/zip.png" class="iconbutton" /></font>', last_version, href_resources_folder));
+            let normal_link = String.format('{0}download/{1}/Template-Informe.zip', href_github_project, last_version);
+            // noinspection HtmlUnknownTarget
+            $('#download-button-1file').append(String.format(' <span id="buttonfile1text">(v{0}) <img src="res/ui/zip.png" class="iconbutton" /></span>', last_version));
+            $dlbutton.attr('href', normal_link);
+            // noinspection HtmlUnknownTarget
+            $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <img src="res/ui/zip.png" class="iconbutton" /></span>', last_version));
             writeOtherLinks(last_version);
+
         } else {
+
+            // Se carga los elementos
+            let $dlbutton = $('#download-button');
+            let $d1fbutton = $('#download-button-1file');
+
             // Se establece la versión en el botón de descargas
-            $('#download-button-1file').attr('href', compact_link);
-            $('#download-button-1file').append(String.format(' <font id="buttonfilectext">(v{0}) <img src="{1}/zip.png" class="iconbutton" /></font>', last_version, href_resources_folder));
-            $('#download-button').attr('href', normal_link);
-            $('#download-button').append(String.format(' <font id="buttonfile1text">(v{0}) <img src="{1}/zip.png" class="iconbutton" /></font>', last_version, href_resources_folder));
-            $('#download-button-1file').click(function () {
-                if (total_downloads != nan_value) {
+            $d1fbutton.attr('href', compact_link);
+            // noinspection HtmlUnknownTarget
+            $d1fbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <img src="res/ui/zip.png" class="iconbutton" /></span>', last_version));
+            $dlbutton.attr('href', normal_link);
+            // noinspection HtmlUnknownTarget
+            $dlbutton.append(String.format(' <span id="buttonfile1text">(v{0}) <img src="res/ui/zip.png" class="iconbutton" /></span>', last_version));
+            $d1fbutton.click(function () {
+                if (total_downloads !== nan_value) {
                     total_downloads += 1;
                     total_downloads_l30 += 1;
                     update_download_banner(total_downloads);
                 }
             });
+
         }
 
         // Se muestra descargas y botones con efecto
@@ -157,28 +167,32 @@ jQuery(document).ready(function ($) {
 
         // Se obtiene el what's new
         $('#github-button-header').attr('href', href_github_project_source);
-        whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
-        whats_new_versions = Math.min(changelog_max, json.length);
-        md_converter = new showdown.Converter();
-        show_github_button = (whats_new_versions == changelog_max);
+        var whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
+        var whats_new_versions = Math.min(changelog_max, json.length);
+        // noinspection ES6ModulesDependencies
+        var md_converter = new showdown.Converter();
+        var show_github_button = (whats_new_versions === changelog_max);
         try {
             for (i = 0; i < whats_new_versions; i++) {
-                version_created_at = json[i].created_at.substring(0, 10);
-                title_new_version = String.format('<b>Versión <a href="{2}"">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, version_created_at, json[i].html_url);
-                content_version = md_converter.makeHtml(json[i].body);
+                let version_created_at = json[i].created_at.substring(0, 10);
+                // noinspection HtmlUnknownTarget
+                let title_new_version = String.format('<b>Versión <a href="{2}"">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, version_created_at, json[i].html_url);
+                let content_version = md_converter.makeHtml(json[i].body);
                 new_version_entry += String.format(whats_new_html, title_new_version, content_version);
                 if (i < whats_new_versions - 1 && changelog_show_hr) {
                     new_version_entry += '<hr class="style1">';
                 }
             }
             if (show_github_button) {
-                new_version_entry += String.format("Puedes ver la lista de cambios completa <a href='{0}'>en Github<img src='{1}/github.png' width='16' height='' class='iconbutton' alt='' /></a>", href_github_project, href_resources_folder);
+                // noinspection HtmlUnknownTarget
+                new_version_entry += String.format("Puedes ver la lista de cambios completa <a href='{0}'>en Github<img src='res/ui/github.png' width='16' height='' class='iconbutton' alt='' /></a>", href_github_project);
             }
             $('#que-hay-de-nuevo').html(new_version_entry);
             $('.main-content hr').css('background-color', hrcolor);
             $('.que-hay-de-nuevo-blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
-        } catch (err) {
+        } catch ($e) {
             throwError(errors.retrieveContentVersions);
+            throwException($e);
         }
 
         // Se llama a afterJSON
@@ -186,13 +200,14 @@ jQuery(document).ready(function ($) {
     });
 
     // Se activa error de json
-    jsonquery.fail(function () {
+    jsonquery.fail(function (data) {
         throwError(errors.cantLoadJson);
     });
 
     // Se define color de fondo principal antes de carga imagen
-    $('#background-page-header-colored').css('background-color', wallpaper_db.color);
-    $('#background-page-header-colored').fadeIn('slow');
+    let $bgheaderc = $('#background-page-header-colored');
+    $bgheaderc.css('background-color', wallpaper_db.color);
+    $bgheaderc.fadeIn('slow');
 
     // Se cambia el color de los titulos
     $('.back-to-top').css('background-color', wallpaper_db.color);
@@ -211,10 +226,15 @@ jQuery(document).ready(function ($) {
     $('.main-content hr').css('background-color', hrcolor);
 
     // Se cambia el color de las cajas de código
-    $('.main-content blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
-    $('.main-content blockquote').css('color', codeprecolor);
-    $('.main-content pre').css('background-color', bgprecolor);
-    $('.main-content pre').css('border', 'solid 1px ' + codeprecolor);
+    $('.main-content blockquote').css({
+        'border-left': '0.25rem solid ' + codebarcolor,
+        'color': codeprecolor
+
+    });
+    $('.main-content pre').css({
+        'background-color': bgprecolor,
+        'border': 'solid 1px ' + codeprecolor
+    });
 
     // Se cambia el color del fondo de la página web
     $('.main-content').css('background-color', backgroundmaincolor);
@@ -246,19 +266,20 @@ jQuery(document).ready(function ($) {
             var back_img = new Image();
             console.log(String.format('Cargando fondo {0} - ID {1} (wallpaper.db)', wallpaper_db.image, wallpaper_db.index));
             back_img.onload = function () {
-                $('#background-page-header').css({
+                let $bgheader = $('#background-page-header');
+                $bgheader.css({
                     'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
                     'background-attachment': 'fixed',
                 });
-                $('#background-page-header').css('-webkit-background-size', 'cover');
-                $('#background-page-header').css('-moz-background-size', 'cover');
-                $('#background-page-header').css('-o-background-size', 'cover');
-                $('#background-page-header').css('background-size', 'cover');
-                $('#background-page-header').css('max-width', '100%');
-                $('#background-page-header').css('width', $(window).width() + 20);
+                $bgheader.css('-webkit-background-size', 'cover');
+                $bgheader.css('-moz-background-size', 'cover');
+                $bgheader.css('-o-background-size', 'cover');
+                $bgheader.css('background-size', 'cover');
+                $bgheader.css('max-width', '100%');
+                $bgheader.css('width', $(window).width() + 20);
                 fadein_css('#background-page-header', '0.5s');
                 wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);
-            }
+            };
             back_img.src = wallpaper_db.image;
         } catch (e) {
             console.log('Error crítico al obtener la imagen del wallpaper (wallpaper.db)');
@@ -269,8 +290,10 @@ jQuery(document).ready(function ($) {
     // Se cambia el color de pace
     if (changepacecolor) {
         $('.pace .pace-progress').css('background', pacecolor);
-        $('.pace .pace-activity').css('border-top-color', codeprecolor);
-        $('.pace .pace-activity').css('border-left-color', codeprecolor);
+        $('.pace .pace-activity').css({
+            'border-top-color': codeprecolor,
+            'border-left-color': codeprecolor
+        });
         $('.pace .pace-progress-inner').css('box-shadow', '0 0 10px ' + bgprecolor + ', 0 0 5px ' + bgprecolor + ';');
     }
 
@@ -284,7 +307,7 @@ jQuery(document).ready(function ($) {
         this.id.innerHTML = total_downloads;
     });
     $('#download-button').click(function () {
-        if (total_downloads != nan_value) {
+        if (total_downloads !== nan_value) {
             total_downloads += 1;
             total_downloads_l30 += 1;
             update_download_banner(total_downloads);
@@ -295,6 +318,7 @@ jQuery(document).ready(function ($) {
     var amountScrolled = 600;
     $(window).scroll(function () {
         location.pathname.replace(/^\//, '');
+        // noinspection JSValidateTypes
         if ($(window).scrollTop() > amountScrolled) {
             $('a.back-to-top').fadeIn('slow');
         } else {
@@ -304,7 +328,7 @@ jQuery(document).ready(function ($) {
 
     // Smooth scrolling al clickear un anchor
     $('a[href*="#"]:not([href="#"])').click(function () {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
@@ -322,12 +346,12 @@ jQuery(document).ready(function ($) {
     // Se actualiza el total de descargas cada n-segundos
     if (update_downloads_version) {
         setInterval(function () {
-            update_downloads = 0;
-            update_last_version = '';
+            let update_downloads = 0;
+            let update_last_version = '';
             jsonquery = $.getJSON(href_json_releases, function (json) {
-                for (i = 0; i < json.length; i++) {
+                for (let i = 0; i < json.length; i++) {
                     try {
-                        for (j = 0; j < json[i].assets.length; j++) {
+                        for (let j = 0; j < json[i].assets.length; j++) {
                             update_downloads += parseInt(json[i].assets[j].download_count);
                         }
                     } catch (err) {
@@ -337,15 +361,15 @@ jQuery(document).ready(function ($) {
                 update_last_version = json[0].tag_name;
 
                 // Si cambió la versión actual entonces recarga la página
-                if (update_last_version != last_version) {
+                if (update_last_version !== last_version) {
                     console.log(String.format('Se encontró una nueva versión v{0}, recargando págna', update_last_version));
                     location.reload();
                 }
 
                 // Si existieron nuevas descargas actualiza contador
                 if (update_downloads > total_downloads_l30) {
-                    delta_downloads = update_downloads - total_downloads_l30;
-                    d = new Date();
+                    let delta_downloads = update_downloads - total_downloads_l30;
+                    let d = new Date();
                     console.log(String.format('[{1} {2}] Actualizando el contador de descargas, +{0} descargas', delta_downloads, d.toLocaleDateString(), d.toLocaleTimeString()));
                     total_downloads += delta_downloads;
                     total_downloads_l30 += delta_downloads;

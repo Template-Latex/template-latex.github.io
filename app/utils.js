@@ -113,7 +113,7 @@ function hide_element_id(idelem) {
 /**
  * Animación fadein css
  * @param {string} idelem               ID del elemento
- * @param {number} t                    Segundos
+ * @param {string} t                    Segundos
  * @return
  */
 function fadein_css(idelem, t) {
@@ -153,7 +153,7 @@ function doBounce(element, times, distance, speed) {
 
 /**
  * Lanza un error, oculta contenido y muestra un div con información
- * @param {string} error                Texto del error
+ * @param {object} error                Texto del error
  * @return
  */
 function throwError(error) {
@@ -169,7 +169,7 @@ function throwError(error) {
     let $html_section = $('#main-content-section');
     let html_error_div = '<div class="tooltip error_msg_1"><div id="errorMsgText"><!--suppress HtmlUnknownTarget --><img src="res/ui/erroricon.png" />{0}</div><div></div><div id="errorMoreInfoMsg" class="tooltiptext_errormsg">{1}</div></div>';
     // noinspection JSUnresolvedVariable
-    $html_section.html(String.format(html_error_div, error.msg, error.moreinfo, href_resources_folder));
+    $html_section.html(String.format(html_error_div, error.msg, error.moreinfo));
     let backheight = $(window).height() - $('.page-header').innerHeight();
     $html_section.css('height', backheight);
     $(window).resize(function () {
@@ -178,9 +178,22 @@ function throwError(error) {
     });
 }
 
-// Obtiene parámetros de la url
+/**
+ * Imprime una excepción en consola
+ * @param {object} $e               Excepción
+ * @return
+ */
+function throwException($e) {
+    console.error($e.message);
+}
+
+/**
+ * Obtiene parámetros de la url
+ * @param name
+ * @return {*}
+ */
 $.urlParam = function (name) {
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results == null) {
         return null;
     } else {

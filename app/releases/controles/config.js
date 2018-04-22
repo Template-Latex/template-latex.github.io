@@ -1,5 +1,5 @@
 /**
- * The MIT License (MIT)
+ The MIT License (MIT)
 
  Copyright 2017,2018 Pablo Pizarro R.
 
@@ -26,7 +26,6 @@ var href_github_project = 'https://github.com/Template-Latex/Template-Controles/
 var href_github_project_source = 'https://github.com/Template-Latex/Template-Controles/';
 var href_json_releases = 'https://api.github.com/repos/Template-Latex/Template-Controles/releases';
 var href_pdf_version = '../Controles/Template-Controles v{0}.pdf';
-var href_resources_folder = 'http://latex.ppizarror.com/resources/';
 var stats_name = 'Controles';
 var update_download_counter = 'Template-Controles';
 
