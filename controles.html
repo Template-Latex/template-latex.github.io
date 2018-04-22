@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress HtmlUnknownAnchorTarget, XmlUnusedNamespaceDeclaration -->
 <html>
 
 <head>
@@ -38,46 +39,58 @@
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:description"
           content="Un completo template para crear enunciados de controles/pruebas/exámenes en LaTeX, contiene funciones opcionales, múltiples configuraciones, entre otros"/>
-    <meta name="twitter:image" content="http://latex.ppizarror.com/icon.png"/>
+    <meta name="twitter:image" content="http://latex.ppizarror.com/res/favicon-informe/icon.png"/>
     <meta name="twitter:title" content="Template Controles"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta property="og:description"
           content="Un completo template para crear enunciados de controles/pruebas/exámenes en LaTeX, contiene funciones opcionales, múltiples configuraciones, entre otros"/>
-    <meta property="og:image" content="http://latex.ppizarror.com/icon.png"/>
+    <meta property="og:image" content="http://latex.ppizarror.com/res/favicon-informe/icon.png"/>
     <meta property="og:title" content="Template Controles"/>
     <meta property="og:url" content="http://latex.ppizarror.com/Template-Controles/"/>
 
-    <!-- Ícono de la página web -->
-    <link rel="apple-touch-icon" sizes="180x180" href="http://latex.ppizarror.com/resources/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="http://latex.ppizarror.com/resources/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="http://latex.ppizarror.com/resources/favicon-16x16.png">
-    <link rel="manifest" href="http://latex.ppizarror.com/resources/manifest.json">
-    <link rel="mask-icon" href="http://latex.ppizarror.com/resources/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="http://latex.ppizarror.com/resources/favicon.ico">
-    <meta name="msapplication-config" content="http://latex.ppizarror.com/resources/browserconfig.xml">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="res/favicon-informe/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/favicon-informe/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/favicon-informe/favicon-16x16.png">
+    <link rel="manifest" href="res/favicon-informe/manifest.json">
+    <link rel="mask-icon" href="res/favicon-informe/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="res/favicon-informe/favicon.ico">
+    <meta name="msapplication-config" content="res/favicon-informe/browserconfig.xml">
 
     <!-- Hojas de estilo -->
-    <link rel="stylesheet" type="text/css"
-          href="http://latex.ppizarror.com/Template-Informe/stylesheets/stylesheet.min.css" media="screen">
-    <link rel="stylesheet" type="text/css"
-          href="http://latex.ppizarror.com/Template-Informe/stylesheets/normalize.min.css" media="screen">
-    <link rel="stylesheet" type="text/css"
-          href="http://latex.ppizarror.com/Template-Informe/stylesheets/font-awesome.min.css" media="screen">
-    <link rel="stylesheet" type="text/css"
-          href="http://latex.ppizarror.com/Template-Informe/stylesheets/github-light.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-v5/css/fontawesome-all.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/github-light/github-light.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/photoswipe/photoswipe.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/default-skin/default-skin.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/jquery-confirm/jquery-confirm.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/pace/pace.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/hover/hover.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/tooltipster.bundle.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-borderless.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-light.min.css" media="screen">
 
-    <!-- Importación de javascript -->
-    <script type="text/javascript" src="config.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/Template-Informe/js/globalconfig.min.js"></script>
-    <script type="text/javascript" src="http://ppizarror.com/wallpaper-db/db.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/Template-Informe/js/about.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/Template-Informe/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/Template-Informe/js/parallax.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/Template-Informe/js/showdown.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/stats/js/prevdownload.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/Template-Informe/js/utils.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/Template-Informe/js/pace.min.js"></script>
-    <script type="text/javascript" src="http://latex.ppizarror.com/Template-Informe/js/onstartup.min.js"></script>
+    <!-- Librerías javascript -->
+    <script src="js/photoswipe/photoswipe.min.js"></script>
+    <script src="js/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/jquery-scrollto/jquery-scrollto.min.js"></script>
+    <script src="js/jquery.leanModal/jquery.leanModal.min.js"></script>
+    <script src="js/parallax/parallax.min.js"></script>
+    <script src="js/showdown/showdown.min.js"></script>
+    <script src="http://ppizarror.com/wallpaper-db/db.min.js"></script>
+    <script src="js/pace/pace.min.js"></script>
+    <script src="js/jquery-confirm/jquery-confirm.min.js"></script>
+    <script src="js/tooltipster/tooltipster.bundle.min.js"></script>
+
+    <!-- Js de la aplicación -->
+    <script src="http://latex.ppizarror.com/stats/js/prevdownload.min.js"></script>
+    <script src="app/releases/controles/config.min.js"></script>
+    <script src="app/globalconfig.min.js"></script>
+    <script src="app/about.min.js"></script>
+    <script src="app/utils.min.js"></script>
+    <script src="app/init.min.js"></script>
 </head>
 
 <body>
@@ -88,13 +101,14 @@
 <section class="page-header">
     <h1 class="project-name">Template Controles</h1>
     <h2 class="project-tagline">Template para crear enunciados de controles/exámenes en LaTeX</h2>
-    <a href="" id="github-button-header" class="btn">Ver en GitHub <img
-            src="http://latex.ppizarror.com/resources/github.png" width="16" height="16" class="iconbutton" alt=""/></a>
-    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn">Ver Ejemplo <img
-            src="http://latex.ppizarror.com/resources/pdf.png" width="16" height="16" class="iconbutton" alt=""/></a>
-    <a href="#Error_al_cargar_enlace_descarga" class="btn-pro" id="download-button">Descargar versión normal</a>
-    <a href="#Error_al_cargar_enlace_descarga" class="btn tooltip" id="download-button-1file">Descargar versión compacta<span
-            class="tooltiptext-headerbtn">Todo el template en 1 sólo archivo</span></a>
+    <a href="" id="github-button-header" class="btn hvr-shadow">Ver en GitHub
+        <img src="res/ui/github.png" class="iconbutton" alt="Latex"/></a>
+    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn hvr-shadow">Ver Ejemplo
+        <img src="res/ui/pdf.png" class="iconbutton" alt=""/></a>
+    <a href="#Error_al_cargar_enlace_descarga" class="btn-pro hvr-shadow" id="download-button">Descargar versión
+        normal</a>
+    <a href="#Error_al_cargar_enlace_descarga" class="btn hvr-shadow" id="download-button-1file">Descargar versión
+        compacta</a>
 </section>
 
 <div id="contentBackground">
@@ -104,43 +118,32 @@
             Controles en Latex</h2>
 
         <!-- Badges -->
-        <a href="http://ppizarror.com" class="tooltip aimg">
-            <img src="http://ppizarror.com/badges/autor.svg" class="bannerimg" alt="">
-            <div class="tooltiptext_autor">
-                <img src="https://avatars0.githubusercontent.com/u/12925256" alt=""/>
-                <div class="autor_name">Pablo Pizarro R.</div>
-                <div class="autor_location">
-                    <svg aria-hidden="true" height="16" class="tooltiptext_autor_svg" viewBox="0 0 12 16" width="12">
-                        <path fill-rule="evenodd"
-                              d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path>
-                    </svg>
-                    Santiago, Chile
-                </div>
-            </div>
+        <a href="http://ppizarror.com" class="aimg" id="autorbanner">
+            <img src="res/badges/autor.svg" class="bannerimg" alt=""/>
         </a>
         <a href="https://opensource.org/licenses/MIT/" class="aimg">
-            <img src="http://ppizarror.com/badges/licenciamit.svg" alt=""/>
+            <img src="res/badges/licenciamit.svg" alt=""/>
         </a>
         <a href="" class="badgeejemplopdf aimg">
-            <img src="http://ppizarror.com/badges/ejemplopdf.svg" alt=""/>
+            <img src="res/badges/ejemplopdf.svg" alt=""/>
         </a>
         <a href="" id="chatgitter" class="aimg">
-            <img src="http://ppizarror.com/badges/chat.svg" alt=""/>
+            <img src="res/badges/chat.svg" alt=""/>
         </a>
         <a href="" id="templatestats">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="104" height="20"
                  id="downloadcounter-banner">
                 <linearGradient id="b" x2="0" y2="100%">
-                    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
-                    <stop offset="1" stop-opacity=".1"/>
+                    <stop offset="0" stop-color="#bbb" stop-opacity=".1"></stop>
+                    <stop offset="1" stop-opacity=".1"></stop>
                 </linearGradient>
                 <clipPath id="a">
-                    <rect width="104" height="20" rx="3" fill="#fff"/>
+                    <rect width="104" height="20" rx="3" fill="#fff"></rect>
                 </clipPath>
                 <g clip-path="url(#a)">
-                    <path fill="#555" d="M0 0h67v20H0z"/>
-                    <path fill="#4c1" d="M67 0h37v20H67z"/>
-                    <path fill="url(#b)" d="M0 0h104v20H0z"/>
+                    <path fill="#555" d="M0 0h67v20H0z"></path>
+                    <path fill="#4c1" d="M67 0h37v20H67z"></path>
+                    <path fill="url(#b)" d="M0 0h104v20H0z"></path>
                 </g>
                 <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
                     <text x="33.5" y="15" fill="#010101" fill-opacity=".3">Descargas</text>
@@ -157,10 +160,10 @@
         <!-- Introducción -->
         <p>
             Este corresponde a un template para confeccionar enunciados de controles/exámenes en <img
-                src="http://latex.ppizarror.com/resources/latex.png" alt="LaTeX" class="lateximg"/>, contiene funciones
+                src="res/other/latex.png" alt="LaTeX" class="lateximg"/>, contiene funciones
             para agregar imágenes, párrafos, fórmulas,
             etc.
-            <img src="http://latex.ppizarror.com/Template-Informe/images/collage_control.png" alt="Control"
+            <img src="res/images/collage_control.png" alt="Control"
                  style="margin: auto; display: block; width:80%"/>
         </p>
 
