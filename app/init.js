@@ -102,6 +102,14 @@ $(function () {
         try {
             last_version = json[0].tag_name;
             last_version_link = json[0].assets[0].browser_download_url;
+            last_version_link_1 = json[0].assets[1].browser_download_url;
+            if (last_version_link.includes('-Single')) {
+                var normal_link = last_version_link_1;
+                var compact_link = last_version_link;
+            } else {
+                var normal_link = last_version_link;
+                var compact_link = last_version_link_1;
+            }
             console.log(String.format('Última versión template: {0}', last_version));
         } catch (err) {
             throwError(errors.cantGetVersion);
