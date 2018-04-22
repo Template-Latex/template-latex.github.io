@@ -21,6 +21,8 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+var amountScrolled = 600;
+var is_movile_browser = false;
 var last_version = '$VERSION';
 var last_version_link = '$VERSION_LINK';
 var new_version_entry = '';
@@ -40,6 +42,7 @@ $(function () {
         useBootstrap: false,
         buttons: {
             close: {
+                keys: ['enter'],
                 text: 'Entendido',
             }
         },
@@ -52,6 +55,19 @@ $(function () {
     // Se escriben los badges
     writeBadges();
 
+    // Se comprueba que wallpaperdb se cargó
+    try {
+        if (wallpaper_db) {
+        }
+    } catch ($e) {
+        wallpaper_db = {
+            color: getRandomColor(),
+            image: null
+        };
+        console.warn('No se pudo cargar wallpaperDB, se creó un color aleatorio por defecto')
+    } finally {
+    }
+
     let backgroundmaincolor = shadeColor2(wallpaper_db.color, 0.98);
     let bgprecolor = shadeColor2(wallpaper_db.color, 0.9);
     let codebarcolor = shadeColor2(wallpaper_db.color, 0.4);
@@ -60,18 +76,18 @@ $(function () {
     let pacecolor = shadeColor2(wallpaper_db.color, 0.15);
 
     // Aplica tema de color a página
-    var $head = $('head');
+    let $head = $('head');
     $head.append(String.format('<meta name="theme-color" content="{0}">', backgroundmaincolor));
     $head.append(String.format('<meta name="msapplication-navbutton-color" content="{0}">', backgroundmaincolor));
     $head.append(String.format('<meta name="apple-mobile-web-app-capable" content="yes">', backgroundmaincolor));
     $head.append(String.format('<meta name="apple-mobile-web-app-status-bar-style" content="{0}">', backgroundmaincolor));
 
     // Se añaden las descargas del template base
-    var jsonquery = $.getJSON(href_json_releases, function (json) {
+    let jsonquery = $.getJSON(href_json_releases, function (json) {
 
         // Se cargan los datos del json
         total_downloads = 0;
-        for (i = 0; i < json.length; i++) {
+        for (let i = 0; i < json.length; i++) {
             try {
                 for (let j = 0; j < json[i].assets.length; j++) {
                     total_downloads += parseInt(json[i].assets[j].download_count);
@@ -98,7 +114,7 @@ $(function () {
         } else {
             updateDownloadCounter(total_downloads, update_download_counter);
             let j = '';
-            for (var i = 0; i < download_list_counter.length; i++) {
+            for (let i = 0; i < download_list_counter.length; i++) {
                 j = download_list_counter[i][1];
                 if (version_entries.indexOf(j) === -1) {
                     if (Array.isArray(download_list_counter[i][0])) {
@@ -167,13 +183,13 @@ $(function () {
 
         // Se obtiene el what's new
         $('#github-button-header').attr('href', href_github_project_source);
-        var whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
-        var whats_new_versions = Math.min(changelog_max, json.length);
+        let whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
+        let whats_new_versions = Math.min(changelog_max, json.length);
         // noinspection ES6ModulesDependencies
-        var md_converter = new showdown.Converter();
-        var show_github_button = (whats_new_versions === changelog_max);
+        let md_converter = new showdown.Converter();
+        let show_github_button = (whats_new_versions === changelog_max);
         try {
-            for (i = 0; i < whats_new_versions; i++) {
+            for (let i = 0; i < whats_new_versions; i++) {
                 let version_created_at = json[i].created_at.substring(0, 10);
                 // noinspection HtmlUnknownTarget
                 let title_new_version = String.format('<b>Versión <a href="{2}"">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, version_created_at, json[i].html_url);
@@ -200,7 +216,7 @@ $(function () {
     });
 
     // Se activa error de json
-    jsonquery.fail(function (data) {
+    jsonquery.fail(function () {
         throwError(errors.cantLoadJson);
     });
 
@@ -245,42 +261,44 @@ $(function () {
     $('#que-hay-de-nuevo blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
 
     // Se comprueba si es navegador móvil
-    var is_movile_browser = false;
     if (/Mobi/.test(navigator.userAgent)) {
         is_movile_browser = true;
         console.log('Utilizando versión móvil');
     } else {
         console.log('Utilizando versión web');
     }
+    console.log(enableparallax);
     if (!is_movile_browser && enableparallax) {
         $('#background-page-header').parallax({
             imageSrc: wallpaper_db.image,
-            speed: 0.15,
-            positionY: wallpaper_db.position,
+            speed: 0.20,
+            positionY: 'bottom',
             positionX: 'center',
             zIndex: 1
         });
         console.log('Se activó el parallax');
     } else {
         try {
-            var back_img = new Image();
-            console.log(String.format('Cargando fondo {0} - ID {1} (wallpaper.db)', wallpaper_db.image, wallpaper_db.index));
-            back_img.onload = function () {
-                let $bgheader = $('#background-page-header');
-                $bgheader.css({
-                    'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
-                    'background-attachment': 'fixed',
-                });
-                $bgheader.css('-webkit-background-size', 'cover');
-                $bgheader.css('-moz-background-size', 'cover');
-                $bgheader.css('-o-background-size', 'cover');
-                $bgheader.css('background-size', 'cover');
-                $bgheader.css('max-width', '100%');
-                $bgheader.css('width', $(window).width() + 20);
-                fadein_css('#background-page-header', '0.5s');
-                wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);
-            };
-            back_img.src = wallpaper_db.image;
+            if (wallpaper_db.image !== null) {
+                let back_img = new Image();
+                console.log(String.format('Cargando fondo {0} - ID {1} (wallpaper.db)', wallpaper_db.image, wallpaper_db.index));
+                back_img.onload = function () {
+                    let $bgheader = $('#background-page-header');
+                    $bgheader.css({
+                        'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
+                        'background-attachment': 'fixed',
+                    });
+                    $bgheader.css('-webkit-background-size', 'cover');
+                    $bgheader.css('-moz-background-size', 'cover');
+                    $bgheader.css('-o-background-size', 'cover');
+                    $bgheader.css('background-size', 'cover');
+                    $bgheader.css('max-width', '100%');
+                    $bgheader.css('width', $(window).width() + 20);
+                    fadein_css('#background-page-header', '0.5s');
+                    wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);
+                };
+                back_img.src = wallpaper_db.image;
+            }
         } catch (e) {
             console.log('Error crítico al obtener la imagen del wallpaper (wallpaper.db)');
         } finally {
@@ -315,7 +333,6 @@ $(function () {
     });
 
     // Muestra un botón para subir al hacer scroll
-    var amountScrolled = 600;
     $(window).scroll(function () {
         location.pathname.replace(/^\//, '');
         // noinspection JSValidateTypes
@@ -329,7 +346,7 @@ $(function () {
     // Smooth scrolling al clickear un anchor
     $('a[href*="#"]:not([href="#"])').click(function () {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-            var target = $(this.hash);
+            let target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
                 $('html, body').animate({

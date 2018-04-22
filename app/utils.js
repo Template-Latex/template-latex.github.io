@@ -83,6 +83,19 @@ function shadeColor2(color, percent) {
 }
 
 /**
+ * Retorna un color random
+ * @return {string}
+ */
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+/**
  * Función String.format(...)
  */
 if (!String.format) {

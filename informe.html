@@ -8,7 +8,7 @@
     <!--
     The MIT License (MIT)
 
-    Copyright 2017,2018 Pablo Pizarro R.
+    Copyright 2017-2018 Pablo Pizarro R.
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -47,7 +47,7 @@
     <meta property="og:title" content="Template Informe"/>
     <meta property="og:url" content="http://latex.ppizarror.com/Template-Informe/"/>
 
-    <!-- Ícono de la página web -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="res/favicon-informe/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="res/favicon-informe/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="res/favicon-informe/favicon-16x16.png">
@@ -60,10 +60,12 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome-v5/css/fontawesome-all.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/normalize.min.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/github-light.min.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/photoswipe.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/github-light/github-light.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/photoswipe/photoswipe.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/default-skin/default-skin.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/jquery-confirm/jquery-confirm.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/pace/pace.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/hover/hover.min.css" media="screen">
 
     <!-- Librerías javascript -->
     <script src="js/photoswipe/photoswipe.min.js"></script>
@@ -81,10 +83,9 @@
     <script src="http://latex.ppizarror.com/stats/js/prevdownload.min.js"></script>
     <script src="app/releases/informe/config.min.js"></script>
     <script src="app/globalconfig.min.js"></script>
-    ¿
     <script src="app/about.min.js"></script>
     <script src="app/utils.min.js"></script>
-    <script src="app/onstartup.min.js"></script>
+    <script src="app/init.min.js"></script>
 </head>
 
 <body>
@@ -107,14 +108,13 @@
 <section class="page-header">
     <h1 class="project-name">Template Informe</h1>
     <h2 class="project-tagline">Template de informe en LaTeX para tareas y trabajos</h2>
-    <a href="" id="github-button-header" class="btn">Ver en GitHub <img
-            src="res/ui/github.png" width="16" height="16" class="iconbutton"
-            alt="Latex"/></a>
-    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn">Ver Ejemplo <img
-            src="res/ui/pdf.png" width="16" height="16" class="iconbutton" alt=""/></a>
-    <a content="#downloadother" class="btn-pro tooltip" id="download-button-1file" name="leanModal">Descargar<span
+    <a href="" id="github-button-header" class="btn hvr-shadow">Ver en GitHub <img
+            src="res/ui/github.png" class="iconbutton" alt="Latex"/></a>
+    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn hvr-shadow">Ver Ejemplo <img
+            src="res/ui/pdf.png" class="iconbutton" alt=""/></a>
+    <a content="#downloadother" class="btn-pro tooltip hvr-shadow" id="download-button-1file" name="leanModal">Descargar<span
             class="tooltiptext-headerbtn">Seleccionar entre distintas versiones</span></a>
-    <a href="#Error_al_cargar_enlace_descarga" class="btn" id="download-button">Descargar versión normal</a>
+    <a href="#Error_al_cargar_enlace_descarga" class="btn hvr-shadow" id="download-button">Descargar versión normal</a>
 </section>
 
 <div id="contentBackground">
@@ -1717,7 +1717,8 @@ def incmatrix(genl1, genl2):
                     <li class="help-links">Si ocurren errores como <i>Package not found</i> intentar compilar muchas
                         veces
                     </li>
-                    <li class="help-links">Diccionario en español (Chile): <a href="./es_CL.oxt" download>descargar</a>
+                    <li class="help-links">Diccionario en español (Chile): <a href="res/es_CL.oxt"
+                                                                              download>descargar</a>
                     </li>
                     <li class="help-links">Autocompletar todas las funciones del template: <a
                             href="https://github.com/Template-Latex/cwl-docs">descargar</a></li>
@@ -1736,7 +1737,9 @@ def incmatrix(genl1, genl2):
                 <strong><a href="https://www.ctan.org/pkg/amsmath">amsmath</a></strong>: Librería matemática.
             </li>
             <li>
-                <strong><a href="http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf">amssymb</a></strong>: Librería matemática.
+                <strong><a
+                        href="http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf">amssymb</a></strong>:
+                Librería matemática.
             </li>
             <li>
                 <strong><a href="https://www.ctan.org/pkg/apacite">apacite</a></strong>: Administración de citas.
@@ -1919,7 +1922,9 @@ def incmatrix(genl1, genl2):
                 de contenidos.
             </li>
             <li>
-                <strong><a href="http://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/caption/totalcount.pdf">totalcount</a></strong>: Permite contar elementos.
+                <strong><a
+                        href="http://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/caption/totalcount.pdf">totalcount</a></strong>:
+                Permite contar elementos.
             </li>
             <li>
                 <strong><a href="https://www.ctan.org/pkg/tikz">tikz</a></strong>: Permite dibujar.
