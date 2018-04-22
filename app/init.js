@@ -49,13 +49,19 @@ $(function () {
         boxWidth: '25%'
     });
 
-    // Escribe el acerca-de
+    /**
+     * Escribe el acerca-de
+     */
     printAboutInfo();
 
-    // Se escriben los badges
+    /**
+     * Se escriben los badges
+     */
     writeBadges();
 
-    // Se comprueba que wallpaperdb se cargó
+    /**
+     * Se comprueba que wallpaper.db se cargó
+     */
     try {
         if (wallpaper_db) {
         }
@@ -64,10 +70,13 @@ $(function () {
             color: getRandomColor(),
             image: null
         };
-        console.warn('No se pudo cargar wallpaperDB, se creó un color aleatorio por defecto')
+        console.warn('No se pudo cargar wallpaper.db, se creó un color aleatorio por defecto')
     } finally {
     }
 
+    /**
+     * Se generan colores
+     */
     let backgroundmaincolor = shadeColor2(wallpaper_db.color, 0.98);
     let bgprecolor = shadeColor2(wallpaper_db.color, 0.9);
     let codebarcolor = shadeColor2(wallpaper_db.color, 0.4);
@@ -75,14 +84,18 @@ $(function () {
     let hrcolor = shadeColor2(wallpaper_db.color, 0.7);
     let pacecolor = shadeColor2(wallpaper_db.color, 0.15);
 
-    // Aplica tema de color a página
+    /**
+     * Aplica tema de color a página
+     */
     let $head = $('head');
     $head.append(String.format('<meta name="theme-color" content="{0}">', backgroundmaincolor));
     $head.append(String.format('<meta name="msapplication-navbutton-color" content="{0}">', backgroundmaincolor));
     $head.append(String.format('<meta name="apple-mobile-web-app-capable" content="yes">', backgroundmaincolor));
     $head.append(String.format('<meta name="apple-mobile-web-app-status-bar-style" content="{0}">', backgroundmaincolor));
 
-    // Se añaden las descargas del template base
+    /**
+     * Se añaden las descargas del template base
+     */
     let jsonquery = $.getJSON(href_json_releases, function (json) {
 
         // Se cargan los datos del json
@@ -214,18 +227,20 @@ $(function () {
         // Se llama a afterJSON
         afterJSONLoad();
     });
-
-    // Se activa error de json
-    jsonquery.fail(function () {
+    jsonquery.fail(function () { // Se activa error de json
         throwError(errors.cantLoadJson);
     });
 
-    // Se define color de fondo principal antes de carga imagen
+    /**
+     * Se define color de fondo principal antes de carga imagen
+     */
     let $bgheaderc = $('#background-page-header-colored');
     $bgheaderc.css('background-color', wallpaper_db.color);
     $bgheaderc.fadeIn('slow');
 
-    // Se cambia el color de los titulos
+    /**
+     * Se cambia el estilo de la página
+     */
     $('.back-to-top').css('background-color', wallpaper_db.color);
     $('.main-content h1').css('color', wallpaper_db.color);
     $('.main-content h2').css('color', wallpaper_db.color);
@@ -237,37 +252,33 @@ $(function () {
     $('.menu-little-entry').css('color', wallpaper_db.color);
     $('.que-hay-de-nuevo-blockquote h3').css('color', wallpaper_db.color);
     $('.section-template').css('color', wallpaper_db.color);
-
-    // Se cambia el color de las barras hr
-    $('.main-content hr').css('background-color', hrcolor);
-
-    // Se cambia el color de las cajas de código
-    $('.main-content blockquote').css({
+    $('.main-content hr').css('background-color', hrcolor); // Se cambia el color de las barras hr
+    $('.main-content blockquote').css({ // Se cambia el color de las cajas de código
         'border-left': '0.25rem solid ' + codebarcolor,
         'color': codeprecolor
-
     });
     $('.main-content pre').css({
         'background-color': bgprecolor,
         'border': 'solid 1px ' + codeprecolor
     });
-
-    // Se cambia el color del fondo de la página web
     $('.main-content').css('background-color', backgroundmaincolor);
     $('#contentBackground').css('background-color', backgroundmaincolor);
     $('body').css('background-color', backgroundmaincolor);
-
-    // Se actualizan los colores del whatsnew
     $('#que-hay-de-nuevo blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
 
-    // Se comprueba si es navegador móvil
+    /**
+     * Se comprueba si es navegador móvil
+     */
     if (/Mobi/.test(navigator.userAgent)) {
         is_movile_browser = true;
         console.log('Utilizando versión móvil');
     } else {
         console.log('Utilizando versión web');
     }
-    console.log(enableparallax);
+
+    /**
+     * Se aplica paralaje o carga la imagen
+     */
     if (!is_movile_browser && enableparallax) {
         $('#background-page-header').parallax({
             imageSrc: wallpaper_db.image,
@@ -305,8 +316,7 @@ $(function () {
         }
     }
 
-    // Se cambia el color de pace
-    if (changepacecolor) {
+    if (changepacecolor) { // Se cambia el color de pace
         $('.pace .pace-progress').css('background', pacecolor);
         $('.pace .pace-activity').css({
             'border-top-color': codeprecolor,
@@ -315,12 +325,16 @@ $(function () {
         $('.pace .pace-progress-inner').css('box-shadow', '0 0 10px ' + bgprecolor + ', 0 0 5px ' + bgprecolor + ';');
     }
 
-    // Se añade un evento al cambiar tamaño página web
+    /**
+     * Se añade un evento al cambiar tamaño página web
+     */
     $(window).resize(function () {
         $('#background-page-header').css('width', $(window).width() + 20);
     });
 
-    // Se actualiza la cantidad de descargas al hacer click
+    /**
+     * Se actualiza la cantidad de descargas al hacer click
+     */
     $('total-download-counter').each(function () {
         this.id.innerHTML = total_downloads;
     });
@@ -332,7 +346,9 @@ $(function () {
         }
     });
 
-    // Muestra un botón para subir al hacer scroll
+    /**
+     * Muestra un botón para subir al hacer scroll
+     */
     $(window).scroll(function () {
         location.pathname.replace(/^\//, '');
         // noinspection JSValidateTypes
@@ -343,7 +359,9 @@ $(function () {
         }
     });
 
-    // Smooth scrolling al clickear un anchor
+    /**
+     * Smooth scrolling al clickear un anchor
+     */
     $('a[href*="#"]:not([href="#"])').click(function () {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
             let target = $(this.hash);
@@ -357,10 +375,14 @@ $(function () {
         }
     });
 
-    // Se añade el link a chat banner
+    /**
+     * Se añade el link a chat banner
+     */
     $('#chatgitter').attr('href', gitter_href + update_download_counter);
 
-    // Se actualiza el total de descargas cada n-segundos
+    /**
+     * Se actualiza el total de descargas cada n-segundos
+     */
     if (update_downloads_version) {
         setInterval(function () {
             let update_downloads = 0;
@@ -396,11 +418,45 @@ $(function () {
         }, seconds_update_downloadCounter * 1000);
     }
 
-    // Se crea un listener para cada elemento de código latex, evento copiar el texto
+    /**
+     * Se crea un listener para cada elemento de código latex, evento copiar el texto
+     */
     $('.highlight-text-tex').each(function () {
         selectAllText(this);
     });
 
-    // Se llama a la función de cada template después de cargar
+    /**
+     * Aplica tooltips
+     */
+    $('#download-button-1file').tooltipster({
+        animation: 'grow',
+        content: 'Seleccionar entre distintas versiones',
+        delay: 400,
+        maxWidth: 200,
+        side: 'bottom',
+        theme: 'tooltipster-borderless'
+    });
+    // noinspection HtmlUnknownAttribute
+    $('#autorbanner').tooltipster({
+        animation: 'grow',
+        content: '<img src="https://avatars0.githubusercontent.com/u/12925256" class="autor_photo" alt=""/>\n' +
+        '        <div class="autor_name">Pablo Pizarro R.</div>\n' +
+        '    <div class="autor_location">\n' +
+        '        <svg aria-hidden="true" height="16" class="tooltiptext_autor_svg" viewBox="0 0 12 16" width="12">\n' +
+        '        <path fill-rule="evenodd"\n' +
+        '    d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path>\n' +
+        '        </svg>\n' +
+        '    Santiago, Chile\n' +
+        '    </div>',
+        contentAsHTML: true,
+        delay: 400,
+        maxWidth: 220,
+        side: 'bottom',
+        theme: 'tooltipster-borderless'
+    });
+
+    /**
+     * Se llama a la función de cada template después de cargar
+     */
     afterDocumentReady();
 });

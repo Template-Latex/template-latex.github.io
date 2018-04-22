@@ -57,6 +57,7 @@
     <meta name="msapplication-config" content="res/favicon-informe/browserconfig.xml">
 
     <!-- Hojas de estilo -->
+    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap-4.0.0-beta.min.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="css/font-awesome-v5/css/fontawesome-all.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/normalize.min.css" media="screen">
@@ -66,6 +67,8 @@
     <link rel="stylesheet" type="text/css" href="css/jquery-confirm/jquery-confirm.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/pace/pace.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/hover/hover.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/tooltipster.bundle.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-borderless.min.css" media="screen">
 
     <!-- Librerías javascript -->
     <script src="js/photoswipe/photoswipe.min.js"></script>
@@ -78,6 +81,7 @@
     <script src="http://ppizarror.com/wallpaper-db/db.min.js"></script>
     <script src="js/pace/pace.min.js"></script>
     <script src="js/jquery-confirm/jquery-confirm.min.js"></script>
+    <script src="js/tooltipster/tooltipster.bundle.min.js"></script>
 
     <!-- Js de la aplicación -->
     <script src="http://latex.ppizarror.com/stats/js/prevdownload.min.js"></script>
@@ -108,12 +112,11 @@
 <section class="page-header">
     <h1 class="project-name">Template Informe</h1>
     <h2 class="project-tagline">Template de informe en LaTeX para tareas y trabajos</h2>
-    <a href="" id="github-button-header" class="btn hvr-shadow">Ver en GitHub <img
-            src="res/ui/github.png" class="iconbutton" alt="Latex"/></a>
-    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn hvr-shadow">Ver Ejemplo <img
-            src="res/ui/pdf.png" class="iconbutton" alt=""/></a>
-    <a content="#downloadother" class="btn-pro tooltip hvr-shadow" id="download-button-1file" name="leanModal">Descargar<span
-            class="tooltiptext-headerbtn">Seleccionar entre distintas versiones</span></a>
+    <a href="" id="github-button-header" class="btn hvr-shadow">Ver en GitHub
+        <img src="res/ui/github.png" class="iconbutton" alt="Latex"/></a>
+    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn hvr-shadow">Ver Ejemplo
+        <img src="res/ui/pdf.png" class="iconbutton" alt=""/></a>
+    <a content="#downloadother" class="btn-pro hvr-shadow" id="download-button-1file" name="leanModal">Descargar</a>
     <a href="#Error_al_cargar_enlace_descarga" class="btn hvr-shadow" id="download-button">Descargar versión normal</a>
 </section>
 
@@ -123,19 +126,8 @@
                 aria-hidden="true" class="octicon octicon-link"></span></a>Template de Informe en Latex</h2>
 
         <!-- Badges -->
-        <a href="http://ppizarror.com" class="tooltip aimg">
+        <a href="http://ppizarror.com" class="aimg" id="autorbanner">
             <img src="res/badges/autor.svg" class="bannerimg" alt=""/>
-            <div class="tooltiptext_autor">
-                <img src="https://avatars0.githubusercontent.com/u/12925256" alt=""/>
-                <div class="autor_name">Pablo Pizarro R.</div>
-                <div class="autor_location">
-                    <svg aria-hidden="true" height="16" class="tooltiptext_autor_svg" viewBox="0 0 12 16" width="12">
-                        <path fill-rule="evenodd"
-                              d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path>
-                    </svg>
-                    Santiago, Chile
-                </div>
-            </div>
         </a>
         <a href="https://opensource.org/licenses/MIT/" class="aimg">
             <img src="res/badges/licenciamit.svg" alt=""/>
