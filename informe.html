@@ -216,11 +216,9 @@
         <!-- Introducción -->
         <p>
             <a id="empezando-con-el-template"></a>Este proyecto corresponde a un template para confeccionar geniales
-            informes en
-            <img src="res/other/latex.png" alt="LaTeX" class="lateximg">, contiene múltiples
+            informes en <img src="res/other/latex.png" alt="LaTeX" class="lateximg">, contiene múltiples
             funciones para insertar imágenes, fórmulas, párrafos y títulos de forma sencilla, sin tener que recurrir a
-            las largas instrucciones
-            que ofrece Latex por defecto.
+            las largas instrucciones que ofrece Latex por defecto.
         </p>
         <img src="res/images/collage.png" alt="Informe" style="margin:auto; display:block; width:80%"/>
         <p>
@@ -234,9 +232,8 @@
                 class="section-template">INTEGRANTES, PROFESORES Y FECHAS</em> <span
                 class="intro-line-authortable"></span> y por último <a href="#agregar-fig-form-cita">empezar a
             escribir</a> tu documento en la sección
-            del
-            <em class="section-template">RESUMEN O ABSTRACT</em> <span class="intro-line-abstract"></span> o en la <b>sección
-            principal</b> del documento <em class="section-template">INICIO DEL DOCUMENTO</em> <span
+            del <em class="section-template">RESUMEN O ABSTRACT</em> <span class="intro-line-abstract"></span> o en la
+            <b>sección principal</b> del documento <em class="section-template">INICIO DEL DOCUMENTO</em> <span
                 class="intro-line-docinit"></span>.
         </p>
         <p>
@@ -255,9 +252,8 @@
         <h2><a id="configurando-el-documento" class="anchor" href="#configurando-el-documento" aria-hidden="true"><span
                 aria-hidden="true" class="octicon octicon-link"></span></a>Configurando el documento</h2> Para
         configurar el documento (título, nombre de la universidad, curso, etc.) se deben modificar las variables
-        definidas en el bloque de
-        <em class="section-template">INFORMACIÓN DEL DOCUMENTO</em> <span class="intro-line-docinit"></span> al
-        principio del archivo principal, estas variables son del estilo:
+        definidas en el bloque de <em class="section-template">INFORMACIÓN DEL DOCUMENTO</em> <span
+            class="intro-line-docinit"></span> al principio del archivo principal, estas variables son del estilo:
         <blockquote>
             <em>\def</em><span class="pl-e">\nombreVariable</span> {<b>Valor</b>}
         </blockquote>
@@ -392,8 +388,7 @@
                 <p>
                     Las funciones para añadir imágenes requieren del nombre de la imagen (el archivo almacenado en el
                     directorio definido por la configuración <a href="#config-otros">\defaultimagefolder</a>, por
-                    defecto la carpeta <strong>img/</strong>),
-                    sus parámetros y la leyenda (la cual es opcional).
+                    defecto la carpeta <strong>img/</strong>), sus parámetros y la leyenda (la cual es opcional).
                 </p>
                 <p>
                     Los parámetros pueden ser <strong>scale=0.5</strong>, <strong>width=5cm</strong>,
@@ -509,8 +504,7 @@
                                     usar</em><b>}</b><b>{</b><em>Ancho
                                     de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                                     Inserta una imagen alineada a la izquierda de un párrafo con un número de líneas
-                                    fijo, encerrada
-                                    en un recuadro.
+                                    fijo, encerrada en un recuadro.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                             <pre><span class="pl-e">\insertimageleftlineboxed</span><b>[</b><span
@@ -575,8 +569,7 @@
                                     usar</em><b>}</b><b>{</b><em>Ancho
                                     de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                                     Inserta una imagen alineada a la derecha de un párrafo con un número de líneas fijo,
-                                    encerrada
-                                    en un recuadro.
+                                    encerrada en un recuadro.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                             <pre><span class="pl-e">\insertimagerightlineboxed</span><b>[]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>0.21<b>}</b><b>{</b>22<b>}</b><b>{</b>0.6<b>}</b><b>{</b>Descripción<b>}</b></pre>
@@ -633,11 +626,9 @@
                             <ul>
                                 <li>
                                     <strong>\insertgather</strong><b>{</b><em>Fórmula</em><b>}</b>: Inserta una fórmula
-                                    con el
-                                    entorno <b>gather</b>, permite insertar nuevas líneas con <b>\\</b> y centra todas
-                                    las fórmulas.
-                                    Cada nueva línea tiene un propio
-                                    número de ecuación. No se pueden usar <i>\label</i>.
+                                    con el entorno <b>gather</b>, permite insertar nuevas líneas con <b>\\</b> y centra
+                                    todas las fórmulas. Cada nueva línea tiene un propio número de ecuación. No se
+                                    pueden usar <i>\label</i>.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertgather</span><b>{</b><span class="pl-c1">\Delta</span> = <span
@@ -657,11 +648,9 @@
                                 <li>
                                     <strong>\insertgathered</strong><b>[</b><em>Label</em>
                                     (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                                    Inserta una
-                                    fórmula con leyenda en el entorno <b>gathered</b>, permite insertar
+                                    Inserta una fórmula con leyenda en el entorno <b>gathered</b>, permite insertar
                                     nuevas líneas con <b>\\</b> y centra todas las fórmulas. Todas las líneas tienen
-                                    sólo 1 número
-                                    de ecuación por lo que esta puede tener etiqueta o un <i>\label</i>.
+                                    sólo 1 número de ecuación por lo que esta puede tener etiqueta o un <i>\label</i>.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertgathered</span><b>[</b><span class="pl-c1">\label</span>{formula-4}<b>]</b><b>{</b><span
@@ -689,12 +678,9 @@
                             <ul>
                                 <li>
                                     <strong>\insertalign</strong><b>{</b><em>Fórmula</em><b>}</b>: Inserta una fórmula
-                                    con el
-                                    entorno <b>align</b> el cual permite insertar nuevas líneas con <b>\\</b> y ajusta
-                                    un alineado
-                                    especial con respecto a los <b>=</b> de cada fórmula. Cada nueva línea tiene un
-                                    propio número de
-                                    ecuación. No se pueden usar <i>\label</i>.
+                                    con el entorno <b>align</b> el cual permite insertar nuevas líneas con <b>\\</b> y
+                                    ajusta un alineado especial con respecto a los <b>=</b> de cada fórmula. Cada nueva
+                                    línea tiene un propio número de ecuación. No se pueden usar <i>\label</i>.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertalign</span><b>{</b>F(<span class="pl-c1">\vec</span>{f},y, y') = <span
@@ -714,12 +700,9 @@
                                 <li>
                                     <strong>\insertaligned</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b>:
                                     Inserta una fórmula con el entorno <b>aligned</b> el cual permite insertar nuevas
-                                    líneas, y
-                                    ajusta un alineado especial
-                                    con respecto a los
-                                    <b>=</b> de cada fórmula. Todas las líneas tienen sólo 1 número de ecuación por lo
-                                    que esta
-                                    puede tener etiqueta o un <i>\label</i>.
+                                    líneas, y ajusta un alineado especial con respecto a los<b>=</b> de cada fórmula.
+                                    Todas las líneas tienen sólo 1 número de ecuación, por lo que ésta puede tener
+                                    etiqueta o un <i>\label</i>.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertaligned</span><b>[</b><span class="pl-c1">\label</span>{formula-5}<b>]</b><b>{</b><span
@@ -947,178 +930,188 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Expresiones matemáticas <a id="hlp-math"></a></strong>
                 <p>
-                    Existen varias funciones para añadir expresiones matemáticas de forma sencilla, estas se pueden usar
-                    tanto dentro como fuera de una fórmula (por ejemplo se pueden usar dentro de un párrafo sin la
-                    necesidad de hacer <i>$\...$</i>).
+                    Existen <span id="mathFunCounter"></span> funciones para añadir expresiones matemáticas de
+                    forma sencilla, estas se pueden usar tanto dentro como fuera de una fórmula (por ejemplo se pueden
+                    usar dentro de un párrafo sin la necesidad de hacer <i>$\...$</i>). <br>
                 </p>
-                <ul>
-                    <li>
-                        <strong>\abs</strong><b>{</b><em>a</em><b>}</b>: Valor absoluto de a.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\abs</span><b>{</b> x + y <b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/abs.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\norm</strong><b>{</b><em>a</em><b>}</b>: Norma de a.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre>La norma de z es <span class="pl-e">\norm</span><b>{</b> z <b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/norm2.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\pow</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Forma simplificada de
-                        añadir una potencia del tipo a^b.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                <a id="showMathFunContainer" class="javascripthref"></a>.
+                <div class="codeFunContainer" id="mathFunContainer">
+                    <ul>
+                        <li>
+                            <strong>\abs</strong><b>{</b><em>a</em><b>}</b>: Valor absoluto de a.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre><span class="pl-e">\abs</span><b>{</b> x + y <b>}</b></pre>
+                                </div>
+                                <p><img src="res/images/abs.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\norm</strong><b>{</b><em>a</em><b>}</b>: Norma de a.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>La norma de z es <span class="pl-e">\norm</span><b>{</b> z <b>}</b></pre>
+                                </div>
+                                <p><img src="res/images/norm2.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\pow</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Forma
+                            simplificada de
+                            añadir una potencia del tipo a^b.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\pow</span><b>{</b> (1 + <span
                                         class="pl-e">\pow</span><b>{</b><span class="pl-c1">\pi</span><b>}{</b><span
                                         class="pl-c1">\epsilon</span><b>}</b>) <b>}{</b>2<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/pow.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\lpow</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Forma simplificada
-                        de añadir una sub potencia del tipo a_b.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                </div>
+                                <p><img src="res/images/pow.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\lpow</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Forma
+                            simplificada
+                            de añadir una sub potencia del tipo a_b.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\lpow</span><b>{</b>f<b>}{</b>i+1<b>}</b> = 2 <span
                                         class="pl-e">\lpow</span><b>{</b>f<b>}{</b>i<b>}</b> + <span
                                         class="pl-e">\lpow</span><b>{</b>f<b>}{</b>i-2<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/lpow.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\fracpartial</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
-                        fracción de derivadas parciales del estilo ∂a/∂b.
-                        <!--<blockquote>-->
-                        <!--<div class="highlight highlight-text-tex">-->
-                        <!--<pre>f(x) = <span class="pl-e">\fracpartial</span><b>{</b>g<b>}{</b>x<b>}</b></pre>-->
-                        <!--</div>-->
-                        <!--<p><img src="res/images/fpartial.png" alt=""></p>-->
-                        <!--</blockquote>-->
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-c1">\lpow</span>{h}{y} = 2 + <span class="pl-e">\fracpartial</span><b>{}{</b>y<b>}</b> h</pre>
-                            </div>
-                            <p><img src="res/images/fpartial2.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\fracdpartial</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
-                        fracción de derivadas parciales al cuadrado al estilo ∂^2 a/∂b^2.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                </div>
+                                <p><img src="res/images/lpow.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\fracpartial</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
+                            fracción de derivadas parciales del estilo ∂a/∂b.
+                            <!--<blockquote>-->
+                            <!--<div class="highlight highlight-text-tex">-->
+                            <!--<pre>f(x) = <span class="pl-e">\fracpartial</span><b>{</b>g<b>}{</b>x<b>}</b></pre>-->
+                            <!--</div>-->
+                            <!--<p><img src="res/images/fpartial.png" alt=""></p>-->
+                            <!--</blockquote>-->
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre><span class="pl-c1">\lpow</span>{h}{y} = 2 + <span
+                                            class="pl-e">\fracpartial</span><b>{}{</b>y<b>}</b> h</pre>
+                                </div>
+                                <p><img src="res/images/fpartial2.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\fracdpartial</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
+                            fracción de derivadas parciales al cuadrado al estilo ∂^2 a/∂b^2.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\fracdpartial</span><b>{</b>u<b>}</b><b>{</b>t<b>}</b> = <span
                                         class="pl-c1">\pow</span>{c}{2} <span class="pl-e">\fracdpartial</span><b>{</b>u<b>}{</b>x<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/fracdpartial.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\fracnpartial</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b><b>{</b><em>c</em><b>}</b>:
-                        Crea una fracción de derivadas parciales a la n al estilo ∂^c a/∂b^2. \frac{\partial
-                        {f}^{n+m}}{\partial {x}^{n+m}}
-                        =
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                </div>
+                                <p><img src="res/images/fracdpartial.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\fracnpartial</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b><b>{</b><em>c</em><b>}</b>:
+                            Crea una fracción de derivadas parciales a la n al estilo ∂^c a/∂b^2. \frac{\partial
+                            {f}^{n+m}}{\partial {x}^{n+m}}
+                            =
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\fracnpartial</span><b>{</b>f<b>}</b><b>{</b>x<b>}</b><b>{</b>n+m<b>}</b> = <span
                                         class="pl-c1">\widehat</span>{<span
                                         class="pl-e">\fracnpartial</span><b>{</b>h<b>}</b><b>{</b>x<b>}</b><b>{</b>n<b>}</b> + <span
                                         class="pl-e">\fracnpartial</span><b>{</b>g<b>}</b><b>{</b>x<b>}</b><b>{</b>m<b>}</b>}</pre>
-                            </div>
-                            <p><img src="res/images/fracnpartial.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\fracderivat</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
-                        fracción de derivadas del estilo da/db.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                </div>
+                                <p><img src="res/images/fracnpartial.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\fracderivat</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
+                            fracción de derivadas del estilo da/db.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\fracderivat</span><b>{}{</b>x<b>}</b><span class="pl-c1">\arccos</span>(x) = -{<span
                                         class="pl-c1">\frac</span>{1}{<span class="pl-c1">\sqrt</span>{ 1 - <span
                                         class="pl-c1">\pow</span>{x}{2} }}</pre>
-                            </div>
-                            <p><img src="res/images/fracderivativ.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\fracdderivat</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
-                        fracción de derivadas al cuadrado al estilo d^2 a/db^2.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre>m <span class="pl-e">\fracdderivat</span><b>{</b>x<b>}{</b>t<b>}</b> + kx = 0</pre>
-                            </div>
-                            <p><img src="res/images/fracddpartial.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\fracnderivat</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b><b>{</b><em>c</em><b>}</b>:
-                        Crea una fracción de derivadas a la n al estilo d^c a/db^2.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                </div>
+                                <p><img src="res/images/fracderivativ.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\fracdderivat</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
+                            fracción de derivadas al cuadrado al estilo d^2 a/db^2.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>m <span
+                                            class="pl-e">\fracdderivat</span><b>{</b>x<b>}{</b>t<b>}</b> + kx = 0</pre>
+                                </div>
+                                <p><img src="res/images/fracddpartial.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\fracnderivat</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b><b>{</b><em>c</em><b>}</b>:
+                            Crea una fracción de derivadas a la n al estilo d^c a/db^2.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\fracnderivat</span><b>{</b>y<b>}{</b>x<b>}{</b>3<b>}</b> <span
                                         class="pl-c1">\times</span> <span class="pl-e">\fracnderivat</span><b>{</b>h<b>}{</b>x<b>}{</b>n<b>}</b> = <span
                                         class="pl-c1">\chi</span></pre>
-                            </div>
-                            <p><img src="res/images/fracndpartial.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\topequal</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una llave
-                        sobre el elemento a con valor b.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\topequal</span><b>{</b>1 + <span class="pl-c1">\sqrt</span>{1+x}<b>}{</b>f(x)<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/topequal.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\underequal</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una llave
-                        bajo el elemento a con valor b.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                </div>
+                                <p><img src="res/images/fracndpartial.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\topequal</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
+                            llave
+                            sobre el elemento a con valor b.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre><span class="pl-e">\topequal</span><b>{</b>1 + <span class="pl-c1">\sqrt</span>{1+x}<b>}{</b>f(x)<b>}</b></pre>
+                                </div>
+                                <p><img src="res/images/topequal.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\underequal</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
+                            llave
+                            bajo el elemento a con valor b.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-c1">\pi</span> + <span
                                         class="pl-e">\underequal</span><b>{</b>1 - <span class="pl-c1">\frac</span>{1}{e}<b>}</b><b>{</b>e <span
                                         class="pl-c1">\approx</span> 2.718<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/underequal.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\topsequal</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una llave
-                        rectangular sobre el elemento a con valor b.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                </div>
+                                <p><img src="res/images/underequal.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\topsequal</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
+                            llave
+                            rectangular sobre el elemento a con valor b.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\topsequal</span><b>{</b> 1+x+<span class="pl-c1">\ldots</span>+<span
                                         class="pl-c1">\pow</span>{x}{n} <b>}{</b>x <span class="pl-c1">\in \Re</span><b>}</b> = <span
                                         class="pl-c1">\sum</span>_{i=0}^{n}<span class="pl-c1">\pow</span>{x}{i}</pre>
-                            </div>
-                            <p><img src="res/images/topsequal.png" alt=""></p>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\undersequal</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
-                        llave rectangular bajo el elemento a con valor b.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
+                                </div>
+                                <p><img src="res/images/topsequal.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\undersequal</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
+                            llave rectangular bajo el elemento a con valor b.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-c1">\lim</span>_{n} <span class="pl-c1">\pow</span>{2}{n} <span
                                         class="pl-e">\undersequal</span><b>{</b> <span
                                         class="pl-c1">\sqrt</span>{2 - <span class="pl-c1">\sqrt</span>{2+ <span
                                         class="pl-c1">\ldots</span> + <span
                                         class="pl-c1">\sqrt</span>{2}}} <b>}</b><b>{</b>n<b>}</b> = <span class="pl-c1">\pi</span></pre>
-                            </div>
-                            <p><img src="res/images/undersequal.png" style="width:220px" alt=""></p>
-                        </blockquote>
-                    </li>
-                </ul>
+                                </div>
+                                <p><img src="res/images/undersequal.png" style="width:220px" alt=""></p>
+                            </blockquote>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Otras funciones<a id="hlp-other"></a></strong>
@@ -1196,8 +1189,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                     de la imagen 1</em><b>}</b><b>{</b><em>Parámetros 1</em><b>}</b><b>{</b><em>Leyenda
                                     1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Parámetros
                                     2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Leyenda
-                                    general</em><b>}</b>:
-                                    Inserta dos imágenes en un sólo elemento.
+                                    general</em><b>}</b>: Inserta dos imágenes en un sólo elemento.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertdoubleimage</span><b>[</b><span
@@ -1212,14 +1204,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                     <strong>\insertdoubleeqimage</strong><b>[</b><em>Label</em>
                                     (opcional)<b>]</b><b>{</b><em>Dirección
                                     de la imagen 1</em><b>}</b><b>{</b><em>Leyenda 1</em><b>}</b><b>{</b><em>Dirección
-                                    de la
-                                    imagen
-                                    2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Parámetros
-                                    generales</em><b>}</b><b>{</b><em>Leyenda
-                                    general</em><b>}</b>:
+                                    de la imagen 2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Parámetros
+                                    generales</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
                                     Inserta dos imágenes en un sólo elemento utilizando los mismos parámetros (estilos
-                                    de
-                                    imagen).
+                                    de imagen).
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertdoubleeqimage</span><b>[</b><span
@@ -1235,14 +1223,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 <li>
                                     <strong>\inserttripleimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
                                     de la imagen 1</em><b>}</b><b>{</b><em>Parámetros 1</em><b>}</b><b>{</b><em>Dirección
-                                    de
-                                    la
-                                    imagen 2</em><b>}</b><b>{</b><em>Parámetros 2</em><b>}</b><b>{</b><em>Dirección de
-                                    la
-                                    imagen
-                                    3</em><b>}</b><b>{</b><em>Parámetros 3</em><b>}</b><b>{</b><em>Leyenda
-                                    general</em><b>}</b>:
-                                    Inserta tres imágenes en un sólo elemento.
+                                    de la imagen 2</em><b>}</b><b>{</b><em>Parámetros 2</em><b>}</b><b>{</b><em>Dirección
+                                    de la imagen 3</em><b>}</b><b>{</b><em>Parámetros 3</em><b>}</b><b>{</b><em>Leyenda
+                                    general</em><b>}</b>: Inserta tres imágenes en un sólo elemento.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\inserttripleimage</span><b>[</b><span
@@ -1261,8 +1244,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                     de la imagen 3</em><b>}</b><b>{</b><em>Parámetros generales</em><b>}</b><b>{</b><em>Leyenda
                                     general</em><b>}</b>:
                                     Inserta tres imágenes en un sólo elemento utilizando los mismos parámetros (estilos
-                                    de
-                                    imagen).
+                                    de imagen).
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\inserttripleeqimage</span><b>[</b><span
@@ -1296,13 +1278,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                     de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
                                     de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Dirección
                                     de la imagen 5</em><b>}</b><b>{</b><em>Parámetros globales</em><b>}</b><b>{</b><em>Leyenda
-                                    general</em><b>}</b>:
-                                    Inserta cinco imágenes en un sólo elemento.
+                                    general</em><b>}</b>: Inserta cinco imágenes en un sólo elemento.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertpentaimage</span><b>[</b><span
                                         class="pl-c1">\label</span>{img-pent1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b>ejemplos/test-image-5.jpg<b>}</b><span class="newline_br"></span><b>{</b><span
+                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b>ejemplos/test-image-5.jpg<b>}</b><span
+                                        class="newline_br"></span><b>{</b><span
                                         class="pl-v">scale</span>=0.7<b>}</b><b>{</b>Descripción general<b>}</b></pre>
                                         </div>
                                     </blockquote>
@@ -1340,55 +1322,56 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             títulos de tablas y figuras <em>(caption)</em>, el tamaño de los títulos de las secciones, etc. Estas
             configuraciones se encuentran
             en el archivo
-            <a href="https://github.com/Template-Latex/Template-Informe/blob/master/lib/config.tex">lib/config.tex</a>
-            (versión normal) y son importadas en el bloque de
+            <a href="https://github.com/Template-Latex/Template-Informe/blob/master/lib/config.tex"
+               class="javascripthref">lib/config.tex</a> (versión normal) y son importadas en el bloque de
             <em class="section-template">CONFIGURACIONES</em> <span class="intro-line-configimport"></span> en el
             archivo principal.
             <br/>
-            <br/> Las configuraciones disponibles son las siguientes:
+            <br/>
+            A continuación se listan las <span id="TemplateConfigCounter"></span> configuraciones disponibles:
         </p>
-        <ul>
+        <ul id="templateConfigsList">
             <li class="config-parent">
                 <strong class="functtitlstyle">Configuraciones generales<a id="config-other"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\addemptypagetwosides</strong>: Añade páginas en blanco después de la portada, el
                         resumen y el índice de manera inteligente al imprimir en doble cara. El índice siempre se
                         imprimirá en una plana impar, así como el contenido
                         del informe.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\columnsepwidth</strong>: Separación de las columnas, en <i>em</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\defaultinterline</strong>: Tamaño del interlineado.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\defaultnewlinesize</strong>: Tamaño del salto de línea, en <i>pt</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\documentlang</strong>: Define el idioma del documento.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\fontdocument</strong>: Define la fuente de todo el texto del documento (lmodern, arial,
                         helvet).
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\importtikz</strong>: Importa la librería tikz al compilar el documento.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\numberedequation</strong>: Muestra el número en las ecuaciones insertadas con <i>\insert...</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\pointdecimal</strong>: Los números decimales se muestran con punto en vez de con coma.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\romanpageuppercase</strong>: Páginas en número romano (abstract-índice) en mayúsculas.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showlinenumbers</strong>: Muestra los números de línea del documento.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\tablepadding</strong>: Ancho de celda de las tablas.
                     </li>
                 </ul>
@@ -1397,11 +1380,11 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="config-parent">
                 <strong class="functtitlstyle">Estilo de portada y header-footer<a id="config-portraithf"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\hfstyle</strong>: Estilo del encabezado y pie de página (header-footer), existen <a
                             onclick="hfGallery();" class="javascripthref">8 estilos distintos</a>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\portraitstyle</strong>: Estilo de la portada, existen <a
                             onclick="portraitGallery();" class="javascripthref">16 estilos distintos</a>.
                     </li>
@@ -1411,19 +1394,19 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="config-parent">
                 <strong class="functtitlstyle">Márgenes de la página<a id="config-pagemargin"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\firstpagemargintop</strong>: Margen superior de la portada en centímetros.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\pagemarginbottom</strong>: Margen inferior de las páginas en centímetros.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\pagemarginleft</strong>: Margen izquierdo de las páginas en centímetros.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\pagemarginright</strong>: Margen derecho de las páginas en centímetros.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\pagemargintop</strong>: Margen superior de las páginas en centímetros.
                     </li>
                 </ul>
@@ -1433,13 +1416,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Posición por defecto de objetos<a
                         id="config-default-placement-objects"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\imagedefaultplacement</strong>: Ubicación por defecto de las imágenes.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\tabledefaultplacement</strong>: Ubicación por defecto de las tablas.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\tikzdefaultplacement</strong>: Ubicación por defecto de las figuras hechas con tikz.
                     </li>
                 </ul>
@@ -1449,44 +1432,44 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configuración de las leyendas - caption<a
                         id="config-caption"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captionalignment</strong>: Alineación leyenda: justified, centered, left, right.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captionlessmarginimage</strong>: Margen inferior si no hay caption en figuras, en
                         centímetros.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captionlrmargin</strong>: Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
                         las leyendas, en centímetros.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captionmarginmultimg</strong>: Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>)
                         de las imágenes múltiples insertadas con <b>images</b>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captiontbmarginfigure</strong>: Margen superior/inferior de la leyenda en las figuras,
                         en <i>pt</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captiontbmargintable</strong>: Margen superior/inferior de la leyenda en las tablas, en
                         <i>pt</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captiontextbold</strong>: Etiquetas (Figura,Tabla,etc.) de la leyenda en negrita.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\codecaptiontop</strong>: Establece la leyenda encima del código fuente.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\figurecaptiontop</strong>: Establece la leyenda encima de las imágenes.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showsectioncaption</strong>: Muestra el número de la sección/subsección/subsubsección
                         en el número de figura/tabla/código, valores permitidos: <b>none</b>, <b>sec</b>
                         <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\tablecaptiontop</strong>: Establece la leyenda encima de las tablas.
                     </li>
                 </ul>
@@ -1495,33 +1478,33 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="config-parent">
                 <strong class="functtitlstyle">Configuración del índice<a id="config-index"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\charafterobjectindex</strong>: Carácter tras cada número de figura, tabla o código en
                         el índice.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\indexdepth</strong>: Profundidad del índice.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\indextitlemargin</strong>: Margen superior en los títulos de los índices (insertado con
                         <i>\insertindextitle</i>), en <i>pt</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showdotpagenumindex</strong>: Muestra puntos entre objeto y número de página.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showindex</strong>: Muestra la página de índice.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showindexofcode</strong>: Muestra la lista de códigos fuente en el índice.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showindexofcontents</strong>: Muestra la lista de contenidos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showindexoffigures</strong>: Muestra la lista de figuras en el índice.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showindexoftables</strong>: Muestra la lista de tablas en el índice.
                     </li>
                 </ul>
@@ -1530,55 +1513,55 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="config-parent">
                 <strong class="functtitlstyle">Configurar los colores del documento<a id="config-colors"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captioncolor</strong>: Color de la etiqueta (Figura, Tabla, Código) en la leyenda de
                         los objetos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\captiontextcolor</strong>: Color de la leyenda de los objetos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\colorpage</strong>: Define el color de fondo de las páginas del documento.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\highlightcolor</strong>: Color del subrayado con <i>\hl{text}</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\indextitlecolor</strong>: Color de los títulos del índice.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\linenumbercolor</strong>: Color del número de línea (Al tener activado <i>\showlinenumbers</i>).
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\linkcolor</strong>: Color de los enlaces del documento, entiendase por números de
                         figuras, entradas del índice, etc.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\maintextcolor</strong>: Color del texto del documento, afecta al color de los títulos,
                         párrafos, líneas, tablas, etc.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\numcitecolor</strong>: Color del número de las referencias o citas.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\portraittitlecolor</strong>: Color de los títulos de la portada.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showborderonlinks</strong>: Reemplaza el color de un link por un recuadro de color.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\subsubtitlecolor</strong>: Color de los sub-subtítulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\subtitlecolor</strong>: Color de los subtítulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\tablelinecolor</strong>: Color de las líneas de las tablas.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\titlecolor</strong>: Color de los títulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\urlcolor</strong>: Color de los enlaces <i>http://</i> del documento insertados con <i>\url</i>
                         y <i>\href</i>.
                     </li>
@@ -1588,18 +1571,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="config-parent">
                 <strong class="functtitlstyle">Configuración de las figuras<a id="config-figure"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\defaultimagefolder</strong>: Directorio de las imágenes, sólo utilizado por las
                         funciones que insertan figuras.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\marginbottomimages</strong>: Margen inferior de las figuras, en centímetros.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\marginfloatimages</strong>: Margen superior de las figuras flotantes (insertadas con
                         <i>\insertimageleft</i> o <i>\insertimageright</i>), en <i>pt</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\margintopimages</strong>: Margen superior de las figuras, en centímetros.
                     </li>
                 </ul>
@@ -1609,43 +1592,43 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configuración del anexo, citas y referencias<a
                         id="config-ref"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\apaciterefsep</strong>: Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
                         en <i>pt</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\appendixindepobjnum</strong>: La numeración de los objetos (figura, tabla, código) en
                         la sección de anexo/apéndice es independiente del documento.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\bibtexrefsep</strong>: Separación entre elementos de las referencias (Estilo
                         <i>bibtex</i>), en <i>pt</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\donumrefsection</strong>: Sección de referencias numerada en el informe.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\natbibrefsep</strong>: Separación entre elementos de las referencias (Estilo
                         <i>natbib</i>), en <i>pt</i>.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\sectionappendixlastchar</strong>: Carácter entre el número de la sección del anexo y el
                         título.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showappendixsecindex</strong>: Muestra el título de la sección de anexos en el índice.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showappendixsectitle</strong>: Muestra el título de la sección de anexo en el informe.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <div id="stylecitereferences">
                             <strong>\stylecitereferences</strong>
                             <a id="ref-style-config"></a>: Estilo citas y referencias, puede ser <i>bibtex</i>, <i>apacite</i>
                             o <i>natbib</i>.
                         </div>
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\twocolumnreferences</strong>: Referencias en dos columnas.
                     </li>
                 </ul>
@@ -1654,36 +1637,36 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="config-parent">
                 <strong class="functtitlstyle">Configuración de los títulos<a id="config-tstyles"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\anumsecaddtocounter</strong>: Las funciones para insertar títulos sin número (anum)
                         aumentan los respectivos contadores.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\fontsizesubsubtitle</strong>: Tamaño sub-subtítulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\fontsizesubtitle</strong>: Tamaño subtítulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\fontsizetitle</strong>: Tamaño títulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\fontsizetitlei</strong>: Tamaño títulos en el índice.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\showdotontitles</strong>: Muestra un punto en cada número de sección, subsección y
                         sub-subsección.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\stylesubsubtitle</strong>: Estilo sub-subtítulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\stylesubtitle</strong>: Estilo subtítulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\styletitle</strong>: Estilo títulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\styletitlei</strong>: Estilo títulos en el índice.
                     </li>
                 </ul>
@@ -1692,51 +1675,51 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="config-parent">
                 <strong class="functtitlstyle">Opciones del pdf<a id="config-pdfoptions"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\addindextobookmarks</strong>: Añade el índice a los marcadores del pdf compilado.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgbookmarksopenlevel</strong>: Nivel de los marcadores a mostrar (1: secciones, 2:
                         muestra todos los subtítulos, etc.).
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdfbookmarkopen</strong>: Expande los marcadores hasta el nivel configurado.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdfcenterwindow</strong>: Centra la ventana del lector pdf al abrir el informe.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdfcopyright</strong>: Establece el copyright en la <i>metadata</i> del pdf.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdfdisplaydoctitle</strong>: Muestra el título del informe como título en el lector
                         del pdf.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdffitwindow</strong>: Ajusta la ventana del lector pdf al tamaño del informe.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdfmenubar</strong>: Muestra la barra de menú en el lector pdf.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdfpagemode</strong>: Modo de página en el lector. Valores esperados:
                         OneColumn,SinglePage.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdfpageview</strong>: Establece cómo se ve la página en el lector pdf, valores
                         esperados: Fit,FitH,FitV,FitR,FitB,FitBH,FitBV.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdfsecnumbookmarks</strong>: Muestra el número de la sección en los marcadores del
                         pdf.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgpdftoolbar</strong>: Muestra la barra de herramientas del lector pdf.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\cfgshowbookmarkmenu</strong>: Muestra el menú de los marcadores en el lector pdf.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\pdfcompileversion</strong>: Establece la versión mínima de compatibilidad del pdf.
                     </li>
                 </ul>
@@ -1745,54 +1728,52 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <li class="config-parent">
                 <strong class="functtitlstyle">Nombres de los elementos<a id="config-elemname"></a></strong>
                 <ul>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nameabstract</strong>: Nombre del resumen-abstract.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nameappendixsection</strong>: Nombre de la sección de anexos/apéndices.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nameportraitpage</strong>: Nombre de la primera página (portada) en el pdf.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\namereferences</strong>: Nombre de la sección de referencias.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomchapter</strong>: Nombre de los capítulos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomltappendixsection</strong>: Etiqueta sección en anexo/apéndices.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomltcont</strong>: Nombre del índice de contenidos.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomltfigure</strong>: Nombre de la lista de figuras.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomltsrc</strong>: Nombre de la lista de código fuente.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomlttable</strong>: Nombre de la lista de tablas.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomltwsrc</strong>: Etiqueta leyenda del código fuente.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomltwfigure</strong>: Etiqueta leyenda de las figuras.
                     </li>
-                    <li>
+                    <li class="config-elem">
                         <strong>\nomltwtable</strong>: Etiqueta leyenda de las tablas.
                     </li>
                 </ul>
             </li>
-
         </ul>
 
         <!-- Links de interés -->
-        <h2><a id="links" class="anchor" href="#links" aria-hidden="true"><span aria-hidden="true"
-                                                                                class="octicon octicon-link"></span></a>Links
-            de interés</h2>
+        <h2><a id="links" class="anchor" href="#links" aria-hidden="true">
+            <span aria-hidden="true" class="octicon octicon-link"></span></a>Links de interés</h2>
         <ul class="linkssection">
             <li>
                 Template Auxiliares en <img src="res/other/latex.png" alt="LaTeX"
@@ -2156,6 +2137,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </div>
         </div>
     </section>
+
+    <!-- Precarga recursos -->
     <div id="preloadresources">
         <img src="https://avatars0.githubusercontent.com/u/12925256" class="autor_photo" alt=""/>
     </div>

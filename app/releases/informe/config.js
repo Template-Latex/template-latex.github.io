@@ -227,6 +227,13 @@ function afterDocumentReady() {
     // Mostrar librerías cargadas + total
     $('#totalLibCount').html($('#usedLibs').find('li').length);
     triggerShowContainerChangeTrigger('#showLibsContainer', '#libsUsedContainer', 'Mostrar lista de librerías', 'Ocultar lista de librerías');
+
+    // Motrar funciones matemáticas + total
+    $('#mathFunCounter').html($('#mathFunContainer').find('li').length);
+    triggerShowContainerChangeTrigger('#showMathFunContainer', '#mathFunContainer', 'Mostrar lista de funciones', 'Ocultar lista de funciones');
+
+    // Mostrar número de configuraciones totales
+    $('#TemplateConfigCounter').html($('#templateConfigsList').find('.config-elem').length);
 }
 
 function afterJSONLoad() {
