@@ -284,12 +284,11 @@ $(function () {
         if (!is_movile_browser && enableparallax) {
             $('#background-page-header').parallax({
                 imageSrc: wallpaper_db.image,
-                speed: 0.20,
-                positionY: 'bottom',
                 positionX: 'center',
+                positionY: 'bottom',
+                speed: 0.20,
                 zIndex: 1
             });
-            console.log('Se activó el parallax');
         } else {
             try {
                 let back_img = new Image();
