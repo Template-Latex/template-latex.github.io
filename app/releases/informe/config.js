@@ -33,10 +33,10 @@ var update_download_counter = 'Template-Informe';
 var bounceStyleReferences; // Efecto en entrada de configuración
 var downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 var hfGallery; // Muestra la galería de header-footer
-var line_abstract = [87, 227]; // Número de línea de abstract/resumen
+var line_abstract = [87, 228]; // Número de línea de abstract/resumen
 var line_authortable = [33, 34]; // Número de línea tabla de integrantes
 var line_configimport = [63, 64]; // Número línea importación de configuraciones
-var line_docinit = [98, 238]; // Número de línea inicio del documento
+var line_docinit = [98, 239]; // Número de línea inicio del documento
 var line_infodocument = [18, 19]; // Número de línea información del documento
 var portraitGallery; // Muestra la galería de portadas
 
