@@ -467,12 +467,14 @@ $(function () {
     if (initial_popup.display) {
         $.confirm({
             boxWidth: '35%',
+            closeIcon: true,
             content: initial_popup.content,
+            escapeKey: 'close',
             title: initial_popup.title,
             useBootstrap: false,
             buttons: {
                 close: {
-                    keys: ['enter'],
+                    keys: ['enter', 'escape'],
                     text: 'Cerrar',
                 }
             }

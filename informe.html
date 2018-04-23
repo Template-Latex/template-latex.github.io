@@ -292,71 +292,72 @@
             </li>
             <li>
                 <strong>\imagendeldepartamento</strong>: Imagen del departamento o universidad a usar en la portada,
-                estos se pueden encontrar en la carpeta
-                <em><a href="https://github.com/Template-Latex/Template-Informe/tree/master/img/departamentos">/img/departamentos/</a></em>.
-                Imágenes disponibles:
-                <ul>
-                    <li>
-                        <strong>adh</strong>: Área de Humanidades.
-                    </li>
-                    <li>
-                        <strong>das</strong>: Departamento de Astronomía.
-                    </li>
-                    <li>
-                        <strong>dcc</strong>: Departamento de Ciencias de la Computación.
-                    </li>
-                    <li>
-                        <strong>dfi</strong>: Departamento de Física.
-                    </li>
-                    <li>
-                        <strong>dgf</strong>: Departamento de Geofísica.
-                    </li>
-                    <li>
-                        <strong>dic</strong>: Departamento de Ingeniería Civil.
-                    </li>
-                    <li>
-                        <strong>dic2</strong>: Departamento de Ingeniería Civil (otra versión).
-                    </li>
-                    <li>
-                        <strong>die</strong>: Departamento de Ingeniería Eléctrica.
-                    </li>
-                    <li>
-                        <strong>dii</strong>: Departamento de Ingeniería Industrial.
-                    </li>
-                    <li>
-                        <strong>dii2</strong>: Departamento de Ingeniería Industrial (otra versión).
-                    </li>
-                    <li>
-                        <strong>dim</strong>: Departamento de Ingeniería Matemática.
-                    </li>
-                    <li>
-                        <strong>dimec</strong>: Departamento de Ingeniería Mecánica.
-                    </li>
-                    <li>
-                        <strong>diqbt</strong>: Departamento de Ingeniería Química y Biotecnología.
-                    </li>
-                    <li>
-                        <strong>fcfm</strong>: Facultad de Ciencias Físicas y Matemáticas.
-                    </li>
-                    <li>
-                        <strong>fcfm2</strong>: Sólo el logo de la Facultad de Ciencias Físicas y Matemáticas.
-                    </li>
-                    <li>
-                        <strong>geo</strong>: Departamento de Geología.
-                    </li>
-                    <li>
-                        <strong>minas</strong>: Departamento de Ingeniería en Minas.
-                    </li>
-                    <li>
-                        <strong>uchile</strong>: Escudo de la Universidad de Chile.
-                    </li>
-                    <li>
-                        <strong>uchile2</strong>: Sólo el escudo de la Universidad de Chile.
-                    </li>
-                    <li>
-                        <strong>uchile3</strong>: Escudo en negro de la Universidad de Chile.
-                    </li>
-                </ul>
+                estos se pueden encontrar en la carpeta <em>img/departamentos/</em>.
+                <a id="showImagesContainer" class="javascripthref"></a>.
+                <div class="codeFunContainer" id="dptoImagesContainer">
+                    <ul>
+                        <li>
+                            <strong>adh</strong>: Área de Humanidades.
+                        </li>
+                        <li>
+                            <strong>das</strong>: Departamento de Astronomía.
+                        </li>
+                        <li>
+                            <strong>dcc</strong>: Departamento de Ciencias de la Computación.
+                        </li>
+                        <li>
+                            <strong>dfi</strong>: Departamento de Física.
+                        </li>
+                        <li>
+                            <strong>dgf</strong>: Departamento de Geofísica.
+                        </li>
+                        <li>
+                            <strong>dic</strong>: Departamento de Ingeniería Civil.
+                        </li>
+                        <li>
+                            <strong>dic2</strong>: Departamento de Ingeniería Civil (otra versión).
+                        </li>
+                        <li>
+                            <strong>die</strong>: Departamento de Ingeniería Eléctrica.
+                        </li>
+                        <li>
+                            <strong>dii</strong>: Departamento de Ingeniería Industrial.
+                        </li>
+                        <li>
+                            <strong>dii2</strong>: Departamento de Ingeniería Industrial (otra versión).
+                        </li>
+                        <li>
+                            <strong>dim</strong>: Departamento de Ingeniería Matemática.
+                        </li>
+                        <li>
+                            <strong>dimec</strong>: Departamento de Ingeniería Mecánica.
+                        </li>
+                        <li>
+                            <strong>diqbt</strong>: Departamento de Ingeniería Química y Biotecnología.
+                        </li>
+                        <li>
+                            <strong>fcfm</strong>: Facultad de Ciencias Físicas y Matemáticas.
+                        </li>
+                        <li>
+                            <strong>fcfm2</strong>: Sólo el logo de la Facultad de Ciencias Físicas y Matemáticas.
+                        </li>
+                        <li>
+                            <strong>geo</strong>: Departamento de Geología.
+                        </li>
+                        <li>
+                            <strong>minas</strong>: Departamento de Ingeniería en Minas.
+                        </li>
+                        <li>
+                            <strong>uchile</strong>: Escudo de la Universidad de Chile.
+                        </li>
+                        <li>
+                            <strong>uchile2</strong>: Sólo el escudo de la Universidad de Chile.
+                        </li>
+                        <li>
+                            <strong>uchile3</strong>: Escudo en negro de la Universidad de Chile.
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li>
                 <strong>\imagendepartamentoescala</strong>: Escala de la imagen a usar.
@@ -996,12 +997,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li>
                         <strong>\fracpartial</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
                         fracción de derivadas parciales del estilo ∂a/∂b.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre>f(x) = <span class="pl-e">\fracpartial</span><b>{</b>g<b>}{</b>x<b>}</b></pre>
-                            </div>
-                            <p><img src="res/images/fpartial.png" alt=""></p>
-                        </blockquote>
+                        <!--<blockquote>-->
+                        <!--<div class="highlight highlight-text-tex">-->
+                        <!--<pre>f(x) = <span class="pl-e">\fracpartial</span><b>{</b>g<b>}{</b>x<b>}</b></pre>-->
+                        <!--</div>-->
+                        <!--<p><img src="res/images/fpartial.png" alt=""></p>-->
+                        <!--</blockquote>-->
                         <blockquote>
                             <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-c1">\lpow</span>{h}{y} = 2 + <span class="pl-e">\fracpartial</span><b>{}{</b>y<b>}</b> h</pre>
@@ -1860,228 +1861,245 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
         <!-- Librerías utilizadas -->
         <h2><a id="librerias-utilizadas" class="anchor" href="#librerias-utilizadas" aria-hidden="true"><span
                 aria-hidden="true" class="octicon octicon-link"></span></a>Librerías utilizadas</h2>
-        <ul class="linkssection">
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/array">array</a></strong>: Añade características extras a las
-                tablas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/amsmath">amsmath</a></strong>: Librería matemática.
-            </li>
-            <li>
-                <strong><a
-                        href="http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf">amssymb</a></strong>:
-                Librería matemática.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/apacite">apacite</a></strong>: Administración de citas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/array">array</a></strong>: Añade características a las tablas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/babel">babel</a></strong>: Soporte para idiomas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/bibtex">bibtex</a></strong>: Administración de referencias.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/bigstrut">bigstrut</a></strong>: Permite añadir líneas en
-                tablas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/bm">bm</a></strong>: Caracteres en negrita en ecuaciones.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/booktabs">booktabs</a></strong>: Permite manejar elementos
-                visuales en tablas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/cancel">cancel</a></strong>: Cancelar términos en fórmulas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/caption">caption</a></strong>: Leyendas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/changepage">changepage</a></strong>: Condicionales para
-                administrar páginas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/chngcntr">chngcntr</a></strong>: Agrega números de secciones a
-                las leyendas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/colortbl">colortbl</a></strong>: Colores en las tablas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/color">color</a></strong>: Colores.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/csquotes">csquotes</a></strong>: Citas y comillas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/datetime">datetime</a></strong>: Fechas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/enumerate">enumitem</a></strong>: Permite enumerar ítemes.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/etoolbox">etoolbox</a></strong>: Herramientas varias del
-                compilador.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/fancyhdr">fancyhdr</a></strong>: Encabezados y pie de páginas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/floatpag">floatpag</a></strong>: Maneja números de páginas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/floatrow">floatrow</a></strong>: Administración de floats.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/float">float</a></strong>: Administrador de posiciones de
-                objetos.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/fontenc">fontenc</a></strong>: Soporta caracteres acentuados.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/footmisc">footmisc</a></strong>: Elimina la barra vertical de
-                las notas al pié de página.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/framed">framed</a></strong>: Permite insertar recuadros.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/gensymb">gensymb</a></strong>: Simbología común.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/geometry">geometry</a></strong>: Dimensiones y geometría del
-                documento.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/graphicx">graphicx</a></strong>: Propiedades extra para los
-                gráficos.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/hyperref">hyperref</a></strong>: Permite añadir enlaces y
-                referencias <em>[dependiente]</em>.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/hyperxmp">hyperxmp</a></strong>: Etiquetas opcionales en el
-                <i>metadata</i> del pdf compilado.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/ifthen">ifthen</a></strong>: Permite el manejo de
-                condicionales.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/mathtools">mathtools</a></strong>: Permite utilizar notaciones
-                matemáticas avanzadas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/multicol">multicol</a></strong>: Múltiples columnas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/multirow">multirow</a></strong>: Añade nuevas opciones a las
-                tablas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/natbib">natbib</a></strong>: Administración de citas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/needspace">needspace</a></strong>: Maneja espacios en páginas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/notoccite">notoccite</a></strong>: Desactiva las citas en el
-                índice.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/lipsum">lipsum</a></strong>: Permite crear párrafos de prueba.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/listings">listings</a></strong>: Permite añadir código fuente.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/longtable">longtable</a></strong>: Permite utilizar tablas en
-                varias hojas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/lscape">lscape</a></strong>: Permite insertar páginas en modo
-                horizontal.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/pdfpages">pdfpages</a></strong>: Permite administrar páginas
-                en pdf.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/physics">physics</a></strong>: Importa funciones matemáticas
-                esenciales.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/rotating">rotating</a></strong>: Permite rotación de objetos.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/secdot">secdot</a></strong>: Agrega puntos a los
-                títulos/subtítulos.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/sectsty">sectsty</a></strong>: Cambia el estilo de los
-                títulos.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/setspace">setspace</a></strong>: Cambia el espacio entre
-                líneas.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/siunitx">siunitx</a></strong>: Permite añadir unidades del
-                sistema internacional.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/soul">soul</a></strong>: Permite subrayar texto.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/subfig">subfig</a></strong>: Permite agrupar imágenes.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/textcomp">textcomp</a></strong>: Simbología.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/titlesec">titlesec</a></strong>: Configuración de los titulos.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/tocloft">tocloft</a></strong>: Manejo de entradas en la tabla
-                de contenidos.
-            </li>
-            <li>
-                <strong><a
-                        href="http://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/caption/totalcount.pdf">totalcount</a></strong>:
-                Permite contar elementos.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/tikz">tikz</a></strong>: Permite dibujar.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/ulem">ulem</a></strong>: Permite cachar, subrayar, etc.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/url">url</a></strong>: Permite añadir enlaces.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/wasysym">wasysym</a></strong>: Contiene caracteres
-                misceláneos.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/wrapfig">wrapfig</a></strong>: Permite comprimir imágenes.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/xcolor">xcolor</a></strong>: Paquete de colores avanzado.
-            </li>
-            <li>
-                <strong><a href="https://www.ctan.org/pkg/xcolor">xspace</a></strong>: Adminisitra espacios en párrafos
-                y líneas.
-            </li>
-        </ul>
+        En total el template hace uso de <span id="totalLibCount"></span> librerías de Latex, cada una es importada en
+        el archivo <em>lib/env/imports.tex</em>. <br/>
+        <a id="showLibsContainer" class="javascripthref"></a>.
+        <div class="codeFunContainer" id="libsUsedContainer">
+            <ul class="linkssection" id="usedLibs">
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/array">array</a></strong>: Añade características extras a
+                    las tablas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/amsmath">amsmath</a></strong>: Librería matemática.
+                </li>
+                <li>
+                    <strong><a
+                            href="http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf">amssymb</a></strong>:
+                    Librería matemática.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/apacite">apacite</a></strong>: Administración de citas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/array">array</a></strong>: Añade características a las
+                    tablas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/babel">babel</a></strong>: Soporte para idiomas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/bibtex">bibtex</a></strong>: Administración de
+                    referencias.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/bigstrut">bigstrut</a></strong>: Permite añadir líneas en
+                    tablas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/bm">bm</a></strong>: Caracteres en negrita en ecuaciones.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/booktabs">booktabs</a></strong>: Permite manejar elementos
+                    visuales en tablas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/cancel">cancel</a></strong>: Cancelar términos en
+                    fórmulas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/caption">caption</a></strong>: Leyendas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/changepage">changepage</a></strong>: Condicionales para
+                    administrar páginas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/chngcntr">chngcntr</a></strong>: Agrega números de
+                    secciones a
+                    las leyendas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/colortbl">colortbl</a></strong>: Colores en las tablas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/color">color</a></strong>: Colores.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/csquotes">csquotes</a></strong>: Citas y comillas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/datetime">datetime</a></strong>: Fechas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/enumerate">enumitem</a></strong>: Permite enumerar ítemes.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/etoolbox">etoolbox</a></strong>: Herramientas varias del
+                    compilador.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/fancyhdr">fancyhdr</a></strong>: Encabezados y pie de
+                    páginas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/floatpag">floatpag</a></strong>: Maneja números de
+                    páginas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/floatrow">floatrow</a></strong>: Administración de floats.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/float">float</a></strong>: Administrador de posiciones de
+                    objetos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/fontenc">fontenc</a></strong>: Soporta caracteres
+                    acentuados.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/footmisc">footmisc</a></strong>: Elimina la barra vertical
+                    de las notas al pié de página.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/framed">framed</a></strong>: Permite insertar recuadros.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/gensymb">gensymb</a></strong>: Simbología común.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/geometry">geometry</a></strong>: Dimensiones y geometría
+                    del documento.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/graphicx">graphicx</a></strong>: Propiedades extra para
+                    los gráficos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/hyperref">hyperref</a></strong>: Permite añadir enlaces y
+                    referencias <em>[dependiente]</em>.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/hyperxmp">hyperxmp</a></strong>: Etiquetas opcionales en
+                    el <i>metadata</i> del pdf compilado.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/ifthen">ifthen</a></strong>: Permite el manejo de
+                    condicionales.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/mathtools">mathtools</a></strong>: Permite utilizar
+                    notaciones matemáticas avanzadas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/multicol">multicol</a></strong>: Múltiples columnas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/multirow">multirow</a></strong>: Añade nuevas opciones a
+                    las tablas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/natbib">natbib</a></strong>: Administración de citas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/needspace">needspace</a></strong>: Maneja espacios en
+                    páginas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/notoccite">notoccite</a></strong>: Desactiva las citas en
+                    el índice.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/lipsum">lipsum</a></strong>: Permite crear párrafos de
+                    prueba.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/listings">listings</a></strong>: Permite añadir código
+                    fuente.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/longtable">longtable</a></strong>: Permite utilizar tablas
+                    en varias hojas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/lscape">lscape</a></strong>: Permite insertar páginas en
+                    modo horizontal.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/pdfpages">pdfpages</a></strong>: Permite administrar
+                    páginas en pdf.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/physics">physics</a></strong>: Importa funciones
+                    matemáticas esenciales.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/rotating">rotating</a></strong>: Permite rotación de
+                    objetos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/secdot">secdot</a></strong>: Agrega puntos a los
+                    títulos/subtítulos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/sectsty">sectsty</a></strong>: Cambia el estilo de los
+                    títulos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/setspace">setspace</a></strong>: Cambia el espacio entre
+                    líneas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/siunitx">siunitx</a></strong>: Permite añadir unidades del
+                    sistema internacional.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/soul">soul</a></strong>: Permite subrayar texto.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/subfig">subfig</a></strong>: Permite agrupar imágenes.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/textcomp">textcomp</a></strong>: Simbología.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/titlesec">titlesec</a></strong>: Configuración de los
+                    titulos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/tocloft">tocloft</a></strong>: Manejo de entradas en la
+                    tabla de contenidos.
+                </li>
+                <li>
+                    <strong><a
+                            href="http://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/caption/totalcount.pdf">totalcount</a></strong>:
+                    Permite contar elementos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/tikz">tikz</a></strong>: Permite dibujar.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/ulem">ulem</a></strong>: Permite cachar, subrayar, etc.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/url">url</a></strong>: Permite añadir enlaces.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/wasysym">wasysym</a></strong>: Contiene caracteres
+                    misceláneos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/wrapfig">wrapfig</a></strong>: Permite comprimir imágenes.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/xcolor">xcolor</a></strong>: Paquete de colores avanzado.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/xcolor">xspace</a></strong>: Adminisitra espacios en
+                    párrafos y líneas.
+                </li>
+            </ul>
+        </div>
 
         <!-- Qué hay de nuevo, CHANGELOG -->
         <div id='whatsnew' class='whatsnew'>

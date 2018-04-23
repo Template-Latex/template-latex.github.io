@@ -1150,8 +1150,9 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 
 .codeFunContainer {
     background-color: #eeeeee;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3) inset;
     display: none;
     margin-bottom: 2px;
     margin-top: 0;
-    padding: 10px 10px 5px;
+    padding: 10px 10px 3px;
 }

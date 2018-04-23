@@ -184,18 +184,30 @@ function afterDocumentReady() {
     }
 
     // Función que muestra u oculta contenedor de códigos
-    let triggerShowContainer = function (trigger, container) {
+    let triggerShowContainerChangeTrigger = function (trigger, container, onstring, offstring) {
         $(container).attr('show', 'off');
+        if (onstring !== '') {
+            $(trigger).html(onstring);
+        }
         $(trigger).on('click', function () {
             let $container = $(container);
             if ($container.attr('show') === 'off') {
                 $container.fadeIn();
                 $container.attr('show', 'on');
+                if (offstring !== '') {
+                    $(trigger).html(offstring);
+                }
             } else {
                 $container.fadeOut();
                 $container.attr('show', 'off');
+                if (onstring !== '') {
+                    $(trigger).html(onstring);
+                }
             }
         })
+    };
+    let triggerShowContainer = function (trigger, container) {
+        triggerShowContainerChangeTrigger(trigger, container, '', '');
     };
 
     // Mostrar funciones deprecadas
@@ -208,6 +220,13 @@ function afterDocumentReady() {
     // Código gather,align
     triggerShowContainer('#showCodeGatherEqn', '#codeGatherEqnContainer');
     triggerShowContainer('#showCodeAlignEqn', '#codeAlignEqnContainer');
+
+    // Mostrar imágenes de departamentos
+    triggerShowContainerChangeTrigger('#showImagesContainer', '#dptoImagesContainer', 'Mostrar imágenes disponibles', 'Ocultar imágenes disponibles');
+
+    // Mostrar librerías cargadas + total
+    $('#totalLibCount').html($('#usedLibs').find('li').length);
+    triggerShowContainerChangeTrigger('#showLibsContainer', '#libsUsedContainer', 'Mostrar lista de librerías', 'Ocultar lista de librerías');
 }
 
 function afterJSONLoad() {
@@ -236,13 +255,13 @@ function writeOtherLinks(verid) {
         ['Departamento de Geología', 'geo'],
         ['Departamento de Ingeniería Civil', 'dic'],
         ['Departamento de Ingeniería Eléctrica', 'die'],
+        ['Departamento de Ingeniería En Minas', 'minas'],
         ['Departamento de Ingeniería Industrial', 'dii'],
         ['Departamento de Ingeniería Matemática', 'dim'],
         ['Departamento de Ingeniería Mecánica', 'dimec'],
-        ['Departamento de Ingeniería en Minas', 'minas'],
         ['Departamento de Ingeniería Química y Biotecnología', 'diqbt'],
         ['Facultad de Ciencias Físicas y Matemáticas', 'fcfm'],
-        ['Universidad de Chile', 'uchile']
+        ['Universidad de Chile', 'uchile'],
     ];
     var $addTotal = function () {
         if (total_downloads !== nan_value) {
