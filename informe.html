@@ -214,14 +214,14 @@
         </ul>
 
         <!-- Introducción -->
-        <p>
+        <p class="justified-text">
             <a id="empezando-con-el-template"></a>Este proyecto corresponde a un template para confeccionar geniales
             informes en <img src="res/other/latex.png" alt="LaTeX" class="lateximg">, contiene múltiples
             funciones para insertar imágenes, fórmulas, párrafos y títulos de forma sencilla, sin tener que recurrir a
             las largas instrucciones que ofrece Latex por defecto.
         </p>
         <img src="res/images/collage.png" alt="Informe" style="margin:auto; display:block; width:80%"/>
-        <p>
+        <p class="justified-text">
             Para crear un informe con este template debes primero <a href="#configurando-el-documento">editar la
             información del documento</a> (título, nombre de la universidad, etc) en la sección <em
                 class="section-template">INFORMACIÓN DEL DOCUMENTO</em> <span class="intro-line-infodocument"></span>
@@ -236,13 +236,13 @@
             <b>sección principal</b> del documento <em class="section-template">INICIO DEL DOCUMENTO</em> <span
                 class="intro-line-docinit"></span>.
         </p>
-        <p>
+        <p class="justified-text">
             Existe además una versión <b>compacta</b> en donde se encuentra todo el código en un sólo archivo si es que
             no prefieres los archivos por separado. Para ver más información sobre cómo utilizar las funciones
             exclusivas del template, o cómo configurar a gusto el template, visita el resto de las secciones de este
             manual.
         </p>
-        <p>
+        <p class="justified-text">
             <b>ATENCIÓN:</b> Para compilar el template es necesario utilizar <a
                 href="http://nokyotsu.com/latex/pdflatex.html">PDFLatex</a>, no se da soporte a otros compiladores como
             xelatex, lualatex, etc.
@@ -250,14 +250,17 @@
 
         <!-- Configurando el documento -->
         <h2><a id="configurando-el-documento" class="anchor" href="#configurando-el-documento" aria-hidden="true"><span
-                aria-hidden="true" class="octicon octicon-link"></span></a>Configurando el documento</h2> Para
-        configurar el documento (título, nombre de la universidad, curso, etc.) se deben modificar las variables
-        definidas en el bloque de <em class="section-template">INFORMACIÓN DEL DOCUMENTO</em> <span
-            class="intro-line-docinit"></span> al principio del archivo principal, estas variables son del estilo:
+                aria-hidden="true" class="octicon octicon-link"></span></a>Configurando el documento</h2>
+        <p class="justified-text">
+            Para
+            configurar el documento (título, nombre de la universidad, curso, etc.) se deben modificar las variables
+            definidas en el bloque de <em class="section-template">INFORMACIÓN DEL DOCUMENTO</em> <span
+                class="intro-line-docinit"></span> al principio del archivo principal, estas variables son del estilo:
+        </p>
         <blockquote>
             <em>\def</em><span class="pl-e">\nombreVariable</span> {<b>Valor</b>}
         </blockquote>
-        <p>
+        <p class="justified-text">
             Si por ejemplo tu informe no tiene un tema, debes dejar el valor en blanco, pero <b> no eliminar la
             variable</b>.
         </p>
@@ -367,7 +370,7 @@
         <h2><a id="tabla-integrantes" class="anchor" href="#tabla-integrantes" aria-hidden="true"><span
                 aria-hidden="true" class="octicon octicon-link"></span></a>Añadiendo integrantes, profesores, auxiliares
             y fechas</h2>
-        <p>
+        <p class="justified-text">
             Esta información de la portada se encuentra en la sección <em class="section-template">INTEGRANTES,
             PROFESORES Y FECHAS</em> <span class="intro-line-authortable"></span> del archivo principal (<a
                 href="https://github.com/Template-Latex/Template-Informe/blob/master/main.tex">main.tex</a>),
@@ -378,14 +381,14 @@
         <!-- Insertar párrafos, figuras, fórmulas, citas y otros -->
         <h2><a id="funciones-template" class="anchor" href="#funciones-template" aria-hidden="true"><span
                 aria-hidden="true" class="octicon octicon-link"></span></a>Funciones propias del template</h2>
-        <p>
+        <p class="justified-text">
             También es posible añadir fórmulas, párrafos, figuras y otros elementos de forma sencilla, utilizando
             funciones especiales definidas en el template.
         </p>
         <ul>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Añadir una imagen <a id="hlp-imagen"></a></strong>
-                <p>
+                <p class="justified-text">
                     Las funciones para añadir imágenes requieren del nombre de la imagen (el archivo almacenado en el
                     directorio definido por la configuración <a href="#config-otros">\defaultimagefolder</a>, por
                     defecto la carpeta <strong>img/</strong>), sus parámetros y la leyenda (la cual es opcional).
@@ -583,9 +586,11 @@
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Insertar una fórmula en el documento <a id="hlp-formulae"></a></strong>
-                <p>Las funciones existentes consideran tanto la fórmula en sí (escrita en bruto, sin los <b>$</b>) como
-                    la leyenda para las funciones tipo <i>captioned</i>.</p>
                 <p>
+                    Las funciones existentes consideran tanto la fórmula en sí (escrita en bruto, sin los <b>$</b>) como
+                    la leyenda para las funciones tipo <i>captioned</i>.
+                </p>
+                <p class="justified-text">
                     Todas las funciones siguientes tienen su versión <b>anum</b>, la cual <b>no</b> enumera la ecuación.
                     Por ejemplo: <i>\insertequation<b>anum</b>{Fórmula}</i>, <i>\insertalign<b>anum</b>{Fórmula}</i>,
                     <i>\insertequationcaptioned<b>anum</b>{Fórmula}{Leyenda}</i>.
@@ -723,7 +728,7 @@
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Insertar secciones sin número y sin aparecer en el índice<a
                         id="hlp-title"></a></strong>
-                <p>
+                <p class="justified-text">
                     También pueden añadirse secciones no numeradas <i>(anum)</i> que aparezcan en el índice o no <i>(noi)</i>.
                     Para ello existen las siguientes funciones:
                 </p>
@@ -803,7 +808,7 @@
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Añadir código fuente<a id="hlp-srccode"></a></strong>
-                <p>
+                <p class="justified-text">
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
                     lenguajes de programación C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>), DOCKER (<b>docker</b>),
                     HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Matlab (<b>matlab</b>),
@@ -858,11 +863,10 @@ def incmatrix(genl1, genl2):
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Añadir referencias<a id="hlp-ref"></a></strong>
-                <p>
+                <p class="justified-text">
                     Para añadir referencias el template ofrece 3 alternativas distintas: el uso de <b>bibtex</b>, <b>apacite</b>
                     y <b>natbib</b>. Para usar cada uno de ellos es necesario cambiar la configuración <a
-                        onclick="bounceStyleReferences();"
-                        class="javascripthref">\stylecitereferences</a>.
+                        onclick="bounceStyleReferences();" class="javascripthref">\stylecitereferences</a>.
                 </p>
                 <ul>
                     <li><b>Bibtex</b>: Es el sistema más sencillo, para insertar referencias existe el ambiente <b>references</b>:
@@ -929,7 +933,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Expresiones matemáticas <a id="hlp-math"></a></strong>
-                <p>
+                <p class="justified-text">
                     Existen <span id="mathFunCounter"></span> funciones para añadir expresiones matemáticas de
                     forma sencilla, estas se pueden usar tanto dentro como fuera de una fórmula (por ejemplo se pueden
                     usar dentro de un párrafo sin la necesidad de hacer <i>$\...$</i>). <br>
@@ -1317,7 +1321,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
         <h2><a id="configurar-el-template" class="anchor" href="#configurar-otros-elementos-del-documento"
                aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configurar el
             template</h2>
-        <p>
+        <p class="justified-text">
             También se pueden modificar los márgenes de la página, el estilo de referencia a usar, los márgenes de los
             títulos de tablas y figuras <em>(caption)</em>, el tamaño de los títulos de las secciones, etc. Estas
             configuraciones se encuentran
@@ -2143,6 +2147,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
         <img src="https://avatars0.githubusercontent.com/u/12925256" class="autor_photo" alt=""/>
     </div>
 </div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118050511-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118050511-1');
+</script>
 </body>
 
 </html>

@@ -294,6 +294,8 @@ $(function () {
                 let back_img = new Image();
                 back_img.onload = function () {
                     let $bgheader = $('#background-page-header');
+
+                    // Se carga el css
                     $bgheader.css({
                         'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
                         'background-attachment': 'fixed',
@@ -306,6 +308,11 @@ $(function () {
                     $bgheader.css('width', $(window).width() + 20);
                     fadein_css('#background-page-header', '0.5s');
                     wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);
+
+                    // Se añade un evento al cambiar tamaño página web
+                    $(window).resize(function () {
+                        $('#background-page-header').css('width', $(window).width() + 20);
+                    });
                 };
                 back_img.src = wallpaper_db.image;
             } catch (e) {
@@ -323,13 +330,6 @@ $(function () {
         });
         $('.pace .pace-progress-inner').css('box-shadow', '0 0 10px ' + bgprecolor + ', 0 0 5px ' + bgprecolor + ';');
     }
-
-    /**
-     * Se añade un evento al cambiar tamaño página web
-     */
-    $(window).resize(function () {
-        $('#background-page-header').css('width', $(window).width() + 20);
-    });
 
     /**
      * Se actualiza la cantidad de descargas al hacer click
@@ -456,11 +456,6 @@ $(function () {
     });
 
     /**
-     * Se llama a la función de cada template después de cargar
-     */
-    afterDocumentReady();
-
-    /**
      * Popup inicial
      */
     if (initial_popup.display) {
@@ -479,4 +474,9 @@ $(function () {
             }
         });
     }
+
+    /**
+     * Se llama a la función de cada template después de cargar
+     */
+    afterDocumentReady();
 });

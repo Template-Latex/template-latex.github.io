@@ -413,7 +413,12 @@ a:hover {
     margin-bottom: 1rem;
     margin-left: 0;
     margin-right: 0.5rem;
+    opacity: 0.9;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.btn:hover {
+    opacity: 1.0;
 }
 
 .btn-pro {
@@ -429,7 +434,12 @@ a:hover {
     margin-bottom: 1rem;
     margin-left: 0;
     margin-right: 0.5rem;
+    opacity: 0.9;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.btn-pro:hover {
+    opacity: 1.0;
 }
 
 /*
@@ -495,7 +505,6 @@ a:hover {
 
     .btn + .btn, .btn-pro + .btn-pro {
         margin-left: 0;
-        margin-top: 1rem;
     }
 }
 
@@ -587,6 +596,10 @@ a:hover {
 
 .main-content p {
     margin-bottom: 1em;
+    /*text-align: justify;*/
+}
+
+.justified-text {
     text-align: justify;
 }
 
