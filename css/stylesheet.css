@@ -3,10 +3,19 @@
 }
 
 .javascripthref {
-    color: blue;
+    color: blue !important;
 }
 
 .javascripthref:hover {
+    cursor: pointer;
+}
+
+.sourcecodel {
+    color: blue !important;
+    font-style: italic;
+}
+
+.sourcecodel:hover {
     cursor: pointer;
 }
 

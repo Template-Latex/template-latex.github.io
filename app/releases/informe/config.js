@@ -40,6 +40,293 @@ var line_docinit = [98, 239]; // Número de línea inicio del documento
 var line_infodocument = [18, 19]; // Número de línea información del documento
 var portraitGallery; // Muestra la galería de portadas
 
+// Lista de códigos fuente
+// noinspection CssUnusedSymbol
+var cmd_sourcecode = {
+    'c': '\\begin{sourcecode}[]{c}{Codigo en c.}\n' +
+    '#include <stdio.h>\n' +
+    'int main(){\n' +
+    '\tint i, j, rows;\n' +
+    '\t\n' +
+    '\tprintf("Enter number of rows: ");\n' +
+    '\tscanf("%d",&rows);\n' +
+    '\t\n' +
+    '\tfor(i=1; i<=rows; ++i){\n' +
+    '\t\tfor(j=1; j<=i; ++j){\n' +
+    '\t\t\tprintf("* ");\n' +
+    '\t\t}\n' +
+    '\t\tprintf("\\n");\n' +
+    '\t}\n' +
+    '\treturn 0;\n' +
+    '}\n' +
+    '\\end{sourcecode}',
+
+    'csharp': '\\begin{sourcecode}[]{csharp}{Ejemplo en C\\#.}\n' +
+    '/*\n' +
+    '* C# Program to Get a Number and Display the Sum of the Digits \n' +
+    '*/\n' +
+    'using System;\n' +
+    'using System.Collections.Generic;\n' +
+    'using System.Linq;\n' +
+    'using System.Text;\n' +
+    '\n' +
+    'namespace Program\n' +
+    '{\n' +
+    '\tclass Program\n' +
+    '\t{\n' +
+    '\t\tstatic void Main(string[] args)\n' +
+    '\t\t{\n' +
+    '\t\t\tint num, sum = 0, r;\n' +
+    '\t\t\tConsole.WriteLine("Enter a Number : ");\n' +
+    '\t\t\tnum = int.Parse(Console.ReadLine());\n' +
+    '\t\t\twhile (num != 0)\n' +
+    '\t\t\t{\n' +
+    '\t\t\t\tr = num % 10;\n' +
+    '\t\t\t\tnum = num / 10;\n' +
+    '\t\t\t\tsum = sum + r;\n' +
+    '\t\t\t}\n' +
+    '\t\t\tConsole.WriteLine("Sum of Digits of the Number : "+sum);\n' +
+    '\t\t\tConsole.ReadLine();\n' +
+    '\t\t\t\n' +
+    '\t\t}\n' +
+    '\t}\n' +
+    '}\n' +
+    '\\end{sourcecode}',
+
+    'cpp': '\\begin{sourcecode}{cpp}{Suma en C++.}\n' +
+    '#include <iostream>\n' +
+    'using namespace std;\n' +
+    '\n' +
+    'int main()\n' +
+    '{\n' +
+    '\tint n, sum = 0;\n' +
+    '\t\n' +
+    '\tcout << "Enter a positive integer: ";\n' +
+    '\tcin >> n;\n' +
+    '\t\n' +
+    '\tfor (int i = 1; i <= n; ++i) {\n' +
+    '\t\tsum += i;\n' +
+    '\t}\n' +
+    '\t\n' +
+    '\tcout << "Sum = " << sum;\n' +
+    '\treturn 0;\n' +
+    '}\n' +
+    '\\end{sourcecode}',
+
+    'docker': '\\begin{sourcecode}{docker}{Docker.}\n' +
+    'version: \'2\'\n' +
+    'services:\n' +
+    'web:\n' +
+    'build: .\n' +
+    'ports:\n' +
+    '- "5000:5000"\n' +
+    'volumes:\n' +
+    '- .:/code\n' +
+    '- logvolume01:/var/log\n' +
+    'links:\n' +
+    '- redis\n' +
+    'redis:\n' +
+    'image: redis\n' +
+    'volumes:\n' +
+    '\\end{sourcecode}',
+
+    'html5': '\\begin{sourcecode}[\\label{codigo-html5}]{html5}{Ejemplo en HTML5.}\n' +
+    '<!DOCTYPE html>\n' +
+    '<html>\n' +
+    '<head>\n' +
+    '\t<title>Página</title>\n' +
+    '</head>\n' +
+    '<body>\n' +
+    '\t<style>\n' +
+    '\t\t.titulo {\n' +
+    '\t\t\tcolor: #ff0000;\n' +
+    '\t\t}\n' +
+    '\t</style>\n' +
+    '\t<div class=".titulo">Hola</div>\n' +
+    '</body>\n' +
+    '</html>\n' +
+    '\\end{sourcecode}',
+
+    'java': '\\begin{sourcecode}[\\label{codigo-java}]{java}{Ejemplo en Java.}\n' +
+    'import java.io.IOException; \n' +
+    'import javax.servlet.*;\n' +
+    '\n' +
+    '// Hola mundo\n' +
+    'public class Hola extends GenericServlet {\n' +
+    '\tpublic void service(ServletRequest request, ServletResponse response)\n' +
+    '\tthrows ServletException, IOException{\n' +
+    '\t\tresponse.setContentType("text/html");\n' +
+    '\t\tPrintWriter pw = response.getWriter();\n' +
+    '\t\tpw.println("Hola, mundo!");\n' +
+    '\t\tpw.close();\n' +
+    '\t}\n' +
+    '}\n' +
+    '\\end{sourcecode}',
+
+    'js': '\\begin{sourcecode}{js}{Ejemplo en Javascript.}\n' +
+    '$.urlParam = function (name) {\n' +
+    '\tlet results = new RegExp(\'[\\?&]\' + name + \'=([^&#]*)\').exec(window.location.href);\n' +
+    '\tif (results == null) {\n' +
+    '\t\treturn null;\n' +
+    '\t} else {\n' +
+    '\t\treturn decodeURI(results[1]) || 0;\n' +
+    '\t}\n' +
+    '};\n' +
+    '\\end{sourcecode}',
+
+    'json': '\\begin{sourcecode}{json}{Un arreglo en JSON.}\n' +
+    '{"menu": {\n' +
+    '\t"id": "file",\n' +
+    '\t"value": "File",\n' +
+    '\t"popup": {\n' +
+    '\t\t"menuitem": [\n' +
+    '\t\t{"value": "New", "onclick": "CreateNewDoc()"},\n' +
+    '\t\t{"value": "Open", "onclick": "OpenDoc()"},\n' +
+    '\t\t{"value": "Close", "onclick": "CloseDoc()"}\n' +
+    '\t\t]\n' +
+    '\t}\n' +
+    '}}\n' +
+    '\\end{sourcecode}',
+
+    'matlab': '\\begin{sourcecode}[\\label{codigo-matlab}]{matlab}{Ejemplo en Matlab.}\n' +
+    '% Se crea gráfico\n' +
+    'f = figure(1);\n' +
+    'hold on;\n' +
+    'movegui(f, \'center\');\n' +
+    'xlabel(\'td/Tn\'); ylabel(\'FAD=Umax/Uf0\');\n' +
+    'title(\'Espectro de pulso de desplazamiento\');\n' +
+    '\n' +
+    'for j = 1:length(BETA)\n' +
+    '\tfad = ones(1, NDATOS); % Arreglo para el FAD, uno para cada r\n' +
+    '\tfor i = 1:NDATOS\n' +
+    '\t\t[t, u_t, ~, ~] = main(BETA(j), r(i), M, K, F0, 0);\n' +
+    '\t\tfad(i) = max(abs(u_t)) / uf0;\n' +
+    '\tend\n' +
+    'mx = find(fad == max(fad(:)));\n' +
+    'fprintf(\'BETA=%.2f, MAX: FAD=%.3f, TD/TN=%.3f\\n\', BETA(j), fad(mx), tdtn(mx));\n' +
+    'plot(tdtn, fad, \'DisplayName\', strcat(\'\\beta=\', sprintf(\'%.2f\', BETA(j))));\n' +
+    'end\t\n' +
+    '\\end{sourcecode}',
+
+    'latex': '\\begin{sourcecode}{latex}{Imágenes múltiples.}\n' +
+    '\\begin{images}[\\label{imagenmultiple}]{Ejemplo de imagen múltiple.}\n' +
+    '\t\\addimage{ejemplos/test-image}{width=6.5cm}{Ciudad}\n' +
+    '\t\\addimage{ejemplos/test-image-wrap}{width=5cm}{Apolo}\n' +
+    '\t\\addimage{ejemplos/test-image}{width=12cm}{Ciudad más grande}\n' +
+    '\\end{images}\n' +
+    '\\end{sourcecode}',
+
+    'perl': '\\begin{sourcecode}[\\label{ejemplito-perl}]{perl}{Algo de perl.}\n' +
+    '#!/usr/bin/perl\n' +
+    'use strict;\n' +
+    'use warnings;\n' +
+    '\n' +
+    '# first, create your message\n' +
+    'use Email::MIME;\n' +
+    'my $message = Email::MIME->create(\n' +
+    '  header_str => [\n' +
+    '    From    => \'you@example.com\',\n' +
+    '    To      => \'friend@example.com\',\n' +
+    '    Subject => \'Happy birthday!\',\n' +
+    '  ],\n' +
+    '  attributes => {\n' +
+    '    encoding => \'quoted-printable\',\n' +
+    '    charset  => \'ISO-8859-1\',\n' +
+    '  },\n' +
+    '  body_str => "Happy birthday to you!\\n",\n' +
+    ');\n' +
+    '\n' +
+    '# send the message\n' +
+    'use Email::Sender::Simple qw(sendmail);\n' +
+    'sendmail($message);\n' +
+    '\\end{sourcecode}',
+
+    'php': '\\begin{sourcecode}{php}{Ejemplo php.}\n' +
+    '<?php\n' +
+    '$target_dir = "uploads/";\n' +
+    '$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);\n' +
+    '$uploadOk = 1;\n' +
+    '$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));\n' +
+    '// Check if image file is a actual image or fake image\n' +
+    'if(isset($_POST["submit"])) {\n' +
+    '    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);\n' +
+    '    if($check !== false) {\n' +
+    '        echo "File is an image - " . $check["mime"] . ".";\n' +
+    '        $uploadOk = 1;\n' +
+    '    } else {\n' +
+    '        echo "File is not an image.";\n' +
+    '        $uploadOk = 0;\n' +
+    '    }\n' +
+    '}\n' +
+    '?>\n' +
+    '\\end{sourcecode}',
+
+    'python': '\\begin{sourcecode}[\\label{codigo-python}]{python}{Ejemplo en Python.}\n' +
+    'import numpy as np\n' +
+    '\n' +
+    'def incmatrix(genl1, genl2):\n' +
+    'm = len(genl1)\n' +
+    'n = len(genl2)\n' +
+    'M = None # Comentario 1\n' +
+    'VT = np.zeros((n*m, 1), int) # Comentario 2\n' +
+    '\\end{sourcecode}',
+
+    'ruby': '\\begin{sourcecode}[]{ruby}{Ejemplo con ruby.}\n' +
+    'class DataFile < ActiveRecord::Base\n' +
+    '    attr_accessor :upload\n' +
+    '\n' +
+    '  def self.save_file(upload)   \n' +
+    '\n' +
+    '    file_name = upload[\'datafile\'].original_filename  if  (upload[\'datafile\'] !=\'\')    \n' +
+    '    file = upload[\'datafile\'].read    \n' +
+    '\n' +
+    '    file_type = file_name.split(\'.\').last\n' +
+    '    new_name_file = Time.now.to_i\n' +
+    '    name_folder = new_name_file\n' +
+    '    new_file_name_with_type = "#{new_name_file}." + file_type\n' +
+    '\n' +
+    '    image_root = "#{RAILS_CAR_IMAGES}"\n' +
+    '\n' +
+    '\n' +
+    '    Dir.mkdir(image_root + "#{name_folder}");\n' +
+    '      File.open(image_root + "#{name_folder}/" + new_file_name_with_type, "wb")  do |f|  \n' +
+    '        f.write(file) \n' +
+    '      end\n' +
+    '\n' +
+    '  end\n' +
+    'end\n' +
+    '\\end{sourcecode}',
+
+    'sql': '\\begin{sourcecode}{sql}{Merge two tables.}\n' +
+    'SELECT ChargeNum, CategoryID, SUM(Hours)\n' +
+    'FROM KnownHours\n' +
+    'GROUP BY ChargeNum, CategoryID\n' +
+    'UNION ALL\n' +
+    'SELECT ChargeNum, \'Unknown\' AS CategoryID, SUM(Hours)\n' +
+    'FROM UnknownHours\n' +
+    'GROUP BY ChargeNum\n' +
+    '\\end{sourcecode}',
+
+    'xml': '\\begin{sourcecode}{xml}{Ejemplos con xml.}\n' +
+    '<?xml version="1.0" encoding="utf-8"?>\n' +
+    '<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"\n' +
+    '   xmlns:xs="http://www.w3.org/2001/XMLSchema">\n' +
+    '  <xs:element name="points">\n' +
+    '    <xs:complexType>\n' +
+    '      <xs:sequence>\n' +
+    '        <xs:element maxOccurs="unbounded" name="point">\n' +
+    '          <xs:complexType>\n' +
+    '            <xs:attribute name="x" type="xs:unsignedShort" use="required" />\n' +
+    '            <xs:attribute name="y" type="xs:unsignedShort" use="required" />\n' +
+    '          </xs:complexType>\n' +
+    '        </xs:element>\n' +
+    '      </xs:sequence>\n' +
+    '    </xs:complexType>\n' +
+    '  </xs:element>\n' +
+    '</xs:schema>\n' +
+    '\\end{sourcecode}'
+};
+
 function afterDocumentReady() {
     $('.intro-line-abstract').each(
         function () {
@@ -234,6 +521,50 @@ function afterDocumentReady() {
 
     // Mostrar número de configuraciones totales
     $('#TemplateConfigCounter').html($('#templateConfigsList').find('.config-elem').length);
+
+    let $write_source_code = function ($c) {
+        let $container = $('#sourcecode-example');
+
+        // Se limpia el div
+        $container.empty();
+
+        /**
+         * Se formatea el texto
+         * @type{string}
+         */
+        let $a = cmd_sourcecode[$c];
+
+        // Se borran carácteres no válidos
+        $a = $a.replace(/&/g, '&amp;');
+        $a = $a.replace(/>/g, '&gt;');
+        $a = $a.replace(/</g, '&lt;');
+
+        // Se aplica estilo
+        $a = $a.replace('\\begin{sourcecode}[', '<span class="pl-c1">\\begin</span>{<span class="pl-e">sourcecode</span>}<b>[</b>');
+        $a = $a.replace('\\begin{sourcecode}{', '<span class="pl-c1">\\begin</span>{<span class="pl-e">sourcecode</span>}<b>{</b>');
+        $a = $a.replace('\\label{', '<span class="pl-c1">\\label</span>{');
+        $a = $a.replace('<b>[</b>]', '<b>[</b><b>]</b>');
+        $a = $a.replace('}]', '}<b>]</b>');
+        $a = $a.replace('<b>]</b>{', '<b>]</b><b>{</b>');
+        $a = $a.replace('}{', '<b>}</b><b>{</b>');
+        $a = $a.replace('{}', '<b>{</b><b>}</b><span class="pl-srccode">');
+        $a = $a.replace('.}', '.<b>}</b><span class="pl-srccode">');
+        $a = $a.replace('\\end{sourcecode}', '</span><span class="pl-c1">\\end</span>{<span class="pl-e">sourcecode</span>}');
+        $a = $a.replace('<b>{</b>}', '<b>{</b><b>}</b>');
+
+        // Se escribe el lenguaje
+        $container.append($a);
+    };
+    $write_source_code('c');
+
+    // Se recorre cada link de lenguaje y se añade evento
+    $('#sourcecode-container').find('.sourcecodel').each(function () {
+        let $a = $(this).html();
+        let $callback = function () {
+            $write_source_code($a);
+        };
+        $(this).on('click', $callback);
+    });
 }
 
 function afterJSONLoad() {
