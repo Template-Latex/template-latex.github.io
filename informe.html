@@ -503,15 +503,83 @@
                                 <li>
                                     <strong>\insertimageleftlineboxed</strong><b>[</b><em>Label</em>
                                     (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
-                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a
-                                    usar</em><b>}</b><b>{</b><em>Ancho
-                                    de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Ancho
+                                    de la línea</em><b>}</b><b>{</b><em>Número de líneas a
+                                    usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                                     Inserta una imagen alineada a la izquierda de un párrafo con un número de líneas
                                     fijo, encerrada en un recuadro.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                             <pre><span class="pl-e">\insertimageleftlineboxed</span><b>[</b><span
-                                                    class="pl-c1">\label</span>{img-leftbox-1}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b>0.25<b>}</b><b>{</b>15<b>}</b><b>{</b>0.7<b>}</b><b>{</b><b>}</b></pre>
+                                                    class="pl-c1">\label</span>{img-leftbox-1}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b>0.25<b>}</b><b>{</b>0.7<b>}</b><b>{</b>15<b>}</b><b>{</b><b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertimageleftp</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho del objeto de
+                                    imagen</em><b>}</b><b>{</b><em>Propiedades de la imagen</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la izquierda de un párrafo, imagen con parámetros.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span
+                                        class="pl-e">\insertimageleftp</span><b>[]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>5cm<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=5cm, <span
+                                        class="pl-v">height</span>=4cm<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertimageleftlinep</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho del objeto de
+                                    imagen</em><b>}</b><b>{</b><em>Propiedades de la imagen</em><b>}</b><b>{</b><em>Número
+                                    de líneas a usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la izquierda de un párrafo con un número de líneas
+                                    fijo,
+                                    imagen con parámetros.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\insertimageleftlinep</span><b>[</b><span
+                                        class="pl-c1">\label</span>{img2}<b>]{</b>ejemplos/test-image<b>}</b><b>{</b>6cm<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=5cm<b>}</b><b>{</b>10<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertimageleftboxedp</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho del objeto de
+                                    imagen</em><b>}</b><b>{</b><em>Propiedades de la imagen</em><b>}</b><b>{</b><em>Ancho
+                                    de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la izquierda de un párrafo, encerrada en un recuadro,
+                                    imagen con parámetros.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span
+                                        class="pl-e">\insertimageleftboxedp</span><b>{</b>ejemplos/test-image<b>}</b><b>{</b>6cm<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=3cm<b>}</b><b>{</b>2.0<b>}</b><b>{</b><b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertimageleftlineboxedp</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho del objeto de
+                                    imagen</em><b>}</b><b>{</b><em>Propiedades de la imagen</em><b>}</b><b>{</b><em>Ancho
+                                    de la línea</em><b>}</b><b>{</b><em>Número de líneas a
+                                    usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la izquierda de un párrafo con un número de líneas
+                                    fijo,
+                                    encerrada en un recuadro, imagen con parámetros.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                            <pre><span class="pl-e">\insertimageleftlineboxedp</span><b>[</b><span
+                                                    class="pl-c1">\label</span>{img-box-l}<b>]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>10cm<b>}</b><b>{</b><span
+                                                    class="pl-v">height</span>=8.4cm<b>}</b><b>{</b>0.6<b>}</b><b>{</b>22<b>}</b><b>{</b>Descripción<b>}</b></pre>
                                         </div>
                                     </blockquote>
                                 </li>
@@ -546,7 +614,7 @@
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertimagerightline</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-right-1}<b>]{</b>ejemplos/test-image<b>}</b><b>{</b>0.21<b>}</b><b>{</b>22<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        class="pl-c1">\label</span>{img-right-1}<b>]{</b>ejemplos/test-image<b>}</b><b>{</b>0.21<b>}</b><b>{</b>10<b>}</b><b>{</b>Descripción<b>}</b></pre>
                                         </div>
                                     </blockquote>
                                 </li>
@@ -568,14 +636,79 @@
                                 </li>
                                 <li>
                                     <strong>\insertimagerightlineboxed</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho
-                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Número de líneas a
-                                    usar</em><b>}</b><b>{</b><em>Ancho
-                                    de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    de la imagen (en textwidth)</em><b>}</b><b>{</b><em>Ancho de la
+                                    línea</em><b>}</b><b>{</b><em>Número de líneas a usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                                     Inserta una imagen alineada a la derecha de un párrafo con un número de líneas fijo,
                                     encerrada en un recuadro.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
-                                            <pre><span class="pl-e">\insertimagerightlineboxed</span><b>[]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>0.21<b>}</b><b>{</b>22<b>}</b><b>{</b>0.6<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                            <pre><span class="pl-e">\insertimagerightlineboxed</span><b>[]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>0.21<b>}</b><b>{</b>0.6<b>}</b><b>{</b>8<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertimagerightp</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho del objeto de
+                                    imagen</em><b>}</b><b>{</b><em>Propiedades de la imagen</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la derecha de un párrafo, imagen con parámetros.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span
+                                        class="pl-e">\insertimagerightp</span><b>[]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>5cm<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=5cm, <span
+                                        class="pl-v">height</span>=4cm<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertimagerightlinep</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho del objeto de
+                                    imagen</em><b>}</b><b>{</b><em>Propiedades de la imagen</em><b>}</b><b>{</b><em>Número
+                                    de líneas a usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la derecha de un párrafo con un número de líneas fijo,
+                                    imagen con parámetros.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\insertimagerightlinep</span><b>[</b><span
+                                        class="pl-c1">\label</span>{img1}<b>]{</b>ejemplos/test-image<b>}</b><b>{</b>6cm<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=5cm<b>}</b><b>{</b>10<b>}</b><b>{</b>Descripción<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                            <hr class="style1">
+                            <ul>
+                                <li>
+                                    <strong>\insertimagerightboxedp</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho del objeto de
+                                    imagen</em><b>}</b><b>{</b><em>Propiedades de la imagen</em><b>}</b><b>{</b><em>Ancho
+                                    de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la derecha de un párrafo, encerrada en un recuadro,
+                                    imagen con parámetros.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span
+                                        class="pl-e">\insertimagerightboxedp</span><b>{</b>ejemplos/test-image<b>}</b><b>{</b>6cm<b>}</b><b>{</b><span
+                                        class="pl-v">width</span>=3cm<b>}</b><b>{</b>1.0<b>}</b><b>{</b><b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertimagerightlineboxedp</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Ancho del objeto de
+                                    imagen</em><b>}</b><b>{</b><em>Propiedades de la imagen</em><b>}</b><b>{</b><em>Ancho
+                                    de la línea</em><b>}</b><b>{</b><em>Número de líneas a
+                                    usar</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen alineada a la derecha de un párrafo con un número de líneas fijo,
+                                    encerrada en un recuadro, imagen con parámetros.
+                                    <blockquote>
+                                        <div class="highlight highlight-text-tex">
+                                            <pre><span class="pl-e">\insertimagerightlineboxedp</span><b>[</b><span
+                                                    class="pl-c1">\label</span>{img-box-r}<b>]{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>10cm<b>}</b><b>{</b><span
+                                                    class="pl-v">height</span>=8.4cm<b>}</b><b>{</b>0.6<b>}</b><b>{</b>12<b>}</b><b>{</b>Descripción<b>}</b></pre>
                                         </div>
                                     </blockquote>
                                 </li>
