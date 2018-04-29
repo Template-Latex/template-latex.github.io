@@ -30,7 +30,7 @@ var stats_name = 'Informe';
 var update_download_counter = 'Template-Informe';
 
 // Declaración de funciones propias de cada template
-var bounceStyleReferences; // Efecto en entrada de configuración
+var bounceStyleReferences, bounceImageFolderConfig; // Efecto en entrada de configuración
 var downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 var hfGallery; // Muestra la galería de header-footer
 var line_abstract = [87, 228]; // Número de línea de abstract/resumen
@@ -328,6 +328,9 @@ var cmd_sourcecode = {
 };
 
 function afterDocumentReady() {
+    /**
+     * Escribe número de líneas introducción
+     */
     $('.intro-line-abstract').each(
         function () {
             $(this).attr('style', 'cursor:pointer;');
@@ -342,6 +345,10 @@ function afterDocumentReady() {
             $(this).html(String.format('(línea {0})', line_abstract[0]));
         }
     );
+
+    /**
+     * Escribe número de líneas tabla autor
+     */
     $('.intro-line-authortable').each(function () {
         $(this).attr('style', 'cursor:pointer;');
         $(this).tooltipster({
@@ -354,6 +361,10 @@ function afterDocumentReady() {
         });
         $(this).html(String.format('(línea {0})', line_authortable[0]));
     });
+
+    /**
+     * Escribe número de líneas configuración - imports
+     */
     $('.intro-line-configimport').each(
         function () {
             $(this).attr('style', 'cursor:pointer;');
@@ -368,6 +379,10 @@ function afterDocumentReady() {
             $(this).html(String.format('(línea {0})', line_configimport[0]));
         }
     );
+
+    /**
+     * Escribe número de líneas inicio del documento
+     */
     $('.intro-line-docinit').each(
         function () {
             $(this).attr('style', 'cursor:pointer;');
@@ -382,6 +397,10 @@ function afterDocumentReady() {
             $(this).html(String.format('(línea {0})', line_docinit[0]));
         }
     );
+
+    /**
+     * Escribe número de líneas información del documento
+     */
     $('.intro-line-infodocument').each(function () {
         $(this).attr('style', 'cursor:pointer;');
         $(this).tooltipster({
@@ -394,6 +413,10 @@ function afterDocumentReady() {
         });
         $(this).html(String.format('(línea {0})', line_infodocument[0]));
     });
+
+    /**
+     * Galería header-footer
+     */
     hfGallery = function () {
         let pswpElement = document.querySelectorAll('.pswp')[0];
         let items = [];
@@ -422,6 +445,10 @@ function afterDocumentReady() {
         gallery.init();
         $('a.back-to-top').fadeOut('slow');
     };
+
+    /**
+     * Galería portadas
+     */
     portraitGallery = function () {
         let pswpElement = document.querySelectorAll('.pswp')[0];
         let items = [];
@@ -450,6 +477,10 @@ function afterDocumentReady() {
         gallery.init();
         $('a.back-to-top').fadeOut('slow');
     };
+
+    /**
+     * Efecto bounce
+     */
     bounceStyleReferences = function () {
         $('#config-ref').ScrollTo();
         setTimeout(function () {
@@ -457,7 +488,19 @@ function afterDocumentReady() {
         }, 1000);
     };
 
-    // Se lee una acción desde url cuando json está cargado
+    /**
+     * Efecto bounce
+     */
+    bounceImageFolderConfig = function () {
+        $('#config-figure').ScrollTo();
+        setTimeout(function () {
+            doBounce($('#defaultimagefolder'), 3, '6px', 100);
+        }, 1000);
+    };
+
+    /**
+     * Se lee un acción desde url para cargar una galería
+     */
     let initAction = $.urlParam('action');
     if (initAction != null) {
         switch (initAction) {
@@ -470,7 +513,9 @@ function afterDocumentReady() {
         }
     }
 
-    // Función que muestra u oculta contenedor de códigos
+    /**
+     * Contenedor de código
+     */
     let triggerShowContainerChangeTrigger = function (trigger, container, onstring, offstring) {
         $(container).attr('show', 'off');
         if (onstring !== '') {
@@ -497,31 +542,48 @@ function afterDocumentReady() {
         triggerShowContainerChangeTrigger(trigger, container, '', '');
     };
 
-    // Mostrar funciones deprecadas
+    /**
+     * Mostrar funciones deprecadas
+     */
     triggerShowContainer('#showDeprecatedImageTrigger', '#showDeprecatedImageContainer');
 
-    // Código imageleft,right
+    /**
+     * Código imageleft,right
+     */
     triggerShowContainer('#showCodeImageLeft', '#codeImageLeftContainer');
     triggerShowContainer('#showCodeImageRight', '#codeImageRightContainer');
 
-    // Código gather,align
+    /**
+     * Código gather,align
+     */
     triggerShowContainer('#showCodeGatherEqn', '#codeGatherEqnContainer');
     triggerShowContainer('#showCodeAlignEqn', '#codeAlignEqnContainer');
 
-    // Mostrar imágenes de departamentos
+    /**
+     * Mostrar imágenes de departamentos
+     */
     triggerShowContainerChangeTrigger('#showImagesContainer', '#dptoImagesContainer', 'Mostrar imágenes disponibles', 'Ocultar imágenes disponibles');
 
-    // Mostrar librerías cargadas + total
+    /**
+     * Mostrar librerías cargadas + total
+     */
     $('#totalLibCount').html($('#usedLibs').find('li').length);
     triggerShowContainerChangeTrigger('#showLibsContainer', '#libsUsedContainer', 'Mostrar lista de librerías', 'Ocultar lista de librerías');
 
-    // Motrar funciones matemáticas + total
+    /**
+     * Motrar funciones matemáticas + total
+     */
     $('#mathFunCounter').html($('#mathFunContainer').find('li').length);
     triggerShowContainerChangeTrigger('#showMathFunContainer', '#mathFunContainer', 'Mostrar lista de funciones', 'Ocultar lista de funciones');
 
-    // Mostrar número de configuraciones totales
+    /**
+     * Mostrar número de configuraciones totales
+     */
     $('#TemplateConfigCounter').html($('#templateConfigsList').find('.config-elem').length);
 
+    /**
+     * Se recorre cada link de lenguaje y se añade evento
+     */
     let $write_source_code = function ($c) {
         let $container = $('#sourcecode-example');
 
@@ -556,14 +618,34 @@ function afterDocumentReady() {
         $container.append($a);
     };
     $write_source_code('c');
-
-    // Se recorre cada link de lenguaje y se añade evento
     $('#sourcecode-container').find('.sourcecodel').each(function () {
         let $a = $(this).html();
         let $callback = function () {
             $write_source_code($a);
         };
         $(this).on('click', $callback);
+    });
+
+    // noinspection HtmlUnknownTarget
+    /**
+     * Se añade tooltipster a imágenes ejemplos links de interés
+     */
+    $('#example-appdata').tooltipster({
+        animation: 'grow',
+        content: '<img src="res/images/ejemplo-appdata.png" alt="" width="250" height="137" />',
+        contentAsHTML: true,
+        maxWidth: 300,
+        side: 'bottom',
+        theme: 'tooltipster-borderless'
+    });
+    // noinspection HtmlUnknownTarget
+    $('#example-plugin-config').tooltipster({
+        animation: 'grow',
+        content: '<img src="res/images/ejemplo-config.png" alt="" width="400" height="261" />',
+        contentAsHTML: true,
+        maxWidth: 400,
+        side: 'bottom',
+        theme: 'tooltipster-borderless'
     });
 }
 

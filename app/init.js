@@ -54,10 +54,10 @@ $(function () {
         let $s = wallpaper_db.color + wallpaper_db.image + wallpaper_db.position;
     } catch ($e) {
         wallpaper_db = {
-            color: getRandomColor(),
+            color: getRandomDarkColor(),
             image: null
         };
-        console.warn('No se pudo cargar wallpaper.db, se creó un color aleatorio por defecto')
+        console.warn('No se pudo cargar wallpaper.db, se creó un color aleatorio por defecto');
     } finally {
     }
 
@@ -205,7 +205,7 @@ $(function () {
             for (let i = 0; i < whats_new_versions; i++) {
                 let version_created_at = json[i].created_at.substring(0, 10);
                 // noinspection HtmlUnknownTarget
-                let title_new_version = String.format('<b>Versión <a href="{2}"">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, version_created_at, json[i].html_url);
+                let title_new_version = String.format('<b>Versión <a href="{2}" class="javascripthref">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, version_created_at, json[i].html_url);
                 let content_version = md_converter.makeHtml(json[i].body);
                 new_version_entry += String.format(whats_new_html, title_new_version, content_version);
                 if (i < whats_new_versions - 1 && changelog_show_hr) {

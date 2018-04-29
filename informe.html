@@ -225,8 +225,9 @@
             Para crear un informe con este template debes primero <a href="#configurando-el-documento">editar la
             información del documento</a> (título, nombre de la universidad, etc) en la sección <em
                 class="section-template">INFORMACIÓN DEL DOCUMENTO</em> <span class="intro-line-infodocument"></span>
-            del archivo principal <i><a href="https://github.com/Template-Latex/Template-Informe/blob/master/main.tex"
-                                        title="informe.tex en versión compacta">main.tex</a></i>, luego
+            del archivo principal (<a href="https://github.com/Template-Latex/Template-Informe/blob/master/main.tex"
+                                      title="informe.tex en versión compacta" class="javascripthref" target="_blank">main.tex</a>),
+            luego
             <!--suppress HtmlUnknownTarget --> <a
                 href="tabla-integrantes">editar la tabla de datos</a> de la portada en la sección <em
                 class="section-template">INTEGRANTES, PROFESORES Y FECHAS</em> <span
@@ -291,7 +292,12 @@
             </li>
             <li>
                 <strong>\imagendeldepartamento</strong>: Imagen del departamento o universidad a usar en la portada,
-                estos se pueden encontrar en la carpeta <em>img/departamentos/</em>.
+                estos se pueden encontrar en la carpeta <a
+                    href="https://github.com/Template-Latex/Template-Informe/tree/master/img/departamentos"
+                    target="_blank" class="javascripthref">img/departamentos/</a>. Se añaden algunas imágenes por
+                defecto de la <a href="http://www.uchile.cl" target="_blank" class="javascripthref">Universidad de
+                Chile</a>, aunque se puede usar cualquier otra. La carpeta <em>img/departamentos/</em> puede borrarse
+                sin problema.<br/>
                 <a id="showImagesContainer" class="javascripthref"></a>.
                 <div class="codeFunContainer" id="dptoImagesContainer">
                     <ul>
@@ -373,13 +379,14 @@
         <p class="justified-text">
             Esta información de la portada se encuentra en la sección <em class="section-template">INTEGRANTES,
             PROFESORES Y FECHAS</em> <span class="intro-line-authortable"></span> del archivo principal (<a
-                href="https://github.com/Template-Latex/Template-Informe/blob/master/main.tex">main.tex</a>),
+                href="https://github.com/Template-Latex/Template-Informe/blob/master/main.tex" class="javascripthref"
+                target="_blank">main.tex</a>),
             en ella se encuentra una <b>tabla</b> la cual contiene la información de los integrantes, profesores,
             auxiliares, auxiliar de laboratorio, fecha de entrega y realización, etc.
         </p>
 
         <!-- Insertar párrafos, figuras, fórmulas, citas y otros -->
-        <h2><a id="funciones-template" class="anchor" href="#funciones-template" aria-hidden="true"><span
+        <h2><a id="funciones-template" class="anchor" aria-hidden="true"><span
                 aria-hidden="true" class="octicon octicon-link"></span></a>Funciones propias del template</h2>
         <p class="justified-text">
             También es posible añadir fórmulas, párrafos, figuras y otros elementos de forma sencilla, utilizando
@@ -390,7 +397,8 @@
                 <strong class="functtitlstyle">Añadir una imagen <a id="hlp-imagen"></a></strong>
                 <p class="justified-text">
                     Las funciones para añadir imágenes requieren del nombre de la imagen (el archivo almacenado en el
-                    directorio definido por la configuración <a href="#config-otros">\defaultimagefolder</a>, por
+                    directorio definido por la configuración <a onclick="bounceImageFolderConfig();"
+                                                                class="javascripthref">\defaultimagefolder</a>, por
                     defecto la carpeta <strong>img/</strong>), sus parámetros y la leyenda (la cual es opcional).
                 </p>
                 <p>
@@ -433,10 +441,11 @@
                         <blockquote>
                             <div class="highlight highlight-text-tex">
                                         <pre>
-<span class="pl-c1">\begin</span>{<span class="pl-e">images</span>}[\<span class="pl-c1">label</span>{imagenmultiple}]{Ejemplo de imagen múltiple.}
-    \<span class="pl-e">addimage</span>{ejemplos/test-image}{width=6.5cm}{Ciudad}
-    \<span class="pl-e">addimage</span>{ejemplos/test-image-wrap}{width=5cm}{Apolo}
-    \<span class="pl-e">addimage</span>{ejemplos/test-image}{width=12cm}{Ciudad más grande}
+<span class="pl-c1">\begin</span>{<span class="pl-e">images</span>}<b>[</b>\<span class="pl-c1">label</span>{imagenmultiple}<b>]{</b>Ejemplo de imagen múltiple.<b>}</b>
+    \<span class="pl-e">addimage</span><b>{</b>ejemplos/test-image<b>}{</b>width=6.5cm<b>}{</b>Ciudad<b>}</b>
+    \<span class="pl-e">addimage</span><b>{</b>ejemplos/test-image-wrap<b>}{</b>width=5cm<b>}{</b>Apolo<b>}</b>
+    \<span class="pl-e">addimageboxed</span><b>{</b>ejemplos/test-image-wrap<b>}{</b>width=5cm<b>}{</b>0.5<b>}{</b>Apolo recuadrado<b>}</b>
+    \<span class="pl-e">addimage</span><b>{</b>ejemplos/test-image<b>}{</b>width=12cm<b>}{</b>Ciudad más grande<b>}</b>
 \<span class="pl-c1">end</span>{<span class="pl-e">images</span>}
 </pre>
                             </div>
@@ -757,6 +766,21 @@
                 <hr class="style1">
                 <ul>
                     <li>
+                        <strong>\equationresize</strong><b>{</b><em>Factor (en textwidth)</em><b>}</b><b>{</b><em>Ecuación</em><b>}</b>:
+                        Ajusta una ecuación a un determinado porcentaje del ancho de la página, si el factor es
+                        <i>1.0</i> se usa el 100% la ecuación se redimensiona por completo al ancho de la página.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-c1">\insertequation</span>{ <span
+                                        class="pl-e">\equationresize</span><b>{</b>0.9<b>}{</b><span
+                                        class="pl-c1">\pow</span>{e}{<span class="pl-c1">\frac</span>{1}{x}+y}+5<b>}</b> }</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                </ul>
+                <hr class="style1">
+                <ul>
+                    <li>
                         <strong><a id="showCodeGatherEqn" class="javascripthref">\insertgather</a></strong>: Inserta una
                         fórmula con el
                         entorno <b>gather</b>, permite insertar nuevas líneas con <b>\\</b> y centra todas las fórmulas.
@@ -893,6 +917,17 @@
                         sub-subsección sin número y sin que aparezca en el índice.
                     </li>
                 </ul>
+                <hr class="style1">
+                <ul>
+                    <li>
+                        <strong>\sectionanumheadless</strong><b>{</b><em>Título</em><b>}</b>: Inserta una sección sin
+                        número y sin aparecer en el header del informe.
+                    </li>
+                    <li>
+                        <strong>\sectionanumheadlessnoi</strong><b>{</b><em>Título</em><b>}</b>: Inserta una sección sin
+                        número, sin aparecer en el header del informe y sin aparecer en el índice.
+                    </li>
+                </ul>
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Insertar párrafos<a id="hlp-parrafo"></a></strong>
@@ -956,13 +991,13 @@
                             class="sourcecodel">cpp</a>, <a
                             class="sourcecodel">csharp</a>, <a class="sourcecodel">docker</a>,
                         <a class="sourcecodel">html5</a>, <a
-                                class="sourcecodel">java</a>, <a class="sourcecodel">js</a>,
+                            class="sourcecodel">java</a>, <a class="sourcecodel">js</a>,
                         <a class="sourcecodel">json</a>, <a
-                                class="sourcecodel">matlab</a>, <a
-                                class="sourcecodel">latex</a>, <a class="sourcecodel">perl</a>,
+                            class="sourcecodel">matlab</a>, <a
+                            class="sourcecodel">latex</a>, <a class="sourcecodel">perl</a>,
                         <a class="sourcecodel">php</a>, <a
-                                class="sourcecodel">python</a>, <a
-                                class="sourcecodel">ruby</a>, <a class="sourcecodel">sql</a>,
+                            class="sourcecodel">python</a>, <a
+                            class="sourcecodel">ruby</a>, <a class="sourcecodel">sql</a>,
                         <a class="sourcecodel">xml</a>) con leyenda (opcional).
                         <blockquote>
                             <div class="highlight highlight-text-tex">
@@ -1074,24 +1109,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <a id="showMathFunContainer" class="javascripthref"></a>.
                 <div class="codeFunContainer" id="mathFunContainer">
                     <ul>
-                        <li>
-                            <strong>\abs</strong><b>{</b><em>a</em><b>}</b>: Valor absoluto de a.
-                            <blockquote>
-                                <div class="highlight highlight-text-tex">
-                                    <pre><span class="pl-e">\abs</span><b>{</b> x + y <b>}</b></pre>
-                                </div>
-                                <p><img src="res/images/abs.png" alt=""></p>
-                            </blockquote>
-                        </li>
-                        <li>
-                            <strong>\norm</strong><b>{</b><em>a</em><b>}</b>: Norma de a.
-                            <blockquote>
-                                <div class="highlight highlight-text-tex">
-                                    <pre>La norma de z es <span class="pl-e">\norm</span><b>{</b> z <b>}</b></pre>
-                                </div>
-                                <p><img src="res/images/norm2.png" alt=""></p>
-                            </blockquote>
-                        </li>
                         <li>
                             <strong>\pow</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Forma
                             simplificada de
@@ -1247,11 +1264,78 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 <p><img src="res/images/undersequal.png" style="width:220px" alt=""></p>
                             </blockquote>
                         </li>
+                        <li>
+                            <strong>\abs</strong><b>{</b><em>x</em><b>}</b>: Valor absoluto de x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre><span class="pl-e">\abs</span><b>{</b> x + y <b>}</b></pre>
+                                </div>
+                                <p><img src="res/images/abs.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\norm</strong><b>{</b><em>x</em><b>}</b>: Norma de x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>La norma de z es <span class="pl-e">\norm</span><b>{</b> z <b>}</b></pre>
+                                </div>
+                                <p><img src="res/images/norm2.png" alt=""></p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\aasin</strong><b>{</b><em>x</em><b>}</b>: Inserta inverso función seno de x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>y = <span class="pl-e">\assin</span><b>{</b> x <b>}</b></pre>
+                                </div>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\aacos</strong><b>{</b><em>x</em><b>}</b>:Inserta inverso función coseno de x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>y = <span class="pl-e">\aacos</span><b>{</b> x <b>}</b></pre>
+                                </div>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\aatan</strong><b>{</b><em>x</em><b>}</b>: Inserta inverso función tangente de x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>y = <span class="pl-e">\aatan</span><b>{</b> x <b>}</b></pre>
+                                </div>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\aacsc</strong><b>{</b><em>x</em><b>}</b>: Inserta inverso función cosecante de x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>y = <span class="pl-e">\aacsc</span><b>{</b> x <b>}</b></pre>
+                                </div>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\aasec</strong><b>{</b><em>x</em><b>}</b>: Inserta inverso función secante de x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>y = <span class="pl-e">\aasec</span><b>{</b> x <b>}</b></pre>
+                                </div>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <strong>\aacot</strong><b>{</b><em>x</em><b>}</b>: Inserta inverso función cotangente de x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>y = <span class="pl-e">\aacot</span><b>{</b> x <b>}</b></pre>
+                                </div>
+                            </blockquote>
+                        </li>
                     </ul>
                 </div>
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Otras funciones<a id="hlp-other"></a></strong>
+                <p></p>
                 <ul>
                     <li>
                         <strong>\beginplandscape, \endplandscape</strong>: Crea una página en modo horizontal.
@@ -1269,15 +1353,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </blockquote>
                     </li>
                     <li>
-                        <strong>\equationresize</strong><b>{</b><em>Factor (en textwidth)</em><b>}</b><b>{</b><em>Ecuación</em><b>}</b>:
-                        Ajusta una ecuación utilizando la función <b>\resizebox</b>.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-c1">\insertequation</span>{<span
-                                        class="pl-e">\equationresize</span><b>{</b>0.9<b>}{</b><span
-                                        class="pl-c1">\pow</span>{e}{<span class="pl-c1">\frac</span>{1}{x}+y}+5<b>}</b> }</pre>
-                            </div>
-                        </blockquote>
+                        <strong>\coreimporttikz</strong>: Importa la librería tikz. Sólo usar antes del inicio del
+                        documento.
                     </li>
                     <li>
                         <strong>\insertemail</strong><b>{</b><em>Correo</em><b>}</b>: Inserta un link de un correo con
@@ -1305,16 +1382,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\quotes</strong><b>{</b><em>Texto</em><b>}</b>: Inserta un texto entre comillas.
                     </li>
                     <li>
-                        <strong>\sectionanumheadless</strong><b>{</b><em>Título</em><b>}</b>: Inserta una sección sin
-                        número y sin aparecer en el header del informe.
-                    </li>
-                    <li>
-                        <strong>\sectionanumheadlessnoi</strong><b>{</b><em>Título</em><b>}</b>: Inserta una sección sin
-                        número, sin aparecer en el header del informe y sin aparecer en el índice.
-                    </li>
-                    <li>
                         <strong>\setcaptionmargincm</strong><b>{</b><em>Margen</em><b>}</b>: Modifica el margen
                         izquierdo/derecho de los <i>caption</i> medido en centímetros.
+                    </li>
+                    <li>
+                        <strong>\setpagemargincm</strong><b>{</b><em>Margen izq</em><b>}</b><b>{</b><em>Margen
+                        der</em><b>}</b><b>{</b><em>Margen sup</em><b>}</b><b>{</b><em>Margen inf</em><b>}</b>: Modifica
+                        los márgenes de la página. Valores en centímetros.
                     </li>
                     <li>
                         <a id="showDeprecatedImageTrigger" class="javascripthref"><b>Inserción múltiple de imágenes</b></a>
@@ -1603,7 +1677,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     </li>
                     <li class="config-elem">
                         <strong>\showsectioncaption</strong>: Muestra el número de la sección/subsección/subsubsección
-                        en el número de figura/tabla/código, valores permitidos: <b>none</b>, <b>sec</b>
+                        en el número de figura/tabla/código. Valores esperados: <b>none</b>, <b>sec</b>
                         <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>.
                     </li>
                     <li class="config-elem">
@@ -1624,7 +1698,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     </li>
                     <li class="config-elem">
                         <strong>\indextitlemargin</strong>: Margen superior en los títulos de los índices (insertado con
-                        <i>\insertindextitle</i>), en <i>pt</i>.
+                        <span class="pl-c1">\insertindextitle</span>), en <i>pt</i>.
                     </li>
                     <li class="config-elem">
                         <strong>\showdotpagenumindex</strong>: Muestra puntos entre objeto y número de página.
@@ -1709,8 +1783,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configuración de las figuras<a id="config-figure"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\defaultimagefolder</strong>: Directorio de las imágenes, sólo utilizado por las
-                        funciones que insertan figuras.
+                        <div id="defaultimagefolder">
+                            <strong>\defaultimagefolder</strong>: Directorio de las imágenes, sólo utilizado por las
+                            funciones que insertan figuras.
+                        </div>
                     </li>
                     <li class="config-elem">
                         <strong>\marginbottomimages</strong>: Margen inferior de las figuras, en centímetros.
@@ -1761,8 +1837,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="config-elem">
                         <div id="stylecitereferences">
                             <strong>\stylecitereferences</strong>
-                            <a id="ref-style-config"></a>: Estilo citas y referencias, puede ser <i>bibtex</i>, <i>apacite</i>
-                            o <i>natbib</i>.
+                            <a id="ref-style-config"></a>: Estilo citas y referencias. Valores esperados: <b>bibtex</b>,
+                            <b>apacite</b> ó <b>natbib</b>.
                         </div>
                     </li>
                     <li class="config-elem">
@@ -1816,8 +1892,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\addindextobookmarks</strong>: Añade el índice a los marcadores del pdf compilado.
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgbookmarksopenlevel</strong>: Nivel de los marcadores a mostrar (1: secciones, 2:
-                        muestra todos los subtítulos, etc.).
+                        <strong>\cfgbookmarksopenlevel</strong>: Nivel de los marcadores a mostrar. Valores esperados:
+                        <b>1</b>: secciones, <b>2</b>: muestra todos los subtítulos, etc.
                     </li>
                     <li class="config-elem">
                         <strong>\cfgpdfbookmarkopen</strong>: Expande los marcadores hasta el nivel configurado.
@@ -1840,11 +1916,11 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     </li>
                     <li class="config-elem">
                         <strong>\cfgpdfpagemode</strong>: Modo de página en el lector. Valores esperados:
-                        OneColumn,SinglePage.
+                        <b>OneColumn</b> ó <b>SinglePage</b>.
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfpageview</strong>: Establece cómo se ve la página en el lector pdf, valores
-                        esperados: Fit,FitH,FitV,FitR,FitB,FitBH,FitBV.
+                        <strong>\cfgpdfpageview</strong>: Establece cómo se ve la página en el lector pdf. Valores
+                        esperados: : <b>Fit</b>, <b>FitH</b>, <b>FitV</b>, <b>FitR</b>, <b>FitB</b>, <b>FitBH</b> ó <b>FitBV</b>.
                     </li>
                     <li class="config-elem">
                         <strong>\cfgpdfsecnumbookmarks</strong>: Muestra el número de la sección en los marcadores del
@@ -1913,26 +1989,20 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <span aria-hidden="true" class="octicon octicon-link"></span></a>Links de interés</h2>
         <ul class="linkssection">
             <li>
-                Template Auxiliares en <img src="res/other/latex.png" alt="LaTeX"
-                                            class="lateximg">: <a
-                    href="http://latex.ppizarror.com/Template-Auxiliares/">http://latex.ppizarror.com/Template-Auxiliares/</a>
+                Manual para usar Latex: <a href="https://es.sharelatex.com/learn" target="_blank">https://es.sharelatex.com/learn</a>
             </li>
             <li>
-                Manual para usar Latex: <a href="https://es.sharelatex.com/learn">https://es.sharelatex.com/learn</a>
-            </li>
-            <li>
-                Plugin para expotar tablas desde Excel: <a href="https://www.ctan.org/pkg/excel2latex">https://www.ctan.org/pkg/excel2latex</a>
+                Plugin para expotar tablas desde Excel: <a href="https://www.ctan.org/pkg/excel2latex" target="_blank">https://www.ctan.org/pkg/excel2latex</a>
                 <ol>
                     <li class="help-links">Descargar el <a
                             href="http://mirrors.ctan.org/support/excel2latex.zip">plugin</a> y extraer el zip
                     </li>
                     <li class="help-links">
-                        Pegar los contenidos del zip en <i>C:\Users\UserName\AppData\Roaming\Microsoft\AddIns</i>
+                        Pegar los contenidos del zip en <i>C:\Users\%USERNAME\AppData\Roaming\Microsoft\AddIns</i>
                         <ul>
-                            <li>Si no encuentras la carpeta Appdata: Pulsa <i class="fa fa-windows"
-                                                                              aria-hidden="true"></i>+<b>R</b> &rarr;
-                                Escribe <i>appdata</i> &rarr; Aceptar (<a
-                                        href="res/images/ejemplo-appdata.PNG">ejemplo</a>)
+                            <li>Si no encuentras la carpeta Appdata: Pulsa <i class="fab fa-windows"></i>+<b>R</b>
+                                &rarr; Escribe <i>appdata</i> &rarr; Aceptar (<a href="res/images/ejemplo-appdata.png"
+                                                                                 target="_blank" id="example-appdata">ejemplo</a>)
                             </li>
                         </ul>
                     </li>
@@ -1940,47 +2010,49 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="help-links">Abrir el plugin ubicado en <i>Complementos</i> &rarr; <i>Convert Table to
                         Latex</i></li>
                     <li class="help-links">Configurar el plugin a gusto (<a
-                            href="res/images/ejemplo-config.PNG">ejemplo</a>)
+                            href="res/images/ejemplo-config.png" target="_blank" id="example-plugin-config">ejemplo</a>)
                     </li>
                 </ol>
             </li>
             <li>
-                Editor Latex online (Sharelatex): <a href="https://www.sharelatex.com?r=298b935f&rm=d&rs=b">https://www.sharelatex.com/</a>
+                Editor Latex online (Sharelatex): <a href="https://www.sharelatex.com?r=298b935f&rm=d&rs=b"
+                                                     target="_blank">https://www.sharelatex.com/</a>
                 <ul>
-                    <li class="help-links">En ShareLatex: <a href="https://www.sharelatex.com/project">Menú
+                    <li class="help-links">En ShareLatex: <a href="https://www.sharelatex.com/project" target="_blank">Menú
                         principal</a> &rarr; <i>New project</i> &rarr; <i>Upload project</i> &rarr; Seleccionar el .zip
                         descargado del template
                     </li>
                 </ul>
             </li>
             <li>
-                Editor Latex online (Overleaf): <a href="https://www.overleaf.com/signup?ref=4d3bd09b7e78">https://www.overleaf.com/</a>
+                Editor Latex online (Overleaf): <a href="https://www.overleaf.com/signup?ref=4d3bd09b7e78"
+                                                   target="_blank">https://www.overleaf.com/</a>
                 <ul>
-                    <li class="help-links">En Overleaf: <a href="https://www.overleaf.com/dash">My projects</a> &rarr;
+                    <li class="help-links">En Overleaf: <a href="https://www.overleaf.com/dash" target="_blank">My
+                        projects</a> &rarr;
                         <i>Upload zip</i> &rarr; Seleccionar el .zip descargado del template
                     </li>
                 </ul>
             </li>
             <li>
-                Editor de Latex para Windows <span class="fa fa-windows" aria-hidden="true"></span>: <a
-                    href="http://www.texstudio.org/">http://www.texstudio.org/</a>
+                Editor de Latex para Windows <i class="fab fa-windows"></i> / Linux <i class="fab fa-linux"></i>: <a
+                    href="http://www.texstudio.org/" target="_blank">http://www.texstudio.org/</a>
                 <ul>
+                    <li class="help-links">Autocompletar todas las funciones del template: <a
+                            href="https://github.com/Template-Latex/cwl-docs" target="_blank">descargar</a></li>
+                    <li class="help-links">Diccionario en español (Chile): <a href="res/es_CL.oxt"
+                                                                              download>descargar</a></li>
                     <li class="help-links">Si ocurren errores como <i>Package not found</i> intentar compilar muchas
                         veces
                     </li>
-                    <li class="help-links">Diccionario en español (Chile): <a href="res/es_CL.oxt"
-                                                                              download>descargar</a>
-                    </li>
-                    <li class="help-links">Autocompletar todas las funciones del template: <a
-                            href="https://github.com/Template-Latex/cwl-docs">descargar</a></li>
                 </ul>
         </ul>
 
         <!-- Librerías utilizadas -->
         <h2><a id="librerias-utilizadas" class="anchor" href="#librerias-utilizadas" aria-hidden="true"><span
                 aria-hidden="true" class="octicon octicon-link"></span></a>Librerías utilizadas</h2>
-        En total el template hace uso de <span id="totalLibCount"></span> librerías de Latex, cada una es importada en
-        el archivo <em>lib/env/imports.tex</em>. <br/>
+        En total el template hace uso de <span id="totalLibCount"></span> librerías, cada una es importada en
+        el archivo <em>lib/env/imports.tex</em>.<br/>
         <a id="showLibsContainer" class="javascripthref"></a>.
         <div class="codeFunContainer" id="libsUsedContainer">
             <ul class="linkssection" id="usedLibs">

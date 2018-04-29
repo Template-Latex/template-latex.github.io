@@ -82,6 +82,7 @@ function shadeColor2(color, percent) {
     return '#' + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
 }
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Retorna un color random
  * @return {string}
@@ -91,6 +92,19 @@ function getRandomColor() {
     let color = '#';
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+/**
+ * Retorna un color oscuro random
+ * @return {string}
+ */
+function getRandomDarkColor() {
+    let letters = '012345678';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * letters.length)];
     }
     return color;
 }
