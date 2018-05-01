@@ -273,7 +273,7 @@ $(function () {
         is_movile_browser = true;
         console.log('Utilizando versión móvil');
     } else {
-        console.log('Utilizando versión web');
+        console.log('Utilizando versión escritorio');
     }
 
     /**
