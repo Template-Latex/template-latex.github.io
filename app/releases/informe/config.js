@@ -261,6 +261,51 @@ var cmd_sourcecode = {
     '?>\n' +
     '\\end{sourcecode}',
 
+    'plaintext': '\\begin{sourcecode}{plaintext}{Resultado del análiis con TEFAME.}\n' +
+    'TEFAME - Toolbox para Elemento Finitos y Analisis\n' +
+    'Matricial de Estructuras en MATLAB\n' +
+    '\n' +
+    'Propiedades de entrada modelo:\n' +
+    '\n' +
+    'Nodos: \n' +
+    'Numero de nodos: 4 \n' +
+    'Coordenadas nodo N1: 0 0\n' +
+    'Coordenadas nodo N2: 800 0\n' +
+    'Coordenadas nodo N3: 400 400\n' +
+    'Coordenadas nodo N4: 400 800\n' +
+    '\n' +
+    'Elementos: \n' +
+    'Numero de elementos: 6 \n' +
+    'Elemento E1:\tLargo: 800         Area: 20        Eo: 200000    \n' +
+    'Elemento E2:\tLargo: 565.6854    Area: 20        Eo: 200000    \n' +
+    'Elemento E3:\tLargo: 565.6854    Area: 20        Eo: 200000    \n' +
+    'Elemento E4:\tLargo: 894.4272    Area: 20        Eo: 200000    \n' +
+    'Elemento E5:\tLargo: 400         Area: 20        Eo: 200000    \n' +
+    'Elemento E6:\tLargo: 894.4272    Area: 20        Eo: 200000    \n' +
+    '\n' +
+    'Resultados del analisis:\n' +
+    '\n' +
+    'Desplazamientos nodos: \n' +
+    'Desplazamientos nodo N1: 0 0\n' +
+    'Desplazamientos nodo N2: 0.016 0\n' +
+    'Desplazamientos nodo N3: 0.008 -0.013\n' +
+    'Desplazamientos nodo N4: 0.053 -0.016\n' +
+    '\n' +
+    'Reacciones: \n' +
+    'Reacciones nodo N1: -80 -20\n' +
+    'Reacciones nodo N2: 0 140\n' +
+    'Reacciones nodo N3: 0 0\n' +
+    'Reacciones nodo N4: 0 0\n' +
+    '\n' +
+    'Esfuerzos Elementos: \n' +
+    'Elemento E1: -78.4273       TRACCION\n' +
+    'Elemento E2: 23.836         COMPRESION\n' +
+    'Elemento E3: 23.836         COMPRESION\n' +
+    'Elemento E4: -41.2047       TRACCION\n' +
+    'Elemento E5: 33.7093        COMPRESION\n' +
+    'Elemento E6: 137.6807       COMPRESION\n' +
+    '\\end{sourcecode}',
+
     'python': '\\begin{sourcecode}[\\label{codigo-python}]{python}{Ejemplo en Python.}\n' +
     'import numpy as np\n' +
     '\n' +

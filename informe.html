@@ -928,6 +928,14 @@
                         número, sin aparecer en el header del informe y sin aparecer en el índice.
                     </li>
                 </ul>
+                <hr class="style1">
+                <ul>
+                    <li>
+                        <strong>\changeheadertitle</strong><b>{</b><em>Título</em><b>}</b>: Cambia el título que aparece
+                        en el header (encabezado de página). Este título será sobrescrito cuando se inserte una nueva
+                        sección.
+                    </li>
+                </ul>
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Insertar párrafos<a id="hlp-parrafo"></a></strong>
@@ -980,8 +988,8 @@
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
                     lenguajes de programación C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>), DOCKER (<b>docker</b>),
                     HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Matlab (<b>matlab</b>),
-                    LaTeX (<b>latex</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Python (<b>python</b>), Ruby
-                    (<b>ruby</b>), SQL (<b>sql</b>) y XML (<b>xml</b>):
+                    LaTeX (<b>latex</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Texto plano (<b>plaintext</b>),
+                    Python (<b>python</b>), Ruby (<b>ruby</b>), SQL (<b>sql</b>) y XML (<b>xml</b>):
                 </p>
                 <ul>
                     <li id="sourcecode-container">
@@ -996,6 +1004,7 @@
                             class="sourcecodel">matlab</a>, <a
                             class="sourcecodel">latex</a>, <a class="sourcecodel">perl</a>,
                         <a class="sourcecodel">php</a>, <a
+                            class="sourcecodel">plaintext</a>, <a
                             class="sourcecodel">python</a>, <a
                             class="sourcecodel">ruby</a>, <a class="sourcecodel">sql</a>,
                         <a class="sourcecodel">xml</a>) con leyenda (opcional).
@@ -1005,6 +1014,60 @@
                                 </pre>
                             </div>
                         </blockquote>
+                    </li>
+                </ul>
+                <hr class="style1">
+                <ul>
+                    <li>
+                        <strong>\begin{sourcecodep}</strong><b>[</b><em>Label</em>
+                        (opcional)<b>]</b><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b>
+                        <b>{</b><em>Leyenda</em><b>}</b>: Inserta un código fuente de un lenguaje definido con
+                        parámetros (ver más adelante) y una leyenda (opcional).
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre style="background-color: rgb(238, 230, 234); border: 1px solid rgb(117, 51, 90);"><span
+                                        class="pl-c1">\begin</span>{<span
+                                        class="pl-e">sourcecode</span>}<b>[</b><b>]</b><b>{</b>c<b>}{</b><span
+                                        class="pl-c1">firstnumber</span>=100<b>}{</b>Codigo en c.<b>}</b><span
+                                        class="pl-srccode">
+#include &lt;stdio.h&gt;
+int main(){
+	int i, j, rows;
+
+	printf("Enter number of rows: ");
+	scanf("%d",&amp;rows);
+
+	for(i=1; i&lt;=rows; ++i){
+		for(j=1; j&lt;=i; ++j){
+			printf("* ");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+</span><span class="pl-c1">\end</span>{<span class="pl-e">sourcecode</span>}</pre>
+                            </div>
+                        </blockquote>
+                        <p>
+                            Algunos parámetros (deben separarse por una coma):
+                        </p>
+                        <ul>
+                            <li>
+                                <b>basicstyle={\size}</b>: Cambia el tamaño de fuente del código fuente.
+                                Ejemplo: <i>{\fontsize{7}{10}\selectfont\ttfamily}</i>.
+                            </li>
+                            <li>
+                                <b>firstnumber=n</b>: Inicia el número de líneas desde <b>n</b>.
+                            </li>
+                            <li>
+                                <b>tabsize=n</b>: Cada tabulación considera <b>n</b> espacios en blanco.
+                            </li>
+                        </ul>
+                        <p>
+                            Para más información consulte la <a href="res/listings.pdf"
+                                                                class="javascripthref">documentación</a> de
+                            la librería listings.
+                        </p>
                     </li>
                 </ul>
             </li>
