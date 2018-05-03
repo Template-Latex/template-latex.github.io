@@ -1178,3 +1178,7 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
     margin-top: 0;
     padding: 10px 10px 3px;
 }
+
+.sourcecodeTriggerEnabled {
+    font-weight: bold;
+}

@@ -33,6 +33,7 @@ var update_download_counter = 'Template-Informe';
 var bounceStyleReferences, bounceImageFolderConfig; // Efecto en entrada de configuración
 var downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 var hfGallery; // Muestra la galería de header-footer
+var lastClickedSourcecode = ''; // Último botón de código fuente clickeado
 var line_abstract = [87, 228]; // Número de línea de abstract/resumen
 var line_authortable = [33, 34]; // Número de línea tabla de integrantes
 var line_configimport = [63, 64]; // Número línea importación de configuraciones
@@ -661,15 +662,33 @@ function afterDocumentReady() {
 
         // Se escribe el lenguaje
         $container.append($a);
+
+        /**
+         * Se añade bold a lenguaje seleccionado
+         */
+        if (lastClickedSourcecode !== '') {
+            $(lastClickedSourcecode).removeClass('sourcecodeTriggerEnabled');
+        }
+        lastClickedSourcecode = '#sourcecode-' + $c;
+        $(lastClickedSourcecode).addClass('sourcecodeTriggerEnabled');
     };
-    $write_source_code('c');
+
+    /**
+     * Se añade evento a cada elemento de código fuente
+     */
     $('#sourcecode-container').find('.sourcecodel').each(function () {
         let $a = $(this).html();
+        $(this).attr('id', 'sourcecode-' + $(this).html()); // Añade código fuente como atributo
         let $callback = function () {
             $write_source_code($a);
         };
         $(this).on('click', $callback);
     });
+
+    /**
+     * Se escribe un lenguaje random al inicio
+     */
+    $write_source_code(pickRandomProperty(cmd_sourcecode));
 
     // noinspection HtmlUnknownTarget
     /**

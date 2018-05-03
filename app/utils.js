@@ -255,3 +255,17 @@ function writeBadges() {
     $badgediv.append('<a href="http://latex.ppizarror.com/professional-cv.html" id="aimg"><img src="res/badges/professionalcv.svg" /></a>');
     $badgediv.fadeIn('slow');
 }
+
+/**
+ * Elige una propiedad random desde un objeto
+ * @param obj
+ * @return {*}
+ */
+function pickRandomProperty(obj) {
+    let result;
+    let count = 0;
+    for (let prop in obj)
+        if (Math.random() < 1 / ++count)
+            result = prop;
+    return result;
+}
