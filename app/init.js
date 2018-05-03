@@ -236,7 +236,7 @@ $(function () {
      */
     let $bgheaderc = $('#background-page-header-colored');
     $bgheaderc.css('background-color', wallpaper_db.color);
-    $bgheaderc.fadeIn('slow');
+    $bgheaderc.show();
 
     /**
      * Se cambia el estilo de la página
@@ -282,12 +282,34 @@ $(function () {
     if (wallpaper_db.image !== null) {
         console.log(String.format('Cargando fondo {0} - ID {1} (wallpaper.db)', wallpaper_db.image, wallpaper_db.index));
         if (!is_movile_browser && enableparallax) {
+            // noinspection JSUnresolvedFunction
             $('#background-page-header').parallax({
-                imageSrc: wallpaper_db.image,
-                positionX: 'center',
-                positionY: 'bottom',
+                src: wallpaper_db.image,
+                posX: 'center',
+                posY: 'bottom',
                 speed: 0.20,
-                zIndex: 1
+                zIndex: 1,
+                afterRefresh: function () {
+
+                    // Se oculta el colored
+                    $('#background-page-header-colored').fadeOut(800);
+
+                    // Se muestra el fondo
+                    let $parallax = $('.parallax-mirror');
+                    $parallax.fadeIn();
+
+                    // Aplica blur
+                    wallpaper_db_random_blur('.parallax-mirror', blurprobability, blurlimits);
+                    $parallax.css('box-shadow', '0px 1px 20px 20px #4e4e4e');
+
+                    // Ajuste ancho
+                    let $f = function () {
+                        $('.parallax-mirror').css('width', $(window).outerWidth() + 'px');
+                    };
+                    $(window).on('resize.parallax', $f);
+                    $f();
+
+                }
             });
         } else {
             try {
@@ -306,28 +328,27 @@ $(function () {
                     $bgheader.css('background-size', 'cover');
                     $bgheader.css('max-width', '100%');
                     $bgheader.css('width', $(window).width() + 20);
-                    fadein_css('#background-page-header', '0.5s');
+
+                    // Se oculta el colored
+                    $bgheaderc.fadeOut();
+
+                    // Se muestra el fondo
+                    $bgheader.fadeIn();
 
                     // Se añade un evento al cambiar tamaño página web
-                    $(window).resize(function () {
+                    $(window).on('resize.backgroundPageHeader', function () {
                         $('#background-page-header').css('width', $(window).width() + 20);
                     });
+
+                    // Aplica blur
+                    wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);
                 };
                 back_img.src = wallpaper_db.image;
-            } catch (e) {
+            } catch ($e) {
                 console.log('Error crítico al obtener la imagen del wallpaper (wallpaper.db)');
             } finally {
             }
         }
-
-        /**
-         * Se agrega efecto de blur aleatorio
-         */
-        let $bg = '#background-page-header';
-        if (!is_movile_browser && enableparallax) {
-            $bg = '.parallax-mirror';
-        }
-        wallpaper_db_random_blur($bg, blurprobability, blurlimits);
     }
 
     if (changepacecolor) { // Se cambia el color de pace
