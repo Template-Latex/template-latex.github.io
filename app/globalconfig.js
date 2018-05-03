@@ -24,7 +24,7 @@
 /**
  * Configuraciones de toda la suite Template-Latex
  */
-var blurlimits = [3, 10];
+var blurlimits = [3, 5];
 var blurprobability = 50;
 var changelog_max = 5;
 var changelog_show_hr = false;

@@ -307,7 +307,6 @@ $(function () {
                     $bgheader.css('max-width', '100%');
                     $bgheader.css('width', $(window).width() + 20);
                     fadein_css('#background-page-header', '0.5s');
-                    wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);
 
                     // Se añade un evento al cambiar tamaño página web
                     $(window).resize(function () {
@@ -320,6 +319,15 @@ $(function () {
             } finally {
             }
         }
+
+        /**
+         * Se agrega efecto de blur aleatorio
+         */
+        let $bg = '#background-page-header';
+        if (!is_movile_browser && enableparallax) {
+            $bg = '.parallax-mirror';
+        }
+        wallpaper_db_random_blur($bg, blurprobability, blurlimits);
     }
 
     if (changepacecolor) { // Se cambia el color de pace
