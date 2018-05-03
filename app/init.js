@@ -298,9 +298,11 @@ $(function () {
                     let $parallax = $('.parallax-mirror');
                     $parallax.fadeIn();
 
+                    // Crea un id
+                    $parallax.attr('id', 'parallaxBgHeader');
+
                     // Aplica blur
-                    wallpaper_db_random_blur('.parallax-mirror', blurprobability, blurlimits);
-                    $parallax.css('box-shadow', '0px 1px 20px 20px #4e4e4e');
+                    wallpaper_db_random_blur('parallaxBgHeader', blurprobability, blurlimits);
 
                     // Ajuste ancho
                     let $f = function () {
@@ -308,7 +310,6 @@ $(function () {
                     };
                     $(window).on('resize.parallax', $f);
                     $f();
-
                 }
             });
         } else {
