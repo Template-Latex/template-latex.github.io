@@ -23,9 +23,10 @@
 
 // noinspection JSUnusedGlobalSymbols
 /**
- * Genera un número aleatorio entero entre min y max.
- * @param {number} min                  Mínimo
- * @param {number} max                  Máximo
+ * Genera un número aleatorio entero entre min y max
+ * @function
+ * @param {number} min - Mínimo
+ * @param {number} max - Máximo
  * @return {*}
  */
 function getRandomInt(min, max) {
@@ -33,9 +34,9 @@ function getRandomInt(min, max) {
 }
 
 /**
- * Selecciona el texto de un div.
- * @param {string}elem                  Elemento
- * @return
+ * Selecciona el texto de un elemento
+ * @function
+ * @param {string} elem - Elemento
  */
 function selectAllText(elem) {
     $(elem).on('mouseup', function () {
@@ -68,8 +69,9 @@ function selectAllText(elem) {
 
 /**
  * Función para transformar colores, oscurece y aclarece
- * @param {string} color                Color a generar
- * @param {number} percent              Porcentaje de oscurecimiento
+ * @function
+ * @param {string} color - Color a generar
+ * @param {number} percent - Porcentaje de oscurecimiento
  * @return {string}
  */
 function shadeColor2(color, percent) {
@@ -85,6 +87,7 @@ function shadeColor2(color, percent) {
 // noinspection JSUnusedGlobalSymbols
 /**
  * Retorna un color random
+ * @function
  * @return {string}
  */
 function getRandomColor() {
@@ -98,6 +101,7 @@ function getRandomColor() {
 
 /**
  * Retorna un color oscuro random
+ * @function
  * @return {string}
  */
 function getRandomDarkColor() {
@@ -125,7 +129,8 @@ if (!String.format) {
 
 /**
  * Desactiva cualquier elemento por id
- * @param {string} idelem               ID del elemento
+ * @function
+ * @param {string} idelem - ID del elemento
  * @return
  */
 function hide_element_id(idelem) {
@@ -139,8 +144,9 @@ function hide_element_id(idelem) {
 
 /**
  * Animación fadein css
- * @param {string} idelem               ID del elemento
- * @param {string} t                    Segundos
+ * @function
+ * @param {string} idelem - ID del elemento
+ * @param {string} t - Segundos
  * @return
  */
 function fadein_css(idelem, t) {
@@ -153,7 +159,8 @@ function fadein_css(idelem, t) {
 
 /**
  * Actualiza el contador de descargas
- * @param {number} total_downloads      Descargas totales
+ * @function
+ * @param {number} total_downloads - Descargas totales
  */
 function update_download_banner(total_downloads) {
     $('#total-download-counter-1').html(total_downloads);
@@ -162,10 +169,11 @@ function update_download_banner(total_downloads) {
 
 /**
  * Efecto de rebote de un elemento
- * @param {string} element              Elemento
- * @param {number} times                Número de veces
- * @param {string} distance             Distancia
- * @param {number} speed                VElocidad
+ * @function
+ * @param {string} element - Elemento
+ * @param {number} times - Número de veces
+ * @param {string} distance - Distancia
+ * @param {number} speed - Velocidad
  */
 function doBounce(element, times, distance, speed) {
     for (let i = 0; i < times; i++) {
@@ -181,8 +189,8 @@ function doBounce(element, times, distance, speed) {
 
 /**
  * Lanza un error, oculta contenido y muestra un div con información
- * @param {object} error                Texto del error
- * @return
+ * @function
+ * @param {object} error - Texto del error
  */
 function throwError(error) {
     // noinspection JSUnresolvedVariable
@@ -208,8 +216,8 @@ function throwError(error) {
 
 /**
  * Imprime una excepción en consola
- * @param {object} $e               Excepción
- * @return
+ * @function
+ * @param {object} $e - Excepción
  */
 function throwException($e) {
     console.error($e.message);
@@ -217,6 +225,7 @@ function throwException($e) {
 
 /**
  * Obtiene parámetros de la url
+ * @function
  * @param name
  * @return {*}
  */
@@ -230,8 +239,8 @@ $.urlParam = function (name) {
 };
 
 /**
- * Escribe los badges de la suite Template-Latex.
- * @return
+ * Escribe los badges de la suite Template-Latex
+ * @function
  */
 function writeBadges() {
     let $badgediv = $('#badgeslistdiv');
@@ -258,6 +267,7 @@ function writeBadges() {
 
 /**
  * Elige una propiedad random desde un objeto
+ * @function
  * @param obj
  * @return {*}
  */
