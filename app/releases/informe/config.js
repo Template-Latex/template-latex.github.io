@@ -262,7 +262,7 @@ var cmd_sourcecode = {
     '?>\n' +
     '\\end{sourcecode}',
 
-    'plaintext': '\\begin{sourcecode}{plaintext}{Resultado del análiis con TEFAME.}\n' +
+    'plaintext': '\\begin{sourcecode}{plaintext}{Resultado del análisis con TEFAME.}\n' +
     'TEFAME - Toolbox para Elemento Finitos y Analisis\n' +
     'Matricial de Estructuras en MATLAB\n' +
     '\n' +
