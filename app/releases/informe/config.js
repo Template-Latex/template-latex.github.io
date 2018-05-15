@@ -40,6 +40,8 @@ var line_configimport = [63, 64]; // Número línea importación de configuracio
 var line_docinit = [98, 239]; // Número de línea inicio del documento
 var line_infodocument = [18, 19]; // Número de línea información del documento
 var portraitGallery; // Muestra la galería de portadas
+var totalHfStyles = 10; // Estilos totales en tipo de header-footer
+var totalPortraitStyles = 16; // Estilos totales de portada
 
 // Lista de códigos fuente
 // noinspection CssUnusedSymbol
@@ -466,7 +468,7 @@ function afterDocumentReady() {
     hfGallery = function () {
         let pswpElement = document.querySelectorAll('.pswp')[0];
         let items = [];
-        for (let i = 1; i <= 8; i++) {
+        for (let i = 1; i <= totalHfStyles; i++) {
             items.push({
                 src: String.format('res/images/hf{0}.png', i),
                 w: 544,
@@ -491,6 +493,9 @@ function afterDocumentReady() {
         gallery.init();
         $('a.back-to-top').fadeOut('slow');
     };
+    let $hftrigger = $('#hfTrigger');
+    $hftrigger.on('click', hfGallery);
+    $hftrigger.html(String.format('{0} estilos distintos', totalHfStyles));
 
     /**
      * Galería portadas
@@ -498,7 +503,7 @@ function afterDocumentReady() {
     portraitGallery = function () {
         let pswpElement = document.querySelectorAll('.pswp')[0];
         let items = [];
-        for (let i = 1; i <= 16; i++) {
+        for (let i = 1; i <= totalPortraitStyles; i++) {
             items.push({
                 src: String.format('res/images/portada{0}.png', i),
                 w: 544,
@@ -523,6 +528,9 @@ function afterDocumentReady() {
         gallery.init();
         $('a.back-to-top').fadeOut('slow');
     };
+    let $portraittrigger = $('#portraitTrigger');
+    $portraittrigger.on('click', portraitGallery);
+    $portraittrigger.html(String.format('{0} estilos distintos', totalPortraitStyles));
 
     /**
      * Efecto bounce
