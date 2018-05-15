@@ -27,7 +27,7 @@
  * @function
  * @param {number} min - Mínimo
  * @param {number} max - Máximo
- * @return {*}
+ * @return {number}
  */
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -131,7 +131,6 @@ if (!String.format) {
  * Desactiva cualquier elemento por id
  * @function
  * @param {string} idelem - ID del elemento
- * @return
  */
 function hide_element_id(idelem) {
     try {

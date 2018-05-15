@@ -1182,3 +1182,7 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 .sourcecodeTriggerEnabled {
     font-weight: bold;
 }
+
+#chatgitter {
+    display: none;
+}

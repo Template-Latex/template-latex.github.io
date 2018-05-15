@@ -27,8 +27,8 @@
  * @type {{version: string, date: string, author: {name: string, tag: string, email: string, website: string, github: string}, productname: string, productnamefooter: string, productsource: string}}
  */
 var aboutinfo = {
-    "version": "3.65",
-    "date": "06/05/2018",
+    "version": "3.67",
+    "date": "15/05/2018",
     "author": {
         "name": "Pablo Pizarro R.",
         "tag": "@ppizarror",
@@ -42,8 +42,8 @@ var aboutinfo = {
 };
 
 /**
- * Imprime un acerca-de en consola.
- * @return
+ * Imprime un acerca-de en consola
+ * @function
  */
 function printAboutInfo() {
     console.log(String.format('{0} v{1}', aboutinfo.productname, aboutinfo.version));
