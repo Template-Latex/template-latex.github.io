@@ -694,9 +694,14 @@ function afterDocumentReady() {
     });
 
     /**
-     * Se escribe un lenguaje random al inicio
+     * Se escribe un lenguaje random al inicio si es que no se pasó uno por $GET
      */
-    $write_source_code(pickRandomProperty(cmd_sourcecode));
+    let $get_source = $.urlParam('srctype');
+    if ($get_source !== null && Object.keys(cmd_sourcecode).indexOf($get_source) !== -1) {
+        $write_source_code($get_source);
+    } else {
+        $write_source_code(pickRandomProperty(cmd_sourcecode));
+    }
 
     // noinspection HtmlUnknownTarget
     /**
