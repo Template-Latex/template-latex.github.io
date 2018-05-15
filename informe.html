@@ -1431,9 +1431,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     </li>
                     <li>
                         <strong>\insertindextitle</strong><b>{</b><em>Título</em><b>}</b><b>{</b><em>Margen vertical <i>(opcional)</i>
-                        []</em><b>}</b>: Inserta un título sólo en el índice. <b>Nota:</b> para utilizar esta función se
+                    </em><b>}</b>: Inserta un título sólo en el índice. <b>Nota:</b> para utilizar esta función se
                         debe haber
                         creado una sección antes.
+                    </li>
+                    <li>
+                        <strong>\itemizebf, \enumeratebf</strong>: Crea un itemize/enumerate en <b>negrita</b>.
                     </li>
                     <li>
                         <strong>\itemresize</strong><b>{</b><em>Factor (en
@@ -1767,14 +1770,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         el índice.
                     </li>
                     <li class="config-elem">
+                        <strong>\charnumpageindex</strong>: Carácter entre título y número de página en el índice.
+                    </li>
+                    <li class="config-elem">
+                        <strong>\equalmarginnumobject</strong>: Iguala el margen de los números de objetos, directamente
+                        relacionado con la configuración <i>\showsectioncaption</i>.
+                    </li>
+                    <li class="config-elem">
                         <strong>\indexdepth</strong>: Profundidad del índice.
                     </li>
                     <li class="config-elem">
                         <strong>\indextitlemargin</strong>: Margen superior en los títulos de los índices (insertado con
                         <span class="pl-c1">\insertindextitle</span>), en <i>pt</i>.
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showdotpagenumindex</strong>: Muestra puntos entre objeto y número de página.
                     </li>
                     <li class="config-elem">
                         <strong>\showindex</strong>: Muestra la página de índice.
@@ -2382,7 +2389,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
         </h2>
         <p><a href="http://ppizarror.com/">Pablo Pizarro R.</a> | 2016 - 2018</p>
         <p>
-            Si tienes alguna sugerencia envíame un correo a: <a href="mailto:pablo.pizarro@ing.uchile.cl">pablo.pizarro@ing.uchile.cl</a>.
+            Si tienes alguna sugerencia envíame un correo a: <a href="mailto:pablo.pizarro@ing.uchile.cl">pablo.pizarro@ing.uchile.cl</a>
         </p>
         <br/>
 
