@@ -30,7 +30,7 @@ var stats_name = 'Informe';
 var update_download_counter = 'Template-Informe';
 
 // Declaración de funciones propias de cada template
-var bounceStyleReferences, bounceImageFolderConfig; // Efecto en entrada de configuración
+var bounceConfig; // Efecto en entrada de configuración
 var downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 var hfGallery; // Muestra la galería de header-footer
 var lastClickedSourcecode = ''; // Último botón de código fuente clickeado
@@ -535,20 +535,10 @@ function afterDocumentReady() {
     /**
      * Efecto bounce
      */
-    bounceStyleReferences = function () {
-        $('#config-ref').ScrollTo();
+    bounceConfig = function (a, b) {
+        $(a).ScrollTo();
         setTimeout(function () {
-            doBounce($('#stylecitereferences'), 3, '6px', 100);
-        }, 1000);
-    };
-
-    /**
-     * Efecto bounce
-     */
-    bounceImageFolderConfig = function () {
-        $('#config-figure').ScrollTo();
-        setTimeout(function () {
-            doBounce($('#defaultimagefolder'), 3, '6px', 100);
+            doBounce($(b), 3, '6px', 100);
         }, 1000);
     };
 

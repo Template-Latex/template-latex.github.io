@@ -397,9 +397,10 @@
                 <strong class="functtitlstyle">Añadir una imagen <a id="hlp-imagen"></a></strong>
                 <p class="justified-text">
                     Las funciones para añadir imágenes requieren del nombre de la imagen (el archivo almacenado en el
-                    directorio definido por la configuración <a onclick="bounceImageFolderConfig();"
-                                                                class="javascripthref">\defaultimagefolder</a>, por
-                    defecto la carpeta <strong>img/</strong>), sus parámetros y la leyenda (la cual es opcional).
+                    directorio definido por la configuración <a
+                        onclick="bounceConfig('#config-figure','#defaultimagefolder');"
+                        class="javascripthref">\defaultimagefolder</a>, por defecto la carpeta <strong>img/</strong>),
+                    sus parámetros y la leyenda (la cual es opcional).
                 </p>
                 <p>
                     Los parámetros pueden ser <strong>scale=0.5</strong>, <strong>width=5cm</strong>,
@@ -1100,7 +1101,7 @@ int main(){
                 <p class="justified-text">
                     Para añadir referencias el template ofrece 3 alternativas distintas: el uso de <b>bibtex</b>, <b>apacite</b>
                     y <b>natbib</b>. Para usar cada uno de ellos es necesario cambiar la configuración <a
-                        onclick="bounceStyleReferences();" class="javascripthref">\stylecitereferences</a>.
+                        onclick="bounceConfig('#config-ref','#stylecitereferences');" class="javascripthref">\stylecitereferences</a>.
                 </p>
                 <ul>
                     <li><b>Bibtex</b>: Es el sistema más sencillo, para insertar referencias existe el ambiente <b>references</b>:
@@ -1122,8 +1123,9 @@ int main(){
                         </blockquote>
                         <b>-</b> Para citar se usa <span class="pl-c1">\cite</span>{ref1}
                         <br/>
-                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
-                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={bibtex}
+                        <b>-</b> Establecer configuración <a
+                                onclick="bounceConfig('#config-ref','#stylecitereferences');"
+                                class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={bibtex}
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1143,8 +1145,9 @@ Para usar citas extensas se utiliza <span class="pl-c1">\fullcite</span>{braas}
 <span class="pl-e">\bibliography</span>{references}</pre>
                             </div>
                         </blockquote>
-                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
-                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={apacite}
+                        <b>-</b> Establecer configuración <a
+                                onclick="bounceConfig('#config-ref','#stylecitereferences');"
+                                class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={apacite}
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1160,8 +1163,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
 <span class="pl-e">\bibliography</span>{references}</pre>
                             </div>
                         </blockquote>
-                        <b>-</b> Establecer configuración <a onclick="bounceStyleReferences();"
-                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={natbib}
+                        <b>-</b> Establecer configuración <a
+                                onclick="bounceConfig('#config-ref','#stylecitereferences');"
+                                class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>={natbib}
                     </li>
                 </ul>
             </li>
@@ -1418,10 +1422,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                             </div>
                         </blockquote>
                     </li>
-                    <!-- <li>
+                    <li>
                         <strong>\coreimporttikz</strong>: Importa la librería tikz. Sólo usar antes del inicio del
-                        documento.
-                    </li> -->
+                        documento. <b>DEPRECADO</b>: Utilizar configuración <a
+                            onclick="bounceConfig('#config-other','#import-tikz-config');"
+                            class="javascripthref">\importikz</a>.
+                    </li>
                     <li>
                         <strong>\insertemail</strong><b>{</b><em>Correo</em><b>}</b>: Inserta un link de un correo con
                         formato y dirección web válida.
@@ -1432,8 +1438,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li>
                         <strong>\insertindextitle</strong><b>{</b><em>Título</em><b>}</b><b>{</b><em>Margen vertical <i>(opcional)</i>
                     </em><b>}</b>: Inserta un título sólo en el índice. <b>Nota:</b> para utilizar esta función se
-                        debe haber
-                        creado una sección antes.
+                        debe haber creado una sección antes.
                     </li>
                     <li>
                         <strong>\itemizebf, \enumeratebf</strong>: Crea un itemize/enumerate en <b>negrita</b>.
@@ -1641,7 +1646,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         helvet).
                     </li>
                     <li class="config-elem">
-                        <strong>\importtikz</strong>: Importa la librería tikz al compilar el documento.
+                        <div id="import-tikz-config">
+                            <strong>\importtikz</strong>: Importa la librería tikz y los submódulos requeridos para añadir compatibilidad con el template.
+                        </div>
                     </li>
                     <li class="config-elem">
                         <strong>\numberedequation</strong>: Muestra el número en las ecuaciones insertadas con <span
