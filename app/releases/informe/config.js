@@ -34,14 +34,22 @@ var bounceConfig; // Efecto en entrada de configuración
 var downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 var hfGallery; // Muestra la galería de header-footer
 var lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-var line_abstract = [87, 228]; // Número de línea de abstract/resumen
+var line_abstract = [87, 252]; // Número de línea de abstract/resumen
 var line_authortable = [33, 34]; // Número de línea tabla de integrantes
 var line_configimport = [63, 64]; // Número línea importación de configuraciones
-var line_docinit = [98, 239]; // Número de línea inicio del documento
+var line_docinit = [98, 263]; // Número de línea inicio del documento
 var line_infodocument = [18, 19]; // Número de línea información del documento
 var portraitGallery; // Muestra la galería de portadas
 var totalHfStyles = 10; // Estilos totales en tipo de header-footer
-var totalPortraitStyles = 16; // Estilos totales de portada
+var totalPortraitStyles = 18; // Estilos totales de portada
+
+// Requerimientos adicionales de ciertas portadas
+var portraitRequiresAdditional = {
+    15: '\\headerimageA, \\headerimagescaleA',
+    16: '\\portraitbackgroundimageB, \\portraitbackgroundcolorB',
+    17: '\\portraitimageC, \\portraitimageboxedC, \\portraitimageboxedwidthC, \\portraitimagewidthC',
+    18: '\\portraitimageD, \\portraitimageboxedD, \\portraitimageboxedwidthD, \\portraitimagewidthD'
+};
 
 // Lista de códigos fuente
 // noinspection CssUnusedSymbol
@@ -309,6 +317,19 @@ var cmd_sourcecode = {
     'Elemento E6: 137.6807       COMPRESION\n' +
     '\\end{sourcecode}',
 
+    'pseudocode': '\\begin{sourcecode}{pseudocode}{Algoritmo.}\n' +
+    'input: int N, int D\n' +
+    'output: int\n' +
+    'begin\n' +
+    '\tres $\\gets$ 0\n' +
+    '\twhile N $\\geq$ D \n' +
+    '\t\tN $\\gets$ N - D\n' +
+    '\t\tres $\\gets$ res + 1      \n' +
+    '\tend\n' +
+    '\treturn res\n' +
+    'end    \n' +
+    '\\end{sourcecode}',
+
     'python': '\\begin{sourcecode}[\\label{codigo-python}]{python}{Ejemplo en Python.}\n' +
     'import numpy as np\n' +
     '\n' +
@@ -503,12 +524,16 @@ function afterDocumentReady() {
     portraitGallery = function () {
         let pswpElement = document.querySelectorAll('.pswp')[0];
         let items = [];
+        let req_add = ''; // Requerimientos adicionales
         for (let i = 1; i <= totalPortraitStyles; i++) {
+            if (portraitRequiresAdditional[i] !== undefined) {
+                req_add = '. Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>.';
+            }
             items.push({
                 src: String.format('res/images/portada{0}.png', i),
                 w: 544,
                 h: 704,
-                title: String.format('<b>Portada estilo {0}</b> (<div class="codegallerytitle">\\portraitstyle=\{style{0}\}</div>)', i)
+                title: String.format('<b>Portada estilo {0}</b> (<div class="codegallerytitle">\\portraitstyle=\{style{0}\}</div>){1}', i, req_add)
             })
         }
         let options = {
@@ -714,6 +739,29 @@ function afterDocumentReady() {
         side: 'bottom',
         theme: 'tooltipster-borderless'
     });
+
+    /**
+     * Se añade tooltip con imagen en tipo de fuente
+     */
+    $('.fontsrc').each(function () {
+        let href = $(this).attr('href');
+        if (href.indexOf('http://www.tug.dk') !== -1) {
+            let img = href.split('/')[4];
+            img = href + img + '-1.png';
+
+            // noinspection HtmlUnknownTarget
+            $(this).tooltipster({
+                animation: 'grow',
+                content: String.format('<img src="{0}" alt="" width="500" height="125" class="imgfontexample" />', img),
+                contentAsHTML: true,
+                delay: 1000,
+                interactive: true,
+                maxWidth: 500,
+                side: 'bottom',
+                theme: 'tooltipster-borderless'
+            });
+        }
+    })
 }
 
 function afterJSONLoad() {

@@ -991,7 +991,8 @@
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
                     lenguajes de programación C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>), DOCKER (<b>docker</b>),
                     HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Matlab (<b>matlab</b>),
-                    LaTeX (<b>latex</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Texto plano (<b>plaintext</b>),
+                    LaTeX (<b>latex</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Pseudocódigo (<b>pseudocode</b>), Texto
+                    plano (<b>plaintext</b>),
                     Python (<b>python</b>), Ruby (<b>ruby</b>), SQL (<b>sql</b>) y XML (<b>xml</b>):
                 </p>
                 <ul>
@@ -1007,7 +1008,8 @@
                             class="sourcecodel">matlab</a>, <a
                             class="sourcecodel">latex</a>, <a class="sourcecodel">perl</a>,
                         <a class="sourcecodel">php</a>, <a
-                            class="sourcecodel">plaintext</a>, <a
+                            class="sourcecodel">plaintext</a>, <a class="sourcecodel">php</a>, <a
+                            class="sourcecodel">pseudocode</a>, <a
                             class="sourcecodel">python</a>, <a
                             class="sourcecodel">ruby</a>, <a class="sourcecodel">sql</a>,
                         <a class="sourcecodel">xml</a>) con leyenda (opcional).
@@ -1624,48 +1626,239 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configuraciones generales<a id="config-other"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\addemptypagetwosides</strong>: Añade páginas en blanco después de la portada, el
-                        resumen y el índice de manera inteligente al imprimir en doble cara. El índice siempre se
-                        imprimirá en una plana impar, así como el contenido
-                        del informe.
-                    </li>
-                    <li class="config-elem">
-                        <strong>\columnsepwidth</strong>: Separación de las columnas, en <i>em</i>.
-                    </li>
-                    <li class="config-elem">
-                        <strong>\defaultinterline</strong>: Tamaño del interlineado.
-                    </li>
-                    <li class="config-elem">
-                        <strong>\defaultnewlinesize</strong>: Tamaño del salto de línea, en <i>pt</i>.
-                    </li>
-                    <li class="config-elem">
-                        <strong>\documentlang</strong>: Define el idioma del documento.
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontdocument</strong>: Define la fuente de todo el texto del documento (lmodern, arial,
-                        helvet).
-                    </li>
-                    <li class="config-elem">
-                        <div id="import-tikz-config">
-                            <strong>\importtikz</strong>: Importa la librería tikz y los submódulos requeridos para añadir compatibilidad con el template.
+                        <strong>\addemptypagetwosides</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Añade páginas en blanco después de la portada, el
+                                resumen y el índice de manera inteligente al imprimir en doble cara. El índice siempre
+                                se imprimirá en una plana impar, así como el contenido del informe.
+                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\numberedequation</strong>: Muestra el número en las ecuaciones insertadas con <span
-                            class="pl-c1">\insert...</span>.
+                        <strong>\columnsepwidth</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación de las columnas, en <i>em</i>.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\pointdecimal</strong>: Los números decimales se muestran con punto en vez de con coma.
+                        <strong>\defaultinterline</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño del interlineado.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\romanpageuppercase</strong>: Páginas en número romano (abstract-índice) en mayúsculas.
+                        <strong>\defaultnewlinesize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño del salto de línea, en <i>pt</i>.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showlinenumbers</strong><a id="showlinenumbers"></a>: Muestra los números de línea del
-                        documento.
+                        <strong>\documentlang</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Define el idioma del documento.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\tablepadding</strong>: Ancho de celda de las tablas.
+                        <strong>\fontdocument</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner" style="text-align: left !important;">Define la fuente de todo el texto del documento. <br>
+                                <b>Fuentes soportadas</b>:
+                                <a href="http://www.tug.dk/FontCatalogue/computermodernsansserif/"
+                                   class="fontsrc javascripthref">lmodern</a>,
+                                <a href="https://ctan.org/pkg/helvet" class="javascripthref">arial</a>,
+                                <a href="https://ctan.org/pkg/helvet" class="fontsrc javascripthref">helvet</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/accanthis/" class="fontsrc javascripthref">accantis</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/alegreya/" class="fontsrc javascripthref">alegreya</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/alegreyasans/" class="fontsrc javascripthref">alegreyasans</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/algolrevived/" class="fontsrc javascripthref">algolrevived</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/antiqua/" class="fontsrc javascripthref">antiqua</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/antykwapoltawskiego/"
+                                   class="fontsrc javascripthref">antpolt</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/antykwapoltawskiegolight/"
+                                   class="fontsrc javascripthref">antpoltlight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/antykwatorunska/"
+                                   class="fontsrc javascripthref">anttor</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/antykwatorunskacondensed/"
+                                   class="fontsrc javascripthref">anttorcondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/antykwatorunskalight/"
+                                   class="fontsrc javascripthref">anttorlight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/antykwatorunskalightcondensed/"
+                                   class="fontsrc javascripthref">anttorlightcondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/arev/" class="fontsrc javascripthref">arev</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/arimo/"
+                                   class="fontsrc javascripthref">arimo</a>,
+                                <a href="" class="fontsrc javascripthref">aurical</a>,
+                                <a href="" class="fontsrc javascripthref">avant</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/baskervaldadf/" class="fontsrc javascripthref">baskervald</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/berasans/" class="fontsrc javascripthref">berasans</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/bera/"
+                                   class="fontsrc javascripthref">beraserif</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/biolinum/" class="fontsrc javascripthref">biolinum</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/cabin/"
+                                   class="fontsrc javascripthref">cabin</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/cabincondensed/"
+                                   class="fontsrc javascripthref">cabincondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/cantarell/" class="fontsrc javascripthref">cantarell</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/carlito/" class="fontsrc javascripthref">carlito</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/chivolight/" class="fontsrc javascripthref">chivolight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/chivoregular/" class="fontsrc javascripthref">chivoregular</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/clearsans/" class="fontsrc javascripthref">clearsans</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/comfortaa/" class="fontsrc javascripthref">comfortaa</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/comicneue/" class="fontsrc javascripthref">comicneue</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/comicneueangular/"
+                                   class="fontsrc javascripthref">comicneueangular</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/crimson/" class="fontsrc javascripthref">crimson</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/cyklop/"
+                                   class="fontsrc javascripthref">cyklop</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/dejavusans/" class="fontsrc javascripthref">dejavusans</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/dejavusanscondensed/"
+                                   class="fontsrc javascripthref">dejavusanscondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/droidsans/" class="fontsrc javascripthref">droidsans</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/firasans/" class="fontsrc javascripthref">firasans</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/iwona/"
+                                   class="fontsrc javascripthref">iwona</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/iwonacondensed/"
+                                   class="fontsrc javascripthref">iwonacondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/iwonalight/" class="fontsrc javascripthref">iwonalight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/iwonalightcondensed/"
+                                   class="fontsrc javascripthref">iwonalightcondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/kurier/"
+                                   class="fontsrc javascripthref">kurier</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/kuriercondensed/"
+                                   class="fontsrc javascripthref">kuriercondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/kurierlight/" class="fontsrc javascripthref">kurierlight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/kurierlightcondensed/"
+                                   class="fontsrc javascripthref">kurierlightcondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/lato/" class="fontsrc javascripthref">lato</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/librisadf/" class="fontsrc javascripthref">libris</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/lxfonts/" class="fontsrc javascripthref">lxfonts</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/merriweathersans/"
+                                   class="fontsrc javascripthref">merriweather</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/merriweathersanslight/"
+                                   class="fontsrc javascripthref">merriweatherlight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/mintspirit/" class="fontsrc javascripthref">mintspirit</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/montserratalternatesextralight/"
+                                   class="fontsrc javascripthref">montserratalternatesextralight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/montserratalternatesregular/"
+                                   class="fontsrc javascripthref">montserratalternatesregular</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/montserratalternateslight/"
+                                   class="fontsrc javascripthref">montserratalternatesthin</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/montserratextralight/"
+                                   class="fontsrc javascripthref">montserratextralight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/montserratlight/"
+                                   class="fontsrc javascripthref">montserratlight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/montserratregular/"
+                                   class="fontsrc javascripthref">montserratregular</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/montserratthin/"
+                                   class="fontsrc javascripthref">montserratthin</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/nimbus15sans/" class="fontsrc javascripthref">nimbussans</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/notosans/"
+                                   class="fontsrc javascripthref">noto</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/opensans/" class="fontsrc javascripthref">opensans</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/overlock/" class="fontsrc javascripthref">overlock</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/paratypesans/" class="fontsrc javascripthref">paratype</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/paratypesanscaption/"
+                                   class="fontsrc javascripthref">paratypesanscaption</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/paratypesansnarrow/"
+                                   class="fontsrc javascripthref">paratypesansnarrow</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/quattrocentosans/"
+                                   class="fontsrc javascripthref">quattrocento</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/raleway/" class="fontsrc javascripthref">raleway</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/roboto/"
+                                   class="fontsrc javascripthref">roboto</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/robotolight/" class="fontsrc javascripthref">robotolight</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/robotolightcondensed/"
+                                   class="fontsrc javascripthref">robotolightcondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/robotothin/" class="fontsrc javascripthref">robotothin</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/rosario/" class="fontsrc javascripthref">rosario</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/sourcesanspro/" class="fontsrc javascripthref">sourcesanspro</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/urwa030/"
+                                   class="fontsrc javascripthref">uarial</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/urwgrotesk/"
+                                   class="fontsrc javascripthref">ugq</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/universalisadfstandard/"
+                                   class="fontsrc javascripthref">universalis</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/universalisadfcondensed/"
+                                   class="fontsrc javascripthref">universaliscondensed</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/venturisadfsans/"
+                                   class="fontsrc javascripthref">venturis</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\fonttypewriter</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner" style="text-align: left !important;">Define la fuente del texto tipo máquina \texttt. <br>
+                                <b>Fuentes soportadas</b>:
+                                <a href="http://www.tug.dk/FontCatalogue/anonymouspro/" class="fontsrc javascripthref">anonymouspro</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/ascii/"
+                                   class="fontsrc javascripthref">ascii</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/beramono/" class="fontsrc javascripthref">beramono</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/cmpica/"
+                                   class="fontsrc javascripthref">cmpica</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/courier/" class="fontsrc javascripthref">courier</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/dejavumono/" class="fontsrc javascripthref">dejavusansmono</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/firamono/" class="fontsrc javascripthref">firamono</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/gomono/"
+                                   class="fontsrc javascripthref">gomono</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/inconsolata/" class="fontsrc javascripthref">inconsolata</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/computermodernteletypel/"
+                                   class="fontsrc javascripthref">lcmtt</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/newtxtt/" class="fontsrc javascripthref">newtxtt</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/nimbus15mono/" class="fontsrc javascripthref">nimbusmono</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/nimbus15mononarrow/"
+                                   class="fontsrc javascripthref">nimbusmononarrow</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/texgyrecursor/" class="fontsrc javascripthref">texgyrecursor</a>,
+                                <a href="http://www.tug.dk/FontCatalogue/latinmodernmono/"
+                                   class="fontsrc javascripthref">tmodern</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <div id="import-tikz-config">
+                            <strong>\importtikz</strong>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Importa la librería tikz y los submódulos requeridos para
+                                    añadir
+                                    compatibilidad con el template.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\numberedequation</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número en las ecuaciones insertadas con <span
+                                    class="pl-c1">\insert...</span>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\pointdecimal</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Los números decimales se muestran con punto en vez de con
+                                coma.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\romanpageuppercase</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Páginas en número romano (abstract-índice) en mayúsculas.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showlinenumbers</strong><a id="showlinenumbers"></a>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra los números de línea del documento.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablepadding</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Ancho de celda de las tablas.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1674,13 +1867,25 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Estilo de portada y header-footer<a id="config-portraithf"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\hfstyle</strong>: Estilo del encabezado y pie de página (header-footer), existen <a
-                            id="hfTrigger" class="javascripthref">8 estilos distintos</a>.
+                        <strong>\hfstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo del encabezado y pie de página (header-footer).<br>
+                                <b>Existen <a id="hfTrigger" class="javascripthref"></a></b>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\portraitstyle</strong>: Estilo de la portada, existen <a id="portraitTrigger"
-                                                                                          class="javascripthref">16
-                        estilos distintos</a>.
+                        <strong>\portraitstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo de la portada.
+                                <b>Existen <a id="portraitTrigger" class="javascripthref"></a></b>.<br>
+                                <i>Algunas portadas
+                                    requieren configuraciones adicionales, estas se definen en el archivo <a
+                                            href="https://github.com/Template-Latex/Template-Informe/blob/master/lib/page/portrait-config.tex"
+                                            class="javascripthref">lib/page/portrait-config.tex</a> (Versión normal) o
+                                    en el bloque de PORTADA (Versión compacta)</i>.
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1689,19 +1894,34 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Márgenes de la página<a id="config-pagemargin"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\firstpagemargintop</strong>: Margen superior de la portada en centímetros.
+                        <strong>\firstpagemargintop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior de la portada en centímetros.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\pagemarginbottom</strong>: Margen inferior de las páginas en centímetros.
+                        <strong>\pagemarginbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior de las páginas en centímetros.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\pagemarginleft</strong>: Margen izquierdo de las páginas en centímetros.
+                        <strong>\pagemarginleft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen izquierdo de las páginas en centímetros.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\pagemarginright</strong>: Margen derecho de las páginas en centímetros.
+                        <strong>\pagemarginright</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen derecho de las páginas en centímetros.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\pagemargintop</strong>: Margen superior de las páginas en centímetros.
+                        <strong>\pagemargintop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior de las páginas en centímetros.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1711,13 +1931,22 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         id="config-default-placement-objects"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\imagedefaultplacement</strong>: Ubicación por defecto de las imágenes.
+                        <strong>\imagedefaultplacement</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Ubicación por defecto de las imágenes.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\tabledefaultplacement</strong>: Ubicación por defecto de las tablas.
+                        <strong>\tabledefaultplacement</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Ubicación por defecto de las tablas.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\tikzdefaultplacement</strong>: Ubicación por defecto de las figuras hechas con tikz.
+                        <strong>\tikzdefaultplacement</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Ubicación por defecto de las figuras hechas con tikz.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1727,44 +1956,83 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         id="config-caption"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\captionalignment</strong>: Alineación leyenda: justified, centered, left, right.
+                        <strong>\captionalignment</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Alineación leyenda: justified, centered, left, right.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\captionlessmarginimage</strong>: Margen inferior si no hay caption en figuras, en
-                        centímetros.
+                        <strong>\captionlessmarginimage</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior si no hay caption en figuras, en
+                                centímetros.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\captionlrmargin</strong>: Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
-                        las leyendas, en centímetros.
+                        <strong>\captionlrmargin</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
+                                las leyendas, en centímetros.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\captionmarginmultimg</strong>: Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>)
-                        de las imágenes múltiples insertadas con <b>images</b>.
+                        <strong>\captionmarginmultimg</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>)
+                                de las imágenes múltiples insertadas con <b>images</b>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\captiontbmarginfigure</strong>: Margen superior/inferior de la leyenda en las figuras,
-                        en <i>pt</i>.
+                        <strong>\captiontbmarginfigure</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior/inferior de la leyenda en las figuras,
+                                en <i>pt</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\captiontbmargintable</strong>: Margen superior/inferior de la leyenda en las tablas, en
-                        <i>pt</i>.
+                        <strong>\captiontbmargintable</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior/inferior de la leyenda en las tablas, en
+                                <i>pt</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\captiontextbold</strong>: Etiquetas (Figura,Tabla,etc.) de la leyenda en negrita.
+                        <strong>\captiontextbold</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Etiquetas (Figura,Tabla,etc.) de la leyenda en negrita.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\codecaptiontop</strong>: Establece la leyenda encima del código fuente.
+                        <strong>\codecaptiontop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece la leyenda encima del código fuente.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\figurecaptiontop</strong>: Establece la leyenda encima de las imágenes.
+                        <strong>\figurecaptiontop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece la leyenda encima de las imágenes.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showsectioncaption</strong>: Muestra el número de la sección/subsección/subsubsección
-                        en el número de figura/tabla/código. Valores esperados: <b>none</b>, <b>sec</b>
-                        <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>.
+                        <strong>\showsectioncaption</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
+                                en el número de figura/tabla/código. Valores esperados: <b>none</b>, <b>sec</b>
+                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\tablecaptiontop</strong>: Establece la leyenda encima de las tablas.
+                        <strong>\tablecaptiontop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece la leyenda encima de las tablas.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1773,37 +2041,70 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configuración del índice<a id="config-index"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\charafterobjectindex</strong>: Carácter tras cada número de figura, tabla o código en
-                        el índice.
+                        <strong>\charafterobjectindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter tras cada número de figura, tabla o código en
+                                el índice.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\charnumpageindex</strong>: Carácter entre título y número de página en el índice.
+                        <strong>\charnumpageindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter entre título y número de página en el índice.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\equalmarginnumobject</strong>: Iguala el margen de los números de objetos, directamente
-                        relacionado con la configuración <i>\showsectioncaption</i>.
+                        <strong>\equalmarginnumobject</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Iguala el margen de los números de objetos, directamente
+                                relacionado con la configuración <i>\showsectioncaption</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\indexdepth</strong>: Profundidad del índice.
+                        <strong>\indexdepth</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Profundidad del índice.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\indextitlemargin</strong>: Margen superior en los títulos de los índices (insertado con
-                        <span class="pl-c1">\insertindextitle</span>), en <i>pt</i>.
+                        <strong>\indextitlemargin</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior en los títulos de los índices (insertado con
+                                <span class="pl-c1">\insertindextitle</span>), en <i>pt</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showindex</strong>: Muestra la página de índice.
+                        <strong>\showindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la página de índice.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showindexofcode</strong>: Muestra la lista de códigos fuente en el índice.
+                        <strong>\showindexofcode</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la lista de códigos fuente en el índice.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showindexofcontents</strong>: Muestra la lista de contenidos.
+                        <strong>\showindexofcontents</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la lista de contenidos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showindexoffigures</strong>: Muestra la lista de figuras en el índice.
+                        <strong>\showindexoffigures</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la lista de figuras en el índice.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showindexoftables</strong>: Muestra la lista de tablas en el índice.
+                        <strong>\showindexoftables</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la lista de tablas en el índice.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1812,58 +2113,120 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configurar los colores del documento<a id="config-colors"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\captioncolor</strong>: Color de la etiqueta (Figura, Tabla, Código) en la leyenda de
-                        los objetos.
+                        <strong>\captioncolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de la etiqueta (Figura, Tabla, Código) en la leyenda de
+                                los objetos.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\captiontextcolor</strong>: Color de la leyenda de los objetos.
+                        <strong>\captiontextcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de la leyenda de los objetos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\colorpage</strong>: Define el color de fondo de las páginas del documento.
+                        <strong>\colorpage</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Define el color de fondo de las páginas del documento.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\highlightcolor</strong>: Color del subrayado con <span
-                            class="pl-c1">\hl</span>{<i>text</i>}.
+                        <strong>\highlightcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color del subrayado con <span
+                                    class="pl-c1">\hl</span>{<i>text</i>}.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\indextitlecolor</strong>: Color de los títulos del índice.
+                        <strong>\indextitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los títulos del índice.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\linenumbercolor</strong>: Color del número de línea (Al tener activado <a
-                            href="#showlinenumbers" class="javascripthref">\showlinenumbers</a>).
+                        <strong>\linenumbercolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color del número de línea (Al tener activado <a
+                                    href="#showlinenumbers" class="javascripthref">\showlinenumbers</a>).
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\linkcolor</strong>: Color de los enlaces del documento, entiendase por números de
-                        figuras, entradas del índice, etc.
+                        <strong>\linkcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los enlaces del documento, entiendase por números de
+                                figuras, entradas del índice, etc.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\maintextcolor</strong>: Color del texto del documento, afecta al color de los títulos,
-                        párrafos, líneas, tablas, etc.
+                        <strong>\maintextcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color del texto del documento, afecta al color de los
+                                títulos,
+                                párrafos, líneas, tablas, etc.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\numcitecolor</strong>: Color del número de las referencias o citas.
+                        <strong>\numcitecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color del número de las referencias o citas.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\portraittitlecolor</strong>: Color de los títulos de la portada.
+                        <strong>\portraittitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los títulos de la portada.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showborderonlinks</strong>: Reemplaza el color de un link por un recuadro de color.
+                        <strong>\showborderonlinks</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Reemplaza el color de un link por un recuadro de color.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\subsubtitlecolor</strong>: Color de los sub-subtítulos.
+                        <strong>\sourcecodebgcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de fondo de los códigos fuente.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\subtitlecolor</strong>: Color de los subtítulos.
+                        <strong>\subsubtitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los sub-subtítulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\tablelinecolor</strong>: Color de las líneas de las tablas.
+                        <strong>\subtitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los subtítulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\titlecolor</strong>: Color de los títulos.
+                        <strong>\tablelinecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de las líneas de las tablas.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\urlcolor</strong>: Color de los enlaces <i>http://</i> del documento insertados con
-                        <span class="pl-c1">\url</span> y <span class="pl-c1">\href</span>.
+                        <strong>\titlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los títulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\urlcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los enlaces <i>http://</i> del documento insertados
+                                con
+                                <span class="pl-c1">\url</span> y <span class="pl-c1">\href</span>.
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1873,20 +2236,36 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <ul>
                     <li class="config-elem">
                         <div id="defaultimagefolder">
-                            <strong>\defaultimagefolder</strong>: Directorio de las imágenes, sólo utilizado por las
-                            funciones que insertan figuras.
+                            <strong>\defaultimagefolder</strong>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Directorio de las imágenes, sólo utilizado por las
+                                    funciones que insertan figuras.
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\marginbottomimages</strong>: Margen inferior de las figuras, en centímetros.
+                        <strong>\marginbottomimages</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior de las figuras, en centímetros.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\marginfloatimages</strong>: Margen superior de las figuras flotantes (insertadas con
-                        <span class="pl-c1">\insertimageleft</span> o <span class="pl-c1">\insertimageright</span>), en
-                        <i>pt</i>.
+                        <strong>\marginfloatimages</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior de las figuras flotantes (insertadas con
+                                <span class="pl-c1">\insertimageleft</span> o <span
+                                        class="pl-c1">\insertimageright</span>),
+                                en
+                                <i>pt</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\margintopimages</strong>: Margen superior de las figuras, en centímetros.
+                        <strong>\margintopimages</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior de las figuras, en centímetros.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1896,43 +2275,79 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         id="config-ref"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\apaciterefsep</strong>: Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
-                        en <i>pt</i>.
+                        <strong>\apaciterefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
+                                en <i>pt</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\appendixindepobjnum</strong>: La numeración de los objetos (figura, tabla, código) en
-                        la sección de anexo/apéndice es independiente del documento.
+                        <strong>\appendixindepobjnum</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">La numeración de los objetos (figura, tabla, código) en
+                                la sección de anexo/apéndice es independiente del documento.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\bibtexrefsep</strong>: Separación entre elementos de las referencias (Estilo
-                        <i>bibtex</i>), en <i>pt</i>.
+                        <strong>\bibtexrefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
+                                <i>bibtex</i>), en <i>pt</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\donumrefsection</strong>: Sección de referencias numerada en el informe.
+                        <strong>\donumrefsection</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Sección de referencias numerada en el informe.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\natbibrefsep</strong>: Separación entre elementos de las referencias (Estilo
-                        <i>natbib</i>), en <i>pt</i>.
+                        <strong>\natbibrefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
+                                <i>natbib</i>), en <i>pt</i>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\sectionappendixlastchar</strong>: Carácter entre el número de la sección del anexo y el
-                        título.
+                        <strong>\sectionappendixlastchar</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter entre el número de la sección del anexo y el
+                                título.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showappendixsecindex</strong>: Muestra el título de la sección de anexos en el índice.
+                        <strong>\showappendixsecindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el título de la sección de anexos en el índice.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showappendixsectitle</strong>: Muestra el título de la sección de anexo en el informe.
+                        <strong>\showappendixsectitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el informe.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
                         <div id="stylecitereferences">
                             <strong>\stylecitereferences</strong>
-                            <a id="ref-style-config"></a>: Estilo citas y referencias. Valores esperados: <b>bibtex</b>,
-                            <b>apacite</b> ó <b>natbib</b>.
+                            <a id="ref-style-config"></a>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
+                                    <b>bibtex</b>, <b>apacite</b> ó <b>natbib</b>.
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\twocolumnreferences</strong>: Referencias en dos columnas.
+                        <strong>\twocolumnreferences</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Referencias en dos columnas.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1941,36 +2356,68 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configuración de los títulos<a id="config-tstyles"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\anumsecaddtocounter</strong>: Las funciones para insertar títulos sin número (anum)
-                        aumentan los respectivos contadores.
+                        <strong>\anumsecaddtocounter</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Las funciones para insertar títulos sin número (anum)
+                                aumentan los respectivos contadores.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\fontsizesubsubtitle</strong>: Tamaño sub-subtítulos.
+                        <strong>\fontsizesubsubtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño sub-subtítulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\fontsizesubtitle</strong>: Tamaño subtítulos.
+                        <strong>\fontsizesubtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño subtítulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\fontsizetitle</strong>: Tamaño títulos.
+                        <strong>\fontsizetitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño títulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\fontsizetitlei</strong>: Tamaño títulos en el índice.
+                        <strong>\fontsizetitlei</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño títulos en el índice.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showdotontitles</strong>: Muestra un punto en cada número de sección, subsección y
-                        sub-subsección.
+                        <strong>\showdotontitles</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra un punto en cada número de sección, subsección y
+                                sub-subsección.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\stylesubsubtitle</strong>: Estilo sub-subtítulos.
+                        <strong>\stylesubsubtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo sub-subtítulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\stylesubtitle</strong>: Estilo subtítulos.
+                        <strong>\stylesubtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo subtítulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\styletitle</strong>: Estilo títulos.
+                        <strong>\styletitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo títulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\styletitlei</strong>: Estilo títulos en el índice.
+                        <strong>\styletitlei</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo títulos en el índice.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -1979,51 +2426,100 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Opciones del pdf<a id="config-pdfoptions"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\addindextobookmarks</strong>: Añade el índice a los marcadores del pdf compilado.
+                        <strong>\addindextobookmarks</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Añade el índice a los marcadores del pdf compilado.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgbookmarksopenlevel</strong>: Nivel de los marcadores a mostrar. Valores esperados:
-                        <b>1</b>: secciones, <b>2</b>: muestra todos los subtítulos, etc.
+                        <strong>\cfgbookmarksopenlevel</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nivel de los marcadores a mostrar. Valores esperados:
+                                <b>1</b>: secciones, <b>2</b>: muestra todos los subtítulos, etc.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfbookmarkopen</strong>: Expande los marcadores hasta el nivel configurado.
+                        <strong>\cfgpdfbookmarkopen</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Expande los marcadores hasta el nivel configurado.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfcenterwindow</strong>: Centra la ventana del lector pdf al abrir el informe.
+                        <strong>\cfgpdfcenterwindow</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Centra la ventana del lector pdf al abrir el informe.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfcopyright</strong>: Establece el copyright en la <i>metadata</i> del pdf.
+                        <strong>\cfgpdfcopyright</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece el copyright en la <i>metadata</i> del pdf.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfdisplaydoctitle</strong>: Muestra el título del informe como título en el lector
-                        del pdf.
+                        <strong>\cfgpdfdisplaydoctitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el título del informe como título en el lector
+                                del pdf.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdffitwindow</strong>: Ajusta la ventana del lector pdf al tamaño del informe.
+                        <strong>\cfgpdffitwindow</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Ajusta la ventana del lector pdf al tamaño del informe.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfmenubar</strong>: Muestra la barra de menú en el lector pdf.
+                        <strong>\cfgpdfmenubar</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la barra de menú en el lector pdf.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfpagemode</strong>: Modo de página en el lector. Valores esperados:
-                        <b>OneColumn</b> ó <b>SinglePage</b>.
+                        <strong>\cfgpdfpagemode</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Modo de página en el lector. Valores esperados:
+                                <b>OneColumn</b> ó <b>SinglePage</b>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfpageview</strong>: Establece cómo se ve la página en el lector pdf. Valores
-                        esperados: <b>Fit</b>, <b>FitH</b>, <b>FitV</b>, <b>FitR</b>, <b>FitB</b>, <b>FitBH</b> ó <b>FitBV</b>.
+                        <strong>\cfgpdfpageview</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece cómo se ve la página en el lector pdf. Valores
+                                esperados: <b>Fit</b>, <b>FitH</b>, <b>FitV</b>, <b>FitR</b>, <b>FitB</b>, <b>FitBH</b>
+                                ó
+                                <b>FitBV</b>.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdfsecnumbookmarks</strong>: Muestra el número de la sección en los marcadores del
-                        pdf.
+                        <strong>\cfgpdfsecnumbookmarks</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número de la sección en los marcadores del
+                                pdf.
+                            </div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgpdftoolbar</strong>: Muestra la barra de herramientas del lector pdf.
+                        <strong>\cfgpdftoolbar</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la barra de herramientas del lector pdf.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\cfgshowbookmarkmenu</strong>: Muestra el menú de los marcadores en el lector pdf.
+                        <strong>\cfgshowbookmarkmenu</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el menú de los marcadores en el lector pdf.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\pdfcompileversion</strong>: Establece la versión mínima de compatibilidad del pdf.
+                        <strong>\pdfcompileversion</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece la versión mínima de compatibilidad del pdf.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -2032,43 +2528,82 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Nombres de los elementos<a id="config-elemname"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\nameabstract</strong>: Nombre del resumen-abstract.
+                        <strong>\nameabstract</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre del resumen-abstract.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nameappendixsection</strong>: Nombre de la sección de anexos/apéndices.
+                        <strong>\nameappendixsection</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de la sección de anexos/apéndices.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nameportraitpage</strong>: Nombre de la primera página (portada) en el pdf.
+                        <strong>\nameportraitpage</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de la primera página (portada) en el pdf.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\namereferences</strong>: Nombre de la sección de referencias.
+                        <strong>\namereferences</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de la sección de referencias.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomchapter</strong>: Nombre de los capítulos.
+                        <strong>\nomchapter</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de los capítulos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomltappendixsection</strong>: Etiqueta sección en anexo/apéndices.
+                        <strong>\nomltappendixsection</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Etiqueta sección en anexo/apéndices.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomltcont</strong>: Nombre del índice de contenidos.
+                        <strong>\nomltcont</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre del índice de contenidos.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomltfigure</strong>: Nombre de la lista de figuras.
+                        <strong>\nomltfigure</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de la lista de figuras.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomltsrc</strong>: Nombre de la lista de código fuente.
+                        <strong>\nomltsrc</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de la lista de código fuente.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomlttable</strong>: Nombre de la lista de tablas.
+                        <strong>\nomlttable</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de la lista de tablas.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomltwsrc</strong>: Etiqueta leyenda del código fuente.
+                        <strong>\nomltwsrc</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Etiqueta leyenda del código fuente.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomltwfigure</strong>: Etiqueta leyenda de las figuras.
+                        <strong>\nomltwfigure</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Etiqueta leyenda de las figuras.</div>
+                        </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\nomltwtable</strong>: Etiqueta leyenda de las tablas.
+                        <strong>\nomltwtable</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Etiqueta leyenda de las tablas.</div>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -2356,7 +2891,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     Permite contar elementos.
                 </li>
                 <li>
-                    <strong><a href="https://www.ctan.org/pkg/tikz">tikz</a></strong>: Permite dibujar.
+                    <strong><a href="https://www.ctan.org/pkg/tikz">tikz</a></strong>: Permite dibujar. Se importa con
+                    la configuración <a onclick="bounceConfig('#config-other','#import-tikz-config');"
+                                        class="javascripthref">\importikz</a>.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/ulem">ulem</a></strong>: Permite cachar, subrayar, etc.

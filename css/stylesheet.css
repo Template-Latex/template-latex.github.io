@@ -1186,3 +1186,44 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 #chatgitter {
     display: none;
 }
+
+#templateConfigsList .config-parent .config-elem {
+    display: table;
+    width: 100%;
+    opacity: 0.8;
+}
+
+#templateConfigsList .config-parent .config-elem:hover {
+    cursor: default;
+    opacity: 1.0;
+}
+
+#templateConfigsList .config-parent .config-elem strong {
+    display: block;
+    float: left;
+    font-weight: 600;
+    width: 30%;
+    word-break: break-all;
+}
+
+.config-desc {
+    display: block;
+    float: right;
+    font-weight: 400;
+    width: 70%;
+}
+
+.config-desc:before {
+    content: ': ';
+}
+
+.config-desc-inner {
+    display: inline-table;
+    text-align: justify;
+    width: 98%;
+}
+
+.imgfontexample {
+    background-color: white;
+    padding: 10px;
+}
