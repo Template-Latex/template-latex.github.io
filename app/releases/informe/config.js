@@ -754,14 +754,15 @@ function afterDocumentReady() {
                 animation: 'grow',
                 content: String.format('<img src="{0}" alt="" width="500" height="125" class="imgfontexample" />', img),
                 contentAsHTML: true,
-                delay: 1000,
+                delay: 1200,
                 interactive: true,
                 maxWidth: 500,
                 side: 'bottom',
                 theme: 'tooltipster-borderless'
             });
         }
-    })
+    });
+
 }
 
 function afterJSONLoad() {
@@ -817,4 +818,5 @@ function writeOtherLinks(verid) {
         $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link-double"><a href="{3}download/{2}/Template-Informe-{1}.zip" class="otherdownloadclickeable">Normal</a></div><div class="downloadother-link-double"><a href="{3}download/{2}/Template-Informe-{1}-Single.zip" class="otherdownloadclickeable">Compacta</a></div></div>', deptos[i][0], deptos[i][1], verid, href_github_project));
         $(String.format('#downloadentry-{0} .otherdownloadclickeable', deptos[i][1])).on('click', $addTotal);
     }
+
 }
