@@ -658,7 +658,7 @@ a:hover {
 .main-content .highlight pre, .main-content pre {
     border-radius: 0.3rem;
     line-height: 1.45;
-    margin-bottom: -9px;
+    /*margin-bottom: -9px;*/
     overflow: auto;
     padding: 0.8rem;
 }
@@ -785,7 +785,7 @@ a:hover {
     /*color: #819198;
     border-left: 0.3rem solid #dce6f0;*/
     margin-left: 5px;
-    padding: 0 0 0.5rem 0.5rem;
+    padding: 0 .5rem;
 }
 
 .section-template {
@@ -1221,6 +1221,7 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 
 .config-desc-inner {
     display: inline-table;
+    float: right;
     text-align: justify;
     width: 98%;
 }
