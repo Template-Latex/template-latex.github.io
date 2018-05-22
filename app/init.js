@@ -305,11 +305,13 @@ $(function () {
                     wallpaper_db_random_blur('parallaxBgHeader', blurprobability, blurlimits);
 
                     // Ajuste ancho
-                    let $f = function () {
-                        $('.parallax-mirror').css('width', $(window).outerWidth() + 'px');
+                    backgroundResize = function () {
+                        if (!scrollLock) {
+                            $('.parallax-mirror').css('width', $(window).outerWidth() + 'px');
+                        }
                     };
-                    $(window).on('resize.parallax', $f);
-                    $f();
+                    $(window).on('resize.parallax', backgroundResize);
+                    backgroundResize();
                 }
             });
         } else {
@@ -337,9 +339,12 @@ $(function () {
                     $bgheader.fadeIn();
 
                     // Se añade un evento al cambiar tamaño página web
-                    $(window).on('resize.backgroundPageHeader', function () {
-                        $('#background-page-header').css('width', $(window).width() + 20);
-                    });
+                    backgroundResize = function () {
+                        if (!scrollLock) {
+                            $('#background-page-header').css('width', $(window).width() + 20);
+                        }
+                    };
+                    $(window).on('resize.backgroundPageHeader', backgroundResize);
 
                     // Aplica blur
                     wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);

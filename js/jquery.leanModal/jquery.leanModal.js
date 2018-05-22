@@ -36,6 +36,8 @@
                     $(o.closeButton).on('click', function () {
                         close_modal(modal_id);
                     });
+                    $.scrollLock(true);
+                    scrollLock = true;
 
                     // Aplica estilos
                     let modal_height = ($(window).height() - $(modal_id).height()) / 2;
@@ -47,12 +49,10 @@
                     $overlay.fadeTo(200, o.overlay);
                     $(modal_id).css({
                         'display': 'block',
-                        'position': 'fixed',
-                        'opacity': 0,
-                        'z-index': 11000,
                         'left': 50 + '%',
-                        'margin-left': -(modal_width / 2) + 'px',
-                        'top': modal_height + 'px'
+                        'opacity': 0,
+                        'position': 'fixed',
+                        'z-index': 11000
                     });
                     $('.page-header').css({
                         'filter': 'blur(' + downloadOtherBackgroundBlur + 'px)',
@@ -64,17 +64,22 @@
                     });
                     $('a.back-to-top').fadeOut(otherdownloadsfadetime);
                     $(modal_id).fadeTo(otherdownloadsfadetime, 1);
-                    $('html').css('overflow-y', 'hidden');
+                    // $('html').css('overflow-y', 'hidden');
                     // noinspection JSValidateTypes
                     $('#downloadother-contents').scrollTop(0);
-                    $(window).off('w.resizelean');
-                    $(window).on('w.resizelean', function () {
+
+                    // Centra verticalmente
+                    let $verticalCentering = function () {
                         modal_width = $(modal_id).outerWidth();
                         $(modal_id).css({
-                            'top': ($(window).height() - $(modal_id).height()) / 2 + 'px',
+                            'top': ($(window).outerHeight() - $(modal_id).outerHeight()) / 2 + 'px',
                             'margin-left': -(modal_width / 2) + 'px'
                         });
-                    });
+
+                    };
+                    $(window).off('resize.lean');
+                    $(window).on('resize.lean', $verticalCentering);
+                    $verticalCentering();
 
                     // Aplica función onopen
                     o.onopen();
@@ -86,7 +91,7 @@
 
             function close_modal(modal_id) {
                 $('#lean_overlay').fadeOut(otherdownloadsfadetime);
-                $('html').css('overflow-y', 'visible');
+                // $('html').css('overflow-y', 'visible');
                 $('.page-header').css({
                     'filter': 'blur(0px)',
                     '-webkit-filter': 'blur(0px)'
@@ -98,6 +103,10 @@
                 $(modal_id).css({
                     'display': 'none'
                 });
+                $.scrollLock(false);
+                scrollLock = false;
+                $(window).trigger('resize');
+                setTimeout(backgroundResize, 200);
             }
         }
     });

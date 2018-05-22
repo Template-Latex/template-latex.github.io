@@ -24,17 +24,19 @@
 /**
  * Configuraciones de toda la suite Template-Latex
  */
-var blurlimits = [3, 5];
-var blurprobability = 50;
-var changelog_max = 5;
-var changelog_show_hr = false;
-var changepacecolor = false;
-var enableparallax = true;
-var gitter_href = 'https://gitter.im/Template-Latex/';
+var backgroundResize; // Ajuste del fondo
+var blurlimits = [3, 5]; // Límites del blur en px
+var blurprobability = 40; // Probabilidad de blur
+var changelog_max = 5; // Número máximo de cambios en changelog
+var changelog_show_hr = false; // Muestra título en changelog
+var changepacecolor = true; // Cambiar el color de pace
+var enableparallax = true; // Activa el parallax
+var gitter_href = 'https://gitter.im/Template-Latex/'; // Página gitter
 var nan_value = 'NaN';
 var otherdownloadsfadetime = 400;
 var pdf_js_href = 'http://latex.ppizarror.com/pdf-version/web/viewer.html?file=';
-var seconds_update_downloadCounter = 60 * 3;
+var scrollLock = false; // Indica que la función $.scrollLock se activó
+var seconds_update_downloadCounter = 60 * 3; // Tiempo de refresco actualización contador descargas
 var stats_href = 'http://latex.ppizarror.com/stats/?template=';
 var update_downloads_version = true;
 

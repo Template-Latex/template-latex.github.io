@@ -423,6 +423,7 @@ a:hover {
     margin-left: 0;
     margin-right: 0.5rem;
     opacity: 0.9;
+    outline: none;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
@@ -444,6 +445,7 @@ a:hover {
     margin-left: 0;
     margin-right: 0.5rem;
     opacity: 0.9;
+    outline: none;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
