@@ -34,6 +34,7 @@ var enableparallax = true; // Activa el parallax
 var gitter_href = 'https://gitter.im/Template-Latex/'; // Página gitter
 var nan_value = 'NaN';
 var otherdownloadsfadetime = 400;
+var parallaxloaded = false; // Indica que parallax ya se cargó
 var pdf_js_href = 'http://latex.ppizarror.com/pdf-version/web/viewer.html?file=';
 var scrollLock = false; // Indica que la función $.scrollLock se activó
 var seconds_update_downloadCounter = 60 * 3; // Tiempo de refresco actualización contador descargas

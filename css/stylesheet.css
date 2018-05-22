@@ -947,7 +947,7 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
     background-color: rgb(235, 235, 235);
     border-radius: 5px;
     border: 1px solid rgb(218, 218, 218);
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);*/
     cursor: pointer;
     display: block;
     font-size: 1.2rem;

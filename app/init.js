@@ -291,6 +291,8 @@ $(function () {
                 zIndex: 1,
                 afterRefresh: function () {
 
+                    if (parallaxloaded) return;
+
                     // Se oculta el colored
                     $('#background-page-header-colored').fadeOut(800);
 
@@ -312,6 +314,7 @@ $(function () {
                     };
                     $(window).on('resize.parallax', backgroundResize);
                     backgroundResize();
+                    parallaxloaded = true;
                 }
             });
         } else {

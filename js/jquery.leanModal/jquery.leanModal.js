@@ -40,7 +40,6 @@
                     scrollLock = true;
 
                     // Aplica estilos
-                    let modal_height = ($(window).height() - $(modal_id).height()) / 2;
                     let modal_width = $(modal_id).outerWidth();
                     $overlay.css({
                         'display': 'block',

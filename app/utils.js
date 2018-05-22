@@ -202,9 +202,15 @@ function throwError(error) {
     hide_element_id('template-preview-pdf');
 
     let $html_section = $('#main-content-section');
-    let html_error_div = '<div class="tooltip error_msg_1"><div id="errorMsgText"><!--suppress HtmlUnknownTarget --><img src="res/ui/erroricon.png" />{0}</div><div></div><div id="errorMoreInfoMsg" class="tooltiptext_errormsg">{1}</div></div>';
+    let html_error_div = '<div class="tooltip error_msg_1"><div id="errorMsgText"><!--suppress HtmlUnknownTarget --><img src="res/ui/erroricon.png" />{0}</div><div></div></div>';
     // noinspection JSUnresolvedVariable
-    $html_section.html(String.format(html_error_div, error.msg, error.moreinfo));
+    $html_section.html(String.format(html_error_div, error.msg));
+    $('.error_msg_1').tooltipster({
+        animation: 'grow',
+        content: error.moreinfo,
+        side: 'bottom',
+        theme: 'tooltipster-borderless'
+    });
     let backheight = $(window).height() - $('.page-header').innerHeight();
     $html_section.css('height', backheight);
     $(window).resize(function () {
