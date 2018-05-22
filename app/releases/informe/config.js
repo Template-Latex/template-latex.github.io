@@ -153,7 +153,7 @@ var cmd_sourcecode = {
     '\t\t\tcolor: #ff0000;\n' +
     '\t\t}\n' +
     '\t</style>\n' +
-    '\t<div class=".titulo">Hola</div>\n' +
+    '\t<div class="titulo">Hola</div>\n' +
     '</body>\n' +
     '</html>\n' +
     '\\end{sourcecode}',
