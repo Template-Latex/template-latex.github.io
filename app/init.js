@@ -204,8 +204,9 @@ $(function () {
         try {
             for (let i = 0; i < whats_new_versions; i++) {
                 let version_created_at = json[i].created_at.substring(0, 10);
+                let $version_created_at = version_created_at.substring(8, 10) + '/' + version_created_at.substring(5, 7) + '/' + version_created_at.substring(0, 4);
                 // noinspection HtmlUnknownTarget
-                let title_new_version = String.format('<b>Versión <a href="{2}" class="javascripthref">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, version_created_at, json[i].html_url);
+                let title_new_version = String.format('<b>Versión <a href="{2}" class="javascripthref">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, $version_created_at, json[i].html_url);
                 let content_version = md_converter.makeHtml(json[i].body);
                 new_version_entry += String.format(whats_new_html, title_new_version, content_version);
                 if (i < whats_new_versions - 1 && changelog_show_hr) {
