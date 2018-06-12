@@ -1219,6 +1219,16 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
     content: ': ';
 }
 
+@media screen and (max-width: 576px) {
+    #templateConfigsList .config-parent .config-elem strong {
+        width: 40% !important;
+    }
+
+    .config-desc {
+        width: 60% !important;
+    }
+}
+
 .config-desc-inner {
     display: inline-table;
     float: right;
