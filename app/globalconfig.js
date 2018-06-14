@@ -26,7 +26,7 @@
  */
 var backgroundResize; // Ajuste del fondo
 var blurlimits = [3, 5]; // Límites del blur en px
-var blurprobability = 40; // Probabilidad de blur
+var blurprobability = 50; // Probabilidad de blur
 var changelog_max = 5; // Número máximo de cambios en changelog
 var changelog_show_hr = false; // Muestra título en changelog
 var changepacecolor = true; // Cambiar el color de pace
@@ -55,18 +55,18 @@ var initial_popup = {
  */
 var errors = {
     "cantGetVersion": {
-        "msg": "No se pudo obtener la última versión.",
+        "msg": "No se pudo obtener la última versión",
         "code": 0,
-        "moreinfo": "Error de conexión con servidor de Github, intente nuevamente."
+        "moreinfo": "Error de conexión con servidor de Github, intente nuevamente"
     },
     "cantLoadJson": {
-        "msg": "No se pudo acceder al JSON de releases de Github.",
+        "msg": "No se pudo acceder al JSON de releases de Github",
         "code": 1,
-        "moreinfo": "Error de conexión con servidor de Github, intente nuevamente."
+        "moreinfo": "Error de conexión con servidor de Github, intente nuevamente"
     },
     "retrieveContentVersions": {
-        "msg": "Error al obtener la descripción de las versiones del Template.",
+        "msg": "Error al obtener la descripción de las versiones del Template",
         "code": 2,
-        "moreinfo": "Ocurrió un error crítico al obtener la descripción de las versiones del Template (changelog) desde el servidor de Github, probable error de configuración, error en showdown.js o bien error de conexión con el servidor."
+        "moreinfo": "Ocurrió un error crítico al obtener la descripción de las versiones del Template (changelog) desde el servidor de Github, probable error de configuración, error en showdown.js o bien error de conexión con el servidor"
     }
 };

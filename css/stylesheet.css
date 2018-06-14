@@ -422,7 +422,7 @@ a:hover {
     margin-bottom: 1rem;
     margin-left: 0;
     margin-right: 0.5rem;
-    opacity: 0.9;
+    opacity: 1.0;
     outline: none;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
@@ -453,17 +453,10 @@ a:hover {
     opacity: 1.0;
 }
 
-/*
-.btn-pro:hover {
-    -moz-box-shadow: 0 0 8px 0 rgba(10, 10, 10, 0.75);
-    -webkit-box-shadow: 0 0 8px 0 rgba(10, 10, 10, 0.75);
-    background-color: rgba(255, 255, 255, 1.0);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 8px 0 rgba(10, 10, 10, 0.75);
-    cursor: pointer;
-    text-decoration: none;
+.btn i, .btn-pro i {
+    padding-left: 8px;
 }
- */
+
 .btn-pro:hover {
     cursor: pointer;
     text-decoration: none;
@@ -477,14 +470,6 @@ a:hover {
     margin-left: 0.5rem;
 }
 
-/*
-.btn:hover {
-    background-color: rgba(30, 30, 30, 0.6);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-}
- */
 .btn:hover {
     text-decoration: none;
 }
@@ -967,17 +952,11 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 .error_msg_1 img {
     display: inline-block;
     margin-bottom: auto;
-    margin-right: 5px;
-    margin-top: auto;
+    margin-right: 10px;
     opacity: 0.6;
     position: relative;
-    top: 8px;
-    width: 35px;
-}
-
-.error_msg_1 {
-    position: relative;
-    top: -5px;
+    top: 5px;
+    width: 25px;
 }
 
 .tooltip .tooltiptext_errormsg {
@@ -1047,7 +1026,7 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 
 @media screen and (min-width: 64em) {
     #downloadother {
-        width: 550px;
+        width: 650px;
     }
 
     .downloadother-entry {
@@ -1057,7 +1036,7 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     #downloadother {
-        width: 550px;
+        width: 650px;
     }
 
     .downloadother-entry {
@@ -1072,6 +1051,13 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 
     .downloadother-entry {
         font-size: 0.7rem;
+    }
+
+    .downloadother-name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-right: 10px;
     }
 
     .downloadother-link {
@@ -1117,12 +1103,15 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 }
 
 .modal_close {
-    background: url(../res/ui/modal_close.png);
+    color: #636363;
     display: block;
+    font-size: 1rem;
     height: 14px;
+    outline: 0;
     position: absolute;
-    right: 12px;
-    top: 24px;
+    right: 18px;
+    text-decoration: none;
+    top: 18px;
     width: 14px;
     z-index: 2;
 }

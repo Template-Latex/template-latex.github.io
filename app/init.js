@@ -154,10 +154,10 @@ $(function () {
             });
             let normal_link = String.format('{0}download/{1}/Template-Informe.zip', href_github_project, last_version);
             // noinspection HtmlUnknownTarget
-            $('#download-button-1file').append(String.format(' <span id="buttonfile1text">(v{0}) <img src="res/ui/zip.png" class="iconbutton" /></span>', last_version));
+            $('#download-button-1file').append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
             $dlbutton.attr('href', normal_link);
             // noinspection HtmlUnknownTarget
-            $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <img src="res/ui/zip.png" class="iconbutton" /></span>', last_version));
+            $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
             writeOtherLinks(last_version);
 
         } else {
@@ -215,7 +215,7 @@ $(function () {
             }
             if (show_github_button) {
                 // noinspection HtmlUnknownTarget
-                new_version_entry += String.format("Puedes ver la lista de cambios completa <a href='{0}'>en Github<img src='res/ui/github.png' width='16' height='' class='iconbutton' alt='' /></a>", href_github_project);
+                new_version_entry += String.format("Puedes ver la lista de cambios completa en <a href='{0}' class='javascripthref'>GitHub <i class='fab fa-github'></i></a>", href_github_project);
             }
             $('#que-hay-de-nuevo').html(new_version_entry);
             $('.main-content hr').css('background-color', hrcolor);

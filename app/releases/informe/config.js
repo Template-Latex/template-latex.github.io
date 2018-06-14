@@ -795,7 +795,7 @@ function writeOtherLinks(verid) {
         ['Departamento de Ingeniería Industrial', 'dii'],
         ['Departamento de Ingeniería Matemática', 'dim'],
         ['Departamento de Ingeniería Mecánica', 'dimec'],
-        ['Departamento de Ingeniería Química y Biotecnología', 'diqbt'],
+        ['Departamento de Ingeniería Química, Biotecnología y Materiales', 'diqbtm'],
         ['Facultad de Ciencias Físicas y Matemáticas', 'fcfm'],
         ['Universidad de Chile', 'uchile'],
     ];

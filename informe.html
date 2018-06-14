@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!--suppress XmlUnusedNamespaceDeclaration, HtmlUnknownAnchorTarget, HtmlUnknownAttribute -->
-<html>
 
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Template Informe</title>
@@ -94,13 +93,12 @@
 </head>
 
 <body>
-<!-- Lista de descargas -->
 <div id="downloadother">
     <div id="downloadother-ct">
         <div id="downloadother-header">
             <div class="downloadtitle">
                 <div id="downloadtitle-title"></div>
-                <a class="modal_close" href="#"></a>
+                <a class="modal_close" href="#"><i class="fas fa-times-circle"></i></a>
             </div>
         </div>
         <div id="downloadother-contents"></div>
@@ -113,11 +111,12 @@
 <section class="page-header">
     <h1 class="project-name">Template Informe</h1>
     <h2 class="project-tagline">Template de informe en LaTeX para tareas y trabajos</h2>
-    <a href="" id="github-button-header" class="btn hvr-shadow">Ver en GitHub
-        <img src="res/ui/github.png" class="iconbutton" alt="Latex"/></a>
-    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn hvr-shadow">Ver Ejemplo
-        <img src="res/ui/pdf.png" class="iconbutton" alt=""/></a>
+    <a href="" id="github-button-header" class="btn hvr-shadow">Ver en GitHub <i class="fab fa-github"></i></a>
+    <!--suppress HtmlUnknownAnchorTarget -->
+    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn hvr-shadow">Ver Ejemplo <i
+            class="fas fa-file-pdf"></i></a>
     <a content="#downloadother" class="btn-pro hvr-shadow" id="download-button-1file" name="leanModal">Descargar</a>
+    <!--suppress HtmlUnknownAnchorTarget -->
     <a href="#Error_al_cargar_enlace_descarga" class="btn hvr-shadow" id="download-button">Descargar versión normal</a>
 </section>
 
@@ -140,7 +139,7 @@
             <img src="res/badges/chat.svg" alt=""/>
         </a>
         <a href="" id="templatestats">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="104" height="20"
+            <svg xmlns="http://www.w3.org/2000/svg" width="104" height="20"
                  id="downloadcounter-banner">
                 <linearGradient id="b" x2="0" y2="100%">
                     <stop offset="0" stop-color="#bbb" stop-opacity=".1"></stop>
@@ -232,8 +231,9 @@
             <!--suppress HtmlUnknownTarget --> <a
                 href="tabla-integrantes">editar la tabla de datos</a> de la portada en la sección <em
                 class="section-template">INTEGRANTES, PROFESORES Y FECHAS</em> <span
-                class="intro-line-authortable"></span> y por último <a href="#agregar-fig-form-cita">empezar a
-            escribir</a> tu documento en la sección
+                class="intro-line-authortable"></span> y por último <!--suppress HtmlUnknownAnchorTarget -->
+            <a href="#agregar-fig-form-cita">empezar a
+                escribir</a> tu documento en la sección
             del <em class="section-template">RESUMEN O ABSTRACT</em> <span class="intro-line-abstract"></span> o en la
             <b>sección principal</b> del documento <em class="section-template">INICIO DEL DOCUMENTO</em> <span
                 class="intro-line-docinit"></span>.
@@ -339,7 +339,7 @@
                             <strong>dimec</strong>: Departamento de Ingeniería Mecánica.
                         </li>
                         <li>
-                            <strong>diqbt</strong>: Departamento de Ingeniería Química y Biotecnología.
+                            <strong>diqbtm</strong>: Departamento de Ingeniería Química, Biotecnología y Materiales.
                         </li>
                         <li>
                             <strong>fcfm</strong>: Facultad de Ciencias Físicas y Matemáticas.
@@ -1602,7 +1602,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
         </ul>
 
         <!-- Configurar otros elementos del documento -->
-        <h2><a id="configurar-el-template" class="anchor" href="#configurar-otros-elementos-del-documento"
+        <h2><!--suppress HtmlUnknownAnchorTarget -->
+            <a id="configurar-el-template" class="anchor" href="#configurar-otros-elementos-del-documento"
                aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configurar el
             template</h2>
         <p class="justified-text">
