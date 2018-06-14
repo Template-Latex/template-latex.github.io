@@ -169,10 +169,10 @@ $(function () {
             // Se establece la versión en el botón de descargas
             $d1fbutton.attr('href', compact_link);
             // noinspection HtmlUnknownTarget
-            $d1fbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <img src="res/ui/zip.png" class="iconbutton" /></span>', last_version));
+            $d1fbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
             $dlbutton.attr('href', normal_link);
             // noinspection HtmlUnknownTarget
-            $dlbutton.append(String.format(' <span id="buttonfile1text">(v{0}) <img src="res/ui/zip.png" class="iconbutton" /></span>', last_version));
+            $dlbutton.append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
             $d1fbutton.click(function () {
                 if (total_downloads !== nan_value) {
                     total_downloads += 1;
