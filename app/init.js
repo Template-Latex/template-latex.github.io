@@ -242,7 +242,6 @@ $(function () {
     /**
      * Se cambia el estilo de la página
      */
-    $('.back-to-top').css('background-color', wallpaper_db.color);
     $('.main-content h1').css('color', wallpaper_db.color);
     $('.main-content h2').css('color', wallpaper_db.color);
     $('.main-content h3').css('color', wallpaper_db.color);
@@ -387,16 +386,13 @@ $(function () {
     /**
      * Muestra un botón para subir al hacer scroll
      */
-    let $scrollBTtop = function () {
-        location.pathname.replace(/^\//, '');
-        // noinspection JSValidateTypes
-        if ($(window).scrollTop() > amountScrolled) {
-            $('a.back-to-top').fadeIn('slow');
-        } else {
-            $('a.back-to-top').fadeOut('slow');
-        }
-    };
-    $(window).on('scroll', $scrollBTtop);
+    $.backToTop({
+        backgroundColor: wallpaper_db.color,
+        pxToTrigger: amountScrolled,
+        scrollAnimation: 400,
+        width: 65,
+        height: 65
+    });
 
     /**
      * Smooth scrolling al clickear un anchor
@@ -417,7 +413,7 @@ $(function () {
     /**
      * Se añade el link a chat banner
      */
-    $('#chatgitter').attr('href', gitter_href + update_download_counter);
+    // $('#chatgitter').attr('href', gitter_href + update_download_counter);
 
     /**
      * Se actualiza el total de descargas cada n-segundos
@@ -497,20 +493,20 @@ $(function () {
     /**
      * Popup inicial
      */
-    if (initial_popup.display) {
+    if (initial_popup.display && initial_popup.content.length > 0) {
         $.confirm({
             boxWidth: '35%',
-            closeIcon: true,
-            content: initial_popup.content,
-            escapeKey: 'close',
-            title: initial_popup.title,
-            useBootstrap: false,
             buttons: {
                 close: {
                     keys: ['enter', 'escape'],
                     text: 'Cerrar',
                 }
-            }
+            },
+            closeIcon: true,
+            content: initial_popup.content,
+            escapeKey: 'close',
+            title: initial_popup.title,
+            useBootstrap: false,
         });
     }
 

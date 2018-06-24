@@ -31,7 +31,7 @@ var changelog_max = 5; // Número máximo de cambios en changelog
 var changelog_show_hr = false; // Muestra título en changelog
 var changepacecolor = true; // Cambiar el color de pace
 var enableparallax = true; // Activa el parallax
-var gitter_href = 'https://gitter.im/Template-Latex/'; // Página gitter
+// var gitter_href = 'https://gitter.im/Template-Latex/'; // Página gitter
 var nan_value = 'NaN';
 var otherdownloadsfadetime = 400;
 var parallaxloaded = false; // Indica que parallax ya se cargó
@@ -46,7 +46,7 @@ var update_downloads_version = true;
  */
 var initial_popup = {
     content: '',
-    display: false,
+    display: true,
     title: ''
 };
 
