@@ -27,7 +27,7 @@
  * @type {{version: string, date: string, author: {name: string, tag: string, email: string, website: string, github: string}, productname: string, productnamefooter: string, productsource: string}}
  */
 var aboutinfo = {
-    "version": "4.10",
+    "version": "4.11",
     "date": "24/06/2018",
     "author": {
         "name": "Pablo Pizarro R.",
