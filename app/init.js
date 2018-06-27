@@ -386,7 +386,7 @@ $(function () {
     /**
      * Muestra un botón para subir al hacer scroll
      */
-    $.backToTop({
+    backToTop = $.backToTop({
         backgroundColor: wallpaper_db.color,
         pxToTrigger: amountScrolled,
         scrollAnimation: 400,

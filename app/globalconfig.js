@@ -51,6 +51,11 @@ var initial_popup = {
 };
 
 /**
+ * Botón backToTop
+ */
+var backToTop;
+
+/**
  * Mensajes de error
  */
 var errors = {

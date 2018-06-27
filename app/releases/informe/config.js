@@ -509,10 +509,10 @@ function afterDocumentReady() {
         };
         let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.listen('close', function () {
-            $('a.back-to-top').fadeIn('slow');
+            backToTop.show(true);
         });
+        backToTop.hide(true);
         gallery.init();
-        $('a.back-to-top').fadeOut('slow');
     };
     let $hftrigger = $('#hfTrigger');
     $hftrigger.on('click', hfGallery);
@@ -548,10 +548,10 @@ function afterDocumentReady() {
         };
         let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.listen('close', function () {
-            $('a.back-to-top').fadeIn('slow');
+            backToTop.show(true);
         });
+        backToTop.hide(true);
         gallery.init();
-        $('a.back-to-top').fadeOut('slow');
     };
     let $portraittrigger = $('#portraitTrigger');
     $portraittrigger.on('click', portraitGallery);
