@@ -21,12 +21,11 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// noinspection ES6ConvertVarToLetConst
 /**
  * Información de la aplicación
  * @type {{version: string, date: string, author: {name: string, tag: string, email: string, website: string, github: string}, productname: string, productnamefooter: string, productsource: string}}
  */
-var aboutinfo = {
+let aboutinfo = {
     "version": "4.12",
     "date": "27/06/2018",
     "author": {
