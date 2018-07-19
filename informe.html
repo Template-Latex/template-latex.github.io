@@ -1616,13 +1616,16 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                class="javascripthref">lib/config.tex</a> (versión normal) y son importadas en el bloque de
             <em class="section-template">CONFIGURACIONES</em> <span class="intro-line-configimport"></span> en el
             archivo principal. <br/>
-            Para modificar una entrada:
+            Para modificar una configuración:
         </p>
         <blockquote>
             <em>\def</em><span class="pl-e">\nombreConfiguracion</span> {<b>Valor</b>}
         </blockquote>
         <p>
-            A continuación se listan las <span id="TemplateConfigCounter"></span> configuraciones disponibles:
+            Solo se pueden modificar las configuraciones dentro del archivo correspondiente (config.tex) o bien, si se
+            utiliza la versión compacta, se debe buscar la línea asociada a dicha configuración. Si se intenta cambiar
+            el valor de la configuración en otro lugar del template es posible que ocurran errores. A continuación se
+            listan las <span id="TemplateConfigCounter"></span> configuraciones disponibles:
         </p>
         <ul id="templateConfigsList">
             <li class="config-parent">
