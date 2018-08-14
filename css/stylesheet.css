@@ -1139,6 +1139,7 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 }
 
 .downloadother-name {
+    cursor: default;
     display: block;
     float: left;
     font-weight: 700;
