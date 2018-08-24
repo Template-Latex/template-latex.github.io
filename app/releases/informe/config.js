@@ -40,7 +40,7 @@ var line_configimport = [63, 64]; // Número línea importación de configuracio
 var line_docinit = [98, 263]; // Número de línea inicio del documento
 var line_infodocument = [18, 19]; // Número de línea información del documento
 var portraitGallery; // Muestra la galería de portadas
-var totalHfStyles = 10; // Estilos totales en tipo de header-footer
+var totalHfStyles = 14; // Estilos totales en tipo de header-footer
 var totalPortraitStyles = 18; // Estilos totales de portada
 
 // Requerimientos adicionales de ciertas portadas
