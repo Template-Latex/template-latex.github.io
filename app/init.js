@@ -259,12 +259,15 @@ $(function () {
     });
     $('.main-content pre').css({
         'background-color': bgprecolor,
-        'border': 'solid 1px ' + codeprecolor
+        'border': 'solid 1px ' + codeprecolor,
     });
     $('.main-content').css('background-color', backgroundmaincolor);
     $('#contentBackground').css('background-color', backgroundmaincolor);
     $('body').css('background-color', backgroundmaincolor);
     $('#que-hay-de-nuevo blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
+
+    // noinspection CssInvalidHtmlTagReference, CssUnusedSymbol, JSJQueryEfficiency
+    $('head').append(String.format('<style>.preExampleButton{background-color:{0}}</style>', codeprecolor));
 
     /**
      * Se comprueba si es navegador móvil
@@ -402,6 +405,7 @@ $(function () {
             let target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
+                // noinspection JSCheckFunctionSignatures
                 $('html, body').animate({
                     scrollTop: target.offset().top
                 }, 700);

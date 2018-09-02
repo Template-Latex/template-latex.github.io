@@ -728,7 +728,7 @@ function afterDocumentReady() {
         contentAsHTML: true,
         maxWidth: 300,
         side: 'bottom',
-        theme: 'tooltipster-borderless'
+        theme: 'tooltipster-borderless',
     });
     // noinspection HtmlUnknownTarget
     $('#example-plugin-config').tooltipster({
@@ -737,7 +737,7 @@ function afterDocumentReady() {
         contentAsHTML: true,
         maxWidth: 400,
         side: 'bottom',
-        theme: 'tooltipster-borderless'
+        theme: 'tooltipster-borderless',
     });
 
     /**
@@ -758,13 +758,73 @@ function afterDocumentReady() {
                 interactive: true,
                 maxWidth: 500,
                 side: 'bottom',
-                theme: 'tooltipster-borderless'
+                theme: 'tooltipster-borderless',
             });
         }
     });
 
+    /**
+     * Se agrega archivo de ejemplos luego de los bloques de código fuente
+     */
+    let $addExample = function (trigger, content) {
+
+        // Obtiene el trigger (usualmente un pre o blockquote)
+        let $trigger = $('#' + trigger).after();
+
+        // Añade bloque oculto con contenido a desbloquear
+        let $contentID = generateID();
+        $trigger.after(String.format('<div class="codeExampleContainer" id="{0}">{1}</div>', $contentID, content));
+
+        // Agrega un botón para ver un ejemplo
+        let $btnID = generateID();
+        $trigger.after(String.format('<div class="preExampleButton" id="{0}" data-status="hidden">Mostrar ejemplo</div>', $btnID));
+
+        // Añade evento al botón
+        $('#' + $btnID).on('click', function () {
+
+            // Obtiene el botón
+            let $btn = $('#' + $btnID);
+
+            // Obtiene el contenid
+            let $cnt = $('#' + $contentID);
+
+            if ($btn.attr('data-status') === 'hidden') { // Mostrar
+                $btn.attr('data-status', 'open');
+                $btn.html('Ocultar ejemplo');
+                $cnt.show();
+            } else { // Ocultar
+                $btn.attr('data-status', 'hidden');
+                $btn.html('Mostrar ejemplo');
+                $cnt.hide();
+            }
+
+        });
+
+    };
+
+    /**
+     * Ejemplos de imágenes
+     */
+    $addExample('insertimage-example-trigger', '<img src="res/images/ex-insertimage.PNG" alt="" class="imageCodeExample imageCodeExample-normal" />');
+    $addExample('insertimageboxed-example-trigger', '<img src="res/images/ex-insertimageboxed.PNG" alt="" class="imageCodeExample imageCodeExample-tiny" />');
+    $addExample('images-example-trigger', '<img src="res/images/ex-images.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
+
+    /**
+     * Ejemplo anexo
+     */
+    $addExample('example-anexos', '<img src="res/images/ex-anexos.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
+
+    /**
+     * Ejemplos de referencias
+     */
+    $addExample('example-references', '<img src="res/images/ex-referencias.PNG" alt="" class="imageCodeExample" />');
+
 }
 
+/**
+ * Función que se aplica una vez se carga el JSON de las versiones
+ * @function
+ */
 function afterJSONLoad() {
     let initAction = $.urlParam('action');
     if (initAction != null) {
@@ -781,6 +841,11 @@ function afterJSONLoad() {
     }
 }
 
+/**
+ * Escribe links de los distintos departamentos
+ * @function
+ * @param {string} verid - ID de la versión
+ */
 function writeOtherLinks(verid) {
     var deptos = [
         ['Área de Humanidades', 'adh'],
