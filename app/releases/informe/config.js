@@ -773,11 +773,11 @@ function afterDocumentReady() {
 
         // Añade bloque oculto con contenido a desbloquear
         let $contentID = generateID();
-        $trigger.after(String.format('<div class="codeExampleContainer" id="{0}">{1}</div>', $contentID, content));
+        $trigger.after(String.format('<div class="codeExampleContainer" id="{0}"></div>', $contentID));
 
         // Agrega un botón para ver un ejemplo
         let $btnID = generateID();
-        $trigger.after(String.format('<div class="preExampleButton" id="{0}" data-status="hidden">Mostrar ejemplo</div>', $btnID));
+        $trigger.after(String.format('<div class="preExampleButton" id="{0}" data-status="hidden" data-write="false">Mostrar ejemplo</div>', $btnID));
 
         // Añade evento al botón
         $('#' + $btnID).on('click', function () {
@@ -785,8 +785,14 @@ function afterDocumentReady() {
             // Obtiene el botón
             let $btn = $('#' + $btnID);
 
-            // Obtiene el contenid
+            // Obtiene el contenido
             let $cnt = $('#' + $contentID);
+
+            // Si no se ha escrito el contenido se escribe
+            if ($btn.attr('data-write') === 'false') {
+                $cnt.html(content);
+                $btn.attr('data-write', 'true');
+            }
 
             if ($btn.attr('data-status') === 'hidden') { // Mostrar
                 $btn.attr('data-status', 'open');
@@ -808,6 +814,11 @@ function afterDocumentReady() {
     $addExample('insertimage-example-trigger', '<img src="res/images/ex-insertimage.PNG" alt="" class="imageCodeExample imageCodeExample-normal" />');
     $addExample('insertimageboxed-example-trigger', '<img src="res/images/ex-insertimageboxed.PNG" alt="" class="imageCodeExample imageCodeExample-tiny" />');
     $addExample('images-example-trigger', '<img src="res/images/ex-images.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
+
+    /**
+     * Ejemplo de código fuente
+     */
+    $addExample('example-sourcecodep', '<img src="res/images/ex-sourcecodep.PNG" alt="" class="imageCodeExample" />');
 
     /**
      * Ejemplo anexo
