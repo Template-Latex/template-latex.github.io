@@ -777,7 +777,7 @@ function afterDocumentReady() {
 
         // Agrega un botón para ver un ejemplo
         let $btnID = generateID();
-        $trigger.after(String.format('<div class="preExampleButton" id="{0}" data-status="hidden" data-write="false">Mostrar ejemplo</div>', $btnID));
+        $trigger.after(String.format('<div class="preExampleButton noselect" id="{0}" data-status="hidden" data-write="false">Mostrar ejemplo</div>', $btnID));
 
         // Añade evento al botón
         $('#' + $btnID).on('click', function () {

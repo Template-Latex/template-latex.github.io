@@ -1312,3 +1312,15 @@ Botón de ejemplo que contiene mostrar/ocultar ejemplo
         width: 4cm;
     }
 }
+
+/**
+Desactiva la selección de un objeto
+ */
+.noselect {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    outline: none;
+    user-select: none;
+}
