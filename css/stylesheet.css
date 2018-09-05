@@ -761,7 +761,7 @@ a:hover {
 
 .main-content li pre b {
     color: #000;
-    font-size: 1.1rem;
+    /*font-size: 1.1rem;*/
     position: relative;
     /*bottom: -1.1px;*/
 }
