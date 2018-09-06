@@ -528,6 +528,7 @@ a:hover {
 }
 
 .project-name {
+    cursor: default;
     margin-bottom: 0.1rem;
     margin-top: 0;
     text-shadow: 2px 2px 4px #000000;
@@ -552,6 +553,7 @@ a:hover {
 }
 
 .project-tagline {
+    cursor: default;
     font-weight: normal;
     margin-bottom: 2rem;
     opacity: 1.0;
