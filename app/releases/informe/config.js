@@ -199,6 +199,67 @@ var cmd_sourcecode = {
         '}}\n' +
         '\\end{sourcecode}',
 
+    'kotlin': '\\begin{sourcecode}{kotlin}{Kotlin en acción.}\n' +
+        '/* Block comment */\n' +
+        'package hello\n' +
+        'import kotlin.collections.* // line comment\n' +
+        '\n' +
+        '/**\n' +
+        '* Doc comment here for `SomeClass`\n' +
+        '* @see Iterator#next()\n' +
+        '*/\n' +
+        '@Deprecated("Deprecated class")\n' +
+        'private class MyClass<out T : Iterable<T>>(var prop1 : Int) {\n' +
+        '\tfun foo(nullable : String?, r : Runnable, f : () -> Int, \n' +
+        '\tfl : FunctionLike, dyn: dynamic) {\n' +
+        '\t\tprintln("length\\nis ${nullable?.length} \\e")\n' +
+        '\t\tval ints = java.util.ArrayList<Int?>(2)\n' +
+        '\t\tints[0] = 102 + f() + fl()\n' +
+        '\t\tval myFun = { -> "" };\n' +
+        '\t\tvar ref = ints.size\n' +
+        '\t\tints.lastIndex + globalCounter\n' +
+        '\t\tints.forEach lit@ {\n' +
+        '\t\t\tif (it == null) return@lit\n' +
+        '\t\t\tprintln(it + ref)\n' +
+        '\t\t}\n' +
+        '\t\tdyn.dynamicCall()\n' +
+        '\t\tdyn.dynamicProp = 5\n' +
+        '\t}\n' +
+        '\t\n' +
+        '\tval test = """hello\n' +
+        '\tworld\n' +
+        '\tkotlin"""\n' +
+        '\toverride fun hashCode(): Int {\n' +
+        '\t\treturn super.hashCode() * 31\n' +
+        '\t}\n' +
+        '}\n' +
+        'fun Int?.bar() {\n' +
+        '\tif (this != null) {\n' +
+        '\t\tprintln(message = toString())\n' +
+        '\t}\n' +
+        '\telse {\n' +
+        '\t\tprintln(this.toString())\n' +
+        '\t}\n' +
+        '}\n' +
+        'var globalCounter : Int = 5\n' +
+        'get = field\n' +
+        'abstract class Abstract {\n' +
+        '}\n' +
+        'object Obj\n' +
+        'enum class E { A, B }\n' +
+        'interface FunctionLike {\n' +
+        '\toperator fun invoke() = 1\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
+    'latex': '\\begin{sourcecode}{latex}{Imágenes múltiples.}\n' +
+        '\\begin{images}[\\label{imagenmultiple}]{Ejemplo de imagen múltiple.}\n' +
+        '\t\\addimage{ejemplos/test-image}{width=6.5cm}{Ciudad}\n' +
+        '\t\\addimage{ejemplos/test-image-wrap}{width=5cm}{Apolo}\n' +
+        '\t\\addimage{ejemplos/test-image}{width=12cm}{Ciudad más grande}\n' +
+        '\\end{images}\n' +
+        '\\end{sourcecode}',
+
     'matlab': '\\begin{sourcecode}[\\label{codigo-matlab}]{matlab}{Ejemplo en Matlab.}\n' +
         '% Se crea gráfico\n' +
         'f = figure(1);\n' +
@@ -217,14 +278,6 @@ var cmd_sourcecode = {
         'fprintf(\'BETA=%.2f, MAX: FAD=%.3f, TD/TN=%.3f\\n\', BETA(j), fad(mx), tdtn(mx));\n' +
         'plot(tdtn, fad, \'DisplayName\', strcat(\'\\beta=\', sprintf(\'%.2f\', BETA(j))));\n' +
         'end\t\n' +
-        '\\end{sourcecode}',
-
-    'latex': '\\begin{sourcecode}{latex}{Imágenes múltiples.}\n' +
-        '\\begin{images}[\\label{imagenmultiple}]{Ejemplo de imagen múltiple.}\n' +
-        '\t\\addimage{ejemplos/test-image}{width=6.5cm}{Ciudad}\n' +
-        '\t\\addimage{ejemplos/test-image-wrap}{width=5cm}{Apolo}\n' +
-        '\t\\addimage{ejemplos/test-image}{width=12cm}{Ciudad más grande}\n' +
-        '\\end{images}\n' +
         '\\end{sourcecode}',
 
     'perl': '\\begin{sourcecode}[\\label{ejemplito-perl}]{perl}{Algo de perl.}\n' +
@@ -364,6 +417,18 @@ var cmd_sourcecode = {
         '\n' +
         '  end\n' +
         'end\n' +
+        '\\end{sourcecode}',
+
+    'scala': '\\begin{sourcecode}{scala}{Código en scala.}\n' +
+        'object Test {\n' +
+        '\tdef main(args: Array[String]) {\n' +
+        '\t\tvar a = 0;\n' +
+        '\t\t// for loop execution with a range\n' +
+        '\t\tfor( a <- 1 to 10){\n' +
+        '\t\t\tprintln( "Value of a: " + a );\n' +
+        '\t\t}\n' +
+        '\t}\n' +
+        '}\n' +
         '\\end{sourcecode}',
 
     'sql': '\\begin{sourcecode}{sql}{Merge two tables.}\n' +
