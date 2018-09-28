@@ -39,12 +39,15 @@ $(function () {
     /**
      * ------------------------------------------------------------------------
      * Escribe el acerca-de
+     * ------------------------------------------------------------------------
      */
     printAboutInfo();
     writeBadges();
 
     /**
+     * ------------------------------------------------------------------------
      * Se comprueba que wallpaper.db se cargó
+     * ------------------------------------------------------------------------
      */
     try {
         // noinspection JSUnusedLocalSymbols
@@ -60,7 +63,9 @@ $(function () {
     }
 
     /**
+     * ------------------------------------------------------------------------
      * Se generan colores
+     * ------------------------------------------------------------------------
      */
     let backgroundmaincolor = shadeColor2(wallpaper_db.color, 0.98);
     let bgprecolor = shadeColor2(wallpaper_db.color, 0.9);
@@ -71,7 +76,9 @@ $(function () {
 
     // noinspection JSJQueryEfficiency
     /**
+     * ------------------------------------------------------------------------
      * Aplica tema de color a página
+     * ------------------------------------------------------------------------
      */
     let $head = $('head');
     $head.append(String.format('<meta name="theme-color" content="{0}">', backgroundmaincolor));
@@ -80,15 +87,19 @@ $(function () {
     $head.append(String.format('<meta name="apple-mobile-web-app-status-bar-style" content="{0}">', backgroundmaincolor));
 
     /**
+     * ------------------------------------------------------------------------
      * Se añaden las descargas del template base
+     * ------------------------------------------------------------------------
      */
     let jsonquery = $.getJSON(href_json_releases, function (json) {
 
-        // Se cargan los datos del json
+        /**
+         * Se cargan los datos del json
+         */
         total_downloads = 0;
-        for (let i = 0; i < json.length; i++) {
+        for (let i = 0; i < json.length; i += 1) {
             try {
-                for (let j = 0; j < json[i].assets.length; j++) {
+                for (let j = 0; j < json[i].assets.length; j += 1) {
                     total_downloads += parseInt(json[i].assets[j].download_count);
                     version_entries.push(json[i].tag_name);
                 }
@@ -97,7 +108,9 @@ $(function () {
             }
         }
 
-        // Válido para los subtemplates
+        /**
+         * Válido para los subtemplates
+         */
         try {
             last_version = json[0].tag_name;
             last_version_link = json[0].assets[0].browser_download_url;
@@ -115,14 +128,16 @@ $(function () {
             throwError(errors.cantGetVersion);
         }
 
-        // Se actualiza total de descargas
+        /**
+         * Se actualiza total de descargas
+         */
         total_downloads_l30 = total_downloads;
         if (total_downloads === 0) {
             total_downloads = nan_value;
         } else {
             updateDownloadCounter(total_downloads, update_download_counter);
             let j = '';
-            for (let i = 0; i < download_list_counter.length; i++) {
+            for (let i = 0; i < download_list_counter.length; i += 1) {
                 j = download_list_counter[i][1];
                 if (version_entries.indexOf(j) === -1) {
                     if (Array.isArray(download_list_counter[i][0])) {
@@ -135,9 +150,10 @@ $(function () {
         }
         update_download_banner(total_downloads);
 
-        // Se añade link estadísticas a banner descargas
+        /**
+         * Se añade link estadísticas a banner descargas
+         */
         $('#main-content-section #templatestats').attr('href', stats_href + stats_name);
-
         if (update_download_counter === 'Template-Informe') {
 
             // Se carga los elementos
@@ -182,18 +198,24 @@ $(function () {
 
         }
 
-        // Se muestra descargas y botones con efecto
+        /**
+         * Se muestra descargas y botones con efecto
+         */
         fadein_css('#total-download-counter-1', '0.1s');
         fadein_css('#total-download-counter-2', '0.1s');
         $('#buttonfile1text').fadeIn('slow');
         $('#buttonfilectext').fadeIn('slow');
 
-        // Se establece la última versión del pdf
+        /**
+         * Se establece la última versión del pdf
+         */
         pdf_href_lastv = pdf_js_href + String.format(href_pdf_version, last_version);
         $('#template-preview-pdf').attr('href', pdf_href_lastv);
         $(".badgeejemplopdf").attr('href', pdf_href_lastv);
 
-        // Se obtiene el what's new
+        /**
+         * Se obtiene el what's new
+         */
         $('#github-button-header').attr('href', href_github_project_source);
         let whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
         let whats_new_versions = Math.min(changelog_max, json.length);
@@ -201,7 +223,7 @@ $(function () {
         let md_converter = new showdown.Converter();
         let show_github_button = (whats_new_versions === changelog_max);
         try {
-            for (let i = 0; i < whats_new_versions; i++) {
+            for (let i = 0; i < whats_new_versions; i += 1) {
                 let version_created_at = json[i].created_at.substring(0, 10);
                 let $version_created_at = version_created_at.substring(8, 10) + '/' + version_created_at.substring(5, 7) + '/' + version_created_at.substring(0, 4);
                 // noinspection HtmlUnknownTarget
@@ -232,14 +254,18 @@ $(function () {
     });
 
     /**
+     * ------------------------------------------------------------------------
      * Se define color de fondo principal antes de carga imagen
+     * ------------------------------------------------------------------------
      */
     let $bgheaderc = $('#background-page-header-colored');
     $bgheaderc.css('background-color', wallpaper_db.color);
     $bgheaderc.show();
 
     /**
+     * ------------------------------------------------------------------------
      * Se cambia el estilo de la página
+     * ------------------------------------------------------------------------
      */
     $('.main-content h1').css('color', wallpaper_db.color);
     $('.main-content h2').css('color', wallpaper_db.color);
@@ -269,7 +295,9 @@ $(function () {
     $('head').append(String.format('<style>.preExampleButton{background-color:{0}}</style>', codeprecolor));
 
     /**
+     * ------------------------------------------------------------------------
      * Se comprueba si es navegador móvil
+     * ------------------------------------------------------------------------
      */
     if (/Mobi/.test(navigator.userAgent)) {
         is_movile_browser = true;
@@ -279,7 +307,9 @@ $(function () {
     }
 
     /**
-     * Se aplica paralaje o carga la imagen
+     * ------------------------------------------------------------------------
+     * Se aplica paralaje o carga la imagen de fondo
+     * ------------------------------------------------------------------------
      */
     if (wallpaper_db.image !== null) {
         console.log(String.format('Cargando fondo {0} - ID {1} (wallpaper.db)', wallpaper_db.image, wallpaper_db.index));
@@ -372,7 +402,9 @@ $(function () {
     }
 
     /**
+     * ------------------------------------------------------------------------
      * Se actualiza la cantidad de descargas al hacer click
+     * ------------------------------------------------------------------------
      */
     $('total-download-counter').each(function () {
         this.id.innerHTML = total_downloads;
@@ -386,18 +418,22 @@ $(function () {
     });
 
     /**
+     * ------------------------------------------------------------------------
      * Muestra un botón para subir al hacer scroll
+     * ------------------------------------------------------------------------
      */
     backToTop = $.backToTop({
         backgroundColor: wallpaper_db.color,
         pxToTrigger: amountScrolled,
         scrollAnimation: 400,
         width: 65,
-        height: 65
+        height: 65,
     });
 
     /**
+     * ------------------------------------------------------------------------
      * Smooth scrolling al clickear un anchor
+     * ------------------------------------------------------------------------
      */
     $('a[href*="#"]:not([href="#"])').click(function () {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
@@ -414,21 +450,25 @@ $(function () {
     });
 
     /**
+     * ------------------------------------------------------------------------
      * Se añade el link a chat banner
+     * ------------------------------------------------------------------------
      */
     // $('#chatgitter').attr('href', gitter_href + update_download_counter);
 
     /**
+     * ------------------------------------------------------------------------
      * Se actualiza el total de descargas cada n-segundos
+     * ------------------------------------------------------------------------
      */
     if (update_downloads_version) {
         setInterval(function () {
             let update_downloads = 0;
             let update_last_version = '';
             jsonquery = $.getJSON(href_json_releases, function (json) {
-                for (let i = 0; i < json.length; i++) {
+                for (let i = 0; i < json.length; i += 1) {
                     try {
-                        for (let j = 0; j < json[i].assets.length; j++) {
+                        for (let j = 0; j < json[i].assets.length; j += 1) {
                             update_downloads += parseInt(json[i].assets[j].download_count);
                         }
                     } catch (err) {
@@ -457,14 +497,18 @@ $(function () {
     }
 
     /**
+     * ------------------------------------------------------------------------
      * Se crea un listener para cada elemento de código latex, evento copiar el texto
+     * ------------------------------------------------------------------------
      */
     $('.highlight-text-tex').each(function () {
         selectAllText(this);
     });
 
     /**
+     * ------------------------------------------------------------------------
      * Aplica tooltips
+     * ------------------------------------------------------------------------
      */
     $('#download-button-1file').tooltipster({
         animation: 'grow',
@@ -472,7 +516,7 @@ $(function () {
         delay: 600,
         maxWidth: 200,
         side: 'bottom',
-        theme: 'tooltipster-borderless'
+        theme: 'tooltipster-borderless',
     });
     // noinspection HtmlUnknownAttribute
     $('#autorbanner').tooltipster({
@@ -490,11 +534,13 @@ $(function () {
         delay: 400,
         maxWidth: 220,
         side: 'bottom',
-        theme: 'tooltipster-borderless'
+        theme: 'tooltipster-borderless',
     });
 
     /**
+     * ------------------------------------------------------------------------
      * Popup inicial
+     * ------------------------------------------------------------------------
      */
     if (initial_popup.display && initial_popup.content.length > 0) {
         $.confirm({
@@ -514,7 +560,10 @@ $(function () {
     }
 
     /**
+     * ------------------------------------------------------------------------
      * Se llama a la función de cada template después de cargar
+     * ------------------------------------------------------------------------
      */
     afterDocumentReady();
+
 });

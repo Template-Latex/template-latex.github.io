@@ -21,15 +21,19 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// Configuraciones
-var href_github_project = 'https://github.com/Template-Latex/Template-Auxiliares/releases/';
-var href_github_project_source = 'https://github.com/Template-Latex/Template-Auxiliares/';
-var href_json_releases = 'https://api.github.com/repos/Template-Latex/Template-Auxiliares/releases';
-var href_pdf_version = '../Auxiliares/Template-Auxiliares v{0}.pdf';
-var stats_name = 'Auxiliares';
-var update_download_counter = 'Template-Auxiliares';
+/**
+ * Configuraciones
+ */
+let href_github_project = 'https://github.com/Template-Latex/Template-Auxiliares/releases/';
+let href_github_project_source = 'https://github.com/Template-Latex/Template-Auxiliares/';
+let href_json_releases = 'https://api.github.com/repos/Template-Latex/Template-Auxiliares/releases';
+let href_pdf_version = '../Auxiliares/Template-Auxiliares v{0}.pdf';
+let stats_name = 'Auxiliares';
+let update_download_counter = 'Template-Auxiliares';
 
-// Declaración de funciones propias de cada template
+/**
+ * Declaración de funciones propias de cada template
+ */
 function afterDocumentReady() {}
 
 function afterJSONLoad() {}

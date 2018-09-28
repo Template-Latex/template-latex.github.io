@@ -21,30 +21,36 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// Configuraciones
-var href_github_project = 'https://github.com/Template-Latex/Template-Informe/releases/';
-var href_github_project_source = 'https://github.com/Template-Latex/Template-Informe/';
-var href_json_releases = 'https://api.github.com/repos/Template-Latex/Template-Informe/releases';
-var href_pdf_version = '../Informe/Template-Informe v{0}.pdf';
-var stats_name = 'Informe';
-var update_download_counter = 'Template-Informe';
+/**
+ * Configuraciones
+ */
+let href_github_project = 'https://github.com/Template-Latex/Template-Informe/releases/';
+let href_github_project_source = 'https://github.com/Template-Latex/Template-Informe/';
+let href_json_releases = 'https://api.github.com/repos/Template-Latex/Template-Informe/releases';
+let href_pdf_version = '../Informe/Template-Informe v{0}.pdf';
+let stats_name = 'Informe';
+let update_download_counter = 'Template-Informe';
 
-// Declaración de funciones propias de cada template
-var bounceConfig; // Efecto en entrada de configuración
-var downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
-var hfGallery; // Muestra la galería de header-footer
-var lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-var line_abstract = [87, 252]; // Número de línea de abstract/resumen
-var line_authortable = [33, 34]; // Número de línea tabla de integrantes
-var line_configimport = [63, 64]; // Número línea importación de configuraciones
-var line_docinit = [98, 263]; // Número de línea inicio del documento
-var line_infodocument = [18, 19]; // Número de línea información del documento
-var portraitGallery; // Muestra la galería de portadas
-var totalHfStyles = 14; // Estilos totales en tipo de header-footer
-var totalPortraitStyles = 18; // Estilos totales de portada
+/**
+ * Declaración de funciones propias de cada template
+ */
+let bounceConfig; // Efecto en entrada de configuración
+let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
+let hfGallery; // Muestra la galería de header-footer
+let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
+let line_abstract = [87, 252]; // Número de línea de abstract/resumen
+let line_authortable = [33, 34]; // Número de línea tabla de integrantes
+let line_configimport = [63, 64]; // Número línea importación de configuraciones
+let line_docinit = [98, 263]; // Número de línea inicio del documento
+let line_infodocument = [18, 19]; // Número de línea información del documento
+let portraitGallery; // Muestra la galería de portadas
+let totalHfStyles = 14; // Estilos totales en tipo de header-footer
+let totalPortraitStyles = 18; // Estilos totales de portada
 
-// Requerimientos adicionales de ciertas portadas
-var portraitRequiresAdditional = {
+/**
+ * Requerimientos adicionales de ciertas portadas
+ */
+let portraitRequiresAdditional = {
     15: '\\headerimageA, \\headerimagescaleA',
     16: '\\portraitbackgroundimageB, \\portraitbackgroundcolorB',
     17: '\\portraitimageC, \\portraitimageboxedC, \\portraitimageboxedwidthC, \\portraitimagewidthC',
@@ -53,7 +59,7 @@ var portraitRequiresAdditional = {
 
 // Lista de códigos fuente
 // noinspection CssUnusedSymbol
-var cmd_sourcecode = {
+let cmd_sourcecode = {
     'bash': '\\begin{sourcecode}[]{bash}{Un poco de bash.}\n' +
         '# Muestra toda la información de la batería\n' +
         'function battr-info {\n' +
@@ -591,7 +597,7 @@ function afterDocumentReady() {
     hfGallery = function () {
         let pswpElement = document.querySelectorAll('.pswp')[0];
         let items = [];
-        for (let i = 1; i <= totalHfStyles; i++) {
+        for (let i = 1; i <= totalHfStyles; i += 1) {
             items.push({
                 src: String.format('res/images/hf{0}.png', i),
                 w: 544,
@@ -627,7 +633,7 @@ function afterDocumentReady() {
         let pswpElement = document.querySelectorAll('.pswp')[0];
         let items = [];
         let req_add = ''; // Requerimientos adicionales
-        for (let i = 1; i <= totalPortraitStyles; i++) {
+        for (let i = 1; i <= totalPortraitStyles; i += 1) {
             if (portraitRequiresAdditional[i] !== undefined) {
                 req_add = '. Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>.';
             }
@@ -960,7 +966,7 @@ function afterJSONLoad() {
  * @param {string} verid - ID de la versión
  */
 function writeOtherLinks(verid) {
-    var deptos = [
+    let deptos = [
         ['Área de Humanidades', 'adh'],
         ['Departamento de Astronomía', 'das'],
         ['Departamento de Ciencias de la Computación', 'dcc'],
@@ -977,7 +983,7 @@ function writeOtherLinks(verid) {
         ['Facultad de Ciencias Físicas y Matemáticas', 'fcfm'],
         ['Universidad de Chile', 'uchile'],
     ];
-    var $addTotal = function () {
+    let $addTotal = function () {
         if (total_downloads !== nan_value) {
             total_downloads += 1;
             total_downloads_l30 += 1;
@@ -991,7 +997,7 @@ function writeOtherLinks(verid) {
     // noinspection HtmlUnknownTarget
     $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión compacta</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Informe-Single.zip">Descargar</a></div></div>', href_github_project, verid));
     $('.downloadother-compact').on('click', $addTotal);
-    for (var i = 0; i < deptos.length; i++) {
+    for (let i = 0; i < deptos.length; i += 1) {
         // noinspection HtmlUnknownTarget
         $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link-double"><a href="{3}download/{2}/Template-Informe-{1}.zip" class="otherdownloadclickeable">Normal</a></div><div class="downloadother-link-double"><a href="{3}download/{2}/Template-Informe-{1}-Single.zip" class="otherdownloadclickeable">Compacta</a></div></div>', deptos[i][0], deptos[i][1], verid, href_github_project));
         $(String.format('#downloadentry-{0} .otherdownloadclickeable', deptos[i][1])).on('click', $addTotal);

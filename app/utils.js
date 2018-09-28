@@ -23,7 +23,8 @@
 
 // noinspection JSUnusedGlobalSymbols
 /**
- * Genera un número aleatorio entero entre min y max
+ * Genera un número aleatorio entero entre min y max.
+ *
  * @function
  * @param {number} min - Mínimo
  * @param {number} max - Máximo
@@ -34,7 +35,8 @@ function getRandomInt(min, max) {
 }
 
 /**
- * Selecciona el texto de un elemento
+ * Selecciona el texto de un elemento.
+ *
  * @function
  * @param {string} elem - Elemento
  */
@@ -68,7 +70,8 @@ function selectAllText(elem) {
 }
 
 /**
- * Función para transformar colores, oscurece y aclarece
+ * Función para transformar colores, oscurece y aclarece.
+ *
  * @function
  * @param {string} color - Color a generar
  * @param {number} percent - Porcentaje de oscurecimiento
@@ -86,7 +89,8 @@ function shadeColor2(color, percent) {
 
 // noinspection JSUnusedGlobalSymbols
 /**
- * Retorna un color random
+ * Retorna un color random.
+ *
  * @function
  * @return {string}
  */
@@ -100,7 +104,8 @@ function getRandomColor() {
 }
 
 /**
- * Retorna un color oscuro random
+ * Retorna un color oscuro random.
+ *
  * @function
  * @return {string}
  */
@@ -128,7 +133,8 @@ if (!String.format) {
 }
 
 /**
- * Desactiva cualquier elemento por id
+ * Desactiva cualquier elemento por id.
+ *
  * @function
  * @param {string} idelem - ID del elemento
  */
@@ -142,11 +148,11 @@ function hide_element_id(idelem) {
 }
 
 /**
- * Animación fadein css
+ * Animación fadein css.
+ *
  * @function
  * @param {string} idelem - ID del elemento
  * @param {string} t - Segundos
- * @return
  */
 function fadein_css(idelem, t) {
     $(idelem).css('animation-name', 'fadeIn');
@@ -157,7 +163,8 @@ function fadein_css(idelem, t) {
 }
 
 /**
- * Actualiza el contador de descargas
+ * Actualiza el contador de descargas.
+ *
  * @function
  * @param {number} total_downloads - Descargas totales
  */
@@ -167,7 +174,8 @@ function update_download_banner(total_downloads) {
 }
 
 /**
- * Efecto de rebote de un elemento
+ * Efecto de rebote de un elemento.
+ *
  * @function
  * @param {string} element - Elemento
  * @param {number} times - Número de veces
@@ -187,7 +195,8 @@ function doBounce(element, times, distance, speed) {
 }
 
 /**
- * Lanza un error, oculta contenido y muestra un div con información
+ * Lanza un error, oculta contenido y muestra un div con información.
+ *
  * @function
  * @param {object} error - Texto del error
  */
@@ -209,7 +218,7 @@ function throwError(error) {
         animation: 'grow',
         content: error.moreinfo,
         side: 'bottom',
-        theme: 'tooltipster-borderless'
+        theme: 'tooltipster-borderless',
     });
     let backheight = $(window).height() - $('.page-header').innerHeight();
     $html_section.css('height', backheight);
@@ -220,7 +229,8 @@ function throwError(error) {
 }
 
 /**
- * Imprime una excepción en consola
+ * Imprime una excepción en consola.
+ *
  * @function
  * @param {object} $e - Excepción
  */
@@ -229,7 +239,8 @@ function throwException($e) {
 }
 
 /**
- * Obtiene parámetros de la url
+ * Obtiene parámetros de la url.
+ *
  * @function
  * @param name
  * @return {*}
@@ -244,7 +255,8 @@ $.urlParam = function (name) {
 };
 
 /**
- * Escribe los badges de la suite Template-Latex
+ * Escribe los badges de la suite Template-Latex.
+ *
  * @function
  */
 function writeBadges() {
@@ -271,9 +283,10 @@ function writeBadges() {
 }
 
 /**
- * Elige una propiedad random desde un objeto
+ * Elige una propiedad random desde un objeto.
+ *
  * @function
- * @param obj
+ * @param obj - Objeto
  * @return {*}
  */
 function pickRandomProperty(obj) {
@@ -286,9 +299,9 @@ function pickRandomProperty(obj) {
 }
 
 /**
- * Genera un string aleatorio
+ * Genera un string aleatorio.
+ *
  * @function
- * @public
  * @returns {string} - String aleatorio
  */
 function generateID() {

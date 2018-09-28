@@ -21,15 +21,19 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// Configuraciones
-var href_github_project = 'https://github.com/Template-Latex/Professional-CV/releases/';
-var href_github_project_source = 'https://github.com/Template-Latex/Professional-CV/';
-var href_json_releases = 'https://api.github.com/repos/Template-Latex/Professional-CV/releases';
-var href_pdf_version = '../Professional-CV/Professional-CV v{0}.pdf';
-var stats_name = 'Professional-CV';
-var update_download_counter = 'Professional-CV';
+/**
+ * Configuraciones
+ */
+let href_github_project = 'https://github.com/Template-Latex/Professional-CV/releases/';
+let href_github_project_source = 'https://github.com/Template-Latex/Professional-CV/';
+let href_json_releases = 'https://api.github.com/repos/Template-Latex/Professional-CV/releases';
+let href_pdf_version = '../Professional-CV/Professional-CV v{0}.pdf';
+let stats_name = 'Professional-CV';
+let update_download_counter = 'Professional-CV';
 
-// Declaración de funciones propias de cada template
+/**
+ * Declaración de funciones propias de cada template
+ */
 function afterDocumentReady() {}
 
 function afterJSONLoad() {
