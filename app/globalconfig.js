@@ -24,41 +24,41 @@
 /**
  * Configuraciones de toda la suite Template-Latex
  */
-var backgroundResize; // Ajuste del fondo
-var blurlimits = [3, 5]; // Límites del blur en px
-var blurprobability = 50; // Probabilidad de blur
-var changelog_max = 5; // Número máximo de cambios en changelog
-var changelog_show_hr = false; // Muestra título en changelog
-var changepacecolor = true; // Cambiar el color de pace
-var enableparallax = true; // Activa el parallax
-// var gitter_href = 'https://gitter.im/Template-Latex/'; // Página gitter
-var nan_value = 'NaN';
-var otherdownloadsfadetime = 400;
-var parallaxloaded = false; // Indica que parallax ya se cargó
-var pdf_js_href = 'http://latex.ppizarror.com/pdf-version/web/viewer.html?file=';
-var scrollLock = false; // Indica que la función $.scrollLock se activó
-var seconds_update_downloadCounter = 60 * 3; // Tiempo de refresco actualización contador descargas
-var stats_href = 'http://latex.ppizarror.com/stats/?template=';
-var update_downloads_version = true;
+let backgroundResize; // Ajuste del fondo
+let blurlimits = [3, 5]; // Límites del blur en px
+let blurprobability = 50; // Probabilidad de blur
+let changelog_max = 5; // Número máximo de cambios en changelog
+let changelog_show_hr = false; // Muestra título en changelog
+let changepacecolor = true; // Cambiar el color de pace
+let enableparallax = true; // Activa el parallax
+// let gitter_href = 'https://gitter.im/Template-Latex/'; // Página gitter
+let nan_value = 'NaN';
+let otherdownloadsfadetime = 400;
+let parallaxloaded = false; // Indica que parallax ya se cargó
+let pdf_js_href = 'http://latex.ppizarror.com/pdf-version/web/viewer.html?file=';
+let scrollLock = false; // Indica que la función $.scrollLock se activó
+let seconds_update_downloadCounter = 60 * 3; // Tiempo de refresco actualización contador descargas
+let stats_href = 'http://latex.ppizarror.com/stats/?template=';
+let update_downloads_version = true;
 
 /**
  * Aviso inicial
  */
-var initial_popup = {
+let initial_popup = {
     content: '',
     display: true,
-    title: ''
+    title: '',
 };
 
 /**
  * Botón backToTop
  */
-var backToTop;
+let backToTop;
 
 /**
  * Mensajes de error
  */
-var errors = {
+let errors = {
     "cantGetVersion": {
         "msg": "No se pudo obtener la última versión",
         "code": 0,
@@ -73,5 +73,5 @@ var errors = {
         "msg": "Error al obtener la descripción de las versiones del Template",
         "code": 2,
         "moreinfo": "Ocurrió un error crítico al obtener la descripción de las versiones del Template (changelog) desde el servidor de Github, probable error de configuración, error en showdown.js o bien error de conexión con el servidor"
-    }
+    },
 };

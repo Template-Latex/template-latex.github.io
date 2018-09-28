@@ -54,6 +54,43 @@ var portraitRequiresAdditional = {
 // Lista de códigos fuente
 // noinspection CssUnusedSymbol
 var cmd_sourcecode = {
+    'bash': '\\begin{sourcecode}[]{bash}{Un poco de bash.}\n' +
+        '# Muestra toda la información de la batería\n' +
+        'function battr-info {\n' +
+        '\twrks-scripts\n' +
+        '\tdata=$(ioreg -l -w0 |grep Capacity)\n' +
+        '\tpython2.7 battery_info.py $data\n' +
+        '\tcd - >> config/.empty\n' +
+        '}\n' +
+        '\n' +
+        'function qtest-java {\n' +
+        '\tif [ -z "${1}" ]; then\n' +
+        '\techo-err \'Nombre fuente no definido\'\n' +
+        '\telse\n' +
+        '\tvim $1\n' +
+        '\tjavac -encoding ISO-8859-1 $1 $2 $3\n' +
+        '\tblankspace=""\n' +
+        '\tfirst=$1\n' +
+        '\tfirst=${first/.java/$blankspace}\n' +
+        '\tjava $first\n' +
+        '\tfi\n' +
+        '}\n' +
+        '\n' +
+        'PATH=$PATH:"/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"\n' +
+        'PATH=$PATH:"/Applications/Utilities/Lynxlet.app/Contents/Resources/lynx/bin"\n' +
+        'export PATH\n' +
+        '\n' +
+        'alias ga=\'git add \'\n' +
+        'dig +short myip.opendns.com @resolver1.opendns.com\n' +
+        'gcc "$@" -o $first\n' +
+        '\n' +
+        '::claramente esto no funcionará::\n' +
+        'sudo x, call y\n' +
+        'rem esto es un comentario en windows\n' +
+        'history -c rm a, ls -d killall e mv | grep | awk python \'hola\'\n' +
+        'vim uwu printf \'have you seen him\' -z\n' +
+        'git doge ssh cp cd\n' +
+        '\\end{sourcecode}',
     'c': '\\begin{sourcecode}[]{c}{Codigo en c.}\n' +
         '#include <stdio.h>\n' +
         'int main(){\n' +

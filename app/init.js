@@ -21,15 +21,15 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-var amountScrolled = 600;
-var is_movile_browser = false;
-var last_version = '$VERSION';
-var last_version_link = '$VERSION_LINK';
-var new_version_entry = '';
-var pdf_href_lastv = '';
-var total_downloads = 0;
-var total_downloads_l30 = 0;
-var version_entries = [];
+let amountScrolled = 600;
+let is_movile_browser = false;
+let last_version = '$VERSION';
+let last_version_link = '$VERSION_LINK';
+let new_version_entry = '';
+let pdf_href_lastv = '';
+let total_downloads = 0;
+let total_downloads_l30 = 0;
+let version_entries = [];
 
 /**
  * Inicio de la aplicación
@@ -37,13 +37,10 @@ var version_entries = [];
 $(function () {
 
     /**
+     * ------------------------------------------------------------------------
      * Escribe el acerca-de
      */
     printAboutInfo();
-
-    /**
-     * Se escriben los badges
-     */
     writeBadges();
 
     /**
@@ -53,9 +50,10 @@ $(function () {
         // noinspection JSUnusedLocalSymbols
         let $s = wallpaper_db.color + wallpaper_db.image + wallpaper_db.position;
     } catch ($e) {
+        // noinspection JSValidateTypes
         wallpaper_db = {
             color: getRandomDarkColor(),
-            image: null
+            image: null,
         };
         console.warn('No se pudo cargar wallpaper.db, se creó un color aleatorio por defecto');
     } finally {
@@ -71,6 +69,7 @@ $(function () {
     let hrcolor = shadeColor2(wallpaper_db.color, 0.7);
     let pacecolor = shadeColor2(wallpaper_db.color, 0.15);
 
+    // noinspection JSJQueryEfficiency
     /**
      * Aplica tema de color a página
      */
