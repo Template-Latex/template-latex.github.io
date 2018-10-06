@@ -1234,12 +1234,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <li>
                             <strong>\fracpartial</strong><b>{</b><em>a</em><b>}</b><b>{</b><em>b</em><b>}</b>: Crea una
                             fracción de derivadas parciales del estilo ∂a/∂b.
-                            <!--<blockquote>-->
-                            <!--<div class="highlight highlight-text-tex">-->
-                            <!--<pre>f(x) = <span class="pl-e">\fracpartial</span><b>{</b>g<b>}{</b>x<b>}</b></pre>-->
-                            <!--</div>-->
-                            <!--<p><img src="res/images/fpartial.png" alt=""></p>-->
-                            <!--</blockquote>-->
                             <blockquote>
                                 <div class="highlight highlight-text-tex">
                                     <pre><span class="pl-c1">\lpow</span>{h}{y} = 2 + <span
@@ -1449,12 +1443,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </blockquote>
                     </li>
                     <li>
-                        <strong>\coreimporttikz</strong>: Importa la librería tikz. Sólo usar antes del inicio del
-                        documento. <b>DEPRECADO</b>: Utilizar configuración <a
-                            onclick="bounceConfig('#config-other','#import-tikz-config');"
-                            class="javascripthref">\importikz</a>.
-                    </li>
-                    <li>
                         <strong>\insertemail</strong><b>{</b><em>Correo</em><b>}</b>: Inserta un link de un correo con
                         formato y dirección web válida.
                     </li>
@@ -1489,136 +1477,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\setpagemargincm</strong><b>{</b><em>Margen izq</em><b>}</b><b>{</b><em>Margen
                         der</em><b>}</b><b>{</b><em>Margen sup</em><b>}</b><b>{</b><em>Margen inf</em><b>}</b>: Modifica
                         los márgenes de la página. Valores en centímetros.
-                    </li>
-                    <li>
-                        <a id="showDeprecatedImageTrigger" class="javascripthref"><b>Inserción múltiple de imágenes</b></a>
-                        (FUNCIONES DEPRECADAS).
-                        <div id="showDeprecatedImageContainer" class="codeFunContainer">
-                            <ul>
-                                <li>
-                                    <strong>\insertdoubleimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                                    de la imagen 1</em><b>}</b><b>{</b><em>Parámetros 1</em><b>}</b><b>{</b><em>Leyenda
-                                    1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Parámetros
-                                    2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Leyenda
-                                    general</em><b>}</b>: Inserta dos imágenes en un sólo elemento.
-                                    <blockquote>
-                                        <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertdoubleimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-double-1}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b><span
-                                        class="pl-v">scale</span>=0.4<b>}</b><b>{</b>Descripción A<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-wrap<b>}</b><b>{</b><span
-                                        class="pl-v">width</span>=5cm<b>}</b><b>{</b>Descripción B<b>}</b><b>{</b>Descripción general de las imágenes<b>}</b></pre>
-                                        </div>
-                                    </blockquote>
-                                </li>
-                                <li>
-                                    <strong>\insertdoubleeqimage</strong><b>[</b><em>Label</em>
-                                    (opcional)<b>]</b><b>{</b><em>Dirección
-                                    de la imagen 1</em><b>}</b><b>{</b><em>Leyenda 1</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 2</em><b>}</b><b>{</b><em>Leyenda 2</em><b>}</b><b>{</b><em>Parámetros
-                                    generales</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
-                                    Inserta dos imágenes en un sólo elemento utilizando los mismos parámetros (estilos
-                                    de imagen).
-                                    <blockquote>
-                                        <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertdoubleeqimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-eql}<b>]</b><b>{</b>ejemplos/test-image<b>}</b><b>{</b>Descripción A<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-wrap<b>}</b><b>{</b>Descripción B<b>}</b><b>{</b><span
-                                        class="pl-v">height</span>=5cm<b>}</b><b>{</b>Descripción general<b>}</b></pre>
-                                        </div>
-                                    </blockquote>
-                                </li>
-                            </ul>
-                            <hr class="style1">
-                            <ul>
-                                <li>
-                                    <strong>\inserttripleimage</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Dirección
-                                    de la imagen 1</em><b>}</b><b>{</b><em>Parámetros 1</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 2</em><b>}</b><b>{</b><em>Parámetros 2</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 3</em><b>}</b><b>{</b><em>Parámetros 3</em><b>}</b><b>{</b><em>Leyenda
-                                    general</em><b>}</b>: Inserta tres imágenes en un sólo elemento.
-                                    <blockquote>
-                                        <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\inserttripleimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-tri-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b><span
-                                        class="pl-v">scale</span>=0.4<b>}</b><b>{</b>ejemplos/test-<span
-                                        class="newline_br"></span>image-2.png<b>}</b><b>{</b><span
-                                        class="pl-v">height</span>=6cm<b>}</b><b>{</b>ejemplos/test-image-3.pdf<b>}</b><b>{</b><span
-                                        class="pl-v">width</span>=3cm<b>}</b><b>{</b>Descripción general<b>}</b></pre>
-                                        </div>
-                                    </blockquote>
-                                </li>
-                                <li>
-                                    <strong>\inserttripleeqimage</strong><b>[</b><em>Label</em>
-                                    (opcional)<b>]</b><b>{</b><em>Dirección
-                                    de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 3</em><b>}</b><b>{</b><em>Parámetros generales</em><b>}</b><b>{</b><em>Leyenda
-                                    general</em><b>}</b>:
-                                    Inserta tres imágenes en un sólo elemento utilizando los mismos parámetros (estilos
-                                    de imagen).
-                                    <blockquote>
-                                        <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\inserttripleeqimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-tri}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.png<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.pdf<b>}</b><b>{</b><span
-                                        class="pl-v">scale</span>=0.6<b>}</b><b>{</b>Descripción general<b>}</b></pre>
-                                        </div>
-                                    </blockquote>
-                                </li>
-                            </ul>
-                            <hr class="style1">
-                            <ul>
-                                <li>
-                                    <strong>\insertquadimage</strong><b>[</b><em>Label</em>
-                                    (opcional)<b>]</b><b>{</b><em>Dirección
-                                    de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Parámetros
-                                    globales</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
-                                    Inserta cuatro imágenes en un sólo elemento.
-                                    <blockquote>
-                                        <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertquadimage</span><b>[</b><span class="pl-c1">\label</span>{img-quad-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b><span
-                                        class="pl-v">width</span>=6cm<b>}</b><b>{</b>Descripción general<b>}</b></pre>
-                                        </div>
-                                    </blockquote>
-                                </li>
-                                <li>
-                                    <strong>\insertpentaimage</strong><b>[</b><em>Label</em>
-                                    (opcional)<b>]</b><b>{</b><em>Dirección
-                                    de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 5</em><b>}</b><b>{</b><em>Parámetros globales</em><b>}</b><b>{</b><em>Leyenda
-                                    general</em><b>}</b>: Inserta cinco imágenes en un sólo elemento.
-                                    <blockquote>
-                                        <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\insertpentaimage</span><b>[</b><span
-                                        class="pl-c1">\label</span>{img-pent1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b>ejemplos/test-image-5.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b><span
-                                        class="pl-v">scale</span>=0.7<b>}</b><b>{</b>Descripción general<b>}</b></pre>
-                                        </div>
-                                    </blockquote>
-                                </li>
-                                <li>
-                                    <strong>\inserthexaimage</strong><b>[</b><em>Label</em>
-                                    (opcional)<b>]</b><b>{</b><em>Dirección
-                                    de la imagen 1</em><b>}</b><b>{</b><em>Dirección de la imagen 2</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 3</em><b>}</b><b>{</b><em>Dirección de la imagen 4</em><b>}</b><b>{</b><em>Dirección
-                                    de la imagen 5</em><b>}</b><b>{</b><em>Dirección de la imagen 6</em><b>}</b><b>{</b><em>Parámetros
-                                    globales</em><b>}</b><b>{</b><em>Leyenda general</em><b>}</b>:
-                                    Inserta seis imágenes en un sólo elemento.
-                                    <blockquote>
-                                        <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\inserthexaimage</span><b>[</b><span class="pl-c1">\label</span>{img-hexa-1}<b>]</b><b>{</b>ejemplos/test-image.jpg<b>}</b><b>{</b>ejemplos/test-image-2.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-3.jpg<b>}</b><b>{</b>ejemplos/test-image-4.jpg<b>}</b><b>{</b>ejemplos/test-image-5.jpg<b>}</b><span
-                                        class="newline_br"></span><b>{</b>ejemplos/test-image-6.jpg<b>}</b><b>{</b><span
-                                        class="pl-v">width</span>=4cm, <span class="pl-v">height</span>=5cm<b>}{</b>Descripción general<b>}</b></pre>
-                                        </div>
-                                    </blockquote>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
                 </ul>
             </li>
