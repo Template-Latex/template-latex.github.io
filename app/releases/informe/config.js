@@ -167,6 +167,18 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
+    'cuda': '\\begin{sourcecode}[]{cuda}{Un poco de cuda.}\n' +
+        '__global__ void foo(){\n' +
+        '}\n' +
+        '\n' +
+        '__global__ void addKernel(int *c, const int *a, const int *b){\n' +
+        '\tint i = threadIdx.x;\n' +
+        '\tc[i] = a[i] + b[i];\n' +
+        '}\n' +
+        '\n' +
+        'foo<<<n,m>>>();\n' +
+        '\\end{sourcecode}',
+
     'docker': '\\begin{sourcecode}{docker}{Docker.}\n' +
         'version: \'2\'\n' +
         'services:\n' +
@@ -504,6 +516,7 @@ let cmd_sourcecode = {
         '\\end{sourcecode}'
 };
 
+// noinspection JSUnusedGlobalSymbols
 function afterDocumentReady() {
     /**
      * Escribe número de líneas introducción

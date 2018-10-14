@@ -1000,10 +1000,11 @@
                 <p class="justified-text">
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
                     lenguajes de programación Bash-scripting (<b>bash</b>), C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>),
-                    DOCKER (<b>docker</b>), HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>),
-                    Kotlin (<b>kotlin</b>), LaTeX (<b>latex</b>), Matlab (<b>matlab</b>), Perl (<b>perl</b>), PHP (<b>php</b>),
-                    Pseudocódigo (<b>pseudocode</b>), Texto plano (<b>plaintext</b>), Python (<b>python</b>), Ruby (<b>ruby</b>),
-                    Scala (<b>scala</b>) SQL (<b>sql</b>) y XML (<b>xml</b>):
+                    CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript
+                    (<b>js</b>), JSON (<b>json</b>), Kotlin (<b>kotlin</b>), LaTeX (<b>latex</b>), Matlab (<b>matlab</b>),
+                    Perl (<b>perl</b>), PHP (<b>php</b>), Pseudocódigo (<b>pseudocode</b>), Texto plano
+                    (<b>plaintext</b>), Python (<b>python</b>), Ruby (<b>ruby</b>), Scala (<b>scala</b>) SQL (<b>sql</b>)
+                    y XML (<b>xml</b>):
                 </p>
                 <ul>
                     <li id="sourcecode-container">
@@ -1014,6 +1015,7 @@
                         <a class="sourcecodel">c</a>,
                         <a class="sourcecodel">cpp</a>,
                         <a class="sourcecodel">csharp</a>,
+                        <a class="sourcecodel">cuda</a>,
                         <a class="sourcecodel">docker</a>,
                         <a class="sourcecodel">html5</a>,
                         <a class="sourcecodel">java</a>,
@@ -1037,6 +1039,13 @@
                                 </pre>
                             </div>
                         </blockquote>
+                    </li>
+                    <li>
+                        <strong>\importsourcecode</strong><b>[</b><em>Label</em>
+                        (opcional)<b>]</b><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Archivo
+                        de código fuente</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                        Carga un archivo de código fuente de un cierto lenguaje definido con
+                        una leyenda (opcional).
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1095,6 +1104,13 @@ int main(){
                                                                 class="javascripthref">documentación</a> de
                             la librería listings.
                         </p>
+                    </li>
+                    <li>
+                        <strong>\importsourcecodep</strong><b>[</b><em>Label</em>
+                        (opcional)<b>]</b><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Archivo
+                        de código fuente</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                        Carga un archivo de código fuente de un cierto lenguaje definido con
+                        parámetros y una leyenda (opcional).
                     </li>
                 </ul>
             </li>
@@ -1427,21 +1443,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Otras funciones<a id="hlp-other"></a></strong>
                 <p></p>
                 <ul>
-                    <li>
-                        <strong>\beginplandscape, \endplandscape</strong>: Crea una página en modo horizontal.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                        <pre>
-<span class="pl-c1">\lipsum</span>[1]
-<span class="pl-comment">...</span>
-<span class="pl-e">\beginplandscape</span>
-<span class="pl-c1">\lipsum</span>[1]
-<span class="pl-e">\endplandscape</span>
-<span class="pl-comment">...</span>
-</pre>
-                            </div>
-                        </blockquote>
-                    </li>
                     <li>
                         <strong>\insertemail</strong><b>{</b><em>Correo</em><b>}</b>: Inserta un link de un correo con
                         formato y dirección web válida.
@@ -2769,7 +2770,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     en varias hojas.
                 </li>
                 <li>
-                    <strong><a href="https://www.ctan.org/pkg/lscape">lscape</a></strong>: Permite insertar páginas en
+                    <strong><a href="https://www.ctan.org/pkg/pdflscape">pdflscape</a></strong>: Permite insertar páginas en
                     modo horizontal.
                 </li>
                 <li>
