@@ -776,9 +776,9 @@
                         <i>1.0</i> se usa el 100% la ecuación se redimensiona por completo al ancho de la página.
                         <blockquote>
                             <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-c1">\insertequation</span>{ <span
+                                <pre><span class="pl-c1">\insertequation</span>{<span
                                         class="pl-e">\equationresize</span><b>{</b>0.9<b>}{</b><span
-                                        class="pl-c1">\pow</span>{e}{<span class="pl-c1">\frac</span>{1}{x}+y}+5<b>}</b> }</pre>
+                                        class="pl-c1">\pow</span>{e}{<span class="pl-c1">\frac</span>{1}{x}+y}+5<b>}</b>}</pre>
                             </div>
                         </blockquote>
                     </li>
@@ -985,14 +985,6 @@
                             </div>
                         </blockquote>
                     </li>
-                    <li>
-                        <strong>\quotes</strong><b>{</b><em>Texto</em><b>}</b>: Función simplificada para insertar
-                        "citas".
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre>Así se insertan las <span class="pl-e">\quotes</span><b>{</b>cítas<b>}</b> de manera sencilla.</pre>
-                            </div>
-                        </blockquote>
                 </ul>
             </li>
             <li class="li-code-parent">
@@ -1047,6 +1039,11 @@
                         de código fuente</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                         Carga un archivo de código fuente de un cierto lenguaje definido con
                         una leyenda (opcional).
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\importsourcecode</span><b>[]{</b>latex<b>}{</b>lib/cfg/init.tex<b>}{</b>Carga código fuente init LaTeX.<b>}</b></pre>
+                            </div>
+                        </blockquote>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1112,6 +1109,12 @@ int main(){
                         de código fuente</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                         Carga un archivo de código fuente de un cierto lenguaje definido con
                         parámetros y una leyenda (opcional).
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\importsourcecode</span><b>[]{</b>latex<b>}{</b><span
+                                        class="pl-c1">numbers</span>=none<b>}{</b>lib/cfg/init.tex<b>}{</b>Carga código fuente init LaTeX.<b>}</b></pre>
+                            </div>
+                        </blockquote>
                     </li>
                 </ul>
             </li>
@@ -1130,6 +1133,7 @@ int main(){
 
             <span class="pl-comment">% Imagen, se numerará automáticamente con la letra del anexo</span>
             <span class="pl-c1">\insertimage</span>{ejemplos/test-image.png}{<span class="pl-v">scale</span>=0.15}{Imagen en anexo.}
+
         <span class="pl-c1">\subsection</span>{Resultados}
             ...
     <span class="pl-c1">\newpage</span>
@@ -1445,6 +1449,32 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <p></p>
                 <ul>
                     <li>
+                        <strong>itemizebf, enumeratebf</strong>: Crea un itemize/enumerate en <b>negrita</b>.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre>
+<span class="pl-c1">\begin</span>{<span class="pl-e">itemizebf</span>}
+    <span class="pl-c1">\item</span> {Contenido 1}
+    <span class="pl-c1">\item</span> {...}
+<span class="pl-c1">\end</span>{<span class="pl-e">itemizebf</span>}</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <strong>landscape</strong>: Entorno que permite insertar una página rotada.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre>
+<span class="pl-c1">\begin</span>{<span class="pl-e">landscape</span>}
+    <span class="pl-comment">% Todo lo que esté dentro de begin se escribirá en una página rotada</span>
+    <span class="pl-c1">\lipsum</span>[1]
+<span class="pl-c1">\end</span>{<span class="pl-e">landscape</span>}</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <!--suppress HtmlUnknownTag -->
+                    <hr class="style1">
+                    <li>
                         <strong>\insertemail</strong><b>{</b><em>Correo</em><b>}</b>: Inserta un link de un correo con
                         formato y dirección web válida.
                     </li>
@@ -1452,12 +1482,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\insertemptypage</strong>: Inserta una página vacía (sin headers ni contenido).
                     </li>
                     <li>
-                        <strong>\insertindextitle</strong><b>{</b><em>Título</em><b>}</b><b>{</b><em>Margen vertical <i>(opcional)</i>
-                    </em><b>}</b>: Inserta un título sólo en el índice. <b>Nota:</b> para utilizar esta función se
+                        <strong>\insertindextitle</strong><b>{</b><em>Título</em><b>}</b><b>{</b><em>Margen vertical <i>(opcional)</i></em><b>}</b>:
+                        Inserta un título sólo en el índice. <b>Nota:</b> para utilizar esta función se
                         debe haber creado una sección antes.
-                    </li>
-                    <li>
-                        <strong>\itemizebf, \enumeratebf</strong>: Crea un itemize/enumerate en <b>negrita</b>.
                     </li>
                     <li>
                         <strong>\itemresize</strong><b>{</b><em>Factor (en
@@ -2546,7 +2573,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="config-elem">
                         <strong>\nomnpageof</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Nombre etiqueta páginas tipo # de #</div>
+                            <div class="config-desc-inner">Nombre etiqueta páginas tipo <i>#</i> de <i>#</i>.</div>
                         </div>
                     </li>
                 </ul>
