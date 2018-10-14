@@ -38,10 +38,10 @@ let bounceConfig; // Efecto en entrada de configuración
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 let hfGallery; // Muestra la galería de header-footer
 let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-let line_abstract = [87, 252]; // Número de línea de abstract/resumen
+let line_abstract = [87, 260]; // Número de línea de abstract/resumen
 let line_authortable = [33, 34]; // Número de línea tabla de integrantes
 let line_configimport = [63, 64]; // Número línea importación de configuraciones
-let line_docinit = [98, 263]; // Número de línea inicio del documento
+let line_docinit = [98, 271]; // Número de línea inicio del documento
 let line_infodocument = [18, 19]; // Número de línea información del documento
 let portraitGallery; // Muestra la galería de portadas
 let totalHfStyles = 14; // Estilos totales en tipo de header-footer
@@ -849,7 +849,7 @@ function afterDocumentReady() {
         contentAsHTML: true,
         maxWidth: 300,
         side: 'bottom',
-        theme: 'tooltipster-borderless',
+        theme: 'tooltipster-borderless'
     });
     // noinspection HtmlUnknownTarget
     $('#example-plugin-config').tooltipster({
@@ -858,7 +858,7 @@ function afterDocumentReady() {
         contentAsHTML: true,
         maxWidth: 400,
         side: 'bottom',
-        theme: 'tooltipster-borderless',
+        theme: 'tooltipster-borderless'
     });
 
     /**
@@ -879,7 +879,7 @@ function afterDocumentReady() {
                 interactive: true,
                 maxWidth: 500,
                 side: 'bottom',
-                theme: 'tooltipster-borderless',
+                theme: 'tooltipster-borderless'
             });
         }
     });
@@ -994,7 +994,7 @@ function writeOtherLinks(verid) {
         ['Departamento de Ingeniería Mecánica', 'dimec'],
         ['Departamento de Ingeniería Química, Biotecnología y Materiales', 'diqbtm'],
         ['Facultad de Ciencias Físicas y Matemáticas', 'fcfm'],
-        ['Universidad de Chile', 'uchile'],
+        ['Universidad de Chile', 'uchile']
     ];
     let $addTotal = function () {
         if (total_downloads !== nan_value) {
