@@ -1524,17 +1524,15 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             <a href="https://github.com/Template-Latex/Template-Informe/blob/master/lib/config.tex"
                class="javascripthref">lib/config.tex</a> (versión normal) y son importadas en el bloque de
             <em class="section-template">CONFIGURACIONES</em> <span class="intro-line-configimport"></span> en el
-            archivo principal. <br/>
-            Para modificar una configuración:
+            archivo principal.
         </p>
-        <blockquote>
-            <em>\def</em><span class="pl-e">\nombreConfiguracion</span> {<b>Valor</b>}
-        </blockquote>
         <p>
-            Solo se pueden modificar las configuraciones dentro del archivo correspondiente (config.tex) o bien, si se
+            Solo se pueden modificar las configuraciones dentro del archivo correspondiente, o bien, si se
             utiliza la versión compacta, se debe buscar la línea asociada a dicha configuración. Si se intenta cambiar
-            el valor de la configuración en otro lugar del template es posible que ocurran errores. A continuación se
-            listan las <span id="TemplateConfigCounter"></span> configuraciones disponibles:
+            el valor de la configuración en otro lugar del template es posible que ocurran errores.
+        </p>
+        <p>
+            A continuación se listan las <span id="TemplateConfigCounter"></span> configuraciones disponibles:
         </p>
         <ul id="templateConfigsList">
             <li class="config-parent">
@@ -2215,6 +2213,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\marginrightmultimage</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen derecho imágenes múltiples, en centímetros.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\margintopimages</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen superior de las figuras, en centímetros.</div>
@@ -2313,6 +2317,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Las funciones para insertar títulos sin número (anum)
                                 aumentan los respectivos contadores.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\disablehfrightmark</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Desactiva el <i>rightmark</i> del header-footer, este
+                                corresponde al nombre del título de la sección activa de la página.
                             </div>
                         </div>
                     </li>
