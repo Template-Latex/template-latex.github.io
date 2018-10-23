@@ -32,7 +32,7 @@ let aboutinfo = {
         "name": "Pablo Pizarro R.",
         "tag": "@ppizarror",
         "email": "pablo.pizarro@ing.uchile.cl",
-        "website": "http://ppizarror.com/",
+        "website": "https://ppizarror.com/",
         "github": "https://github.com/ppizarror"
     },
     "productname": "Template-Latex Web",

@@ -264,21 +264,21 @@ function writeBadges() {
     $badgediv.html('');
 
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/tesis.html" id="aimg"><img src="res/badges/tesis.svg" style="display: none" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/tesis.html" id="aimg"><img src="res/badges/tesis.svg" style="display: none" /></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/apunte.html" id="aimg"><img src="res/badges/apunte.svg" style="display: none" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/apunte.html" id="aimg"><img src="res/badges/apunte.svg" style="display: none" /></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/tareas.html" id="aimg"><img src="res/badges/tareas.svg" style="display: none" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/tareas.html" id="aimg"><img src="res/badges/tareas.svg" style="display: none" /></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/auxiliares.html" id="aimg"><img src="res/badges/auxiliares.svg" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/auxiliares.html" id="aimg"><img src="res/badges/auxiliares.svg" /></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/controles.html" id="aimg"><img src="res/badges/controles.svg" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/controles.html" id="aimg"><img src="res/badges/controles.svg" /></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/pautas.html" id="aimg"><img src="res/badges/pauta.svg" style="display: none" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/pautas.html" id="aimg"><img src="res/badges/pauta.svg" style="display: none" /></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/informe.html" id="aimg"><img src="res/badges/informe.svg" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/informe.html" id="aimg"><img src="res/badges/informe.svg" /></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="http://latex.ppizarror.com/professional-cv.html" id="aimg"><img src="res/badges/professionalcv.svg" /></a>');
+    $badgediv.append('<a href="https://latex.ppizarror.com/professional-cv.html" id="aimg"><img src="res/badges/professionalcv.svg" /></a>');
     $badgediv.fadeIn('slow');
 }
 
