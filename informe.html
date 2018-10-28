@@ -193,19 +193,17 @@
                     <li><a href="#config-other" class="menu-little-entry">Configuraciones generales</a></li>
                     <li><a href="#config-portraithf" class="menu-little-entry">Estilo de portada y header-footer</a>
                     </li>
-                    <li><a href="#config-pagemargin" class="menu-little-entry">Márgenes de la página</a></li>
-                    <li><a href="#config-default-placement-objects" class="menu-little-entry">Posición por defecto de
-                        objetos</a></li>
+                    <li><a href="#config-objects" class="menu-little-entry">Configuración de objetos</a></li>
                     <li><a href="#config-caption" class="menu-little-entry">Configuración de las leyendas - caption</a>
+                    </li>
+                    <li><a href="#config-ref" class="menu-little-entry">Configuración del anexo, citas y referencias</a>
                     </li>
                     <li><a href="#config-index" class="menu-little-entry">Configuración del índice</a></li>
                     <li><a href="#config-colors" class="menu-little-entry">Configurar los colores del documento</a></li>
-                    <li><a href="#config-figure" class="menu-little-entry">Márgenes de las figuras</a></li>
-                    <li><a href="#config-ref" class="menu-little-entry">Configuración del anexo, citas y referencias</a>
-                    </li>
                     <li><a href="#config-tstyles" class="menu-little-entry">Configuración de los títulos</a></li>
-                    <li><a href="#config-elemname" class="menu-little-entry">Nombres de los elementos</a></li>
+                    <li><a href="#config-pagemargin" class="menu-little-entry">Márgenes de la página</a></li>
                     <li><a href="#config-pdfoptions" class="menu-little-entry">Opciones del pdf</a></li>
+                    <li><a href="#config-elemname" class="menu-little-entry">Nombres de los elementos</a></li>
                 </ul>
             </li>
             <li><a href="#links" class="menu-big-entry">Links de interés</a></li>
@@ -1548,20 +1546,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\columnhspace</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen horizontal entre objetos <span
-                                    class="pl-c1">\createcolumn</span>, en <i>cm</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\columnsepwidth</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación de las columnas, en <i>em</i>.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\defaultinterline</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Tamaño del interlineado.</div>
@@ -1765,6 +1749,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\predocromannumber</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Las páginas anteriores al inicio del cuerpo del documeno
+                                (Resumen, Índice) se definen con números romanos.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\romanpageuppercase</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Páginas en número romano (abstract-índice) en mayúsculas.
@@ -1775,18 +1767,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\showlinenumbers</strong><a id="showlinenumbers"></a>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra los números de línea del documento.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\tablepaddingh</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen horizontal de las celdas de las tablas.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\tablepaddingv</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen vertical de las celdas de las tablas.</div>
                         </div>
                     </li>
                 </ul>
@@ -1820,45 +1800,33 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </li>
 
             <li class="config-parent">
-                <strong class="functtitlstyle">Márgenes de la página<a id="config-pagemargin"></a></strong>
+                <strong class="functtitlstyle">Configuraciones de objetos<a
+                        id="config-objects"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\firstpagemargintop</strong>
+                        <strong>\columnhspace</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior de la portada en centímetros.</div>
+                            <div class="config-desc-inner">Margen horizontal entre objetos <span
+                                    class="pl-c1">\createcolumn</span>, en <i>cm</i>.
+                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\pagemarginbottom</strong>
+                        <strong>\columnsepwidth</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior de las páginas en centímetros.</div>
+                            <div class="config-desc-inner">Separación de las columnas, en <i>em</i>.</div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\pagemarginleft</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen izquierdo de las páginas en centímetros.</div>
+                        <div id="defaultimagefolder">
+                            <strong>\defaultimagefolder</strong>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Directorio de las imágenes, sólo utilizado por las
+                                    funciones que insertan figuras.
+                                </div>
+                            </div>
                         </div>
                     </li>
-                    <li class="config-elem">
-                        <strong>\pagemarginright</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen derecho de las páginas en centímetros.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\pagemargintop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior de las páginas en centímetros.</div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Posición por defecto de objetos<a
-                        id="config-default-placement-objects"></a></strong>
-                <ul>
                     <li class="config-elem">
                         <strong>\imagedefaultplacement</strong>
                         <div class="config-desc">
@@ -1866,9 +1834,29 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\objectmarginstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Márgenes de objetos (figuras, ecuaciones), valores posibles:
+                                small, normal, large.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\tabledefaultplacement</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Ubicación por defecto de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablepaddingh</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen horizontal de las celdas de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablepaddingv</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen vertical de las celdas de las tablas.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -1967,6 +1955,96 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </li>
 
             <li class="config-parent">
+                <strong class="functtitlstyle">Configuración del anexo, citas y referencias<a
+                        id="config-ref"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\apaciterefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
+                                en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\appendixindepobjnum</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">La numeración de los objetos (figura, tabla, código) en
+                                la sección de anexo/apéndice es independiente del documento.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\bibtexrefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
+                                <i>bibtex</i>), en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\donumrefsection</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Sección de referencias numerada en el informe.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\natbibrefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
+                                <i>natbib</i>), en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\natbibrefstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de referencias natbib
+                                (abbrvnat,apa,ieeetr,unsrt,etc.).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionappendixlastchar</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter entre el número de la sección del anexo y el
+                                título.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showappendixsecindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el título de la sección de anexos en el índice.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showappendixsectitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el informe.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <div id="stylecitereferences">
+                            <strong>\stylecitereferences</strong>
+                            <a id="ref-style-config"></a>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
+                                    <b>apacite</b>, <b>bibtex</b>ó <b>natbib</b>.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\twocolumnreferences</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Referencias en dos columnas.</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
                 <strong class="functtitlstyle">Configuración del índice<a id="config-index"></a></strong>
                 <ul>
                     <li class="config-elem">
@@ -2018,6 +2096,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Indenta la lista de objetos, si es <i>false</i> los números y
                                 los títulos de los objetos se alínean completamente a la izquierda.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\resetpagnumafterindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">El número de la página se resetea tras el índice.
                             </div>
                         </div>
                     </li>
@@ -2183,141 +2268,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </li>
 
             <li class="config-parent">
-                <strong class="functtitlstyle">Configuración de las figuras<a id="config-figure"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <div id="defaultimagefolder">
-                            <strong>\defaultimagefolder</strong>
-                            <div class="config-desc">
-                                <div class="config-desc-inner">Directorio de las imágenes, sólo utilizado por las
-                                    funciones que insertan figuras.
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginbottomimages</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior de las figuras, en centímetros.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginfloatimages</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior de las figuras flotantes (insertadas con
-                                <span class="pl-c1">\insertimageleft</span> o <span
-                                        class="pl-c1">\insertimageright</span>),
-                                en
-                                <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginrightmultimage</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen derecho imágenes múltiples, en centímetros.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margintopimages</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior de las figuras, en centímetros.</div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Configuración del anexo, citas y referencias<a
-                        id="config-ref"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <strong>\apaciterefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
-                                en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\appendixindepobjnum</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">La numeración de los objetos (figura, tabla, código) en
-                                la sección de anexo/apéndice es independiente del documento.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\bibtexrefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
-                                <i>bibtex</i>), en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\donumrefsection</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Sección de referencias numerada en el informe.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\natbibrefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
-                                <i>natbib</i>), en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\natbibrefstyle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Formato de referencias natbib
-                                (abbrvnat,apa,ieeetr,unsrt,etc.).
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\sectionappendixlastchar</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Carácter entre el número de la sección del anexo y el
-                                título.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showappendixsecindex</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra el título de la sección de anexos en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showappendixsectitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el informe.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <div id="stylecitereferences">
-                            <strong>\stylecitereferences</strong>
-                            <a id="ref-style-config"></a>
-                            <div class="config-desc">
-                                <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
-                                    <b>apacite</b>, <b>bibtex</b>ó <b>natbib</b>.
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\twocolumnreferences</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Referencias en dos columnas.</div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
                 <strong class="functtitlstyle">Configuración de los títulos<a id="config-tstyles"></a></strong>
                 <ul>
                     <li class="config-elem">
@@ -2402,6 +2352,42 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\styletitlei</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Estilo títulos en el índice.</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
+                <strong class="functtitlstyle">Márgenes de la página<a id="config-pagemargin"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\firstpagemargintop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior de la portada en centímetros.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\pagemarginbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior de las páginas en centímetros.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\pagemarginleft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen izquierdo de las páginas en centímetros.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\pagemarginright</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen derecho de las páginas en centímetros.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\pagemargintop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior de las páginas en centímetros.</div>
                         </div>
                     </li>
                 </ul>
