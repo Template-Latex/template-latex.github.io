@@ -845,7 +845,7 @@ function afterDocumentReady() {
      */
     $('#example-appdata').tooltipster({
         animation: 'grow',
-        content: '<img src="res/images/ejemplo-appdata.png" alt="" width="250" height="137" />',
+        content: '<img src="res/images/ejemplo-appdata.PNG" alt="" width="300" height="165" />',
         contentAsHTML: true,
         maxWidth: 300,
         side: 'bottom',
@@ -854,9 +854,9 @@ function afterDocumentReady() {
     // noinspection HtmlUnknownTarget
     $('#example-plugin-config').tooltipster({
         animation: 'grow',
-        content: '<img src="res/images/ejemplo-config.png" alt="" width="400" height="261" />',
+        content: '<img src="res/images/ejemplo-config.PNG" alt="" width="500" height="327" />',
         contentAsHTML: true,
-        maxWidth: 400,
+        maxWidth: 500,
         side: 'bottom',
         theme: 'tooltipster-borderless'
     });
