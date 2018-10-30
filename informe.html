@@ -1480,9 +1480,21 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\insertemptypage</strong>: Inserta una página vacía (sin headers ni contenido).
                     </li>
                     <li>
+                        <strong>\insertfullhfpdf</strong><b>[</b><em>Parámetros
+                        <i>(opcional)</i></em><b>]</b><b>{</b><em>Nombre del archivo pdf</em><b>}</b>: Inserta un
+                        archivo pdf conservando el header-footer, incluyendo todas las páginas.
+                    </li>
+                    <li>
+                        <strong>\inserthfpdf</strong><b>[</b><em>Parámetros <i>(opcional)</i></em><b>]</b><b>{</b><em>Nombre
+                        del archivo pdf</em><b>}</b>: Inserta un archivo pdf conservando el header-footer.
+                    </li>
+                    <li>
                         <strong>\insertindextitle</strong><b>{</b><em>Título</em><b>}</b><b>{</b><em>Margen vertical <i>(opcional)</i></em><b>}</b>:
                         Inserta un título sólo en el índice. <b>Nota:</b> para utilizar esta función se
                         debe haber creado una sección antes.
+                    </li>
+                    <li>
+                        <strong>\insertphone</strong>: Inserta un número de teléfono con formato de link.
                     </li>
                     <li>
                         <strong>\itemresize</strong><b>{</b><em>Factor (en
@@ -1722,6 +1734,16 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\footnoterestart</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Comportamiento del reinicio de los números de <i>footnote</i>,
+                                valores esperados: <b>none</b> (Ninguno), <b>page</b> (Por cada página), <b>sec</b>
+                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
+                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <div id="import-tikz-config">
                             <strong>\importtikz</strong>
                             <div class="config-desc">
@@ -1941,7 +1963,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
                                 en el número de figura/tabla/código. Valores esperados: <b>none</b>, <b>sec</b>
-                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>.
+                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
+                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
                             </div>
                         </div>
                     </li>
