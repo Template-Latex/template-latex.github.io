@@ -193,14 +193,14 @@
                     <li><a href="#config-other" class="menu-little-entry">Configuraciones generales</a></li>
                     <li><a href="#config-portraithf" class="menu-little-entry">Estilo de portada y header-footer</a>
                     </li>
-                    <li><a href="#config-objects" class="menu-little-entry">Configuración de objetos</a></li>
                     <li><a href="#config-caption" class="menu-little-entry">Configuración de las leyendas - caption</a>
                     </li>
+                    <li><a href="#config-index" class="menu-little-entry">Configuración del índice</a></li>
+                    <li><a href="#config-tstyles" class="menu-little-entry">Configuración de los títulos</a></li>
+                    <li><a href="#config-colors" class="menu-little-entry">Configurar los colores del documento</a></li>
                     <li><a href="#config-ref" class="menu-little-entry">Configuración del anexo, citas y referencias</a>
                     </li>
-                    <li><a href="#config-index" class="menu-little-entry">Configuración del índice</a></li>
-                    <li><a href="#config-colors" class="menu-little-entry">Configurar los colores del documento</a></li>
-                    <li><a href="#config-tstyles" class="menu-little-entry">Configuración de los títulos</a></li>
+                    <li><a href="#config-objects" class="menu-little-entry">Configuración de objetos</a></li>
                     <li><a href="#config-pagemargin" class="menu-little-entry">Márgenes de la página</a></li>
                     <li><a href="#config-pdfoptions" class="menu-little-entry">Opciones del pdf</a></li>
                     <li><a href="#config-elemname" class="menu-little-entry">Nombres de los elementos</a></li>
@@ -1850,6 +1850,490 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </li>
 
             <li class="config-parent">
+                <strong class="functtitlstyle">Configuración de las leyendas - caption<a
+                        id="config-caption"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\captionalignment</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Alineación leyenda: justified, centered, left, right.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionlessmarginimage</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior si no hay caption en figuras, en
+                                centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionlrmargin</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
+                                las leyendas, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionmarginmultimg</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>)
+                                de las imágenes múltiples insertadas con <b>images</b>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captiontbmarginfigure</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior/inferior de la leyenda en las figuras,
+                                en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captiontbmargintable</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior/inferior de la leyenda en las tablas, en
+                                <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captiontextbold</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Etiquetas (Figura,Tabla,etc.) de la leyenda en negrita.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\codecaptiontop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece la leyenda encima del código fuente.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\figurecaptiontop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece la leyenda encima de las imágenes.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showsectioncaption</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
+                                en el número de figura/tabla/código. Valores esperados: <b>none</b>, <b>sec</b>
+                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
+                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablecaptiontop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece la leyenda encima de las tablas.</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
+                <strong class="functtitlstyle">Configuración del índice<a id="config-index"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\charafterobjectindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter tras cada número de figura, tabla o código en
+                                el índice.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\charnumpageindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter entre título y número de página en el índice.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\equalmarginnumobject</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Iguala el margen de los números de objetos, directamente
+                                relacionado con la configuración <i>\showsectioncaption</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\indexdepth</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Profundidad del índice.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\indexforcenewpage</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Forza una nueva página en cada índice nuevo (lista de
+                                figuras, tablas, códigos fuente).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\indextitlemargin</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior en los títulos de los índices (insertado con
+                                <span class="pl-c1">\insertindextitle</span>), en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\objectindexindent</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Indenta la lista de objetos, si es <i>false</i> los números y
+                                los títulos de los objetos se alínean completamente a la izquierda.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\resetpagnumafterindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">El número de la página se resetea tras el índice.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showindex</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la página de índice.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showindexofcode</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la lista de códigos fuente en el índice.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showindexofcontents</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la lista de contenidos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showindexoffigures</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la lista de figuras en el índice.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showindexoftables</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra la lista de tablas en el índice.</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
+                <strong class="functtitlstyle">Configuración de los títulos<a id="config-tstyles"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\anumsecaddtocounter</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Las funciones para insertar títulos sin número (anum)
+                                aumentan los respectivos contadores.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\disablehfrightmark</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Desactiva el <i>rightmark</i> del header-footer, este
+                                corresponde al nombre del título de la sección activa de la página.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\fontsizessstitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño sub-sub-subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\fontsizesubsubtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño sub-subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\fontsizesubtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\fontsizetitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño títulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\fontsizetitlei</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño títulos en el índice.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showdotontitles</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra un punto en cada número de sección, subsección y
+                                sub-subsección.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\stylessstitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo sub-sub-subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\stylesubsubtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo sub-subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\stylesubtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\styletitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo títulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\styletitlei</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo títulos en el índice.</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
+                <strong class="functtitlstyle">Configurar los colores del documento<a id="config-colors"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\captioncolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de la etiqueta (Figura, Tabla, Código) en la leyenda de
+                                los objetos.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captiontextcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de la leyenda de los objetos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\colorpage</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Define el color de fondo de las páginas del documento.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\highlightcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color del subrayado con <span
+                                    class="pl-c1">\hl</span>{<i>text</i>}.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\indextitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los títulos del índice.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\linenumbercolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color del número de línea (Al tener activado <a
+                                    href="#showlinenumbers" class="javascripthref">\showlinenumbers</a>).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\linkcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los enlaces del documento, entiendase por números de
+                                figuras, entradas del índice, etc.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\maintextcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color del texto del documento, afecta al color de los
+                                títulos,
+                                párrafos, líneas, tablas, etc.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\numcitecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color del número de las referencias o citas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\portraittitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los títulos de la portada.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showborderonlinks</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Reemplaza el color de un link por un recuadro de color.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sourcecodebgcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de fondo de los códigos fuente.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssstitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los sub-sub-subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\subsubtitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los sub-subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\subtitlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los subtítulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablelinecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de las líneas de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\titlecolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los títulos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\urlcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los enlaces <i>http://</i> del documento insertados
+                                con
+                                <span class="pl-c1">\url</span> y <span class="pl-c1">\href</span>.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
+                <strong class="functtitlstyle">Configuración del anexo, citas y referencias<a
+                        id="config-ref"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\apaciterefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
+                                en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\appendixindepobjnum</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">La numeración de los objetos (figura, tabla, código) en
+                                la sección de anexo/apéndice es independiente del documento.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\bibtexrefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
+                                <i>bibtex</i>), en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\natbibrefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
+                                <i>natbib</i>), en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\natbibrefstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de referencias natbib
+                                (abbrvnat,apa,ieeetr,unsrt,etc.).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionappendixlastchar</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter entre el número de la sección del anexo y el
+                                título.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionrefenv</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Las referencias se consideran como sección.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showappendixsectitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el informe.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <div id="stylecitereferences">
+                            <strong>\stylecitereferences</strong>
+                            <a id="ref-style-config"></a>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
+                                    <b>apacite</b>, <b>bibtex</b>ó <b>natbib</b>.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\twocolumnreferences</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Referencias en dos columnas.</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
                 <strong class="functtitlstyle">Configuraciones de objetos<a
                         id="config-objects"></a></strong>
                 <ul>
@@ -2043,490 +2527,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\tikzdefaultplacement</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Ubicación por defecto de las figuras hechas con tikz.</div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Configuración de las leyendas - caption<a
-                        id="config-caption"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <strong>\captionalignment</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Alineación leyenda: justified, centered, left, right.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\captionlessmarginimage</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior si no hay caption en figuras, en
-                                centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\captionlrmargin</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
-                                las leyendas, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\captionmarginmultimg</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>)
-                                de las imágenes múltiples insertadas con <b>images</b>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\captiontbmarginfigure</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior/inferior de la leyenda en las figuras,
-                                en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\captiontbmargintable</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior/inferior de la leyenda en las tablas, en
-                                <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\captiontextbold</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Etiquetas (Figura,Tabla,etc.) de la leyenda en negrita.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\codecaptiontop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Establece la leyenda encima del código fuente.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\figurecaptiontop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Establece la leyenda encima de las imágenes.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showsectioncaption</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
-                                en el número de figura/tabla/código. Valores esperados: <b>none</b>, <b>sec</b>
-                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
-                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\tablecaptiontop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Establece la leyenda encima de las tablas.</div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Configuración del anexo, citas y referencias<a
-                        id="config-ref"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <strong>\apaciterefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
-                                en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\appendixindepobjnum</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">La numeración de los objetos (figura, tabla, código) en
-                                la sección de anexo/apéndice es independiente del documento.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\bibtexrefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
-                                <i>bibtex</i>), en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\natbibrefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
-                                <i>natbib</i>), en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\natbibrefstyle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Formato de referencias natbib
-                                (abbrvnat,apa,ieeetr,unsrt,etc.).
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\sectionappendixlastchar</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Carácter entre el número de la sección del anexo y el
-                                título.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\sectionrefenv</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Las referencias se consideran como sección.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showappendixsectitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el informe.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <div id="stylecitereferences">
-                            <strong>\stylecitereferences</strong>
-                            <a id="ref-style-config"></a>
-                            <div class="config-desc">
-                                <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
-                                    <b>apacite</b>, <b>bibtex</b>ó <b>natbib</b>.
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\twocolumnreferences</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Referencias en dos columnas.</div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Configuración del índice<a id="config-index"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <strong>\charafterobjectindex</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Carácter tras cada número de figura, tabla o código en
-                                el índice.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\charnumpageindex</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Carácter entre título y número de página en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\equalmarginnumobject</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Iguala el margen de los números de objetos, directamente
-                                relacionado con la configuración <i>\showsectioncaption</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\indexdepth</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Profundidad del índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\indexforcenewpage</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Forza una nueva página en cada índice nuevo (lista de
-                                figuras, tablas, códigos fuente).
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\indextitlemargin</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior en los títulos de los índices (insertado con
-                                <span class="pl-c1">\insertindextitle</span>), en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\objectindexindent</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Indenta la lista de objetos, si es <i>false</i> los números y
-                                los títulos de los objetos se alínean completamente a la izquierda.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\resetpagnumafterindex</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">El número de la página se resetea tras el índice.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showindex</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la página de índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showindexofcode</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la lista de códigos fuente en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showindexofcontents</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la lista de contenidos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showindexoffigures</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la lista de figuras en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showindexoftables</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la lista de tablas en el índice.</div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Configurar los colores del documento<a id="config-colors"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <strong>\captioncolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de la etiqueta (Figura, Tabla, Código) en la leyenda de
-                                los objetos.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\captiontextcolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de la leyenda de los objetos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\colorpage</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Define el color de fondo de las páginas del documento.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\highlightcolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color del subrayado con <span
-                                    class="pl-c1">\hl</span>{<i>text</i>}.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\indextitlecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los títulos del índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\linenumbercolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color del número de línea (Al tener activado <a
-                                    href="#showlinenumbers" class="javascripthref">\showlinenumbers</a>).
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\linkcolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los enlaces del documento, entiendase por números de
-                                figuras, entradas del índice, etc.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\maintextcolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color del texto del documento, afecta al color de los
-                                títulos,
-                                párrafos, líneas, tablas, etc.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\numcitecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color del número de las referencias o citas.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\portraittitlecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los títulos de la portada.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showborderonlinks</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Reemplaza el color de un link por un recuadro de color.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\sourcecodebgcolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de fondo de los códigos fuente.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\ssstitlecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los sub-sub-subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\subsubtitlecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los sub-subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\subtitlecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\tablelinecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de las líneas de las tablas.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\titlecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los títulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\urlcolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los enlaces <i>http://</i> del documento insertados
-                                con
-                                <span class="pl-c1">\url</span> y <span class="pl-c1">\href</span>.
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Configuración de los títulos<a id="config-tstyles"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <strong>\anumsecaddtocounter</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Las funciones para insertar títulos sin número (anum)
-                                aumentan los respectivos contadores.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\disablehfrightmark</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Desactiva el <i>rightmark</i> del header-footer, este
-                                corresponde al nombre del título de la sección activa de la página.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontsizessstitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño sub-sub-subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontsizesubsubtitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño sub-subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontsizesubtitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontsizetitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño títulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontsizetitlei</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño títulos en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showdotontitles</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra un punto en cada número de sección, subsección y
-                                sub-subsección.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\stylessstitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Estilo sub-sub-subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\stylesubsubtitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Estilo sub-subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\stylesubtitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Estilo subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\styletitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Estilo títulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\styletitlei</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Estilo títulos en el índice.</div>
                         </div>
                     </li>
                 </ul>
