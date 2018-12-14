@@ -196,11 +196,11 @@
                     <li><a href="#config-caption" class="menu-little-entry">Configuración de las leyendas - caption</a>
                     </li>
                     <li><a href="#config-index" class="menu-little-entry">Configuración del índice</a></li>
-                    <li><a href="#config-tstyles" class="menu-little-entry">Configuración de los títulos</a></li>
-                    <li><a href="#config-colors" class="menu-little-entry">Configurar los colores del documento</a></li>
                     <li><a href="#config-ref" class="menu-little-entry">Configuración del anexo, citas y referencias</a>
                     </li>
                     <li><a href="#config-objects" class="menu-little-entry">Configuración de objetos</a></li>
+                    <li><a href="#config-tstyles" class="menu-little-entry">Configuración de los títulos</a></li>
+                    <li><a href="#config-colors" class="menu-little-entry">Configurar los colores del documento</a></li>
                     <li><a href="#config-pagemargin" class="menu-little-entry">Márgenes de la página</a></li>
                     <li><a href="#config-pdfoptions" class="menu-little-entry">Opciones del pdf</a></li>
                     <li><a href="#config-elemname" class="menu-little-entry">Nombres de los elementos</a></li>
@@ -1597,16 +1597,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\equationrestart</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Comportamiento del reinicio de los números de las ecuaciones,
-                                valores esperados: <b>none</b> (Ninguno), <b>page</b> (Por cada página), <b>sec</b> <i>(Sección)</i>,
-                                <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
-                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\fontdocument</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner" style="text-align: left !important;">Define la fuente de todo
@@ -1765,16 +1755,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\footnoterestart</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Comportamiento del reinicio de los números de <i>footnote</i>,
-                                valores esperados: <b>none</b> (Ninguno), <b>page</b> (Por cada página), <b>sec</b>
-                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
-                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <div id="import-tikz-config">
                             <strong>\importtikz</strong>
                             <div class="config-desc">
@@ -1782,14 +1762,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                     añadir
                                     compatibilidad con el template.
                                 </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\numberedequation</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra el número en las ecuaciones insertadas con <span
-                                    class="pl-c1">\insert...</span>.
                             </div>
                         </div>
                     </li>
@@ -2035,6 +2007,317 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </li>
 
             <li class="config-parent">
+                <strong class="functtitlstyle">Configuración del anexo, citas y referencias<a
+                        id="config-ref"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\apaciterefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
+                                en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\appendixindepobjnum</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">La numeración de los objetos (figura, tabla, código) en
+                                la sección de anexo/apéndice es independiente del documento.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\bibtexrefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
+                                <i>bibtex</i>), en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\natbibrefsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
+                                <i>natbib</i>), en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\natbibrefstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de referencias natbib
+                                (abbrvnat,apa,ieeetr,unsrt,etc.).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionappendixlastchar</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter entre el número de la sección del anexo y el
+                                título.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionrefenv</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Las referencias se consideran como sección.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showappendixsectitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el informe.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <div id="stylecitereferences">
+                            <strong>\stylecitereferences</strong>
+                            <a id="ref-style-config"></a>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
+                                    <b>apacite</b>, <b>bibtex</b>ó <b>natbib</b>.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\twocolumnreferences</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Referencias en dos columnas.</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
+                <strong class="functtitlstyle">Configuraciones de objetos<a
+                        id="config-objects"></a></strong>
+                <ul>
+                    <li class="config-elem">
+                        <strong>\columnhspace</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen horizontal entre objetos <span
+                                    class="pl-c1">\createcolumn</span>, en <i>cm</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\columnsepwidth</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación de las columnas, en <i>em</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <div id="defaultimagefolder">
+                            <strong>\defaultimagefolder</strong>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Directorio de las imágenes, sólo utilizado por las
+                                    funciones que insertan figuras.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\equationrestart</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Comportamiento del reinicio de los números de las ecuaciones,
+                                valores esperados: <b>none</b> (Ninguno), <b>page</b> (Por cada página), <b>sec</b> <i>(Sección)</i>,
+                                <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
+                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\footnoterestart</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Comportamiento del reinicio de los números de <i>footnote</i>,
+                                valores esperados: <b>none</b> (Ninguno), <b>page</b> (Por cada página), <b>sec</b>
+                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
+                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\imagedefaultplacement</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Ubicación por defecto de las imágenes.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginalignbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior ecuaciones con entorno align, en
+                                centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginaligncaptbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior ecuaciones con entorno align que tienen
+                                caption, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginaligncapttop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones con entorno align que tienen
+                                caption, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginaligntop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones con entorno align, en
+                                centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margineqncaptionbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior ecuaciones con caption, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margineqncaptiontop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones con caption, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginequationbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior ecuaciones, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginequationtop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginfloatimages</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior imágenes flotantes insertadas con <i>\insertimageleft</i>,
+                                <i>\insertimageright</i>, en pt.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginfootnote</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen derecho de los footnotes, en pt.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margingatherbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior ecuaciones con entorno <i>gather</i>, en
+                                centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margingathercaptbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior ecuaciones con entorno <i>gather</i> que
+                                tienen
+                                caption, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margingathercapttop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>gather</i> que
+                                tienen
+                                caption, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margingathertop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>gather</i>, en
+                                centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginimagebottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior figuras, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginimagetop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior imágenes, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginimagemultright</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen derecho imágenes múltiples del entorno <i>images</i>,
+                                en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginimagemulttop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior del entorno <i>images</i>, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\numberedequation</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número en las ecuaciones insertadas con <span
+                                    class="pl-c1">\insert...</span>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tabledefaultplacement</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Ubicación por defecto de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablepaddingh</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen horizontal de las celdas de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablepaddingv</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen vertical de las celdas de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tikzdefaultplacement</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Ubicación por defecto de las figuras hechas con tikz.</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="config-parent">
                 <strong class="functtitlstyle">Configuración de los títulos<a id="config-tstyles"></a></strong>
                 <ul>
                     <li class="config-elem">
@@ -2247,289 +2530,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 con
                                 <span class="pl-c1">\url</span> y <span class="pl-c1">\href</span>.
                             </div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Configuración del anexo, citas y referencias<a
-                        id="config-ref"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <strong>\apaciterefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
-                                en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\appendixindepobjnum</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">La numeración de los objetos (figura, tabla, código) en
-                                la sección de anexo/apéndice es independiente del documento.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\bibtexrefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
-                                <i>bibtex</i>), en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\natbibrefsep</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo
-                                <i>natbib</i>), en <i>pt</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\natbibrefstyle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Formato de referencias natbib
-                                (abbrvnat,apa,ieeetr,unsrt,etc.).
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\sectionappendixlastchar</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Carácter entre el número de la sección del anexo y el
-                                título.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\sectionrefenv</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Las referencias se consideran como sección.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showappendixsectitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el informe.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <div id="stylecitereferences">
-                            <strong>\stylecitereferences</strong>
-                            <a id="ref-style-config"></a>
-                            <div class="config-desc">
-                                <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
-                                    <b>apacite</b>, <b>bibtex</b>ó <b>natbib</b>.
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\twocolumnreferences</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Referencias en dos columnas.</div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="config-parent">
-                <strong class="functtitlstyle">Configuraciones de objetos<a
-                        id="config-objects"></a></strong>
-                <ul>
-                    <li class="config-elem">
-                        <strong>\columnhspace</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen horizontal entre objetos <span
-                                    class="pl-c1">\createcolumn</span>, en <i>cm</i>.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\columnsepwidth</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Separación de las columnas, en <i>em</i>.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <div id="defaultimagefolder">
-                            <strong>\defaultimagefolder</strong>
-                            <div class="config-desc">
-                                <div class="config-desc-inner">Directorio de las imágenes, sólo utilizado por las
-                                    funciones que insertan figuras.
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\imagedefaultplacement</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Ubicación por defecto de las imágenes.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginalignbottom</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior ecuaciones con entorno align, en
-                                centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginaligncaptbottom</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior ecuaciones con entorno align que tienen
-                                caption, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginaligncapttop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior ecuaciones con entorno align que tienen
-                                caption, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginaligntop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior ecuaciones con entorno align, en
-                                centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginbottomimages</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior figuras, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margineqncaptionbottom</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior ecuaciones con caption, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margineqncaptiontop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior ecuaciones con caption, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginequationbottom</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior ecuaciones, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginequationtop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior ecuaciones, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginfloatimages</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior imágenes flotantes insertadas con <i>\insertimageleft</i>,
-                                <i>\insertimageright</i>, en pt.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginfootnote</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen derecho de los footnotes, en pt.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margingatherbottom</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior ecuaciones con entorno <i>gather</i>, en
-                                centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margingathercaptbottom</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen inferior ecuaciones con entorno <i>gather</i> que
-                                tienen
-                                caption, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margingathercapttop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>gather</i> que
-                                tienen
-                                caption, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margingathertop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>gather</i>, en
-                                centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginrightmultimage</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen derecho imágenes múltiples del entorno <i>images</i>,
-                                en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margintopimages</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior imágenes, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\margintopmultimages</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior del entorno <i>images</i>, en centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\tabledefaultplacement</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Ubicación por defecto de las tablas.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\tablepaddingh</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen horizontal de las celdas de las tablas.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\tablepaddingv</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen vertical de las celdas de las tablas.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\tikzdefaultplacement</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Ubicación por defecto de las figuras hechas con tikz.</div>
                         </div>
                     </li>
                 </ul>
