@@ -115,7 +115,7 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
-    'csharp': '\\begin{sourcecode}[]{csharp}{Ejemplo en C\\#.}\n' +
+    'csharp': '\\begin{sourcecode}[]{csharp}{Ejemplo en C#.}\n' +
         '/*\n' +
         '* C# Program to Get a Number and Display the Sum of the Digits \n' +
         '*/\n' +
@@ -198,7 +198,7 @@ let cmd_sourcecode = {
 
     'html5': '\\begin{sourcecode}[\\label{codigo-html5}]{html5}{Ejemplo en HTML5.}\n' +
         '<!DOCTYPE html>\n' +
-        '<html>\n' +
+        '<html lang="es">\n' +
         '<head>\n' +
         '\t<title>Página</title>\n' +
         '</head>\n' +
@@ -333,6 +333,68 @@ let cmd_sourcecode = {
         'fprintf(\'BETA=%.2f, MAX: FAD=%.3f, TD/TN=%.3f\\n\', BETA(j), fad(mx), tdtn(mx));\n' +
         'plot(tdtn, fad, \'DisplayName\', strcat(\'\\beta=\', sprintf(\'%.2f\', BETA(j))));\n' +
         'end\t\n' +
+        '\\end{sourcecode}',
+
+    'opencl': '\\begin{sourcecode}[\\label{test-opencl}]{opencl}{Ejemplito OpenCL.}\n' +
+        '__kernel void vector_add(__global const int *A, __global const int *B, __global int *C) {\n' +
+        '\n' +
+        '    // Get the index of the current element to be processed\n' +
+        '    int i = get_global_id(0);\n' +
+        '\n' +
+        '    // Do the operation\n' +
+        '    C[i] = A[i] + B[i];\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
+    'opensees': '\\begin{sourcecode}[\\label{programa-opensees}]{opensees}{Estructura en OpenSees.}\n' +
+        '# Remove existing model\n' +
+        'wipe\n' +
+        '\n' +
+        '# Create ModelBuilder (with two-dimensions and 2 DOF/node)\n' +
+        'model BasicBuilder -ndm 2 -ndf 2\n' +
+        '\n' +
+        '# Create nodes\n' +
+        '# ------------\n' +
+        '# Create nodes & add to Domain - command: node nodeId xCrd yCrd\n' +
+        'node 1   0.0  0.0\n' +
+        'node 2 144.0  0.0\n' +
+        'node 3 168.0  0.0\n' +
+        'node 4  72.0 96.0\n' +
+        '    \n' +
+        '# Set the boundary conditions - command: fix nodeID xResrnt? yRestrnt?\n' +
+        'fix 1 1 1 \n' +
+        'fix 2 1 1\n' +
+        'fix 3 1 1\n' +
+        '    \n' +
+        '# Define materials for truss elements\n' +
+        '# -----------------------------------\n' +
+        '# Create Elastic material prototype - command: uniaxialMaterial Elastic matID E\n' +
+        'uniaxialMaterial Elastic 1 3000\n' +
+        '\n' +
+        '# \n' +
+        '# Define elements\n' +
+        '#\n' +
+        '\n' +
+        '# Create truss elements - command: element truss trussID node1 node2 A matID\n' +
+        'element Truss 1 1 4 10.0 1\n' +
+        'element Truss 2 2 4 5.0 1\n' +
+        'element Truss 3 3 4 5.0 1\n' +
+        '        \n' +
+        '# Define loads\n' +
+        '# ------------\n' +
+        '#\n' +
+        '\n' +
+        '# create a Linear TimeSeries with a tag of 1\n' +
+        'timeSeries Linear 1\n' +
+        '    \n' +
+        '# Create a Plain load pattern associated with the TimeSeries,\n' +
+        '# command: pattern Plain $patternTag $timeSeriesTag { load commands }\n' +
+        '\n' +
+        'pattern Plain 1 1 {\n' +
+        '\t\n' +
+        '   # Create the nodal load - command: load nodeID xForce yForce\n' +
+        '   load 4 100 -50\n' +
+        '}\n' +
         '\\end{sourcecode}',
 
     'perl': '\\begin{sourcecode}[\\label{ejemplito-perl}]{perl}{Algo de perl.}\n' +
@@ -483,6 +545,26 @@ let cmd_sourcecode = {
         '\t\t\tprintln( "Value of a: " + a );\n' +
         '\t\t}\n' +
         '\t}\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
+    'tcl': '\\begin{sourcecode}[\\label{ejemplo-tcl}]{tcl}{Código en TCL.}\n' +
+        'proc file\'hexdump filename {\n' +
+        '   set fp [open $filename]\n' +
+        '   fconfigure $fp -translation binary\n' +
+        '   set n 0\n' +
+        '   while {![eof $fp]} {\n' +
+        '       set bytes [read $fp 16]\n' +
+        '       regsub -all {[^\x20-\xfe]} $bytes . ascii\n' +
+        '       puts [format "%04X %-48s %-16s" $n [hexdump $bytes] $ascii]\n' +
+        '       incr n 16\n' +
+        '   }\n' +
+        '   close $fp\n' +
+        '}\n' +
+        '\n' +
+        'proc hexdump string {\n' +
+        '   binary scan $string H* hex\n' +
+        '   regexp -all -inline .. $hex\n' +
         '}\n' +
         '\\end{sourcecode}',
 
