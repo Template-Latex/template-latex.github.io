@@ -293,7 +293,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 
 body {
     background-attachment: fixed;
-    color: #606c71;
+    color: #363636;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
     font-weight: normal;
@@ -350,6 +350,7 @@ a.back-to-top {
 
 .functtitlstyle {
     cursor: default;
+    font-weight: 500 !important;
 }
 
 @media screen and (min-width: 64em) {
@@ -853,7 +854,7 @@ a:hover {
 
 @media screen and (min-width: 64em) {
     .main-content {
-        font-size: 0.97rem;
+        font-size: 0.92rem;
         margin: 0 auto;
         max-width: 64rem;
         padding: 2rem 6rem;
@@ -863,7 +864,7 @@ a:hover {
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .main-content {
         padding: 2rem 4rem;
-        font-size: 0.9rem;
+        font-size: 0.87rem;
     }
 }
 

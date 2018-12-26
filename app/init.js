@@ -267,6 +267,7 @@ $(function () {
      * Se cambia el estilo de la página
      * ------------------------------------------------------------------------
      */
+    $('.main-content .functtitlstyle').css('color', wallpaper_db.color);
     $('.main-content h1').css('color', wallpaper_db.color);
     $('.main-content h2').css('color', wallpaper_db.color);
     $('.main-content h3').css('color', wallpaper_db.color);

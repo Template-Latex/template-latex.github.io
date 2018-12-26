@@ -38,10 +38,10 @@ let bounceConfig; // Efecto en entrada de configuración
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 let hfGallery; // Muestra la galería de header-footer
 let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-let line_abstract = [87, 260]; // Número de línea de abstract/resumen
+let line_abstract = [86, 284]; // Número de línea de abstract/resumen
 let line_authortable = [33, 34]; // Número de línea tabla de integrantes
-let line_configimport = [63, 64]; // Número línea importación de configuraciones
-let line_docinit = [98, 271]; // Número de línea inicio del documento
+let line_configimport = [62, 63]; // Número línea importación de configuraciones
+let line_docinit = [97, 295]; // Número de línea inicio del documento
 let line_infodocument = [18, 19]; // Número de línea información del documento
 let portraitGallery; // Muestra la galería de portadas
 let totalHfStyles = 14; // Estilos totales en tipo de header-footer

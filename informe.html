@@ -464,8 +464,16 @@
                                 Añade una imagen encerrada en un recuadro dentro del objeto <b>images</b>.
                             </li>
                             <li>
-                                <strong>\addimagenewline</strong>:
+                                <strong>\imageshspace</strong><b>{</b><em>Margen</em><b>}</b>:
+                                Añade un margen horizontal dentro del objeto <b>images</b>.
+                            </li>
+                            <li>
+                                <strong>\imagesnewline</strong>:
                                 Añade un salto de línea dentro del objeto <b>images</b>.
+                            </li>
+                            <li>
+                                <strong>\imagesvspace</strong><b>{</b><em>Margen</em><b>}</b>:
+                                Añade un margen vertical dentro del objeto <b>images</b>.
                             </li>
                         </ul>
                     </li>
@@ -1944,10 +1952,32 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\indexforcenewpage</strong>
+                        <strong>\indexnewpagec</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Forza una nueva página en cada índice nuevo (lista de
-                                figuras, tablas, códigos fuente).
+                            <div class="config-desc-inner">Forza una nueva página en el índice de códigos fuente.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\indexnewpagef</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Forza una nueva página en el índice de figuras.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\indexnewpaget</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Forza una nueva página en el índice de tablas.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\indexstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo del índice de objetos, <i>c</i>: Código fuente,
+                                <i>f:</i> Figura, <i>t</i>: Tabla. Combinaciones posibles: <i>(vacío), f, ft, ftc, fc,
+                                    fct, t, tf, tfc, tc, tcf, c, ct, ctf, cf, cft</i>.
                             </div>
                         </div>
                     </li>
@@ -1981,27 +2011,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showindexofcode</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la lista de códigos fuente en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\showindexofcontents</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra la lista de contenidos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showindexoffigures</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la lista de figuras en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showindexoftables</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la lista de tablas en el índice.</div>
                         </div>
                     </li>
                 </ul>
@@ -2430,7 +2442,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showdotontitles</strong>
+                        <strong>\showdotaftersnum</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra un punto en cada número de sección, subsección y
                                 sub-subsección.
