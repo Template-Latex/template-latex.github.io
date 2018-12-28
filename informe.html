@@ -1844,6 +1844,24 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\captionlabelformat</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato leyenda: empty, simple, parens &nbsp;<a
+                                    href="http://www.peteryu.ca/tutorials/publishing/latex_captions#label_format_and_label_separator">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionlabelsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separador entre el número de la leyenda y el texto, valores
+                                posibles: <b>none</b>, <b>colon</b>, <b>period</b>, <b>space</b>, <b>quad</b>, <b>newline</b>
+                                &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#label_format_and_label_separator">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\captionlessmarginimage</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen inferior si no hay caption en figuras, en
@@ -1868,6 +1886,51 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\captionnumcode</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de número para los códigos fuente, valores posibles:
+                                <b>arabic</b>, <b>alph</b>, <b>Alph</b>, <b>roman</b>, <b>Roman</b> &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#set_caption_label_numbering_style">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionnumfigure</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de número para las figuras, valores posibles:
+                                <b>arabic</b>, <b>alph</b>, <b>Alph</b>, <b>roman</b>, <b>Roman</b> &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#set_caption_label_numbering_style">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionnumsubfigure</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de número para las subfiguras, valores posibles:
+                                <b>arabic</b>, <b>alph</b>, <b>Alph</b>, <b>roman</b>, <b>Roman</b> &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#set_caption_label_numbering_style">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionnumsubtable</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de número para las subtablas, valores posibles:
+                                <b>arabic</b>, <b>alph</b>, <b>Alph</b>, <b>roman</b>, <b>Roman</b> &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#set_caption_label_numbering_style">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionnumtable</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de número para las tablas, valores posibles:
+                                <b>arabic</b>, <b>alph</b>, <b>Alph</b>, <b>roman</b>, <b>Roman</b> &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#set_caption_label_numbering_style">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\captiontbmarginfigure</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen superior/inferior de la leyenda en las figuras,
@@ -1886,7 +1949,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="config-elem">
                         <strong>\captiontextbold</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Etiquetas (Figura,Tabla,etc.) de la leyenda en negrita.</div>
+                            <div class="config-desc-inner">Etiquetas (Figura, Tabla, etc) de la leyenda en negrita.
+                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -1906,8 +1970,28 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
                                 en el número de figura/tabla/código. Valores esperados: <b>none</b>, <b>sec</b>
-                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
-                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
+                                (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
+                                <b>ssssec</b> (Sub-sub-subsección).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\subcaptionlabelformat</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato leyenda para las subfiguras y subtablas, valores
+                                posibles: <b>empty</b>, <b>simple</b>, <b>parens</b> &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#label_format_and_label_separator">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\subcaptionlabelsep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separador entre el número de la leyenda y el texto para las
+                                subfiguras y subtablas, valores
+                                posibles: <b>none</b>, <b>colon</b>, <b>period</b>, <b>space</b>, <b>quad</b>, <b>newline</b>
+                                &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#label_format_and_label_separator">(documentación)</a>.
                             </div>
                         </div>
                     </li>
@@ -1976,8 +2060,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\indexstyle</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Estilo del índice de objetos, <i>c</i>: Código fuente,
-                                <i>f:</i> Figura, <i>t</i>: Tabla. Combinaciones posibles: <i>(vacío), f, ft, ftc, fc,
-                                    fct, t, tf, tfc, tc, tcf, c, ct, ctf, cf, cft</i>.
+                                <i>f:</i> Figura, <i>t</i>: Tabla. Combinaciones posibles: <b>(vacío)</b>, <b>f</b>, <b>ft</b>,
+                                <b>ftc</b>, <b>fc</b>, <b>fct</b>, <b>t</b>, <b>tf</b>, <b>tfc</b>, <b>tc</b>,
+                                <b>tcf</b>, <b>c</b>, <b>ct</b>, <b>ctf</b>, <b>cf</b>, <b>cft</b>.
                             </div>
                         </div>
                     </li>
@@ -2089,7 +2174,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                             <a id="ref-style-config"></a>
                             <div class="config-desc">
                                 <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
-                                    <b>apacite</b>, <b>bibtex</b>ó <b>natbib</b>.
+                                    <b>apacite</b>, <b>bibtex</b> ó <b>natbib</b>.
                                 </div>
                             </div>
                         </div>
@@ -2135,9 +2220,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\equationrestart</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Comportamiento del reinicio de los números de las ecuaciones,
-                                valores esperados: <b>none</b> (Ninguno), <b>page</b> (Por cada página), <b>sec</b> <i>(Sección)</i>,
-                                <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
-                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
+                                valores esperados: <b>none</b> (Ninguno), <b>page</b> &nbsp;(Por cada página),
+                                <b>sec</b> &nbsp;(Sección), <b>ssec</b> &nbsp;(Subsección), <b>sssec</b> &nbsp;(Sub-subsección),
+                                <b>ssssec</b> &nbsp;(Sub-sub-subsección).
                             </div>
                         </div>
                     </li>
@@ -2145,9 +2230,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\footnoterestart</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Comportamiento del reinicio de los números de <i>footnote</i>,
-                                valores esperados: <b>none</b> (Ninguno), <b>page</b> (Por cada página), <b>sec</b>
-                                <i>(Sección)</i>, <b>ssec</b> <i>(Subsección)</i>, <b>sssec</b> <i>(Sub-subsección)</i>,
-                                <b>ssssec</b> <i>(Sub-sub-subsección)</i>.
+                                valores esperados: <b>none</b> (Ninguno), <b>page</b> &nbsp;(Por cada página),
+                                <b>sec</b> &nbsp;(Sección), <b>ssec</b> &nbsp;(Subsección), <b>sssec</b> &nbsp;(Sub-subsección),
+                                <b>ssssec</b> &nbsp;(Sub-sub-subsección).
                             </div>
                         </div>
                     </li>
@@ -2659,7 +2744,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\cfgbookmarksopenlevel</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Nivel de los marcadores a mostrar. Valores esperados:
-                                <b>1</b>: secciones, <b>2</b>: muestra todos los subtítulos, etc.
+                                <b>1</b> (Secciones), <b>2</b> (Muestra todos los subtítulos, etc).
                             </div>
                         </div>
                     </li>

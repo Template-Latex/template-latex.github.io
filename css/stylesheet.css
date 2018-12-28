@@ -1230,7 +1230,6 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
 .config-desc-inner {
     display: inline-table;
     float: right;
-    text-align: justify;
     width: 98%;
 }
 
