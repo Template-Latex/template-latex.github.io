@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017-2018 Pablo Pizarro R.
+ Copyright 2017-2019 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -211,14 +211,14 @@ function throwError(error) {
     hide_element_id('template-preview-pdf');
 
     let $html_section = $('#main-content-section');
-    let html_error_div = '<div class="tooltip error_msg_1"><div id="errorMsgText"><!--suppress HtmlUnknownTarget --><img src="res/ui/erroricon.png" />{0}</div><div></div></div>';
+    let html_error_div = '<div class="tooltip error_msg_1"><div id="errorMsgText"><!--suppress HtmlUnknownTarget --><img src="res/ui/erroricon.png" alt=""/>{0}</div><div></div></div>';
     // noinspection JSUnresolvedVariable
     $html_section.html(String.format(html_error_div, error.msg));
     $('.error_msg_1').tooltipster({
         animation: 'grow',
         content: error.moreinfo,
         side: 'bottom',
-        theme: 'tooltipster-borderless',
+        theme: 'tooltipster-borderless'
     });
     let backheight = $(window).height() - $('.page-header').innerHeight();
     $html_section.css('height', backheight);
@@ -264,21 +264,21 @@ function writeBadges() {
     $badgediv.html('');
 
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/tesis.html" id="aimg"><img src="res/badges/tesis.svg" style="display: none" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/tesis.html" id="aimg"><img src="res/badges/tesis.svg" style="display: none" alt=""/></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/apunte.html" id="aimg"><img src="res/badges/apunte.svg" style="display: none" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/apunte.html" id="aimg"><img src="res/badges/apunte.svg" style="display: none" alt=""/></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/tareas.html" id="aimg"><img src="res/badges/tareas.svg" style="display: none" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/tareas.html" id="aimg"><img src="res/badges/tareas.svg" style="display: none" alt=""/></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/auxiliares.html" id="aimg"><img src="res/badges/auxiliares.svg" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/auxiliares.html" id="aimg"><img src="res/badges/auxiliares.svg" alt=""/></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/controles.html" id="aimg"><img src="res/badges/controles.svg" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/controles.html" id="aimg"><img src="res/badges/controles.svg" alt=""/></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/pautas.html" id="aimg"><img src="res/badges/pauta.svg" style="display: none" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/pautas.html" id="aimg"><img src="res/badges/pauta.svg" style="display: none"  alt=""/></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/informe.html" id="aimg"><img src="res/badges/informe.svg" /></a> ');
+    $badgediv.append('<a href="https://latex.ppizarror.com/informe.html" id="aimg"><img src="res/badges/informe.svg" alt=""/></a> ');
     // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/professional-cv.html" id="aimg"><img src="res/badges/professionalcv.svg" /></a>');
+    $badgediv.append('<a href="https://latex.ppizarror.com/professional-cv.html" id="aimg"><img src="res/badges/professionalcv.svg" alt=""/></a>');
     $badgediv.fadeIn('slow');
 }
 

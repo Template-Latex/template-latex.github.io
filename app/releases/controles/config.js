@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017-2018 Pablo Pizarro R.
+ Copyright 2017-2019 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -36,4 +36,5 @@ let update_download_counter = 'Template-Controles';
  */
 function afterDocumentReady() {}
 
+// noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {}
