@@ -24,20 +24,20 @@
 /**
  * Configuraciones de toda la suite Template-Latex
  */
-let backgroundResize; // Ajuste del fondo
-let blurlimits = [3, 5]; // Límites del blur en px
-let blurprobability = 50; // Probabilidad de blur
-let changelog_max = 10; // Número máximo de cambios en changelog
-let changelog_show_hr = false; // Muestra título en changelog
-let changepacecolor = true; // Cambiar el color de pace
-let enableparallax = true; // Activa el parallax
+let backgroundResize;               // Ajuste del fondo
+let blurlimits = [3, 5];            // Límites del blur en px
+let blurprobability = 50;           // Probabilidad de blur
+let changelog_max = 10;             // Número máximo de cambios en changelog
+let changelog_show_hr = false;      // Muestra título en changelog
+let changepacecolor = true;         // Cambiar el color de pace
+let enableparallax = true;          // Activa el parallax
 // let gitter_href = 'https://gitter.im/Template-Latex/'; // Página gitter
-let nan_value = 'NaN';
-let otherdownloadsfadetime = 400;
-let parallaxloaded = false; // Indica que parallax ya se cargó
+let nan_value = 'NaN';              // Valor NaN como string
+let otherdownloadsfadetime = 400;   // Tiempo de fade para descargas
+let parallaxloaded = false;         // Indica que parallax ya se cargó
 let pdf_js_href = 'https://latex.ppizarror.com/pdf-version/web/viewer.html?file=';
-let scrollLock = false; // Indica que la función $.scrollLock se activó
-let seconds_update_downloadCounter = 60 * 3; // Tiempo de refresco actualización contador descargas
+let scrollLock = false;             // Indica que la función $.scrollLock se activó
+let seconds_update_downloadCounter = 60 * 4; // Tiempo de refresco actualización contador descargas
 let stats_href = 'https://latex.ppizarror.com/stats/?template=';
 let update_downloads_version = true;
 
