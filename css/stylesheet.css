@@ -1339,3 +1339,22 @@ Desactiva la selección de un objeto
     outline: none;
     user-select: none;
 }
+
+/**
+Lista de banners en index
+ */
+.indexbannerlist {
+    text-align: center;
+}
+
+.indexbannerlist img {
+    display: flex;
+    height: 2rem;
+    margin: 0.5rem 2rem;
+}
+
+@media screen and (max-width: 576px) {
+    .indexbannerlist img {
+        margin: 0.5rem auto;
+    }
+}

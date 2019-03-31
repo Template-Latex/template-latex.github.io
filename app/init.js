@@ -91,167 +91,222 @@ $(function () {
      * Se añaden las descargas del template base
      * ------------------------------------------------------------------------
      */
-    let jsonquery = $.getJSON(href_json_releases, function (json) {
+    let jsonquery;
+    if (href_json_releases !== '') {
+        jsonquery = $.getJSON(href_json_releases, function (json) {
 
-        /**
-         * Se cargan los datos del json
-         */
-        total_downloads = 0;
-        for (let i = 0; i < json.length; i += 1) {
-            try {
-                for (let j = 0; j < json[i].assets.length; j += 1) {
-                    total_downloads += parseInt(json[i].assets[j].download_count);
-                    version_entries.push(json[i].tag_name);
+            /**
+             * Se cargan los datos del json
+             */
+            total_downloads = 0;
+            for (let i = 0; i < json.length; i += 1) {
+                try {
+                    for (let j = 0; j < json[i].assets.length; j += 1) {
+                        total_downloads += parseInt(json[i].assets[j].download_count);
+                        version_entries.push(json[i].tag_name);
+                    }
+                } catch (err) {
+                    console.log(String.format('Error al obtener la cantidad de descargas del archivo {0}', json[i].name));
                 }
+            }
+
+            /**
+             * Válido para los subtemplates
+             */
+            try {
+                last_version = json[0].tag_name;
+                last_version_link = json[0].assets[0].browser_download_url;
+                let last_version_link_1 = json[0].assets[1].browser_download_url;
+                var normal_link, compact_link;
+                if (last_version_link.includes('.min')) {
+                    normal_link = last_version_link_1;
+                    compact_link = last_version_link;
+                } else {
+                    normal_link = last_version_link;
+                    compact_link = last_version_link_1;
+                }
+                console.log(String.format('Última versión template: {0}', last_version));
             } catch (err) {
-                console.log(String.format('Error al obtener la cantidad de descargas del archivo {0}', json[i].name));
+                throwError(errors.cantGetVersion);
             }
-        }
 
-        /**
-         * Válido para los subtemplates
-         */
-        try {
-            last_version = json[0].tag_name;
-            last_version_link = json[0].assets[0].browser_download_url;
-            let last_version_link_1 = json[0].assets[1].browser_download_url;
-            var normal_link, compact_link;
-            if (last_version_link.includes('.min')) {
-                normal_link = last_version_link_1;
-                compact_link = last_version_link;
+            /**
+             * Se actualiza total de descargas
+             */
+            total_downloads_l30 = total_downloads;
+            if (total_downloads === 0) {
+                total_downloads = nan_value;
             } else {
-                normal_link = last_version_link;
-                compact_link = last_version_link_1;
-            }
-            console.log(String.format('Última versión template: {0}', last_version));
-        } catch (err) {
-            throwError(errors.cantGetVersion);
-        }
-
-        /**
-         * Se actualiza total de descargas
-         */
-        total_downloads_l30 = total_downloads;
-        if (total_downloads === 0) {
-            total_downloads = nan_value;
-        } else {
-            updateDownloadCounter(total_downloads, update_download_counter);
-            let j = '';
-            for (let i = 0; i < download_list_counter.length; i += 1) {
-                j = download_list_counter[i][1];
-                if (version_entries.indexOf(j) === -1) {
-                    if (Array.isArray(download_list_counter[i][0])) {
-                        total_downloads += download_list_counter[i][0][0] + download_list_counter[i][0][1];
-                    } else {
-                        total_downloads += download_list_counter[i][0];
+                updateDownloadCounter(total_downloads, update_download_counter);
+                let j = '';
+                for (let i = 0; i < download_list_counter.length; i += 1) {
+                    j = download_list_counter[i][1];
+                    if (version_entries.indexOf(j) === -1) {
+                        if (Array.isArray(download_list_counter[i][0])) {
+                            total_downloads += download_list_counter[i][0][0] + download_list_counter[i][0][1];
+                        } else {
+                            total_downloads += download_list_counter[i][0];
+                        }
                     }
                 }
             }
-        }
-        update_download_banner(total_downloads);
+            update_download_banner(total_downloads);
 
-        /**
-         * Se añade link estadísticas a banner descargas
-         */
-        $('#main-content-section #templatestats').attr('href', stats_href + stats_name);
-        if (update_download_counter === 'Template-Informe') {
+            /**
+             * Se añade link estadísticas a banner descargas
+             */
+            $('#main-content-section #templatestats').attr('href', stats_href + stats_name);
+            if (update_download_counter === 'Template-Informe') {
 
-            // Se carga los elementos
-            let $dlbutton = $('#download-button');
+                // Se carga los elementos
+                let $dlbutton = $('#download-button');
 
-            // Si es Template-Informe se muestra botón otras descargas
-            $('a[name*=leanModal]').leanModal({
-                closeButton: '.modal_close',
-                onopen: function () {
-                    $('#download-button-1file').tooltipster('close');
-                    $('#autorbanner').tooltipster('close');
-                }
-            });
-            let normal_link = String.format('{0}download/{1}/Template-Informe.zip', href_github_project, last_version);
-            // noinspection HtmlUnknownTarget
-            $('#download-button-1file').append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
-            $dlbutton.attr('href', normal_link);
-            // noinspection HtmlUnknownTarget
-            $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
-            writeOtherLinks(last_version);
-
-        } else {
-
-            // Se carga los elementos
-            let $dlbutton = $('#download-button');
-            let $d1fbutton = $('#download-button-1file');
-
-            // Se establece la versión en el botón de descargas
-            $d1fbutton.attr('href', compact_link);
-            // noinspection HtmlUnknownTarget
-            $d1fbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
-            $dlbutton.attr('href', normal_link);
-            // noinspection HtmlUnknownTarget
-            $dlbutton.append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
-            $d1fbutton.click(function () {
-                if (total_downloads !== nan_value) {
-                    total_downloads += 1;
-                    total_downloads_l30 += 1;
-                    update_download_banner(total_downloads);
-                }
-            });
-
-        }
-
-        /**
-         * Se muestra descargas y botones con efecto
-         */
-        fadein_css('#total-download-counter-1', '0.1s');
-        fadein_css('#total-download-counter-2', '0.1s');
-        $('#buttonfile1text').fadeIn('slow');
-        $('#buttonfilectext').fadeIn('slow');
-
-        /**
-         * Se establece la última versión del pdf
-         */
-        pdf_href_lastv = pdf_js_href + String.format(href_pdf_version, last_version);
-        $('#template-preview-pdf').attr('href', pdf_href_lastv);
-        $(".badgeejemplopdf").attr('href', pdf_href_lastv);
-
-        /**
-         * Se obtiene el what's new
-         */
-        $('#github-button-header').attr('href', href_github_project_source);
-        let whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
-        let whats_new_versions = Math.min(changelog_max, json.length);
-        // noinspection ES6ModulesDependencies
-        let md_converter = new showdown.Converter();
-        let show_github_button = (whats_new_versions === changelog_max);
-        try {
-            for (let i = 0; i < whats_new_versions; i += 1) {
-                let version_created_at = json[i].created_at.substring(0, 10);
-                let $version_created_at = version_created_at.substring(8, 10) + '/' + version_created_at.substring(5, 7) + '/' + version_created_at.substring(0, 4);
+                // Si es Template-Informe se muestra botón otras descargas
+                $('a[name*=leanModal]').leanModal({
+                    closeButton: '.modal_close',
+                    onopen: function () {
+                        $('#download-button-1file').tooltipster('close');
+                        $('#autorbanner').tooltipster('close');
+                    }
+                });
+                let normal_link = String.format('{0}download/{1}/Template-Informe.zip', href_github_project, last_version);
                 // noinspection HtmlUnknownTarget
-                let title_new_version = String.format('<b>Versión <a href="{2}" class="javascripthref">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, $version_created_at, json[i].html_url);
-                let content_version = md_converter.makeHtml(json[i].body);
-                new_version_entry += String.format(whats_new_html, title_new_version, content_version);
-                if (i < whats_new_versions - 1 && changelog_show_hr) {
-                    new_version_entry += '<hr class="style1">';
-                }
-            }
-            if (show_github_button) {
+                $('#download-button-1file').append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
+                $dlbutton.attr('href', normal_link);
                 // noinspection HtmlUnknownTarget
-                new_version_entry += String.format("Puedes ver la lista de cambios completa en <a href='{0}' class='javascripthref'>GitHub <i class='fab fa-github'></i></a>", href_github_project);
-            }
-            $('#que-hay-de-nuevo').html(new_version_entry);
-            $('.main-content hr').css('background-color', hrcolor);
-            $('.que-hay-de-nuevo-blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
-        } catch ($e) {
-            throwError(errors.retrieveContentVersions);
-            throwException($e);
-        }
+                $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
+                writeOtherLinks(last_version);
 
-        // Se llama a afterJSON
-        afterJSONLoad();
-    });
-    jsonquery.fail(function () { // Se activa error de json
-        throwError(errors.cantLoadJson);
-    });
+            } else {
+
+                // Se carga los elementos
+                let $dlbutton = $('#download-button');
+                let $d1fbutton = $('#download-button-1file');
+
+                // Se establece la versión en el botón de descargas
+                $d1fbutton.attr('href', compact_link);
+                // noinspection HtmlUnknownTarget
+                $d1fbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
+                $dlbutton.attr('href', normal_link);
+                // noinspection HtmlUnknownTarget
+                $dlbutton.append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
+                $d1fbutton.click(function () {
+                    if (total_downloads !== nan_value) {
+                        total_downloads += 1;
+                        total_downloads_l30 += 1;
+                        update_download_banner(total_downloads);
+                    }
+                });
+
+            }
+
+            /**
+             * Se muestra descargas y botones con efecto
+             */
+            fadein_css('#total-download-counter-1', '0.1s');
+            fadein_css('#total-download-counter-2', '0.1s');
+            $('#buttonfile1text').fadeIn('slow');
+            $('#buttonfilectext').fadeIn('slow');
+
+            /**
+             * Se establece la última versión del pdf
+             */
+            pdf_href_lastv = pdf_js_href + String.format(href_pdf_version, last_version);
+            $('#template-preview-pdf').attr('href', pdf_href_lastv);
+            $(".badgeejemplopdf").attr('href', pdf_href_lastv);
+
+            /**
+             * Se obtiene el what's new
+             */
+            $('#github-button-header').attr('href', href_github_project_source);
+            let whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
+            let whats_new_versions = Math.min(changelog_max, json.length);
+            // noinspection ES6ModulesDependencies
+            let md_converter = new showdown.Converter();
+            let show_github_button = (whats_new_versions === changelog_max);
+            try {
+                for (let i = 0; i < whats_new_versions; i += 1) {
+                    let version_created_at = json[i].created_at.substring(0, 10);
+                    let $version_created_at = version_created_at.substring(8, 10) + '/' + version_created_at.substring(5, 7) + '/' + version_created_at.substring(0, 4);
+                    // noinspection HtmlUnknownTarget
+                    let title_new_version = String.format('<b>Versión <a href="{2}" class="javascripthref">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, $version_created_at, json[i].html_url);
+                    let content_version = md_converter.makeHtml(json[i].body);
+                    new_version_entry += String.format(whats_new_html, title_new_version, content_version);
+                    if (i < whats_new_versions - 1 && changelog_show_hr) {
+                        new_version_entry += '<hr class="style1">';
+                    }
+                }
+                if (show_github_button) {
+                    // noinspection HtmlUnknownTarget
+                    new_version_entry += String.format("Puedes ver la lista de cambios completa en <a href='{0}' class='javascripthref'>GitHub <i class='fab fa-github'></i></a>", href_github_project);
+                }
+                $('#que-hay-de-nuevo').html(new_version_entry);
+                $('.main-content hr').css('background-color', hrcolor);
+                $('.que-hay-de-nuevo-blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
+            } catch ($e) {
+                throwError(errors.retrieveContentVersions);
+                throwException($e);
+            }
+
+            // Se llama a afterJSON
+            afterJSONLoad();
+        });
+        jsonquery.fail(function () { // Se activa error de json
+            throwError(errors.cantLoadJson);
+        });
+
+        /**
+         * Se actualiza la cantidad de descargas al hacer click
+         */
+        $('total-download-counter').each(function () {
+            this.id.innerHTML = total_downloads;
+        });
+        $('#download-button').click(function () {
+            if (total_downloads !== nan_value) {
+                total_downloads += 1;
+                total_downloads_l30 += 1;
+                update_download_banner(total_downloads);
+            }
+        });
+
+        /**
+         * Se actualiza el total de descargas cada n-segundos
+         */
+        if (update_downloads_version) {
+            setInterval(function () {
+                let update_downloads = 0;
+                let update_last_version = '';
+                jsonquery = $.getJSON(href_json_releases, function (json) {
+                    for (let i = 0; i < json.length; i += 1) {
+                        try {
+                            for (let j = 0; j < json[i].assets.length; j += 1) {
+                                update_downloads += parseInt(json[i].assets[j].download_count);
+                            }
+                        } catch (err) {
+                            console.log(String.format('Error al obtener la cantidad de descargas del archivo {0}', json[i].name));
+                        }
+                    }
+                    update_last_version = json[0].tag_name;
+
+                    // Si cambió la versión actual entonces recarga la página
+                    if (update_last_version !== last_version) {
+                        console.log(String.format('Se encontró una nueva versión v{0}, recargando págna', update_last_version));
+                        location.reload();
+                    }
+
+                    // Si existieron nuevas descargas actualiza contador
+                    if (update_downloads > total_downloads_l30) {
+                        let delta_downloads = update_downloads - total_downloads_l30;
+                        let d = new Date();
+                        console.log(String.format('[{1} {2}] Actualizando el contador de descargas, +{0} descargas', delta_downloads, d.toLocaleDateString(), d.toLocaleTimeString()));
+                        total_downloads += delta_downloads;
+                        total_downloads_l30 += delta_downloads;
+                        update_download_banner(total_downloads);
+                    }
+                });
+            }, seconds_update_downloadCounter * 1000);
+        }
+    }
 
     /**
      * ------------------------------------------------------------------------
@@ -404,22 +459,6 @@ $(function () {
 
     /**
      * ------------------------------------------------------------------------
-     * Se actualiza la cantidad de descargas al hacer click
-     * ------------------------------------------------------------------------
-     */
-    $('total-download-counter').each(function () {
-        this.id.innerHTML = total_downloads;
-    });
-    $('#download-button').click(function () {
-        if (total_downloads !== nan_value) {
-            total_downloads += 1;
-            total_downloads_l30 += 1;
-            update_download_banner(total_downloads);
-        }
-    });
-
-    /**
-     * ------------------------------------------------------------------------
      * Muestra un botón para subir al hacer scroll
      * ------------------------------------------------------------------------
      */
@@ -456,46 +495,6 @@ $(function () {
      * ------------------------------------------------------------------------
      */
     // $('#chatgitter').attr('href', gitter_href + update_download_counter);
-
-    /**
-     * ------------------------------------------------------------------------
-     * Se actualiza el total de descargas cada n-segundos
-     * ------------------------------------------------------------------------
-     */
-    if (update_downloads_version) {
-        setInterval(function () {
-            let update_downloads = 0;
-            let update_last_version = '';
-            jsonquery = $.getJSON(href_json_releases, function (json) {
-                for (let i = 0; i < json.length; i += 1) {
-                    try {
-                        for (let j = 0; j < json[i].assets.length; j += 1) {
-                            update_downloads += parseInt(json[i].assets[j].download_count);
-                        }
-                    } catch (err) {
-                        console.log(String.format('Error al obtener la cantidad de descargas del archivo {0}', json[i].name));
-                    }
-                }
-                update_last_version = json[0].tag_name;
-
-                // Si cambió la versión actual entonces recarga la página
-                if (update_last_version !== last_version) {
-                    console.log(String.format('Se encontró una nueva versión v{0}, recargando págna', update_last_version));
-                    location.reload();
-                }
-
-                // Si existieron nuevas descargas actualiza contador
-                if (update_downloads > total_downloads_l30) {
-                    let delta_downloads = update_downloads - total_downloads_l30;
-                    let d = new Date();
-                    console.log(String.format('[{1} {2}] Actualizando el contador de descargas, +{0} descargas', delta_downloads, d.toLocaleDateString(), d.toLocaleTimeString()));
-                    total_downloads += delta_downloads;
-                    total_downloads_l30 += delta_downloads;
-                    update_download_banner(total_downloads);
-                }
-            });
-        }, seconds_update_downloadCounter * 1000);
-    }
 
     /**
      * ------------------------------------------------------------------------
