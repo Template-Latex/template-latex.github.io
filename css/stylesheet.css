@@ -1349,12 +1349,13 @@ Lista de banners en index
 
 .indexbannerlist img {
     display: flex;
-    height: 2rem;
+    height: 1.9rem;
     margin: 0.5rem 2rem;
 }
 
 @media screen and (max-width: 576px) {
     .indexbannerlist img {
+        height: 1.6rem;
         margin: 0.5rem auto;
     }
 }
