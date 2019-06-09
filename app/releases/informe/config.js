@@ -510,6 +510,14 @@ let cmd_sourcecode = {
         'VT = np.zeros((n*m, 1), int) # Comentario 2\n' +
         '\\end{sourcecode}',
 
+    'r': '\\begin{sourcecode}{r}{Ejemplo en r.}\n' +
+        '# Genera una correlacion de los generos con todas sus variables\n' +
+        'corr_data_genre <- function(data, genre) {\n' +
+        '\tnum_genre <- data[data$genre == genre, -c(1:4)]\n' +
+        '\tcorr_genre <- cor(num_genre)\n' +
+        '\tcorrplot(corr_genre, type = "lower", order = "hclust", tl.col = "black", tl.srt = 30, main = toupper(genre), tl.cex = 0.7, mar=c(0,0,1,0))\n' +
+        '}\n' +
+        '\\end{sourcecode}',
     'ruby': '\\begin{sourcecode}[]{ruby}{Ejemplo con ruby.}\n' +
         'class DataFile < ActiveRecord::Base\n' +
         '    attr_accessor :upload\n' +

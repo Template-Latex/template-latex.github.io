@@ -1030,8 +1030,8 @@
                     CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript
                     (<b>js</b>), JSON (<b>json</b>), Kotlin (<b>kotlin</b>), LaTeX (<b>latex</b>), Matlab (<b>matlab</b>),
                     OpenSees (<b>opensees</b>), OpenCL (<b>opencl</b>), Perl (<b>perl</b>), PHP (<b>php</b>),
-                    Pseudocódigo (<b>pseudocode</b>), Texto plano (<b>plaintext</b>), Python (<b>python</b>), Ruby (<b>ruby</b>),
-                    Scala (<b>scala</b>), SQL (<b>sql</b>), TCL (<b>tcl</b>) y XML (<b>xml</b>):
+                    Pseudocódigo (<b>pseudocode</b>), Texto plano (<b>plaintext</b>), Python (<b>python</b>), R (<b>r</b>),
+                    Ruby (<b>ruby</b>), Scala (<b>scala</b>), SQL (<b>sql</b>), TCL (<b>tcl</b>) y XML (<b>xml</b>):
                 </p>
                 <ul>
                     <li id="sourcecode-container">
@@ -1058,6 +1058,7 @@
                         <a class="sourcecodel">plaintext</a>,
                         <a class="sourcecodel">pseudocode</a>,
                         <a class="sourcecodel">python</a>,
+                        <a class="sourcecodel">r</a>,
                         <a class="sourcecodel">ruby</a>,
                         <a class="sourcecodel">scala</a>,
                         <a class="sourcecodel">sql</a>,
@@ -1588,6 +1589,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 </div>
                             </blockquote>
                         </li>
+                        <li>
+                            <strong>\overbar</strong><b>{</b><em>x</em><b>}</b>: Agrega una barra superior en x.
+                            <blockquote>
+                                <div class="highlight highlight-text-tex">
+                                    <pre>y = <span class="pl-e">\overbar</span><b>{</b> x <b>}</b></pre>
+                                </div>
+                            </blockquote>
+                        </li>
                     </ul>
                 </div>
             </li>
@@ -1622,6 +1631,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <!--suppress HtmlUnknownTag -->
                     <hr class="style1">
                     <li>
+                        <strong>\disablecaptionmargin</strong>: Desactiva el margen de las leyendas en cualquier punto
+                        del documento.
+                    </li>
+                    <li>
                         <strong>\includefullhfpdf</strong><b>[</b><em>Parámetros
                         <i>(opcional)</i></em><b>]</b><b>{</b><em>Nombre del archivo pdf</em><b>}</b>: Inserta un
                         archivo pdf conservando el header-footer, incluyendo todas las páginas.
@@ -1652,6 +1665,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     </li>
                     <li>
                         <strong>\quotes</strong><b>{</b><em>Texto</em><b>}</b>: Inserta un texto entre comillas.
+                    </li>
+                    <li>
+                        <strong>\resetcaptionmargin</strong>: Reinicia el margen de las leyendas en cualquier punto del
+                        documento.
                     </li>
                     <li>
                         <strong>\restartequation</strong>: Reinicia el número de las ecuaciones en cualquier parte del
@@ -2404,14 +2421,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\marginaligntop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>align</i>, en
-                                centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\marginalignedbottom</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen inferior ecuaciones con entorno <i>aligned</i>, en
@@ -2439,6 +2448,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\marginalignedtop</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>aligned</i>, en
+                                centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginaligntop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>align</i>, en
                                 centímetros.
                             </div>
                         </div>
@@ -2511,14 +2528,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\margingathertop</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>gather</i>, en
-                                centímetros.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\margingatheredbottom</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen inferior ecuaciones con entorno <i>gathered</i>, en
@@ -2546,6 +2555,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\margingatheredtop</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>gathered</i>, en
+                                centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margingathertop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones con entorno <i>gather</i>, en
                                 centímetros.
                             </div>
                         </div>
@@ -2959,6 +2976,22 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\cfgshowbookmarkmenu</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el menú de los marcadores en el lector pdf.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\pdfcompilecompression</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece el factor de compresión del pdf, valor entre 0 (Sin
+                                comprimir) y 9 (Máxima compresión).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\pdfcompileobjcompression</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Establece la compresión de los objetos embebidos en el pdf,
+                                valor entre 0 (Sin comprimir) y 3 (Máxima compresión).
+                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
