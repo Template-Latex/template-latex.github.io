@@ -38,14 +38,14 @@ let bounceConfig; // Efecto en entrada de configuración
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 let hfGallery; // Muestra la galería de header-footer
 let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-let line_abstract = [86, 284]; // Número de línea de abstract/resumen
+let line_abstract = [86, 304]; // Número de línea de abstract/resumen
 let line_authortable = [33, 34]; // Número de línea tabla de integrantes
 let line_configimport = [62, 63]; // Número línea importación de configuraciones
-let line_docinit = [97, 295]; // Número de línea inicio del documento
+let line_docinit = [97, 315]; // Número de línea inicio del documento
 let line_infodocument = [18, 19]; // Número de línea información del documento
 let portraitGallery; // Muestra la galería de portadas
-let totalHfStyles = 14; // Estilos totales en tipo de header-footer
-let totalPortraitStyles = 18; // Estilos totales de portada
+let totalHfStyles = 15; // Estilos totales en tipo de header-footer
+let totalPortraitStyles = 20; // Estilos totales de portada
 
 /**
  * Requerimientos adicionales de ciertas portadas
@@ -54,7 +54,8 @@ let portraitRequiresAdditional = {
     15: '\\headerimageA, \\headerimagescaleA',
     16: '\\portraitbackgroundimageB, \\portraitbackgroundcolorB',
     17: '\\portraitimageC, \\portraitimageboxedC, \\portraitimageboxedwidthC, \\portraitimagewidthC',
-    18: '\\portraitimageD, \\portraitimageboxedD, \\portraitimageboxedwidthD, \\portraitimagewidthD'
+    18: '\\portraitimageD, \\portraitimageboxedD, \\portraitimageboxedwidthD, \\portraitimagewidthD',
+    20: '\\portraitverticalspaceE'
 };
 
 // Lista de códigos fuente
@@ -115,6 +116,26 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
+    'cpp': '\\begin{sourcecode}{cpp}{Suma en C++.}\n' +
+        '#include <iostream>\n' +
+        'using namespace std;\n' +
+        '\n' +
+        'int main()\n' +
+        '{\n' +
+        '\tint n, sum = 0;\n' +
+        '\t\n' +
+        '\tcout << "Enter a positive integer: ";\n' +
+        '\tcin >> n;\n' +
+        '\t\n' +
+        '\tfor (int i = 1; i <= n; ++i) {\n' +
+        '\t\tsum += i;\n' +
+        '\t}\n' +
+        '\t\n' +
+        '\tcout << "Sum = " << sum;\n' +
+        '\treturn 0;\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
     'csharp': '\\begin{sourcecode}[]{csharp}{Ejemplo en C#.}\n' +
         '/*\n' +
         '* C# Program to Get a Number and Display the Sum of the Digits \n' +
@@ -147,23 +168,51 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
-    'cpp': '\\begin{sourcecode}{cpp}{Suma en C++.}\n' +
-        '#include <iostream>\n' +
-        'using namespace std;\n' +
+    'css': '\\begin{sourcecode}{css}{Código CSS.}\n' +
+        '.fecha-estilo {\n' +
+        '\tcolor: #819198;\n' +
+        '\tfont-size: 15px;\n' +
+        '\tposition: relative;\n' +
+        '\tbottom: 0;\n' +
+        '}\n' +
         '\n' +
-        'int main()\n' +
-        '{\n' +
-        '\tint n, sum = 0;\n' +
-        '\t\n' +
-        '\tcout << "Enter a positive integer: ";\n' +
-        '\tcin >> n;\n' +
-        '\t\n' +
-        '\tfor (int i = 1; i <= n; ++i) {\n' +
-        '\t\tsum += i;\n' +
-        '\t}\n' +
-        '\t\n' +
-        '\tcout << "Sum = " << sum;\n' +
-        '\treturn 0;\n' +
+        '.btn {\n' +
+        '\t-moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);\n' +
+        '\t-webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);\n' +
+        '\tbackground-color: rgba(100, 100, 100, 0.4);\n' +
+        '\tborder-radius: 0.3rem;\n' +
+        '\tborder: 1px solid rgba(255, 255, 255, 0.2);\n' +
+        '\tbox-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);\n' +
+        '\tcolor: rgba(255, 255, 255, 1);\n' +
+        '\tdisplay: inline-block;\n' +
+        '\tmargin-bottom: 1rem;\n' +
+        '\tmargin-left: 0;\n' +
+        '\tmargin-right: 0.5rem;\n' +
+        '\topacity: 1.0;\n' +
+        '\toutline: none;\n' +
+        '\ttransition: color 0.2s, background-color 0.2s, border-color 0.2s;\n' +
+        '}\n' +
+        '\n' +
+        '.btn:hover {\n' +
+        '\topacity: 1.0;\n' +
+        '}\n' +
+        '\n' +
+        '.btn-pro {\n' +
+        '\t-moz-box-shadow: 0 0 5px 0 rgba(10, 10, 10, 0.75);\n' +
+        '\t-webkit-box-shadow: 0 0 5px 0 rgba(10, 10, 10, 0.75);\n' +
+        '\tbackground-color: rgba(210, 210, 210, 0.85);\n' +
+        '\tborder-radius: 0.3rem;\n' +
+        '\tborder: 1px solid rgba(255, 255, 255, 0.5);\n' +
+        '\tbox-shadow: 0 0 5px 0 rgba(10, 10, 10, 0.75);\n' +
+        '\tcolor: rgba(20, 20, 20, 1);\n' +
+        '\tdisplay: inline-block;\n' +
+        '\tfont-weight: bolder;\n' +
+        '\tmargin-bottom: 1rem;\n' +
+        '\tmargin-left: 0;\n' +
+        '\tmargin-right: 0.5rem;\n' +
+        '\topacity: 0.9;\n' +
+        '\toutline: none;\n' +
+        '\ttransition: color 0.2s, background-color 0.2s, border-color 0.2s;\n' +
         '}\n' +
         '\\end{sourcecode}',
 
@@ -194,6 +243,83 @@ let cmd_sourcecode = {
         'redis:\n' +
         'image: redis\n' +
         'volumes:\n' +
+        '\\end{sourcecode}',
+
+    'glsl': '\\begin{sourcecode}{glsl}{Noise shader.}\n' +
+        '#ifdef GL_ES\n' +
+        'precision mediump float;\n' +
+        '#endif\n' +
+        '\n' +
+        'uniform vec2 u_resolution;\n' +
+        'uniform vec2 u_mouse;\n' +
+        'uniform float u_time;\n' +
+        '\n' +
+        '// 2D Random\n' +
+        'float random (in vec2 st) {\n' +
+        '\treturn fract(sin(dot(st.xy,\n' +
+        '\tvec2(12.9898,78.233)))\n' +
+        '\t* 43758.5453123);\n' +
+        '}\n' +
+        '\n' +
+        '// 2D Noise based on Morgan McGuire @morgan3d\n' +
+        '// https://www.shadertoy.com/view/4dS3Wd\n' +
+        'float noise (in vec2 st) {\n' +
+        '\tvec2 i = floor(st);\n' +
+        '\tvec2 f = fract(st);\n' +
+        '\t\n' +
+        '\t// Four corners in 2D of a tile\n' +
+        '\tfloat a = random(i);\n' +
+        '\tfloat b = random(i + vec2(1.0, 0.0));\n' +
+        '\tfloat c = random(i + vec2(0.0, 1.0));\n' +
+        '\tfloat d = random(i + vec2(1.0, 1.0));\n' +
+        '\t\n' +
+        '\t// Smooth Interpolation\n' +
+        '\t\n' +
+        '\t// Cubic Hermine Curve.  Same as SmoothStep()\n' +
+        '\tvec2 u = f*f*(3.0-2.0*f);\n' +
+        '\t// u = smoothstep(0.,1.,f);\n' +
+        '\t\n' +
+        '\t// Mix 4 coorners percentages\n' +
+        '\treturn mix(a, b, u.x) +\n' +
+        '\t(c - a)* u.y * (1.0 - u.x) +\n' +
+        '\t(d - b) * u.x * u.y;\n' +
+        '}\n' +
+        '\n' +
+        'void main() {\n' +
+        '\tvec2 st = gl_FragCoord.xy/u_resolution.xy;\n' +
+        '\t\n' +
+        '\t// Scale the coordinate system to see\n' +
+        '\t// some noise in action\n' +
+        '\tvec2 pos = vec2(st*5.0);\n' +
+        '\t\n' +
+        '\t// Use the noise function\n' +
+        '\tfloat n = noise(pos);\n' +
+        '\t\n' +
+        '\tgl_FragColor = vec4(vec3(n), 1.0);\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
+    'haskell': '\\begin{sourcecode}{haskell}{Ejemplo en Haskell.}\n' +
+        '-- Type annotation (optional)\n' +
+        'fib :: Int -> Integer\n' +
+        '\n' +
+        '-- With self-referencing data\n' +
+        'fib n = fibs !! n\n' +
+        'where fibs = 0 : scanl (+) 1 fibs\n' +
+        '-- 0,1,1,2,3,5,...\n' +
+        '\n' +
+        '-- Same, coded directly\n' +
+        'fib n = fibs !! n\n' +
+        'where fibs = 0 : 1 : next fibs\n' +
+        'next (a : t@(b:_)) = (a+b) : next t\n' +
+        '\n' +
+        '-- Similar idea, using zipWith\n' +
+        'fib n = fibs !! n\n' +
+        'where fibs = 0 : 1 : zipWith (+) fibs (tail fibs)\n' +
+        '\n' +
+        '-- Using a generator function\n' +
+        'fib n = fibs (0,1) !! n\n' +
+        'where fibs (a,b) = a : fibs (b,a+b)\n' +
         '\\end{sourcecode}',
 
     'html5': '\\begin{sourcecode}[\\label{codigo-html5}]{html5}{Ejemplo en HTML5.}\n' +
@@ -395,6 +521,39 @@ let cmd_sourcecode = {
         '   # Create the nodal load - command: load nodeID xForce yForce\n' +
         '   load 4 100 -50\n' +
         '}\n' +
+        '\\end{sourcecode}',
+
+    'pascal': '\\begin{sourcecode}{pascal}{Ejemplo pascal.}\n' +
+        'PROGRAM NotasDeAlumnos;\n' +
+        'uses crt;\n' +
+        'Type\n' +
+        'vecalumnos = array [1..40] of string;\n' +
+        'var\n' +
+        'Nombre, Apellido: vecalumnos;\n' +
+        'Nota: array [1..40] of real;\n' +
+        'Begin\n' +
+        'clrscr; /*Limpia pantalla*/\n' +
+        'For i:= 1 to 40 do\n' +
+        '\tbegin\n' +
+        '\t\twrite(\'Ingrese Nombre: \');\n' +
+        '\t\treadln(Nombre[i]);\n' +
+        '\t\twrite(\'Ingrese Apellido: \');\n' +
+        '\t\treadln(Apellido[i]);\n' +
+        '\t\twrite(\'Ingrese Nota: \');\n' +
+        '\t\treadln(Nota[i]);\n' +
+        '\tend;\n' +
+        'For i:= 1 to 40 do\n' +
+        '\tbegin\n' +
+        '\t\twrite(Nombre[i], \' \',Apellido[i]);\n' +
+        '\t\tif (Nota[i] >=7) then\n' +
+        '\t\t\twriteln(\' aprobó\')\n' +
+        '\t\telse\n' +
+        '\t\t\twriteln(\' no aprobó\');\n' +
+        '\tend;\n' +
+        'writeln(\'\');\n' +
+        'Write (\'Pulse [Intro] para finalizar...\');\n' +
+        'Readln\n' +
+        'end.\n' +
         '\\end{sourcecode}',
 
     'perl': '\\begin{sourcecode}[\\label{ejemplito-perl}]{perl}{Algo de perl.}\n' +
@@ -735,10 +894,11 @@ function afterDocumentReady() {
     portraitGallery = function () {
         let pswpElement = document.querySelectorAll('.pswp')[0];
         let items = [];
-        let req_add = ''; // Requerimientos adicionales
+        let req_add; // Requerimientos adicionales
         for (let i = 1; i <= totalPortraitStyles; i += 1) {
+            req_add = '';
             if (portraitRequiresAdditional[i] !== undefined) {
-                req_add = '. Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>.';
+                req_add = '<br>Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>.';
             }
             items.push({
                 src: String.format('res/images/portada{0}.png', i),
@@ -1087,6 +1247,7 @@ function writeOtherLinks(verid) {
         ['Universidad de Chile', 'uchile']
     ];
     let $addTotal = function () {
+        // noinspection JSIncompatibleTypesComparison
         if (total_downloads !== nan_value) {
             total_downloads += 1;
             total_downloads_l30 += 1;

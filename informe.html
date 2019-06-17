@@ -1026,11 +1026,12 @@
                 <strong class="functtitlstyle">Añadir código fuente</strong>
                 <p class="justified-text">
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
-                    lenguajes de programación Bash-scripting (<b>bash</b>), C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>),
-                    CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript
-                    (<b>js</b>), JSON (<b>json</b>), Kotlin (<b>kotlin</b>), LaTeX (<b>latex</b>), Matlab (<b>matlab</b>),
-                    OpenSees (<b>opensees</b>), OpenCL (<b>opencl</b>), Perl (<b>perl</b>), PHP (<b>php</b>),
-                    Pseudocódigo (<b>pseudocode</b>), Texto plano (<b>plaintext</b>), Python (<b>python</b>), R (<b>r</b>),
+                    lenguajes de programación Bash-scripting (<b>Bash</b>), C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>),
+                    CSS (<b>css</b>), CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), GLSL (<b>glsl</b>), Haskell (<b>haskell</b>),
+                    HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Kotlin (<b>kotlin</b>),
+                    LaTeX (<b>latex</b>), Matlab (<b>matlab</b>), OpenSees (<b>opensees</b>), OpenCL (<b>opencl</b>),
+                    Pascal (<b>pascal</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Pseudocódigo (<b>pseudocode</b>),
+                    Texto plano (<b>plaintext</b>), Python (<b>python</b>), R (<b>r</b>),
                     Ruby (<b>ruby</b>), Scala (<b>scala</b>), SQL (<b>sql</b>), TCL (<b>tcl</b>) y XML (<b>xml</b>):
                 </p>
                 <ul>
@@ -1042,8 +1043,11 @@
                         <a class="sourcecodel">c</a>,
                         <a class="sourcecodel">cpp</a>,
                         <a class="sourcecodel">csharp</a>,
+                        <a class="sourcecodel">css</a>,
                         <a class="sourcecodel">cuda</a>,
                         <a class="sourcecodel">docker</a>,
+                        <a class="sourcecodel">glsl</a>,
+                        <a class="sourcecodel">haskell</a>,
                         <a class="sourcecodel">html5</a>,
                         <a class="sourcecodel">java</a>,
                         <a class="sourcecodel">js</a>,
@@ -1053,6 +1057,7 @@
                         <a class="sourcecodel">matlab</a>,
                         <a class="sourcecodel">opencl</a>,
                         <a class="sourcecodel">opensees</a>,
+                        <a class="sourcecodel">pascal</a>,
                         <a class="sourcecodel">perl</a>,
                         <a class="sourcecodel">php</a>,
                         <a class="sourcecodel">plaintext</a>,
@@ -1635,6 +1640,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         del documento.
                     </li>
                     <li>
+                        <strong>\disabletablerowcolor</strong>: Desactiva el color alternado en las filas de las tablas.
+                    </li>
+                    <li>
+                        <strong>\enabletablerowcolor</strong><b>[</b><em>Índice inicio <i>(opcional)</i></em><b>]</b>:
+                        Activa el color alternado en las filas de las tablas.
+                    </li>
+                    <li>
                         <strong>\includefullhfpdf</strong><b>[</b><em>Parámetros
                         <i>(opcional)</i></em><b>]</b><b>{</b><em>Nombre del archivo pdf</em><b>}</b>: Inserta un
                         archivo pdf conservando el header-footer, incluyendo todas las páginas.
@@ -1675,6 +1687,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         documento.
                     </li>
                     <li>
+                        <strong>\scite</strong><b>{</b><em>cite</em><b>}</b>: Inserta una cita con un texto elevado
+                        (superscript).
+                    </li>
+                    <li>
                         <strong>\setcaptionmargincm</strong><b>{</b><em>Margen</em><b>}</b>: Modifica el margen
                         izquierdo/derecho de los <i>caption</i> medido en centímetros.
                     </li>
@@ -1682,6 +1698,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\setpagemargincm</strong><b>{</b><em>Margen izq</em><b>}</b><b>{</b><em>Margen
                         der</em><b>}</b><b>{</b><em>Margen sup</em><b>}</b><b>{</b><em>Margen inf</em><b>}</b>: Modifica
                         los márgenes de la página. Valores en centímetros.
+                    </li>
+                    <li>
+                        <strong>\switchtablerowcolors</strong>: Alterna los colores de las filas de las tablas.
                     </li>
                 </ul>
             </li>
@@ -1947,10 +1966,34 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Estilo de portada y header-footer<a id="config-portraithf"></a></strong>
                 <ul>
                     <li class="config-elem">
+                        <strong>\disablehfrightmark</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Desactiva el <i>rightmark</i> del header-footer, este
+                                corresponde al nombre del título de la sección activa de la página.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\hfcoursewidth</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño máximo del curso en header-footer como porcentaje del
+                                ancho de la página.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\hfstyle</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Estilo del encabezado y pie de página (header-footer).<br>
                                 <b>Existen <a id="hfTrigger" class="javascripthref"></a></b>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\hftitlewidth</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">TTamaño máximo del título en header-footer como porcentaje
+                                del ancho de la página.
                             </div>
                         </div>
                     </li>
@@ -2643,14 +2686,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\disablehfrightmark</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Desactiva el <i>rightmark</i> del header-footer, este
-                                corresponde al nombre del título de la sección activa de la página.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\fontsizessstitle</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Tamaño sub-sub-subtítulos.</div>
@@ -2829,6 +2864,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\tablelinecolor</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Color de las líneas de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablerowfirstcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Primer color de celda de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablerowsecondcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Segundo color de celda de las tablas.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -3205,6 +3252,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/caption">caption</a></strong>: Leyendas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/cellspace">cellspace</a></strong>: Administración de
+                    espacios en celdas con fórmulas matemáticas.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/changepage">changepage</a></strong>: Condicionales para
