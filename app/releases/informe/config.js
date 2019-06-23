@@ -38,13 +38,13 @@ let bounceConfig; // Efecto en entrada de configuración
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 let hfGallery; // Muestra la galería de header-footer
 let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-let line_abstract = [86, 304]; // Número de línea de abstract/resumen
+let line_abstract = [86, 305]; // Número de línea de abstract/resumen
 let line_authortable = [33, 34]; // Número de línea tabla de integrantes
 let line_configimport = [62, 63]; // Número línea importación de configuraciones
-let line_docinit = [97, 315]; // Número de línea inicio del documento
+let line_docinit = [97, 316]; // Número de línea inicio del documento
 let line_infodocument = [18, 19]; // Número de línea información del documento
 let portraitGallery; // Muestra la galería de portadas
-let totalHfStyles = 15; // Estilos totales en tipo de header-footer
+let totalHfStyles = 16; // Estilos totales en tipo de header-footer
 let totalPortraitStyles = 20; // Estilos totales de portada
 
 /**
@@ -245,6 +245,46 @@ let cmd_sourcecode = {
         'volumes:\n' +
         '\\end{sourcecode}',
 
+    'fortran': '\\begin{sourcecode}{fortran}{Ejemplo en Fortran.}\n' +
+        'REGRESION LINEAL.FORTRANS\n' +
+        'APLICACION\n' +
+        '     DIMENSION TIEMPO(1000),PROD(1000)\n' +
+        '        OPEN(1,FILE=\'HISTORIA.txt\')\n' +
+        '        I=0\n' +
+        ' 10     READ(1,*,END=80)T,P\n' +
+        '        I=I+1\n' +
+        '        TIEMPO(.l.)=T\n' +
+        '        PROD(I)=P\n' +
+        '        GO TO 10\n' +
+        ' 80     NDATOS=I\n' +
+        '        CALL AJULIN(TIEMPO,PROD,NDATOS,A,B)\n' +
+        '        WRITE(*,90)A,B\n' +
+        ' 90     FORMAT(\'LA ECUACION ES:Y=\',F10.2,\'+\',F10.2,\'X\')\n' +
+        ' 20     FORMAT(20F10.0)\n' +
+        '        END\n' +
+        '\n' +
+        '\n' +
+        '        SUBROUTINE AJULIN(X,Y,N,A,B)\n' +
+        '         DIMENSION X(1),Y(1)\n' +
+        '          SUMX=0.\n' +
+        '          SUMY=0.\n' +
+        '          SUMX2=0.\n' +
+        '          SUMY2=0\n' +
+        '          SUMXY=0\n' +
+        '        DO 20 I=1,N\n' +
+        '         SUMX=SUMX+X(.l.)\n' +
+        '         SUMY=SUMY+Y(.l.)\n' +
+        '         SUMX2=SUMX2+(X(I)*X(.l.))\n' +
+        '         SUMY2=SUMY2+Y(I)**2\n' +
+        '         SUMXY=SUMXY+(X(I)*Y(I))\n' +
+        ' 20    CONTINUE\n' +
+        '        PROD=SUMX*SUMY\n' +
+        '        B=(SUMXY-PROD/N)/(SUMX2-SUMX**2/N)\n' +
+        '        A=(SUMY/N-B*SUMX/N)\n' +
+        '       RETURN\n' +
+        '       END\n' +
+        '\\end{sourcecode}',
+
     'glsl': '\\begin{sourcecode}{glsl}{Noise shader.}\n' +
         '#ifdef GL_ES\n' +
         'precision mediump float;\n' +
@@ -441,6 +481,38 @@ let cmd_sourcecode = {
         '\\end{images}\n' +
         '\\end{sourcecode}',
 
+    'lisp': '\\begin{sourcecode}{lisp}{Ejemplo en Lisp.}\n' +
+        '(defun find-symbol-between-sigma-sets (sigma-a sigma-b scan-node symbols g)\n' +
+        '\t(let* ((scan-node-set-in-sigma-a (find-scan-node sigma-a scan-node))\n' +
+        '\t\t   (next-scan-node-set-in-sigma-b \n' +
+        '\t\t\t(get-next-node-set-from-scan-node-set \n' +
+        '\t\t\t scan-node-set-in-sigma-a sigma-b g))\n' +
+        '\t\t   (union-node-set-in-sigma-a \n' +
+        '\t\t\t(get-previous-nodes next-scan-node-set-in-sigma-b g)))\n' +
+        '\t  (if \n' +
+        '\t   (and \n' +
+        '\t\t(memberp union-node-set-in-sigma-a scan-node-set-in-sigma-a)\n' +
+        '\t\t(path-exists-between-set-a-and-set-b \n' +
+        '\t\t union-node-set-in-sigma-a next-scan-node-set-in-sigma-b g))\n' +
+        '\t   (car \n' +
+        '\t\t(unique-get-symbols \n' +
+        '\t\t union-node-set-in-sigma-a next-scan-node-set-in-sigma-b symbols))\n' +
+        '\t   nil)))\n' +
+        '\\end{sourcecode}',
+
+    'maple': '\\begin{sourcecode}{maple}{Ejemplo en Maple.}\n' +
+        'restart:\n' +
+        'with(geom3d):\n' +
+        'eqS:=Equation(sphere(S,(x-1)^2 + (y-1)^2 +(z-1)^2 -121=0,[x,y,z],\'centername\'=T)):\n' +
+        'L:=[]:\n' +
+        'for x from -5 to 10  do\n' +
+        'for y from -5 to 10  do\n' +
+        'L:=[op(L), [x,y,z]] fi;\n' +
+        'od: od: od: \n' +
+        'nops(L);  \n' +
+        'L;\n' +
+        '\\end{sourcecode}',
+
     'matlab': '\\begin{sourcecode}[\\label{codigo-matlab}]{matlab}{Ejemplo en Matlab.}\n' +
         '% Se crea gráfico\n' +
         'f = figure(1);\n' +
@@ -459,6 +531,22 @@ let cmd_sourcecode = {
         'fprintf(\'BETA=%.2f, MAX: FAD=%.3f, TD/TN=%.3f\\n\', BETA(j), fad(mx), tdtn(mx));\n' +
         'plot(tdtn, fad, \'DisplayName\', strcat(\'\\beta=\', sprintf(\'%.2f\', BETA(j))));\n' +
         'end\t\n' +
+        '\\end{sourcecode}',
+
+    'octave': '\\begin{sourcecode}{octave}{Ejemplo en Octave.}\n' +
+        'function out = invar_table(n,m,N)\n' +
+        'if n>m, error(\'first number must be smaller than the second\'), endif\n' +
+        '\n' +
+        't = cputime;\n' +
+        'out = zeros(m-n+1,2);\n' +
+        '\n' +
+        'for i=n:m\n' +
+        '  out(i+1-n,1) = i;\n' +
+        '  out(i+1-n,2) = invar(braidmatrix(i),N);\n' +
+        'end\n' +
+        '\n' +
+        'printf(\'Total CPU time: %f seconds\\n\', cputime-t);\n' +
+        'end\n' +
         '\\end{sourcecode}',
 
     'opencl': '\\begin{sourcecode}[\\label{test-opencl}]{opencl}{Ejemplito OpenCL.}\n' +
@@ -674,7 +762,6 @@ let cmd_sourcecode = {
         'corr_data_genre <- function(data, genre) {\n' +
         '\tnum_genre <- data[data$genre == genre, -c(1:4)]\n' +
         '\tcorr_genre <- cor(num_genre)\n' +
-        '\tcorrplot(corr_genre, type = "lower", order = "hclust", tl.col = "black", tl.srt = 30, main = toupper(genre), tl.cex = 0.7, mar=c(0,0,1,0))\n' +
         '}\n' +
         '\\end{sourcecode}',
     'ruby': '\\begin{sourcecode}[]{ruby}{Ejemplo con ruby.}\n' +
@@ -715,6 +802,23 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
+    'scheme': '\\begin{sourcecode}{scheme}{Ejemplo en Scheme.}\n' +
+        ';;; If the next character on p is a letter, get-word reads a word\n' +
+        ';;; from p and returns it in a string.  If the character is not a\n' +
+        ';;; letter, get-word returns the character (on eof, the eof-object).\n' +
+        '(define get-word\n' +
+        '\t(lambda (p)\n' +
+        '\t(let ((c (read-char p)))\n' +
+        '\t\t(if (eq? (char-type c) \'letter)\n' +
+        '\t\t\t(list->string\n' +
+        '\t\t\t(let loop ((c c))\n' +
+        '\t\t\t\t(cons c\n' +
+        '\t\t\t\t(if (memq (char-type (peek-char p)) \'(letter digit))\n' +
+        '\t\t\t\t\t(loop (read-char p))\n' +
+        '\t\t\t\t\t\'()))))\n' +
+        '\t\t\tc))))\n' +
+        '\\end{sourcecode}',
+
     'tcl': '\\begin{sourcecode}[\\label{ejemplo-tcl}]{tcl}{Código en TCL.}\n' +
         'proc file\'hexdump filename {\n' +
         '   set fp [open $filename]\n' +
@@ -743,6 +847,42 @@ let cmd_sourcecode = {
         'SELECT ChargeNum, \'Unknown\' AS CategoryID, SUM(Hours)\n' +
         'FROM UnknownHours\n' +
         'GROUP BY ChargeNum\n' +
+        '\\end{sourcecode}',
+
+    'vbscript': '\\begin{sourcecode}{vbscript}{Ejemplo en Visual Basic.}\n' +
+        'Option Explicit\n' +
+        '\n' +
+        'Sub Signal(strSignalfolge As String, Optional lngTakt As Long = 100)\n' +
+        '\'Prozedur erzeugt eine Serie von Warntönen.\n' +
+        '\'Die optionale Variable lngTakt gibt den Takt in Millisekunden vor (Standard: 100 ms)\n' +
+        '\'Das Muster kann über die String-Variable strSignalfolge beeinflusst werden:\n' +
+        '\' Stern (*)     -> 1 Warnton\n' +
+        '\' Ziffern 1..9  -> 1..9 Takte Pause\n' +
+        '\' Leerzeichen   -> 1 Sekunde Pause\n' +
+        '\' Minus (-)     -> 1.5 Sekunden Pause\n' +
+        '    Dim i As Integer\n' +
+        '    Dim b As String\n' +
+        '    For i = 1 To Len(strSignalfolge)\n' +
+        '        b = Mid(strSignalfolge, i, 1)\n' +
+        '        Select Case b\n' +
+        '            Case "*": beep\n' +
+        '            Case 1 To 9: DELAY CInt(b) * lngTakt\n' +
+        '            Case " ": DELAY 1000\n' +
+        '            Case "-": DELAY 1500\n' +
+        '        End Select\n' +
+        '        DELAY lngTakt\n' +
+        '    Next i\n' +
+        '\n' +
+        'End Sub\n' +
+        '\n' +
+        'Public Function strParse(Data As String, Trenn As String, Nr As Integer)\n' +
+        '\'Funktion trennt die Zeichenkette <Data>\n' +
+        '    On Error Resume Next\n' +
+        '    Dim MainData() As String, SplitData() As String\n' +
+        '    MainData = Split(Data, Trenn)\n' +
+        '    SplitData = Split(MainData(Nr - 1), Trenn)\n' +
+        '    strParse = SplitData(0)\n' +
+        'End Function\n' +
         '\\end{sourcecode}',
 
     'xml': '\\begin{sourcecode}{xml}{Ejemplos con xml.}\n' +

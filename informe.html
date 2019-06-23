@@ -1027,12 +1027,14 @@
                 <p class="justified-text">
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
                     lenguajes de programación Bash-scripting (<b>bash</b>), C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>),
-                    CSS (<b>css</b>), CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), GLSL (<b>glsl</b>), Haskell (<b>haskell</b>),
-                    HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Kotlin (<b>kotlin</b>),
-                    LaTeX (<b>latex</b>), Matlab (<b>matlab</b>), OpenSees (<b>opensees</b>), OpenCL (<b>opencl</b>),
+                    CSS (<b>css</b>), CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), Fortran (<b>fortran</b>), GLSL (<b>glsl</b>),
+                    Haskell (<b>haskell</b>), HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON
+                    (<b>json</b>), Kotlin (<b>kotlin</b>), LaTeX (<b>latex</b>), Lisp (<b>lisp</b>), Maple (<b>maple</b>),
+                    Matlab (<b>matlab</b>), Octave (<b>octave</b>), OpenSees (<b>opensees</b>), OpenCL (<b>opencl</b>),
                     Pascal (<b>pascal</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Pseudocódigo (<b>pseudocode</b>),
                     Texto plano (<b>plaintext</b>), Python (<b>python</b>), R (<b>r</b>),
-                    Ruby (<b>ruby</b>), Scala (<b>scala</b>), SQL (<b>sql</b>), TCL (<b>tcl</b>) y XML (<b>xml</b>):
+                    Ruby (<b>ruby</b>), Scala (<b>scala</b>), Scheme (<b>scheme</b>), SQL (<b>sql</b>), TCL (<b>tcl</b>),
+                    Vbscript (<b>vbscript</b>)y XML (<b>xml</b>):
                 </p>
                 <ul>
                     <li id="sourcecode-container">
@@ -1046,6 +1048,7 @@
                         <a class="sourcecodel">css</a>,
                         <a class="sourcecodel">cuda</a>,
                         <a class="sourcecodel">docker</a>,
+                        <a class="sourcecodel">fortran</a>,
                         <a class="sourcecodel">glsl</a>,
                         <a class="sourcecodel">haskell</a>,
                         <a class="sourcecodel">html5</a>,
@@ -1054,6 +1057,8 @@
                         <a class="sourcecodel">json</a>,
                         <a class="sourcecodel">kotlin</a>,
                         <a class="sourcecodel">latex</a>,
+                        <a class="sourcecodel">lisp</a>,
+                        <a class="sourcecodel">maple</a>,
                         <a class="sourcecodel">matlab</a>,
                         <a class="sourcecodel">opencl</a>,
                         <a class="sourcecodel">opensees</a>,
@@ -1066,8 +1071,10 @@
                         <a class="sourcecodel">r</a>,
                         <a class="sourcecodel">ruby</a>,
                         <a class="sourcecodel">scala</a>,
+                        <a class="sourcecodel">scheme</a>,
                         <a class="sourcecodel">sql</a>,
                         <a class="sourcecodel">tcl</a>,
+                        <a class="sourcecodel">vbscript</a>,
                         <a class="sourcecodel">xml</a>.
                         <blockquote>
                             <div class="highlight highlight-text-tex">
@@ -1974,14 +1981,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\hfcoursewidth</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño máximo del curso en header-footer como porcentaje del
-                                ancho de la página.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\hfstyle</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Estilo del encabezado y pie de página (header-footer).<br>
@@ -1990,10 +1989,27 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\hftitlewidth</strong>
+                        <strong>\hfwidthcourse</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">TTamaño máximo del título en header-footer como porcentaje
+                            <div class="config-desc-inner">Tamaño máximo del curso en header-footer como % del
+                                ancho de la página.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\hfwidthtitle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño máximo del título en header-footer como %
                                 del ancho de la página.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\hfwidthwrap</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Activa el límite de tamaño de los elementos (título, curso)
+                                en header-footer, si se desactiva el efecto de <i>\hfwidthcourse</i> y
+                                <i>\hfwidthtitle</i>,
                             </div>
                         </div>
                     </li>
