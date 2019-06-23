@@ -61,34 +61,13 @@ let initial_encuesta = {
 };
 
 /**
- * Mensajes de error
- */
-let errors = {
-    "cantGetVersion": {
-        "msg": "No se pudo obtener la última versión",
-        "code": 0,
-        "moreinfo": "Error de conexión con servidor de Github, intente nuevamente"
-    },
-    "cantLoadJson": {
-        "msg": "No se pudo acceder al JSON de releases de Github",
-        "code": 1,
-        "moreinfo": "Error de conexión con servidor de Github, intente nuevamente"
-    },
-    "retrieveContentVersions": {
-        "msg": "Error al obtener la descripción de las versiones del Template",
-        "code": 2,
-        "moreinfo": "Ocurrió un error crítico al obtener la descripción de las versiones del Template (changelog) desde el servidor de Github, probable error de configuración, error en showdown.js o bien error de conexión con el servidor"
-    },
-};
-
-/**
  * ID de las cookies
  * @type {string}
  * @const
  * @global
  * @ignore
  */
-const cfg_cookie_session_id = 'Rr3RTyAZyk';
+const cfg_cookie_session_id = 'Rr3RTyAZ6k';
 
 /**
  * Días antes que las cookies expiren
@@ -108,3 +87,24 @@ let backToTop;
  Cookies de la sesión
  */
 let sessionCookie;
+
+/**
+ * Mensajes de error
+ */
+let errors = {
+    "cantGetVersion": {
+        "msg": "No se pudo obtener la última versión",
+        "code": 0,
+        "moreinfo": "Error de conexión con servidor de Github, intente nuevamente"
+    },
+    "cantLoadJson": {
+        "msg": "No se pudo acceder al JSON de releases de Github",
+        "code": 1,
+        "moreinfo": "Error de conexión con servidor de Github, intente nuevamente"
+    },
+    "retrieveContentVersions": {
+        "msg": "Error al obtener la descripción de las versiones del Template",
+        "code": 2,
+        "moreinfo": "Ocurrió un error crítico al obtener la descripción de las versiones del Template (changelog) desde el servidor de Github, probable error de configuración, error en showdown.js o bien error de conexión con el servidor"
+    },
+};
