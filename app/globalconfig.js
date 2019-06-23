@@ -51,9 +51,14 @@ let initial_popup = {
 };
 
 /**
- * Botón backToTop
+ * Encuesta
  */
-let backToTop;
+let initial_encuesta = {
+    content: '¿Te gustaría participar de la encuesta de uso del template?<br><a href="{0}" target="_blank">{0}</a>{1}',
+    display: true,
+    link: 'https://forms.gle/xf9AEYbSuzGtqvWS6',
+    title: 'Encuesta uso 2019',
+};
 
 /**
  * Mensajes de error
@@ -75,3 +80,31 @@ let errors = {
         "moreinfo": "Ocurrió un error crítico al obtener la descripción de las versiones del Template (changelog) desde el servidor de Github, probable error de configuración, error en showdown.js o bien error de conexión con el servidor"
     },
 };
+
+/**
+ * ID de las cookies
+ * @type {string}
+ * @const
+ * @global
+ * @ignore
+ */
+const cfg_cookie_session_id = 'Rr3RTyAZyk';
+
+/**
+ * Días antes que las cookies expiren
+ * @type {number}
+ * @const
+ * @global
+ * @ignore
+ */
+const cfg_cookie_expire_days = 60;
+
+/**
+ * Botón backToTop
+ */
+let backToTop;
+
+/**
+ Cookies de la sesión
+ */
+let sessionCookie;

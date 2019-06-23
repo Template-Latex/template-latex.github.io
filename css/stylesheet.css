@@ -1359,3 +1359,16 @@ Lista de banners en index
         margin: 0.5rem auto;
     }
 }
+
+/**
+Formularios
+ */
+.form-check {
+    display: block;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.form-check-label {
+    margin-left: 0.5rem;
+}

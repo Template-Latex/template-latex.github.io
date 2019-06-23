@@ -46,6 +46,13 @@ $(function () {
 
     /**
      * ------------------------------------------------------------------------
+     * Carga las cookies
+     * ------------------------------------------------------------------------
+     */
+    sessionCookie = loadSessionCookies();
+
+    /**
+     * ------------------------------------------------------------------------
      * Se comprueba que wallpaper.db se cargó
      * ------------------------------------------------------------------------
      */
@@ -542,22 +549,14 @@ $(function () {
      * Popup inicial
      * ------------------------------------------------------------------------
      */
-    if (initial_popup.display && initial_popup.content.length > 0) {
-        $.confirm({
-            boxWidth: '35%',
-            buttons: {
-                close: {
-                    keys: ['enter', 'escape'],
-                    text: 'Cerrar',
-                }
-            },
-            closeIcon: true,
-            content: initial_popup.content,
-            escapeKey: 'close',
-            title: initial_popup.title,
-            useBootstrap: false,
-        });
-    }
+    loadInitialPopup();
+
+    /**
+     * ------------------------------------------------------------------------
+     * Abre la encuesta
+     * ------------------------------------------------------------------------
+     */
+    loadEncuesta();
 
     /**
      * ------------------------------------------------------------------------

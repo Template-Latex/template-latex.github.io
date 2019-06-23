@@ -255,6 +255,17 @@ $.urlParam = function (name) {
 };
 
 /**
+ * Retorna verdadero si el objeto no es nulo e indefinido.
+ *
+ * @function
+ * @param {object} obj - Objeto a comprobar
+ * @returns {boolean} - Booleano de comprobación
+ */
+function notNullUndf(obj) {
+    return obj !== null && obj !== undefined;
+}
+
+/**
  * Escribe los badges de la suite Template-Latex.
  *
  * @function
@@ -310,4 +321,73 @@ function generateID() {
         let v = c === 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
+}
+
+/**
+ * Ejecuta el popup inicial.
+ *
+ * @function
+ */
+function loadInitialPopup() {
+    if (initial_popup.display && initial_popup.content.length > 0) {
+        // noinspection JSCheckFunctionSignatures
+        $.confirm({
+            boxWidth: '35%',
+            buttons: {
+                close: {
+                    keys: ['enter', 'escape'],
+                    text: 'Cerrar',
+                }
+            },
+            closeIcon: true,
+            content: initial_popup.content,
+            escapeKey: 'close',
+            title: initial_popup.title,
+            useBootstrap: false,
+        });
+    }
+}
+
+/**
+ * Carga el mensaje de encuesta si aplica.
+ *
+ * @function
+ */
+function loadEncuesta() {
+    if (initial_encuesta.display && initial_encuesta.link.length > 0 && sessionCookie.encuesta) {
+
+        // Genera el contenido
+        let $checkid = generateID();
+        let $form = String.format('<br><form action=""><div class="form-check"><input type="checkbox" class="form-check-input" id="{0}"><label class="form-check-label" for="{0}">No volver a mostrar este mensaje</label></div></form>', $checkid);
+        let $content = String.format(initial_encuesta.content, initial_encuesta.link, $form);
+
+        // noinspection JSCheckFunctionSignatures
+        $.confirm({
+            boxWidth: '45%',
+            buttons: {
+                close: {
+                    keys: ['enter', 'escape'],
+                    text: 'Cerrar',
+                }
+            },
+            closeIcon: true,
+            content: $content,
+            escapeKey: 'close',
+            icon: 'fas fa-chart-bar',
+            onClose: function () {
+
+                // Carga la respuesta si se deja de mostrar el mensaje
+                let $disable = $(String.format('#{0}', $checkid))[0].checked;
+                sessionCookie.encuesta = !$disable;
+                if ($disable) {
+                    console.log('Se ha desactivado el mensaje de la encuesta');
+                }
+                updateSessionCookie();
+
+            },
+            title: initial_encuesta.title,
+            useBootstrap: false,
+        });
+
+    }
 }
