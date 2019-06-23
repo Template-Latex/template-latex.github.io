@@ -363,7 +363,7 @@ function loadEncuesta() {
 
         // noinspection JSCheckFunctionSignatures
         $.confirm({
-            boxWidth: '45%',
+            boxWidth: '30%',
             buttons: {
                 close: {
                     keys: ['enter', 'escape'],
