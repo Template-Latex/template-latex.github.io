@@ -471,10 +471,11 @@ $(function () {
      */
     backToTop = $.backToTop({
         backgroundColor: wallpaper_db.color,
+        height: 65,
+        position: 'top right',
         pxToTrigger: amountScrolled,
         scrollAnimation: 400,
         width: 65,
-        height: 65,
     });
 
     /**
@@ -557,6 +558,28 @@ $(function () {
      * ------------------------------------------------------------------------
      */
     loadEncuesta();
+
+    /**
+     * ------------------------------------------------------------------------
+     * Inicia el motor de notificaciones
+     * ------------------------------------------------------------------------
+     */
+    NotificationJS.init({
+        "backgroundcolor": wallpaper_db.color,
+        "core": "amaranjs",
+        "enabled": true,
+        "exceptionTitle": "Error",
+        "maxStack": 5,
+        "textcolor": "#ffffff",
+        "timeout": 15000
+    });
+
+    // Lanza las configuraciones
+    let $c = Object.keys(notification);
+    for (let $i = 0; $i < $c.length; $i++) {
+        if (notification[$c[$i]].content.length === 0) continue;
+        NotificationJS.other(notification[$c[$i]].content, {"persistent": notification[$c[$i]].persistent});
+    }
 
     /**
      * ------------------------------------------------------------------------

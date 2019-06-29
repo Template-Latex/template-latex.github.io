@@ -37,7 +37,7 @@ let otherdownloadsfadetime = 400;   // Tiempo de fade para descargas
 let parallaxloaded = false;         // Indica que parallax ya se cargó
 let pdf_js_href = 'https://latex.ppizarror.com/pdf-version/web/viewer.html?file=';
 let scrollLock = false;             // Indica que la función $.scrollLock se activó
-let seconds_update_downloadCounter = 60 * 4; // Tiempo de refresco actualización contador descargas
+let seconds_update_downloadCounter = 60 * 5; // Tiempo de refresco actualización contador descargas
 let stats_href = 'https://latex.ppizarror.com/stats/?template=';
 let update_downloads_version = true;
 
@@ -54,10 +54,20 @@ let initial_popup = {
  * Encuesta
  */
 let initial_encuesta = {
-    content: '¿Te gustaría participar de la encuesta de uso del template?<br><a href="{0}" target="_blank">{0}</a>{1}',
-    display: true,
-    link: 'https://forms.gle/xf9AEYbSuzGtqvWS6',
-    title: 'Encuesta uso 2019',
+    content: '',
+    display: false,
+    link: '',
+    title: '',
+};
+
+/**
+ * Notificaciones
+ */
+let notification = {
+    'encuesta': {
+        'content': '¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank" class="javascripthref">https://forms.gle/xf9AEYbSuzGtqvWS6</a>',
+        'persistent': true
+    }
 };
 
 /**
@@ -67,7 +77,7 @@ let initial_encuesta = {
  * @global
  * @ignore
  */
-const cfg_cookie_session_id = 'Rr3RTyAZ6k';
+const cfg_cookie_session_id = 'Rr3R8yAZ6k';
 
 /**
  * Días antes que las cookies expiren

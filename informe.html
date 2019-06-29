@@ -70,6 +70,8 @@
     <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-borderless.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-light.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/jquery-backToTop/jquery-backToTop.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/amaran/amaran.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/notification/notification.min.css" media="screen">
 
     <!-- Librerías javascript -->
     <script src="js/jscookie/js.cookie-2.2.0.js"></script>
@@ -86,6 +88,8 @@
     <script src="js/tooltipster/tooltipster.bundle.min.js"></script>
     <script src="js/jquery-scrollLock/jquery-scrollLock.min.js"></script>
     <script src="js/jquery-backToTop/jquery-backToTop.min.js"></script>
+    <script src="js/amaran/jquery.amaran.min.js"></script>
+    <script src="js/notification/notification.min.js"></script>
 
     <!-- Js de la aplicación -->
     <script src="https://latex.ppizarror.com/stats/app/prevdownload.min.js"></script>
@@ -2154,6 +2158,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\captiontextsubnumbold</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">N° subfigura/subtabla en negrita.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\codecaptiontop</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Establece la leyenda encima del código fuente.</div>
@@ -2662,6 +2673,34 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el número en las ecuaciones insertadas con <span
                                     class="pl-c1">\insert...</span>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sourcecodefontf</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tipo de letra del código fuente (sourcecode).</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sourcecodefonts</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño de la letra del código fuente.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sourcecodenumbersep</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Separación entre el número de las líneas del código fuente y
+                                el cuerpo.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sourcecodetabsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Número de espacios en blanco por cada tabulación en el código
+                                fuente.
                             </div>
                         </div>
                     </li>
@@ -3271,10 +3310,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/caption">caption</a></strong>: Leyendas.
                 </li>
+                <!--
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/cellspace">cellspace</a></strong>: Administración de
                     espacios en celdas con fórmulas matemáticas.
                 </li>
+                -->
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/changepage">changepage</a></strong>: Condicionales para
                     administrar páginas.
