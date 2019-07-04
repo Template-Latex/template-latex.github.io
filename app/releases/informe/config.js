@@ -61,6 +61,51 @@ let portraitRequiresAdditional = {
 // Lista de códigos fuente
 // noinspection CssUnusedSymbol
 let cmd_sourcecode = {
+    'assemblerx64': '\\begin{sourcecode}{assemblerx64}{Assembler x64.}\n' +
+        'cdqe 1, r8\n' +
+        'push 1\n' +
+        'add rsp, 4\n' +
+        'push 1\n' +
+        '\\end{sourcecode}',
+
+    'assemblerx86': '\\begin{sourcecode}{assemblerx86}{Assembler x86.}\n' +
+        '; ---------------------------------------------\n' +
+        '; Programa que imprime un string en la pantalla\n' +
+        '; ---------------------------------------------\n' +
+        '\t.model small              ; modelo de memoria\n' +
+        '\n' +
+        '\t.stack                    ; segmento del stack\n' +
+        '\n' +
+        '\t.data                     ; segmento de datos\n' +
+        '\tCadena1 DB \'Hola Mundo.$\' ; string a imprimir (finalizado en $)\n' +
+        '\n' +
+        '\t.code                     ; segmento del código\n' +
+        '\n' +
+        '; ---------------------------------------------\n' +
+        '; Inicio del programa\n' +
+        '; ---------------------------------------------\n' +
+        '\tprograma:\n' +
+        '\t\t; ------------------------------------\n' +
+        '\t\t; inicia el segmento de datos\n' +
+        '\t\t; ------------------------------------\n' +
+        '\t\tMOV AX, @data          ; carga en AX la dirección del segmento de datos\n' +
+        '\t\tMOV DS, AX             ; mueve la dirección al registro de segmento por medio de AX\n' +
+        '\t\t\n' +
+        '\t\t; ------------------------------------\n' +
+        '\t\t; Imprime un string en pantalla\n' +
+        '\t\t; ------------------------------------\n' +
+        '\t\tMOV DX, offset Cadena1 ; mueve a DX la dirección del string a imprimir\n' +
+        '\t\tMOV AH, 9              ; AH = código para indicar al MS DOS que imprima en la pantalla, el string en DS:DX\n' +
+        '\t\tINT 21h                ; llamada al MS DOS para ejecutar la función (en este caso especificada en AH)\n' +
+        '\t\t\n' +
+        '\t\t; ------------------------------------\n' +
+        '\t\t; Finaliza el programa\n' +
+        '\t\t; ------------------------------------\n' +
+        '\t\tINT 20h                ; llamada al MS DOS para finalizar el programa\n' +
+        '\n' +
+        '\tend programa\n' +
+        '\\end{sourcecode}',
+
     'bash': '\\begin{sourcecode}[]{bash}{Un poco de bash.}\n' +
         '# Muestra toda la información de la batería\n' +
         'function battr-info {\n' +
@@ -98,6 +143,7 @@ let cmd_sourcecode = {
         'vim uwu printf \'have you seen him\' -z\n' +
         'git doge ssh cp cd\n' +
         '\\end{sourcecode}',
+
     'c': '\\begin{sourcecode}[]{c}{Codigo en c.}\n' +
         '#include <stdio.h>\n' +
         'int main(){\n' +
@@ -500,6 +546,21 @@ let cmd_sourcecode = {
         '\t   nil)))\n' +
         '\\end{sourcecode}',
 
+    'lua': '\\begin{sourcecode}{lua}{Ejemplo en Lua.}\n' +
+        '-- defines a factorial function\n' +
+        'function fact (n)\n' +
+        '\tif n == 0 then\n' +
+        '\t\treturn 1\n' +
+        '\telse\n' +
+        '\t\treturn n * fact(n-1)\n' +
+        '\tend\n' +
+        'end\n' +
+        '\n' +
+        'print("enter a number:")\n' +
+        'a = io.read("*number")        -- read a number\n' +
+        'print(fact(a))\n' +
+        '\\end{sourcecode}',
+
     'maple': '\\begin{sourcecode}{maple}{Ejemplo en Maple.}\n' +
         'restart:\n' +
         'with(geom3d):\n' +
@@ -883,6 +944,63 @@ let cmd_sourcecode = {
         '    SplitData = Split(MainData(Nr - 1), Trenn)\n' +
         '    strParse = SplitData(0)\n' +
         'End Function\n' +
+        '\\end{sourcecode}',
+
+    'verilog': '\\begin{sourcecode}{verilog}{Ejemplo en Verilog.}\n' +
+        'module Mixing {\n' +
+        '\t///////// ADC /////////\n' +
+        '\tinout              ADC_CS_N,\n' +
+        '\toutput             ADC_DIN,\n' +
+        '\tinput              ADC_DOUT,\n' +
+        '\toutput             ADC_SCLK,\n' +
+        '\t\n' +
+        '\t///////// ADC /////////\n' +
+        '\tinput              AUD_ADCDAT,\n' +
+        '\tinout              AUD_ADCLRCK,\n' +
+        '\tinout              AUD_BCLK,\n' +
+        '\toutput             AUD_DACDAT,\n' +
+        '\tinout              AUD_DACLRCK,\n' +
+        '\toutput             AUD_XCK,\n' +
+        '\t\n' +
+        '\t///////// clocks /////////\n' +
+        '\tinput              clock2_50,\n' +
+        '\tinput              clock3_50,\n' +
+        '\tinput              clock4_50,\n' +
+        '\tinput              clock_50,\n' +
+        '\t\n' +
+        '\t///////// HEX /////////\n' +
+        '\toutput      [6:0]  HEX0,\n' +
+        '\toutput      [6:0]  HEX1,\n' +
+        '\toutput      [6:0]  HEX2,\n' +
+        '\toutput      [6:0]  HEX3,\n' +
+        '\toutput      [6:0]  HEX4,\n' +
+        '\toutput      [6:0]  HEX5,\n' +
+        '\t\n' +
+        '\t///////// FOO /////////\n' +
+        '\toutput      [2]    FOO,\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
+    'vhdl': '\\begin{sourcecode}{vhdl}{Ejemplo en VHDL.}\n' +
+        '-- (this is a VHDL comment)\n' +
+        '\n' +
+        '-- import std_logic from the IEEE library\n' +
+        'library IEEE;\n' +
+        'use IEEE.std_logic_1164.all;\n' +
+        '\n' +
+        '-- this is the entity\n' +
+        'entity ANDGATE is\n' +
+        '\tport (\n' +
+        '\t\tI1 : in std_logic;\n' +
+        '\t\tI2 : in std_logic;\n' +
+        '\t\tO  : out std_logic);\n' +
+        'end entity ANDGATE;\n' +
+        '\n' +
+        '-- this is the architecture\n' +
+        'architecture RTL of ANDGATE is\n' +
+        'begin\n' +
+        '\tO <= I1 and I2;\n' +
+        'end architecture RTL;\n' +
         '\\end{sourcecode}',
 
     'xml': '\\begin{sourcecode}{xml}{Ejemplos con xml.}\n' +

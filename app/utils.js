@@ -391,3 +391,11 @@ function loadEncuesta() {
 
     }
 }
+
+/**
+ * Retorna un elemento random de una lista
+ * @returns {*}
+ */
+Array.prototype.randomElement = function () {
+    return this[Math.floor(Math.random() * this.length)]
+};

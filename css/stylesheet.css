@@ -6,6 +6,20 @@
     color: blue !important;
 }
 
+.colorful-inner a {
+    color: white !important;
+    font-weight: bold;
+}
+
+.amaran {
+    margin-bottom: 10px !important;
+    margin-top: 0 !important;
+}
+
+.amaran.colorful .colorful-inner {
+    text-align: justify;
+}
+
 .javascripthref:hover {
     cursor: pointer;
 }

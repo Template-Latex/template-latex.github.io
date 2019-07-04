@@ -1032,21 +1032,25 @@
                 <strong class="functtitlstyle">Añadir código fuente</strong>
                 <p class="justified-text">
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
-                    lenguajes de programación Bash-scripting (<b>bash</b>), C (<b>c</b>), C++ (<b>cpp</b>), C# (<b>csharp</b>),
-                    CSS (<b>css</b>), CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), Fortran (<b>fortran</b>), GLSL (<b>glsl</b>),
-                    Haskell (<b>haskell</b>), HTML5 (<b>html5</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON
-                    (<b>json</b>), Kotlin (<b>kotlin</b>), LaTeX (<b>latex</b>), Lisp (<b>lisp</b>), Maple (<b>maple</b>),
-                    Matlab (<b>matlab</b>), Octave (<b>octave</b>), OpenSees (<b>opensees</b>), OpenCL (<b>opencl</b>),
-                    Pascal (<b>pascal</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Pseudocódigo (<b>pseudocode</b>),
-                    Texto plano (<b>plaintext</b>), Python (<b>python</b>), R (<b>r</b>),
-                    Ruby (<b>ruby</b>), Scala (<b>scala</b>), Scheme (<b>scheme</b>), SQL (<b>sql</b>), TCL (<b>tcl</b>),
-                    Vbscript (<b>vbscript</b>)y XML (<b>xml</b>):
+                    lenguajes de programación: Assembler x76 (<b>assemblerx64</b>), Assembler x86[masm]
+                    (<b>assemblerx86</b>), Bash-scripting (<b>bash</b>), C (<b>c</b>), C++ (<b>cpp</b>), C#
+                    (<b>csharp</b>), CSS (<b>css</b>), CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), Fortran
+                    (<b>fortran</b>), GLSL (<b>glsl</b>), Haskell (<b>haskell</b>), HTML5 (<b>html5</b>), Java
+                    (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Kotlin (<b>kotlin</b>), LaTeX
+                    (<b>latex</b>), Lisp (<b>lisp</b>), Lua (<b>lua</b>), Maple (<b>maple</b>), Matlab (<b>matlab</b>),
+                    Octave (<b>octave</b>), OpenSees (<b>opensees</b>), OpenCL (<b>opencl</b>), Pascal (<b>pascal</b>),
+                    Perl (<b>perl</b>), PHP (<b>php</b>), Pseudocódigo (<b>pseudocode</b>), Texto plano
+                    (<b>plaintext</b>), Python (<b>python</b>), R (<b>r</b>), Ruby (<b>ruby</b>), Scala (<b>scala</b>),
+                    Scheme (<b>scheme</b>), SQL (<b>sql</b>), TCL (<b>tcl</b>), Vbscript (<b>vbscript</b>),
+                    Verilog (<b>verilog</b>), VHDL (<b>vhdl</b>) y XML (<b>xml</b>):
                 </p>
                 <ul>
                     <li id="sourcecode-container">
                         <strong>\begin{sourcecode}</strong><b>[</b><em>Label</em>
                         (opcional)<b>]</b><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta un
                         código fuente de un lenguaje definido, con leyenda (opcional). Lenguajes soportados:
+                        <a class="sourcecodel">assemblerx64</a>,
+                        <a class="sourcecodel">assemblerx86</a>,
                         <a class="sourcecodel">bash</a>,
                         <a class="sourcecodel">c</a>,
                         <a class="sourcecodel">cpp</a>,
@@ -1064,6 +1068,7 @@
                         <a class="sourcecodel">kotlin</a>,
                         <a class="sourcecodel">latex</a>,
                         <a class="sourcecodel">lisp</a>,
+                        <a class="sourcecodel">lua</a>,
                         <a class="sourcecodel">maple</a>,
                         <a class="sourcecodel">matlab</a>,
                         <a class="sourcecodel">opencl</a>,
@@ -1081,6 +1086,8 @@
                         <a class="sourcecodel">sql</a>,
                         <a class="sourcecodel">tcl</a>,
                         <a class="sourcecodel">vbscript</a>,
+                        <a class="sourcecodel">verilog</a>,
+                        <a class="sourcecodel">vhdl</a>,
                         <a class="sourcecodel">xml</a>.
                         <blockquote>
                             <div class="highlight highlight-text-tex">
@@ -1784,6 +1791,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 <a href="https://ctan.org/pkg/helvet" class="javascripthref">arial</a>,
                                 <a href="https://ctan.org/pkg/arial" class="javascripthref">arial2</a>,
                                 <a href="https://ctan.org/pkg/helvet" class="fontsrc javascripthref">helvet</a>,
+                                <a href="https://ctan.org/pkg/helvet" class="fontsrc javascripthref">helvet2</a>,
                                 <a href="http://www.tug.dk/FontCatalogue/accanthis/" class="fontsrc javascripthref">accantis</a>,
                                 <a href="http://www.tug.dk/FontCatalogue/alegreya/" class="fontsrc javascripthref">alegreya</a>,
                                 <a href="http://www.tug.dk/FontCatalogue/alegreyasans/" class="fontsrc javascripthref">alegreyasans</a>,
@@ -1849,6 +1857,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 <a href="http://www.tug.dk/FontCatalogue/lato/" class="fontsrc javascripthref">lato</a>,
                                 <a href="http://www.tug.dk/FontCatalogue/librisadf/" class="fontsrc javascripthref">libris</a>,
                                 <a href="http://www.tug.dk/FontCatalogue/lxfonts/" class="fontsrc javascripthref">lxfonts</a>,
+                                <a href="https://ctan.org/pkg/mathpazo" class="fontsrc javascripthref">mathpazo</a>,
                                 <a href="http://www.tug.dk/FontCatalogue/merriweathersans/"
                                    class="fontsrc javascripthref">merriweather</a>,
                                 <a href="http://www.tug.dk/FontCatalogue/merriweathersanslight/"
@@ -1933,12 +1942,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\fonturl</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Fuente de los enlaces insertados con \url.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <div id="import-tikz-config">
                             <strong>\importtikz</strong>
                             <div class="config-desc">
                                 <div class="config-desc-inner">Importa la librería tikz y los submódulos requeridos para
-                                    añadir
-                                    compatibilidad con el template.
+                                    añadir compatibilidad con el template.
                                 </div>
                             </div>
                         </div>

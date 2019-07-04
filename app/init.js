@@ -577,6 +577,13 @@ $(function () {
     // Lanza las configuraciones
     let $c = Object.keys(notification);
     for (let $i = 0; $i < $c.length; $i++) {
+        if ($c[$i] === 'sabiasque') {
+            let $rand = Object.keys(notification[$c[$i]]).randomElement();
+            let $text = String.format('Sabías que <b>#{0}</b>:<br>{1}', $rand, notification[$c[$i]][$rand]);
+            $text = $text.replace(':)', '🤔');
+            NotificationJS.other($text, {"persistent": false});
+            continue;
+        }
         if (notification[$c[$i]].content.length === 0) continue;
         NotificationJS.other(notification[$c[$i]].content, {"persistent": notification[$c[$i]].persistent});
     }
