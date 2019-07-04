@@ -571,7 +571,7 @@ $(function () {
         "exceptionTitle": "Error",
         "maxStack": 5,
         "textcolor": "#ffffff",
-        "timeout": 15000
+        "timeout": 30000
     });
 
     // Lanza las configuraciones
