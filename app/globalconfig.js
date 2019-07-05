@@ -64,10 +64,6 @@ let initial_encuesta = {
  * Notificaciones
  */
 let notification = {
-    'encuesta': {
-        'content': '¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>',
-        'persistent': true
-    },
     'sabiasque': {
         '1': 'Existen más de 20 estilos de portada distintos, revisa las configuraciones :)',
         '2': 'El template está escrito en más de 6k líneas de código en LaTeX',
@@ -114,6 +110,10 @@ let notification = {
         '43': '¿Te aburre siempre la misma portada? Prueba modificando la configuración <i>\\portraitstyle</i>',
         '44': '¿Te gustaría tener el texto de las leyendas en negrita? Prueba modificando la configuración <i>\\captiontextbold</i>',
         '45': '¿Eres ayudante o profesor de algún curso? Prueba utilizando Template-Controles o Template-Auxiliares',
+    },
+    'encuesta': {
+        'content': '¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>',
+        'persistent': true
     }
 };
 
