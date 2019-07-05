@@ -574,6 +574,12 @@ $(function () {
         "timeout": 30000
     });
 
+    let $throwNotification = function ($text, $persistent, $pos) {
+        setTimeout(function () {
+            NotificationJS.other($text, {"persistent": $persistent});
+        }, 250 + 500 * Math.pow($pos + 1, 2));
+    };
+
     // Lanza las configuraciones
     let $c = Object.keys(notification);
     for (let $i = 0; $i < $c.length; $i++) {
@@ -581,11 +587,11 @@ $(function () {
             let $rand = Object.keys(notification[$c[$i]]).randomElement();
             let $text = String.format('Sabías que <b>#{0}</b>:<br>{1}', $rand, notification[$c[$i]][$rand]);
             $text = $text.replace(':)', '🤔');
-            NotificationJS.other($text, {"persistent": false});
+            $throwNotification($text, false, $i);
             continue;
         }
         if (notification[$c[$i]].content.length === 0) continue;
-        NotificationJS.other(notification[$c[$i]].content, {"persistent": notification[$c[$i]].persistent});
+        $throwNotification(notification[$c[$i]].content, notification[$c[$i]].persistent, $i);
     }
 
     /**

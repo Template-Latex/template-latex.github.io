@@ -47,7 +47,7 @@ let update_downloads_version = true;
 let initial_popup = {
     content: '',
     display: true,
-    title: '',
+    title: ''
 };
 
 /**
@@ -57,13 +57,17 @@ let initial_encuesta = {
     content: '',
     display: false,
     link: '',
-    title: '',
+    title: ''
 };
 
 /**
  * Notificaciones
  */
 let notification = {
+    'encuesta': {
+        'content': '¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>',
+        'persistent': true
+    },
     'sabiasque': {
         '1': 'Existen más de 20 estilos de portada distintos, revisa las configuraciones :)',
         '2': 'El template está escrito en más de 6k líneas de código en LaTeX',
@@ -104,11 +108,12 @@ let notification = {
         '37': 'LaTeX data desde el año 1984',
         '38': 'Puedes seguir el desarrollo de Template-Informe dando una estrella a su página en github <a href="https://github.com/Template-Latex/Template-Informe/" target="_blank">https://github.com/Template-Latex/Template-Informe/</a>',
         '39': 'Los lenguajes más utilizados en el template son Java, Python y Matlab',
-        '40': 'El template importa y configura más de 60 librerías para funcionar'
-    },
-    'encuesta': {
-        'content': '¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>',
-        'persistent': true
+        '40': 'El template importa y configura más de 60 librerías para funcionar',
+        '41': 'Es recomendable utilizar imagenes .eps o .pdf para tener mayor resolución',
+        '42': '¿Te aburre la mismo tipo de letra siempre? Prueba modificando la configuración <i>\\fontdocument</i>',
+        '43': '¿Te aburre siempre la misma portada? Prueba modificando la configuración <i>\\portraitstyle</i>',
+        '44': '¿Te gustaría tener el texto de las leyendas en negrita? Prueba modificando la configuración <i>\\captiontextbold</i>',
+        '45': '¿Eres ayudante o profesor de algún curso? Prueba utilizando Template-Controles o Template-Auxiliares',
     }
 };
 
