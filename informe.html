@@ -2116,6 +2116,15 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\captionnumequation</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Formato de los números de las ecuaciones, valores posibles:
+                                <b>arabic</b>, <b>alph</b>, <b>Alph</b>, <b>roman</b>, <b>Roman</b> &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#set_caption_label_numbering_style">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\captionnumfigure</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Formato de número para las figuras, valores posibles:
@@ -2194,10 +2203,48 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showsectioncaption</strong>
+                        <strong>\sectioncaptiondelimiter</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter separador entre el número de la sección y el número
+                                del objeto (por ejemplo 1.2.3), válido siempre que se use <i>\showsectioncaption...</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showsectioncaptioncode</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
-                                en el número de figura/tabla/código. Valores esperados: <b>none</b>, <b>sec</b>
+                                en el número de cada código fuente. Valores esperados: <b>none</b>, <b>sec</b>
+                                (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
+                                <b>ssssec</b> (Sub-sub-subsección).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showsectioncaptioneqn</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
+                                en el número de ecuación. Valores esperados: <b>none</b>, <b>sec</b>
+                                (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
+                                <b>ssssec</b> (Sub-sub-subsección).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showsectioncaptionfig</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
+                                en el número de cada figura. Valores esperados: <b>none</b>, <b>sec</b>
+                                (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
+                                <b>ssssec</b> (Sub-sub-subsección).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showsectioncaptiontab</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
+                                en el número de tabla. Valores esperados: <b>none</b>, <b>sec</b>
                                 (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
                                 <b>ssssec</b> (Sub-sub-subsección).
                             </div>
@@ -2247,14 +2294,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\charnumpageindex</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Carácter entre título y número de página en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\equalmarginnumobject</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Iguala el margen de los números de objetos, directamente
-                                relacionado con la configuración <i>\showsectioncaption</i>.
-                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
