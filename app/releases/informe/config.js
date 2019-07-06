@@ -38,10 +38,10 @@ let bounceConfig; // Efecto en entrada de configuración
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 let hfGallery; // Muestra la galería de header-footer
 let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-let line_abstract = [86, 311]; // Número de línea de abstract/resumen
+let line_abstract = [86, 315]; // Número de línea de abstract/resumen
 let line_authortable = [33, 34]; // Número de línea tabla de integrantes
 let line_configimport = [62, 63]; // Número línea importación de configuraciones
-let line_docinit = [97, 322]; // Número de línea inicio del documento
+let line_docinit = [97, 326]; // Número de línea inicio del documento
 let line_infodocument = [18, 19]; // Número de línea información del documento
 let portraitGallery; // Muestra la galería de portadas
 let totalHfStyles = 16; // Estilos totales en tipo de header-footer
@@ -96,6 +96,12 @@ notification['sabiasque'] = {
     '43': '¿Te aburre siempre la misma portada? Prueba modificando la configuración <i>\\portraitstyle</i>',
     '44': '¿Te gustaría tener el texto de las leyendas en negrita? Prueba modificando la configuración <i>\\captiontextbold</i>',
     '45': '¿Eres ayudante o profesor de algún curso? Prueba utilizando Template-Controles o Template-Auxiliares',
+    '46': 'Puedes añadir el número de sección/subsección/etc al número de cada objeto, como Figura 1.2, revisa las configuraciones <i>\\showsectioncaption</i>',
+    '47': 'Recuerda revisar constantemente nuevas actualizaciones para estar al día con los parches y mejoras',
+    '48': 'La diferencia entre las sub-versiones (ejemplo) <i>6.3</i> y <i>6.4</i> son debido a cambios importantes en configuraciones; la diferencia entre versiones (ejemplo) <i>6.0</i> y <i>7.0</i> son cambios notables en la funcionalidad y mecánica de funciones, configuraciones u otros',
+    '49': 'El año que más el template ha sufrido modificaciones importantes es el 2019',
+    '50': 'La monotonía aburre a cualquiera, prueba a darle sabor al template jugando con las configuraciones, por ejemplo con una portada nueva',
+    '51': 'En cada nueva versión se verifica que el tiempo que tarda en compilar el template no suba, puedes revisar el tiempo promedio de compilación (del archivo de ejemplo) en <a href="https://latex.ppizarror.com/stats/?template=Informe" target="_blank">https://latex.ppizarror.com/stats/?template=Informe</a>'
 };
 notification['encuesta'] = {
     'content': '¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>',
