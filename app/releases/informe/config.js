@@ -103,6 +103,7 @@ notification['sabiasque'] = {
     '50': 'La monotonía aburre a cualquiera, prueba a darle sabor al template jugando con las configuraciones, por ejemplo con una portada nueva',
     '51': 'En cada nueva versión se verifica que el tiempo que tarda en compilar el template no suba, puedes revisar el tiempo promedio de compilación (del archivo de ejemplo) en <a href="https://latex.ppizarror.com/stats/?template=Informe" target="_blank">https://latex.ppizarror.com/stats/?template=Informe</a>'
 };
+
 notification['encuesta'] = {
     'content': '¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>',
     'persistent': true
