@@ -571,7 +571,7 @@ $(function () {
         "exceptionTitle": "Error",
         "maxStack": 5,
         "textcolor": "#ffffff",
-        "timeout": 30000
+        "timeout": 60 * 1000
     });
 
     let $throwNotification = function ($text, $persistent, $pos) {
