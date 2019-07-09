@@ -199,7 +199,7 @@
 
 .amaran-wrapper {
     position: fixed;
-    z-index: 9999
+    z-index: 2
 }
 
 .amaran-wrapper.top {

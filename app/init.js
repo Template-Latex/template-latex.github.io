@@ -578,7 +578,7 @@ $(function () {
         if ($text.length === 0) return;
         setTimeout(function () {
             NotificationJS.other($text, {"persistent": $persistent});
-        }, 250 + 1000 * Math.pow($pos + 1, 2.5));
+        }, 1000 * (1 + Math.pow($pos + 1, 3)));
     };
 
     // Lanza las configuraciones
