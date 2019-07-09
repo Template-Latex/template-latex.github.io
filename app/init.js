@@ -575,9 +575,10 @@ $(function () {
     });
 
     let $throwNotification = function ($text, $persistent, $pos) {
+        if ($text.length === 0) return;
         setTimeout(function () {
             NotificationJS.other($text, {"persistent": $persistent});
-        }, 250 + 500 * Math.pow($pos + 1, 2));
+        }, 250 + 1000 * Math.pow($pos + 1, 2.5));
     };
 
     // Lanza las configuraciones
@@ -586,7 +587,7 @@ $(function () {
         if ($c[$i] === 'sabiasque') {
             let $rand = Object.keys(notification[$c[$i]]).randomElement();
             let $text = String.format('Sabías que <b>#{0}</b>:<br>{1}', $rand, notification[$c[$i]][$rand]);
-            $text = $text.replace(':)', '🤔');
+            $text = $text.replace(':)', '😉');
             $throwNotification($text, false, $i);
             continue;
         }

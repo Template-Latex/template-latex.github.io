@@ -1969,7 +1969,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\predocromannumber</strong>
+                        <strong>\predocpageromannumber</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Las páginas anteriores al inicio del cuerpo del documeno
                                 (Resumen, Índice) se definen con números romanos.
@@ -1977,9 +1977,16 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\romanpageuppercase</strong>
+                        <strong>\predocpageromanupper</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Páginas en número romano (abstract-índice) en mayúsculas.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\predocresetpagenumber</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">El número de la página se resetea tras el índice.
                             </div>
                         </div>
                     </li>
@@ -2350,13 +2357,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\resetpagnumafterindex</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">El número de la página se resetea tras el índice.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\showindex</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra la página de índice.</div>
@@ -2495,9 +2495,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\equationrestart</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Comportamiento del reinicio de los números de las ecuaciones,
-                                valores esperados: <b>none</b> (Ninguno), <b>page</b> &nbsp;(Por cada página),
-                                <b>sec</b> &nbsp;(Sección), <b>ssec</b> &nbsp;(Subsección), <b>sssec</b> &nbsp;(Sub-subsección),
-                                <b>ssssec</b> &nbsp;(Sub-sub-subsección).
+                                valores esperados: <b>none</b> (Ninguno), <b>sec</b> (Sección),
+                                <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección), <b>ssssec</b>
+                                (Sub-sub-subsección).
                             </div>
                         </div>
                     </li>
