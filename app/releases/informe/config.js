@@ -101,7 +101,15 @@ notification['sabiasque'] = {
     '48': 'La diferencia entre las sub-versiones (ejemplo) <i>6.3</i> y <i>6.4</i> son debido a cambios importantes en configuraciones; la diferencia entre versiones (ejemplo) <i>6.0</i> y <i>7.0</i> son cambios notables en la funcionalidad y mecánica de funciones, configuraciones u otros',
     '49': 'El año que más el template ha sufrido modificaciones importantes es el 2019',
     '50': 'La monotonía aburre a cualquiera, prueba a darle sabor al template jugando con las configuraciones, por ejemplo con una portada nueva',
-    '51': 'En cada nueva versión se verifica que el tiempo que tarda en compilar el template no suba, puedes revisar el tiempo promedio de compilación (del archivo de ejemplo) en <a href="https://latex.ppizarror.com/stats/?template=Informe" target="_blank">https://latex.ppizarror.com/stats/?template=Informe</a>'
+    '51': 'En cada nueva versión se verifica que el tiempo que tarda en compilar el template no suba, puedes revisar el tiempo promedio de compilación (del archivo de ejemplo) en <a href="https://latex.ppizarror.com/stats/?template=Informe" target="_blank">https://latex.ppizarror.com/stats/?template=Informe</a>',
+    '52': 'Si programar no es lo tuyo pero aún así quieres aportar al desarrollo del template puedes sugerir cambios en el manual online, descripción de las configuraciones o notificar errores :)',
+    '53': 'Quizás una de las cosas más poderosas de LaTeX son los macros, puedes automatizar cualquier cosa mediante el uso de funciones, de hecho, casi todo el template es un gran conjunto de macros y configuraciones',
+    '54': 'Puedes utilizar el template para generar reportes automatizados, sólo basta generar el .tex con alguna herramienta como python y utilizar pdf2latex para compilar',
+    '55': 'Aún existen muchos bugs, anímate a reportar alguno :)',
+    '56': 'Una de las librerías que más demoran la compilación en LaTeX es tikz',
+    '57': 'Con tikz puedes generar complejas figuras utilizando dibujo vectorial (svg)',
+    '58': 'Graficar con LaTeX es muy sencillo, prueba a usar <a href="https://www.overleaf.com/learn/latex/Pgfplots_package" target="_blank">Pgfplots</a>',
+    '59': 'El template tiene más de cuatro años de desarrollo constante'
 };
 
 notification['encuesta'] = {
