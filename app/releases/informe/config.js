@@ -112,8 +112,9 @@ notification['sabiasque'] = {
     '59': 'El template tiene más de cuatro años de desarrollo constante'
 };
 
+// ¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>
 notification['encuesta'] = {
-    'content': '¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>',
+    'content': '',
     'persistent': true
 };
 
