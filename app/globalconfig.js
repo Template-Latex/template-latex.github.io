@@ -72,7 +72,7 @@ let notification = {};
  * @global
  * @ignore
  */
-const cfg_cookie_session_id = 'Rr3R8yAZ6k';
+const cfg_cookie_session_id = 'er3t8yAZ6k';
 
 /**
  * Días antes que las cookies expiren
