@@ -1211,7 +1211,8 @@ function afterDocumentReady() {
             backToTop.show(true);
         });
         backToTop.hide(true);
-        gallery.init();
+        NotificationJS.clearall(); // Oculta las notificaciones
+        gallery.init(); // Inicia la galería
     };
     let $hftrigger = $('#hfTrigger');
     $hftrigger.on('click', hfGallery);
@@ -1251,7 +1252,9 @@ function afterDocumentReady() {
             backToTop.show(true);
         });
         backToTop.hide(true);
-        gallery.init();
+
+        NotificationJS.clearall(); // Oculta las notificaciones
+        gallery.init(); // Inicia la galería
     };
     let $portraittrigger = $('#portraitTrigger');
     $portraittrigger.on('click', portraitGallery);
