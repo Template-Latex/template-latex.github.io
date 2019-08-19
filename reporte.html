@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Template Reporte</title>
+    <!--
+    The MIT License (MIT)
+
+    Copyright 2017-2019 Pablo Pizarro R.
+
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the "Software"),
+    to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom the Software
+    is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    -->
+
+    <!-- Metadatos -->
+    <meta name="author" content="Pablo Pizarro R. @ppizarror"/>
+    <meta name="description" content="Template para crear reportes rápidos en LaTeX"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="resources/ms-icon-144x144.png"/>
+    <meta name="robots" content="noarchive"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:description" content="Template para crear reportes rápidos en LaTeX"/>
+    <meta name="twitter:image" content="https://latex.ppizarror.com/res/favicon-informe/icon.png"/>
+    <meta name="twitter:title" content="Template Reporte"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta property="og:description" content="Template para crear reportes rápidos en LaTeX"/>
+    <meta property="og:image" content="https://latex.ppizarror.com/res/favicon-informe/icon.png"/>
+    <meta property="og:title" content="Template Reporte"/>
+    <meta property="og:url" content="https://latex.ppizarror.com/Template-Reporte/"/>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="res/favicon-informe/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/favicon-informe/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/favicon-informe/favicon-16x16.png">
+    <link rel="manifest" href="res/favicon-informe/manifest.json">
+    <link rel="mask-icon" href="res/favicon-informe/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="res/favicon-informe/favicon.ico">
+    <meta name="msapplication-config" content="res/favicon-informe/browserconfig.xml">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-v5/css/fontawesome-all.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/github-light/github-light.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/photoswipe/photoswipe.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/default-skin/default-skin.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/jquery-confirm/jquery-confirm.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/pace/pace.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/hover/hover.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/tooltipster.bundle.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-borderless.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/tooltipster/themes/sideTip-light.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/jquery-backToTop/jquery-backToTop.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/amaran/amaran.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/notification/notification.min.css" media="screen">
+
+    <!-- Librerías javascript -->
+    <script src="js/jscookie/js.cookie-2.2.0.js"></script>
+    <script src="js/photoswipe/photoswipe.min.js"></script>
+    <script src="js/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/jquery-scrollto/jquery-scrollto.min.js"></script>
+    <script src="js/jquery.leanModal/jquery.leanModal.min.js"></script>
+    <script src="js/parallax/jquery.parallax.min.js"></script>
+    <script src="js/showdown/showdown.min.js"></script>
+    <script src="https://ppizarror.com/wallpaper-db/db.min.js"></script>
+    <script src="js/pace/pace.min.js"></script>
+    <script src="js/jquery-confirm/jquery-confirm.min.js"></script>
+    <script src="js/tooltipster/tooltipster.bundle.min.js"></script>
+    <script src="js/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+    <script src="js/jquery-backToTop/jquery-backToTop.min.js"></script>
+    <script src="js/amaran/jquery.amaran.min.js"></script>
+    <script src="js/notification/notification.min.js"></script>
+
+    <!-- Js de la aplicación -->
+    <script src="https://latex.ppizarror.com/stats/app/prevdownload.min.js"></script>
+    <script src="app/globalconfig.min.js"></script>
+    <script src="app/releases/reporte/config.min.js"></script>
+    <script src="app/about.min.js"></script>
+    <script src="app/utils.min.js"></script>
+    <script src="app/session.min.js"></script>
+    <script src="app/init.min.js"></script>
+</head>
+
+<body>
+<a href="#" class="back-to-top hvr-shadow" id="scrolls"></a>
+<div id="background-page-header-colored"></div>
+<div id="background-page-header"></div>
+
+<section class="page-header">
+    <h1 class="project-name">Template Reporte</h1>
+    <h2 class="project-tagline">Template para crear reportes rápidos en LaTeX</h2>
+    <a href="" id="github-button-header" class="btn hvr-shadow">Ver en GitHub <i class="fab fa-github"></i></a>
+    <!--suppress HtmlUnknownAnchorTarget -->
+    <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn hvr-shadow">Ver Ejemplo <i
+            class="fas fa-file-pdf"></i></a>
+    <!--suppress HtmlUnknownAnchorTarget -->
+    <a href="#Error_al_cargar_enlace_descarga" class="btn-pro hvr-shadow" id="download-button">Descargar versión
+        normal</a>
+    <!--suppress HtmlUnknownAnchorTarget -->
+    <a href="#Error_al_cargar_enlace_descarga" class="btn hvr-shadow" id="download-button-1file">Descargar versión
+        compacta</a>
+</section>
+
+<div id="contentBackground">
+    <section id="main-content-section" class="main-content" style="margin-top:1px">
+        <h2><a class="anchor" href="" aria-hidden="true"><span aria-hidden="true"
+                                                               class="octicon octicon-link"></span></a>Template de
+            Reportes en Latex</h2>
+
+        <!-- Badges -->
+        <a href="https://ppizarror.com" class="aimg" id="autorbanner">
+            <img src="res/badges/autor.svg" class="bannerimg" alt=""/>
+        </a>
+        <a href="https://opensource.org/licenses/MIT/" class="aimg">
+            <img src="res/badges/licenciamit.svg" alt=""/>
+        </a>
+        <a href="" class="badgeejemplopdf aimg">
+            <img src="res/badges/ejemplopdf.svg" alt=""/>
+        </a>
+        <a href="" id="chatgitter" class="aimg">
+            <img src="res/badges/chat.svg" alt=""/>
+        </a>
+        <a href="" id="templatestats">
+            <svg xmlns="http://www.w3.org/2000/svg" width="104" height="20"
+                 id="downloadcounter-banner">
+                <linearGradient id="b" x2="0" y2="100%">
+                    <stop offset="0" stop-color="#bbb" stop-opacity=".1"></stop>
+                    <stop offset="1" stop-opacity=".1"></stop>
+                </linearGradient>
+                <clipPath id="a">
+                    <rect width="104" height="20" rx="3" fill="#fff"></rect>
+                </clipPath>
+                <g clip-path="url(#a)">
+                    <path fill="#555" d="M0 0h67v20H0z"></path>
+                    <path fill="#4c1" d="M67 0h37v20H67z"></path>
+                    <path fill="url(#b)" d="M0 0h104v20H0z"></path>
+                </g>
+                <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
+                    <text x="33.5" y="15" fill="#010101" fill-opacity=".3">Descargas</text>
+                    <text x="33.5" y="14">Descargas</text>
+                    <text x="84.5" y="15" fill="#010101" fill-opacity=".3" id="total-download-counter-1"
+                          style="opacity: 0"></text>
+                    <text x="84.5" y="14" id="total-download-counter-2" style="opacity: 0"></text>
+                </g>
+            </svg>
+        </a>
+        <br/>
+        <div id="badgeslistdiv"></div>
+
+        <!-- Introducción -->
+        <p>
+            Este corresponde a un template para confeccionar reportes sencillos en <img
+                src="res/other/latex.png" alt="LaTeX" class="lateximg"/>, contiene funciones
+            para agregar imágenes, párrafos, fórmulas,
+            etc.
+            <img src="res/images/reporte.png" alt="Reporte"
+                 style="margin: auto; display: block; width:80%"/>
+        </p>
+
+        <!-- Manual de uso -->
+        <h2>Manual de uso</h2>
+        <p>
+            El manual de uso de las funciones opcionales se encuentra disponible en la página web del template de
+            informes: <a href="https://ppizarror.com/Template-Informe/">Template-Informe</a>.
+        </p>
+
+        <!-- Qué hay de nuevo, CHANGELOG -->
+        <div id='whatsnew'>
+            <h2 style='margin-top: 2.5rem;'>
+                <a id="qhaydenuevo" class="anchor" href="#que-hay-de-nuevo" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Changelog
+            </h2>
+            <div id="que-hay-de-nuevo">
+            </div>
+        </div>
+
+        <!-- Autor -->
+        <h2>
+            <a id="autor" class="anchor" href="#autor" aria-hidden="true">
+                <span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>
+            Autor
+        </h2>
+        <p><a href="https://ppizarror.com/">Pablo Pizarro R.</a> | 2019</p>
+        <p>Si tienes alguna sugerencia envíame un correo a: <a href="mailto:pablo.pizarro@ing.uchile.cl">pablo.pizarro@ing.uchile.cl</a>
+        </p>
+    </section>
+
+    <!-- Precarga recursos -->
+    <div id="preloadresources">
+        <img src="https://avatars0.githubusercontent.com/u/12925256" style="display: none;" alt=""/>
+        <img src="res/ui/hd-bg.png" style="display: none;" alt="">
+    </div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118050511-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118050511-2');
+</script>
+</body>
+
+</html>

@@ -289,6 +289,8 @@ function writeBadges() {
     // noinspection HtmlUnknownTarget
     $badgediv.append('<a href="https://latex.ppizarror.com/informe.html" class="aimg"><img src="res/badges/informe.svg" alt=""/></a> ');
     // noinspection HtmlUnknownTarget
+    $badgediv.append('<a href="https://latex.ppizarror.com/reporte.html" class="aimg"><img src="res/badges/reporte.svg" alt=""/></a> ');
+    // noinspection HtmlUnknownTarget
     $badgediv.append('<a href="https://latex.ppizarror.com/professional-cv.html" class="aimg"><img src="res/badges/professionalcv.svg" alt=""/></a>');
     $badgediv.fadeIn('slow');
 }
