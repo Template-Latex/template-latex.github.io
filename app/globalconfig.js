@@ -45,9 +45,9 @@ let update_downloads_version = true;
  * Aviso inicial
  */
 let initial_popup = {
-    content: '',
+    content: '<a href="https://latex.ppizarror.com/reporte.html">Template-Reporte</a> es el nuevo template que se une a la familia Template-Latex.<br>Es útil para hacer informes rápidos que no requieren de la complejidad de Template-Informe, no tiene portada, ni índice, sólo un título sencillo y el contenido.',
     display: true,
-    title: ''
+    title: 'Nuevo Template-Reporte'
 };
 
 /**

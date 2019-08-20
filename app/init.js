@@ -163,7 +163,7 @@ $(function () {
              * Se añade link estadísticas a banner descargas
              */
             $('#main-content-section #templatestats').attr('href', stats_href + stats_name);
-            if (update_download_counter === 'Template-Informe') {
+            if (update_download_counter === 'Template-Informe' || update_download_counter === 'Template-Reporte') {
 
                 // Se carga los elementos
                 let $dlbutton = $('#download-button');
@@ -176,13 +176,14 @@ $(function () {
                         $('#autorbanner').tooltipster('close');
                     }
                 });
-                let normal_link = String.format('{0}download/{1}/Template-Informe.zip', href_github_project, last_version);
+                let normal_link = String.format('{0}download/{1}/{2}.zip', href_github_project, last_version, update_download_counter);
                 // noinspection HtmlUnknownTarget
                 $('#download-button-1file').append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
                 $dlbutton.attr('href', normal_link);
                 // noinspection HtmlUnknownTarget
                 $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
                 writeOtherLinks(last_version);
+                console.log('h');
 
             } else {
 
