@@ -331,7 +331,8 @@ function generateID() {
  * @function
  */
 function loadInitialPopup() {
-    if (initial_popup.display && initial_popup.content.length > 0) {
+    if (initial_popup.display && initial_popup.content.length > 0 && initial_popup.ignore.indexOf(update_download_counter) === -1) {
+        console.log(initial_popup.ignore, update_download_counter);
         // noinspection JSCheckFunctionSignatures
         $.confirm({
             boxWidth: '35%',
