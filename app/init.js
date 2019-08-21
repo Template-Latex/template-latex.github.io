@@ -163,7 +163,9 @@ $(function () {
              * Se añade link estadísticas a banner descargas
              */
             $('#main-content-section #templatestats').attr('href', stats_href + stats_name);
-            if (update_download_counter === 'Template-Informe' || update_download_counter === 'Template-Reporte') {
+            if (update_download_counter === 'Template-Informe' ||
+                update_download_counter === 'Template-Reporte' ||
+                update_download_counter === 'Template-Tesis') {
 
                 // Se carga los elementos
                 let $dlbutton = $('#download-button');
