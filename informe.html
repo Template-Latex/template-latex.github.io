@@ -2234,9 +2234,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\showsectioncaptioncode</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
-                                en el número de cada código fuente. Valores esperados: <b>none</b>, <b>sec</b>
-                                (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
-                                <b>ssssec</b> (Sub-sub-subsección).
+                                en el número de cada código fuente. Valores esperados: <b>none</b>, <b>chap</b>
+                                (Capítulo), <b>sec</b> (Sección), <b>ssec</b> (Subsección), <b>sssec</b>
+                                (Sub-subsección), <b>ssssec</b> (Sub-sub-subsección).
                             </div>
                         </div>
                     </li>
@@ -2244,8 +2244,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\showsectioncaptioneqn</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
-                                en el número de ecuación. Valores esperados: <b>none</b>, <b>sec</b>
-                                (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
+                                en el número de ecuación. Valores esperados: <b>none</b>, <b>chap</b> (Capítulo),
+                                <b>sec</b> (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
                                 <b>ssssec</b> (Sub-sub-subsección).
                             </div>
                         </div>
@@ -2254,7 +2254,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\showsectioncaptionfig</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
-                                en el número de cada figura. Valores esperados: <b>none</b>, <b>sec</b>
+                                en el número de cada figura. Valores esperados: <b>none</b>, <b>chap</b> (Capítulo), <b>sec</b>
+                                (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
+                                <b>ssssec</b> (Sub-sub-subsección).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showsectioncaptionmat</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
+                                en el número de cada entorno matemático como teoremas, proposiciones, lemas, etc.
+                                Valores esperados: <b>none</b>, <b>chap</b> (Capítulo), <b>sec</b>
                                 (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
                                 <b>ssssec</b> (Sub-sub-subsección).
                             </div>
@@ -2264,8 +2275,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\showsectioncaptiontab</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra el número de la sección/subsección/subsubsección
-                                en el número de tabla. Valores esperados: <b>none</b>, <b>sec</b>
-                                (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
+                                en el número de tabla. Valores esperados: <b>none</b>, <b>chap</b> (Capítulo),
+                                <b>sec</b> (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
                                 <b>ssssec</b> (Sub-sub-subsección).
                             </div>
                         </div>
@@ -2524,7 +2535,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\equationrestart</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Comportamiento del reinicio de los números de las ecuaciones,
-                                valores esperados: <b>none</b> (Ninguno), <b>sec</b> (Sección),
+                                valores esperados: <b>none</b> (Ninguno), <b>chap</b> (Capítulo), <b>sec</b> (Sección),
                                 <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección), <b>ssssec</b>
                                 (Sub-sub-subsección).
                             </div>
@@ -2541,9 +2552,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\footnoterestart</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Comportamiento del reinicio de los números de <i>footnote</i>,
-                                valores esperados: <b>none</b> (Ninguno), <b>page</b> &nbsp;(Por cada página),
-                                <b>sec</b> &nbsp;(Sección), <b>ssec</b> &nbsp;(Subsección), <b>sssec</b> &nbsp;(Sub-subsección),
-                                <b>ssssec</b> &nbsp;(Sub-sub-subsección).
+                                valores esperados: <b>none</b> (Ninguno), <b>chap</b> (Capítulo), <b>page</b> &nbsp;(Por
+                                cada página), <b>sec</b> &nbsp;(Sección), <b>ssec</b> &nbsp;(Subsección), <b>sssec</b>
+                                &nbsp;(Sub-subsección), <b>ssssec</b> &nbsp;(Sub-sub-subsección).
                             </div>
                         </div>
                     </li>
@@ -3208,6 +3219,48 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\namemathcol</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de los colorarios.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\namemathdefn</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de las definiciones.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\namemathej</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de los ejemplos.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\namemathlem</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de los lemas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\namemathobs</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de las observaciones.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\namemathprp</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de las proposiciones.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\namemaththeorem</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre de los teoremas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\nameportraitpage</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Nombre de la primera página (portada) en el pdf.</div>
@@ -3362,6 +3415,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <strong><a
                             href="http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf">amssymb</a></strong>:
                     Librería matemática.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/amsthm">amsthm</a></strong>: Entornos de teoremas
+                    matemáticos.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/apacite">apacite</a></strong>: Administración de citas.
