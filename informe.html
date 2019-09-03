@@ -1717,6 +1717,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         documento.
                     </li>
                     <li>
+                        <strong>\resetindexcaption</strong>: Reinicia el título de las leyendas.
+                    </li>
+                    <li>
                         <strong>\restartequation</strong>: Reinicia el número de las ecuaciones en cualquier parte del
                         documento.
                     </li>
@@ -1727,6 +1730,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li>
                         <strong>\setcaptionmargincm</strong><b>{</b><em>Margen</em><b>}</b>: Modifica el margen
                         izquierdo/derecho de los <i>caption</i> medido en centímetros.
+                    </li>
+                    <li>
+                        <strong>\setindexcaption</strong><b>{</b><em>Título</em><b>}</b>: Define el título del índice de
+                        una leyenda de un objeto, esta función permite configurar el comportamiento de las funciones del
+                        template que implementen los caption, como la inserción de figuras. Los entornos no permiten el
+                        uso de esta función (como <i>images</i> o <i>sourcecode</i>). Este título solo se usa en el
+                        primer objeto que sigue al llamado de esta función.
                     </li>
                     <li>
                         <strong>\setpagemargincm</strong><b>{</b><em>Margen izq</em><b>}</b><b>{</b><em>Margen
