@@ -39,10 +39,10 @@ let bounceConfig; // Efecto en entrada de configuración
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 let hfGallery; // Muestra la galería de header-footer
 let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-let line_abstract = [86, 315]; // Número de línea de abstract/resumen
+let line_abstract = [86, 325]; // Número de línea de abstract/resumen
 let line_authortable = [33, 34]; // Número de línea tabla de integrantes
 let line_configimport = [62, 63]; // Número línea importación de configuraciones
-let line_docinit = [97, 326]; // Número de línea inicio del documento
+let line_docinit = [97, 336]; // Número de línea inicio del documento
 let line_infodocument = [18, 19]; // Número de línea información del documento
 let portraitGallery; // Muestra la galería de portadas
 let totalHfStyles = 16; // Estilos totales en tipo de header-footer
@@ -64,14 +64,14 @@ notification['sabiasque'] = {
     '10': 'Existe tanto template informe, template auxiliares, template controles y professional-cv',
     '11': 'El índice puede tener distintos tipos de orden, revisa las configuraciones :)',
     '12': 'El autor @ppizarror les quiere mucho',
-    // '13': 'En promedio el template se actualiza cada 2 semanas',
+    '13': 'Con tikz puedes generar complejas figuras utilizando dibujo vectorial (svg)',
     '14': 'El manual online sólo da soporte a la última versión del template',
     '15': 'La versión 6 es la que más cambios ha tenido',
     '16': 'El template tiene soporte completo en overleaf',
     '17': 'Se puede cambiar la posición de todas las leyendas de los objetos, revisa las configuraciones :)',
     '18': 'Existe un <i>easter-egg</i> que nadie aún lo ha encontrado',
     '19': 'Se puede cambiar el nombre de todos los elementos del template, revisa las configuraciones :)',
-    '20': 'En primavera del año 2019 se lanzará template-tesis',
+    '20': 'Una de las librerías que más demoran la compilación en LaTeX es tikz',
     '21': 'Junto a template-tesis se lanzará la versión 7 de template-informe',
     '22': 'Todos los subtemplates nacen a partir de template-informe',
     '23': 'Template-Informe es usado por personas de más de 30 países en el mundo',
@@ -84,7 +84,7 @@ notification['sabiasque'] = {
     '30': 'El departamento que más descarga el template es eléctrica (13%), seguido de ingeniería civil (12%) y ciencias de la computación (11%)',
     '31': 'Es posible cambiar el color de la página, revisa las configuraciones :)',
     '32': 'Puedes sugerir feedback o notificar de cualquier error al correo',
-    // '33': 'Template-Tesis se viene anunciando de 2017',
+    '33': 'Graficar con LaTeX es muy sencillo, prueba a usar <a href="https://www.overleaf.com/learn/latex/Pgfplots_package" target="_blank">Pgfplots</a>',
     '34': 'La configuración <i>\\portraitstyle</i> permite cambiar la portada del documento',
     '35': 'La configuración <i>\\hfstyle</i> permite cambiar la cabecera y pié de página del documento',
     '36': 'Es posible desactivar la numeración con números romanos del principio del documento con la configuración <i>\\predocromannumber</i>',
@@ -100,17 +100,13 @@ notification['sabiasque'] = {
     '46': 'Puedes añadir el número de sección/subsección/etc al número de cada objeto, como Figura 1.2, revisa las configuraciones <i>\\showsectioncaption</i>',
     '47': 'Recuerda revisar constantemente nuevas actualizaciones para estar al día con los parches y mejoras',
     '48': 'La diferencia entre las sub-versiones (ejemplo) <i>6.3</i> y <i>6.4</i> son debido a cambios importantes en configuraciones; la diferencia entre versiones (ejemplo) <i>6.0</i> y <i>7.0</i> son cambios notables en la funcionalidad y mecánica de funciones, configuraciones u otros',
-    // '49': 'El año que más el template ha sufrido modificaciones importantes es el 2019',
+    '49': 'El template tiene más de cuatro años de desarrollo constante',
     '50': 'La monotonía aburre a cualquiera, prueba a darle sabor al template jugando con las configuraciones, por ejemplo con una portada nueva',
     '51': 'En cada nueva versión se verifica que el tiempo que tarda en compilar el template no suba, puedes revisar el tiempo promedio de compilación (del archivo de ejemplo) en <a href="https://latex.ppizarror.com/stats/?template=Informe" target="_blank">https://latex.ppizarror.com/stats/?template=Informe</a>',
     '52': 'Si programar no es lo tuyo pero aún así quieres aportar al desarrollo del template puedes sugerir cambios en el manual online, descripción de las configuraciones o notificar errores :)',
     '53': 'Quizás una de las cosas más poderosas de LaTeX son los macros, puedes automatizar cualquier cosa mediante el uso de funciones, de hecho, casi todo el template es un gran conjunto de macros y configuraciones',
     '54': 'Puedes utilizar el template para generar reportes automatizados, sólo basta generar el .tex con alguna herramienta como python y utilizar pdf2latex para compilar',
-    '55': 'Aún existen muchos bugs, anímate a reportar alguno :)',
-    '56': 'Una de las librerías que más demoran la compilación en LaTeX es tikz',
-    '57': 'Con tikz puedes generar complejas figuras utilizando dibujo vectorial (svg)',
-    '58': 'Graficar con LaTeX es muy sencillo, prueba a usar <a href="https://www.overleaf.com/learn/latex/Pgfplots_package" target="_blank">Pgfplots</a>',
-    '59': 'El template tiene más de cuatro años de desarrollo constante'
+    '55': 'Aún existen muchos bugs, anímate a reportar alguno :)'
 };
 
 // ¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>
@@ -144,36 +140,36 @@ let cmd_sourcecode = {
         '; ---------------------------------------------\n' +
         '; Programa que imprime un string en la pantalla\n' +
         '; ---------------------------------------------\n' +
-        '\t.model small              ; modelo de memoria\n' +
+        '.model small              ; modelo de memoria\n' +
         '\n' +
-        '\t.stack                    ; segmento del stack\n' +
+        '.stack                    ; segmento del stack\n' +
         '\n' +
-        '\t.data                     ; segmento de datos\n' +
-        '\tCadena1 DB \'Hola Mundo.$\' ; string a imprimir (finalizado en $)\n' +
+        '.data                     ; segmento de datos\n' +
+        'Cadena1 DB \'Hola Mundo.$\' ; string a imprimir (finalizado en $)\n' +
         '\n' +
-        '\t.code                     ; segmento del código\n' +
+        '.code                     ; segmento del código\n' +
         '\n' +
         '; ---------------------------------------------\n' +
         '; Inicio del programa\n' +
         '; ---------------------------------------------\n' +
-        '\tprograma:\n' +
-        '\t\t; ------------------------------------\n' +
-        '\t\t; inicia el segmento de datos\n' +
-        '\t\t; ------------------------------------\n' +
-        '\t\tMOV AX, @data          ; carga en AX la dirección del segmento de datos\n' +
-        '\t\tMOV DS, AX             ; mueve la dirección al registro de segmento por medio de AX\n' +
-        '\t\t\n' +
-        '\t\t; ------------------------------------\n' +
-        '\t\t; Imprime un string en pantalla\n' +
-        '\t\t; ------------------------------------\n' +
-        '\t\tMOV DX, offset Cadena1 ; mueve a DX la dirección del string a imprimir\n' +
-        '\t\tMOV AH, 9              ; AH = código para indicar al MS DOS que imprima en la pantalla, el string en DS:DX\n' +
-        '\t\tINT 21h                ; llamada al MS DOS para ejecutar la función (en este caso especificada en AH)\n' +
-        '\t\t\n' +
-        '\t\t; ------------------------------------\n' +
-        '\t\t; Finaliza el programa\n' +
-        '\t\t; ------------------------------------\n' +
-        '\t\tINT 20h                ; llamada al MS DOS para finalizar el programa\n' +
+        'programa:\n' +
+        '\t; ------------------------------------\n' +
+        '\t; inicia el segmento de datos\n' +
+        '\t; ------------------------------------\n' +
+        '\tMOV AX, @data          ; carga en AX la dirección del segmento de datos\n' +
+        '\tMOV DS, AX             ; mueve la dirección al registro de segmento por medio de AX\n' +
+        '\t\n' +
+        '\t; ------------------------------------\n' +
+        '\t; Imprime un string en pantalla\n' +
+        '\t; ------------------------------------\n' +
+        '\tMOV DX, offset Cadena1 ; mueve a DX la dirección del string a imprimir\n' +
+        '\tMOV AH, 9              ; AH = código para indicar al MS DOS que imprima en la pantalla, el string en DS:DX\n' +
+        '\tINT 21h                ; llamada al MS DOS para ejecutar la función (en este caso especificada en AH)\n' +
+        '\n' +
+        '\t; ------------------------------------\n' +
+        '\t; Finaliza el programa\n' +
+        '\t; ------------------------------------\n' +
+        '\tINT 20h                ; llamada al MS DOS para finalizar el programa\n' +
         '\n' +
         '\tend programa\n' +
         '\\end{sourcecode}',
