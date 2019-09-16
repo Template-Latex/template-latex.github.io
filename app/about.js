@@ -27,7 +27,7 @@
  */
 let aboutinfo = {
     "version": "5.04",
-    "date": "13/08/2019",
+    "date": "16/09/2019",
     "author": {
         "name": "Pablo Pizarro R.",
         "tag": "@ppizarror",
@@ -37,7 +37,7 @@ let aboutinfo = {
     },
     "productname": "Template-Latex Web",
     "productnamefooter": "Template-Latex",
-    "productsource": "https://github.com/Template-Latex/template-latex.github.io",
+    "productsource": "https://github.com/Template-Latex/",
 };
 
 /**

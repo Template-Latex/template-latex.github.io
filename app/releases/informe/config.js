@@ -66,7 +66,7 @@ notification['sabiasque'] = {
     '12': 'El autor @ppizarror les quiere mucho',
     '13': 'Con tikz puedes generar complejas figuras utilizando dibujo vectorial (svg)',
     '14': 'El manual online sólo da soporte a la última versión del template',
-    '15': 'La versión 6 es la que más cambios ha tenido',
+    '15': 'Aún existen muchos bugs, anímate a reportar alguno :)',
     '16': 'El template tiene soporte completo en overleaf',
     '17': 'Se puede cambiar la posición de todas las leyendas de los objetos, revisa las configuraciones :)',
     '18': 'Existe un <i>easter-egg</i> que nadie aún lo ha encontrado',
@@ -106,7 +106,6 @@ notification['sabiasque'] = {
     '52': 'Si programar no es lo tuyo pero aún así quieres aportar al desarrollo del template puedes sugerir cambios en el manual online, descripción de las configuraciones o notificar errores :)',
     '53': 'Quizás una de las cosas más poderosas de LaTeX son los macros, puedes automatizar cualquier cosa mediante el uso de funciones, de hecho, casi todo el template es un gran conjunto de macros y configuraciones',
     '54': 'Puedes utilizar el template para generar reportes automatizados, sólo basta generar el .tex con alguna herramienta como python y utilizar pdf2latex para compilar',
-    '55': 'Aún existen muchos bugs, anímate a reportar alguno :)'
 };
 
 // ¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>
