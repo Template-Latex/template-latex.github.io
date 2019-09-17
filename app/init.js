@@ -74,6 +74,7 @@ $(function () {
      * Se generan colores
      * ------------------------------------------------------------------------
      */
+    let bodycolor = '#4d4d4d';
     let backgroundmaincolor = shadeColor2(wallpaper_db.color, 0.98);
     let bgprecolor = shadeColor2(wallpaper_db.color, 0.9);
     let codebarcolor = shadeColor2(wallpaper_db.color, 0.4);
@@ -354,7 +355,7 @@ $(function () {
     });
     $('.main-content').css('background-color', backgroundmaincolor);
     $('#contentBackground').css('background-color', backgroundmaincolor);
-    $('body').css('background-color', backgroundmaincolor);
+    $('body').css('background-color', bodycolor);
     $('#que-hay-de-nuevo blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
 
     // noinspection CssInvalidHtmlTagReference, CssUnusedSymbol, JSJQueryEfficiency
