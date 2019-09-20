@@ -35,7 +35,7 @@ let enableparallax = true;          // Activa el parallax
 let nan_value = 'NaN';              // Valor NaN como string
 let otherdownloadsfadetime = 400;   // Tiempo de fade para descargas
 let parallaxloaded = false;         // Indica que parallax ya se cargó
-let pdf_js_href = 'https://latex.ppizarror.com/pdf-version/web/viewer.html?file=';
+let pdf_js_href = 'https://latex.ppizarror.com/pdf-version/web/viewer?file=';
 let scrollLock = false;             // Indica que la función $.scrollLock se activó
 let seconds_update_downloadCounter = 60 * 5; // Tiempo de refresco actualización contador descargas
 let stats_href = 'https://latex.ppizarror.com/stats?template=';
@@ -45,7 +45,7 @@ let update_downloads_version = true;
  * Aviso inicial
  */
 let initial_popup = {
-    content: '<a href="https://latex.ppizarror.com/reporte.html">Template-Reporte</a> es el nuevo template que se une a la familia Template-Latex.<br>Es útil para hacer informes rápidos que no requieren de la complejidad de Template-Informe, no tiene portada, ni índice, sólo un título sencillo y el contenido.',
+    content: '<a href="https://latex.ppizarror.com/reporte">Template-Reporte</a> es el nuevo template que se une a la familia Template-Latex.<br>Es útil para hacer informes rápidos que no requieren de la complejidad de Template-Informe, no tiene portada, ni índice, sólo un título sencillo y el contenido.',
     display: false,
     ignore: ['Template-Reporte'],
     title: 'Nuevo Template-Reporte'
