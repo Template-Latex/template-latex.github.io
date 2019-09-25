@@ -186,7 +186,6 @@ $(function () {
                 // noinspection HtmlUnknownTarget
                 $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
                 writeOtherLinks(last_version);
-                console.log('h');
 
             } else {
 
