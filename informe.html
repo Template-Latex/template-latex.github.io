@@ -256,8 +256,9 @@
         </p>
         <p class="justified-text">
             <b>ATENCIÓN:</b> Para compilar el template es necesario utilizar <a
-                href="http://nokyotsu.com/latex/pdflatex.html">PDFLatex</a>, no se da soporte a otros compiladores como
-            xelatex, lualatex, etc.
+                href="http://nokyotsu.com/latex/pdflatex.html">PDFLatex</a> ó <a
+                href="https://www.overleaf.com/learn/latex/XeLaTeX">XeLaTeX</a>, no se da soporte a otros compiladores
+            como lualatex, latex, latexmk, etc.
         </p>
 
         <!-- Configurando el documento -->
@@ -1274,6 +1275,9 @@ int main(){
                         <b>-</b> Establecer configuración <a
                                 onclick="bounceConfig('#config-ref','#stylecitereferences');"
                                 class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{bibtex}
+                        <b>-</b> Cambiar estilo referencias con la configuración <a
+                                onclick="bounceConfig('#config-ref','#bibtexstyle');"
+                                class="javascripthref"><span class="pl-c1">\bibtexstyle</span></a>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1296,6 +1300,9 @@ Para usar citas extensas se utiliza <span class="pl-c1">\fullcite</span>{braas}
                         <b>-</b> Establecer configuración <a
                                 onclick="bounceConfig('#config-ref','#stylecitereferences');"
                                 class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{apacite}
+                        <b>-</b> Cambiar estilo referencias con la configuración <a
+                                onclick="bounceConfig('#config-ref','#apacitestyle');"
+                                class="javascripthref"><span class="pl-c1">\apacitestyle</span></a>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1314,6 +1321,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <b>-</b> Establecer configuración <a
                                 onclick="bounceConfig('#config-ref','#stylecitereferences');"
                                 class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{natbib}
+                        <b>-</b> Cambiar estilo referencias con la configuración <a
+                                onclick="bounceConfig('#config-ref','#natbibrefstyle');"
+                                class="javascripthref"><span class="pl-c1">\natbibrefstyle</span></a>
                     </li>
                 </ul>
             </li>
@@ -1810,6 +1820,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                             <div class="config-desc-inner">Añade páginas en blanco después de la portada, el
                                 resumen y el índice de manera inteligente al imprimir en doble cara. El índice siempre
                                 se imprimirá en una plana impar, así como el contenido del informe.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\compilertype</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tipo de compilador que se usa para compilar a pdf.
+                                Soportados: <i>pdf2latex</i> y <i>xelatex</i>.
                             </div>
                         </div>
                     </li>
@@ -2446,17 +2464,17 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\apaciterefnumberinit</strong>
+                        <strong>\apaciterefnumberfinal</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter inicial números al tener activada la configuración
+                            <div class="config-desc-inner">Caracter final números al tener activada la configuración
                                 <i>\apaciterefnumber</i>.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\apaciterefnumberfinal</strong>
+                        <strong>\apaciterefnumberinit</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter final números al tener activada la configuración
+                            <div class="config-desc-inner">Caracter inicial números al tener activada la configuración
                                 <i>\apaciterefnumber</i>.
                             </div>
                         </div>
@@ -2466,6 +2484,16 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
                                 en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <div id="apacitestyle">
+                            <strong>\apacitestyle</strong>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Formato de referencias apacite
+                                    (abbrvnat, apa, ieeetr, unsrt, etc.).
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -2486,6 +2514,16 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <div id="bibtexstyle">
+                            <strong>\bibtexstyle</strong>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Formato de referencias bibtex
+                                    (abbrvnat, apa, ieeetr, unsrt, etc.).
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\natbibnumbers</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Las referencias se ordenan según números, al tener activada
@@ -2502,10 +2540,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\natbibrefstyle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Formato de referencias natbib
-                                (abbrvnat, apa, ieeetr, unsrt, etc.).
+                        <div id="natbibrefstyle">
+                            <strong>\natbibrefstyle</strong>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Formato de referencias natbib
+                                    (abbrvnat, apa, ieeetr, unsrt, etc.).
+                                </div>
                             </div>
                         </div>
                     </li>
