@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017-2019 Pablo Pizarro R.
+ Copyright 2017-2020 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -26,8 +26,8 @@
  * @type {{version: string, date: string, author: {name: string, tag: string, email: string, website: string, github: string}, productname: string, productnamefooter: string, productsource: string}}
  */
 let aboutinfo = {
-    "version": "5.04",
-    "date": "16/09/2019",
+    "version": "5.05",
+    "date": "03/01/2020",
     "author": {
         "name": "Pablo Pizarro R.",
         "tag": "@ppizarror",
