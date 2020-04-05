@@ -76,7 +76,7 @@ notification['sabiasque'] = {
     '22': 'Todos los subtemplates nacen a partir de template-informe',
     '23': 'Template-Informe es usado por personas de más de 30 países en el mundo',
     '24': 'La primera versión pública del template fue la 1.8.5',
-    '25': 'El autor hizo un taller de LaTex? <a href="https://ppizarror.com/taller-latex" target="_blank">https://ppizarror.com/taller-latex</a>',
+    '25': 'El autor hizo un taller de LaTex? <a href="https://github.ppizarror.com/taller-latex" target="_blank">https://github.ppizarror.com/taller-latex</a>',
     '26': 'La mejor manera de crear tablas en LaTeX es usar Excel2LaTeX',
     '27': 'Si usas TexStudio existe un plugin para autocompletar todas las funciones del template<br><a href="https://github.com/Template-Latex/cwl-docs" target="_blank">https://github.com/Template-Latex/cwl-docs</a>',
     '28': 'El autor @ppizarror recomienda utilizar TexStudio para windows/linux y Overleaf para la web',
