@@ -201,7 +201,7 @@
             <li>
                 <a href="#configurar-el-template" class="menu-big-entry">Configurar el template</a>
                 <ul>
-                    <li><a href="#config-other" class="menu-little-entry">Configuraciones generales</a></li>
+                    <li><a href="#config-gral" class="menu-little-entry">Configuraciones generales</a></li>
                     <li><a href="#config-portraithf" class="menu-little-entry">Estilo de portada y header-footer</a>
                     </li>
                     <li><a href="#config-caption" class="menu-little-entry">Configuración de las leyendas - caption</a>
@@ -256,9 +256,12 @@
         </p>
         <p class="justified-text">
             <b>ATENCIÓN:</b> Para compilar el template es necesario utilizar <a
-                href="http://nokyotsu.com/latex/pdflatex.html">PDFLatex</a> ó <a
-                href="https://www.overleaf.com/learn/latex/XeLaTeX">XeLaTeX</a>, no se da soporte a otros compiladores
-            como lualatex, latex, latexmk, etc.
+                href="http://nokyotsu.com/latex/pdflatex.html">PDFLatex</a>, <a
+                href="https://www.overleaf.com/learn/latex/XeLaTeX">XeLaTeX</a> ó <a
+                href="http://www.luatex.org">LuaLaTeX</a>, no se da soporte a otros
+            compiladores como latex, latexmk, etc. Es necesario modificar la configuración <a
+                onclick="bounceConfig('#config-gral','#compilertype');"
+                class="javascripthref"><span class="pl-c1">\compilertype</span></a> para usar distintos compiladores.
         </p>
 
         <!-- Configurando el documento -->
@@ -1827,7 +1830,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
         </p>
         <ul id="templateConfigsList">
             <li class="config-parent">
-                <strong class="functtitlstyle">Configuraciones generales<a id="config-other"></a></strong>
+                <strong class="functtitlstyle">Configuraciones generales<a id="config-gral"></a></strong>
                 <ul>
                     <li class="config-elem">
                         <strong>\addemptypagetwosides</strong>
@@ -1839,10 +1842,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\compilertype</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tipo de compilador que se usa para compilar a pdf.
-                                Soportados: <i>pdf2latex</i> y <i>xelatex</i>.
+                        <div id="compilertype">
+                            <strong>\compilertype</strong>
+                            <div class="config-desc">
+                                <div class="config-desc-inner">Tipo de compilador que se usa para compilar a pdf.
+                                    Soportados: <i>pdf2latex</i>, <i>xelatex</i> ó <i>lualatex</i>.
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -3496,7 +3501,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
             </li>
             <li>
                 Taller Latex: <a href="https://github.ppizarror.com/taller-latex"
-                    target="_blank">https://github.ppizarror.com/taller-latex</a>
+                                 target="_blank">https://github.ppizarror.com/taller-latex</a>
             </li>
             <li>
                 Plugin para expotar tablas desde Excel: <b>Excel2LaTeX</b>
@@ -3785,7 +3790,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/tikz">tikz</a></strong>: Permite dibujar. Se importa con
-                    la configuración <a onclick="bounceConfig('#config-other','#import-tikz-config');"
+                    la configuración <a onclick="bounceConfig('#config-gral','#import-tikz-config');"
                                         class="javascripthref">\importikz</a>.
                 </li>
                 <li>
