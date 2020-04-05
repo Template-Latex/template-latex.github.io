@@ -812,6 +812,18 @@
                         </ul>
                         <br>
                     </li>
+                    <li>
+                        <strong>\insertindexequation</strong><b>[</b><em>Label</em>
+                        (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>: Inserta una
+                        fórmula (entorno align) con una entrada en el índice de ecuaciones.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\insertindexequation</span><b>{</b>a+b=c<b>}</b><b>{</b>Ecuación muy difícil<b>}</b></pre>
+                            </div>
+                            <!--<p><img src="res/images/equationindex.png" alt=""></p>-->
+                        </blockquote>
+                        <br>
+                    </li>
                     <li style="margin-bottom:20px">
                         <strong>\insertequationcaptioned</strong><b>[</b><em>Label</em> (opcional)<b>]</b><b>{</b><em>Fórmula</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                         Inserta una fórmula con leyenda.
@@ -2421,10 +2433,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="config-elem">
                         <strong>\indexstyle</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Estilo del índice de objetos, <i>c</i>: Código fuente,
-                                <i>f:</i> Figura, <i>t</i>: Tabla. Combinaciones posibles: <b>(vacío)</b>, <b>f</b>, <b>ft</b>,
-                                <b>ftc</b>, <b>fc</b>, <b>fct</b>, <b>t</b>, <b>tf</b>, <b>tfc</b>, <b>tc</b>,
-                                <b>tcf</b>, <b>c</b>, <b>ct</b>, <b>ctf</b>, <b>cf</b>, <b>cft</b>.
+                            <div class="config-desc-inner">Estilo del índice de objetos, <b>c</b>: Código fuente,
+                                <b>f</b>: Figura, <b>t</b>: Tabla, <b>e</b>: Ecuación.
+                                Todas las combinaciones son válidas, y el orden es
+                                según cómo se define la configuración, por ejemplo <i>{fct}</i> (Figura, Código y
+                                Tablas), <i>{}</i> (Vacío, sin mostrar índices), <i>{etc}</i> (Ecuaciones, Tablas y
+                                Código), <i>{f}</i> (Sólo mostrar figuras), etc.
                             </div>
                         </div>
                     </li>
@@ -2757,6 +2771,20 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\marginequationbottom</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen inferior ecuaciones, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margineqnindexbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior ecuaciones en índice, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\margineqnindextop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen superior ecuaciones en índice, en centímetros.
                             </div>
                         </div>
                     </li>
@@ -3408,21 +3436,27 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\nomlteqn</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Nombre del índice de ecuaciones.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\nomltfigure</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Nombre de la lista de figuras.</div>
+                            <div class="config-desc-inner">Nombre del índice de figuras.</div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\nomltsrc</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Nombre de la lista de código fuente.</div>
+                            <div class="config-desc-inner">Nombre del índice de códigos fuente.</div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\nomlttable</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Nombre de la lista de tablas.</div>
+                            <div class="config-desc-inner">Nombre del índice de tablas.</div>
                         </div>
                     </li>
                     <li class="config-elem">
