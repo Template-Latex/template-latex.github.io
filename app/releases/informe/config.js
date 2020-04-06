@@ -72,7 +72,7 @@ notification['sabiasque'] = {
     '18': 'Existe un <i>easter-egg</i> que nadie aún lo ha encontrado',
     '19': 'Se puede cambiar el nombre de todos los elementos del template, revisa las configuraciones :)',
     '20': 'Una de las librerías que más demoran la compilación en LaTeX es tikz',
-    '21': 'Junto a template-tesis se lanzará la versión 7 de template-informe',
+    '21': 'Desde la versión 6.8.0 se pueden insertar ecuaciones en el índice',
     '22': 'Todos los subtemplates nacen a partir de template-informe',
     '23': 'Template-Informe es usado por personas de más de 30 países en el mundo',
     '24': 'La primera versión pública del template fue la 1.8.5',
@@ -106,7 +106,6 @@ notification['sabiasque'] = {
     '52': 'Si programar no es lo tuyo pero aún así quieres aportar al desarrollo del template puedes sugerir cambios en el manual online, descripción de las configuraciones o notificar errores :)',
     '53': 'Quizás una de las cosas más poderosas de LaTeX son los macros, puedes automatizar cualquier cosa mediante el uso de funciones, de hecho, casi todo el template es un gran conjunto de macros y configuraciones',
     '54': 'Puedes utilizar el template para generar reportes automatizados, sólo basta generar el .tex con alguna herramienta como python y utilizar pdf2latex para compilar',
-    '55': 'Desde la versión 6.8.0 se pueden insertar ecuaciones en el índice',
 };
 
 // ¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>
