@@ -63,7 +63,7 @@ notification['sabiasque'] = {
     '9': 'El template se viene desarrollando desde el año 2016',
     '10': 'Existe tanto template informe, template auxiliares, template controles y professional-cv',
     '11': 'El índice puede tener distintos tipos de orden, revisa las configuraciones :)',
-    '12': 'El autor @ppizarror les quiere mucho',
+    // '12': 'El autor @ppizarror les quiere mucho',
     '13': 'Con tikz puedes generar complejas figuras utilizando dibujo vectorial (svg)',
     '14': 'El manual online sólo da soporte a la última versión del template',
     '15': 'Aún existen muchos bugs, anímate a reportar alguno :)',
