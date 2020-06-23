@@ -1191,6 +1191,10 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
     width: 15%;
 }
 
+.parallax-mirror img {
+    opacity: 0.65 !important;
+}
+
 #preloadresources {
     display: none;
 }
