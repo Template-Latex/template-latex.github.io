@@ -39,11 +39,10 @@ let bounceConfig; // Efecto en entrada de configuración
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 let hfGallery; // Muestra la galería de header-footer
 let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
-let line_abstract = [86, 337]; // Número de línea de abstract/resumen
-let line_authortable = [32, 33]; // Número de línea tabla de integrantes
-let line_configimport = [61, 62]; // Número línea importación de configuraciones
-let line_docinit = [96, 347]; // Número de línea inicio del documento
-let line_infodocument = [17, 18]; // Número de línea información del documento
+let line_abstract = [73]; // Número de línea de abstract/resumen
+let line_authortable = [32]; // Número de línea tabla de integrantes
+let line_docinit = [84]; // Número de línea inicio del documento
+let line_infodocument = [17]; // Número de línea información del documento
 let portraitGallery; // Muestra la galería de portadas
 let totalHfStyles = 16; // Estilos totales en tipo de header-footer
 let totalPortraitStyles = 20; // Estilos totales de portada
@@ -126,7 +125,7 @@ let portraitRequiresAdditional = {
 };
 
 // Lista de códigos fuente
-// noinspection CssUnusedSymbol
+// noinspection CssUnusedSymbol,JSUnresolvedFunction,BadExpressionStatementJS
 let cmd_sourcecode = {
     'assemblerx64': '\\begin{sourcecode}{assemblerx64}{Assembler x64.}\n' +
         'cdqe 1, r8\n' +
@@ -329,6 +328,17 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
+    'csv': '\\begin{sourcecode}{csv}{Archivo en csv.}\n' +
+        'orand-car-with-bbs/training/images/0001_5179655_46066.jpg,83,8,126,61,4\n' +
+        'orand-car-with-bbs/training/images/0001_5179655_46066.jpg,143,11,182,61,6\n' +
+        'orand-car-with-bbs/training/images/0001_5179655_46066.jpg,204,11,247,54,0\n' +
+        'orand-car-with-bbs/training/images/0001_5179655_46066.jpg,264,15,307,58,6\n' +
+        'orand-car-with-bbs/training/images/0001_5179655_46066.jpg,329,11,365,62,6\n' +
+        'orand-car-with-bbs/training/images/0002_5179657_53862.jpg,80,11,114,56,5\n' +
+        'orand-car-with-bbs/training/images/0002_5179657_53862.jpg,116,13,150,62,3\n' +
+        'orand-car-with-bbs/training/images/0002_5179657_53862.jpg,166,15,205,68,8\n' +
+        '\\end{sourcecode}',
+
     'cuda': '\\begin{sourcecode}[]{cuda}{Un poco de cuda.}\n' +
         '__global__ void foo(){\n' +
         '}\n' +
@@ -490,6 +500,18 @@ let cmd_sourcecode = {
         '\t<div class="titulo">Hola</div>\n' +
         '</body>\n' +
         '</html>\n' +
+        '\\end{sourcecode}',
+
+    'ini': '\\begin{sourcecode}{ini}{Ejemplo de archivo de configuración.}\n' +
+        '[anchor_parameters]\n' +
+        '# Sizes should correlate to how the network processes an image.\n' +
+        'sizes   = 32 64 128 256 512\n' +
+        '# Strides should correlate to how the network strides over an image.\n' +
+        'strides = 8 16 32 64 128\n' +
+        '# The different ratios to use per anchor location.\n' +
+        'ratios  = 0.5 1 2 3\n' +
+        '# The different scaling factors to use per anchor location.\n' +
+        'scales  = 1 1.2 1.6\n' +
         '\\end{sourcecode}',
 
     'java': '\\begin{sourcecode}[\\label{codigo-java}]{java}{Ejemplo en Java.}\n' +
@@ -1098,14 +1120,6 @@ function afterDocumentReady() {
     $('.intro-line-abstract').each(
         function () {
             $(this).attr('style', 'cursor:pointer;');
-            $(this).tooltipster({
-                animation: 'grow',
-                content: String.format('Línea {0} en versión compacta', line_abstract[1]),
-                delay: 300,
-                maxWidth: 150,
-                side: 'bottom',
-                theme: 'tooltipster-borderless'
-            });
             $(this).html(String.format('(línea {0})', line_abstract[0]));
         }
     );
@@ -1115,34 +1129,8 @@ function afterDocumentReady() {
      */
     $('.intro-line-authortable').each(function () {
         $(this).attr('style', 'cursor:pointer;');
-        $(this).tooltipster({
-            animation: 'grow',
-            content: String.format('Línea {0} en versión compacta', line_authortable[1]),
-            delay: 300,
-            maxWidth: 150,
-            side: 'bottom',
-            theme: 'tooltipster-borderless'
-        });
         $(this).html(String.format('(línea {0})', line_authortable[0]));
     });
-
-    /**
-     * Escribe número de líneas configuración - imports
-     */
-    $('.intro-line-configimport').each(
-        function () {
-            $(this).attr('style', 'cursor:pointer;');
-            $(this).tooltipster({
-                animation: 'grow',
-                content: String.format('Línea {0} en versión compacta', line_configimport[1]),
-                delay: 300,
-                maxWidth: 150,
-                side: 'bottom',
-                theme: 'tooltipster-borderless'
-            });
-            $(this).html(String.format('(línea {0})', line_configimport[0]));
-        }
-    );
 
     /**
      * Escribe número de líneas inicio del documento
@@ -1150,14 +1138,6 @@ function afterDocumentReady() {
     $('.intro-line-docinit').each(
         function () {
             $(this).attr('style', 'cursor:pointer;');
-            $(this).tooltipster({
-                animation: 'grow',
-                content: String.format('Línea {0} en versión compacta', line_docinit[1]),
-                delay: 300,
-                maxWidth: 150,
-                side: 'bottom',
-                theme: 'tooltipster-borderless'
-            });
             $(this).html(String.format('(línea {0})', line_docinit[0]));
         }
     );
@@ -1167,14 +1147,6 @@ function afterDocumentReady() {
      */
     $('.intro-line-infodocument').each(function () {
         $(this).attr('style', 'cursor:pointer;');
-        $(this).tooltipster({
-            animation: 'grow',
-            content: String.format('Línea {0} en versión compacta', line_infodocument[1]),
-            delay: 300,
-            maxWidth: 150,
-            side: 'bottom',
-            theme: 'tooltipster-borderless'
-        });
         $(this).html(String.format('(línea {0})', line_infodocument[0]));
     });
 
@@ -1211,6 +1183,7 @@ function afterDocumentReady() {
         gallery.init(); // Inicia la galería
     };
     let $hftrigger = $('#hfTrigger');
+    // noinspection JSCheckFunctionSignatures
     $hftrigger.on('click', hfGallery);
     $hftrigger.html(String.format('{0} estilos distintos', totalHfStyles));
 
@@ -1253,6 +1226,7 @@ function afterDocumentReady() {
         gallery.init(); // Inicia la galería
     };
     let $portraittrigger = $('#portraitTrigger');
+    // noinspection JSCheckFunctionSignatures
     $portraittrigger.on('click', portraitGallery);
     $portraittrigger.html(String.format('{0} estilos distintos', totalPortraitStyles));
 
@@ -1260,12 +1234,14 @@ function afterDocumentReady() {
      * Efecto bounce
      */
     bounceConfig = function (a, b) {
+        // noinspection JSUnresolvedFunction
         $(a).ScrollTo();
         setTimeout(function () {
             doBounce($(b), 3, '6px', 100);
         }, 1000);
     };
 
+    // noinspection JSUnresolvedFunction
     /**
      * Se lee un acción desde url para cargar una galería
      */
@@ -1311,9 +1287,10 @@ function afterDocumentReady() {
     };
 
     /**
-     * Mostrar funciones deprecadas
+     * Imagemc
      */
-    triggerShowContainer('#showDeprecatedImageTrigger', '#showDeprecatedImageContainer');
+    triggerShowContainer('#showCodeImageMc', '#showCodeImageMcContainer');
+    triggerShowContainer('#showCodeBeginImageMc', '#showCodeBeginImageMcContainer');
 
     /**
      * Código imageleft,right
@@ -1344,6 +1321,7 @@ function afterDocumentReady() {
     $('#mathFunCounter').html($('#mathFunContainer').find('li').length);
     triggerShowContainerChangeTrigger('#showMathFunContainer', '#mathFunContainer', 'Mostrar lista de funciones', 'Ocultar lista de funciones');
 
+    // noinspection JSStringConcatenationToES6Template
     /**
      * Mostrar número de configuraciones totales
      */
@@ -1395,6 +1373,7 @@ function afterDocumentReady() {
         $(lastClickedSourcecode).addClass('sourcecodeTriggerEnabled');
     };
 
+    // noinspection JSStringConcatenationToES6Template
     /**
      * Se añade evento a cada elemento de código fuente
      */
@@ -1404,9 +1383,11 @@ function afterDocumentReady() {
         let $callback = function () {
             $write_source_code($a);
         };
+        // noinspection JSCheckFunctionSignatures
         $(this).on('click', $callback);
     });
 
+    // noinspection JSUnresolvedFunction
     /**
      * Se escribe un lenguaje random al inicio si es que no se pasó uno por $GET
      */
@@ -1536,6 +1517,7 @@ function afterDocumentReady() {
  * @function
  */
 function afterJSONLoad() {
+    // noinspection JSUnresolvedFunction
     let initAction = $.urlParam('action');
     if (initAction != null) {
         switch (initAction) {
@@ -1587,11 +1569,13 @@ function writeOtherLinks(verid) {
     let $contents = $('#downloadother-contents');
     $('#downloadtitle-title').html(String.format('Descargas v{0}', verid));
     // noinspection HtmlUnknownTarget
-    $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión compacta</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Informe.min.zip">Descargar</a></div></div>', href_github_project, verid));
+    $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Informe.zip">Descargar</a></div></div>', href_github_project, verid));
+    // noinspection JSCheckFunctionSignatures
     $('.downloadother-compact').on('click', $addTotal);
     for (let i = 0; i < deptos.length; i += 1) {
         // noinspection HtmlUnknownTarget
-        $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link-double"><a href="{3}download/{2}/Template-Informe-{1}.zip" class="otherdownloadclickeable">Normal</a></div><div class="downloadother-link-double"><a href="{3}download/{2}/Template-Informe-{1}.min.zip" class="otherdownloadclickeable">Compacta</a></div></div>', deptos[i][0], deptos[i][1], verid, href_github_project));
+        $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Informe-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', deptos[i][0], verid, href_github_project));
+        // noinspection JSCheckFunctionSignatures
         $(String.format('#downloadentry-{0} .otherdownloadclickeable', deptos[i][1])).on('click', $addTotal);
     }
 

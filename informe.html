@@ -125,8 +125,6 @@
             class="fas fa-file-pdf"></i></a>
     <!--suppress HtmlDeprecatedAttribute -->
     <a content="#downloadother" class="btn-pro hvr-shadow" id="download-button-1file" name="leanModal">Descargar</a>
-    <!--suppress HtmlUnknownAnchorTarget -->
-    <a href="#Error_al_cargar_enlace_descarga" class="btn hvr-shadow" id="download-button">Descargar versión normal</a>
 </section>
 
 <div id="contentBackground">
@@ -247,12 +245,6 @@
             del <em class="section-template">RESUMEN O ABSTRACT</em> <span class="intro-line-abstract"></span> o en la
             <b>sección principal</b> del documento <em class="section-template">INICIO DEL DOCUMENTO</em> <span
                 class="intro-line-docinit"></span>.
-        </p>
-        <p class="justified-text">
-            Existe además una versión <b>compacta</b> (minificada) en donde se encuentra todo el código en un sólo
-            archivo si es que no prefieres los archivos por separado. Para ver más información sobre cómo utilizar las
-            funciones exclusivas del template, o cómo configurar a gusto el template, visita el resto de las secciones
-            de este manual.
         </p>
         <p class="justified-text">
             <b>ATENCIÓN:</b> Para compilar el template es necesario utilizar <a
@@ -448,6 +440,29 @@
                             </div>
                         </blockquote>
                     </li>
+                    <li>
+                        <strong><a id="showCodeImageMc" class="javascripthref">\insertimagemc</a></strong>: Añade una
+                        imagen en el entorno <i>multicols</i>.
+                        <div class="codeFunContainer" id="showCodeImageMcContainer">
+                            <ul>
+                                <li>
+                                    <strong>\insertimagemc</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Posición</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen dentro del entorno multicols usando todas las columnas
+                                    disponibles en la posición superior o inferior de la página. Para controlar la
+                                    posición, se debe usar los valores <i>{t}</i> (top), o <i>{b}</i> (bottom).
+                                </li>
+                                <li>
+                                    <strong>\insertimageboxedmc</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Ancho
+                                    de la línea</em><b>}</b><b>{</b><em>Posición</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una imagen recuadrada dentro del entorno multicols usando todas las columnas
+                                    disponibles en la posición superior o inferior de la página. Para controlar la
+                                    posición, se debe usar los valores <i>{t}</i> (top), o <i>{b}</i> (bottom).
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
                 <hr class="style1">
                 <ul>
@@ -491,6 +506,24 @@
                                 Añade un margen vertical dentro del objeto <b>images</b>.
                             </li>
                         </ul>
+                    </li>
+                    <li style="padding: .5rem 0;">
+                        <strong><a id="showCodeBeginImageMc" class="javascripthref">\begin{imagemc}</a></strong>: Añade
+                        una
+                        imagen múltiple en el entorno <i>multicols</i>.
+                        <div class="codeFunContainer" id="showCodeBeginImageMcContainer">
+                            <ul>
+                                <li>
+                                    <strong>\begin{imagesmc}</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]</b><b>{</b><em>Posición</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                    Permite insertar múltiples imágenes dentro de un objeto, para ello se hace uso de
+                                    las instrucciones <strong>\addimage</strong> y <strong>\addimageboxed</strong>.
+                                    Para controlar la posición, se debe usar los valores <i>{t}</i> (top), o <i>{b}</i>
+                                    (bottom). Todas las funciones de <i>\begin{images}</i> se pueden utilizar dentro de
+                                    este macro.
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1089,12 +1122,12 @@
                     Para añadir código fuente existe el entorno <b>sourcecode</b> que permite añadir código de los
                     lenguajes de programación: Assembler x64 (<b>assemblerx64</b>), Assembler x86[masm]
                     (<b>assemblerx86</b>), Bash-scripting (<b>bash</b>), C (<b>c</b>), C++ (<b>cpp</b>), C#
-                    (<b>csharp</b>), CSS (<b>css</b>), CUDA (<b>cuda</b>), DOCKER (<b>docker</b>), Fortran
-                    (<b>fortran</b>), GLSL (<b>glsl</b>), Haskell (<b>haskell</b>), HTML5 (<b>html5</b>), Java
-                    (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Kotlin (<b>kotlin</b>), LaTeX
-                    (<b>latex</b>), Lisp (<b>lisp</b>), Lua (<b>lua</b>), Maple (<b>maple</b>), Matlab (<b>matlab</b>),
-                    Octave (<b>octave</b>), OpenSees (<b>opensees</b>), OpenCL (<b>opencl</b>), Pascal (<b>pascal</b>),
-                    Perl (<b>perl</b>), PHP (<b>php</b>), Pseudocódigo (<b>pseudocode</b>), Texto plano
+                    (<b>csharp</b>), CSS (<b>css</b>), CSV (<b>csv</b>), CUDA (<b>cuda</b>), DOCKER (<b>docker</b>),
+                    Fortran (<b>fortran</b>), GLSL (<b>glsl</b>), Haskell (<b>haskell</b>), HTML5 (<b>html5</b>), INI
+                    (<b>ini</b>), Java (<b>java</b>), Javascript (<b>js</b>), JSON (<b>json</b>), Kotlin (<b>kotlin</b>),
+                    LaTeX (<b>latex</b>), Lisp (<b>lisp</b>), Lua (<b>lua</b>), Maple (<b>maple</b>), Matlab
+                    (<b>matlab</b>), Octave (<b>octave</b>), OpenCL (<b>opencl</b>), OpenSees (<b>opensees</b>), Pascal
+                    (<b>pascal</b>), Perl (<b>perl</b>), PHP (<b>php</b>), Pseudocódigo (<b>pseudocode</b>), Texto plano
                     (<b>plaintext</b>), Python (<b>python</b>), R (<b>r</b>), Ruby (<b>ruby</b>), Scala (<b>scala</b>),
                     Scheme (<b>scheme</b>), SQL (<b>sql</b>), TCL (<b>tcl</b>), Vbscript (<b>vbscript</b>),
                     Verilog (<b>verilog</b>), VHDL (<b>vhdl</b>) y XML (<b>xml</b>):
@@ -1111,12 +1144,14 @@
                         <a class="sourcecodel">cpp</a>,
                         <a class="sourcecodel">csharp</a>,
                         <a class="sourcecodel">css</a>,
+                        <a class="sourcecodel">csv</a>,
                         <a class="sourcecodel">cuda</a>,
                         <a class="sourcecodel">docker</a>,
                         <a class="sourcecodel">fortran</a>,
                         <a class="sourcecodel">glsl</a>,
                         <a class="sourcecodel">haskell</a>,
                         <a class="sourcecodel">html5</a>,
+                        <a class="sourcecodel">ini</a>,
                         <a class="sourcecodel">java</a>,
                         <a class="sourcecodel">js</a>,
                         <a class="sourcecodel">json</a>,
@@ -1161,8 +1196,8 @@
                                 <pre style="background-color: rgb(238, 230, 234); border: 1px solid rgb(117, 51, 90);"><span
                                         class="pl-c1">\begin</span>{<span
                                         class="pl-e">sourcecodep</span>}<b>[</b><b>]</b><b>{</b>c<b>}{</b><span
-                                        class="pl-c1">basicstyle</span>={\fontsize{7}{10}\selectfont\ttfamily}<b>,</b><span
-                                        class="pl-c1">firstnumber</span>=27<b>}{Ejemplito de código.}</b><span
+                                        class="pl-c1">basicstyle</span>={\fontsize{7}{10}\selectfont\ttfamily}<b>,
+                         </b><span class="pl-c1">firstnumber</span>=27<b>}{Ejemplito de código.}</b><span
                                         class="pl-srccode">
 #include &lt;stdio.h&gt;
 int main(){
@@ -1701,6 +1736,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <p></p>
                 <ul>
                     <li>
+                        <strong>\addpathimage</strong><b>{</b><em>Ubicacón de la carpeta</em><b>}</b>: Añade una carpeta
+                        al path gráfico manejado por el documento.
+                    </li>
+                    <li>
                         <strong>\changepagesize</strong><b>[</b><em>Rotación de página <i>(opcional)</i></em><b>]</b><b>{</b><em>Ancho
                         de página (cm)</em><b>}</b><b>{</b><em>Alto de la página (cm)</em><b>}</b>: Función que cambia
                         el tamaño de página en ancho y alto. La rotación puede tomar valores <i>[0]</i> ó <i>[90]</i>.
@@ -1830,17 +1869,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
         <p class="justified-text">
             También se pueden modificar los márgenes de la página, el estilo de referencia a usar, los márgenes de los
             títulos de tablas y figuras <em>(caption)</em>, el tamaño de los títulos de las secciones, etc. Estas
-            configuraciones se encuentran
-            en el archivo
-            <a href="https://github.com/Template-Latex/Template-Informe/blob/master/lib/config.tex"
-               class="javascripthref">lib/config.tex</a> (versión normal) y son importadas en el bloque de
-            <em class="section-template">CONFIGURACIONES</em> <span class="intro-line-configimport"></span> en el
-            archivo principal.
+            configuraciones se encuentran en el archivo <b>template_config.tex</b>.
         </p>
         <p>
             Solo se pueden modificar las configuraciones dentro del archivo correspondiente, o bien, si se
             utiliza la versión compacta, se debe buscar la línea asociada a dicha configuración. Si se intenta cambiar
-            el valor de la configuración en otro lugar del template es posible que ocurran errores.
+            el valor de la configuración en otro lugar del template es posible que ocurran errores, salvo algunas
+            excepciones como el margen de los objetos.\inserttableimageboxed
         </p>
         <p>
             A continuación se listan las <span id="TemplateConfigCounter"></span> configuraciones disponibles:
@@ -1869,15 +1904,17 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\defaultinterline</strong>
+                        <strong>\documentfontsize</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño del interlineado.</div>
+                            <div class="config-desc-inner">Tamaño de letra del documento. El template permite configurar
+                                tamaños de fuentes menores a 10pt sin la importación de nuevos módulos.
+                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\defaultnewlinesize</strong>
+                        <strong>\documentinterline</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño del salto de línea, en <i>pt</i>.</div>
+                            <div class="config-desc-inner">Tamaño del interlineado.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -2162,11 +2199,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Estilo de la portada.
                                 <b>Existen <a id="portraitTrigger" class="javascripthref"></a></b>.<br>
-                                <i>Algunas portadas
-                                    requieren configuraciones adicionales, estas se definen en el archivo <a
-                                            href="https://github.com/Template-Latex/Template-Informe/blob/master/lib/page/portrait-config.tex"
-                                            class="javascripthref">lib/page/portrait-config.tex</a> (Versión normal) o
-                                    en el bloque de PORTADA (Versión compacta)</i>.
+                                <i>Algunas portadas requieren configuraciones adicionales, dentro del archivo de
+                                    template.tex</i>.
                             </div>
                         </div>
                     </li>
@@ -2182,6 +2216,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Alineación leyenda, valores posibles: <b>justified</b>, <b>centered</b>,
                                 <b>left</b>, <b>right</b>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionfontsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño de fuente de los caption, valores típicos a usar: <i>footnotesize,
+                                small, normalsize, large, Large, LARGE, huge, Huge, HUGE</i>.
                             </div>
                         </div>
                     </li>
@@ -2216,6 +2258,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
                                 las leyendas, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionlrmarginmc</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
+                                las leyendas dentro del entorno <i>multicols</i>, en centímetros.
                             </div>
                         </div>
                     </li>
@@ -2415,6 +2465,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configuración del índice<a id="config-index"></a></strong>
                 <ul>
                     <li class="config-elem">
+                        <strong>\addindextobookmarks</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Añade el índice a los marcadores del pdf compilado.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\charafterobjectindex</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Carácter tras cada número de figura, tabla o código en
@@ -2438,6 +2494,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\indexnewpagec</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Forza una nueva página en el índice de códigos fuente.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\indexnewpagee</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Forza una nueva página en el índice de ecuaciones.
                             </div>
                         </div>
                     </li>
@@ -2484,15 +2547,15 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showindex</strong>
+                        <strong>\showappendixsecindex</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la página de índice.</div>
+                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el índice.</div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\showindexofcontents</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Muestra la lista de contenidos.</div>
+                            <div class="config-desc-inner">Muestra la lista de contenidos en el índice.</div>
                         </div>
                     </li>
                 </ul>
@@ -2502,6 +2565,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Configuración del anexo, citas y referencias<a
                         id="config-ref"></a></strong>
                 <ul>
+                    <li class="config-elem">
+                        <strong>\apacitebothers</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Etiqueta usada en <i>(y otros)</i> mediante <i>\shortcite</i>.
+                            </div>
+                        </div>
+                    </li>
                     <li class="config-elem">
                         <strong>\apaciterefnumber</strong>
                         <div class="config-desc">
@@ -2532,6 +2602,13 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Separación entre elementos de las referencias (Estilo <i>apaciteb</i>),
                                 en <i>pt</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\apaciteshowurl</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra las URL en las referencias.
                             </div>
                         </div>
                     </li>
@@ -2628,12 +2705,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\showappendixsectitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Muestra el título de la sección de anexo en el informe.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <div id="stylecitereferences">
                             <strong>\stylecitereferences</strong>
                             <a id="ref-style-config"></a>
@@ -2713,6 +2784,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 valores esperados: <b>none</b> (Ninguno), <b>chap</b> (Capítulo), <b>page</b> &nbsp;(Por
                                 cada página), <b>sec</b> &nbsp;(Sección), <b>ssec</b> &nbsp;(Subsección), <b>sssec</b>
                                 &nbsp;(Sub-subsección), <b>ssssec</b> &nbsp;(Sub-sub-subsección).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\fpremovetopbottomcenter</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Elimina el espacio vertical al centrar las imágenes flotantes
+                                con <i>b!</i> o <i>t!</i>.
                             </div>
                         </div>
                     </li>
@@ -3261,12 +3340,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <strong class="functtitlstyle">Opciones del pdf<a id="config-pdfoptions"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\addindextobookmarks</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Añade el índice a los marcadores del pdf compilado.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\cfgbookmarksopenlevel</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Nivel de los marcadores a mostrar. Valores esperados:
@@ -3606,6 +3679,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     matemáticos.
                 </li>
                 <li>
+                    <strong><a href="https://www.ctan.org/pkg/anyfontsize">anyfontsize</a></strong>: Permite escalar las
+                    fuentes a cualquier tamaño.
+                </li>
+                <li>
                     <strong><a href="https://www.ctan.org/pkg/apacite">apacite</a></strong>: Administración de citas.
                 </li>
                 <li>
@@ -3790,6 +3867,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/rotating">rotating</a></strong>: Permite rotación de
                     objetos.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/scrextend">scrextend</a></strong>: Permite extender el
+                    tamaño de fuente permitido en el documento.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/secdot">secdot</a></strong>: Agrega puntos a los

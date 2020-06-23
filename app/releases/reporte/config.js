@@ -41,6 +41,7 @@ function afterDocumentReady() {}
 // noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {
     // Links de descargas por cada departamento
+    // noinspection JSUnresolvedFunction
     let initAction = $.urlParam('action');
     if (initAction != null) {
         switch (initAction) {
@@ -93,10 +94,12 @@ function writeOtherLinks(verid) {
     $('#downloadtitle-title').html(String.format('Descargas v{0}', verid));
     // noinspection HtmlUnknownTarget
     $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión compacta</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Reporte.min.zip">Descargar</a></div></div>', href_github_project, verid));
+    // noinspection JSCheckFunctionSignatures
     $('.downloadother-compact').on('click', $addTotal);
     for (let i = 0; i < deptos.length; i += 1) {
         // noinspection HtmlUnknownTarget
-        $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link-double"><a href="{3}download/{2}/Template-Reporte-{1}.zip" class="otherdownloadclickeable">Normal</a></div><div class="downloadother-link-double"><a href="{3}download/{2}/Template-Reporte-{1}.min.zip" class="otherdownloadclickeable">Compacta</a></div></div>', deptos[i][0], deptos[i][1], verid, href_github_project));
+        $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Reporte-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', deptos[i][0], verid, href_github_project));
+        // noinspection JSCheckFunctionSignatures
         $(String.format('#downloadentry-{0} .otherdownloadclickeable', deptos[i][1])).on('click', $addTotal);
     }
 

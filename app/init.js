@@ -124,14 +124,11 @@ $(function () {
             try {
                 last_version = json[0].tag_name;
                 last_version_link = json[0].assets[0].browser_download_url;
-                let last_version_link_1 = json[0].assets[1].browser_download_url;
-                var normal_link, compact_link;
+                var normal_link;
                 if (last_version_link.includes('.min')) {
                     normal_link = last_version_link_1;
-                    compact_link = last_version_link;
                 } else {
                     normal_link = last_version_link;
-                    compact_link = last_version_link_1;
                 }
                 console.log(String.format('Última versión template: {0}', last_version));
             } catch (err) {
@@ -175,7 +172,7 @@ $(function () {
                 $('a[name*=leanModal]').leanModal({
                     closeButton: '.modal_close',
                     onopen: function () {
-                        $('#download-button-1file').tooltipster('close');
+                        // $('#download-button-1file').tooltipster('close');
                         $('#autorbanner').tooltipster('close');
                     }
                 });
@@ -191,22 +188,10 @@ $(function () {
 
                 // Se carga los elementos
                 let $dlbutton = $('#download-button');
-                let $d1fbutton = $('#download-button-1file');
 
-                // Se establece la versión en el botón de descargas
-                $d1fbutton.attr('href', compact_link);
-                // noinspection HtmlUnknownTarget
-                $d1fbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
                 $dlbutton.attr('href', normal_link);
                 // noinspection HtmlUnknownTarget
                 $dlbutton.append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
-                $d1fbutton.click(function () {
-                    if (total_downloads !== nan_value) {
-                        total_downloads += 1;
-                        total_downloads_l30 += 1;
-                        update_download_banner(total_downloads);
-                    }
-                });
 
             }
 
@@ -271,6 +256,7 @@ $(function () {
         $('total-download-counter').each(function () {
             this.id.innerHTML = total_downloads;
         });
+        // noinspection JSDeprecatedSymbols
         $('#download-button').click(function () {
             if (total_downloads !== nan_value) {
                 total_downloads += 1;
@@ -410,6 +396,7 @@ $(function () {
                             $('.parallax-mirror').css('width', $(window).outerWidth() + 'px');
                         }
                     };
+                    // noinspection JSCheckFunctionSignatures
                     $(window).on('resize.parallax', backgroundResize);
                     backgroundResize();
                     parallaxloaded = true;
@@ -445,6 +432,7 @@ $(function () {
                             $('#background-page-header').css('width', $(window).width() + 20);
                         }
                     };
+                    // noinspection JSCheckFunctionSignatures
                     $(window).on('resize.backgroundPageHeader', backgroundResize);
 
                     // Aplica blur
@@ -481,6 +469,7 @@ $(function () {
         width: 65,
     });
 
+    // noinspection JSDeprecatedSymbols
     /**
      * ------------------------------------------------------------------------
      * Smooth scrolling al clickear un anchor
@@ -521,14 +510,14 @@ $(function () {
      * Aplica tooltips
      * ------------------------------------------------------------------------
      */
-    $('#download-button-1file').tooltipster({
-        animation: 'grow',
-        content: 'Seleccionar entre distintas versiones',
-        delay: 600,
-        maxWidth: 200,
-        side: 'bottom',
-        theme: 'tooltipster-borderless',
-    });
+    // $('#download-button-1file').tooltipster({
+    //     animation: 'grow',
+    //     content: 'Seleccionar entre distintas versiones',
+    //     delay: 600,
+    //     maxWidth: 200,
+    //     side: 'bottom',
+    //     theme: 'tooltipster-borderless',
+    // });
     // noinspection HtmlUnknownAttribute
     $('#autorbanner').tooltipster({
         animation: 'grow',

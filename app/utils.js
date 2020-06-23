@@ -166,7 +166,7 @@ function fadein_css(idelem, t) {
  * Actualiza el contador de descargas.
  *
  * @function
- * @param {number} total_downloads - Descargas totales
+ * @param {number|string} total_downloads - Descargas totales
  */
 function update_download_banner(total_downloads) {
     $('#total-download-counter-1').html(total_downloads);
@@ -222,6 +222,7 @@ function throwError(error) {
     });
     let backheight = $(window).height() - $('.page-header').innerHeight();
     $html_section.css('height', backheight);
+    // noinspection JSDeprecatedSymbols
     $(window).resize(function () {
         backheight = $(window).height() - $('.page-header').innerHeight();
         $('#main-content-section').css('height', backheight);
@@ -333,7 +334,7 @@ function generateID() {
 function loadInitialPopup() {
     if (initial_popup.display && initial_popup.content.length > 0 && initial_popup.ignore.indexOf(update_download_counter) === -1) {
         console.log(initial_popup.ignore, update_download_counter);
-        // noinspection JSCheckFunctionSignatures
+        // noinspection JSCheckFunctionSignatures,JSUnresolvedFunction
         $.confirm({
             boxWidth: '35%',
             buttons: {
@@ -364,7 +365,7 @@ function loadEncuesta() {
         let $form = String.format('<br><form action=""><div class="form-check"><input type="checkbox" class="form-check-input" id="{0}"><label class="form-check-label" for="{0}">No volver a mostrar este mensaje</label></div></form>', $checkid);
         let $content = String.format(initial_encuesta.content, initial_encuesta.link, $form);
 
-        // noinspection JSCheckFunctionSignatures
+        // noinspection JSCheckFunctionSignatures,JSUnresolvedFunction
         $.confirm({
             boxWidth: '30%',
             buttons: {
