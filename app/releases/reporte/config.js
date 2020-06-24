@@ -93,7 +93,7 @@ function writeOtherLinks(verid) {
     let $contents = $('#downloadother-contents');
     $('#downloadtitle-title').html(String.format('Descargas v{0}', verid));
     // noinspection HtmlUnknownTarget
-    $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión compacta</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Reporte.min.zip">Descargar</a></div></div>', href_github_project, verid));
+    $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Reporte.zip">Descargar</a></div></div>', href_github_project, verid));
     // noinspection JSCheckFunctionSignatures
     $('.downloadother-compact').on('click', $addTotal);
     for (let i = 0; i < deptos.length; i += 1) {
