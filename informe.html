@@ -494,6 +494,16 @@
                                 Añade una imagen encerrada en un recuadro dentro del objeto <b>images</b>.
                             </li>
                             <li>
+                                <strong>\addimageanum</strong><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b>:
+                                Añade una imagen dentro de un objeto <b>images</b> sin leyenda ni numeración.
+                            </li>
+                            <li>
+                                <strong>\addimageanumboxed</strong><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Ancho
+                                de la línea</em><b>}</b>:
+                                Añade una imagen encerrada en un recuadro dentro del objeto <b>images</b> sin leyenda ni
+                                numeración.
+                            </li>
+                            <li>
                                 <strong>\imageshspace</strong><b>{</b><em>Margen</em><b>}</b>:
                                 Añade un margen horizontal dentro del objeto <b>images</b>.
                             </li>
@@ -1359,8 +1369,8 @@ Para usar citas extensas se utiliza <span class="pl-c1">\fullcite</span>{braas}
                         <br/>
                         <b>-</b> <a href="res/guia_basica_referencias_mendeley_v3.pdf">Guía básica referencias Mendeley
                             (v3)</a>. Documento creado por Marcia Paredes A; ilustra detalladamente el proceso necesario
-                        para usar las referencias y configurar el template. Válido tanto para <i>apacite</i> como 
-						<i>natbib</i>.
+                        para usar las referencias y configurar el template. Válido tanto para <i>apacite</i> como
+                        <i>natbib</i>.
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1822,6 +1832,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         un capítulo.
                     </li>
                     <li>
+                        <strong>\newcolumn</strong>: Forza un salto de columna dentro del entorno <i>multicol</i>.
+                    </li>
+                    <li>
                         <strong>\quotes</strong><b>{</b><em>Texto</em><b>}</b>: Inserta un texto entre comillas.
                     </li>
                     <li>
@@ -2093,16 +2106,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\fonturl</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Fuente de los enlaces insertados con \url.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <div id="import-tikz-config">
-                            <strong>\importtikz</strong>
-                            <div class="config-desc">
-                                <div class="config-desc-inner">Importa la librería tikz y los submódulos requeridos para
-                                    añadir compatibilidad con el template.
-                                </div>
                             </div>
                         </div>
                     </li>
@@ -2430,6 +2433,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 en el número de tabla. Valores esperados: <b>none</b>, <b>chap</b> (Capítulo),
                                 <b>sec</b> (Sección), <b>ssec</b> (Subsección), <b>sssec</b> (Sub-subsección),
                                 <b>ssssec</b> (Sub-sub-subsección).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\subcaptionfsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño de fuente de los subcaption, valores típicos a usar:
+                                <i>footnotesize, small, normalsize, large, Large, LARGE, huge, Huge, HUGE</i>.
                             </div>
                         </div>
                     </li>
@@ -2998,6 +3009,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\marginimagetop</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen superior imágenes, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\marginimagemultbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen inferior imágenes múltiples del entorno <i>images</i>,
+                                en centímetros.
                             </div>
                         </div>
                     </li>
@@ -3914,11 +3933,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <strong><a
                             href="http://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/caption/totalcount.pdf">totalcount</a></strong>:
                     Permite contar elementos.
-                </li>
-                <li>
-                    <strong><a href="https://www.ctan.org/pkg/tikz">tikz</a></strong>: Permite dibujar. Se importa con
-                    la configuración <a onclick="bounceConfig('#config-gral','#import-tikz-config');"
-                                        class="javascripthref">\importikz</a>.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/ulem">ulem</a></strong>: Permite cachar, subrayar, etc.
