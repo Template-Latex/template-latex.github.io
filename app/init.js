@@ -126,7 +126,7 @@ $(function () {
                 last_version_link = json[0].assets[0].browser_download_url;
                 var normal_link;
                 if (last_version_link.includes('.min')) {
-                    normal_link = last_version_link_1;
+                    normal_link = json[0].assets[1].browser_download_url;
                 } else {
                     normal_link = last_version_link;
                 }
