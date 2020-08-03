@@ -451,7 +451,8 @@
                                     (opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Posición</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                                     Inserta una imagen dentro del entorno multicols usando todas las columnas
                                     disponibles en la posición superior o inferior de la página. Para controlar la
-                                    posición, se debe usar los valores <i>{top}</i>, o <i>{bottom}</i>.
+                                    posición, se debe usar los valores <i>{bottom}</i>, <i>{fixed2}</i>, <i>{fixed3}</i>,
+                                    <i>{fixed4}</i> ó <i>{top}</i>.
                                 </li>
                                 <li>
                                     <strong>\insertimageboxedmc</strong><b>[</b><em>Label</em>
@@ -459,7 +460,8 @@
                                     de la línea</em><b>}</b><b>{</b><em>Posición</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                                     Inserta una imagen recuadrada dentro del entorno multicols usando todas las columnas
                                     disponibles en la posición superior o inferior de la página. Para controlar la
-                                    posición, se debe usar los valores <i>{top}</i>, o <i>{bottom}</i>.
+                                    posición, se debe usar los valores <i>{bottom}</i>, <i>{fixed2}</i>, <i>{fixed3}</i>,
+                                    <i>{fixed4}</i> ó <i>{top}</i>.
                                 </li>
                             </ul>
                         </div>
@@ -529,7 +531,7 @@
                                     (opcional)<b>]</b><b>{</b><em>Posición</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
                                     Permite insertar múltiples imágenes dentro de un objeto, para ello se hace uso de
                                     las instrucciones <strong>\addimage</strong> y <strong>\addimageboxed</strong>.
-                                    Para controlar la posición, se debe usar los valores <i>{top}</i>, o <i>{bottom}</i>.
+                                    Para controlar la posición, se debe usar los valores <i>{bottom}</i> ó <i>{top}</i>.
                                     Todas las funciones de <i>\begin{images}</i> se pueden utilizar dentro de este
                                     macro.
                                 </li>
@@ -1836,6 +1838,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\newcolumn</strong>: Forza un salto de columna dentro del entorno <i>multicol</i>.
                     </li>
                     <li>
+                        <strong>\newpagemulticol</strong>: Forza un salto de página dentro del entorno <i>multicol</i>.
+                    </li>
+                    <li>
                         <strong>\quotes</strong><b>{</b><em>Texto</em><b>}</b>: Inserta un texto entre comillas.
                     </li>
                     <li>
@@ -2700,6 +2705,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div class="config-desc">
                             <div class="config-desc-inner">Los números de las referencias están encerrados entre
                                 corchetes, si el valor es falso se usan paréntesis.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\refsfontsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño de fuente de las referencias insertadas con el comando
+                                <i>\bibliography{file}</i>.
                             </div>
                         </div>
                     </li>
