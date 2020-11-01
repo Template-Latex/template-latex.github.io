@@ -155,7 +155,6 @@ $(function () {
                     }
                 }
             }
-            update_download_banner(total_downloads);
 
             /**
              * Se añade link estadísticas a banner descargas
@@ -198,8 +197,6 @@ $(function () {
             /**
              * Se muestra descargas y botones con efecto
              */
-            fadein_css('#total-download-counter-1', '0.1s');
-            fadein_css('#total-download-counter-2', '0.1s');
             $('#buttonfile1text').fadeIn('slow');
             $('#buttonfilectext').fadeIn('slow');
 
@@ -249,59 +246,6 @@ $(function () {
         jsonquery.fail(function () { // Se activa error de json
             throwError(errors.cantLoadJson);
         });
-
-        /**
-         * Se actualiza la cantidad de descargas al hacer click
-         */
-        $('total-download-counter').each(function () {
-            this.id.innerHTML = total_downloads;
-        });
-        // noinspection JSDeprecatedSymbols
-        $('#download-button').click(function () {
-            if (total_downloads !== nan_value) {
-                total_downloads += 1;
-                total_downloads_l30 += 1;
-                update_download_banner(total_downloads);
-            }
-        });
-
-        /**
-         * Se actualiza el total de descargas cada n-segundos
-         */
-        if (update_downloads_version) {
-            setInterval(function () {
-                let update_downloads = 0;
-                let update_last_version = '';
-                jsonquery = $.getJSON(href_json_releases, function (json) {
-                    for (let i = 0; i < json.length; i += 1) {
-                        try {
-                            for (let j = 0; j < json[i].assets.length; j += 1) {
-                                update_downloads += parseInt(json[i].assets[j].download_count);
-                            }
-                        } catch (err) {
-                            console.log(String.format('Error al obtener la cantidad de descargas del archivo {0}', json[i].name));
-                        }
-                    }
-                    update_last_version = json[0].tag_name;
-
-                    // Si cambió la versión actual entonces recarga la página
-                    if (update_last_version !== last_version) {
-                        console.log(String.format('Se encontró una nueva versión v{0}, recargando págna', update_last_version));
-                        location.reload();
-                    }
-
-                    // Si existieron nuevas descargas actualiza contador
-                    if (update_downloads > total_downloads_l30) {
-                        let delta_downloads = update_downloads - total_downloads_l30;
-                        let d = new Date();
-                        console.log(String.format('[{1} {2}] Actualizando el contador de descargas, +{0} descargas', delta_downloads, d.toLocaleDateString(), d.toLocaleTimeString()));
-                        total_downloads += delta_downloads;
-                        total_downloads_l30 += delta_downloads;
-                        update_download_banner(total_downloads);
-                    }
-                });
-            }, seconds_update_downloadCounter * 1000);
-        }
     }
 
     /**

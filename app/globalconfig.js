@@ -37,9 +37,7 @@ let otherdownloadsfadetime = 400;   // Tiempo de fade para descargas
 let parallaxloaded = false;         // Indica que parallax ya se cargó
 let pdf_js_href = 'https://latex.ppizarror.com/pdf-version/web/viewer?file=';
 let scrollLock = false;             // Indica que la función $.scrollLock se activó
-let seconds_update_downloadCounter = 60 * 5; // Tiempo de refresco actualización contador descargas
 let stats_href = 'https://latex.ppizarror.com/stats?template=';
-let update_downloads_version = true;
 
 /**
  * Aviso inicial
