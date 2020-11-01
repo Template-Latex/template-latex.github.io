@@ -1514,7 +1514,6 @@ function afterDocumentReady() {
 
 /**
  * Función que se aplica una vez se carga el JSON de las versiones
- * @function
  */
 function afterJSONLoad() {
     // noinspection JSUnresolvedFunction
@@ -1534,8 +1533,8 @@ function afterJSONLoad() {
 }
 
 /**
- * Escribe links de los distintos departamentos
- * @function
+ * Escribe links de los distintos departamentos.
+ *
  * @param {string} verid - ID de la versión
  */
 function writeOtherLinks(verid) {
@@ -1556,22 +1555,12 @@ function writeOtherLinks(verid) {
         ['Facultad de Ciencias Físicas y Matemáticas', 'fcfm'],
         ['Universidad de Chile', 'uchile']
     ];
-    let $addTotal = function () {
-        // noinspection JSIncompatibleTypesComparison
-        if (total_downloads !== nan_value) {
-            total_downloads += 1;
-            total_downloads_l30 += 1;
-            update_download_banner(total_downloads);
-        }
-    };
 
     // Genera el contenido
     let $contents = $('#downloadother-contents');
     $('#downloadtitle-title').html(String.format('Descargas v{0}', verid));
     // noinspection HtmlUnknownTarget
     $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Informe.zip">Descargar</a></div></div>', href_github_project, verid));
-    // noinspection JSCheckFunctionSignatures
-    $('.downloadother-compact').on('click', $addTotal);
     for (let i = 0; i < deptos.length; i += 1) {
         // noinspection HtmlUnknownTarget
         $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Informe-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', deptos[i][0], deptos[i][1], verid, href_github_project));
