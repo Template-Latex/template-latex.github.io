@@ -89,8 +89,6 @@ function writeOtherLinks(verid) {
     for (let i = 0; i < deptos.length; i += 1) {
         // noinspection HtmlUnknownTarget
         $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Tesis-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', deptos[i][0], deptos[i][1], verid, href_github_project));
-        // noinspection JSCheckFunctionSignatures
-        $(String.format('#downloadentry-{0} .otherdownloadclickeable', deptos[i][1])).on('click', $addTotal);
     }
 
 }
