@@ -31,7 +31,6 @@ let cfg_cookie_local = false;
 /**
  * Carga las cookies de la sesión.
  *
- * @function
  * @returns {object} - Cookie de la sesión
  */
 function loadSessionCookies() {
@@ -105,7 +104,6 @@ function loadSessionCookies() {
 /**
  * Guarda el estado de la sesión.
  *
- * @function
  * @returns {boolean} - Indica el estado de la consulta
  */
 function updateSessionCookie() {

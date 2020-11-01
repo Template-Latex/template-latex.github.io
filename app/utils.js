@@ -25,7 +25,6 @@
 /**
  * Genera un número aleatorio entero entre min y max.
  *
- * @function
  * @param {number} min - Mínimo
  * @param {number} max - Máximo
  * @return {number}
@@ -37,7 +36,6 @@ function getRandomInt(min, max) {
 /**
  * Selecciona el texto de un elemento.
  *
- * @function
  * @param {string} elem - Elemento
  */
 function selectAllText(elem) {
@@ -72,7 +70,6 @@ function selectAllText(elem) {
 /**
  * Función para transformar colores, oscurece y aclarece.
  *
- * @function
  * @param {string} color - Color a generar
  * @param {number} percent - Porcentaje de oscurecimiento
  * @return {string}
@@ -91,7 +88,6 @@ function shadeColor2(color, percent) {
 /**
  * Retorna un color random.
  *
- * @function
  * @return {string}
  */
 function getRandomColor() {
@@ -106,7 +102,6 @@ function getRandomColor() {
 /**
  * Retorna un color oscuro random.
  *
- * @function
  * @return {string}
  */
 function getRandomDarkColor() {
@@ -135,7 +130,6 @@ if (!String.format) {
 /**
  * Desactiva cualquier elemento por id.
  *
- * @function
  * @param {string} idelem - ID del elemento
  */
 function hide_element_id(idelem) {
@@ -148,35 +142,8 @@ function hide_element_id(idelem) {
 }
 
 /**
- * Animación fadein css.
- *
- * @function
- * @param {string} idelem - ID del elemento
- * @param {string} t - Segundos
- */
-function fadein_css(idelem, t) {
-    $(idelem).css('animation-name', 'fadeIn');
-    $(idelem).css('animation-iteration-count', 1);
-    $(idelem).css('animation-timing-function', 'ease-in-out');
-    $(idelem).css('animation-duration', t);
-    $(idelem).css('animation-fill-mode', 'forwards');
-}
-
-/**
- * Actualiza el contador de descargas.
- *
- * @function
- * @param {number|string} total_downloads - Descargas totales
- */
-function update_download_banner(total_downloads) {
-    $('#total-download-counter-1').html(total_downloads);
-    $('#total-download-counter-2').html(total_downloads);
-}
-
-/**
  * Efecto de rebote de un elemento.
  *
- * @function
  * @param {string} element - Elemento
  * @param {number} times - Número de veces
  * @param {string} distance - Distancia
@@ -197,7 +164,6 @@ function doBounce(element, times, distance, speed) {
 /**
  * Lanza un error, oculta contenido y muestra un div con información.
  *
- * @function
  * @param {object} error - Texto del error
  */
 function throwError(error) {
@@ -232,7 +198,6 @@ function throwError(error) {
 /**
  * Imprime una excepción en consola.
  *
- * @function
  * @param {object} $e - Excepción
  */
 function throwException($e) {
@@ -242,7 +207,6 @@ function throwException($e) {
 /**
  * Obtiene parámetros de la url.
  *
- * @function
  * @param name
  * @return {*}
  */
@@ -258,7 +222,6 @@ $.urlParam = function (name) {
 /**
  * Retorna verdadero si el objeto no es nulo e indefinido.
  *
- * @function
  * @param {object} obj - Objeto a comprobar
  * @returns {boolean} - Booleano de comprobación
  */
@@ -268,8 +231,6 @@ function notNullUndf(obj) {
 
 /**
  * Escribe los badges de la suite Template-Latex.
- *
- * @function
  */
 function writeBadges() {
     let $badgediv = $('#badgeslistdiv');
@@ -299,7 +260,6 @@ function writeBadges() {
 /**
  * Elige una propiedad random desde un objeto.
  *
- * @function
  * @param obj - Objeto
  * @return {*}
  */
@@ -315,7 +275,6 @@ function pickRandomProperty(obj) {
 /**
  * Genera un string aleatorio.
  *
- * @function
  * @returns {string} - String aleatorio
  */
 function generateID() {
@@ -328,8 +287,6 @@ function generateID() {
 
 /**
  * Ejecuta el popup inicial.
- *
- * @function
  */
 function loadInitialPopup() {
     if (initial_popup.display && initial_popup.content.length > 0 && initial_popup.ignore.indexOf(update_download_counter) === -1) {
@@ -354,8 +311,6 @@ function loadInitialPopup() {
 
 /**
  * Carga el mensaje de encuesta si aplica.
- *
- * @function
  */
 function loadEncuesta() {
     if (initial_encuesta.display && initial_encuesta.link.length > 0 && sessionCookie.encuesta) {
