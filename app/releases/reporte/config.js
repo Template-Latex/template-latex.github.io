@@ -77,6 +77,7 @@ function writeOtherLinks(verid) {
         ['Departamento de Ingeniería Matemática', 'dim'],
         ['Departamento de Ingeniería Mecánica', 'dimec'],
         ['Departamento de Ingeniería Química, Biotecnología y Materiales', 'diqbtm'],
+        ['Departamento de Postgrado y Postítulo', 'dpostgrado'],
         ['Facultad de Ciencias Físicas y Matemáticas', 'fcfm'],
         ['Universidad de Chile', 'uchile']
     ];

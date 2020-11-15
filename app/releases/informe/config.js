@@ -117,10 +117,13 @@ notification['encuesta'] = {
  * Requerimientos adicionales de ciertas portadas
  */
 let portraitRequiresAdditional = {
-    15: '\\headerimageA, \\headerimagescaleA',
+    4: '\\portraitimageF, \\portraitimageparamsF',
+    5: '\\portraitimageG, \\portraitimageparamsG',
+    6: '\\portraitimageH, \\portraitimageparamsH',
+    15: '\\portraitimageA, \\portraitimageparamsA, \\portraitimagerightA, \\portraitimagerightparamsA',
     16: '\\portraitbackgroundimageB, \\portraitbackgroundcolorB',
-    17: '\\portraitimageC, \\portraitimageboxedC, \\portraitimageboxedwidthC, \\portraitimagewidthC',
-    18: '\\portraitimageD, \\portraitimageboxedD, \\portraitimageboxedwidthD, \\portraitimagewidthD',
+    17: '\\portraitimageC, \\portraitimageboxedC, \\portraitimageboxedwidthC, \\portraitimageparamsC',
+    18: '\\portraitimageD, \\portraitimageboxedD, \\portraitimageboxedwidthD, \\portraitimageparamsD',
     20: '\\portraitverticalspaceE'
 };
 
@@ -1552,6 +1555,7 @@ function writeOtherLinks(verid) {
         ['Departamento de Ingeniería Matemática', 'dim'],
         ['Departamento de Ingeniería Mecánica', 'dimec'],
         ['Departamento de Ingeniería Química, Biotecnología y Materiales', 'diqbtm'],
+        ['Departamento de Postgrado y Postítulo', 'dpostgrado'],
         ['Facultad de Ciencias Físicas y Matemáticas', 'fcfm'],
         ['Universidad de Chile', 'uchile']
     ];
