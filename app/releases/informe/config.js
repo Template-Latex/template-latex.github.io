@@ -52,9 +52,9 @@ let totalPortraitStyles = 20; // Estilos totales de portada
  */
 notification['sabiasque'] = {
     '1': 'Existen más de 20 estilos de portada distintos, revisa las configuraciones :)',
-    '2': 'El template está escrito en más de 6k líneas de código en LaTeX',
-    '3': 'Existen más de 15 estilos de header-footer, revisa las configuraciones :)',
-    '4': 'Existen más de 170 configuraciones en el template',
+    '2': 'El template está escrito en más de 7k líneas de código en LaTeX',
+    '3': 'Existen más de 20 estilos de header-footer, revisa las configuraciones :)',
+    '4': 'Existen más de 200 configuraciones en el template',
     '5': 'El template da soporte a más de 40 lenguajes de programación',
     '6': 'Es posible cambiar la fuente del texto, revisa las configuraciones :)',
     '7': 'Es posible cambiar todos los colores del documento, revisa las configuraciones :)',
@@ -1316,7 +1316,7 @@ function afterDocumentReady() {
      * Mostrar librerías cargadas + total
      */
     $('#totalLibCount').html($('#usedLibs').find('li').length);
-    triggerShowContainerChangeTrigger('#showLibsContainer', '#libsUsedContainer', 'Mostrar lista de librerías', 'Ocultar lista de librerías');
+    triggerShowContainerChangeTrigger('#showLibsContainer', '#libsUsedContainer', 'Mostrar lista de librerías utilizadas', 'Ocultar lista de librerías');
 
     /**
      * Motrar funciones matemáticas + total

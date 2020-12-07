@@ -516,14 +516,14 @@ $(function () {
         "exceptionTitle": "Error",
         "maxStack": 5,
         "textcolor": "#ffffff",
-        "timeout": 60 * 1000
+        "timeout": 30 * 1000
     });
 
-    let $throwNotification = function ($text, $persistent, $pos) {
+    let $throwNotification = function ($text, $persistent) {
         if ($text.length === 0) return;
         setTimeout(function () {
             NotificationJS.other($text, {"persistent": $persistent});
-        }, 1000 * (4 + Math.pow($pos + 1, 3)));
+        }, 5000);
     };
 
     // Lanza las configuraciones
@@ -533,11 +533,11 @@ $(function () {
             let $rand = Object.keys(notification[$c[$i]]).randomElement();
             let $text = String.format('Sabías que <b>#{0}</b>:<br>{1}', $rand, notification[$c[$i]][$rand]);
             $text = $text.replace(':)', '😉');
-            $throwNotification($text, false, $i);
+            $throwNotification($text, false);
             continue;
         }
         if (notification[$c[$i]].content.length === 0) continue;
-        $throwNotification(notification[$c[$i]].content, notification[$c[$i]].persistent, $i);
+        $throwNotification(notification[$c[$i]].content, notification[$c[$i]].persistent);
     }
 
     /**

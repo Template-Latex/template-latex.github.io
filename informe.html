@@ -196,7 +196,7 @@
                 </ul>
             </li>
             <li><a href="#links" class="menu-big-entry">Links de interés</a></li>
-            <li><a href="#librerias-utilizadas" class="menu-big-entry">Librerías utilizadas</a></li>
+            <li><a href="#importacion-librerias" class="menu-big-entry">Impotación de librerías</a></li>
             <li id='changelog-menu'><a href="#changelog" class="menu-big-entry">Changelog</a></li>
             <li><a href="#autor" class="menu-big-entry">Autor</a></li>
         </ul>
@@ -3707,11 +3707,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
         </ul>
 
         <!-- Librerías utilizadas -->
-        <h2><a id="librerias-utilizadas" class="anchor" href="#librerias-utilizadas" aria-hidden="true"><span
-                aria-hidden="true" class="octicon octicon-link"></span></a>Librerías utilizadas</h2>
-        En total el template hace uso de <span id="totalLibCount"></span> librerías, cada una es importada en
-        el archivo <a href="https://github.com/Template-Latex/Template-Informe/blob/master/lib/env/imports.tex"
-                      target="_blank" class="javascripthref">lib/env/imports.tex</a>.<br/>
+        <h2><a id="importacion-librerias" class="anchor" href="#importacion-librerias" aria-hidden="true"><span
+                aria-hidden="true" class="octicon octicon-link"></span></a>Importación de librerías</h2>
+        <p>
+            En total el template hace uso de <span id="totalLibCount"></span> librerías. Si necesitas utilizar otra (por
+            ejemplo <b>tikz</b>) éstas se deben importar en el archivo principal (main.tex) luego de la
+            línea <i><span class="pl-c1">\input</span>{template}</i>.
+        </p>
+
         <a id="showLibsContainer" class="javascripthref"></a>
         <div class="codeFunContainer" id="libsUsedContainer">
             <ul class="linkssection" id="usedLibs">
