@@ -45,7 +45,7 @@ let line_docinit = [84]; // Número de línea inicio del documento
 let line_infodocument = [17]; // Número de línea información del documento
 let portraitGallery; // Muestra la galería de portadas
 let totalHfStyles = 16; // Estilos totales en tipo de header-footer
-let totalPortraitStyles = 20; // Estilos totales de portada
+let totalPortraitStyles = 21; // Estilos totales de portada
 
 /**
  * Añade notificaciones
@@ -124,7 +124,8 @@ let portraitRequiresAdditional = {
     16: '\\portraitbackgroundimageB, \\portraitbackgroundcolorB',
     17: '\\portraitimageC, \\portraitimageboxedC, \\portraitimageboxedwidthC, \\portraitimageparamsC',
     18: '\\portraitimageD, \\portraitimageboxedD, \\portraitimageboxedwidthD, \\portraitimageparamsD',
-    20: '\\portraitverticalspaceE'
+    20: '\\portraitverticalspaceE',
+    21: '\\portraitimageI, \\portraitimageboxedI, \\portraitimageboxedwidthI, \\portraitimageparamsI'
 };
 
 // Lista de códigos fuente
@@ -1200,7 +1201,7 @@ function afterDocumentReady() {
         for (let i = 1; i <= totalPortraitStyles; i += 1) {
             req_add = '';
             if (portraitRequiresAdditional[i] !== undefined) {
-                req_add = '<br>Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>.';
+                req_add = '<br>Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>';
             }
             items.push({
                 src: String.format('res/images/portada{0}.png', i),

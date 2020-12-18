@@ -480,7 +480,8 @@
                             <div class="highlight highlight-text-tex">
                                         <pre>
 <span class="pl-c1">\begin</span>{<span class="pl-e">images</span>}<b>[</b>\<span class="pl-c1">label</span>{imagenmultiple}<b>]{</b>Ejemplo de imagen múltiple.<b>}</b>
-    \<span class="pl-e">addimage</span><b>{</b>ejemplos/test-image<b>}{</b>width=6.5cm<b>}{</b>Ciudad<b>}</b>
+    \<span class="pl-e">addimage</span><b>[</b>\<span
+                                                class="pl-c1">label</span>{subimagen}<b>]{</b>ejemplos/test-image<b>}{</b>width=6.5cm<b>}{</b>Ciudad<b>}</b>
     \<span class="pl-e">addimage</span><b>{</b>ejemplos/test-image-wrap<b>}{</b>width=5cm<b>}{</b>Apolo<b>}</b>
     \<span class="pl-e">addimageboxed</span><b>{</b>ejemplos/test-image-wrap<b>}{</b>width=5cm<b>}{</b>0.5<b>}{</b>Apolo recuadrado<b>}</b>
     \<span class="pl-e">addimage</span><b>{</b>ejemplos/test-image<b>}{</b>width=12cm<b>}{</b>Ciudad más grande<b>}</b>
@@ -490,35 +491,35 @@
                         </blockquote>
                         <ul>
                             <li>
-                                <strong>\addimage</strong><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                                Añade una imagen dentro de un objeto <b>images</b>.
+                                <strong>\addimage</strong><b>[</b><em>Label</em>(opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
+                                Añade una imagen dentro de un objeto images.
                             </li>
                             <li>
-                                <strong>\addimageboxed</strong><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Ancho
+                                <strong>\addimageboxed</strong><b>[</b><em>Label</em>(opcional)<b>]</b><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Ancho
                                 de la línea</em><b>}</b><b>{</b><em>Leyenda</em><b>}</b>:
-                                Añade una imagen encerrada en un recuadro dentro del objeto <b>images</b>.
+                                Añade una imagen encerrada en un recuadro dentro del objeto images.
                             </li>
                             <li>
                                 <strong>\addimageanum</strong><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b>:
-                                Añade una imagen dentro de un objeto <b>images</b> sin leyenda ni numeración.
+                                Añade una imagen dentro de un objeto images sin leyenda ni numeración.
                             </li>
                             <li>
                                 <strong>\addimageanumboxed</strong><b>{</b><em>Archivo</em><b>}</b><b>{</b><em>Parámetros</em><b>}</b><b>{</b><em>Ancho
                                 de la línea</em><b>}</b>:
-                                Añade una imagen encerrada en un recuadro dentro del objeto <b>images</b> sin leyenda ni
+                                Añade una imagen encerrada en un recuadro dentro del objeto images sin leyenda ni
                                 numeración.
                             </li>
                             <li>
                                 <strong>\imageshspace</strong><b>{</b><em>Margen</em><b>}</b>:
-                                Añade un margen horizontal dentro del objeto <b>images</b>.
+                                Añade un margen horizontal dentro del objeto images.
                             </li>
                             <li>
                                 <strong>\imagesnewline</strong>:
-                                Añade un salto de línea dentro del objeto <b>images</b>.
+                                Añade un salto de línea dentro del objeto images.
                             </li>
                             <li>
                                 <strong>\imagesvspace</strong><b>{</b><em>Margen</em><b>}</b>:
-                                Añade un margen vertical dentro del objeto <b>images</b>.
+                                Añade un margen vertical dentro del objeto images.
                             </li>
                         </ul>
                     </li>
@@ -1255,6 +1256,19 @@ int main(){
                                                                 class="javascripthref">documentación</a> de
                             la librería listings.
                         </p>
+                    </li>
+                </ul>
+                <hr class="style1">
+                <ul>
+                    <li><strong>\inlinesourcecode</strong><b>{</b><em>Lenguaje</em><b>}</b>:
+                        Crea un código inline (de una sola línea dentro de un párrafo). Tras el llamado de esta función
+                        deben usarse dos carácteres cualesquiera diferentes a los del syntax, dentro de dichos
+                        carácteres irá el código fuente (Ver ejemplos).
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\inlinesourcecode</span><b>{</b>python<b>}!</b>sigma = ['00', '11', 01']<b>!</b><br><span class="pl-e">\inlinesourcecode</span><b>{</b>javascript<b>}#</b>let var = Object.keys(foo);<b>#</b></pre>
+                            </div>
+                        </blockquote>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -2212,7 +2226,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                             <div class="config-desc-inner">Estilo de la portada.
                                 <b>Existen <a id="portraitTrigger" class="javascripthref"></a></b>.<br>
                                 <i>Algunas portadas requieren configuraciones adicionales, dentro del archivo de
-                                    template.tex</i>.
+                                    template.tex, se recomienda buscar por el nombre exacto dentro del archivo</i>.
                             </div>
                         </div>
                     </li>
@@ -2340,6 +2354,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                             <div class="config-desc-inner">Formato de número para las tablas, valores posibles:
                                 <b>arabic</b>, <b>alph</b>, <b>Alph</b>, <b>roman</b>, <b>Roman</b> &nbsp;<a
                                         href="http://www.peteryu.ca/tutorials/publishing/latex_captions#set_caption_label_numbering_style">(documentación)</a>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionsubchar</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Carácter entre el número de la figura y la subfigura. Por
+                                ejemplo <i>3.a</i>.
                             </div>
                         </div>
                     </li>
