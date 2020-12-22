@@ -60,9 +60,9 @@ notification['sabiasque'] = {
     '7': 'Es posible cambiar todos los colores del documento, revisa las configuraciones :)',
     '8': 'Es posible cambiar los tamaños de todos los textos del documento, revisa las configuraciones :)',
     '9': 'El template se viene desarrollando desde el año 2016',
-    '10': 'Existe tanto template informe, template auxiliares, template controles y professional-cv',
+    '10': 'Quizás una de las cosas más poderosas de LaTeX son los macros, puedes automatizar cualquier cosa mediante el uso de funciones, de hecho, casi todo el template es un gran conjunto de macros y configuraciones',
     '11': 'El índice puede tener distintos tipos de orden, revisa las configuraciones :)',
-    // '12': 'El autor @ppizarror les quiere mucho',
+    '12': 'Puedes utilizar el template para generar reportes automatizados, sólo basta generar el .tex con alguna herramienta como python y utilizar pdf2latex para compilar',
     '13': 'Con tikz puedes generar complejas figuras utilizando dibujo vectorial (svg)',
     '14': 'El manual online sólo da soporte a la última versión del template',
     '15': 'Aún existen muchos bugs, anímate a reportar alguno :)',
@@ -103,8 +103,6 @@ notification['sabiasque'] = {
     '50': 'La monotonía aburre a cualquiera, prueba a darle sabor al template jugando con las configuraciones, por ejemplo con una portada nueva',
     '51': 'En cada nueva versión se verifica que el tiempo que tarda en compilar el template no suba, puedes revisar el tiempo promedio de compilación (del archivo de ejemplo) en <a href="https://latex.ppizarror.com/stats/?template=Informe" target="_blank">https://latex.ppizarror.com/stats/?template=Informe</a>',
     '52': 'Si programar no es lo tuyo pero aún así quieres aportar al desarrollo del template puedes sugerir cambios en el manual online, descripción de las configuraciones o notificar errores :)',
-    '53': 'Quizás una de las cosas más poderosas de LaTeX son los macros, puedes automatizar cualquier cosa mediante el uso de funciones, de hecho, casi todo el template es un gran conjunto de macros y configuraciones',
-    '54': 'Puedes utilizar el template para generar reportes automatizados, sólo basta generar el .tex con alguna herramienta como python y utilizar pdf2latex para compilar',
 };
 
 // ¿Te gustaría participar de la encuesta de uso del template?<br><a href="https://forms.gle/xf9AEYbSuzGtqvWS6" target="_blank">https://forms.gle/xf9AEYbSuzGtqvWS6</a>
