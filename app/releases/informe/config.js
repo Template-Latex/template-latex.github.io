@@ -944,6 +944,46 @@ let cmd_sourcecode = {
         'end\n' +
         '\\end{sourcecode}',
 
+    'rust': '\\begin{sourcecode}{rust}{Ejemplo en Rust.}\n' +
+        'use std::rc::Rc;\n' +
+        '\n' +
+        '/// upside-down tree with a designated position (the *stack pointer*)\n' +
+        '/// and *nodes* of type `A`.\n' +
+        '#[derive(Clone, Debug)]\n' +
+        'pub struct TreeStack<A> {\n' +
+        '\tparent: Option<(usize, Rc<TreeStack<A>>)>,\n' +
+        '\tvalue: A,\n' +
+        '\tchildren: Vec<Option<Rc<TreeStack<A>>>>,\n' +
+        '}\n' +
+        '\n' +
+        'impl<A> TreeStack<A> {\n' +
+        '\t/// Creates a new `TreeStack<A>` with root label `a`.\n' +
+        '\tpub fn new(a: A) -> Self {\n' +
+        '\t\tTreeStack { value: a, children: Vec::new(), parent: None }\n' +
+        '\t}\n' +
+        '\t\n' +
+        '\t/// Applies a function `FnMut(&A) -> B` to every node in a `TreeStack<A>`.\n' +
+        '\tpub fn map<F, B>(&self, f: &mut F) -> TreeStack<B>\n' +
+        '\twhere F: FnMut(&A) -> B,\n' +
+        '\t{\n' +
+        '\t\tlet new_value = f(&self.value);\n' +
+        '\t\tlet new_parent = match self.parent {\n' +
+        '\t\t\tSome((i, ref p)) => Some((i, Rc::new(p.map(f)))),\n' +
+        '\t\t\tNone => None,\n' +
+        '\t\t};\n' +
+        '\t\tlet new_children = self.children\n' +
+        '\t\t.iter()\n' +
+        '\t\t.map(|o| o.clone().map(|v| Rc::new(v.map(f))))\n' +
+        '\t\t.collect();\n' +
+        '\t\tTreeStack {\n' +
+        '\t\t\tparent: new_parent,\n' +
+        '\t\t\tvalue: new_value,\n' +
+        '\t\t\tchildren: new_children\n' +
+        '\t\t}\n' +
+        '\t}\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
     'scala': '\\begin{sourcecode}{scala}{Código en scala.}\n' +
         'object Test {\n' +
         '\tdef main(args: Array[String]) {\n' +
