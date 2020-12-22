@@ -1018,7 +1018,7 @@ let cmd_sourcecode = {
         '   set n 0\n' +
         '   while {![eof $fp]} {\n' +
         '       set bytes [read $fp 16]\n' +
-        '       regsub -all {[^\x20-\xfe]} $bytes . ascii\n' +
+        '       regsub -all {[^ -p]} $bytes . ascii\n' +
         '       puts [format "%04X %-48s %-16s" $n [hexdump $bytes] $ascii]\n' +
         '       incr n 16\n' +
         '   }\n' +
