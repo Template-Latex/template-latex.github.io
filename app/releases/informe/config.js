@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017-2020 Pablo Pizarro R.
+ Copyright 2017-2021 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -212,6 +212,35 @@ let cmd_sourcecode = {
         'git doge ssh cp cd\n' +
         '\\end{sourcecode}',
 
+    'basic': '\\begin{sourcecode}{basic}{Ejemplo en Basic.}\n' +
+        'REM QuickBASIC example\n' +
+        '\n' +
+        'REM Forward declaration - allows the main code to call a\n' +
+        'REM    subroutine that is defined later in the source code\n' +
+        'DECLARE SUB PrintSomeStars (StarCount!)\n' +
+        '\n' +
+        'REM Main program follows\n' +
+        'INPUT "What is your name: ", UserName$\n' +
+        'PRINT "Hello "; UserName$\n' +
+        'DO\n' +
+        '   INPUT "How many stars do you want: ", NumStars\n' +
+        '   CALL PrintSomeStars(NumStars)\n' +
+        '   DO\n' +
+        '      INPUT "Do you want more stars? ", Answer$\n' +
+        '   LOOP UNTIL Answer$ <> ""\n' +
+        '   Answer$ = LEFT$(Answer$, 1)\n' +
+        'LOOP WHILE UCASE$(Answer$) = "Y"\n' +
+        'PRINT "Goodbye "; UserName$\n' +
+        'END\n' +
+        '\n' +
+        'REM subroutine definition\n' +
+        'SUB PrintSomeStars (StarCount)\n' +
+        '   REM This procedure uses a local variable called Stars$\n' +
+        '   Stars$ = STRING$(StarCount, "*")\n' +
+        '   PRINT Stars$\n' +
+        'END SUB\n' +
+        '\\end{sourcecode}',
+
     'c': '\\begin{sourcecode}[]{c}{Codigo en c.}\n' +
         '#include <stdio.h>\n' +
         'int main(){\n' +
@@ -228,6 +257,27 @@ let cmd_sourcecode = {
         '\t}\n' +
         '\treturn 0;\n' +
         '}\n' +
+        '\\end{sourcecode}',
+
+    'cobol': '\\begin{sourcecode}{cobol}{Ejemplo en Cobol.}\n' +
+        '*> Terminator period ("implicit termination")\n' +
+        'IF invalid-record\n' +
+        '    IF no-more-records\n' +
+        '        NEXT SENTENCE\n' +
+        '    ELSE\n' +
+        '        READ record-file\n' +
+        '            AT END SET no-more-records TO TRUE.\n' +
+        '\n' +
+        '*> Scope terminators ("explicit termination")\n' +
+        'IF invalid-record\n' +
+        '    IF no-more-records\n' +
+        '        CONTINUE\n' +
+        '    ELSE\n' +
+        '        READ record-file\n' +
+        '            AT END SET no-more-records TO TRUE\n' +
+        '        END-READ\n' +
+        '    END-IF\n' +
+        'END-IF\n' +
         '\\end{sourcecode}',
 
     'cpp': '\\begin{sourcecode}{cpp}{Suma en C++.}\n' +
@@ -464,6 +514,38 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
+    'gnuplot': '\\begin{sourcecode}{gnuplot}{Ejemplo en Gnuplot.}\n' +
+        'set terminal epslatex   \n' +
+        'set output \'mplot.tex\'   \n' +
+        'set xlabel "Avg. No. of demand duration (slot) "   \n' +
+        'set ylabel "Acceptence rate (%)"   \n' +
+        'set grid xtics ytics   \n' +
+        'set key right bottom   \n' +
+        '\n' +
+        'set style line 1 lw 1 lc 3 pt 7  \n' +
+        'set style line 2 lw 1 lc 1 pt 5  \n' +
+        'set style line 3 lw 1 lc 0 pt 9  \n' +
+        'set style line 4 lw 1 lc 4 pt 3  \n' +
+        '\n' +
+        'plot "AcceptanceRate_Ser.txt" using 2:4:5:6 title "NoMig" with errorlines linestyle 1,\\ \n' +
+        '     "AcceptanceRate_Ser.txt" using 2:7:8:9 title "FlowMig" with errorlines linestyle 2 ,\\ \n' +
+        '      "AcceptanceRate_Ser.txt" using 2:10:11:12 title "VMMig" with errorlines linestyle 3, \\ \n' +
+        '     "AcceptanceRate_Ser.txt" using 2:13:14:15 title "NoRis" with errorlines linestyle 4\n' +
+        '\\end{sourcecode}',
+
+    'go': '\\begin{sourcecode}{go}{Ejemplo en Go.}\n' +
+        '// Package main is, tautologically, the main package.\n' +
+        'package main\n' +
+        '\n' +
+        'import "fmt"\n' +
+        '\n' +
+        'type s struct{}\n' +
+        '\n' +
+        'func main() {\n' +
+        '\tfmt.Println("Hello, world!")\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
     'haskell': '\\begin{sourcecode}{haskell}{Ejemplo en Haskell.}\n' +
         '-- Type annotation (optional)\n' +
         'fib :: Int -> Integer\n' +
@@ -663,6 +745,21 @@ let cmd_sourcecode = {
         'od: od: od: \n' +
         'nops(L);  \n' +
         'L;\n' +
+        '\\end{sourcecode}',
+
+    'mathematica': '\\begin{sourcecode}{mathematica}{Ejemplo en Mathematica.}\n' +
+        'Block[\n' +
+        ' {region=DiscretizeRegion[Polygon[{{0,0},{-1/2,Sqrt[3]/2},{1/2,Sqrt[3]/2}}]]},\n' +
+        ' ContourPlot[\n' +
+        '  2 Cos[4 Pi x] Sin[(4 Pi y)/Sqrt[3]] - Sin[(8 Pi y)/Sqrt[3]],\n' +
+        '  {x,y} %*$\\in$*) region,\n' +
+        '  PlotPoints ->70,\n' +
+        '  Contours ->10,\n' +
+        '  AspectRatio ->Automatic,\n' +
+        '  FrameLabel ->{"x","y"},\n' +
+        '  PlotLabel ->"Excited state of the equilateral triangle"\n' +
+        ' ]\n' +
+        ']\n' +
         '\\end{sourcecode}',
 
     'matlab': '\\begin{sourcecode}[\\label{codigo-matlab}]{matlab}{Ejemplo en Matlab.}\n' +
@@ -886,6 +983,18 @@ let cmd_sourcecode = {
         'Elemento E6: 137.6807       COMPRESION\n' +
         '\\end{sourcecode}',
 
+    'postscript': '\\begin{sourcecode}{postscript}{Ejemplo en PostScript.}\n' +
+        '%!PS\n' +
+        ' /Courier             % name the desired font\n' +
+        ' 20 selectfont        % choose the size in points and establish \n' +
+        '                      % the font as the current one\n' +
+        ' 72 500 moveto        % position the current point at \n' +
+        '                      % coordinates 72, 500 (the origin is at the \n' +
+        '                      % lower-left corner of the page)\n' +
+        ' (Hello world!) show  % stroke the text in parentheses\n' +
+        ' showpage             % print all on the page\n' +
+        '\\end{sourcecode}',
+
     'pseudocode': '\\begin{sourcecode}{pseudocode}{Algoritmo.}\n' +
         'input: int N, int D\n' +
         'output: int\n' +
@@ -915,6 +1024,28 @@ let cmd_sourcecode = {
         '\tnum_genre <- data[data$genre == genre, -c(1:4)]\n' +
         '\tcorr_genre <- cor(num_genre)\n' +
         '}\n' +
+        '\\end{sourcecode}',
+    'racket': '\\begin{sourcecode}{racket}{Ejemplo en Racket.}\n' +
+        '#lang racket/gui\n' +
+        '\n' +
+        ';; let\'s play a guessing game\n' +
+        '\n' +
+        '(define frame (new frame% [label "Guess"]))\n' +
+        '\n' +
+        '(define secret (random 5))\n' +
+        '(define ((check i) btn evt)\n' +
+        '  (define found? (if (= i secret) "Yes" "No"))\n' +
+        '  (message-box "?" found?)\n' +
+        '  (when (= i secret)\n' +
+        '    (send frame show #false)))\n' +
+        '\n' +
+        '(for ([i (in-range 5)])\n' +
+        '   (new button%\n' +
+        '        [label (~a i)]\n' +
+        '        [parent frame]\n' +
+        '        [callback (check i)]))\n' +
+        '\n' +
+        '(send frame show #t)\n' +
         '\\end{sourcecode}',
     'ruby': '\\begin{sourcecode}[]{ruby}{Ejemplo con ruby.}\n' +
         'class DataFile < ActiveRecord::Base\n' +
@@ -1009,6 +1140,22 @@ let cmd_sourcecode = {
         '\t\t\t\t\t(loop (read-char p))\n' +
         '\t\t\t\t\t\'()))))\n' +
         '\t\t\tc))))\n' +
+        '\\end{sourcecode}',
+
+    'swift': '\\begin{sourcecode}{swift}{Ejemplo en Swift.}\n' +
+        '// This function passes the result of the first closure or function to another and returns its result.\n' +
+        'func b(closure a: () -> Int, anotherClosure: (Int) -> Int) -> Int {\n' +
+        '    return anotherClosure(a())\n' +
+        '}\n' +
+        '\n' +
+        '// With no trailing closures\n' +
+        'a(closure: {return 1}, anotherClosure: {x in return x + 1})\n' +
+        '\n' +
+        '// With 1 trailing closure\n' +
+        'a(closure: {return 1}) {x in return x + 1})\n' +
+        '\n' +
+        '// With 2 trailing closures\n' +
+        'a {return 1} anotherClosure: {x in return x + 1}\n' +
         '\\end{sourcecode}',
 
     'tcl': '\\begin{sourcecode}[\\label{ejemplo-tcl}]{tcl}{Código en TCL.}\n' +
