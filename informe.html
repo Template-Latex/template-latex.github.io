@@ -2257,6 +2257,23 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\graphicxdraft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Activa el modo boceto (draft) del documento, lo que la carga
+                                de las imágenes de deshabilita, escribiendo un recuadro con el nombre del archivo, pero
+                                conservando la geometría; útil para acelerar el proceso de compilación durante la fase
+                                de desarrollo del documento.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\importtikz</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Importa la librería tikz sin parámetros adicionales.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\pointdecimal</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Los números decimales se muestran con punto en vez de con
@@ -2283,6 +2300,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\predocresetpagenumber</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">El número de la página se resetea tras el índice.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\showlayoutlines</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Muestra las líneas del layout de la página, útil para revisar
+                                dimensiones, márgenes o disposiciones particulares de la geometría del documento.
                             </div>
                         </div>
                     </li>
@@ -2323,15 +2348,15 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="config-elem">
                         <strong>\hfwidthcourse</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño máximo del curso en header-footer como % del
-                                ancho de la página.
+                            <div class="config-desc-inner">Tamaño máximo del curso en header-footer como porcentaje
+                                del ancho de la página.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\hfwidthtitle</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño máximo del título en header-footer como %
+                            <div class="config-desc-inner">Tamaño máximo del título en header-footer como porcentaje
                                 del ancho de la página.
                             </div>
                         </div>
@@ -3945,6 +3970,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/datetime">datetime</a></strong>: Fechas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/draftfigure">draftfigure</a></strong>: Modo draft en
+                    imágenes.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/enumerate">enumitem</a></strong>: Permite enumerar ítemes.
