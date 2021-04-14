@@ -1614,9 +1614,9 @@ function afterDocumentReady() {
      */
     $('.fontsrc').each(function () {
         let href = $(this).attr('href');
-        if (href.indexOf('http://www.tug.dk') !== -1) {
+        if (href.indexOf('https://tug.org/') !== -1) {
             let img = href.split('/')[4];
-            img = href + img + '-1.png';
+            img = href + img + '-1.svg';
 
             // noinspection HtmlUnknownTarget
             $(this).tooltipster({
