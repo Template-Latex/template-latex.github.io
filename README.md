@@ -10,6 +10,7 @@
 <a href="https://github.com/Template-Latex/Template-Auxiliares/"><img alt="Template-Auxiliares" src="https://latex.ppizarror.com/res/badges/auxiliares.svg" /></a>
 <a href="https://github.com/Template-Latex/Template-Controles/"><img alt="Template-Controles" src="https://latex.ppizarror.com/res/badges/controles.svg" /></a>
 <a href="https://github.com/Template-Latex/Template-Informe/"><img alt="Template-Informe" src="https://latex.ppizarror.com/res/badges/informe.svg" /></a>
+<a href="https://github.com/Template-Latex/Template-Presentacion/"><img alt="Template-Presentacion" src="https://latex.ppizarror.com/res/badges/presentacion.svg" /></a>
 <a href="https://github.com/Template-Latex/Template-Reporte/"><img alt="Template-Reporte" src="https://latex.ppizarror.com/res/badges/reporte.svg" /></a>
 <a href="https://github.com/Template-Latex/Template-Tesis/"><img alt="Template-Tesis" src="https://latex.ppizarror.com/res/badges/tesis.svg" /></a>
 <a href="https://github.com/Template-Latex/Professional-CV/"><img alt="Professional-CV" src="https://latex.ppizarror.com/res/badges/professionalcv.svg" /></a>
@@ -23,6 +24,6 @@ Repositorio que contiene la página web de toda la familia de templates
 
 Este proyecto está licenciado bajo la licencia MIT [https://opensource.org/licenses/MIT]
 
-
 ## Autor
+
 <a href="https://ppizarror.com" title="ppizarror">Pablo Pizarro R.</a> | 2016 - 2021
