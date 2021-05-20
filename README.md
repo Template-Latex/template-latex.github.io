@@ -5,7 +5,6 @@
 <p align="center">Familia de templates en LaTeX para múltiples propósitos</p>
 <div align="center"><a href="https://ppizarror.com"><img alt="@ppizarror" src="https://latex.ppizarror.com/res/badges/autor.svg" /></a>
 <a href="https://opensource.org/licenses/MIT/"><img alt="Licencia MIT" src="https://latex.ppizarror.com/res/badges/licenciamit.svg" /></a>
-<a href="https://gitter.im/Template-Latex/Lobby"><img alt="Chat" src="https://latex.ppizarror.com/res/badges/chat.svg" /></a>
 <br>
 <a href="https://github.com/Template-Latex/Template-Auxiliares/"><img alt="Template-Auxiliares" src="https://latex.ppizarror.com/res/badges/auxiliares.svg" /></a>
 <a href="https://github.com/Template-Latex/Template-Controles/"><img alt="Template-Controles" src="https://latex.ppizarror.com/res/badges/controles.svg" /></a>
