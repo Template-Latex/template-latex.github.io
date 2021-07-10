@@ -1699,6 +1699,13 @@ function afterDocumentReady() {
      */
     $addExample('example-references', '<img src="res/images/ex-referencias.PNG" alt="" class="imageCodeExample" />');
 
+    /**
+     * Ejemplos de tablas
+     */
+    $addExample('table-style-c', '<img src="res/images/tabla_c.PNG" alt="" class="imageCodeExample" />');
+    $addExample('table-style-l', '<img src="res/images/tabla_l.PNG" alt="" class="imageCodeExample" />');
+    $addExample('table-style-r', '<img src="res/images/tabla_r.PNG" alt="" class="imageCodeExample" />');
+
 }
 
 /**

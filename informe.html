@@ -173,6 +173,7 @@
                     <li><a href="#hlp-annex" class="menu-little-entry">Insertar anexos</a></li>
                     <li><a href="#hlp-ref" class="menu-little-entry">Añadir referencias</a></li>
                     <li><a href="#hlp-math" class="menu-little-entry">Expresiones matemáticas</a></li>
+                    <li><a href="#hlp-tables" class="menu-little-entry">Estilo columnas en tablas</a></li>
                     <li><a href="#hlp-other" class="menu-little-entry">Otras funciones</a></li>
                 </ul>
             </li>
@@ -1898,6 +1899,124 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="li-code-parent">
+                <strong class="functtitlstyle">Estilo columnas en tablas <a id="hlp-tables"></a></strong>
+                <p class="justified-text">
+                    El template ofrece diferentes estilos de columnas, adicionales a los que ya trae incorporado Latex.
+                    Entre ellas, se destacan columnas centradas, alineadas a la izquierda y la derecha, con diferentes
+                    posiciones y colores. <b>Los estilos requieren del ancho de la columna.</b><br><br>
+
+                    Todas las columnas poseen la versión con fondo de color, por ejemplo, si una columna tiene nombre
+                    <strong>X</strong>, la columna <strong>\XColor</strong> acepta un argumento de color, como se
+                    ilustra
+                    en los ejemplos.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Columnas centradas</strong>: Se ofrecen los siguientes estilos:
+                        <ul>
+                            <li><strong>C</strong>: Columna centrada horizontal y verticalmente.</li>
+                            <li><strong>P</strong>: Columna centrada horizontal y tope de celda alineado verticalmente.
+                            </li>
+                            <li><strong>B</strong>: Columna centrada horizontal y piso de celda alineado verticalmente.
+                            </li>
+                        </ul>
+                        <blockquote id="table-style-c">
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-c1">\begin</span>{table}[H]
+    <span class="pl-c1">\centering</span>
+    <span class="pl-c1">\caption</span>{Columnas centradas.}
+    <span class="pl-c1">\begin</span>{tabular}{| c | <span class="pl-e">C</span>{2cm} | <span
+                                            class="pl-e">\CColor</span>{green!20}{2cm} | <span class="pl-e">P</span>{2.5cm} | <span
+                                            class="pl-e">B</span>{3cm} |}
+        <span class="pl-c1">\hline</span>
+        c <span class="pl-c1">&</span> C <span class="pl-c1">&</span> CColor <span class="pl-c1">&</span> P <span
+                                            class="pl-c1">&</span> B <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+        1 <span class="pl-c1">&</span> 2 <span class="pl-c1">&</span> 3 <span class="pl-c1">&</span> 4 <span
+                                            class="pl-c1">&</span> 5 <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+        Centrado sin multi-líneas <span class="pl-c1">&</span> Centrado con ancho fijo <span class="pl-c1">&</span> Centrado con ancho fijo
+        y color <span class="pl-c1">&</span> Tope párrafo alineado con centro de línea <span class="pl-c1">&</span> Piso párrafo alineado
+        con centro de línea <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+    <span class="pl-c1">\end</span>{tabular}
+<span class="pl-c1">\end</span>{table}</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                </ul>
+                <hr class="style1">
+                <ul>
+                    <li>
+                        <strong>Columnas alineadas a la izquierda</strong>: Se ofrecen los siguientes estilos:
+                        <ul>
+                            <li><strong>L</strong>: Columna izquierda y verticalmente alineada.</li>
+                            <li><strong>T</strong>: Columna izquierda y tope de celda alineado verticalmente.</li>
+                            <li><strong>F</strong>: Columna izquierda y piso de celda alineado verticalmente.</li>
+                        </ul>
+                        <blockquote id="table-style-l">
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-c1">\begin</span>{table}[H]
+    <span class="pl-c1">\centering</span>
+    <span class="pl-c1">\caption</span>{Columnas con texto a la izquierda.}
+    <span class="pl-c1">\begin</span>{tabular}{| l | <span class="pl-e">L</span>{2cm} | <span
+                                            class="pl-e">\LColor</span>{lgray}{2cm} | <span class="pl-e">T</span>{2.5cm} | <span
+                                            class="pl-e">F</span>{3cm} |}
+        <span class="pl-c1">\hline</span>
+        l <span class="pl-c1">&</span> L <span class="pl-c1">&</span> LColor <span class="pl-c1">&</span> T <span
+                                            class="pl-c1">&</span> F <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+        1 <span class="pl-c1">&</span> 2 <span class="pl-c1">&</span> 3 <span class="pl-c1">&</span> 4 <span
+                                            class="pl-c1">&</span> 5 <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+        Izquierda sin multi-líneas <span class="pl-c1">&</span> Izquierda con ancho fijo <span class="pl-c1">&</span> Izquierda con ancho fijo
+        y color <span class="pl-c1">&</span> Tope párrafo alineado con centro de línea <span class="pl-c1">&</span> Piso párrafo alineado
+        con centro de línea <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+    <span class="pl-c1">\end</span>{tabular}
+<span class="pl-c1">\end</span>{table}</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                </ul>
+                <hr class="style1">
+                <ul>
+                    <li>
+                        <strong>Columnas derechas</strong>: Se ofrecen los siguientes estilos:
+                        <ul>
+                            <li><strong>R</strong>: Columna derecha y verticalmente alineada.</li>
+                            <li><strong>H</strong>: Columna derecha y tope de celda alineado verticalmente.
+                            </li>
+                            <li><strong>G</strong>: Columna derecha y piso de celda alineado verticalmente.
+                            </li>
+                        </ul>
+                        <blockquote id="table-style-r">
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-c1">\begin</span>{table}[H]
+    <span class="pl-c1">\centering</span>
+    <span class="pl-c1">\caption</span>{Columnas con texto a la derecha.}
+    <span class="pl-c1">\begin</span>{tabular}{| r | <span class="pl-e">R</span>{2cm} | <span
+                                            class="pl-e">\RColor</span>{red!10}{2cm} | <span class="pl-e">H</span>{2.5cm} | <span
+                                            class="pl-e">G</span>{3cm} |}
+        <span class="pl-c1">\hline</span>
+        r <span class="pl-c1">&</span> R <span class="pl-c1">&</span> RColor <span class="pl-c1">&</span> H <span
+                                            class="pl-c1">&</span> G <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+        1 <span class="pl-c1">&</span> 2 <span class="pl-c1">&</span> 3 <span class="pl-c1">&</span> 4 <span
+                                            class="pl-c1">&</span> 5 <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+        Derecha sin multi-líneas <span class="pl-c1">&</span> Derecha con ancho fijo <span class="pl-c1">&</span> Derecha con ancho fijo
+        y color <span class="pl-c1">&</span> Tope párrafo alineado con centro de línea <span class="pl-c1">&</span> Piso párrafo alineado
+        con centro de línea <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+    <span class="pl-c1">\end</span>{tabular}
+<span class="pl-c1">\end</span>{table}</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                </ul>
             </li>
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Otras funciones<a id="hlp-other"></a></strong>
