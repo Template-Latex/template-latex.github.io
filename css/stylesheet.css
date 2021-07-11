@@ -530,10 +530,6 @@ a:hover {
     z-index: 2;
 }
 
-#templatestats {
-    display: none;
-}
-
 @media screen and (min-width: 64em) {
     .page-header {
         padding: 6rem 6rem;

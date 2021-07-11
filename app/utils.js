@@ -230,32 +230,6 @@ function notNullUndf(obj) {
 }
 
 /**
- * Escribe los badges de la suite Template-Latex.
- */
-function writeBadges() {
-    let $badgediv = $('#badgeslistdiv');
-    $badgediv.html('');
-
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/apunte" class="aimg"><img src="res/badges/apunte.svg" style="display: none" alt=""/></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/auxiliares" class="aimg"><img src="res/badges/auxiliares.svg" alt=""/></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/controles" class="aimg"><img src="res/badges/controles.svg" alt=""/></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/informe" class="aimg"><img src="res/badges/informe.svg" alt=""/></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/presentacion" class="aimg"><img src="res/badges/presentacion.svg" alt=""/></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/reporte" class="aimg"><img src="res/badges/reporte.svg" alt=""/></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/tesis" class="aimg"><img src="res/badges/tesis.svg" alt=""/></a> ');
-    // noinspection HtmlUnknownTarget
-    $badgediv.append('<a href="https://latex.ppizarror.com/professional-cv" class="aimg"><img src="res/badges/professionalcv.svg" alt=""/></a>');
-    $badgediv.fadeIn('slow');
-}
-
-/**
  * Elige una propiedad random desde un objeto.
  *
  * @param obj - Objeto
