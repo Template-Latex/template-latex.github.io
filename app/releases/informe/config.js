@@ -1537,16 +1537,17 @@ function afterDocumentReady() {
         $a = $a.replace(/</g, '&lt;');
 
         // Se aplica estilo
-        $a = $a.replace('\\begin{sourcecode}[', '<span class="pl-c1">\\begin</span>{<span class="pl-e">sourcecode</span>}<b>[</b>');
-        $a = $a.replace('\\begin{sourcecode}{', '<span class="pl-c1">\\begin</span>{<span class="pl-e">sourcecode</span>}<b>{</b>');
+        $a = $a.replace('\\begin{sourcecode}[', '<span class="pl-c1">\\begin</span><b>{</b><span class="pl-e">sourcecode</span><b>}[</b>');
+        $a = $a.replace('\\begin{sourcecode}{', '<span class="pl-c1">\\begin</span><b>{</b><span class="pl-e">sourcecode</span><b>}{</b>');
         $a = $a.replace('\\label{', '<span class="pl-c1">\\label</span>{');
         $a = $a.replace('<b>[</b>]', '<b>[</b><b>]</b>');
         $a = $a.replace('}]', '}<b>]</b>');
         $a = $a.replace('<b>]</b>{', '<b>]</b><b>{</b>');
         $a = $a.replace('}{', '<b>}</b><b>{</b>');
+        $a = $a.replace('}{', '<b>}</b><b>{</b>');
         $a = $a.replace('{}', '<b>{</b><b>}</b><span class="pl-srccode">');
         $a = $a.replace('.}', '.<b>}</b><span class="pl-srccode">');
-        $a = $a.replace('\\end{sourcecode}', '</span><span class="pl-c1">\\end</span>{<span class="pl-e">sourcecode</span>}');
+        $a = $a.replace('\\end{sourcecode}', '</span><span class="pl-c1">\\end</span><b>{</b><span class="pl-e">sourcecode</span><b>}</b>');
         $a = $a.replace('<b>{</b>}', '<b>{</b><b>}</b>');
 
         // Se escribe el lenguaje
@@ -1705,6 +1706,14 @@ function afterDocumentReady() {
     $addExample('table-style-c', '<img src="res/images/tabla_c.PNG" alt="" class="imageCodeExample" />');
     $addExample('table-style-l', '<img src="res/images/tabla_l.PNG" alt="" class="imageCodeExample" />');
     $addExample('table-style-r', '<img src="res/images/tabla_r.PNG" alt="" class="imageCodeExample" />');
+
+    /**
+     * Columnas
+     */
+    $addExample('multicol-createwocolumn', '<img src="res/images/column_two_normal.PNG" alt="" class="imageCodeExample" />');
+    $addExample('multicol-createwocolumn-cfg1', '<img src="res/images/column_two_normal_cfg1.PNG" alt="" class="imageCodeExample" />');
+    $addExample('multicol-createwocolumn-cfg2', '<img src="res/images/column_two_normal_cfg2.PNG" alt="" class="imageCodeExample" />');
+    $addExample('multicol-createthreecolumn', '<img src="res/images/column_three_normal.PNG" alt="" class="imageCodeExample" />');
 
 }
 

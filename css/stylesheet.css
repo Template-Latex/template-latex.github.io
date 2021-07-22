@@ -1313,9 +1313,11 @@ Botón de ejemplo que contiene mostrar/ocultar ejemplo
 
 .codeExampleContainer {
     background-color: #eee;
+    border-radius: .3rem;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3) inset;
     display: none;
     margin-bottom: 8px;
+    margin-inline-end: 40px;
     margin-top: 5px;
     padding: 10px 10px;
 }
