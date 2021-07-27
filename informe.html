@@ -252,7 +252,7 @@
         <p class="justified-text">
             <b>ATENCIÓN:</b> Para compilar el template es necesario utilizar <a
                 href="https://nokyotsu.com/latex/pdflatex.html">PDFLatex</a>, <a
-                href="https://www.overleaf.com/learn/latex/XeLaTeX">XeLaTeX</a> ó <a
+                href="https://www.overleaf.com/learn/latex/XeLaTeX">XeLaTeX</a> o <a
                 href="http://www.luatex.org">LuaLaTeX</a>, no se da soporte a otros
             compiladores como latex, latexmk, etc. Es necesario modificar la configuración <a
                 onclick="bounceConfig('#config-gral','#compilertype');"
@@ -483,7 +483,7 @@
                                     Inserta una imagen dentro del entorno multicols usando todas las columnas
                                     disponibles en la posición superior o inferior de la página. Para controlar la
                                     posición, se debe usar los valores <i>{bottom}</i>, <i>{fixed2}</i>, <i>{fixed3}</i>,
-                                    <i>{fixed4}</i> ó <i>{top}</i>.
+                                    <i>{fixed4}</i> o <i>{top}</i>.
                                 </li>
                                 <li>
                                     <strong>\insertimageboxedmc</strong><b>[</b><em>Label</em>
@@ -492,7 +492,7 @@
                                     Inserta una imagen recuadrada dentro del entorno multicols usando todas las columnas
                                     disponibles en la posición superior o inferior de la página. Para controlar la
                                     posición, se debe usar los valores <i>{bottom}</i>, <i>{fixed2}</i>, <i>{fixed3}</i>,
-                                    <i>{fixed4}</i> ó <i>{top}</i>.
+                                    <i>{fixed4}</i> o <i>{top}</i>.
                                 </li>
                             </ul>
                         </div>
@@ -563,7 +563,7 @@
                                     (opcional)<b>]{</b><em>Posición</em><b>}{</b><em>Leyenda</em><b>}</b>:
                                     Permite insertar múltiples imágenes dentro de un objeto, para ello se hace uso de
                                     las instrucciones <strong>\addimage</strong> y <strong>\addimageboxed</strong>.
-                                    Para controlar la posición, se debe usar los valores <i>{bottom}</i> ó <i>{top}</i>.
+                                    Para controlar la posición, se debe usar los valores <i>{bottom}</i> o <i>{top}</i>.
                                     Todas las funciones de <i>\begin{images}</i> se pueden utilizar dentro de este
                                     macro.
                                 </li>
@@ -2209,15 +2209,15 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\changepagesize</strong><b>[</b><em>Rotación de página
                         <i>(opcional)</i></em><b>]{</b><em>Ancho de página (cm)</em><b>}{</b><em>Alto de la página
                         (cm)</em><b>}</b>: Función que cambia el tamaño de página en ancho y alto. La rotación puede
-                        tomar valores <i>[0]</i> ó <i>[90]</i>. Ejemplos de llamados pueden ser <i>\changepagesize{22}{16}</i>
-                        ó <i>\changepagesize[90]{30}{5}</i>
+                        tomar valores <i>[0]</i> o <i>[90]</i>. Ejemplos de llamados pueden ser <i>\changepagesize{22}{16}</i>
+                        o <i>\changepagesize[90]{30}{5}</i>
                     </li>
                     <li>
                         <strong>\changepagesizeformat</strong><b>[</b><em>Rotación de página
                         <i>(opcional)</i></em><b>]{</b><em>Formato de página</em><b>}</b>: Función que cambia el
                         tamaño de la página según los formatos estándar <i>4A0, 2A0, A0, A1, A2, A3, A4, A5, A6, letter,
                         legal, foolscap, executive, ledger, tabloid, ANSIC, ANSID, ANSIE, B0, B1, B2, B3, B4, B5, B6</i>.
-                        La rotación puede tomar valores <i>[0]</i> ó <i>[90]</i>.
+                        La rotación puede tomar valores <i>[0]</i> o <i>[90]</i>.
                     </li>
                     <li>
                         <strong>\disablecaptionmargin</strong>: Desactiva el margen de las leyendas en cualquier punto
@@ -2388,7 +2388,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                             <strong>\compilertype</strong>
                             <div class="config-desc">
                                 <div class="config-desc-inner">Tipo de compilador que se usa para compilar a pdf.
-                                    Soportados: <i>pdf2latex</i>, <i>xelatex</i> ó <i>lualatex</i>.
+                                    Soportados: <i>pdf2latex</i>, <i>xelatex</i> o <i>lualatex</i>.
                                 </div>
                             </div>
                         </div>
@@ -2789,6 +2789,22 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\captionmarginimage</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen vertical entre caption e imagen, en centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionmarginimages</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen vertical entre caption y entorno <i>images</i>, en
+                                centímetros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captionmarginimagesmc</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Margen vertical entre caption y entorno <i>imagesmc</i>, en
+                                centímetros.
                             </div>
                         </div>
                     </li>
@@ -3391,7 +3407,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                             <a id="ref-style-config"></a>
                             <div class="config-desc">
                                 <div class="config-desc-inner">Estilo citas y referencias. Valores esperados:
-                                    <b>apacite</b>, <b>bibtex</b>, <b>natbib</b> ó <b>custom</b>.
+                                    <b>apacite</b>, <b>bibtex</b>, <b>natbib</b> o <b>custom</b>.
                                 </div>
                             </div>
                         </div>
@@ -4041,7 +4057,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\cfgpdflayout</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Modo de página en el lector. Valores esperados:
-                                <b>OneColumn</b> ó <b>SinglePage</b>.
+                                <b>OneColumn</b> o <b>SinglePage</b>.
                             </div>
                         </div>
                     </li>
