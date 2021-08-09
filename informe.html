@@ -234,7 +234,7 @@
         <img src="res/images/collage.png" alt="Informe" style="margin:auto; display:block; width:80%"/>
         <p class="justified-text">
             Para crear un informe con este template debes primero <a href="#configurando-el-documento">editar la
-            información del documento</a> (título, nombre de la universidad, etc) en la sección <em
+            información del documento</a> (título, nombre de la universidad, etc.) en la sección <em
                 class="section-template">INFORMACIÓN DEL DOCUMENTO</em> <span class="intro-line-infodocument"></span>
             del archivo principal (<a href="https://github.com/Template-Latex/Template-Informe/blob/master/main.tex"
                                       title="informe.tex en versión compacta" class="javascripthref" target="_blank">main.tex</a>),
@@ -296,7 +296,7 @@
                 <strong>\nombreuniversidad</strong>: Universidad, instituto, etc.
             </li>
             <li>
-                <strong>\nombrefacultad</strong>: Facultad relacionada a la universidad, instituto, etc.
+                <strong>\nombrefacultad</strong>: Facultad relacionada con la universidad, instituto, etc.
             </li>
             <li>
                 <strong>\departamentouniversidad</strong>: Departamento de la universidad.
@@ -373,7 +373,7 @@
                             <strong>fcfm</strong>: Facultad de Ciencias Físicas y Matemáticas.
                         </li>
                         <li>
-                            <strong>fcfm2</strong>: Sólo el logo de la Facultad de Ciencias Físicas y Matemáticas.
+                            <strong>fcfm2</strong>: Solo el logo de la Facultad de Ciencias Físicas y Matemáticas.
                         </li>
                         <li>
                             <strong>fcfm3</strong>: Facultad de Ciencias Físicas y Matemáticas (color).
@@ -972,7 +972,7 @@
                                     (opcional)<b>]{</b><em>Fórmula</em><b>}{</b><em>Leyenda</em><b>}</b>:
                                     Inserta una fórmula con leyenda en el entorno <b>gathered</b>, permite insertar
                                     nuevas líneas con <b>\\</b> y centra todas las fórmulas. Todas las líneas tienen
-                                    sólo 1 número de ecuación por lo que esta puede tener etiqueta o un <i>\label</i>.
+                                    solo 1 número de ecuación por lo que esta puede tener etiqueta o un <i>\label</i>.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertgathered</span><b>[</b><span class="pl-c1">\label</span>{formula-4}<b>]{</b><span
@@ -1024,7 +1024,7 @@
                                     (opcional)<b>]{</b><em>Fórmula</em><b>}</b>:
                                     Inserta una fórmula con el entorno <b>aligned</b> el cual permite insertar nuevas
                                     líneas, y ajusta un alineado especial con respecto a los<b>=</b> de cada fórmula.
-                                    Todas las líneas tienen sólo 1 número de ecuación, por lo que ésta puede tener
+                                    Todas las líneas tienen solo 1 número de ecuación, por lo que esta puede tener
                                     etiqueta o un <i>\label</i>.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
@@ -1560,7 +1560,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 <ul>
                     <li><b>Custom</b>: Este estilo permite la definición personalizada del estilo de las referencias por
                         el usuario; el template no importará ni configurará nada de las referencias. Al importar las
-                        librerías requeridas por el gestor de referencias éstas deben ser importadas después de <i>template.tex</i>
+                        librerías requeridas por el gestor de referencias estas deben ser importadas después de <i>template.tex</i>
                         en el documento principal.
 
                         <blockquote>
@@ -1679,6 +1679,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                                 <p><img src="res/images/fracddpartial.png" alt=""></p>
                             </blockquote>
                         </li>
+                        <!--suppress GrazieInspection -->
                         <li>
                             <strong>\fracnderivat</strong><b>{</b><em>a</em><b>}{</b><em>b</em><b>}{</b><em>c</em><b>}</b>:
                             Crea una fracción de derivadas a la n al estilo d^c a/db^2.
@@ -2060,7 +2061,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     Se ofrecen dos tipos de funciones para insertar columnas dobles y triples. Además de funciones para
                     configurar los estilos.
                     <br><br>
-                    Las columnas por defecto están alineadas en el tope, sin embargo éstas se pueden configurar en
+                    Las columnas por defecto están alineadas en el tope, sin embargo estas se pueden configurar en
                     cualquier posición al definir la altura (centro, tope o piso). En las funciones la altura es un
                     parámetro opcional.
                 </p>
@@ -2101,7 +2102,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         admite los valores: <b>c</b> (center), <b>t</b> (top) y <b>b</b> (bottom). La alineación
                         horizontal admite los valores: <b>c</b> (center), <b>l</b> (left), <b>r</b> (right).
                         <b>Nota:</b>
-                        La posición vertical sólo tiene efecto si se define la altura de las columnas.
+                        La posición vertical solo tiene efecto si se define la altura de las columnas.
                         <blockquote id="multicol-createwocolumn-cfg1">
                             <div class="highlight highlight-text-tex">
                                 <pre>A continuación se ilustran los siguientes conceptos: <span class="pl-c1">\\</span>
@@ -2189,7 +2190,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         vertical admite los valores: <b>c</b> (center), <b>t</b> (top) y <b>b</b> (bottom). La
                         alineación horizontal admite los valores: <b>c</b> (center), <b>l</b> (left), <b>r</b> (right).
                         <b>Nota:</b>
-                        La posición vertical sólo tiene efecto si se define la altura de las columnas.
+                        La posición vertical solo tiene efecto si se define la altura de las columnas.
                     </li>
                     <li>
                         <strong>\resetthreecolumncfg</strong>: Resetea las configuraciones de tres columnas (tope y
@@ -2340,8 +2341,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li>
                         <strong>\settablecellpadding</strong><b>{</b><em>Margen horizontal</em><b>}{</b><em>Margen
                         vertical</em><b>}</b>: Establece el margen interior (padding) de las celdas de las tablas.
-                        Acepta sólo valores numéricos en <i>em</i>, por ejemplo, <i>\settablecellpadding{0.5}{1.2}</i>.
-                        Afecta sólo a las tablas que se crean posterior al llamado de esta función. Esta función tampoco
+                        Acepta solo valores numéricos en <i>em</i>, por ejemplo, <i>\settablecellpadding{0.5}{1.2}</i>.
+                        Afecta solo a las tablas que se crean posterior al llamado de esta función. Esta función tampoco
                         afecta las configuraciones <i>\tablepaddingh</i> y <i>\tablepaddingv</i>
                     </li>
                     <li>
@@ -2410,182 +2411,168 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="config-elem">
                         <strong>\fontdocument</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner" style="text-align: left !important;">Define la fuente de todo
-                                el texto del documento. <br>
+                            <div class="config-desc-inner" style="text-align: left !important;">Define la fuente de todo el texto del documento. <br>
                                 <b>Fuentes soportadas</b>: <i>(Recomendadas) </i>
-                                <a href="https://tug.org/FontCatalogue/computermodern/"
-                                   class="fontsrc javascripthref">lmodern</a>,
+                                <a href="https://tug.org/FontCatalogue/computermodern/" class="fontsrc javascripthref">lmodern</a>,
                                 <a href="https://ctan.org/pkg/helvet" class="javascripthref">arial</a>,
-                                <a href="https://tug.org/FontCatalogue/alegreyasans/" class="fontsrc javascripthref">alegreyasans</a>,
                                 <a href="https://ctan.org/pkg/arial" class="javascripthref">arial2</a>,
-                                <a href="https://ctan.org/pkg/helvet" class="fontsrc javascripthref">helvet</a>,
-                                <a href="https://ctan.org/pkg/mathpazo" class="fontsrc javascripthref">mathpazo</a>,
+                                <a href="https://ctan.org/pkg/mathptmx" class="javascripthref">times</a>,
                                 <a href="https://ctan.org/pkg/mathptmx" class="javascripthref">mathptmx</a>,
-                                <a href="https://tug.org/FontCatalogue/opensans/" class="fontsrc javascripthref"
-                                   title="Calibri">opensans</a>.
+                                <a href="https://ctan.org/pkg/helvet" class="javascripthref">helvet</a>,
+                                <a href="https://tug.org/FontCatalogue/opensans/" class="fontsrc javascripthref">opensans</a>.
+                                <a href="https://ctan.org/pkg/mathpazo" class="javascripthref">mathpazo</a>,
+                                <a href="https://tug.org/FontCatalogue/caladea/" class="fontsrc javascripthref">cambria</a>,
+                                <a href="https://www.ctan.org/tex-archive/fonts/libertine/" class="javascripthref">libertine</a>,
+                                custom (permite importar otras librerías tras la importación de template.tex). <br>
                                 <i>(Otras) </i>
-                                <a href="https://tug.org/FontCatalogue/accanthis/" class="fontsrc javascripthref">accantis</a>,
+                                <a href="https://tug.org/FontCatalogue/accanthis/" class="fontsrc javascripthref">accanthis</a>,
                                 <a href="https://tug.org/FontCatalogue/alegreya/" class="fontsrc javascripthref">alegreya</a>,
+                                <a href="https://tug.org/FontCatalogue/alegreyasans/" class="fontsrc javascripthref">alegreyasans</a>,
                                 <a href="https://tug.org/FontCatalogue/algolrevived/" class="fontsrc javascripthref">algolrevived</a>,
-                                <a href="https://tug.org/FontCatalogue/antiqua/"
-                                   class="fontsrc javascripthref">antiqua</a>,
-                                <a href="https://tug.org/FontCatalogue/antykwapoltawskiego/"
-                                   class="fontsrc javascripthref">antpolt</a>,
-                                <a href="https://tug.org/FontCatalogue/antykwapoltawskiegolight/"
-                                   class="fontsrc javascripthref">antpoltlight</a>,
-                                <a href="https://tug.org/FontCatalogue/antykwatorunska/"
-                                   class="fontsrc javascripthref">anttor</a>,
-                                <a href="https://tug.org/FontCatalogue/antykwatorunskacondensed/"
-                                   class="fontsrc javascripthref">anttorcondensed</a>,
-                                <a href="https://tug.org/FontCatalogue/antykwatorunskalight/"
-                                   class="fontsrc javascripthref">anttorlight</a>,
-                                <a href="https://tug.org/FontCatalogue/antykwatorunskalightcondensed/"
-                                   class="fontsrc javascripthref">anttorlightcondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/almendra/" class="fontsrc javascripthref">almendra</a>,
+                                <a href="https://tug.org/FontCatalogue/antykwapoltawskiego/" class="fontsrc javascripthref">antpolt</a>,
+                                <a href="https://tug.org/FontCatalogue/antykwapoltawskiegolight/" class="fontsrc javascripthref">antpoltlight</a>,
+                                <a href="https://tug.org/FontCatalogue/antykwatorunska/" class="fontsrc javascripthref">anttor</a>,
+                                <a href="https://tug.org/FontCatalogue/antykwatorunskacondensed/" class="fontsrc javascripthref">anttorcondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/antykwatorunskalight/" class="fontsrc javascripthref">anttorlight</a>,
+                                <a href="https://tug.org/FontCatalogue/antykwatorunskalightcondensed/" class="fontsrc javascripthref">anttorlightcondensed</a>,
                                 <a href="https://tug.org/FontCatalogue/arev/" class="fontsrc javascripthref">arev</a>,
-                                <a href="https://tug.org/FontCatalogue/arimo/"
-                                   class="fontsrc javascripthref">arimo</a>,
-                                <a href="" class="fontsrc javascripthref">aurical</a>,
-                                <a href="" class="fontsrc javascripthref">avant</a>,
+                                <a href="https://tug.org/FontCatalogue/arimo/" class="fontsrc javascripthref">arimo</a>,
+                                <a href="https://tug.org/FontCatalogue/arvo/" class="fontsrc javascripthref">arvo</a>,
                                 <a href="https://tug.org/FontCatalogue/baskervaldadf/" class="fontsrc javascripthref">baskervald</a>,
+                                <a href="https://tug.org/FontCatalogue/baskervaldx/" class="fontsrc javascripthref">baskervaldx</a>,
                                 <a href="https://tug.org/FontCatalogue/berasans/" class="fontsrc javascripthref">berasans</a>,
-                                <a href="https://tug.org/FontCatalogue/bera/"
-                                   class="fontsrc javascripthref">beraserif</a>,
+                                <a href="https://tug.org/FontCatalogue/bera/" class="fontsrc javascripthref">beraserif</a>,
                                 <a href="https://tug.org/FontCatalogue/biolinum/" class="fontsrc javascripthref">biolinum</a>,
-                                <a href="https://tug.org/FontCatalogue/cabin/"
-                                   class="fontsrc javascripthref">cabin</a>,
-                                <a href="https://tug.org/FontCatalogue/cabincondensed/"
-                                   class="fontsrc javascripthref">cabincondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/bitter/" class="fontsrc javascripthref">bitter</a>,
+                                <a href="https://tug.org/FontCatalogue/boisik/" class="fontsrc javascripthref">boisik</a>,
+                                <a href="https://tug.org/FontCatalogue/bookman/" class="fontsrc javascripthref">bookman</a>,
+                                <a href="https://tug.org/FontCatalogue/cabin/" class="fontsrc javascripthref">cabin</a>,
+                                <a href="https://tug.org/FontCatalogue/cabincondensed/" class="fontsrc javascripthref">cabincondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/caladea/" class="fontsrc javascripthref">cambria</a>,
                                 <a href="https://tug.org/FontCatalogue/cantarell/" class="fontsrc javascripthref">cantarell</a>,
-                                <a href="https://tug.org/FontCatalogue/carlito/"
-                                   class="fontsrc javascripthref">carlito</a>,
+                                <a href="https://tug.org/FontCatalogue/carlito/" class="fontsrc javascripthref">carlito</a>,
+                                <a href="https://tug.org/FontCatalogue/charterbt/" class="fontsrc javascripthref">charterbt</a>,
                                 <a href="https://tug.org/FontCatalogue/chivolight/" class="fontsrc javascripthref">chivolight</a>,
                                 <a href="https://tug.org/FontCatalogue/chivoregular/" class="fontsrc javascripthref">chivoregular</a>,
+                                <a href="https://tug.org/FontCatalogue/clara/" class="fontsrc javascripthref">clara</a>,
                                 <a href="https://tug.org/FontCatalogue/clearsans/" class="fontsrc javascripthref">clearsans</a>,
+                                <a href="https://tug.org/FontCatalogue/cochineal/" class="fontsrc javascripthref">cochineal</a>,
+                                <a href="https://tug.org/FontCatalogue/coelacanthregular/" class="fontsrc javascripthref">coelacanth</a>,
+                                <a href="https://tug.org/FontCatalogue/coelacanthextralight/" class="fontsrc javascripthref">coelacanthextralight</a>,
+                                <a href="https://tug.org/FontCatalogue/coelacanthlight/" class="fontsrc javascripthref">coelacanthlight</a>,
                                 <a href="https://tug.org/FontCatalogue/comfortaa/" class="fontsrc javascripthref">comfortaa</a>,
                                 <a href="https://tug.org/FontCatalogue/comicneue/" class="fontsrc javascripthref">comicneue</a>,
-                                <a href="https://tug.org/FontCatalogue/comicneueangular/"
-                                   class="fontsrc javascripthref">comicneueangular</a>,
-                                <a href="https://tug.org/FontCatalogue/crimson/"
-                                   class="fontsrc javascripthref">crimson</a>,
-                                <a href="https://tug.org/FontCatalogue/cyklop/"
-                                   class="fontsrc javascripthref">cyklop</a>,
+                                <a href="https://tug.org/FontCatalogue/comicneueangular/" class="fontsrc javascripthref">comicneueangular</a>,
+                                <a href="https://tug.org/FontCatalogue/computerconcrete/" class="fontsrc javascripthref">computerconcrete</a>,
+                                <a href="https://tug.org/FontCatalogue/computerconcreteeuler/" class="fontsrc javascripthref">computerconcreteeuler</a>,
+                                <a href="https://tug.org/FontCatalogue/computermodern/" class="fontsrc javascripthref">computermodern</a>,
+                                <a href="https://tug.org/FontCatalogue/computermodernbright/" class="fontsrc javascripthref">computermodernbright</a>,
+                                <a href="https://tug.org/FontCatalogue/crimson/" class="fontsrc javascripthref">crimson</a>,
+                                <a href="https://tug.org/FontCatalogue/crimsonproregular/" class="fontsrc javascripthref">crimsonpro</a>,
+                                <a href="https://tug.org/FontCatalogue/crimsonproextralight/" class="fontsrc javascripthref">crimsonproextralight</a>,
+                                <a href="https://tug.org/FontCatalogue/crimsonprolight/" class="fontsrc javascripthref">crimsonprolight</a>,
+                                <a href="https://tug.org/FontCatalogue/crimsonpromedium/" class="fontsrc javascripthref">crimsonpromedium</a>,
+                                <a href="https://tug.org/FontCatalogue/cyklop/" class="fontsrc javascripthref">cyklop</a>,
                                 <a href="https://tug.org/FontCatalogue/dejavusans/" class="fontsrc javascripthref">dejavusans</a>,
-                                <a href="https://tug.org/FontCatalogue/dejavusanscondensed/"
-                                   class="fontsrc javascripthref">dejavusanscondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/dejavusanscondensed/" class="fontsrc javascripthref">dejavusanscondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/domitian/" class="fontsrc javascripthref">domitian</a>,
                                 <a href="https://tug.org/FontCatalogue/droidsans/" class="fontsrc javascripthref">droidsans</a>,
+                                <a href="https://tug.org/FontCatalogue/electrumadf/" class="fontsrc javascripthref">electrum</a>,
+                                <a href="https://tug.org/FontCatalogue/erewhon/" class="fontsrc javascripthref">erewhon</a>,
+                                <a href="https://tug.org/FontCatalogue/fbb/" class="fontsrc javascripthref">fbb</a>,
+                                <a href="https://tug.org/FontCatalogue/fetamont/" class="fontsrc javascripthref">fetamont</a>,
                                 <a href="https://tug.org/FontCatalogue/firasans/" class="fontsrc javascripthref">firasans</a>,
-                                <a href="https://tug.org/FontCatalogue/iwona/"
-                                   class="fontsrc javascripthref">iwona</a>,
-                                <a href="https://tug.org/FontCatalogue/iwonacondensed/"
-                                   class="fontsrc javascripthref">iwonacondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/firasansnewtxsf/" class="fontsrc javascripthref">firasansnewtxsf</a>,
+                                <a href="https://tug.org/FontCatalogue/utopia-fouriermath/" class="fontsrc javascripthref">fourier</a>,
+                                <a href="https://tug.org/FontCatalogue/urwschoolbookl/" class="fontsrc javascripthref">fouriernc</a>,
+                                <a href="https://tug.org/FontCatalogue/gfsartemisia/" class="fontsrc javascripthref">gfsartemisia</a>,
+                                <a href="https://tug.org/FontCatalogue/gfsartemisiaeulermath/" class="fontsrc javascripthref">gfsartemisiaeuler</a>,
+                                <a href="https://tug.org/FontCatalogue/heuristica/" class="fontsrc javascripthref">heuristica</a>,
+                                <a href="https://tug.org/FontCatalogue/iwona/" class="fontsrc javascripthref">iwona</a>,
+                                <a href="https://tug.org/FontCatalogue/iwonacondensed/" class="fontsrc javascripthref">iwonacondensed</a>,
                                 <a href="https://tug.org/FontCatalogue/iwonalight/" class="fontsrc javascripthref">iwonalight</a>,
-                                <a href="https://tug.org/FontCatalogue/iwonalightcondensed/"
-                                   class="fontsrc javascripthref">iwonalightcondensed</a>,
-                                <a href="https://tug.org/FontCatalogue/kurier/"
-                                   class="fontsrc javascripthref">kurier</a>,
-                                <a href="https://tug.org/FontCatalogue/kuriercondensed/"
-                                   class="fontsrc javascripthref">kuriercondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/iwonalightcondensed/" class="fontsrc javascripthref">iwonalightcondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/kerkis/" class="fontsrc javascripthref">kerkis</a>,
+                                <a href="https://tug.org/FontCatalogue/kurier/" class="fontsrc javascripthref">kurier</a>,
+                                <a href="https://tug.org/FontCatalogue/kuriercondensed/" class="fontsrc javascripthref">kuriercondensed</a>,
                                 <a href="https://tug.org/FontCatalogue/kurierlight/" class="fontsrc javascripthref">kurierlight</a>,
-                                <a href="https://tug.org/FontCatalogue/kurierlightcondensed/"
-                                   class="fontsrc javascripthref">kurierlightcondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/kurierlightcondensed/" class="fontsrc javascripthref">kurierlightcondensed</a>,
                                 <a href="https://tug.org/FontCatalogue/lato/" class="fontsrc javascripthref">lato</a>,
-                                <a href="https://www.ctan.org/tex-archive/fonts/libertine/"
-                                   class="javascripthref">libertine</a>,
-                                <a href="https://tug.org/FontCatalogue/librisadf/"
-                                   class="fontsrc javascripthref">libris</a>,
-                                <a href="https://tug.org/FontCatalogue/lxfonts/"
-                                   class="fontsrc javascripthref">lxfonts</a>,
-                                <a href="https://tug.org/FontCatalogue/merriweathersans/"
-                                   class="fontsrc javascripthref">merriweather</a>,
-                                <a href="https://tug.org/FontCatalogue/merriweathersanslight/"
-                                   class="fontsrc javascripthref">merriweatherlight</a>,
+                                <a href="https://tug.org/FontCatalogue/libertinusserif/" class="fontsrc javascripthref">libertinus</a>,
+                                <a href="https://tug.org/FontCatalogue/librebaskerville/" class="fontsrc javascripthref">librebaskerville</a>,
+                                <a href="https://tug.org/FontCatalogue/librebodoni/" class="fontsrc javascripthref">librebodoni</a>,
+                                <a href="https://tug.org/FontCatalogue/librecaslon/" class="fontsrc javascripthref">librecaslon</a>,
+                                <a href="https://tug.org/FontCatalogue/librisadf/" class="fontsrc javascripthref">libris</a>,
+                                <a href="https://tug.org/FontCatalogue/lxfonts/" class="fontsrc javascripthref">lxfonts</a>,
+                                <a href="https://tug.org/FontCatalogue/merriweathersans/" class="fontsrc javascripthref">merriweather</a>,
+                                <a href="https://tug.org/FontCatalogue/merriweathersanslight/" class="fontsrc javascripthref">merriweatherlight</a>,
                                 <a href="https://tug.org/FontCatalogue/mintspirit/" class="fontsrc javascripthref">mintspirit</a>,
-                                <a href="https://tug.org/FontCatalogue/montserratalternatesextralight/"
-                                   class="fontsrc javascripthref">montserratalternatesextralight</a>,
-                                <a href="https://tug.org/FontCatalogue/montserratalternatesregular/"
-                                   class="fontsrc javascripthref">montserratalternatesregular</a>,
-                                <a href="https://tug.org/FontCatalogue/montserratalternateslight/"
-                                   class="fontsrc javascripthref">montserratalternatesthin</a>,
-                                <a href="https://tug.org/FontCatalogue/montserratextralight/"
-                                   class="fontsrc javascripthref">montserratextralight</a>,
-                                <a href="https://tug.org/FontCatalogue/montserratlight/"
-                                   class="fontsrc javascripthref">montserratlight</a>,
-                                <a href="https://tug.org/FontCatalogue/montserratregular/"
-                                   class="fontsrc javascripthref">montserratregular</a>,
-                                <a href="https://tug.org/FontCatalogue/montserratthin/"
-                                   class="fontsrc javascripthref">montserratthin</a>,
+                                <a href="https://tug.org/FontCatalogue/mlmodern/" class="fontsrc javascripthref">mlmodern</a>,
+                                <a href="https://tug.org/FontCatalogue/montserratalternatesextralight/" class="fontsrc javascripthref">montserratalternatesextralight</a>,
+                                <a href="https://tug.org/FontCatalogue/montserratalternatesregular/" class="fontsrc javascripthref">montserratalternatesregular</a>,
+                                <a href="https://tug.org/FontCatalogue/montserratalternateslight/" class="fontsrc javascripthref">montserratalternatesthin</a>,
+                                <a href="https://tug.org/FontCatalogue/montserratextralight/" class="fontsrc javascripthref">montserratextralight</a>,
+                                <a href="https://tug.org/FontCatalogue/montserratlight/" class="fontsrc javascripthref">montserratlight</a>,
+                                <a href="https://tug.org/FontCatalogue/montserratregular/" class="fontsrc javascripthref">montserratregular</a>,
+                                <a href="https://tug.org/FontCatalogue/montserratthin/" class="fontsrc javascripthref">montserratthin</a>,
+                                <a href="https://tug.org/FontCatalogue/newpx/" class="fontsrc javascripthref">newpx</a>,
                                 <a href="https://tug.org/FontCatalogue/nimbus15sans/" class="fontsrc javascripthref">nimbussans</a>,
-                                <a href="https://tug.org/FontCatalogue/notosans/"
-                                   class="fontsrc javascripthref">noto</a>,
+                                <a href="https://tug.org/FontCatalogue/notosans/" class="fontsrc javascripthref">noto</a>,
+                                <a href="https://tug.org/FontCatalogue/notoserif/" class="fontsrc javascripthref">notoserif</a>,
                                 <a href="https://tug.org/FontCatalogue/opensans/" class="fontsrc javascripthref">opensansserif</a>,
                                 <a href="https://tug.org/FontCatalogue/overlock/" class="fontsrc javascripthref">overlock</a>,
                                 <a href="https://tug.org/FontCatalogue/paratypesans/" class="fontsrc javascripthref">paratype</a>,
-                                <a href="https://tug.org/FontCatalogue/paratypesanscaption/"
-                                   class="fontsrc javascripthref">paratypesanscaption</a>,
-                                <a href="https://tug.org/FontCatalogue/paratypesansnarrow/"
-                                   class="fontsrc javascripthref">paratypesansnarrow</a>,
-                                <a href="https://tug.org/FontCatalogue/quattrocentosans/"
-                                   class="fontsrc javascripthref">quattrocento</a>,
-                                <a href="https://tug.org/FontCatalogue/raleway/"
-                                   class="fontsrc javascripthref">raleway</a>,
-                                <a href="https://tug.org/FontCatalogue/roboto/"
-                                   class="fontsrc javascripthref">roboto</a>,
+                                <a href="https://tug.org/FontCatalogue/paratypesanscaption/" class="fontsrc javascripthref">paratypesanscaption</a>,
+                                <a href="https://tug.org/FontCatalogue/paratypesansnarrow/" class="fontsrc javascripthref">paratypesansnarrow</a>,
+                                <a href="https://tug.org/FontCatalogue/pxfonts/" class="fontsrc javascripthref">pxfonts</a>,
+                                <a href="https://tug.org/FontCatalogue/quattrocentosans/" class="fontsrc javascripthref">quattrocento</a>,
+                                <a href="https://tug.org/FontCatalogue/raleway/" class="fontsrc javascripthref">raleway</a>,
+                                <a href="https://tug.org/FontCatalogue/roboto/" class="fontsrc javascripthref">roboto</a>,
                                 <a href="https://tug.org/FontCatalogue/robotolight/" class="fontsrc javascripthref">robotolight</a>,
-                                <a href="https://tug.org/FontCatalogue/robotolightcondensed/"
-                                   class="fontsrc javascripthref">robotolightcondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/robotolightcondensed/" class="fontsrc javascripthref">robotolightcondensed</a>,
                                 <a href="https://tug.org/FontCatalogue/robotothin/" class="fontsrc javascripthref">robotothin</a>,
-                                <a href="https://tug.org/FontCatalogue/rosario/"
-                                   class="fontsrc javascripthref">rosario</a>,
+                                <a href="https://tug.org/FontCatalogue/rosario/" class="fontsrc javascripthref">rosario</a>,
                                 <a href="https://tug.org/FontCatalogue/sourcesanspro/" class="fontsrc javascripthref">sourcesanspro</a>,
-                                <a href="https://tug.org/FontCatalogue/urwa030/"
-                                   class="fontsrc javascripthref">uarial</a>,
-                                <a href="https://tug.org/FontCatalogue/urwgrotesk/"
-                                   class="fontsrc javascripthref">ugq</a>,
-                                <a href="https://tug.org/FontCatalogue/universalisadfstandard/"
-                                   class="fontsrc javascripthref">universalis</a>,
-                                <a href="https://tug.org/FontCatalogue/universalisadfcondensed/"
-                                   class="fontsrc javascripthref">universaliscondensed</a>,
-                                <a href="https://tug.org/FontCatalogue/venturisadfsans/"
-                                   class="fontsrc javascripthref">venturis</a>.
+                                <a href="https://tug.org/FontCatalogue/step/" class="fontsrc javascripthref">step</a>,
+                                <a href="https://tug.org/FontCatalogue/stickstoo/" class="fontsrc javascripthref">stickstoo</a>,
+                                <a href="https://tug.org/FontCatalogue/texgyrebonum/" class="fontsrc javascripthref">texgyrebonum</a>,
+                                <a href="https://tug.org/FontCatalogue/txfonts/" class="fontsrc javascripthref">txfonts</a>,
+                                <a href="https://tug.org/FontCatalogue/urwa030/" class="fontsrc javascripthref">uarial</a>,
+                                <a href="https://tug.org/FontCatalogue/urwgrotesk/" class="fontsrc javascripthref">ugq</a>,
+                                <a href="https://tug.org/FontCatalogue/universalisadfstandard/" class="fontsrc javascripthref">universalis</a>,
+                                <a href="https://tug.org/FontCatalogue/universalisadfcondensed/" class="fontsrc javascripthref">universaliscondensed</a>,
+                                <a href="https://tug.org/FontCatalogue/venturisadfsans/" class="fontsrc javascripthref">venturis</a>.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\fonttypewriter</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner" style="text-align: left !important;">Define la fuente del
-                                texto tipo máquina <span class="pl-c1">\texttt</span>. <br>
+                            <div class="config-desc-inner" style="text-align: left !important;">Define la fuente del texto tipo máquina <span class="pl-c1">\texttt</span>. <br>
                                 <b>Fuentes soportadas</b>:
                                 <a href="https://tug.org/FontCatalogue/anonymouspro/" class="fontsrc javascripthref">anonymouspro</a>,
-                                <a href="https://tug.org/FontCatalogue/ascii/"
-                                   class="fontsrc javascripthref">ascii</a>,
+                                <a href="https://tug.org/FontCatalogue/ascii/" class="fontsrc javascripthref">ascii</a>,
                                 <a href="https://tug.org/FontCatalogue/beramono/" class="fontsrc javascripthref">beramono</a>,
-                                <a href="https://tug.org/FontCatalogue/cmpica/"
-                                   class="fontsrc javascripthref">cmpica</a>,
-                                <a href="https://tug.org/FontCatalogue/courier/"
-                                   class="fontsrc javascripthref">courier</a>,
+                                <a href="https://tug.org/FontCatalogue/cmpica/" class="fontsrc javascripthref">cmpica</a>,
+                                <a href="https://tug.org/FontCatalogue/courier/" class="fontsrc javascripthref">courier</a>,
                                 <a href="https://tug.org/FontCatalogue/dejavumono/" class="fontsrc javascripthref">dejavusansmono</a>,
                                 <a href="https://tug.org/FontCatalogue/firamono/" class="fontsrc javascripthref">firamono</a>,
-                                <a href="https://tug.org/FontCatalogue/gomono/"
-                                   class="fontsrc javascripthref">gomono</a>,
+                                <a href="https://tug.org/FontCatalogue/gomono/" class="fontsrc javascripthref">gomono</a>,
                                 <a href="https://tug.org/FontCatalogue/inconsolata/" class="fontsrc javascripthref">inconsolata</a>,
-                                <a href="https://tug.org/FontCatalogue/computermodernteletypel/"
-                                   class="fontsrc javascripthref">lcmtt</a>,
-                                <a href="https://tug.org/FontCatalogue/newtxtt/"
-                                   class="fontsrc javascripthref">newtxtt</a>,
+                                <a href="https://tug.org/FontCatalogue/computermodernteletypel/" class="fontsrc javascripthref">lcmtt</a>,
+                                <a href="https://tug.org/FontCatalogue/newtxtt/" class="fontsrc javascripthref">newtxtt</a>,
                                 <a href="https://tug.org/FontCatalogue/nimbus15mono/" class="fontsrc javascripthref">nimbusmono</a>,
-                                <a href="https://tug.org/FontCatalogue/nimbus15mononarrow/"
-                                   class="fontsrc javascripthref">nimbusmononarrow</a>,
+                                <a href="https://tug.org/FontCatalogue/nimbus15mononarrow/" class="fontsrc javascripthref">nimbusmononarrow</a>,
                                 <a href="https://tug.org/FontCatalogue/texgyrecursor/" class="fontsrc javascripthref">texgyrecursor</a>,
-                                <a href="https://tug.org/FontCatalogue/latinmodernmono/"
-                                   class="fontsrc javascripthref">tmodern</a>.
+                                <a href="https://tug.org/FontCatalogue/latinmodernmono/" class="fontsrc javascripthref">tmodern</a>.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\fonturl</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Fuente de los enlaces insertados con \url.
+                            <div class="config-desc-inner">Fuente de los enlaces insertados con <i>\url</i>.
                             </div>
                         </div>
                     </li>
@@ -2593,7 +2580,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\graphicxdraft</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Activa el modo boceto (draft) del documento, lo que la carga
-                                de las imágenes de deshabilita, escribiendo un recuadro con el nombre del archivo, pero
+                                de las imágenes se deshabilita, escribiendo un recuadro con el nombre del archivo, pero
                                 conservando la geometría; útil para acelerar el proceso de compilación durante la fase
                                 de desarrollo del documento.
                             </div>
@@ -3435,7 +3422,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <div id="defaultimagefolder">
                             <strong>\defaultimagefolder</strong>
                             <div class="config-desc">
-                                <div class="config-desc-inner">Directorio de las imágenes, sólo utilizado por las
+                                <div class="config-desc-inner">Directorio de las imágenes, solo utilizado por las
                                     funciones que insertan figuras.
                                 </div>
                             </div>
@@ -3469,6 +3456,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="config-elem">
                         <strong>\footnoterestart</strong>
                         <div class="config-desc">
+                            <!--suppress GrazieInspection -->
                             <div class="config-desc-inner">Comportamiento del reinicio de los números de <i>footnote</i>,
                                 valores esperados: <b>none</b> (Ninguno), <b>chap</b> (Capítulo), <b>page</b> &nbsp;(Por
                                 cada página), <b>sec</b> &nbsp;(Sección), <b>ssec</b> &nbsp;(Subsección), <b>sssec</b>
@@ -3487,7 +3475,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                     <li class="config-elem">
                         <strong>\hfpdashcharstyle</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Estilo del guión en portadas, header-footer y objetos.
+                            <div class="config-desc-inner">Estilo del guion en portadas, header-footer y objetos.
                             </div>
                         </div>
                     </li>
@@ -4011,7 +3999,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         <strong>\cfgbookmarksopenlevel</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Nivel de los marcadores a mostrar. Valores esperados:
-                                <b>1</b> (Secciones), <b>2</b> (Muestra todos los subtítulos, etc).
+                                <b>1</b> (Secciones), <b>2</b> (Muestra todos los subtítulos, etc.).
                             </div>
                         </div>
                     </li>
@@ -4336,7 +4324,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 aria-hidden="true" class="octicon octicon-link"></span></a>Importación de librerías</h2>
         <p>
             En total el template hace uso de <span id="totalLibCount"></span> librerías. Si necesitas utilizar otra (por
-            ejemplo <b>tikz</b>) éstas se deben importar en el archivo principal (main.tex) luego de la
+            ejemplo <b>tikz</b>) estas se deben importar en el archivo principal (main.tex) luego de la
             línea <i><span class="pl-c1">\input</span>{template}</i>.
         </p>
 
@@ -4696,7 +4684,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
 <script>
     window.dataLayer = window.dataLayer || [];
 
-    function gtag() {dataLayer.push(arguments);}
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
     gtag('js', new Date());
 
