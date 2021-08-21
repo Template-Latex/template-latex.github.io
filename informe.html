@@ -1394,14 +1394,23 @@ end
                 </ul>
                 <hr class="style1">
                 <ul>
-                    <li><strong>\inlinesourcecode</strong><b>{</b><em>Lenguaje</em><b>}</b>:
-                        Crea un código inline (de una sola línea dentro de un párrafo). Tras el llamado de esta función
-                        deben usarse dos carácteres cualesquiera diferentes a los del syntax, dentro de dichos
-                        carácteres irá el código fuente (Ver ejemplos).
+                    <li><strong>\inlinesourcecode</strong><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Código</em><b>}</b>:
+                        Crea un código inline (de una sola línea dentro de un párrafo). Puede usarse cualquier caracter dentro
+                        del código, salvo las llaves, las cuales deben ser reemplazadas por <b>\{</b> y <b>\}</b> (ver ejemplo).
                         <blockquote>
                             <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\inlinesourcecode</span><b>{</b>python<b>}!</b>sigma = ['00', '11', 01']<b>!</b><br><span
-                                        class="pl-e">\inlinesourcecode</span><b>{</b>javascript<b>}#</b>let var = Object.keys(foo);<b>#</b></pre>
+                                <pre><span class="pl-e">\inlinesourcecode</span><b>{</b>python<b>}{</b>sigma = ['00', '11', 01']<b>}</b><br><span
+                                        class="pl-e">\inlinesourcecode</span><b>{</b>js<b>}{</b>function()\{let c=2;\}<b>}</b></pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li><strong>\inlinesourcecodeboxed</strong><b>[</b><em>Color (opcional)</em><b>]{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Código</em><b>}</b>:
+                        Crea un código inline dentro de un recuadro coloreado. Si no se define un argumento, el color de fondo es
+                        el mismo que la configuración <a href="#sourcecodebgcolor" class="javascripthref">\sourcecodebgcolor</a>.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-e">\inlinesourcecodeboxed</span><b>{</b>bash<b>}{</b>git commit -m "Mensaje"<b>}</b><br><span
+                                        class="pl-e">\inlinesourcecodeboxed</span><b>[</b>red<b>]{</b>js<b>}{</b>let var = Object.keys(foo);<b>}</b></pre>
                             </div>
                         </blockquote>
                     </li>
@@ -1534,7 +1543,7 @@ Para usar citas extensas se utiliza <span class="pl-c1">\fullcite</span>{braas}
                         <b>-</b> <a href="res/guia_basica_referencias_mendeley_v3.pdf">Guía básica referencias Mendeley
                             (v3)</a>: Documento creado por Marcia Paredes A; ilustra detalladamente el proceso necesario
                         para usar las referencias y configurar el template. Válido tanto para <i>apacite</i> como
-                        <i>natbib</i>.
+                        <i>natbib</i>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -3907,7 +3916,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\sourcecodebgcolor</strong>
+                        <strong>\sourcecodebgcolor</strong><a id="sourcecodebgcolor"></a>
                         <div class="config-desc">
                             <div class="config-desc-inner">Color de fondo de los códigos fuente.</div>
                         </div>
@@ -4545,6 +4554,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/ragged2e">ragged2e</a></strong>: Alineación de texto.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/realboxes">realboxes</a></strong>: Permite inserción
+                    de recuadros avanzados.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/rotating">rotating</a></strong>: Permite rotación de

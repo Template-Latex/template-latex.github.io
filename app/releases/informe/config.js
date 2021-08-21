@@ -1,3 +1,5 @@
+// noinspection JSNonASCIINames,CommaExpressionJS,JSCheckFunctionSignatures,UnreachableCodeJS,JSUnnecessarySemicolon,UnnecessaryLabelJS,JSAnnotator,JSUnusedLocalSymbols,JSDeprecatedSymbols
+
 /**
  The MIT License (MIT)
 
@@ -52,9 +54,9 @@ let totalPortraitStyles = 21; // Estilos totales de portada
  */
 notification['sabiasque'] = {
     '1': 'Existen más de 20 estilos de portada distintos, revisa las configuraciones :)',
-    '2': 'El template está escrito en más de 7k líneas de código en LaTeX',
+    '2': 'El template está escrito en más de 8k líneas de código en LaTeX',
     '3': 'Existen más de 20 estilos de header-footer, revisa las configuraciones :)',
-    '4': 'Existen más de 200 configuraciones en el template',
+    '4': 'Existen más de 220 configuraciones en el template',
     '5': 'El template da soporte a más de 40 lenguajes de programación',
     '6': 'Es posible cambiar la fuente del texto, revisa las configuraciones :)',
     '7': 'Es posible cambiar todos los colores del documento, revisa las configuraciones :)',
