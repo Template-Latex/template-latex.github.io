@@ -261,6 +261,28 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
+    'cmake': '\\begin{sourcecode}{cmake}{Ejemplo en cmake.}\n' +
+        '# Propiedades del make\n' +
+        'cmake_minimum_required(VERSION 3.10)\n' +
+        'project(CC7515-AUX-1)\n' +
+        'set(CMAKE_CXX_STANDARD 11)\n' +
+        '\n' +
+        '# Crea un set, contiene varios archivos que permiten compilar al principal\n' +
+        'set(AUX1_EX10\n' +
+        'src/10_complex_v1_sep.cpp)\n' +
+        '\n' +
+        'set(AUX1_STACK\n' +
+        'src/13_stack.h\n' +
+        'src/12_complex_v3.cpp)\n' +
+        '\n' +
+        '# Define ejecutables\n' +
+        'add_executable(EX-1-HELLO-WORLD src/01_helloworld.cpp)\n' +
+        'add_executable(EX-2-VARIABLES src/02_variables.cpp)\n' +
+        'add_executable(EX-3-IF-ELSE src/03_if_else.cpp)\n' +
+        'add_executable(EX-4-WHILE-FOR src/04_while_for.cpp)\n' +
+        '...\n' +
+        '\\end{sourcecode}',
+
     'cobol': '\\begin{sourcecode}{cobol}{Ejemplo en Cobol.}\n' +
         '*> Terminator period ("implicit termination")\n' +
         'IF invalid-record\n' +
@@ -734,6 +756,22 @@ let cmd_sourcecode = {
         'print("enter a number:")\n' +
         'a = io.read("*number")        -- read a number\n' +
         'print(fact(a))\n' +
+        '\\end{sourcecode}',
+
+    'make': '\\begin{sourcecode}{make}{Ejemplo en make.}\n' +
+        'all: helloworld variables if_else while_for functions strings pointer\n' +
+        '\n' +
+        'helloworld:\n' +
+        'g++ 01_helloworld.cpp -o 01_helloworld\n' +
+        '\n' +
+        'variables:\n' +
+        'g++ 02_variables.cpp -o 02_variables\n' +
+        '\n' +
+        'if_else:\n' +
+        'g++ 03_if_else.cpp -o 03_if_else\n' +
+        '\n' +
+        'while_for:\n' +
+        'g++ 04_while_for.cpp -o 04_while_for\n' +
         '\\end{sourcecode}',
 
     'maple': '\\begin{sourcecode}{maple}{Ejemplo en Maple.}\n' +
