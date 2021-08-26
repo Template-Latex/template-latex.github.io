@@ -255,7 +255,6 @@
                 href="https://www.overleaf.com/learn/latex/XeLaTeX">XeLaTeX</a> o <a
                 href="http://www.luatex.org">LuaLaTeX</a>, no se da soporte a otros
             compiladores como latex, latexmk, etc. Es necesario modificar la configuración <a
-                onclick="bounceConfig('#config-gral','#compilertype');"
                 class="javascripthref"><span class="pl-c1">\compilertype</span></a> para usar distintos compiladores.
         </p>
 
@@ -440,10 +439,10 @@
                 <strong class="functtitlstyle">Añadir una imagen <a id="hlp-imagen"></a></strong>
                 <p class="justified-text">
                     Las funciones para añadir imágenes requieren del nombre de la imagen (el archivo almacenado en el
-                    directorio definido por la configuración <a
-                        onclick="bounceConfig('#config-figure','#defaultimagefolder');"
-                        class="javascripthref">\defaultimagefolder</a>, por defecto la carpeta <i>img/</i>),
+                    directorio definido por la configuración <a href="#defaultimagefolder"
+                                                                class="javascripthref">\defaultimagefolder</a>, por defecto la carpeta <i>img/</i>),
                     sus parámetros y la leyenda (la cual es opcional).
+                    <!-- onclick="bounceConfig('#config-figure','#defaultimagefolder');" -->
                 </p>
                 <p>
                     Los parámetros pueden ser <strong>scale=0.5</strong>, <strong>width=5cm</strong>,
@@ -1478,7 +1477,7 @@ end
                 <p class="justified-text">
                     Para añadir referencias el template ofrece 4 alternativas distintas: el uso de <b>bibtex</b>, <b>apacite</b>,
                     <b>natbib</b> y <b>custom</b>. Para usar cada uno de ellos es necesario cambiar la configuración <a
-                        onclick="bounceConfig('#config-ref','#stylecitereferences');" class="javascripthref">\stylecitereferences</a>.
+                        class="javascripthref">\stylecitereferences</a>.
                 </p>
                 <ul>
                     <li><b>Bibtex</b>: Es el sistema más sencillo, y es el que viene activado por defecto en las
@@ -1511,13 +1510,11 @@ Para citar: <span class="pl-c1">\cite</span>{myref}.
                         </blockquote>
                         <b>-</b> Para citar se usa <span class="pl-c1">\cite</span>{ref1}
                         <br/>
-                        <b>-</b> Establecer configuración <a
-                                onclick="bounceConfig('#config-ref','#stylecitereferences');"
-                                class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{bibtex}
+                        <b>-</b> Establecer configuración <a href="#stylecitereferences"
+                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{bibtex}
                         <br/>
-                        <b>-</b> Cambiar estilo referencias con la configuración <a
-                                onclick="bounceConfig('#config-ref','#bibtexstyle');"
-                                class="javascripthref"><span class="pl-c1">\bibtexstyle</span></a>
+                        <b>-</b> Cambiar estilo referencias con la configuración <a href="#bibtexstyle"
+                                                                                    class="javascripthref"><span class="pl-c1">\bibtexstyle</span></a>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1536,13 +1533,11 @@ Para usar citas extensas se utiliza <span class="pl-c1">\fullcite</span>{braas}
 <span class="pl-e">\bibliography</span>{references}</pre>
                             </div>
                         </blockquote>
-                        <b>-</b> Establecer configuración <a
-                                onclick="bounceConfig('#config-ref','#stylecitereferences');"
-                                class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{apacite}
+                        <b>-</b> Establecer configuración <a href="#stylecitereferences"
+                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{apacite}
                         <br/>
-                        <b>-</b> Cambiar estilo referencias con la configuración <a
-                                onclick="bounceConfig('#config-ref','#apacitestyle');"
-                                class="javascripthref"><span class="pl-c1">\apacitestyle</span></a>
+                        <b>-</b> Cambiar estilo referencias con la configuración <a href="#apacitestyle"
+                                                                                    class="javascripthref"><span class="pl-c1">\apacitestyle</span></a>
                         <br/>
                         <b>-</b> <a href="res/guia_basica_referencias_mendeley_v3.pdf">Guía básica referencias Mendeley
                             (v3)</a>: Documento creado por Marcia Paredes A; ilustra detalladamente el proceso necesario
@@ -1563,13 +1558,11 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
 <span class="pl-e">\bibliography</span>{references}</pre>
                             </div>
                         </blockquote>
-                        <b>-</b> Establecer configuración <a
-                                onclick="bounceConfig('#config-ref','#stylecitereferences');"
-                                class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{natbib}
+                        <b>-</b> Establecer configuración <a href="#stylecitereferences"
+                                                             class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{natbib}
                         <br/>
-                        <b>-</b> Cambiar estilo referencias con la configuración <a
-                                onclick="bounceConfig('#config-ref','#natbibrefstyle');"
-                                class="javascripthref"><span class="pl-c1">\natbibrefstyle</span></a>
+                        <b>-</b> Cambiar estilo referencias con la configuración <a href="#natbibrefstyle"
+                                                                                    class="javascripthref"><span class="pl-c1">\natbibrefstyle</span></a>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1593,8 +1586,28 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}
                         </blockquote>
 
                         <b>-</b> Establecer configuración <a
-                                onclick="bounceConfig('#config-ref','#stylecitereferences');"
                                 class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{custom}
+                    </li>
+                </ul>
+                <hr class="style1">
+                <p>Otros links útiles y preguntas más comunes:</p>
+                <ul>
+                    <li><a href="https://www.bibtex.com/styles/" class="javascripthref" id="estilosrefs">
+                        ¿Qué estilos de referencias existen?</a>: Para cambiarlos basta con escribir el nombre
+                        del estilo en la configuración respectiva del template.
+                    </li>
+                    <li><a href="http://minisconlatex.blogspot.com/2013/01/como-poner-y-en-vez-de-and-en-la.html" class="javascripthref" id="cambionombrerefs">¿Cómo cambio el idioma de las referencias?</a>: Los estilos
+                        de las referencias, ya sea apa, ieeetr, etc. están configurados para funcionar en inglés. Para
+                        usar el español (por ejemplo en la lista de autores, que aparezca un <i>y</i> en vez de <i>and</i>)
+                        se debe descargar el archivo <i>.bst</i> correspondiente del estilo de referencias y editarlo.
+                        <br>
+                        Para usar el nuevo <i>.bst</i> éste se debe ubicar en la misma carpeta que el archivo <i>.tex</i> y
+                        se debe nombrar la configuración del estilo con el mismo nombre que el archivo. Por ejemplo, si se
+                        descargó un estilo <i>apaesp2.bst</i> y se está usando <a href="#stylecitereferences"
+                                                                                  class="javascripthref">
+                            <span class="pl-c1">\stylecitereferences</span></a>{natbib} se debe
+                        modificar la configuración del estilo a <a href="#natbibrefstyle" class="javascripthref">
+                            <span class="pl-c1">\natbibrefstyle</span></a>{apaesp2}.
                     </li>
                 </ul>
             </li>

@@ -1466,7 +1466,7 @@ function afterDocumentReady() {
         // noinspection JSUnresolvedFunction
         $(a).ScrollTo();
         setTimeout(function () {
-            doBounce($(b), 3, '6px', 100);
+            // doBounce($(b), 3, '6px', 100);
         }, 1000);
     };
 
