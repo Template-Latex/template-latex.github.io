@@ -57,7 +57,7 @@ notification['sabiasque'] = {
     '2': 'El template está escrito en más de 8k líneas de código en LaTeX',
     '3': 'Existen más de 20 estilos de header-footer, revisa las configuraciones :)',
     '4': 'Existen más de 220 configuraciones en el template',
-    '5': 'El template da soporte a más de 40 lenguajes de programación',
+    '5': 'El template da soporte a más de 70 lenguajes de programación',
     '6': 'Es posible cambiar la fuente del texto, revisa las configuraciones :)',
     '7': 'Es posible cambiar todos los colores del documento, revisa las configuraciones :)',
     '8': 'Es posible cambiar los tamaños de todos los textos del documento, revisa las configuraciones :)',
@@ -480,6 +480,29 @@ let cmd_sourcecode = {
         'foo<<<n,m>>>();\n' +
         '\\end{sourcecode}',
 
+    'dart': '\\begin{sourcecode}{dart}{Ejemplo en Dart.}\n' +
+        '#import(\'dart:html\');\n' +
+        '\n' +
+        'class Contacts {\n' +
+        '\n' +
+        '  Contacts() {\n' +
+        '  }\n' +
+        '\n' +
+        '  void run() {\n' +
+        '    write("Hello World!");\n' +
+        '  }\n' +
+        '\n' +
+        '  void write(String message) {\n' +
+        '    // the HTML library defines a global "document" variable\n' +
+        '    document.query(\'#status\').innerHTML = message;\n' +
+        '  }\n' +
+        '}\n' +
+        '\n' +
+        'void main() {\n' +
+        '  new Contacts().run();\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
     'docker': '\\begin{sourcecode}{docker}{Docker.}\n' +
         'version: \'2\'\n' +
         'services:\n' +
@@ -504,6 +527,19 @@ let cmd_sourcecode = {
         '  (set-window-buffer (next-window) (other-buffer)))\n' +
         '\n' +
         '(global-set-key (kbd "C-x 2") #\'my-split-window-func)\n' +
+        '\\end{sourcecode}',
+
+    'elixir': '\\begin{sourcecode}{elixir}{Ejemplo en Elixir.}\n' +
+        '# A comment\n' +
+        'defmodule Foo do\n' +
+        '\tdef bar(x) do\n' +
+        '\t\tstring = "hello"\n' +
+        '\n' +
+        '\t\tfc = fn x,y -> x + y end \n' +
+        '\t\tatom = fc.(!\\elsymb{:imanatom}!)\n' +
+        '\t\tatom = fc.(!\\elsymb{:because_the_parser_is_not_good_enough}! )\n' +
+        '\tend\n' +
+        'end\n' +
         '\\end{sourcecode}',
 
     'erlang': '\\begin{sourcecode}{erlang}{Ejemplo en erlang.}\n' +
@@ -562,6 +598,32 @@ let cmd_sourcecode = {
         '        A=(SUMY/N-B*SUMX/N)\n' +
         '       RETURN\n' +
         '       END\n' +
+        '\\end{sourcecode}',
+
+    'fsharp': '\\begin{sourcecode}{fsharp}{Ejemplo en F#.}\n' +
+        '/// Fibonacci Number formula\n' +
+        'let fib n =\n' +
+        '    let rec g n f0 f1 =\n' +
+        '        match n with\n' +
+        '        | 0 -> f0\n' +
+        '        | 1 -> f1\n' +
+        '        | _ -> g (n - 1) f1 (f0 + f1)\n' +
+        '    g n 0 1\n' +
+        '\n' +
+        '/// Another approach - a lazy infinite sequence of Fibonacci numbers\n' +
+        'let fibSeq = Seq.unfold (fun (a,b) -> Some(a+b, (b, a+b))) (0,1)\n' +
+        '\n' +
+        '// Print even fibs\n' +
+        '[1 .. 10]\n' +
+        '|> List.map     fib\n' +
+        '|> List.filter  (fun n -> (n % 2) = 0)\n' +
+        '|> printList\n' +
+        '\n' +
+        '// Same thing, using a list expression\n' +
+        '[ for i in 1..10 do\n' +
+        '    let r = fib i\n' +
+        '    if r % 2 = 0 then yield r ]\n' +
+        '|> printList\n' +
         '\\end{sourcecode}',
 
     'glsl': '\\begin{sourcecode}{glsl}{Noise shader.}\n' +
@@ -971,6 +1033,36 @@ let cmd_sourcecode = {
         '   end record;\n' +
         '\\end{sourcecode}',
 
+    'objectivec': '\\begin{sourcecode}{objectivec}{Ejemplo en Objective-C.}\n' +
+        '#import "Forwarder.h"\n' +
+        '\n' +
+        '@implementation Forwarder\n' +
+        '- (retval_t)forward:(SEL)sel args:(arglist_t)args {\n' +
+        '  /*\n' +
+        '  * Check whether the recipient actually responds to the message.\n' +
+        '  * This may or may not be desirable, for example, if a recipient\n' +
+        '  * in turn does not respond to the message, it might do forwarding\n' +
+        '  * itself.\n' +
+        '  */\n' +
+        '  if ([recipient respondsToSelector:sel]) {\n' +
+        '    return [recipient performv:sel args:args];\n' +
+        '  } else {\n' +
+        '    return [self error:"Recipient does not respond"];\n' +
+        '  }\n' +
+        '}\n' +
+        '\n' +
+        '- (id)setRecipient:(id)_recipient {\n' +
+        '  [recipient autorelease];\n' +
+        '  recipient = [_recipient retain];\n' +
+        '  return self;\n' +
+        '}\n' +
+        '\n' +
+        '- (id)recipient {\n' +
+        '  return recipient;\n' +
+        '}\n' +
+        '@end\n' +
+        '\\end{sourcecode}',
+
     'octave': '\\begin{sourcecode}{octave}{Ejemplo en Octave.}\n' +
         'function out = invar_table(n,m,N)\n' +
         'if n>m, error(\'first number must be smaller than the second\'), endif\n' +
@@ -1184,6 +1276,33 @@ let cmd_sourcecode = {
         ' showpage             % print all on the page\n' +
         '\\end{sourcecode}',
 
+    'powershell': '\\begin{sourcecode}{powershell}{Ejemplo en Powershell.}\n' +
+        '# comment\n' +
+        '\n' +
+        '<#\n' +
+        'multi\n' +
+        'line\n' +
+        'comment\n' +
+        '#>\n' +
+        '\n' +
+        '$tmp = \'string\'\n' +
+        '$tmp = "string"\n' +
+        '\n' +
+        '$tmp = @\'\n' +
+        'mutli\n' +
+        '"line"\n' +
+        'strings\n' +
+        '\'@\n' +
+        '\n' +
+        '$tmp = @"\n' +
+        'multi\n' +
+        '\'line\'\n' +
+        'strings\n' +
+        '"@\n' +
+        '\n' +
+        'If (1 -lt 2) { Write-Output "Hello World!" }\n' +
+        '\\end{sourcecode}',
+
     'prolog': '\\begin{sourcecode}{prolog}{Ejemplo en prolog.}\n' +
         'somePredicate(_, B) :-\n' +
         '    arbitraryPredicate(A, _variable, 1, 2),\n' +
@@ -1247,6 +1366,20 @@ let cmd_sourcecode = {
         'n = len(genl2)\n' +
         'M = None # Comentario 1\n' +
         'VT = np.zeros((n*m, 1), int) # Comentario 2\n' +
+        '\\end{sourcecode}',
+
+    'qsharp': '\\begin{sourcecode}{qsharp}{Ejemplo en Q#.}\n' +
+        'namespace Example {\n' +
+        '\topen Microsoft.Quantum.Intrinsic;\n' +
+        '\n' +
+        '\t/// # Summary\n' +
+        '\t/// Prepares $(\\ket{00} + \\ket{11}) / \\sqrt{2}$.\n' +
+        '\toperation PrepareEntangledPair(left : Qubit, right : Qubit) : Unit\n' +
+        '\t\tis Adj + Ctl {\n' +
+        '\t\t\tH(left);\n' +
+        '\t\t\tCNOT(left, right);\n' +
+        '\t\t}\n' +
+        '}\n' +
         '\\end{sourcecode}',
 
     'r': '\\begin{sourcecode}{r}{Ejemplo en r.}\n' +
@@ -1857,7 +1990,7 @@ function afterDocumentReady() {
     /**
      * Se añade evento a cada elemento de código fuente
      */
-    $('#sourcecode-container').find('.sourcecodel').each(function () {
+    $('body').find('.sourcecodel').each(function () {
         let $a = $(this).html();
         $(this).attr('id', 'sourcecode-' + $(this).html()); // Añade código fuente como atributo
         let $callback = function () {
