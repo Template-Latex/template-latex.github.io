@@ -129,8 +129,35 @@ let portraitRequiresAdditional = {
 };
 
 // Lista de códigos fuente
-// noinspection CssUnusedSymbol,JSUnresolvedFunction,BadExpressionStatementJS
+// noinspection CssUnusedSymbol,JSUnresolvedFunction,BadExpressionStatementJS,HttpUrlsUsage
 let cmd_sourcecode = {
+    'abap': '\\begin{sourcecode}{abap}{Ejemplo en ABAP.}\n' +
+        '* Primitive types:\n' +
+        'DATA: COUNTER      TYPE I,\n' +
+        '      VALIDITY     TYPE I VALUE 60,\n' +
+        '      TAXRATE(3)   TYPE P DECIMALS 1,\n' +
+        '      LASTNAME(20) TYPE C,\n' +
+        '      DESCRIPTION  TYPE STRING.\n' +
+        '\n' +
+        '* Dictionary types:\n' +
+        'DATA: ORIGIN       TYPE COUNTRY.\n' +
+        '\n' +
+        '* Internal table:\n' +
+        'DATA: T_FLIGHTS    TYPE TABLE OF FLIGHTINFO,\n' +
+        '      T_LOOKUP     TYPE HASHED TABLE OF FLT_LOOKUP.\n' +
+        '\n' +
+        '* Objects:\n' +
+        'DATA: BOOKING      TYPE REF TO CL_FLT_BOOKING.\n' +
+        '\\end{sourcecode}',
+
+    'ada': '\\begin{sourcecode}{ada}{Ejemplo en Ada.}\n' +
+        'MODULE Hello;\n' +
+        'FROM STextIO IMPORT WriteString;\n' +
+        'BEGIN\n' +
+        '  WriteString("Hello World!");\n' +
+        'END Hello.\n' +
+        '\\end{sourcecode}',
+
     'assemblerx64': '\\begin{sourcecode}{assemblerx64}{Assembler x64.}\n' +
         'cdqe 1, r8\n' +
         'push 1\n' +
@@ -176,6 +203,20 @@ let cmd_sourcecode = {
         '\tend programa\n' +
         '\\end{sourcecode}',
 
+    'awk': '\\begin{sourcecode}{awk}{Ejemplo en Awk.}\n' +
+        'BEGIN {\n' +
+        '    FS="[^a-zA-Z]+"\n' +
+        '}\n' +
+        '{\n' +
+        '    for (i=1; i<=NF; i++)\n' +
+        '        words[tolower($i)]++\n' +
+        '}\n' +
+        'END {\n' +
+        '    for (i in words)\n' +
+        '        print i, words[i]\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
     'bash': '\\begin{sourcecode}[]{bash}{Un poco de bash.}\n' +
         '# Muestra toda la información de la batería\n' +
         'function battr-info {\n' +
@@ -214,7 +255,7 @@ let cmd_sourcecode = {
         'git doge ssh cp cd\n' +
         '\\end{sourcecode}',
 
-    'basic': '\\begin{sourcecode}{basic}{Ejemplo en Basic.}\n' +
+    'basic': '\\begin{sourcecode}[\\label{codigobasic}]{basic}{Ejemplo en Basic.}\n' +
         'REM QuickBASIC example\n' +
         '\n' +
         'REM Forward declaration - allows the main code to call a\n' +
@@ -259,6 +300,18 @@ let cmd_sourcecode = {
         '\t}\n' +
         '\treturn 0;\n' +
         '}\n' +
+        '\\end{sourcecode}',
+
+    'caml': '\\begin{sourcecode}{caml}{Ejemplo en Caml.}\n' +
+        '# let haar l =\n' +
+        '   let rec aux l s d = \n' +
+        '     match l, s, d with\n' +
+        '       [s], [], d -> s :: d\n' +
+        '     | [], s, d -> aux s [] d\n' +
+        '     | h1 :: h2 :: t, s, d -> aux t (h1 + h2 :: s) (h1 - h2 :: d)\n' +
+        '     | _ -> invalid_arg "haar" \n' +
+        '     in aux l [] [];;\n' +
+        'val haar : int list -> int list = <fun>\n' +
         '\\end{sourcecode}',
 
     'cmake': '\\begin{sourcecode}{cmake}{Ejemplo en cmake.}\n' +
@@ -444,6 +497,33 @@ let cmd_sourcecode = {
         'volumes:\n' +
         '\\end{sourcecode}',
 
+    'elisp': '\\begin{sourcecode}{elisp}{Ejemplo en elisp.}\n' +
+        '(defun my-split-window-func ()\n' +
+        '  (interactive)\n' +
+        '  (split-window-below)\n' +
+        '  (set-window-buffer (next-window) (other-buffer)))\n' +
+        '\n' +
+        '(global-set-key (kbd "C-x 2") #\'my-split-window-func)\n' +
+        '\\end{sourcecode}',
+
+    'erlang': '\\begin{sourcecode}{erlang}{Ejemplo en erlang.}\n' +
+        '% This is file \'listsort.erl\' (the compiler is made this way)\n' +
+        '-module(listsort).\n' +
+        '% Export \'by_length\' with 1 parameter (don\'t care about the type and name)\n' +
+        '-export([by_length/1]).\n' +
+        '\n' +
+        'by_length(Lists) -> % Use \'qsort/2\' and provides an anonymous function as a parameter\n' +
+        '   qsort(Lists, fun(A,B) -> length(A) < length(B) end).\n' +
+        '\n' +
+        'qsort([], _)-> []; % If list is empty, return an empty list (ignore the second parameter)\n' +
+        'qsort([Pivot|Rest], Smaller) ->\n' +
+        '    % Partition list with \'Smaller\' elements in front of \'Pivot\' and not-\'Smaller\' elements\n' +
+        '    % after \'Pivot\' and sort the sublists.\n' +
+        '    qsort([X || X <- Rest, Smaller(X,Pivot)], Smaller)\n' +
+        '    ++ [Pivot] ++\n' +
+        '    qsort([Y || Y <- Rest, not(Smaller(Y, Pivot))], Smaller).\n' +
+        '\\end{sourcecode}',
+
     'fortran': '\\begin{sourcecode}{fortran}{Ejemplo en Fortran.}\n' +
         'REGRESION LINEAL.FORTRANS\n' +
         'APLICACION\n' +
@@ -593,7 +673,7 @@ let cmd_sourcecode = {
         'where fibs (a,b) = a : fibs (b,a+b)\n' +
         '\\end{sourcecode}',
 
-    'html5': '\\begin{sourcecode}[\\label{codigo-html5}]{html5}{Ejemplo en HTML5.}\n' +
+    'html': '\\begin{sourcecode}[\\label{codigo-html}]{html}{Ejemplo en HTML.}\n' +
         '<!DOCTYPE html>\n' +
         '<html lang="es">\n' +
         '<head>\n' +
@@ -638,7 +718,7 @@ let cmd_sourcecode = {
         '}\n' +
         '\\end{sourcecode}',
 
-    'js': '\\begin{sourcecode}{js}{Ejemplo en Javascript.}\n' +
+    'javascript': '\\begin{sourcecode}{javascript}{Ejemplo en Javascript.}\n' +
         '$.urlParam = function (name) {\n' +
         '\tlet results = new RegExp(\'[\\?&]\' + name + \'=([^&#]*)\').exec(window.location.href);\n' +
         '\tif (results == null) {\n' +
@@ -661,6 +741,26 @@ let cmd_sourcecode = {
         '\t\t]\n' +
         '\t}\n' +
         '}}\n' +
+        '\\end{sourcecode}',
+
+    'julia': '\\begin{sourcecode}{julia}{Ejemplo en Julia.}\n' +
+        '#= This is a code sample for the Julia language\n' +
+        '(adapted from http://julialang.org) =#\n' +
+        'function mandel(z)\n' +
+        '    c = z\n' +
+        '    maxiter = 80\n' +
+        '    for n = 1:maxiter\n' +
+        '        if abs(z) > 2\n' +
+        '            return n-1\n' +
+        '        end\n' +
+        '        z = z^2 + c\n' +
+        '    end\n' +
+        '    return maxiter\n' +
+        'end\n' +
+        '\n' +
+        'function helloworld()\n' +
+        '    println("Hello, World!") # Bye bye, MATLAB!\n' +
+        'end\n' +
         '\\end{sourcecode}',
 
     'kotlin': '\\begin{sourcecode}{kotlin}{Kotlin en acción.}\n' +
@@ -724,7 +824,7 @@ let cmd_sourcecode = {
         '\\end{images}\n' +
         '\\end{sourcecode}',
 
-    'lisp': '\\begin{sourcecode}{lisp}{Ejemplo en Lisp.}\n' +
+    'lisp': '\\begin{sourcecode}[\\label{ex-lisp}]{lisp}{Ejemplo en Lisp.}\n' +
         '(defun find-symbol-between-sigma-sets (sigma-a sigma-b scan-node symbols g)\n' +
         '\t(let* ((scan-node-set-in-sigma-a (find-scan-node sigma-a scan-node))\n' +
         '\t\t   (next-scan-node-set-in-sigma-b \n' +
@@ -743,6 +843,21 @@ let cmd_sourcecode = {
         '\t   nil)))\n' +
         '\\end{sourcecode}',
 
+    'llvm': '\\begin{sourcecode}{llvm}{Ejemplo en LLVM.}\n' +
+        'target triple = "x86_64-unknown-linux-gnu"\n' +
+        '\n' +
+        '@s = private constant [13 x i8] c"hello world\\0A\\00"\n' +
+        '\n' +
+        '; main prints "hello world" to standard output.\n' +
+        'define i32 @main(i32 %argc, i8** %argv) {\n' +
+        '\t%1 = getelementptr [13 x i8]* @s, i32 0, i32 0\n' +
+        '\tcall i32 (i8*, ...)* @printf(i8* %1)\n' +
+        '\tret i32 0\n' +
+        '}\n' +
+        '\n' +
+        'declare i32 @printf(i8*, ...)\n' +
+        '\\end{sourcecode}',
+
     'lua': '\\begin{sourcecode}{lua}{Ejemplo en Lua.}\n' +
         '-- defines a factorial function\n' +
         'function fact (n)\n' +
@@ -758,7 +873,7 @@ let cmd_sourcecode = {
         'print(fact(a))\n' +
         '\\end{sourcecode}',
 
-    'make': '\\begin{sourcecode}{make}{Ejemplo en make.}\n' +
+    'make': '\\begin{sourcecode}[]{make}{Ejemplo en make.}\n' +
         'all: helloworld variables if_else while_for functions strings pointer\n' +
         '\n' +
         'helloworld:\n' +
@@ -820,6 +935,40 @@ let cmd_sourcecode = {
         'fprintf(\'BETA=%.2f, MAX: FAD=%.3f, TD/TN=%.3f\\n\', BETA(j), fad(mx), tdtn(mx));\n' +
         'plot(tdtn, fad, \'DisplayName\', strcat(\'\\beta=\', sprintf(\'%.2f\', BETA(j))));\n' +
         'end\t\n' +
+        '\\end{sourcecode}',
+
+    'mercury': '\\begin{sourcecode}{mercury}{Ejemplo en Mercury.}\n' +
+        ' :- module fib.\n' +
+        ' :- interface.\n' +
+        ' :- import_module io.\n' +
+        ' :- pred main(io::di, io::uo) is det.\n' +
+        ' \n' +
+        ' :- implementation.\n' +
+        ' :- import_module int.\n' +
+        '\n' +
+        ' :- func fib(int) = int.\n' +
+        ' fib(N) = (if N =< 2 then 1 else fib(N - 1) + fib(N - 2)).\n' +
+        '\n' +
+        ' main(!IO) :-\n' +
+        '        io.write_string("fib(10) = ", !IO),\n' +
+        '        io.write_int(fib(10), !IO),\n' +
+        '        io.nl(!IO).\n' +
+        '        % Could instead use io.format("fib(10) = %d\\n", [i(fib(10))], !IO).\n' +
+        '\\end{sourcecode}',
+
+    'modula2': '\\begin{sourcecode}{modula2}{Ejemplo en Modula-2.}\n' +
+        'type Day_type   is range    1 ..   31;\n' +
+        'type Month_type is range    1 ..   12;\n' +
+        'type Year_type  is range 1800 .. 2100;\n' +
+        'type Hours is mod 24;\n' +
+        'type Weekday is (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);\n' +
+        '\n' +
+        'type Date is\n' +
+        '   record\n' +
+        '     Day   : Day_type;\n' +
+        '     Month : Month_type;\n' +
+        '     Year  : Year_type;\n' +
+        '   end record;\n' +
         '\\end{sourcecode}',
 
     'octave': '\\begin{sourcecode}{octave}{Ejemplo en Octave.}\n' +
@@ -1035,6 +1184,48 @@ let cmd_sourcecode = {
         ' showpage             % print all on the page\n' +
         '\\end{sourcecode}',
 
+    'prolog': '\\begin{sourcecode}{prolog}{Ejemplo en prolog.}\n' +
+        'somePredicate(_, B) :-\n' +
+        '    arbitraryPredicate(A, _variable, 1, 2),\n' +
+        '    predicateWithAtom(someAtom),\n' +
+        '    anotherPredicate(B, someAtom, myPredicate(A, _)),\n' +
+        '    findall(X, (\'testString\'(X), myPredicate(A, X)), L1),\n' +
+        '    member(A, L1),\n' +
+        '    !.\n' +
+        '    /*\n' +
+        '    block comment: blah blah blah\n' +
+        '    */\n' +
+        '    % to-end-of-line comment: blah blah blah\n' +
+        '\\end{sourcecode}',
+
+    'promela': '\\begin{sourcecode}{promela}{Ejemplo promela.}\n' +
+        'mtype = {M_UP, M_DW};\n' +
+        'chan Chan_data_down = [0] of {mtype};\n' +
+        'chan Chan_data_up   = [0] of {mtype};\n' +
+        'proctype P1 (chan Chan_data_in, Chan_data_out)\n' +
+        '{\n' +
+        '    do\n' +
+        '    ::  Chan_data_in  ? M_UP -> skip;\n' +
+        '    ::  Chan_data_out ! M_DW -> skip;\n' +
+        '    od;\n' +
+        '};\n' +
+        'proctype P2 (chan Chan_data_in, Chan_data_out)\n' +
+        '{\n' +
+        '    do\n' +
+        '    ::  Chan_data_in  ? M_DW -> skip;\n' +
+        '    ::  Chan_data_out ! M_UP -> skip;\n' +
+        '    od;\n' +
+        '};\n' +
+        'init\n' +
+        '{\n' +
+        '    atomic\n' +
+        '    {\n' +
+        '        run P1 (Chan_data_up,   Chan_data_down);\n' +
+        '        run P2 (Chan_data_down, Chan_data_up);\n' +
+        '    }\n' +
+        '}\n' +
+        '\\end{sourcecode}',
+
     'pseudocode': '\\begin{sourcecode}{pseudocode}{Algoritmo.}\n' +
         'input: int N, int D\n' +
         'output: int\n' +
@@ -1065,6 +1256,7 @@ let cmd_sourcecode = {
         '\tcorr_genre <- cor(num_genre)\n' +
         '}\n' +
         '\\end{sourcecode}',
+
     'racket': '\\begin{sourcecode}{racket}{Ejemplo en Racket.}\n' +
         '#lang racket/gui\n' +
         '\n' +
@@ -1087,6 +1279,27 @@ let cmd_sourcecode = {
         '\n' +
         '(send frame show #t)\n' +
         '\\end{sourcecode}',
+
+    'reil': '\\begin{sourcecode}{reil}{Ejemplo en REIL.}\n' +
+        'bisz t8, , ZF\n' +
+        'str t8, , esp\n' +
+        'ldm 16815620, , t0\n' +
+        'str t0, , eax\n' +
+        'sub esp, 4, esp\n' +
+        'and esp, 4294967295, esp\n' +
+        'stm esi, , esp\n' +
+        'sub esp, 4, esp\n' +
+        'and esp, 4294967295, esp\n' +
+        'stm t2, , esp\n' +
+        'add -4, ebp, t0\n' +
+        'and t0, 4294967295, t1\n' +
+        'stm eax, , t1\n' +
+        'sub esp, 4, t0\n' +
+        'and t0, 4294967295, esp\n' +
+        'stm 16805479, , esp\n' +
+        'jcc 1, , 16805367\n' +
+        '\\end{sourcecode}',
+
     'ruby': '\\begin{sourcecode}[]{ruby}{Ejemplo con ruby.}\n' +
         'class DataFile < ActiveRecord::Base\n' +
         '    attr_accessor :upload\n' +
@@ -1182,8 +1395,54 @@ let cmd_sourcecode = {
         '\t\t\tc))))\n' +
         '\\end{sourcecode}',
 
+    'scilab': '\\begin{sourcecode}{scilab}{Ejemplo en scilab.}\n' +
+        'function y = f(x)\n' +
+        '\ty = 1/sqrt(2*\\%pi) * exp(-x^2/2)\n' +
+        'endfunction\n' +
+        '\n' +
+        '// A simple plot of z = f(x,y)\n' +
+        't=[0:0.3:2*%pi]\';\n' +
+        'z=sin(t) * cos(t\');\n' +
+        'plot3d(t, t\', z)\n' +
+        '\\end{sourcecode}',
+
+    'simula': '\\begin{sourcecode}{simula}{Ejemplo en simula.}\n' +
+        'Real Procedure Sigma (k, m, n, u);\n' +
+        '   Name k, u;\n' +
+        '   Integer k, m, n; Real u;\n' +
+        'Begin\n' +
+        '   Real s;\n' +
+        '   k:= m;\n' +
+        '   While k <= n Do Begin s:= s + u; k:= k + 1; End;\n' +
+        '   Sigma:= s;\n' +
+        'End;\n' +
+        '\\end{sourcecode}',
+
+    'sparql': '\\begin{sourcecode}{sparql}{Ejemplo en SPARQL.}\n' +
+        'PREFIX ex: <https://example.com/exampleOntology#>\n' +
+        'SELECT ?capital\n' +
+        '       ?country\n' +
+        'WHERE\n' +
+        '  {\n' +
+        '    ?x  ex:cityname       ?capital   ;\n' +
+        '        ex:isCapitalOf    ?y         .\n' +
+        '    ?y  ex:countryname    ?country   ;\n' +
+        '        ex:isInContinent  ex:Africa  .\n' +
+        '  }\n' +
+        '\\end{sourcecode}',
+
+    'sql': '\\begin{sourcecode}{sql}{Merge two tables in SQL.}\n' +
+        'SELECT ChargeNum, CategoryID, SUM(Hours)\n' +
+        'FROM KnownHours\n' +
+        'GROUP BY ChargeNum, CategoryID\n' +
+        'UNION ALL\n' +
+        'SELECT ChargeNum, \'Unknown\' AS CategoryID, SUM(Hours)\n' +
+        'FROM UnknownHours\n' +
+        'GROUP BY ChargeNum\n' +
+        '\\end{sourcecode}',
+
     'swift': '\\begin{sourcecode}{swift}{Ejemplo en Swift.}\n' +
-        '// This function passes the result of the first closure or function to another and returns its result.\n' +
+        '// This function passes the result of the first closure or function.\n' +
         'func b(closure a: () -> Int, anotherClosure: (Int) -> Int) -> Int {\n' +
         '    return anotherClosure(a())\n' +
         '}\n' +
@@ -1216,16 +1475,6 @@ let cmd_sourcecode = {
         '   binary scan $string H* hex\n' +
         '   regexp -all -inline .. $hex\n' +
         '}\n' +
-        '\\end{sourcecode}',
-
-    'sql': '\\begin{sourcecode}{sql}{Merge two tables.}\n' +
-        'SELECT ChargeNum, CategoryID, SUM(Hours)\n' +
-        'FROM KnownHours\n' +
-        'GROUP BY ChargeNum, CategoryID\n' +
-        'UNION ALL\n' +
-        'SELECT ChargeNum, \'Unknown\' AS CategoryID, SUM(Hours)\n' +
-        'FROM UnknownHours\n' +
-        'GROUP BY ChargeNum\n' +
         '\\end{sourcecode}',
 
     'vbscript': '\\begin{sourcecode}{vbscript}{Ejemplo en Visual Basic.}\n' +
@@ -1585,6 +1834,7 @@ function afterDocumentReady() {
         $a = $a.replace('<b>]</b>{', '<b>]</b><b>{</b>');
         $a = $a.replace('}{', '<b>}</b><b>{</b>');
         $a = $a.replace('}{', '<b>}</b><b>{</b>');
+        $a = $a.replace(']{', '<b>]</b><b>{</b>');
         $a = $a.replace('{}', '<b>{</b><b>}</b><span class="pl-srccode">');
         $a = $a.replace('.}', '.<b>}</b><span class="pl-srccode">');
         $a = $a.replace('\\end{sourcecode}', '</span><span class="pl-c1">\\end</span><b>{</b><span class="pl-e">sourcecode</span><b>}</b>');
