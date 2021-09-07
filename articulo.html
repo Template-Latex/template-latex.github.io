@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Template Presentacion</title>
+    <title>Template Articulo</title>
     <!--
     The MIT License (MIT)
 
@@ -29,20 +29,20 @@
 
     <!-- Metadatos -->
     <meta name="author" content="Pablo Pizarro R. @ppizarror"/>
-    <meta name="description" content="Template para crear presentaciones en LaTeX"/>
+    <meta name="description" content="Template para crear artículos en LaTeX"/>
     <meta name="msapplication-TileColor" content="#ffffff"/>
     <meta name="msapplication-TileImage" content="resources/ms-icon-144x144.png"/>
     <meta name="robots" content="noarchive"/>
     <meta name="theme-color" content="#ffffff"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:description" content="Template para crear presentaciones en LaTeX"/>
+    <meta name="twitter:description" content="Template para crear artículos en LaTeX"/>
     <meta name="twitter:image" content="https://latex.ppizarror.com/res/favicon-informe/icon.png"/>
-    <meta name="twitter:title" content="Template Presentacion"/>
+    <meta name="twitter:title" content="Template Articulo"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta property="og:description" content="Template para crear presentaciones en LaTeX"/>
+    <meta property="og:description" content="Template para crear artículos en LaTeX"/>
     <meta property="og:image" content="https://latex.ppizarror.com/res/favicon-informe/icon.png"/>
-    <meta property="og:title" content="Template Presentacion"/>
-    <meta property="og:url" content="https://latex.ppizarror.com/presentacion"/>
+    <meta property="og:title" content="Template Articulo"/>
+    <meta property="og:url" content="https://latex.ppizarror.com/articulo"/>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="res/favicon-informe/apple-touch-icon.png">
@@ -91,7 +91,7 @@
     <!-- Js de la aplicación -->
     <script src="https://latex.ppizarror.com/stats/app/prevdownload.min.js"></script>
     <script src="app/globalconfig.min.js"></script>
-    <script src="app/releases/presentacion/config.min.js"></script>
+    <script src="app/releases/articulo/config.min.js"></script>
     <script src="app/about.min.js"></script>
     <script src="app/utils.min.js"></script>
     <script src="app/session.min.js"></script>
@@ -114,14 +114,14 @@
 <div id="background-page-header"></div>
 
 <section class="page-header">
-    <h1 class="project-name">Template Presentacion</h1>
-    <h2 class="project-tagline">Template para crear presentaciones en LaTeX</h2>
+    <h1 class="project-name">Template Articulo</h1>
+    <h2 class="project-tagline">Template para crear artículos en LaTeX</h2>
     <a href="" id="github-button-header" class="btn hvr-shadow">Ver en GitHub <i class="fab fa-github"></i></a>
     <!--suppress HtmlUnknownAnchorTarget -->
     <a id="template-preview-pdf" href="#bad-pdf-preview-url" class="btn hvr-shadow">Ver Ejemplo <i
             class="fas fa-file-pdf"></i></a>
-    <!--suppress HtmlDeprecatedAttribute -->
-    <a content="#downloadother" class="btn-pro hvr-shadow" id="download-button-1file" name="leanModal">Descargar</a>
+    <!--suppress HtmlUnknownAnchorTarget -->
+    <a href="#Error_al_cargar_enlace_descarga" class="btn-pro hvr-shadow" id="download-button">Descargar</a>
 </section>
 
 <div id="contentBackground">
@@ -129,7 +129,7 @@
         <h2>
             <a class="anchor" href="" aria-hidden="true">
                 <span aria-hidden="true" class="octicon octicon-link"></span>
-            </a>Template de Presentaciones en Latex
+            </a>Template de Artículos en Latex
         </h2>
 
         <!-- Badges -->
@@ -146,7 +146,7 @@
             <img src="res/badges/chat.svg" alt=""/>
         </a>
         <a href="" id="templatestats">
-            <img src="https://img.shields.io/github/downloads/Template-Latex/Template-Presentacion/total?label=Descargas"
+            <img src="https://img.shields.io/github/downloads/Template-Latex/Template-Articulo/total?label=Descargas"
                  alt="">
         </a>
         <br/>
@@ -166,15 +166,16 @@
             <a href="https://latex.ppizarror.com/tesis" class="aimg">
                 <img src="res/badges/tesis.svg" alt=""></a>
             <a href="https://latex.ppizarror.com/professional-cv" class="aimg">
-                <img src="res/badges/professionalcv.svg" alt=""></a>
+                <img src="res/badges/professionalcv.svg" alt="">
+            </a>
         </div>
 
         <!-- Introducción -->
         <p>
-            Este corresponde a un template para confeccionar presentaciones en <img
-                src="res/other/latex.png" alt="LaTeX" class="lateximg"/>, contiene funciones
-            para agregar imágenes, párrafos, fórmulas, etc.<br><br>
-            <img src="res/images/collage_presentacion.png" alt="Presentación" class="exampleCollage"/>
+            Este corresponde a un template para confeccionar artículos en
+            <img src="res/other/latex.png" alt="LaTeX" class="lateximg">, contiene funciones
+            para agregar imágenes, párrafos, fórmulas, etc.
+            <img src="res/images/collage_articulo.png" alt="Artículo" class="exampleCollage">
         </p>
 
         <!-- Manual de uso -->
@@ -223,16 +224,18 @@
 </div>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118050511-10"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118050511-3"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
-    function gtag() {dataLayer.push(arguments);}
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
     gtag('js', new Date());
 
-    gtag('config', 'UA-118050511-10');
+    gtag('config', 'UA-118050511-3');
 </script>
-</body>
 
+</body>
 </html>

@@ -154,8 +154,8 @@
         </a>
         <br/>
         <div id="badgeslistdiv" style="display: block;">
-            <a href="https://latex.ppizarror.com/apunte" class="aimg">
-                <img src="res/badges/apunte.svg" style="display: none" alt=""></a>
+            <a href="https://latex.ppizarror.com/articulo" class="aimg">
+                <img src="res/badges/articulo.svg" alt=""></a>
             <a href="https://latex.ppizarror.com/auxiliares" class="aimg">
                 <img src="res/badges/auxiliares.svg" alt=""></a>
             <a href="https://latex.ppizarror.com/controles" class="aimg">
@@ -227,7 +227,7 @@
             funciones para insertar imágenes, fórmulas, párrafos y títulos de forma sencilla, sin tener que recurrir a
             las largas instrucciones que ofrece Latex por defecto.
         </p>
-        <img src="res/images/collage.png" alt="Informe" style="margin:auto; display:block; width:80%"/>
+        <img src="res/images/collage.png" alt="Informe" class="exampleCollage"/>
         <p class="justified-text">
             Para crear un informe con este template debes primero <a href="#configurando-el-documento">editar la
             información del documento</a> (título, nombre de la universidad, etc.) en la sección <em
@@ -273,10 +273,10 @@
         </p>
         <ul>
             <li>
-                <strong>\titulodelinforme</strong>: Título del informe.
+                <strong>\titulodeldocumento</strong>: Título del informe u documento.
             </li>
             <li>
-                <strong>\subtituloinforme</strong>: Si se define, se usa como título en los header-footer.
+                <strong>\subtitulodocumento</strong>: Si se define, se usa como título en los header-footer.
             </li>
             <li>
                 <strong>\temaatratar</strong>: Tema a tratar.
@@ -559,8 +559,7 @@
                                 <li>
                                     <strong>\begin{imagesmc}</strong><b>[</b><em>Label</em>
                                     (opcional)<b>]{</b><em>Posición</em><b>}{</b><em>Leyenda</em><b>}</b>:
-                                    Permite insertar múltiples imágenes dentro de un objeto, para ello se hace uso de
-                                    las instrucciones <strong>\addimage</strong> y <strong>\addimageboxed</strong>.
+                                    Permite insertar múltiples imágenes dentro de un objeto.
                                     Para controlar la posición, se debe usar los valores <i>{bottom}</i> o <i>{top}</i>.
                                     Todas las funciones de <i>\begin{images}</i> se pueden utilizar dentro de este
                                     macro.
@@ -4513,10 +4512,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/notoccite">notoccite</a></strong>: Desactiva las citas en
                     el índice.
-                </li>
-                <li>
-                    <strong><a href="https://www.ctan.org/pkg/lastpage">lastpage</a></strong>: Obtiene el número de
-                    páginas del documento.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/lineno">lineno</a></strong>: Muestra los números de línea.

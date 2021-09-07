@@ -138,6 +138,7 @@
 
 #badgeslistdiv {
     display: none;
+    margin-top: 5px;
 }
 
 @keyframes fadeIn {
@@ -1320,6 +1321,12 @@ Botón de ejemplo que contiene mostrar/ocultar ejemplo
     margin-inline-end: 40px;
     margin-top: 5px;
     padding: 10px 10px;
+}
+
+.exampleCollage {
+    margin: auto;
+    display: block;
+    width: 80%;
 }
 
 .imageCodeExample {
