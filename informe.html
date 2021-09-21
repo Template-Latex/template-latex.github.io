@@ -152,7 +152,7 @@
             <img src="https://img.shields.io/github/downloads/Template-Latex/Template-Informe/total?label=Descargas"
                  alt="">
         </a>
-        <br/>
+        <br>
         <div id="badgeslistdiv" style="display: block;">
             <a href="https://latex.ppizarror.com/articulo" class="aimg">
                 <img src="res/badges/articulo.svg" alt=""></a>
@@ -162,6 +162,8 @@
                 <img src="res/badges/controles.svg" alt=""></a>
             <a href="https://latex.ppizarror.com/informe" class="aimg">
                 <img src="res/badges/informe.svg" alt=""></a>
+            <a href="https://latex.ppizarror.com/poster" class="aimg">
+                <img src="res/badges/poster.svg" alt=""></a>
             <a href="https://latex.ppizarror.com/presentacion" class="aimg">
                 <img src="res/badges/presentacion.svg" alt=""></a>
             <a href="https://latex.ppizarror.com/reporte" class="aimg">
@@ -185,7 +187,6 @@
                     <li><a href="#hlp-formulae" class="menu-little-entry">Insertar una fórmula en el documento</a></li>
                     <li><a href="#hlp-title" class="menu-little-entry">Insertar secciones sin número y sin aparecer en
                         el índice</a></li>
-                    <li><a href="#hlp-parrafo" class="menu-little-entry">Insertar párrafos</a></li>
                     <li><a href="#hlp-srccode" class="menu-little-entry">Añadir código fuente</a></li>
                     <li><a href="#hlp-annex" class="menu-little-entry">Insertar anexos</a></li>
                     <li><a href="#hlp-ref" class="menu-little-entry">Añadir referencias</a></li>
@@ -273,40 +274,40 @@
         </p>
         <ul>
             <li>
-                <strong>\titulodeldocumento</strong>: Título del informe u documento.
+                <strong>\documenttitle</strong>: Título del informe u documento.
             </li>
             <li>
-                <strong>\subtitulodocumento</strong>: Si se define, se usa como título en los header-footer.
+                <strong>\documentsubtitle</strong>: Si se define, se usa como título en los header-footer.
             </li>
             <li>
-                <strong>\temaatratar</strong>: Tema a tratar.
+                <strong>\documentsubject</strong>: Tema a tratar en el documento.
             </li>
             <li>
-                <strong>\autordeldocumento</strong>: Nombre del autor o grupo, <b>no</b> es usado en la portada.
+                <strong>\documentauthor</strong>: Nombre del autor o grupo, <b>no</b> es usado en la portada.
             </li>
             <li>
-                <strong>\nombredelcurso</strong>: Curso/Ramo referido al informe.
+                <strong>\coursename</strong>: Curso/Ramo referido al informe.
             </li>
             <li>
-                <strong>\codigodelcurso</strong>: Código del curso.
+                <strong>\coursecode</strong>: Código del curso.
             </li>
             <li>
-                <strong>\nombreuniversidad</strong>: Universidad, instituto, etc.
+                <strong>\universityname</strong>: Universidad, instituto, etc.
             </li>
             <li>
-                <strong>\nombrefacultad</strong>: Facultad relacionada con la universidad, instituto, etc.
+                <strong>\universityfaculty</strong>: Facultad relacionada con la universidad, instituto, etc.
             </li>
             <li>
-                <strong>\departamentouniversidad</strong>: Departamento de la universidad.
+                <strong>\universitydepartment</strong>: Departamento de la universidad.
             </li>
             <li>
-                <strong>\imagendeldepartamento</strong>: Imagen del departamento o universidad a usar en la portada,
+                <strong>\universitydepartmentimage</strong>: Imagen del departamento o universidad a usar en la portada,
                 estos se pueden encontrar en la carpeta <a
                     href="https://github.com/Template-Latex/Template-Informe/tree/master/img/departamentos"
                     target="_blank" class="javascripthref">img/departamentos/</a>. Se añaden algunas imágenes por
                 defecto de la <a href="http://www.uchile.cl" target="_blank" class="javascripthref">Universidad de
                 Chile</a>, aunque se puede usar cualquier otra. La carpeta <em>img/departamentos/</em> puede borrarse
-                sin problema.<br/>
+                sin problema.<br>
                 <a id="showImagesContainer" class="javascripthref"></a>.
                 <div class="codeFunContainer" id="dptoImagesContainer">
                     <ul>
@@ -401,11 +402,11 @@
                 </div>
             </li>
             <li>
-                <strong>\imagendepartamentoparams</strong>: Parámetros de la imágen, puede ser <i>scale</i>,
+                <strong>\universitydepartmentimagecfg</strong>: Parámetros de la imágen, puede ser <i>scale</i>,
                 <i>width</i>, <i>angle</i>, etc.
             </li>
             <li>
-                <strong>\localizacionuniversidad</strong>: Ciudad o región en donde se ubica la universidad o instituto.
+                <strong>\universitylocation</strong>: Ciudad o región en donde se ubica la universidad o instituto.
             </li>
         </ul>
 
@@ -1127,43 +1128,6 @@
                 </ul>
             </li>
             <li class="li-code-parent">
-                <strong class="functtitlstyle">Insertar párrafos<a id="hlp-parrafo"></a></strong>
-                <p>
-                    Para esto existen las siguientes funciones:
-                </p>
-                <ul>
-                    <li>
-                        <strong>\newp</strong>: Sencilla forma de añadir un nuevo párrafo.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre>Este es un parrafo. <br><span class="pl-e">\newp</span> Este es otro.</pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\newpar</strong><b><b>{</b></b><em>Párrafo</em><b>}</b>: Inserta un nuevo párrafo con un
-                        salto de linea al terminar.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-e">\newpar</span><b>{</b>Este es un parrafo.<b>}</b><br><span
-                                        class="pl-e">\newpar</span><b>{</b>Este es otro.<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <strong>\newparnl</strong><b>{</b><em>Párrafo</em><b>}</b>: Inserta un nuevo párrafo sin un
-                        salto de linea al terminar.
-                        <blockquote>
-                            <div class="highlight highlight-text-tex">
-                                <pre><span
-                                        class="pl-e">\newparnl</span><b>{</b>Este es un parrafo sin salto de línea.<b>}</b><br><span
-                                        class="pl-e">\newparnl</span><b>{</b>Este es otro párrafo sin salto de línea.<b>}</b></pre>
-                            </div>
-                        </blockquote>
-                    </li>
-                </ul>
-            </li>
-            <li class="li-code-parent">
                 <a id="hlp-srccode"></a>
                 <strong class="functtitlstyle">Añadir código fuente</strong>
                 <p class="justified-text">
@@ -1417,12 +1381,12 @@ end
             <li class="li-code-parent">
                 <strong class="functtitlstyle">Insertar anexos<a id="hlp-annex"></a></strong>
                 <p>
-                    Para insertar anexos existe el ambiente <b>anexo</b>, dentro de él se pueden crear secciones,
+                    Para insertar anexos existe el ambiente <b>appendixd</b>, dentro de él se pueden crear secciones,
                     sub-secciones, etc.
                 </p>
                 <blockquote id="example-anexos">
                     <div class="highlight highlight-text-tex">
-                                <pre><span class="pl-c1">\begin</span><b>{</b><span class="pl-e">anexo</span><b>}</b>
+                                <pre><span class="pl-c1">\begin</span><b>{</b><span class="pl-e">appendixd</span><b>}</b>
     <span class="pl-c1">\section</span>{Cálculos realizados}
         <span class="pl-c1">\subsection</span>{Metodología}
             <span class="pl-c1">\lipsum</span>[69]
@@ -1435,7 +1399,7 @@ end
     <span class="pl-c1">\newpage</span>
     <span class="pl-c1">\section</span>{Otros anexos}
         <span class="pl-c1">\lipsum</span>[1]
-<span class="pl-c1">\end</span><b>{</b><span class="pl-e">anexo</span><b>}</b></pre>
+<span class="pl-c1">\end</span><b>{</b><span class="pl-e">appendixd</span><b>}</b></pre>
                     </div>
                 </blockquote>
             </li>
@@ -1478,10 +1442,10 @@ Para citar: <span class="pl-c1">\cite</span>{myref}.
                             </div>
                         </blockquote>
                         <b>-</b> Para citar se usa <span class="pl-c1">\cite</span>{ref1}
-                        <br/>
+                        <br>
                         <b>-</b> Establecer configuración <a href="#stylecitereferences"
                                                              class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{bibtex}
-                        <br/>
+                        <br>
                         <b>-</b> Cambiar estilo referencias con la configuración <a href="#bibtexstyle"
                                                                                     class="javascripthref"><span class="pl-c1">\bibtexstyle</span></a>
                     </li>
@@ -1505,14 +1469,10 @@ Para usar citas extensas se utiliza <span class="pl-c1">\fullcite</span>{braas}.
                         </blockquote>
                         <b>-</b> Establecer configuración <a href="#stylecitereferences"
                                                              class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{apacite}
-                        <br/>
+                        <br>
                         <b>-</b> Cambiar estilo referencias con la configuración <a href="#apacitestyle"
                                                                                     class="javascripthref"><span class="pl-c1">\apacitestyle</span></a>
-                        <br/>
-                        <b>-</b> <a href="res/guia_basica_referencias_mendeley_v3.pdf">Guía básica referencias Mendeley
-                            (v3)</a>: Documento creado por Marcia Paredes A; ilustra detalladamente el proceso necesario
-                        para usar las referencias y configurar el template. Válido tanto para <i>apacite</i> como
-                        <i>natbib</i>
+                        <br>
                     </li>
                 </ul>
                 <hr class="style1">
@@ -1531,7 +1491,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </blockquote>
                         <b>-</b> Establecer configuración <a href="#stylecitereferences"
                                                              class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{natbib}
-                        <br/>
+                        <br>
                         <b>-</b> Cambiar estilo referencias con la configuración <a href="#natbibrefstyle"
                                                                                     class="javascripthref"><span class="pl-c1">\natbibrefstyle</span></a>
                     </li>
@@ -1579,6 +1539,16 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                             <span class="pl-c1">\stylecitereferences</span></a>{natbib} se debe
                         modificar la configuración del estilo a <a href="#natbibrefstyle" class="javascripthref">
                             <span class="pl-c1">\natbibrefstyle</span></a>{apaesp2}.
+                    </li>
+                    <li><a href="doc/guia_basica_referencias_mendeley_v3.pdf" class="javascripthref">
+                        Guía básica referencias Mendeley (v3)</a>: Documento creado por Marcia Paredes A
+                        ilustra detalladamente el proceso necesario para usar las referencias y configurar
+                        el template. Válido tanto para <i>apacite</i> como <i>natbib</i>.
+                    </li>
+                    <li><a href="doc/guia-bibtex.pdf" class="javascripthref">Guía casi completa de BibTEX</a>:
+                        Guía que aborda todos los aspectos de BibTEX, desde los más básicos a los más complejos,
+                        haciendo además hincapié en su españolización, pues BibTEX, como tantas otras herramientas,
+                        presupone que será usada para trabajar con documentos en inglés.
                     </li>
                 </ul>
             </li>
@@ -2301,6 +2271,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\newpagemulticol</strong>: Forza un salto de página dentro del entorno <i>multicol</i>.
                     </li>
                     <li>
+                        <strong>\newp</strong>: Sencilla forma de añadir un nuevo párrafo.
+                    </li>
+                    <li>
                         <strong>\quotes</strong><b>{</b><em>Texto</em><b>}</b>: Inserta un texto entre comillas.
                     </li>
                     <li>
@@ -2415,6 +2388,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\documentinterline</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Tamaño del interlineado en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\documentparindent</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño del indentado de los párrafos en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\documentparskip</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Distancia entre párrafos en pt.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -2537,6 +2522,11 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                                 <a href="https://tug.org/FontCatalogue/pxfonts/" class="fontsrc javascripthref">pxfonts</a>,
                                 <a href="https://tug.org/FontCatalogue/quattrocentosans/" class="fontsrc javascripthref">quattrocento</a>,
                                 <a href="https://tug.org/FontCatalogue/raleway/" class="fontsrc javascripthref">raleway</a>,
+                                <a href="https://tug.org/FontCatalogue/raleway/" class="fontsrc javascripthref">ralewayblack</a>,
+                                <a href="https://tug.org/FontCatalogue/raleway/" class="fontsrc javascripthref">ralewayextralight</a>,
+                                <a href="https://tug.org/FontCatalogue/raleway/" class="fontsrc javascripthref">ralewaymedium</a>,
+                                <a href="https://tug.org/FontCatalogue/raleway/" class="fontsrc javascripthref">ralewaylight</a>,
+                                <a href="https://tug.org/FontCatalogue/raleway/" class="fontsrc javascripthref">ralewaythincaptioncolor</a>,
                                 <a href="https://tug.org/FontCatalogue/roboto/" class="fontsrc javascripthref">roboto</a>,
                                 <a href="https://tug.org/FontCatalogue/robotolight/" class="fontsrc javascripthref">robotolight</a>,
                                 <a href="https://tug.org/FontCatalogue/robotolightcondensed/" class="fontsrc javascripthref">robotolightcondensed</a>,
@@ -2731,14 +2721,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\captioncolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de la etiqueta (Figura, Tabla, Código) en la leyenda de
-                                los objetos.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <strong>\captionfontsize</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Tamaño de fuente de los caption, valores típicos a usar: <i>footnotesize,
@@ -2902,12 +2884,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <div class="config-desc">
                             <div class="config-desc-inner">Etiquetas (Figura, Tabla, etc) de la leyenda en negrita.
                             </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\captiontextcolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de la leyenda de los objetos.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -3397,14 +3373,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\sectionappendixlastchar</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Caracter entre el número de la sección del anexo y el
-                                título.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
                         <div id="stylecitereferences">
                             <strong>\stylecitereferences</strong>
                             <a id="ref-style-config"></a>
@@ -3463,9 +3431,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\footnotepagetoprule</strong>
+                        <strong>\footnotelmargin</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Footnote en página tienen separador superior.
+                            <div class="config-desc-inner">Margen entre el número del footnote y el texto, en pt.
                             </div>
                         </div>
                     </li>
@@ -3477,6 +3445,34 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                                 valores esperados: <b>none</b> (Ninguno), <b>chap</b> (Capítulo), <b>page</b> &nbsp;(Por
                                 cada página), <b>sec</b> &nbsp;(Sección), <b>ssec</b> &nbsp;(Subsección), <b>sssec</b>
                                 &nbsp;(Sub-subsección), <b>ssssec</b> &nbsp;(Sub-sub-subsección).
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\footnoterulefigure</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Footnote en figuras tienen separador superior.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\footnoterulepage</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Footnote en página tienen separador superior.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\footnoteruletable</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Footnote en tablas tienen separador superior.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\footnotetwocolumn</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Activa los footnotes en dos columnas.
                             </div>
                         </div>
                     </li>
@@ -3566,13 +3562,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <div class="config-desc">
                             <div class="config-desc-inner">Margen superior imágenes flotantes insertadas con <i>\insertimageleft</i>,
                                 <i>\insertimageright</i>, en pt.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\marginfootnote</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Margen derecho de los footnotes, en pt.
                             </div>
                         </div>
                     </li>
@@ -3722,10 +3711,33 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\sourcecodeilfontf</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tipo de letra del código fuente inline, insertado con
+                                las funciones <i>\inlinesourcecode</i> o <i>\inlinesourcecodeboxed</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sourcecodeilfonts</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño de la letra del código fuente, insertado con
+                                las funciones <i>\inlinesourcecode</i> o <i>\inlinesourcecodeboxed</i>.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\sourcecodenumbersep</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Separación entre el número de las líneas del código fuente y
                                 el cuerpo.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sourcecodenumbersize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño fuente números de líneas en código fuente.
                             </div>
                         </div>
                     </li>
@@ -3741,6 +3753,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\tabledefaultplacement</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Ubicación por defecto de las tablas.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablenotesameline</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Notas en tablas se ubican en la misma línea.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\tablenotesfontsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño del texto en las notas de tablas.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -3776,37 +3800,15 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\fontsizessstitle</strong>
+                        <strong>\appendixsectionlastchar</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño sub-sub-subtítulos.</div>
+                            <div class="config-desc-inner">Caracter entre el número de la sección del anexo y el
+                                título.
+                            </div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\fontsizesubsubtitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño sub-subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontsizesubtitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño subtítulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontsizetitle</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño títulos.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\fontsizetitlei</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño títulos en el índice.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\showdotaftersnum</strong>
+                        <strong>\dotaftersnum</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Muestra un punto en cada número de sección, subsección y
                                 sub-subsección.
@@ -3814,33 +3816,195 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\stylessstitle</strong>
+                        <strong>\indexsectionfontsize</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Estilo sub-sub-subtítulos.</div>
+                            <div class="config-desc-inner">Tamaño secciones en el índice.</div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\stylesubsubtitle</strong>
+                        <strong>\indexsectionstyle</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Estilo sub-subtítulos.</div>
+                            <div class="config-desc-inner">Estilo secciones en el índice.</div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\stylesubtitle</strong>
+                        <strong>\paragfontsize</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Estilo subtítulos.</div>
+                            <div class="config-desc-inner">Tamaño fuente <i>\paragraph</i>.</div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\styletitle</strong>
+                        <strong>\paragfontstyle</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Estilo títulos.</div>
+                            <div class="config-desc-inner">Estilo fuente <i>\paragraph</i>.</div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\styletitlei</strong>
+                        <strong>\paragspacingbottom</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Estilo títulos en el índice.</div>
+                            <div class="config-desc-inner">Espaciado inferior en <i>\paragraph</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\paragspacingleft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado a la izquierda en <i>\paragraph</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\paragspacingtop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado superior <i>\paragraph</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\paragsubfontsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño fuente <i>\subparagraph</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\paragsubfontstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo fuente <i>\subparagraph</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\paragsubspacingbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado inferior en <i>\subparagraph</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\paragsubspacingleft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado a la izquierda en <i>\subparagraph</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\paragsubspacingtop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado superior <i>\subparagraph</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionfontsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño fuente <i>\section</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionfontstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo fuente <i>\section</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionspacingbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado inferior en <i>\section</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionspacingleft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado a la izquierda en <i>\section</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectionspacingtop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado superior <i>\section</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssectionfontsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño fuente <i>\subsection</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssectionfontstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo fuente <i>\subsection</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssectionspacingbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado inferior en <i>\subsection</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssectionspacingleft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado a la izquierda en <i>\subsection</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssectionspacingtop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado superior <i>\subsection</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sssectionfontsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño fuente <i>\subsubsection</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sssectionfontstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo fuente <i>\subsubsection</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sssectionspacingbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado inferior en <i>\subsubsection</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sssectionspacingleft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado a la izquierda en <i>\subsubsection</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sssectionspacingtop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado superior <i>\subsubsection</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssssectionfontsize</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Tamaño fuente <i>\subsubsubsection</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssssectionfontstyle</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Estilo fuente <i>\subsubsubsection</i>.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssssectionspacingbottom</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado inferior en <i>\subsubsubsection</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssssectionspacingleft</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado a la izquierda en <i>\subsubsubsection</i> en pt.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\ssssectionspacingtop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Espaciado superior <i>\subsubsubsection</i> en pt.</div>
                         </div>
                     </li>
                 </ul>
@@ -3850,9 +4014,17 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                 <strong class="functtitlstyle">Configurar los colores del documento<a id="config-colors"></a></strong>
                 <ul>
                     <li class="config-elem">
-                        <strong>\colorpage</strong>
+                        <strong>\captioncolor</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Define el color de fondo de las páginas del documento.</div>
+                            <div class="config-desc-inner">Color de la etiqueta (Figura, Tabla, Código) en la leyenda de
+                                los objetos.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\captiontextcolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de la leyenda de los objetos.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -3901,9 +4073,21 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </div>
                     </li>
                     <li class="config-elem">
+                        <strong>\pagescolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Define el color de fondo de las páginas del documento.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\portraittitlecolor</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Color de los títulos de la portada.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\sectioncolor</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Color de los <i>\section</i>.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -3919,21 +4103,21 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\ssstitlecolor</strong>
+                        <strong>\ssectioncolor</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Color de los sub-sub-subtítulos.</div>
+                            <div class="config-desc-inner">Color de los <i>\subsection</i>.</div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\subsubtitlecolor</strong>
+                        <strong>\sssectioncolor</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Color de los sub-subtítulos.</div>
+                            <div class="config-desc-inner">Color de los <i>\subsubsection</i>.</div>
                         </div>
                     </li>
                     <li class="config-elem">
-                        <strong>\subtitlecolor</strong>
+                        <strong>\ssssectioncolor</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Color de los subtítulos.</div>
+                            <div class="config-desc-inner">Color de los <i>\subsubsubsection</i>.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -3952,12 +4136,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\tablerowsecondcolor</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Segundo color de celda de las tablas.</div>
-                        </div>
-                    </li>
-                    <li class="config-elem">
-                        <strong>\titlecolor</strong>
-                        <div class="config-desc">
-                            <div class="config-desc-inner">Color de los títulos.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -4429,6 +4607,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <strong><a href="https://www.ctan.org/pkg/datetime">datetime</a></strong>: Fechas.
                 </li>
                 <li>
+                    <strong><a href="https://www.ctan.org/pkg/dblfnote">dblfnote</a></strong>: Footnotes en múltiples columnas.
+                </li>
+                <li>
                     <strong><a href="https://www.ctan.org/pkg/draftfigure">draftfigure</a></strong>: Modo draft en
                     imágenes.
                 </li>
@@ -4448,8 +4629,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     objetos.
                 </li>
                 <li>
-                    <strong><a href="https://www.ctan.org/pkg/floatpag">floatpag</a></strong>: Maneja números de
-                    páginas.
+                    <strong><a href="https://www.ctan.org/pkg/floatpag">floatpag</a></strong>: Permite modificar los
+                    estilos de páginas creados por objetos flotantes.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/floatrow">floatrow</a></strong>: Administración de floats.
@@ -4580,10 +4761,17 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <strong><a href="https://www.ctan.org/pkg/soul">soul</a></strong>: Permite subrayar texto.
                 </li>
                 <li>
+                    <strong><a href="https://www.ctan.org/pkg/stfloats">stfloats</a></strong>: Permite cambiar posición
+                    de flotantes con [b] y [t].
+                </li>
+                <li>
                     <strong><a href="https://www.ctan.org/pkg/subfig">subfig</a></strong>: Permite agrupar imágenes.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/textcomp">textcomp</a></strong>: Simbología.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/threeparttable">threeparttable</a></strong>: Notas en tablas.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/titlesec">titlesec</a></strong>: Configuración de los
@@ -4606,9 +4794,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <strong><a href="https://www.ctan.org/pkg/ulem">ulem</a></strong>: Permite cachar, subrayar, etc.
                 </li>
                 <li>
-                    <strong><a href="https://www.ctan.org/pkg/url">url</a></strong>: Permite añadir enlaces.
-                </li>
-                <li>
                     <strong><a href="https://www.ctan.org/pkg/wasysym">wasysym</a></strong>: Contiene caracteres
                     misceláneos.
                 </li>
@@ -4619,8 +4804,11 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <strong><a href="https://www.ctan.org/pkg/xcolor">xcolor</a></strong>: Paquete de colores avanzado.
                 </li>
                 <li>
-                    <strong><a href="https://www.ctan.org/pkg/xcolor">xspace</a></strong>: Adminisitra espacios en
+                    <strong><a href="https://www.ctan.org/pkg/xspace">xspace</a></strong>: Adminisitra espacios en
                     párrafos y líneas.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/xurl">xurl</a></strong>: Permite añadir enlaces.
                 </li>
             </ul>
         </div>
@@ -4649,7 +4837,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
             Si tienes alguna sugerencia, o encontraste un error en el template puedes abrir un nuevo <i>issue</i> en su
             página en GitHub.
         </p>
-        <br/>
+        <br>
 
         <!-- Galerías -->
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
