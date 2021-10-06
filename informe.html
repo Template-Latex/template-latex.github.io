@@ -2362,7 +2362,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                             <strong>\compilertype</strong>
                             <div class="config-desc">
                                 <div class="config-desc-inner">Tipo de compilador que se usa para compilar a pdf.
-                                    Soportados: <i>pdf2latex</i>, <i>xelatex</i> o <i>lualatex</i>.
+                                    Soportados: <b>pdf2latex</b>, <b>xelatex</b> o <b>lualatex</b>.
                                 </div>
                             </div>
                         </div>
@@ -2631,7 +2631,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\twopagesclearformat</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Formato de las nuevas páginas insertadas en el estilo
-                                de documento <i>twoside</i>. Estilos disponibles: <i>blank</i> y <i>empty</i>.
+                                de documento <i>twoside</i>. Estilos disponibles: <b>blank</b> y <b>empty</b>.
                             </div>
                         </div>
                     </li>
@@ -2710,16 +2710,18 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\captionfontsize</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Tamaño de fuente de los caption, valores típicos a usar: <i>footnotesize,
-                                small, normalsize, large, Large, LARGE, huge, Huge, HUGE</i>.
+                            <div class="config-desc-inner">Tamaño de fuente de los caption, valores típicos a usar:
+                                <b>footnotesize</b>, <b>small</b>, <b>normalsize</b>, <b>large</b>, <b>Large</b>,
+                                <b>LARGE</b>, <b>huge</b>, <b>Huge</b> o <b>HUGE</b>.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\captionlabelformat</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Formato leyenda: empty, simple, parens &nbsp;<a
-                                    href="http://www.peteryu.ca/tutorials/publishing/latex_captions#label_format_and_label_separator">(documentación)</a>.
+                            <div class="config-desc-inner">Formato leyenda, valores posibles: <b>empty</b>,
+                                <b>simple</b> o <b>parens</b> &nbsp;<a
+                                        href="http://www.peteryu.ca/tutorials/publishing/latex_captions#label_format_and_label_separator">(documentación)</a>.
                             </div>
                         </div>
                     </li>
@@ -2784,7 +2786,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\captionmarginmultimg</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>)
-                                de las imágenes múltiples insertadas con <b>images</b>.
+                                de las imágenes múltiples insertadas con <i>images</i>.
                             </div>
                         </div>
                     </li>
@@ -3041,7 +3043,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\subcaptionfsize</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Tamaño de fuente de los subcaption, valores típicos a usar:
-                                <i>footnotesize, small, normalsize, large, Large, LARGE, huge, Huge, HUGE</i>.
+                                <b>footnotesize</b>, <b>small</b>, <b>normalsize</b>, <b>large</b>, <b>Large</b>,
+                                <b>LARGE</b>, <b>huge</b>, <b>Huge</b> o <b>HUGE</b>.
                             </div>
                         </div>
                     </li>
@@ -3290,8 +3293,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\bibtextextalign</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Ajuste de línea de las referencias bibtex (justify, left,
-                                right, center).
+                            <div class="config-desc-inner">Ajuste de línea de las referencias bibtex. Valores
+                                posibles: <b>justify</b>, <b>left</b>, <b>right</b> o <b>center</b>.
                             </div>
                         </div>
                     </li>
@@ -3320,7 +3323,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\natbibrefcitecompress</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Comprime las citas contiguas, por ejemplo, si está activado,
+                            <div class="config-desc-inner">Comprime las citas contiguas. Por ejemplo, si está activado,
                                 una cita del estilo <i>[1, 5, 6, 7, 8]</i> pasa a ser <i>[1, 5-8]</i>.
                             </div>
                         </div>
@@ -3335,7 +3338,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\nabbirefcitetype</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Tipo de citas, puede ser <i>authoryear</i>, <i>numbers</i> ó
+                            <div class="config-desc-inner">Tipo de citas, puede ser <i>authoryear</i>, <i>numbers</i> o
                                 <i>super</i>.
                             </div>
                         </div>
@@ -4208,7 +4211,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\cfgbookmarksopenlevel</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Nivel de los marcadores a mostrar. Valores esperados:
-                                <b>1</b> (Secciones), <b>2</b> (Muestra todos los subtítulos, etc.).
+                                <b>1</b> (Secciones), <b>2</b> (Muestra todos los subtítulos),
+                                <b>3</b> (Muestra hasta los sub-subtítulos), etc.
                             </div>
                         </div>
                     </li>
@@ -4268,9 +4272,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\cfgpdfpageview</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Establece cómo se ve la página en el lector pdf. Valores
-                                esperados: <b>Fit</b>, <b>FitH</b>, <b>FitV</b>, <b>FitR</b>, <b>FitB</b>, <b>FitBH</b>
-                                ó
-                                <b>FitBV</b>.
+                                esperados: <b>Fit</b>, <b>FitH</b>, <b>FitV</b>, <b>FitR</b>, <b>FitB</b>,
+                                <b>FitBH</b> o <b>FitBV</b>.
                             </div>
                         </div>
                     </li>
@@ -4297,8 +4300,8 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\pdfcompilecompression</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Establece el factor de compresión del pdf, valor entre 0 (Sin
-                                comprimir) y 9 (Máxima compresión).
+                            <div class="config-desc-inner">Establece el factor de compresión del pdf, valor entre
+                                <b>0</b> (Sin comprimir) y <b>9</b> (Máxima compresión).
                             </div>
                         </div>
                     </li>
@@ -4306,7 +4309,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         <strong>\pdfcompileobjcompression</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Establece la compresión de los objetos embebidos en el pdf,
-                                valor entre 0 (Sin comprimir) y 3 (Máxima compresión).
+                                valor entre <b>0</b> (Sin comprimir) y <b>3</b> (Máxima compresión).
                             </div>
                         </div>
                     </li>
