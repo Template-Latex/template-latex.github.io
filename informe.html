@@ -449,7 +449,7 @@
                     <li>
                         <strong>\insertimage</strong><b>[</b><em>Label</em>
                         (opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Leyenda</em><b>}</b>:
-                        Inserta una simple imagen.
+                        Inserta una simple imagen. Si se quiere una imagen sin leyenda, dejar <b>vacío</b> el parámetro, pero <b>no</b> borrar las llaves. Además, imágenes sin leyenda no aceptan un label, por tanto, la función se debe llamar como <i>\insertimage{Archivo}{Parámetros}{}</i>.
                         <blockquote id="insertimage-example-trigger">
                             <div class="highlight highlight-text-tex">
                                 <pre><span
@@ -461,7 +461,7 @@
                     <li>
                         <strong>\insertimageboxed</strong><b>[</b><em>Label</em>
                         (opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Ancho
-                        de la línea</em><b>}{</b><em>Leyenda</em><b>}</b>: Inserta
+                        de la línea (pt)</em><b>}{</b><em>Leyenda</em><b>}</b>: Inserta
                         una imagen recuadrada.
                         <blockquote id="insertimageboxed-example-trigger">
                             <div class="highlight highlight-text-tex">
@@ -470,6 +470,60 @@
                                         class="pl-v">scale</span>=0.5<b>}{</b>0.5<b>}{}</b></pre>
                             </div>
                         </blockquote>
+                    </li>
+                    <li>
+                        <strong><a id="showAnimatedImageLink" class="javascripthref">\insertanimatedimage</a></strong>:
+                        Inserta imágenes animadas.
+                        <div class="codeFunContainer" id="showAnimatedImageContainer">
+                            <ul>
+                                <li>
+                                    <strong>\insertanimatedimage</strong><b>[</b><em>Label</em>(opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>FPS</em><b>}{</b><em>Total imágenes (N)</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una simple animada. Para ello los archivos deben estar denominados desde <i>Archivo-0.png/jpg..</i> hasta <i>Archivo-N.png/jpg..</i>. La velocidad de animación se define por los FPS. Para mostrar controles
+                                    u otros ver las configuraciones. <br><br>
+
+                                    Para usar una imagen GIF se recomienda el programa <a href="https://imagemagick.org/index.php" class="javascripthref">ImageMagick</a>. Para ello, si se descarga una imagen, debe usarse el comando <i>magick convert
+                                    -coalesce Thanks.gif Thanks.png</i> tal como se ilustra en <a href="https://latex-beamer.com/tutorials/gif-latex-beamer/" class="javascripthref">Este ejemplo</a>.
+                                    <blockquote id="insertanimatedimage-example-trigger">
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span
+                                        class="pl-e">\insertanimatedimage</span><b>[</b><span
+                                        class="pl-c1">\label</span>{img-1}<b>]{</b>img/Thanks<b>}{</b><span
+                                        class="pl-v">width</span>=10cm<b>}{</b>10<b>}{</b>6<b>}{</b>Ejemplo animación.<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <strong>\insertanimatedimageboxed</strong><b>[</b><em>Label</em>(opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>FPS</em><b>}{</b><em>Total imágenes (N)</em><b>}{</b><em>Ancho de la línea
+                                    (pt)</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una simple animada recuadrada.
+                                    <blockquote id="insertanimatedimageboxed-example-trigger">
+                                        <div class="highlight highlight-text-tex">
+                                <pre><span
+                                        class="pl-e">\insertanimatedimageboxed</span><b>{</b>img/Thanks<b>}{</b><span
+                                        class="pl-v">width</span>=10cm<b>}{</b>10<b>}{</b>6<b>}{</b>1<b>}{</b>Ejemplo animación.<b>}</b></pre>
+                                        </div>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <strong><a id="showImageLink" class="javascripthref">\insertimagelink</a></strong>:
+                        Insertar imágenes con links clickeables.
+                        <div class="codeFunContainer" id="showImageLinkContainer">
+                            <ul>
+                                <li>
+                                    <strong>\insertimagelink</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Link</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una simple imagen con un enlace.
+                                </li>
+                                <li>
+                                    <strong>\insertimagelinkboxed</strong><b>[</b><em>Label</em>
+                                    (opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Link</em><b>}{</b><em>Ancho de la línea (pt)</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                    Inserta una simple imagen con un enlace.
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li>
                         <strong><a id="showCodeImageMc" class="javascripthref">\insertimagemc</a></strong>: Añade una
@@ -536,6 +590,59 @@
                                 de la línea</em><b>}</b>:
                                 Añade una imagen encerrada en un recuadro dentro del objeto images sin leyenda ni
                                 numeración.
+                            </li>
+                            <li>
+                                <strong><a id="showAddImageAnimated" class="javascripthref">\addimageanimated</a></strong>:
+                                Insertar imágenes animadas.
+                                <div class="codeFunContainer" id="showAddImageAnimatedContainer">
+                                    <ul>
+                                        <li>
+                                            <strong>\addimageanimated</strong><b>[</b><em>Label</em>(opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>FPS</em><b>}{</b><em>Total imágenes
+                                            (N)</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                            Inserta una simple animada.
+                                        </li>
+                                        <li>
+                                            <strong>\addimageanimatedboxed</strong><b>[</b><em>Label</em>(opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>FPS</em><b>}{</b><em>Total imágenes (N)</em><b>}{</b><em>Ancho de la
+                                            línea (pt)</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                            Inserta una simple animada recuadrada.
+                                        </li>
+                                        <li>
+                                            <strong>\addimageanimatedanum</strong><b>{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>FPS</em><b>}{</b><em>Total imágenes
+                                            (N)</em><b>}</b>:
+                                            Inserta una simple animada sin leyenda ni numeración.
+                                        </li>
+                                        <li>
+                                            <strong>\addimageanimatedanumboxed</strong><b>{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>FPS</em><b>}{</b><em>Total imágenes (N)</em><b>}{</b><em>Ancho de
+                                            la línea (pt)</em><b>}</b>:
+                                            Inserta una simple animada recuadrada sin leyenda ni numeración.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <strong><a id="showImageAnumLink" class="javascripthref">\addimagelink</a></strong>:
+                                Insertar imágenes con links clickeables.
+                                <div class="codeFunContainer" id="showImageAnumLinkContainer">
+                                    <ul>
+                                        <li>
+                                            <strong>\addimagelink</strong><b>[</b><em>Label</em>(opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Link</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                            Añade una imagen dentro de un objeto images con un enlace.
+                                        </li>
+                                        <li>
+                                            <strong>\addimagelinkboxed</strong><b>[</b><em>Label</em>(opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Ancho de la
+                                            línea (pt)</em><b>}{</b><em>Link</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                            Añade una imagen encerrada en un recuadro dentro del objeto images con un enlace.
+                                        </li>
+                                        <li>
+                                            <strong>\addimageanumlink</strong><b>{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Link</em><b>}</b>:
+                                            Añade una imagen dentro de un objeto images sin leyenda ni numeración con un enlace.
+                                        </li>
+                                        <li>
+                                            <strong>\addimageanumlinkboxed</strong><b>{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Ancho de la línea (pt)</em><b>}{</b><em>Link</em><b>}</b>:
+                                            Añade una imagen encerrada en un recuadro dentro del objeto images sin leyenda ni numeración con un enlace.
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             <li>
                                 <strong>\imageshspace</strong><b>{</b><em>Margen</em><b>}</b>:
@@ -607,7 +714,7 @@
                                     <strong>\insertimageleftboxed</strong><b>[</b><em>Label</em>
                                     (opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Ancho
                                     de la imagen (en textwidth)</em><b>}{</b><em>Ancho de la
-                                    línea</em><b>}{</b><em>Leyenda</em><b>}</b>:
+                                    línea (pt)</em><b>}{</b><em>Leyenda</em><b>}</b>:
                                     Inserta una imagen alineada a la izquierda de un párrafo, encerrada en un recuadro.
                                     <blockquote>
                                         <div class="highlight highlight-text-tex">
@@ -1189,6 +1296,7 @@
                     Prolog (<a class="sourcecodel">prolog</a>),
                     Promela (<a class="sourcecodel">promela</a>),
                     Pseudocódigo (<a class="sourcecodel">pseudocode</a>),
+                    Pseudocódigo+color (<a class="sourcecodel">pseudocodecolor</a>),
                     Python (<a class="sourcecodel">python</a>),
                     Q# (<a class="sourcecodel">qsharp</a>),
                     R (<a class="sourcecodel">r</a>),
@@ -3387,6 +3495,24 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         id="config-objects"></a></strong>
                 <ul>
                     <li class="config-elem">
+                        <strong>\animatedimageautoplay</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Animaciones se reproducen instantáneamente.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\animatedimagecontrols</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Animaciones muestran controles.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
+                        <strong>\animatedimageloop</strong>
+                        <div class="config-desc">
+                            <div class="config-desc-inner">Animaciones se repiten al terminar.</div>
+                        </div>
+                    </li>
+                    <li class="config-elem">
                         <strong>\columnsepwidth</strong>
                         <div class="config-desc">
                             <div class="config-desc-inner">Separación de las columnas, en <i>em</i>.</div>
@@ -4559,6 +4685,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
         <a id="showLibsContainer" class="javascripthref"></a>
         <div class="codeFunContainer" id="libsUsedContainer">
             <ul class="linkssection" id="usedLibs">
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/animate">animate</a></strong>: Inserta figuras animadas.
+                </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/amsmath">amsmath</a></strong>: Librería matemática.
                 </li>

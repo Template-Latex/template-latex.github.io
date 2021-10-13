@@ -1358,6 +1358,19 @@ let cmd_sourcecode = {
         'end    \n' +
         '\\end{sourcecode}',
 
+    'pseudocodecolor': '\\begin{sourcecode}{pseudocodecolor}{Algoritmo con fondo de color.}\n' +
+        'input: int N, int D\n' +
+        'output: int\n' +
+        'begin\n' +
+        '\tres $\\gets$ 0\n' +
+        '\twhile N $\\geq$ D \n' +
+        '\t\tN $\\gets$ N - D\n' +
+        '\t\tres $\\gets$ res + 1      \n' +
+        '\tend\n' +
+        '\treturn res\n' +
+        'end    \n' +
+        '\\end{sourcecode}',
+
     'python': '\\begin{sourcecode}[\\label{codigo-python}]{python}{Ejemplo en Python.}\n' +
         'import numpy as np\n' +
         '\n' +
@@ -1898,6 +1911,18 @@ function afterDocumentReady() {
     };
 
     /**
+     * Imágenes animadas
+     */
+    triggerShowContainer('#showAnimatedImageLink', '#showAnimatedImageContainer');
+    triggerShowContainer('#showAddImageAnimated', '#showAddImageAnimatedContainer')
+
+    /**
+     * Código images + link
+     */
+    triggerShowContainer('#showImageLink', '#showImageLinkContainer');
+    triggerShowContainer('#showImageAnumLink', '#showImageAnumLinkContainer');
+
+    /**
      * Imagemc
      */
     triggerShowContainer('#showCodeImageMc', '#showCodeImageMcContainer');
@@ -2104,9 +2129,11 @@ function afterDocumentReady() {
     /**
      * Ejemplos de imágenes
      */
-    $addExample('insertimage-example-trigger', '<img src="res/images/ex-insertimage.PNG" alt="" class="imageCodeExample imageCodeExample-normal" />');
+    $addExample('insertimage-example-trigger', '<img src="res/images/ex-insertimage.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
     $addExample('insertimageboxed-example-trigger', '<img src="res/images/ex-insertimageboxed.PNG" alt="" class="imageCodeExample imageCodeExample-tiny" />');
     $addExample('images-example-trigger', '<img src="res/images/ex-images.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
+    $addExample('insertanimatedimage-example-trigger', '<img src="res/images/ex_animated.gif" alt="" class="imageCodeExample imageCodeExample-large" />')
+    $addExample('insertanimatedimageboxed-example-trigger', '<img src="res/images/ex_animated_boxed.gif" alt="" class="imageCodeExample imageCodeExample-large" />')
 
     /**
      * Ejemplo de código fuente
