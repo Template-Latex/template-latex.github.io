@@ -6,6 +6,11 @@
     color: blue !important;
 }
 
+.javascripthrefb {
+    color: blue !important;
+    font-weight: bold;
+}
+
 .colorful-inner a {
     color: white !important;
     font-weight: bold;
@@ -628,6 +633,10 @@ a:hover {
 }
 
 .justified-text {
+    text-align: justify;
+}
+
+li {
     text-align: justify;
 }
 

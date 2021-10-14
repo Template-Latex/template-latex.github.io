@@ -1631,29 +1631,48 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                 <hr class="style1">
                 <p>Otros links útiles y preguntas más comunes:</p>
                 <ul>
-                    <li><a href="https://www.bibtex.com/styles/" class="javascripthref" id="estilosrefs">
+                    <li><a href="https://www.bibtex.com/styles/" class="javascripthrefb" id="estilosrefs">
                         ¿Qué estilos de referencias existen?</a>: Para cambiarlos basta con escribir el nombre
                         del estilo en la configuración respectiva del template.
                     </li>
-                    <li><a href="http://minisconlatex.blogspot.com/2013/01/como-poner-y-en-vez-de-and-en-la.html" class="javascripthref" id="cambionombrerefs">¿Cómo cambio el idioma de las referencias?</a>: Los estilos
+                    <li><a href="http://minisconlatex.blogspot.com/2013/01/como-poner-y-en-vez-de-and-en-la.html" class="javascripthrefb" id="cambionombrerefs">¿Cómo cambio el idioma de las referencias?</a>: Los estilos
                         de las referencias, ya sea apa, ieeetr, etc. están configurados para funcionar en inglés. Para
                         usar el español (por ejemplo en la lista de autores, que aparezca un <i>y</i> en vez de <i>and</i>)
                         se debe descargar el archivo <i>.bst</i> correspondiente del estilo de referencias y editarlo.
                         <br>
-                        Para usar el nuevo <i>.bst</i> éste se debe ubicar en la misma carpeta que el archivo <i>.tex</i> y
-                        se debe nombrar la configuración del estilo con el mismo nombre que el archivo. Por ejemplo, si se
-                        descargó un estilo <i>apaesp2.bst</i> y se está usando <a href="#stylecitereferences"
-                                                                                  class="javascripthref">
+                        Para usar el nuevo <i>.bst</i> éste se debe ubicar en la misma carpeta que el archivo <i>.tex</i>
+                        (el principal a compilar) y se debe nombrar la configuración del estilo con el mismo nombre que
+                        el archivo (sin la extensión). Por ejemplo, si se descargó un estilo <i>apaesp2.bst</i> y se
+                        está usando <a href="#stylecitereferences" class="javascripthref">
                             <span class="pl-c1">\stylecitereferences</span></a>{natbib} se debe
                         modificar la configuración del estilo a <a href="#natbibrefstyle" class="javascripthref">
                             <span class="pl-c1">\natbibrefstyle</span></a>{apaesp2}.
                     </li>
-                    <li><a href="doc/guia_basica_referencias_mendeley_v3.pdf" class="javascripthref">
+                    <li><b>¿Cómo uso mi propio estilo de referencias?</b>: Al igual que el punto anterior, para usar el nuevo <i>.bst</i> éste se debe ubicar en la misma carpeta que el archivo <i>.tex</i>
+                        (el principal a compilar) y se debe nombrar la configuración del estilo con el mismo nombre que
+                        el archivo (sin la extensión). Por ejemplo, si se quiere usar un un estilo <i>mystyle.bst</i> y se
+                        está usando <a href="#stylecitereferences" class="javascripthref">
+                            <span class="pl-c1">\stylecitereferences</span></a>{natbib} se debe
+                        modificar la configuración del estilo a <a href="#natbibrefstyle" class="javascripthref">
+                            <span class="pl-c1">\natbibrefstyle</span></a>{mystyle}.
+                        <br>
+                        El autor (Pablo) también tiene un propio estilo de referencias, similares a los que se pueden
+                        encontrar el papers de diferentes revistas de ingeniería (en inglés, pero puede cambiarse al
+                        español siguiendo el link anterior). Formato ordenado según aparición, numerados. <a href="res/images/example_natnum_url.png" class="javascripthref">Ver ejemplo</a>.<br>
+                        Links de descarga:
+                        <ul>
+                            <li>Formato sin url: <a href="https://raw.githubusercontent.com/Template-Latex/Template-Informe/master/natnum.bst" class="javascripthref">español</a>, <a
+                                    href="https://raw.githubusercontent.com/Template-Latex/Template-Informe/master/natnum_en.bst" class="javascripthref">inglés</a>.</li>
+                            <li>Formato con url: <a href="https://raw.githubusercontent.com/Template-Latex/Template-Informe/master/natnumurl.bst" class="javascripthref">español</a>, <a
+                                    href="https://raw.githubusercontent.com/Template-Latex/Template-Informe/master/natnumurl_en.bst" class="javascripthref">inglés</a>.</li>
+                        </ul>
+                    </li>
+                    <li><a href="doc/guia_basica_referencias_mendeley_v3.pdf" class="javascripthrefb">
                         Guía básica referencias Mendeley (v3)</a>: Documento creado por Marcia Paredes A
                         ilustra detalladamente el proceso necesario para usar las referencias y configurar
                         el template. Válido tanto para <i>apacite</i> como <i>natbib</i>.
                     </li>
-                    <li><a href="doc/guia-bibtex.pdf" class="javascripthref">Guía casi completa de BibTEX</a>:
+                    <li><a href="doc/guia-bibtex.pdf" class="javascripthrefb">Guía casi completa de BibTEX</a>:
                         Guía que aborda todos los aspectos de BibTEX, desde los más básicos a los más complejos,
                         haciendo además hincapié en su españolización, pues BibTEX, como tantas otras herramientas,
                         presupone que será usada para trabajar con documentos en inglés.
