@@ -1338,6 +1338,16 @@ Botón de ejemplo que contiene mostrar/ocultar ejemplo
     width: 80%;
 }
 
+.exampleCollageMid {
+    margin: auto;
+    display: block;
+    width: 60%;
+}
+
+.imageShadow {
+    box-shadow: 0 0 14px rgb(0 0 0 / 32%);
+}
+
 .imageCodeExample {
     display: inline-block;
     left: 50%;
