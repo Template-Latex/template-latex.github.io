@@ -251,8 +251,7 @@
                 href="https://nokyotsu.com/latex/pdflatex.html">PDFLatex</a>, <a
                 href="https://www.overleaf.com/learn/latex/XeLaTeX">XeLaTeX</a> o <a
                 href="http://www.luatex.org">LuaLaTeX</a>, no se da soporte a otros
-            compiladores como latex, latexmk, etc. Es necesario modificar la configuración <a
-                class="javascripthref"><span class="pl-c1">\compilertype</span></a> para usar distintos compiladores.
+            compiladores como latex, latexmk, etc.
         </p>
 
         <!-- Configurando el documento -->
@@ -2486,16 +2485,6 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
             <li class="config-parent">
                 <strong class="functtitlstyle">Configuraciones generales<a id="config-gral"></a></strong>
                 <ul>
-                    <li class="config-elem">
-                        <div id="compilertype">
-                            <strong>\compilertype</strong>
-                            <div class="config-desc">
-                                <div class="config-desc-inner">Tipo de compilador que se usa para compilar a pdf.
-                                    Soportados: <b>pdf2latex</b>, <b>xelatex</b> o <b>lualatex</b>.
-                                </div>
-                            </div>
-                        </div>
-                    </li>
                     <li class="config-elem">
                         <strong>\documentfontsize</strong>
                         <div class="config-desc">
@@ -4968,6 +4957,9 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/hyperxmp">hyperxmp</a></strong>: Etiquetas opcionales en
                     el <i>metadata</i> del pdf compilado.
+                </li>
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/iftex">iftex</a></strong>: Permite la detección del compilador.
                 </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/ifthen">ifthen</a></strong>: Permite el manejo de
