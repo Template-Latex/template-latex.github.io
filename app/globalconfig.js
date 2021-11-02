@@ -43,10 +43,10 @@ let stats_href = 'https://latex.ppizarror.com/stats?template=';
  * Aviso inicial
  */
 let initial_popup = {
-    content: '<a href="https://latex.ppizarror.com/reporte">Template-Reporte</a> es el nuevo template que se une a la familia Template-Latex.<br>Es útil para hacer informes rápidos que no requieren de la complejidad de Template-Informe, no tiene portada, ni índice, sólo un título sencillo y el contenido.',
-    display: false,
-    ignore: ['Template-Reporte'],
-    title: 'Nuevo Template-Reporte'
+    content: 'La página está en actualizaciones por la nueva versión 8 del template, que saldrá dentro de los próximos días. Ésta incluye dos nuevos templates (Artículo, Poster), soporte para múltiples idiomas, soporte para letras en unicode, una mejor capa de personalización, corrección de errores, entre <a href="https://github.com/Template-Latex/Template-Informe/compare/7.4.1...master#diff-6b465f429d8fe56b3480ab8ff597e06baf2102e508552b0145cf08b1c6b66719">cientos de otros cambios</a>.',
+    display: true,
+    ignore: ['Template-v8'],
+    title: 'Nueva versión 8 del Template'
 };
 
 /**

@@ -262,7 +262,6 @@ function generateID() {
  */
 function loadInitialPopup() {
     if (initial_popup.display && initial_popup.content.length > 0 && initial_popup.ignore.indexOf(update_download_counter) === -1) {
-        console.log(initial_popup.ignore, update_download_counter);
         // noinspection JSCheckFunctionSignatures,JSUnresolvedFunction
         $.confirm({
             boxWidth: '35%',
@@ -276,7 +275,7 @@ function loadInitialPopup() {
             content: initial_popup.content,
             escapeKey: 'close',
             title: initial_popup.title,
-            useBootstrap: false,
+            useBootstrap: false
         });
     }
 }
