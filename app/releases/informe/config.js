@@ -36,8 +36,6 @@ let update_download_counter = 'Template-Informe';
 /**
  * Declaración de funciones propias de cada template
  */
-let bounceConfig; // Efecto en entrada de configuración
-// noinspection JSUnusedGlobalSymbols
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 let hfGallery; // Muestra la galería de header-footer
 let lastClickedSourcecode = ''; // Último botón de código fuente clickeado
@@ -1853,17 +1851,6 @@ function afterDocumentReady() {
     // noinspection JSCheckFunctionSignatures
     $portraittrigger.on('click', portraitGallery);
     $portraittrigger.html(String.format('{0} estilos distintos', totalPortraitStyles));
-
-    /**
-     * Efecto bounce
-     */
-    bounceConfig = function (a, b) {
-        // noinspection JSUnresolvedFunction
-        $(a).ScrollTo();
-        setTimeout(function () {
-            // doBounce($(b), 3, '6px', 100);
-        }, 1000);
-    };
 
     // noinspection JSUnresolvedFunction
     /**

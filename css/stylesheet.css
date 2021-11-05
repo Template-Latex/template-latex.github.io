@@ -21,11 +21,9 @@
     margin-top: 0 !important;
 }
 
-/**
 .amaran.colorful .colorful-inner {
-    text-align: justify;
+    font-size: 15px !important;
 }
- */
 
 .javascripthref:hover {
     cursor: pointer;
@@ -314,6 +312,8 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 }
 
 body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
     background-attachment: fixed;
     color: #363636;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -324,6 +324,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     padding: 0;
+    text-rendering: optimizeLegibility;
 }
 
 .help-links {
@@ -439,7 +440,9 @@ a:hover {
 
 .btn {
     -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+    -webkit-backdrop-filter: blur(15px);
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(15px);
     background-color: rgba(100, 100, 100, 0.4);
     border-radius: 0.3rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -641,7 +644,7 @@ li {
 }
 
 .main-content code {
-    background-color: #f3f6fa;
+    background-color: #e7e7e7;
     border-radius: 0.3rem;
     color: #383e41;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -691,19 +694,19 @@ li {
 
 @media screen and (min-width: 64em) {
     .main-content .highlight pre, .main-content pre {
-        font-size: 0.82rem;
+        font-size: 0.9rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .main-content .highlight pre, .main-content pre {
-        font-size: 0.72rem;
+        font-size: 0.82rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .main-content .highlight pre, .main-content pre {
-        font-size: 0.51rem;
+        font-size: 0.61rem;
     }
 }
 
@@ -766,37 +769,37 @@ li {
 
 @media screen and (min-width: 64em) {
     .menu-big-entry {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .menu-big-entry {
-        font-size: 17px;
+        font-size: 19px;
     }
 }
 
 @media screen and (max-width: 42em) {
     .menu-big-entry {
-        font-size: 16px;
+        font-size: 17px;
     }
 }
 
 @media screen and (min-width: 64em) {
     .menu-little-entry {
-        font-size: 17px;
+        font-size: 18px;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .menu-little-entry {
-        font-size: 15px;
+        font-size: 17px;
     }
 }
 
 @media screen and (max-width: 42em) {
     .menu-little-entry {
-        font-size: 13px;
+        font-size: 16px;
     }
 }
 
@@ -887,7 +890,7 @@ li {
 
 @media screen and (min-width: 64em) {
     .main-content {
-        font-size: 0.92rem;
+        font-size: 1rem;
         margin: 0 auto;
         max-width: 64rem;
         padding: 2rem 6rem;
@@ -897,7 +900,7 @@ li {
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .main-content {
         padding: 2rem 4rem;
-        font-size: 0.87rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -1295,7 +1298,7 @@ Botón de ejemplo que contiene mostrar/ocultar ejemplo
     padding: 2px 10px;
     position: relative;
     right: 48px;
-    top: -38px;
+    top: -39px;
 }
 
 .preExampleButton:hover {
