@@ -73,13 +73,38 @@ $(function () {
      * Se generan colores
      * ------------------------------------------------------------------------
      */
-    let bodycolor = '#4d4d4d';
-    let backgroundmaincolor = shadeColor2(wallpaper_db.color, 0.98);
-    let bgprecolor = shadeColor2(wallpaper_db.color, 0.9);
-    let codebarcolor = shadeColor2(wallpaper_db.color, 0.4);
-    let codeprecolor = shadeColor2(wallpaper_db.color, 0.2);
-    let hrcolor = shadeColor2(wallpaper_db.color, 0.7);
-    let pacecolor = shadeColor2(wallpaper_db.color, 0.15);
+    let $color = tinycolor(wallpaper_db.color);
+    let $wbright = $color.getBrightness();
+    if ($wbright <= 20) {
+        $color.brighten(30);
+    } else if ($wbright <= 40) {
+        $color.brighten(20);
+    } else if ($wbright <= 70) {
+        $color.brighten(10);
+    } else if ($wbright <= 80) {
+        $color.darken(5);
+    } else if ($wbright <= 90) {
+        $color.darken(10);
+    } else if ($wbright <= 100) {
+        $color.darken(15);
+    } else if ($wbright <= 125) {
+        $color.darken(20);
+    } else if ($wbright <= 150) {
+        $color.darken(30);
+    } else if ($wbright <= 200) {
+        $color.darken(40);
+    } else {
+        $color.darken(50);
+    }
+
+    let $backgroundmaincolor = $color.clone().brighten(95);
+    let $bgprecolor = $color.clone().brighten(90);
+    let $bodycolor = '#4d4d4d';
+    let $codebarcolor = $color.clone().brighten(20);
+    let $codeprecolor = $color.clone().brighten(10);
+    let $hrcolor = $color.clone().darken(5);
+    let $pacecolor = $color.clone().brighten(10);
+    let $titlecolor = $color.clone().darken(15);
 
     // noinspection JSJQueryEfficiency
     /**
@@ -88,32 +113,33 @@ $(function () {
      * ------------------------------------------------------------------------
      */
     let $head = $('head');
-    $head.append(String.format('<meta name="theme-color" content="{0}">', backgroundmaincolor));
-    $head.append(String.format('<meta name="msapplication-navbutton-color" content="{0}">', backgroundmaincolor));
-    $head.append(String.format('<meta name="apple-mobile-web-app-capable" content="yes">', backgroundmaincolor));
-    $head.append(String.format('<meta name="apple-mobile-web-app-status-bar-style" content="{0}">', backgroundmaincolor));
+    $head.append(String.format('<meta name="theme-color" content="{0}">', $backgroundmaincolor));
+    $head.append(String.format('<meta name="msapplication-navbutton-color" content="{0}">', $backgroundmaincolor));
+    $head.append(String.format('<meta name="apple-mobile-web-app-capable" content="yes">', $backgroundmaincolor));
+    $head.append(String.format('<meta name="apple-mobile-web-app-status-bar-style" content="{0}">', $backgroundmaincolor));
 
     /**
      * ------------------------------------------------------------------------
      * Se añaden las descargas del template base
      * ------------------------------------------------------------------------
      */
-    let jsonquery;
+    let $jsonquery;
     if (href_json_releases !== '') {
-        jsonquery = $.getJSON(href_json_releases, function (json) {
+        $jsonquery = $.getJSON(href_json_releases, function (json) {
+            let $normal_link;
 
             /**
              * Se cargan los datos del json
              */
             total_downloads = 0;
-            for (let i = 0; i < json.length; i += 1) {
+            for (let $i = 0; $i < json.length; $i += 1) {
                 try {
-                    for (let j = 0; j < json[i].assets.length; j += 1) {
-                        total_downloads += parseInt(json[i].assets[j].download_count);
-                        version_entries.push(json[i].tag_name);
+                    for (let j = 0; j < json[$i].assets.length; j += 1) {
+                        total_downloads += parseInt(json[$i].assets[j].download_count);
+                        version_entries.push(json[$i].tag_name);
                     }
                 } catch (err) {
-                    console.log(String.format('Error al obtener la cantidad de descargas del archivo {0}', json[i].name));
+                    console.log(String.format('Error al obtener la cantidad de descargas del archivo {0}', json[$i].name));
                 }
             }
 
@@ -123,11 +149,10 @@ $(function () {
             try {
                 last_version = json[0].tag_name;
                 last_version_link = json[0].assets[0].browser_download_url;
-                var normal_link;
                 if (last_version_link.includes('.min')) {
-                    normal_link = json[0].assets[1].browser_download_url;
+                    $normal_link = json[0].assets[1].browser_download_url;
                 } else {
-                    normal_link = last_version_link;
+                    $normal_link = last_version_link;
                 }
                 console.log(String.format('Última versión template: {0}', last_version));
             } catch (err) {
@@ -177,10 +202,10 @@ $(function () {
                         $('#autorbanner').tooltipster('close');
                     }
                 });
-                let normal_link = String.format('{0}download/{1}/{2}.zip', href_github_project, last_version, update_download_counter);
+                $normal_link = String.format('{0}download/{1}/{2}.zip', href_github_project, last_version, update_download_counter);
                 // noinspection HtmlUnknownTarget
                 $('#download-button-1file').append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
-                $dlbutton.attr('href', normal_link);
+                $dlbutton.attr('href', $normal_link);
                 // noinspection HtmlUnknownTarget
                 $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
                 writeOtherLinks(last_version);
@@ -190,7 +215,7 @@ $(function () {
                 // Se carga los elementos
                 let $dlbutton = $('#download-button');
 
-                $dlbutton.attr('href', normal_link);
+                $dlbutton.attr('href', $normal_link);
                 // noinspection HtmlUnknownTarget
                 $dlbutton.append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
 
@@ -213,30 +238,30 @@ $(function () {
              * Se obtiene el what's new
              */
             $('#github-button-header').attr('href', href_github_project_source);
-            let whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
-            let whats_new_versions = Math.min(changelog_max, json.length);
+            let $whats_new_html = "<div id='que-hay-de-nuevo-version-title'>{0}</div><blockquote class='que-hay-de-nuevo-blockquote'>{1}</blockquote>";
+            let $whats_new_versions = Math.min(changelog_max, json.length);
             // noinspection ES6ModulesDependencies
-            let md_converter = new showdown.Converter();
-            let show_github_button = (whats_new_versions === changelog_max);
+            let $md_converter = new showdown.Converter();
+            let $show_github_button = ($whats_new_versions === changelog_max);
             try {
-                for (let i = 0; i < whats_new_versions; i += 1) {
-                    let version_created_at = json[i].created_at.substring(0, 10);
-                    let $version_created_at = version_created_at.substring(8, 10) + '/' + version_created_at.substring(5, 7) + '/' + version_created_at.substring(0, 4);
+                for (let $i = 0; $i < $whats_new_versions; $i += 1) {
+                    let $version_created_at = json[$i].created_at.substring(0, 10);
+                    $version_created_at = $version_created_at.substring(8, 10) + '/' + $version_created_at.substring(5, 7) + '/' + $version_created_at.substring(0, 4);
                     // noinspection HtmlUnknownTarget
-                    let title_new_version = String.format('<b>Versión <a href="{2}" class="javascripthref">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[i].tag_name, $version_created_at, json[i].html_url);
-                    let content_version = md_converter.makeHtml(json[i].body);
-                    new_version_entry += String.format(whats_new_html, title_new_version, content_version);
-                    if (i < whats_new_versions - 1 && changelog_show_hr) {
+                    let $title_new_version = String.format('<b>Versión <a href="{2}" class="javascripthref">{0}</b></a>: <i class="fecha-estilo">{1}</i>', json[$i].tag_name, $version_created_at, json[$i].html_url);
+                    let $content_version = $md_converter.makeHtml(json[$i].body);
+                    new_version_entry += String.format($whats_new_html, $title_new_version, $content_version);
+                    if ($i < $whats_new_versions - 1 && changelog_show_hr) {
                         new_version_entry += '<hr class="style1">';
                     }
                 }
-                if (show_github_button) {
+                if ($show_github_button) {
                     // noinspection HtmlUnknownTarget
                     new_version_entry += String.format("Puedes ver la lista de cambios completa en <a href='{0}' class='javascripthref'>GitHub <i class='fab fa-github'></i></a>", href_github_project);
                 }
                 $('#que-hay-de-nuevo').html(new_version_entry);
-                $('.main-content hr').css('background-color', hrcolor);
-                $('.que-hay-de-nuevo-blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
+                $('.main-content hr').css('background-color', $hrcolor);
+                $('.que-hay-de-nuevo-blockquote').css('border-left', '0.25rem solid ' + $codebarcolor);
             } catch ($e) {
                 throwError(errors.retrieveContentVersions);
                 throwException($e);
@@ -245,7 +270,7 @@ $(function () {
             // Se llama a afterJSON
             afterJSONLoad();
         });
-        jsonquery.fail(function () { // Se activa error de json
+        $jsonquery.fail(function () { // Se activa error de json
             throwError(errors.cantLoadJson);
         });
     }
@@ -264,33 +289,34 @@ $(function () {
      * Se cambia el estilo de la página
      * ------------------------------------------------------------------------
      */
-    $('.main-content .functtitlstyle').css('color', wallpaper_db.color);
-    $('.main-content h1').css('color', wallpaper_db.color);
-    $('.main-content h2').css('color', wallpaper_db.color);
-    $('.main-content h3').css('color', wallpaper_db.color);
-    $('.main-content h4').css('color', wallpaper_db.color);
-    $('.main-content h5').css('color', wallpaper_db.color);
-    $('.main-content h6').css('color', wallpaper_db.color);
-    $('.menu-big-entry').css('color', wallpaper_db.color);
-    $('.menu-little-entry').css('color', wallpaper_db.color);
-    $('.que-hay-de-nuevo-blockquote h3').css('color', wallpaper_db.color);
-    $('.section-template').css('color', wallpaper_db.color);
-    $('.main-content hr').css('background-color', hrcolor); // Se cambia el color de las barras hr
+    $('.main-content .functtitlstyle').css('color', $titlecolor);
+    $('.main-content h1').css('color', $titlecolor);
+    $('.main-content h2').css('color', $titlecolor);
+    $('.main-content h3').css('color', $titlecolor);
+    $('.main-content h4').css('color', $titlecolor);
+    $('.main-content h5').css('color', $titlecolor);
+    $('.main-content h6').css('color', $titlecolor);
+    $('.menu-big-entry').css('color', $titlecolor);
+    $('.menu-little-entry').css('color', $titlecolor);
+    $('.que-hay-de-nuevo-blockquote h3').css('color', $titlecolor);
+    $('.section-template').css('color', $titlecolor);
+    $('.main-content hr').css('background-color', $hrcolor); // Se cambia el color de las barras hr
     $('.main-content blockquote').css({ // Se cambia el color de las cajas de código
-        'border-left': '0.25rem solid ' + codebarcolor,
-        'color': codeprecolor
+        'border-left': '0.25rem solid ' + $codebarcolor,
+        'color': $codeprecolor
     });
     $('.main-content pre').css({
-        'background-color': bgprecolor,
-        'border': 'solid 1px ' + codeprecolor,
+        'background-color': $bgprecolor,
+        'border': 'solid 1px ' + $codeprecolor,
     });
-    $('.main-content').css('background-color', backgroundmaincolor);
-    $('#contentBackground').css('background-color', backgroundmaincolor);
-    $('body').css('background-color', bodycolor);
-    $('#que-hay-de-nuevo blockquote').css('border-left', '0.25rem solid ' + codebarcolor);
+    $('.main-content').css('background-color', $backgroundmaincolor);
+    $('#contentBackground').css('background-color', $backgroundmaincolor);
+    $('body').css('background-color', $bodycolor);
+    $('#que-hay-de-nuevo blockquote').css('border-left', '0.25rem solid ' + $codebarcolor);
 
     // noinspection CssInvalidHtmlTagReference, CssUnusedSymbol, JSJQueryEfficiency
-    $('head').append(String.format('<style>.preExampleButton{background-color:{0}}</style>', codeprecolor));
+    $('head').append(String.format('<style>.preExampleButton{background-color:{0}}</style>', $codeprecolor));
+    $('.page-header-container').addClass('onstart');
 
     /**
      * ------------------------------------------------------------------------
@@ -317,7 +343,7 @@ $(function () {
                 src: wallpaper_db.image,
                 posX: 'center',
                 posY: 'bottom',
-                speed: 0.20,
+                speed: 0.25,
                 zIndex: 1,
                 afterRefresh: function () {
 
@@ -350,8 +376,8 @@ $(function () {
             });
         } else {
             try {
-                let back_img = new Image();
-                back_img.onload = function () {
+                let $back_img = new Image();
+                $back_img.onload = function () {
                     let $bgheader = $('#background-page-header');
 
                     // Se carga el css
@@ -384,7 +410,7 @@ $(function () {
                     // Aplica blur
                     wallpaper_db_random_blur('#background-page-header', blurprobability, blurlimits);
                 };
-                back_img.src = wallpaper_db.image;
+                $back_img.src = wallpaper_db.image;
             } catch ($e) {
                 console.log('Error crítico al obtener la imagen del wallpaper (wallpaper.db)');
             } finally {
@@ -393,12 +419,12 @@ $(function () {
     }
 
     if (changepacecolor) { // Se cambia el color de pace
-        $('.pace .pace-progress').css('background', pacecolor);
+        $('.pace .pace-progress').css('background', $pacecolor);
         $('.pace .pace-activity').css({
-            'border-top-color': codeprecolor,
-            'border-left-color': codeprecolor
+            'border-top-color': $codeprecolor,
+            'border-left-color': $codeprecolor
         });
-        $('.pace .pace-progress-inner').css('box-shadow', '0 0 10px ' + bgprecolor + ', 0 0 5px ' + bgprecolor + ';');
+        $('.pace .pace-progress-inner').css('box-shadow', '0 0 10px ' + $bgprecolor + ', 0 0 5px ' + $bgprecolor + ';');
     }
 
     /**
@@ -407,7 +433,7 @@ $(function () {
      * ------------------------------------------------------------------------
      */
     backToTop = $.backToTop({
-        backgroundColor: wallpaper_db.color,
+        backgroundColor: $color,
         height: 65,
         position: 'top right',
         pxToTrigger: amountScrolled,
@@ -423,24 +449,17 @@ $(function () {
      */
     $('a[href*="#"]:not([href="#"])').click(function () {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-            let target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
+            let $target = $(this.hash);
+            $target = $target.length ? $target : $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
                 // noinspection JSCheckFunctionSignatures
                 $('html, body').animate({
-                    scrollTop: target.offset().top
+                    scrollTop: $target.offset().top
                 }, 700);
                 return false;
             }
         }
     });
-
-    /**
-     * ------------------------------------------------------------------------
-     * Se añade el link a chat banner
-     * ------------------------------------------------------------------------
-     */
-    // $('#chatgitter').attr('href', gitter_href + update_download_counter);
 
     /**
      * ------------------------------------------------------------------------
@@ -456,15 +475,6 @@ $(function () {
      * Aplica tooltips
      * ------------------------------------------------------------------------
      */
-    // $('#download-button-1file').tooltipster({
-    //     animation: 'grow',
-    //     content: 'Seleccionar entre distintas versiones',
-    //     delay: 600,
-    //     maxWidth: 200,
-    //     side: 'bottom',
-    //     theme: 'tooltipster-borderless',
-    // });
-    // noinspection HtmlUnknownAttribute
     $('#autorbanner').tooltipster({
         animation: 'grow',
         content: '<img src="https://avatars0.githubusercontent.com/u/12925256" class="autor_photo" alt=""/>\n' +

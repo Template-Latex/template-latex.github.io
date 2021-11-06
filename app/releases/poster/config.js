@@ -34,7 +34,9 @@ let update_download_counter = 'Template-Poster';
 /**
  * Declaración de funciones propias de cada template
  */
-function afterDocumentReady() {}
+function afterDocumentReady() {
+}
 
 // noinspection JSUnusedGlobalSymbols
-function afterJSONLoad() {}
+function afterJSONLoad() {
+}

@@ -92,6 +92,53 @@
     position: relative;
 }
 
+.page-header-container {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.page-header-container.onstart {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+/* fade in up */
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translate3d(0, 50%, 0);
+        transform: translate3d(0, 50%, 0);
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translate3d(0, 50%, 0);
+        transform: translate3d(0, 50%, 0);
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 #background-page-header-colored {
     bottom: 0;
     display: none;
@@ -443,7 +490,7 @@ a:hover {
     -webkit-backdrop-filter: blur(15px);
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(15px);
-    background-color: rgba(100, 100, 100, 0.4);
+    /* background-color: rgba(100, 100, 100, 0.4); */
     border-radius: 0.3rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
@@ -451,7 +498,7 @@ a:hover {
     display: inline-block;
     margin-bottom: 1rem;
     margin-left: 0;
-    margin-right: 0.5rem;
+    margin-right: 1.5rem;
     opacity: 1.0;
     outline: none;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
@@ -473,7 +520,7 @@ a:hover {
     font-weight: bolder;
     margin-bottom: 1rem;
     margin-left: 0;
-    margin-right: 0.5rem;
+    margin-right: 1.5rem;
     opacity: 0.9;
     outline: none;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
@@ -492,6 +539,10 @@ a:hover {
     text-decoration: none;
 }
 
+.page-header .btn-pro:last-child {
+    margin-right: 0 !important;
+}
+
 .btn + .btn {
     margin-left: 0;
 }
@@ -506,27 +557,26 @@ a:hover {
 
 @media screen and (min-width: 64em) {
     .btn, .btn-pro {
-        font-size: 1rem;
-        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .btn, .btn-pro {
-        font-size: 0.9rem;
-        padding: 0.6rem 0.9rem;
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+        margin-right: 1rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .btn, .btn-pro {
         display: block;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
         padding: 0.75rem;
         width: 100%;
-    }
-
-    .btn, .btn-pro {
-        font-size: 0.75rem;
     }
 
     .btn + .btn, .btn-pro + .btn-pro {
@@ -541,7 +591,7 @@ a:hover {
 
 @media screen and (min-width: 64em) {
     .page-header {
-        padding: 6rem 6rem;
+        padding: 7rem 6rem;
     }
 }
 
@@ -566,26 +616,27 @@ a:hover {
 
 @media screen and (min-width: 64em) {
     .project-name {
-        font-size: 3.25rem;
+        font-size: 4rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .project-name {
-        font-size: 2.8rem;
+        font-size: 3.2rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .project-name {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
     }
 }
 
 .project-tagline {
     cursor: default;
     font-weight: normal;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    margin-top: 0.3rem;
     opacity: 1.0;
     text-shadow: 2px 2px 5px #000000;
 }
@@ -599,12 +650,14 @@ a:hover {
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .project-tagline {
         font-size: 1.15rem;
+        margin-bottom: 2rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .project-tagline {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -892,7 +945,7 @@ li {
     .main-content {
         font-size: 1rem;
         margin: 0 auto;
-        max-width: 64rem;
+        max-width: 70rem;
         padding: 2rem 6rem;
     }
 }
@@ -900,14 +953,14 @@ li {
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .main-content {
         padding: 2rem 4rem;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .main-content {
         padding: 2rem 1rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -1187,6 +1240,7 @@ a#templatestats, a:hover#templatestats, .page-header#templatestats {
     display: block;
     float: left;
     font-weight: 700;
+    padding: 0.1rem;
     width: 85%;
 }
 

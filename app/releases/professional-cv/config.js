@@ -34,7 +34,8 @@ let update_download_counter = 'Professional-CV';
 /**
  * Declaración de funciones propias de cada template
  */
-function afterDocumentReady() {}
+function afterDocumentReady() {
+}
 
 // noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {

@@ -26,7 +26,7 @@
  */
 let backgroundResize;               // Ajuste del fondo
 let blurlimits = [3, 5];            // Límites del blur en px
-let blurprobability = 15;           // Probabilidad de blur
+let blurprobability = 0;           // Probabilidad de blur
 let changelog_max = 10;             // Número máximo de cambios en changelog
 let changelog_show_hr = false;      // Muestra título en changelog
 let changepacecolor = true;         // Cambiar el color de pace
@@ -44,7 +44,7 @@ let stats_href = 'https://latex.ppizarror.com/stats?template=';
  */
 let initial_popup = {
     content: 'La página está en actualizaciones por la nueva versión 8 del template, que saldrá dentro de los próximos días. Ésta incluye dos nuevos templates (Artículo, Poster), soporte para múltiples idiomas, soporte para letras en unicode, una mejor capa de personalización, corrección de errores, entre <a href="https://github.com/Template-Latex/Template-Informe/compare/7.4.1...master#diff-6b465f429d8fe56b3480ab8ff597e06baf2102e508552b0145cf08b1c6b66719">cientos de otros cambios</a>.',
-    display: true,
+    display: false,
     ignore: ['Template-v8'],
     title: 'Nueva versión 8 del Template'
 };

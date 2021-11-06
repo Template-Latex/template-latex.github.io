@@ -36,7 +36,8 @@ let update_download_counter = 'Template-Reporte';
  */
 let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de descargas
 
-function afterDocumentReady() {}
+function afterDocumentReady() {
+}
 
 // noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {
@@ -60,10 +61,10 @@ function afterJSONLoad() {
 /**
  * Escribe links de los distintos departamentos.
  *
- * @param {string} verid - ID de la versión
+ * @param {string} $verid - ID de la versión
  */
-function writeOtherLinks(verid) {
-    let deptos = [
+function writeOtherLinks($verid) {
+    let $deptos = [
         ['Área de Humanidades', 'adh'],
         ['Departamento de Astronomía', 'das'],
         ['Departamento de Ciencias de la Computación', 'dcc'],
@@ -84,12 +85,12 @@ function writeOtherLinks(verid) {
 
     // Genera el contenido
     let $contents = $('#downloadother-contents');
-    $('#downloadtitle-title').html(String.format('Descargas v{0}', verid));
+    $('#downloadtitle-title').html(String.format('Descargas v{0}', $verid));
     // noinspection HtmlUnknownTarget
-    $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Reporte.zip">Descargar</a></div></div>', href_github_project, verid));
-    for (let i = 0; i < deptos.length; i += 1) {
+    $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Reporte.zip">Descargar</a></div></div>', href_github_project, $verid));
+    for (let $i = 0; $i < $deptos.length; $i += 1) {
         // noinspection HtmlUnknownTarget
-        $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Reporte-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', deptos[i][0], deptos[i][1], verid, href_github_project));
+        $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Reporte-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', $deptos[$i][0], $deptos[$i][1], $verid, href_github_project));
     }
 
 }

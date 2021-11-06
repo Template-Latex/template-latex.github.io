@@ -1776,17 +1776,17 @@ function afterDocumentReady() {
      * Galería header-footer
      */
     hfGallery = function () {
-        let pswpElement = document.querySelectorAll('.pswp')[0];
-        let items = [];
-        for (let i = 1; i <= totalHfStyles; i += 1) {
-            items.push({
-                src: String.format('res/images/hf{0}.png', i),
+        let $pswp_element = document.querySelectorAll('.pswp')[0];
+        let $items = [];
+        for (let $i = 1; $i <= totalHfStyles; $i += 1) {
+            $items.push({
+                src: String.format('res/images/hf{0}.png', $i),
                 w: 544,
                 h: 704,
-                title: String.format('<b>Header-Footer estilo {0}</b> (<div class="codegallerytitle">\\hfstyle=\{style{0}\}</div>)', i)
+                title: String.format('<b>Header-Footer estilo {0}</b> (<div class="codegallerytitle">\\hfstyle=\{style{0}\}</div>)', $i)
             })
         }
-        let options = {
+        let $options = {
             counterEl: true,
             fullscreenEl: false,
             hideAnimationDuration: 400,
@@ -1796,13 +1796,13 @@ function afterDocumentReady() {
             showAnimationDuration: 400,
             zoomEl: false
         };
-        let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.listen('close', function () {
+        let $gallery = new PhotoSwipe($pswp_element, PhotoSwipeUI_Default, $items, $options);
+        $gallery.listen('close', function () {
             backToTop.show(true);
         });
         backToTop.hide(true);
         NotificationJS.clearall(); // Oculta las notificaciones
-        gallery.init(); // Inicia la galería
+        $gallery.init(); // Inicia la galería
     };
     let $hftrigger = $('#hfTrigger');
     // noinspection JSCheckFunctionSignatures
@@ -1813,22 +1813,22 @@ function afterDocumentReady() {
      * Galería portadas
      */
     portraitGallery = function () {
-        let pswpElement = document.querySelectorAll('.pswp')[0];
-        let items = [];
-        let req_add; // Requerimientos adicionales
+        let $pswp_element = document.querySelectorAll('.pswp')[0];
+        let $items = [];
+        let $req_add; // Requerimientos adicionales
         for (let i = 1; i <= totalPortraitStyles; i += 1) {
-            req_add = '';
+            $req_add = '';
             if (portraitRequiresAdditional[i] !== undefined) {
-                req_add = '<br>Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>';
+                $req_add = '<br>Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>';
             }
-            items.push({
+            $items.push({
                 src: String.format('res/images/portada{0}.png', i),
                 w: 544,
                 h: 704,
-                title: String.format('<b>Portada estilo {0}</b> (<div class="codegallerytitle">\\portraitstyle=\{style{0}\}</div>){1}', i, req_add)
+                title: String.format('<b>Portada estilo {0}</b> (<div class="codegallerytitle">\\portraitstyle=\{style{0}\}</div>){1}', i, $req_add)
             })
         }
-        let options = {
+        let $options = {
             counterEl: true,
             fullscreenEl: false,
             hideAnimationDuration: 400,
@@ -1838,7 +1838,7 @@ function afterDocumentReady() {
             showAnimationDuration: 400,
             zoomEl: false
         };
-        let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        let gallery = new PhotoSwipe($pswp_element, PhotoSwipeUI_Default, $items, $options);
         gallery.listen('close', function () {
             backToTop.show(true);
         });
@@ -1856,9 +1856,9 @@ function afterDocumentReady() {
     /**
      * Se lee un acción desde url para cargar una galería
      */
-    let initAction = $.urlParam('action');
-    if (initAction != null) {
-        switch (initAction) {
+    let $initAction = $.urlParam('action');
+    if ($initAction != null) {
+        switch ($initAction) {
             case 'portraitGallery':
                 portraitGallery();
                 break;
@@ -1871,30 +1871,30 @@ function afterDocumentReady() {
     /**
      * Contenedor de código
      */
-    let triggerShowContainerChangeTrigger = function (trigger, container, onstring, offstring) {
-        $(container).attr('show', 'off');
-        if (onstring !== '') {
-            $(trigger).html(onstring);
+    let triggerShowContainerChangeTrigger = function ($trigger, $container, $onstring, $offstring) {
+        $($container).attr('show', 'off');
+        if ($onstring !== '') {
+            $($trigger).html($onstring);
         }
-        $(trigger).on('click', function () {
-            let $container = $(container);
+        $($trigger).on('click', function () {
+            let $container = $($container);
             if ($container.attr('show') === 'off') {
                 $container.fadeIn();
                 $container.attr('show', 'on');
-                if (offstring !== '') {
-                    $(trigger).html(offstring);
+                if ($offstring !== '') {
+                    $($trigger).html($offstring);
                 }
             } else {
                 $container.fadeOut();
                 $container.attr('show', 'off');
-                if (onstring !== '') {
-                    $(trigger).html(onstring);
+                if ($onstring !== '') {
+                    $($trigger).html($onstring);
                 }
             }
         })
     };
-    let triggerShowContainer = function (trigger, container) {
-        triggerShowContainerChangeTrigger(trigger, container, '', '');
+    let triggerShowContainer = function ($trigger, $container) {
+        triggerShowContainerChangeTrigger($trigger, $container, '', '');
     };
 
     /**
@@ -2049,15 +2049,15 @@ function afterDocumentReady() {
      * Se añade tooltip con imagen en tipo de fuente
      */
     $('.fontsrc').each(function () {
-        let href = $(this).attr('href');
-        if (href.indexOf('https://tug.org/') !== -1) {
-            let img = href.split('/')[4];
-            img = href + img + '-1.svg';
+        let $href = $(this).attr('href');
+        if ($href.indexOf('https://tug.org/') !== -1) {
+            let $img = $href.split('/')[4];
+            $img = $href + $img + '-1.svg';
 
             // noinspection HtmlUnknownTarget
             $(this).tooltipster({
                 animation: 'grow',
-                content: String.format('<img src="{0}" alt="" width="500" height="125" class="imgfontexample" />', img),
+                content: String.format('<img src="{0}" alt="" width="500" height="125" class="imgfontexample" />', $img),
                 contentAsHTML: true,
                 delay: 1200,
                 interactive: true,
@@ -2071,10 +2071,10 @@ function afterDocumentReady() {
     /**
      * Se agrega archivo de ejemplos luego de los bloques de código fuente
      */
-    let $addExample = function (trigger, content) {
+    let $addExample = function ($trigger, $content) {
 
         // Obtiene el trigger (usualmente un pre o blockquote)
-        let $trigger = $('#' + trigger).after();
+        $trigger = $('#' + $trigger).after();
 
         // Añade bloque oculto con contenido a desbloquear
         let $contentID = generateID();
@@ -2095,7 +2095,7 @@ function afterDocumentReady() {
 
             // Si no se ha escrito el contenido se escribe
             if ($btn.attr('data-write') === 'false') {
-                $cnt.html(content);
+                $cnt.html($content);
                 $btn.attr('data-write', 'true');
             }
 
@@ -2159,9 +2159,9 @@ function afterDocumentReady() {
  */
 function afterJSONLoad() {
     // noinspection JSUnresolvedFunction
-    let initAction = $.urlParam('action');
-    if (initAction != null) {
-        switch (initAction) {
+    let $initAction = $.urlParam('action');
+    if ($initAction != null) {
+        switch ($initAction) {
             case 'download':
                 $('a[name*=leanModal]').leanModal({
                     closeButton: '.modal_close'
@@ -2177,10 +2177,10 @@ function afterJSONLoad() {
 /**
  * Escribe links de los distintos departamentos.
  *
- * @param {string} verid - ID de la versión
+ * @param {string} $verid - ID de la versión
  */
-function writeOtherLinks(verid) {
-    let deptos = [
+function writeOtherLinks($verid) {
+    let $deptos = [
         ['Área de Humanidades', 'adh'],
         ['Departamento de Astronomía', 'das'],
         ['Departamento de Ciencias de la Computación', 'dcc'],
@@ -2201,12 +2201,12 @@ function writeOtherLinks(verid) {
 
     // Genera el contenido
     let $contents = $('#downloadother-contents');
-    $('#downloadtitle-title').html(String.format('Descargas v{0}', verid));
+    $('#downloadtitle-title').html(String.format('Descargas v{0}', $verid));
     // noinspection HtmlUnknownTarget
-    $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Informe.zip">Descargar</a></div></div>', href_github_project, verid));
-    for (let i = 0; i < deptos.length; i += 1) {
+    $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Informe.zip">Descargar</a></div></div>', href_github_project, $verid));
+    for (let $i = 0; $i < $deptos.length; $i += 1) {
         // noinspection HtmlUnknownTarget
-        $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Informe-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', deptos[i][0], deptos[i][1], verid, href_github_project));
+        $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Informe-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', $deptos[$i][0], $deptos[$i][1], $verid, href_github_project));
     }
 
 }
