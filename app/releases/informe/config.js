@@ -1872,12 +1872,12 @@ function afterDocumentReady() {
      * Contenedor de código
      */
     let triggerShowContainerChangeTrigger = function ($trigger, $container, $onstring, $offstring) {
-        $($container).attr('show', 'off');
+        $container = $($container);
+        $container.attr('show', 'off');
         if ($onstring !== '') {
             $($trigger).html($onstring);
         }
         $($trigger).on('click', function () {
-            let $container = $($container);
             if ($container.attr('show') === 'off') {
                 $container.fadeIn();
                 $container.attr('show', 'on');
@@ -1901,7 +1901,7 @@ function afterDocumentReady() {
      * Imágenes animadas
      */
     triggerShowContainer('#showAnimatedImageLink', '#showAnimatedImageContainer');
-    triggerShowContainer('#showAddImageAnimated', '#showAddImageAnimatedContainer')
+    triggerShowContainer('#showAddImageAnimated', '#showAddImageAnimatedContainer');
 
     /**
      * Código images + link

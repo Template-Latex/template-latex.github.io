@@ -1361,20 +1361,20 @@ Botón de ejemplo que contiene mostrar/ocultar ejemplo
 
 @media screen and (min-width: 64em) {
     .preExampleButton {
-        top: -38px !important;
+        top: -39px !important;
     }
 }
 
 @media screen and (max-width: 42em) {
     .preExampleButton {
-        top: -36px !important;
+        top: -38px !important;
     }
 }
 
 @media screen and (max-width: 576px) {
     .preExampleButton {
         font-size: 0.5rem;
-        top: -43px !important;
+        top: -31px !important;
     }
 }
 
