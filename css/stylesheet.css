@@ -490,7 +490,7 @@ a:hover {
     -webkit-backdrop-filter: blur(15px);
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(15px);
-    /* background-color: rgba(100, 100, 100, 0.4); */
+    background-color: rgb(100 100 100 / 10%);
     border-radius: 0.3rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
@@ -498,7 +498,7 @@ a:hover {
     display: inline-block;
     margin-bottom: 1rem;
     margin-left: 0;
-    margin-right: 1.5rem;
+    margin-right: 1.75rem;
     opacity: 1.0;
     outline: none;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
