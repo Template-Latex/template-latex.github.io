@@ -443,7 +443,8 @@
                 </p>
                 <p>
                     Los parámetros pueden ser <strong>scale=0.5</strong>, <strong>width=5cm</strong>,
-                    <strong>width=50%</strong>, <strong>angle=45</strong>, <strong>page=3</strong> (Al usar PDF's), etc.
+                    <strong>width=50%</strong>, <strong>angle=45</strong>, <strong>page=3</strong> (Al usar pdf),
+                    <strong>margin=1cm 2cm</strong> (Horizontal vertical), etc.
                 </p>
                 <ul>
                     <li>
@@ -655,6 +656,11 @@
                             <li>
                                 <strong>\imagesvspace</strong><b>{</b><em>Margen</em><b>}</b>:
                                 Añade un margen vertical dentro del objeto images.
+                            </li>
+                            <li>
+                                <strong>\setnextimagevmargin</strong><b>{</b><em>Margen</em><b>}</b>:
+                                Define el margen vertical de la siguiente imagen a insertar con <i>\addimage</i> o
+                                sus variantes. Tras insertar la imagen, éste margen se vuelve a setear en cero.
                             </li>
                         </ul>
                     </li>
@@ -4844,6 +4850,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
         <a id="showLibsContainer" class="javascripthref"></a>
         <div class="codeFunContainer" id="libsUsedContainer">
             <ul class="linkssection" id="usedLibs">
+                <li>
+                    <strong><a href="https://www.ctan.org/pkg/adjustbox">adjustbox</a></strong>: Permite nuevos argumentos para
+                    modificar propiedades de las imágenes y los márgenes.
+                </li>
                 <li>
                     <strong><a href="https://www.ctan.org/pkg/animate">animate</a></strong>: Inserta figuras animadas.
                 </li>
