@@ -90,7 +90,7 @@ notification['sabiasque'] = {
     '37': 'LaTeX data desde el año 1984',
     '38': 'Puedes seguir el desarrollo de Template-Informe dando una estrella a su página en github <a href="https://github.com/Template-Latex/Template-Informe/" target="_blank">https://github.com/Template-Latex/Template-Informe/</a>',
     '39': 'Los lenguajes más utilizados en el template son Java, Python y Matlab',
-    '40': 'El template importa y configura más de 60 librerías para funcionar',
+    '40': 'El template importa y configura más de 80 librerías',
     '41': 'Es recomendable utilizar imagenes .eps o .pdf para tener mayor resolución',
     '42': '¿Te aburre la mismo tipo de letra siempre? Prueba modificando la configuración <i>\\fontdocument</i>',
     '43': '¿Te aburre siempre la misma portada? Prueba modificando la configuración <i>\\portraitstyle</i>',

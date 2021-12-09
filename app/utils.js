@@ -125,26 +125,6 @@ function hide_element_id(idelem) {
 }
 
 /**
- * Efecto de rebote de un elemento.
- *
- * @param {string} element - Elemento
- * @param {number} times - Número de veces
- * @param {string} distance - Distancia
- * @param {number} speed - Velocidad
- */
-function doBounce(element, times, distance, speed) {
-    for (let i = 0; i < times; i++) {
-        // noinspection JSUnresolvedFunction
-        element.animate({
-            marginTop: '-=' + distance
-        }, speed)
-            .animate({
-                marginTop: '+=' + distance
-            }, speed);
-    }
-}
-
-/**
  * Lanza un error, oculta contenido y muestra un div con información.
  *
  * @param {object} error - Texto del error
