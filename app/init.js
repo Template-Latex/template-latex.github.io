@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017-2021 Pablo Pizarro R.
+ Copyright 2017 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -179,6 +179,8 @@ $(function () {
                     }
                 }
             }
+            addDownloadCounter(total_downloads);
+            console.log(String.format('Total descargas: {0}', total_downloads));
 
             /**
              * Se añade link estadísticas a banner descargas
