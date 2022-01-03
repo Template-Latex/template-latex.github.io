@@ -302,7 +302,9 @@ Array.prototype.randomElement = function () {
 function addDownloadCounter($total) {
     let $size = 210;
     if ($total < 100) {
-        $size = 150;
+        $size = 140;
+    } else if (1000 <= $total < 10000) {
+        $size = 230;
     }
     if ($total >= 1000) {
         let $factor = 1;
