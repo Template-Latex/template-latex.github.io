@@ -4,5 +4,8 @@
 # Python
 *.pyc
 
+# Jar desarrollo
+res/other/**.jar
+
 # Otros
 *._**
