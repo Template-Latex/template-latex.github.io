@@ -300,6 +300,7 @@ Array.prototype.randomElement = function () {
  * @param {number} $total - Total de descargas
  */
 function addDownloadCounter($total) {
+    let $ttotal = $total;
     let $size = 210;
     if ($total < 100) {
         $size = 140;
@@ -314,8 +315,8 @@ function addDownloadCounter($total) {
         $total = $total.toString();
     }
     $('#templatestats').html(`
-    <svg xmlns="http://www.w3.org/2000/svg" width="98" height="20" role="img" aria-label="Descargas: ${$total}">
-       <title>Descargas: ${$total}</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="98" height="20" role="img" aria-label="Descargas: ${$ttotal}">
+       <title>Descargas: ${$ttotal}</title>
        <linearGradient id="s" x2="0" y2="100%">
           <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
           <stop offset="1" stop-opacity=".1"/>
