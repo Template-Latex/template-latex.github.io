@@ -2364,6 +2364,32 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         </blockquote>
                     </li>
                     <li>
+                        <strong>fontsizeblock</strong><b>[</b><em>Tamaño de fuente en pt
+                        <i>(opcional)</i></em><b>]</b>: Crea un bloque con un tamaño de fuente diferente. Se puede agregar cualquier elemento dentro, desde un párrafo a una tabla.
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                <pre>
+<span class="pl-c1">\begin</span>{<span class="pl-e">fontsizeblock</span>}[8]
+    A diferencia del resto del documento, la siguiente tabla tendrá un tamaño de fuente de 8pt:
+    <span class="pl-c1">\begin</span>{table}[H]
+        <span class="pl-c1">\centering</span>
+        <span class="pl-c1">\caption</span>{Ejemplo de tablas.}
+        <span class="pl-c1">\begin</span>{tabular}{ccc}
+            <span class="pl-c1">\hline</span>
+            <span class="pl-c1">\textbf</span>{Columna 1} & <span class="pl-c1">\textbf</span>{Columna 2} & <span class="pl-c1">\textbf</span>{Columna 3} <span class="pl-c1">\bigstrut</span>\\
+            <span class="pl-c1">\hline</span>
+            $<span class="pl-c1">\omega</span>$ & $<span class="pl-c1">\nu</span>$ & $<span class="pl-c1">\delta</span>$ <span class="pl-c1">\bigstrut</span>[t]\\
+            $<span class="pl-c1">\Phi</span>$ & $<span class="pl-c1">\Theta</span>$ & $<span class="pl-c1">\varSigma</span>$ \\
+            $<span class="pl-c1">\xi</span>$ & $<span class="pl-c1">\kappa</span>$ & $<span class="pl-c1">\varpi</span>$ <span class="pl-c1">\bigstrut</span>[b] \\
+            <span class="pl-c1">\hline</span>
+        <span class="pl-c1">\end</span>{tabular}
+        <span class="pl-c1">\label</span>{tab:tabla-1}
+    <span class="pl-c1">\end</span>{table}
+<span class="pl-c1">\end</span>{<span class="pl-e">fontsizeblock</span>}</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li>
                         <strong>\forceindent</strong>: Fuerza el indentado de un nuevo párrafo.
                     </li>
                     <li>
