@@ -218,7 +218,7 @@
                 </ul>
             </li>
             <li><a href="#links" class="menu-big-entry">Links de interés</a></li>
-            <li><a href="#importacion-librerias" class="menu-big-entry">Impotación de librerías</a></li>
+            <li><a href="#importacion-librerias" class="menu-big-entry">Importación de librerías</a></li>
             <li id="changelog-menu"><a href="#changelog" class="menu-big-entry">Changelog</a></li>
             <li><a href="#autor" class="menu-big-entry">Autor</a></li>
         </ul>
@@ -400,7 +400,7 @@
                 </div>
             </li>
             <li>
-                <strong>\universitydepartmentimagecfg</strong>: Parámetros de la imágen, puede ser <i>scale</i>,
+                <strong>\universitydepartmentimagecfg</strong>: Parámetros de la imagen, puede ser <i>scale</i>,
                 <i>width</i>, <i>angle</i>, etc.
             </li>
             <li>
@@ -507,7 +507,7 @@
                     </li>
                     <li>
                         <strong><a id="showImageLink" class="javascripthref">\insertimagelink</a></strong>:
-                        Insertar imágenes con links clickeables.
+                        Insertar imágenes con links cliqueables.
                         <div class="codeFunContainer" id="showImageLinkContainer">
                             <ul>
                                 <li>
@@ -572,16 +572,16 @@
                         <ul>
                             <li>
                                 <strong>\addimage</strong><b>[</b><em>Label</em>(opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Leyenda</em><b>}</b>:
-                                Añade una imagen dentro de un objeto images.
+                                Añade una imagen dentro de un objeto <i>images</i>.
                             </li>
                             <li>
                                 <strong>\addimageboxed</strong><b>[</b><em>Label</em>(opcional)<b>]{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Ancho
                                 de la línea</em><b>}{</b><em>Leyenda</em><b>}</b>:
-                                Añade una imagen encerrada en un recuadro dentro del objeto images.
+                                Añade una imagen encerrada en un recuadro dentro del objeto <i>images</i>.
                             </li>
                             <li>
                                 <strong>\addimageanum</strong><b>{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}</b>:
-                                Añade una imagen dentro de un objeto images sin leyenda ni numeración.
+                                Añade una imagen dentro de un objeto <i>images</i> sin leyenda ni numeración.
                             </li>
                             <li>
                                 <strong>\addimageanumboxed</strong><b>{</b><em>Archivo</em><b>}{</b><em>Parámetros</em><b>}{</b><em>Ancho
@@ -619,7 +619,7 @@
                             </li>
                             <li>
                                 <strong><a id="showImageAnumLink" class="javascripthref">\addimagelink</a></strong>:
-                                Insertar imágenes con links clickeables.
+                                Insertar imágenes con links cliqueables.
                                 <div class="codeFunContainer" id="showImageAnumLinkContainer">
                                     <ul>
                                         <li>
@@ -1007,7 +1007,7 @@
                     <li>
                         <strong>\insertindexequation</strong><b>[</b><em>Label</em>
                         (opcional)<b>]{</b><em>Fórmula</em><b>}{</b><em>Leyenda</em><b>}</b>: Inserta una
-                        fórmula (entorno align) con una entrada en el índice de ecuaciones.
+                        fórmula (entorno <i>align</i>) con una entrada en el índice de ecuaciones.
                         <blockquote>
                             <div class="highlight highlight-text-tex">
                                 <pre><span class="pl-e">\insertindexequation</span><b>{</b>a+b=c<b>}{</b>Ecuación muy difícil<b>}</b></pre>
@@ -1443,7 +1443,7 @@ end
                 <hr class="style1">
                 <ul>
                     <li><strong>\inlinesourcecode</strong><b>{</b><em>Lenguaje</em><b>}</b><b>{</b><em>Código</em><b>}</b>:
-                        Crea un código inline (de una sola línea dentro de un párrafo). Puede usarse cualquier caracter dentro
+                        Crea un código inline (de una sola línea dentro de un párrafo). Puede usarse cualquier carácter dentro
                         del código, salvo las llaves, las cuales deben ser reemplazadas por <b>\{</b> y <b>\}</b> (ver ejemplo).
                         <blockquote>
                             <div class="highlight highlight-text-tex">
@@ -1656,7 +1656,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     </li>
                     <li><b>¿Cómo uso mi propio estilo de referencias?</b>: Al igual que el punto anterior, para usar el nuevo <i>.bst</i> éste se debe ubicar en la misma carpeta que el archivo <i>.tex</i>
                         (el principal a compilar) y se debe nombrar la configuración del estilo con el mismo nombre que
-                        el archivo (sin la extensión). Por ejemplo, si se quiere usar un un estilo <i>mystyle.bst</i> y se
+                        el archivo (sin la extensión). Por ejemplo, si se quiere usar un estilo <i>mystyle.bst</i> y se
                         está usando <a href="#stylecitereferences" class="javascripthref">
                             <span class="pl-c1">\stylecitereferences</span></a>{natbib} se debe
                         modificar la configuración del estilo a <a href="#natbibrefstyle" class="javascripthref">
@@ -1702,7 +1702,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                 <strong class="functtitlstyle">Expresiones matemáticas <a id="hlp-math"></a></strong>
                 <p class="justified-text">
                     Existen <span id="mathFunCounter"></span> funciones para añadir expresiones matemáticas de
-                    forma sencilla, estas se pueden usar tanto dentro como fuera de una fórmula (por ejemplo se pueden
+                    forma sencilla, estas se pueden usar tanto dentro como fuera de una fórmula (por ejemplo, se pueden
                     usar dentro de un párrafo sin la necesidad de hacer <i style="color: #228b22">$\...$</i>). <br>
                 </p>
                 <a id="showMathFunContainer" class="javascripthref"></a>
@@ -2172,12 +2172,12 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                 <strong class="functtitlstyle">Multi-columnas <a id="hlp-multicolumn"></a></strong>
                 <p class="justified-text">
                     El template ofrece funciones para crear múltiples columnas de manera sencilla. A diferencia de los
-                    entornos <i>multicol</i> éstas columnas son más flexibles, al estar programadas con <i>minipages</i>.
+                    entornos <i>multicol</i> estas columnas son más flexibles, al estar programadas con <i>minipages</i>.
                     <br>
                     Se ofrecen dos tipos de funciones para insertar columnas dobles y triples. Además de funciones para
                     configurar los estilos.
                     <br><br>
-                    Las columnas por defecto están alineadas en el tope, sin embargo estas se pueden configurar en
+                    Las columnas por defecto están alineadas en el tope, sin embargo, se pueden configurar en
                     cualquier posición al definir la altura (centro, tope o piso). En las funciones la altura es un
                     parámetro opcional.
                 </p>
@@ -2320,7 +2320,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                 <ul>
                     <li>
                         <strong>\addpathimage</strong><b>{</b><em>Ubicación de la carpeta</em><b>}</b>: Añade una
-                        carpeta al path gráfico manejado por el documento.
+                        carpeta al <i>path</i> gráfico manejado por el documento.
                     </li>
                     <li>
                         <strong>\changepagesize</strong><b>[</b><em>Rotación de página
@@ -2437,10 +2437,10 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                         un capítulo.
                     </li>
                     <li>
-                        <strong>\newcolumn</strong>: Forza un salto de columna dentro del entorno <i>multicol</i>.
+                        <strong>\newcolumn</strong>: Fuerza un salto de columna dentro del entorno <i>multicol</i>.
                     </li>
                     <li>
-                        <strong>\newpagemulticol</strong>: Forza un salto de página dentro del entorno <i>multicol</i>.
+                        <strong>\newpagemulticol</strong>: Fuerza un salto de página dentro del entorno <i>multicol</i>.
                     </li>
                     <li>
                         <strong>\newp</strong>: Sencilla forma de añadir un nuevo párrafo.
@@ -2766,7 +2766,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\predocpageromannumber</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Las páginas anteriores al inicio del cuerpo del documeno
+                            <div class="config-desc-inner">Las páginas anteriores al inicio del cuerpo del documento
                                 (Resumen, Índice) se definen con números romanos.
                             </div>
                         </div>
@@ -2916,7 +2916,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\captionlrmargin</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
+                            <div class="config-desc-inner">Margen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
                                 las leyendas, en centímetros.
                             </div>
                         </div>
@@ -2924,7 +2924,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\captionlrmarginmc</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
+                            <div class="config-desc-inner">Margen izquierdo (<i>left</i>) y derecho (<i>right</i>) de
                                 las leyendas dentro del entorno <i>multicols</i>, en centímetros.
                             </div>
                         </div>
@@ -2955,7 +2955,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\captionmarginmultimg</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Márgen izquierdo (<i>left</i>) y derecho (<i>right</i>)
+                            <div class="config-desc-inner">Margen izquierdo (<i>left</i>) y derecho (<i>right</i>)
                                 de las imágenes múltiples insertadas con <i>images</i>.
                             </div>
                         </div>
@@ -3017,7 +3017,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\captionsubchar</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter entre el número de la figura y la subfigura. Por
+                            <div class="config-desc-inner">Carácter entre el número de la figura y la subfigura. Por
                                 ejemplo <i>3.a</i>.
                             </div>
                         </div>
@@ -3153,7 +3153,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\sectioncaptiondelimiter</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter separador entre el número de la sección y el número
+                            <div class="config-desc-inner">Carácter separador entre el número de la sección y el número
                                 del objeto (por ejemplo 1.2.3), válido siempre que se use <i>\showsectioncaption...</i>.
                             </div>
                         </div>
@@ -3267,7 +3267,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\charafterobjectindex</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter tras cada número de figura, tabla o código en
+                            <div class="config-desc-inner">Carácter tras cada número de figura, tabla o código en
                                 el índice.
                             </div>
                         </div>
@@ -3275,7 +3275,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\charnumpageindex</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter entre título y número de página en el índice.</div>
+                            <div class="config-desc-inner">Carácter entre título y número de página en el índice.</div>
                         </div>
                     </li>
                     <li class="config-elem">
@@ -3287,28 +3287,28 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\indexnewpagec</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Forza una nueva página en el índice de códigos fuente.
+                            <div class="config-desc-inner">Fuerza una nueva página en el índice de códigos fuente.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\indexnewpagee</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Forza una nueva página en el índice de ecuaciones.
+                            <div class="config-desc-inner">Fuerza una nueva página en el índice de ecuaciones.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\indexnewpagef</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Forza una nueva página en el índice de figuras.
+                            <div class="config-desc-inner">Fuerza una nueva página en el índice de figuras.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\indexnewpaget</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Forza una nueva página en el índice de tablas.
+                            <div class="config-desc-inner">Fuerza una nueva página en el índice de tablas.
                             </div>
                         </div>
                     </li>
@@ -3369,7 +3369,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\apaciterefcitecharclose</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter final de los números al tener activada la
+                            <div class="config-desc-inner">Carácter final de los números al tener activada la
                                 configuración <i>\apaciterefnumber</i>.
                             </div>
                         </div>
@@ -3377,7 +3377,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\apaciterefcitecharopen</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter inicial de los números al tener activada la
+                            <div class="config-desc-inner">Carácter inicial de los números al tener activada la
                                 configuración <i>\apaciterefnumber</i>.
                             </div>
                         </div>
@@ -3479,14 +3479,14 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\natbibrefcitecharclose</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter final de las citas con natbib.
+                            <div class="config-desc-inner">Carácter final de las citas con natbib.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\natbibrefcitecharopen</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter inicial de las citas con natbib.
+                            <div class="config-desc-inner">Carácter inicial de las citas con natbib.
                             </div>
                         </div>
                     </li>
@@ -4053,7 +4053,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\charaftersectionnum</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter después número sección, subsección,
+                            <div class="config-desc-inner">Carácter después número sección, subsección,
                                 sub-subsección, y sub-sub-subsección.
                             </div>
                         </div>
@@ -4061,7 +4061,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\charappendixsection</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter entre el número de la sección del anexo y el
+                            <div class="config-desc-inner">Carácter entre el número de la sección del anexo y el
                                 título.
                             </div>
                         </div>
@@ -4069,28 +4069,28 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\charbetwchaptersection</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter entre el número de capítulo y sección.
+                            <div class="config-desc-inner">Carácter entre el número de capítulo y sección.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\charbetwsectionsubsection</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter entre el número de sección y subsección.
+                            <div class="config-desc-inner">Carácter entre el número de sección y subsección.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\charbetwssectionsssect</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter entre el número de sub-subsección y sub-sub-subsección.
+                            <div class="config-desc-inner">Carácter entre el número de sub-subsección y sub-sub-subsección.
                             </div>
                         </div>
                     </li>
                     <li class="config-elem">
                         <strong>\charbetwsubsectionssect</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Caracter entre el número de subsección y sub-subsección.
+                            <div class="config-desc-inner">Carácter entre el número de subsección y sub-subsección.
                             </div>
                         </div>
                     </li>
@@ -4419,7 +4419,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\linkcolor</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">Color de los enlaces del documento, entiendase por números de
+                            <div class="config-desc-inner">Color de los enlaces del documento, entiéndase por números de
                                 figuras, entradas del índice, etc.
                             </div>
                         </div>
@@ -4671,7 +4671,7 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                     <li class="config-elem">
                         <strong>\usepdfmetadata</strong>
                         <div class="config-desc">
-                            <div class="config-desc-inner">El template añade metadatatos al pdf compilado.</div>
+                            <div class="config-desc-inner">El template añade metadatos al pdf compilado.</div>
                         </div>
                     </li>
                 </ul>
