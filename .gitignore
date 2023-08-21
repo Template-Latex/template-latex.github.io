@@ -1,5 +1,6 @@
-# Webstorm
+# IDE
 .idea/
+.vscode/
 
 # Python
 *.pyc
