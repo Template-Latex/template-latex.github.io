@@ -1,3 +1,5 @@
+// noinspection JSUnresolvedReference
+
 /**
  The MIT License (MIT)
 
@@ -73,30 +75,7 @@ $(function () {
      * Se generan colores
      * ------------------------------------------------------------------------
      */
-    let $color = tinycolor(wallpaper_db.color);
-    let $wbright = $color.getBrightness();
-    if ($wbright <= 20) {
-        $color.brighten(30);
-    } else if ($wbright <= 40) {
-        $color.brighten(20);
-    } else if ($wbright <= 70) {
-        $color.brighten(10);
-    } else if ($wbright <= 80) {
-        $color.darken(5);
-    } else if ($wbright <= 90) {
-        $color.darken(10);
-    } else if ($wbright <= 100) {
-        $color.darken(15);
-    } else if ($wbright <= 125) {
-        $color.darken(20);
-    } else if ($wbright <= 150) {
-        $color.darken(30);
-    } else if ($wbright <= 200) {
-        $color.darken(40);
-    } else {
-        $color.darken(50);
-    }
-
+    let $color = wallpaper_db_query_color(tinycolor, 70, null, true);
     let $backgroundmaincolor = $color.clone().brighten(95);
     let $bgprecolor = $color.clone().brighten(90);
     let $bodycolor = '#4d4d4d';
