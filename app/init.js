@@ -76,14 +76,14 @@ $(function () {
      * ------------------------------------------------------------------------
      */
     let $color = wallpaper_db_query_color(tinycolor, 70);
-    let $backgroundmaincolor = $color.clone().brighten(95);
-    let $bgprecolor = $color.clone().brighten(90);
+    let $backgroundmaincolor =  wallpaper_db_query_color(tinycolor, 254);
+    let $bgprecolor = wallpaper_db_query_color(tinycolor, 250);
     let $bodycolor = '#4d4d4d';
-    let $codebarcolor = $color.clone().brighten(20);
-    let $codeprecolor = $color.clone().brighten(10);
-    let $hrcolor = $color.clone().darken(5);
-    let $pacecolor = $color.clone().brighten(10);
-    let $titlecolor = $color.clone().darken(15);
+    let $codebarcolor = wallpaper_db_query_color(tinycolor, 110);
+    let $codeprecolor = wallpaper_db_query_color(tinycolor, 90);
+    let $hrcolor = wallpaper_db_query_color(tinycolor, 65);
+    let $pacecolor = wallpaper_db_query_color(tinycolor, 60);
+    let $titlecolor = wallpaper_db_query_color(tinycolor, 45);
 
     // noinspection JSJQueryEfficiency
     /**
