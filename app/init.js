@@ -75,7 +75,7 @@ $(function () {
      * Se generan colores
      * ------------------------------------------------------------------------
      */
-    let $color = wallpaper_db_query_color(tinycolor, 70, null, true);
+    let $color = wallpaper_db_query_color(tinycolor, 70);
     let $backgroundmaincolor = $color.clone().brighten(95);
     let $bgprecolor = $color.clone().brighten(90);
     let $bodycolor = '#4d4d4d';
