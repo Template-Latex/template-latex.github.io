@@ -61,7 +61,7 @@ $(function () {
         // noinspection JSUnusedLocalSymbols
         let $s = wallpaper_db.color + wallpaper_db.image + wallpaper_db.position;
     } catch ($e) {
-        // noinspection JSValidateTypes
+        // noinspection JSValidateTypes,JSUndeclaredVariable
         wallpaper_db = {
             color: getRandomDarkColor(),
             image: null,
@@ -171,7 +171,6 @@ $(function () {
                 update_download_counter === 'Template-Reporte' ||
                 update_download_counter === 'Template-Tesis'
             ) {
-
                 // Se carga los elementos
                 let $dlbutton = $('#download-button');
 
@@ -190,16 +189,13 @@ $(function () {
                 // noinspection HtmlUnknownTarget
                 $dlbutton.append(String.format(' <span id="buttonfilectext">(v{0}) <i class="fas fa-download"></i></span>', last_version));
                 writeOtherLinks(last_version);
-
             } else {
-
                 // Se carga los elementos
                 let $dlbutton = $('#download-button');
 
                 $dlbutton.attr('href', $normal_link);
                 // noinspection HtmlUnknownTarget
                 $dlbutton.append(String.format(' <span id="buttonfile1text">(v{0}) <i class="fas fa-download"></i></span>', last_version));
-
             }
 
             /**
