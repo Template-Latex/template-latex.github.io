@@ -34,34 +34,25 @@ let cfg_cookie_local = false;
  * @returns {object} - Cookie de la sesión
  */
 function loadSessionCookies() {
-
     /**
      * Carga las cookies
      */
     let c = Cookies.get(cfg_cookie_session_id);
     if (!notNullUndf(c)) {
-
-        /**
-         * Valores por defecto
-         */
+        // Valores por defecto
         let defvalue = {
             encuesta: true, // Carga la encuesta
         };
 
-        /**
-         * Si las cookies no son locales se carga la cookie guardada para verificar errores
-         */
+        // Si las cookies no son locales se carga la cookie guardada para verificar errores
         Cookies.set(cfg_cookie_session_id, defvalue, {
             expires: cfg_cookie_expire_days,
             path: '/',
         });
         c = Cookies.get(cfg_cookie_session_id);
 
-        /**
-         * No se pueden almacenar cookies en el navegador se utiliza localStorage
-         */
+        // No se pueden almacenar cookies en el navegador se utiliza localStorage
         if (!notNullUndf(c)) {
-
             console.log('Usando localStorage');
             cfg_cookie_local = true;
 
@@ -80,12 +71,9 @@ function loadSessionCookies() {
             }
             c = JSON.parse(c);
             return c;
-
         }
 
-        /**
-         * Retorna las cookies
-         */
+        // Retorna las cookies
         try {
             return JSON.parse(c);
         } catch (e) {
@@ -98,7 +86,6 @@ function loadSessionCookies() {
      * Fallback, retorna cookies cargadas
      */
     return JSON.parse(c);
-
 }
 
 /**

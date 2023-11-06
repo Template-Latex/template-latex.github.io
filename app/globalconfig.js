@@ -68,8 +68,6 @@ let notification = {};
  * ID de las cookies
  * @type {string}
  * @const
- * @global
- * @ignore
  */
 const cfg_cookie_session_id = 'er3t8yAZ6k';
 
@@ -77,8 +75,6 @@ const cfg_cookie_session_id = 'er3t8yAZ6k';
  * Días antes que las cookies expiren
  * @type {number}
  * @const
- * @global
- * @ignore
  */
 const cfg_cookie_expire_days = 60;
 
