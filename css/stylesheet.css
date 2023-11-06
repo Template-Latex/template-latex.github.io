@@ -1,3 +1,5 @@
+@import url("https://rsms.me/inter/inter.css");
+
 * {
     box-sizing: border-box;
 }
@@ -113,13 +115,11 @@
     from {
         opacity: 0;
         visibility: hidden;
-        -webkit-transform: translate3d(0, 50%, 0);
         transform: translate3d(0, 50%, 0);
     }
     to {
         opacity: 1;
         visibility: visible;
-        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
 }
@@ -128,13 +128,11 @@
     from {
         opacity: 0;
         visibility: hidden;
-        -webkit-transform: translate3d(0, 50%, 0);
         transform: translate3d(0, 50%, 0);
     }
     to {
         opacity: 1;
         visibility: visible;
-        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
 }
@@ -307,8 +305,6 @@ hr.style17 {
 }
 
 hr.style17:after {
-    -moz-transform: rotate(60deg);
-    -webkit-transform: rotate(60deg);
     background: #f0f0f0;
     color: #8c8b8b;
     content: '§';
@@ -363,7 +359,7 @@ body {
     -webkit-text-size-adjust: 100%;
     background-attachment: fixed;
     color: #363636;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
     font-weight: normal;
     line-height: 1.5;
@@ -372,6 +368,12 @@ body {
     overflow-x: hidden;
     padding: 0;
     text-rendering: optimizeLegibility;
+}
+
+@supports (font-variation-settings: normal) {
+    body {
+        font-family: 'Inter var', sans-serif;
+    }
 }
 
 .help-links {
