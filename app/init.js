@@ -76,7 +76,7 @@ $(function () {
      * ------------------------------------------------------------------------
      */
     let $color = wallpaper_db_query_color(tinycolor, 70);
-    let $backgroundmaincolor = wallpaper_db_query_color(tinycolor, 254);
+    let $backgroundmaincolor = '#ffffff';
     let $bgprecolor = wallpaper_db_query_color(tinycolor, 250);
     let $bodycolor = '#4d4d4d';
     let $codebarcolor = wallpaper_db_query_color(tinycolor, 110);
