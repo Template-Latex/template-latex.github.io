@@ -21,18 +21,6 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// noinspection JSUnusedGlobalSymbols
-/**
- * Genera un número aleatorio entero entre min y max.
- *
- * @param {number} $min - Mínimo
- * @param {number} $max - Máximo
- * @return {number}
- */
-function getRandomInt($min, $max) {
-    return Math.floor(Math.random() * ($max - $min + 1)) + $min;
-}
-
 /**
  * Selecciona el texto de un elemento.
  *
@@ -65,21 +53,6 @@ function selectAllText($elem) {
             }
         }
     });
-}
-
-// noinspection JSUnusedGlobalSymbols
-/**
- * Retorna un color random.
- *
- * @return {string}
- */
-function getRandomColor() {
-    let $letters = '0123456789ABCDEF';
-    let $color = '#';
-    for (let $i = 0; $i < 6; $i++) {
-        $color += $letters[Math.floor(Math.random() * 16)];
-    }
-    return $color;
 }
 
 /**
@@ -248,11 +221,15 @@ function loadInitialPopup() {
  */
 function loadEncuesta() {
     if (initial_encuesta.display && initial_encuesta.link.length > 0 && sessionCookie.encuesta) {
-
-        // Genera el contenido
         let $checkid = generateID();
-        let $form = String.format('<br><form action=""><div class="form-check"><input type="checkbox" class="form-check-input" id="{0}"><label class="form-check-label" for="{0}">No volver a mostrar este mensaje</label></div></form>', $checkid);
-        let $content = String.format(initial_encuesta.content, initial_encuesta.link, $form);
+        let $content = String.format(initial_encuesta.content, initial_encuesta.link, `
+            <br><form action="">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="${$checkid}">
+                    <label class="form-check-label" for="${$checkid}">No volver a mostrar este mensaje</label>
+                </div>
+            </form>
+        `);
 
         // noinspection JSCheckFunctionSignatures,JSUnresolvedFunction
         $.confirm({
@@ -281,7 +258,6 @@ function loadEncuesta() {
             title: initial_encuesta.title,
             useBootstrap: false,
         });
-
     }
 }
 
