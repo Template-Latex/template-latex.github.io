@@ -231,7 +231,7 @@ function loadEncuesta() {
             </form>
         `);
 
-        // noinspection JSCheckFunctionSignatures,JSUnresolvedFunction
+        // noinspection JSCheckFunctionSignatures,JSUnresolvedFunction,JSUnusedGlobalSymbols
         $.confirm({
             boxWidth: '30%',
             buttons: {
@@ -261,6 +261,7 @@ function loadEncuesta() {
     }
 }
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Retorna un elemento random de una lista.
  *

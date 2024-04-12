@@ -22,6 +22,13 @@
  */
 
 /**
+ * @typedef Cookies
+ * @property {(function(string): Object|string)} get
+ * @property {(function(string): void)} remove
+ * @property {(function(string, Object, Object))} set
+ */
+
+/**
  * Las cookies se cargaron de manera local.
  *
  * @type {boolean}
