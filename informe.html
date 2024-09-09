@@ -1635,6 +1635,23 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                             </div>
                         </blockquote>
 
+                        Por ejemplo, si se quiere usar el estilo de bibliografía <b>ISO 690</b> el cambio requerido sería:
+
+                        <blockquote>
+                            <div class="highlight highlight-text-tex">
+                                        <pre>
+% IMPORTACIÓN DEL TEMPLATE
+<span class="pl-c1">\input</span>{template}
+<span class="pl-c1">\usepackage</span>[backend=biber, style=iso-authoryear, giveninits=true]{biblatex}
+<span class="pl-c1">\addbibresource</span>{library.bib}
+...
+
+% MOSTRAR LA BIBLIOGRAFÍA (por ejemplo, al final del documento)
+<span class="pl-c1">\printbibliography</span>[heading=bibintoc]
+</pre>
+                            </div>
+                        </blockquote>
+
                         <b>-</b> Establecer configuración <a
                                 class="javascripthref"><span class="pl-c1">\stylecitereferences</span></a>{custom}
                     </li>

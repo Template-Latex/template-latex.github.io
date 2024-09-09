@@ -245,7 +245,6 @@ function loadEncuesta() {
             escapeKey: 'close',
             icon: 'fas fa-chart-bar',
             onClose: function () {
-
                 // Carga la respuesta si se deja de mostrar el mensaje
                 let $disable = $(String.format('#{0}', $checkid))[0].checked;
                 sessionCookie.encuesta = !$disable;
@@ -253,7 +252,6 @@ function loadEncuesta() {
                     console.log('Se ha desactivado el mensaje de la encuesta');
                 }
                 updateSessionCookie();
-
             },
             title: initial_encuesta.title,
             useBootstrap: false,
