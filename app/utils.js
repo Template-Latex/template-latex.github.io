@@ -28,27 +28,27 @@
  */
 function selectAllText($elem) {
     $($elem).on('mouseup', function () {
-        let sel, range;
-        const el = $(this)[0];
+        let $sel, $range;
+        const $el = $(this)[0];
         if (window.getSelection && document.createRange) {
-            sel = window.getSelection();
-            if (sel.toString() === '') {
+            $sel = window.getSelection();
+            if ($sel.toString() === '') {
                 window.setTimeout(function () {
-                    range = document.createRange();
-                    range.selectNodeContents(el);
-                    sel.removeAllRanges();
-                    sel.addRange(range);
+                    $range = document.createRange();
+                    $range.selectNodeContents($el);
+                    $sel.removeAllRanges();
+                    $sel.addRange($range);
                 }, 1);
             }
         } else { // noinspection JSUnresolvedVariable
             if (document.selection) {
-                sel = document.selection.createRange();
-                if (sel.text === '') {
+                $sel = document.selection.createRange();
+                if ($sel.text === '') {
                     // noinspection JSUnresolvedFunction
-                    range = document.body.createTextRange();
+                    $range = document.body.createTextRange();
                     // noinspection JSUnresolvedFunction
-                    range.moveToElementText(el);
-                    range.select();
+                    $range.moveToElementText($el);
+                    $range.select();
                 }
             }
         }
@@ -88,9 +88,8 @@ if (!String.format) {
  *
  * @param {string} $id_elem - ID del elemento
  */
-function hide_element_id($id_elem) {
+function hideElementId($id_elem) {
     try {
-        // noinspection JSValidateTypes
         document.getElementById($id_elem).style = 'display:none';
     } catch (err) {
         console.log('Error al ocultar id: ' + $id_elem);
@@ -103,31 +102,29 @@ function hide_element_id($id_elem) {
  * @param {object} $error - Texto del error
  */
 function throwError($error) {
-    // noinspection JSUnresolvedVariable
     console.log(String.format('ERROR[{0}]: {1}', $error.code, $error.msg));
     $('#whatsnew').attr('style', 'display:none');
-    hide_element_id('download-button');
-    hide_element_id('download-button-1file');
-    hide_element_id('whatsnew');
-    hide_element_id('downloadcounter-banner');
-    hide_element_id('template-preview-pdf');
+    hideElementId('download-button');
+    hideElementId('download-button-1file');
+    hideElementId('whatsnew');
+    hideElementId('downloadcounter-banner');
+    hideElementId('template-preview-pdf');
 
-    let $html_section = $('#main-content-section');
-    let html_error_div = '<div class="tooltip error_msg_1"><div id="errorMsgText"><!--suppress HtmlUnknownTarget --><img src="res/ui/erroricon.png" alt=""/>{0}</div><div></div></div>';
-    // noinspection JSUnresolvedVariable
-    $html_section.html(String.format(html_error_div, $error.msg));
+    const $html_section = $('#main-content-section');
+    const $html_error_div = '<div class="tooltip error_msg_1"><div id="errorMsgText"><img src="res/ui/erroricon.png" alt=""/>{0}</div><div></div></div>';
+    $html_section.html(String.format($html_error_div, $error.msg));
     $('.error_msg_1').tooltipster({
         animation: 'grow',
         content: $error.moreinfo,
         side: 'bottom',
         theme: 'tooltipster-borderless'
     });
-    let backheight = $(window).height() - $('.page-header').innerHeight();
-    $html_section.css('height', backheight);
+    /** @type {number} */ let $backheight = $(window).height() - $('.page-header').innerHeight();
+    $html_section.css('height', $backheight);
     // noinspection JSDeprecatedSymbols
     $(window).resize(function () {
-        backheight = $(window).height() - $('.page-header').innerHeight();
-        $('#main-content-section').css('height', backheight);
+        $backheight = $(window).height() - $('.page-header').innerHeight();
+        $('#main-content-section').css('height', $backheight);
     });
 }
 
@@ -148,11 +145,8 @@ function throwException($e) {
  */
 $.urlParam = function ($name) {
     let $results = new RegExp('[\?&]' + $name + '=([^&#]*)').exec(window.location.href);
-    if ($results == null) {
-        return null;
-    } else {
-        return decodeURI($results[1]) || 0;
-    }
+    if ($results == null) return null;
+    return decodeURI($results[1]) || 0;
 };
 
 /**
@@ -173,7 +167,7 @@ function notNullUndf($obj) {
  */
 function pickRandomProperty($obj) {
     let $result;
-    let $count = 0;
+    /** @type {number} */ let $count = 0;
     for (let $prop in $obj)
         if (Math.random() < 1 / ++$count)
             $result = $prop;
@@ -187,9 +181,9 @@ function pickRandomProperty($obj) {
  */
 function generateID() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        let r = Math.random() * 16 | 0;
-        let v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
+        /** @type {number} */ let $r = Math.random() * 16 | 0;
+        /** @type {number} */ let $v = c === 'x' ? $r : ($r & 0x3 | 0x8);
+        return $v.toString(16);
     });
 }
 
@@ -275,15 +269,15 @@ Array.prototype.randomElement = function () {
  * @param {number} $total - Total de descargas
  */
 function addDownloadCounter($total) {
-    let $ttotal = $total;
-    let $size = 210;
+    /** @type {number} */ let $ttotal = $total;
+    /** @type {number} */ let $size = 210;
     if ($total < 100) {
         $size = 140;
     } else if (1000 <= $total < 10000) {
         $size = 230;
     }
     if ($total >= 1000) {
-        let $factor = 1;
+        /** @type {number} */ let $factor = 1;
         if ($total <= 10000) $factor = 10;
         $total = (Math.round($total * $factor / 1000) / $factor).toString() + 'k';
     } else {

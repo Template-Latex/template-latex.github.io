@@ -1,0 +1,17 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "ppizarror.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Template-Latex/template-latex.github.io.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Template-Latex"
+  },
+  "homepage": "https://ppizarror.com",
+  "devDependencies": {
+    "@types/jquery": "^3.5.32"
+  }
+}

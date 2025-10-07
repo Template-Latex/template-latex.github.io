@@ -75,22 +75,22 @@ $(function () {
      * Se generan colores
      * ------------------------------------------------------------------------
      */
-    let $color = wallpaper_db_query_color(tinycolor, 70);
-    let $backgroundmaincolor = '#ffffff';
-    let $bgprecolor = wallpaper_db_query_color(tinycolor, 250);
-    let $bodycolor = '#4d4d4d';
-    let $codebarcolor = wallpaper_db_query_color(tinycolor, 110);
-    let $codeprecolor = wallpaper_db_query_color(tinycolor, 90);
-    let $hrcolor = wallpaper_db_query_color(tinycolor, 65);
-    let $pacecolor = wallpaper_db_query_color(tinycolor, 60);
-    let $titlecolor = wallpaper_db_query_color(tinycolor, 45);
+    const $color = wallpaper_db_query_color(tinycolor, 70);
+    const $backgroundmaincolor = '#ffffff';
+    const $bgprecolor = wallpaper_db_query_color(tinycolor, 250);
+    const $bodycolor = '#4d4d4d';
+    const $codebarcolor = wallpaper_db_query_color(tinycolor, 110);
+    const $codeprecolor = wallpaper_db_query_color(tinycolor, 90);
+    const $hrcolor = wallpaper_db_query_color(tinycolor, 65);
+    const $pacecolor = wallpaper_db_query_color(tinycolor, 60);
+    const $titlecolor = wallpaper_db_query_color(tinycolor, 45);
 
     /**
      * ------------------------------------------------------------------------
      * Aplica tema de color a página
      * ------------------------------------------------------------------------
      */
-    let $head = $('head');
+    const $head = $('head');
     $head.append(`<meta name="theme-color" content="${$backgroundmaincolor}">`);
     $head.append(`<meta name="msapplication-navbutton-color" content="${$backgroundmaincolor}">`);
     $head.append('<meta name="apple-mobile-web-app-capable" content="yes">');
@@ -108,10 +108,10 @@ $(function () {
 
             // Se cargan los datos del json
             total_downloads = 0;
-            for (let $i = 0; $i < $json.length; $i += 1) {
+            for (/** @type {number} */ let $i = 0; $i < $json.length; $i += 1) {
                 try {
-                    for (let j = 0; j < $json[$i].assets.length; j += 1) {
-                        total_downloads += parseInt($json[$i].assets[j].download_count);
+                    for (/** @type {number} */ let $j = 0; $j < $json[$i].assets.length; $j += 1) {
+                        total_downloads += parseInt($json[$i].assets[$j].download_count);
                         version_entries.push($json[$i].tag_name);
                     }
                 } catch (err) {
@@ -139,14 +139,14 @@ $(function () {
                 total_downloads = nan_value;
             } else {
                 updateDownloadCounter(total_downloads, update_download_counter);
-                let j = '';
-                for (let i = 0; i < download_list_counter.length; i += 1) {
-                    j = download_list_counter[i][1];
-                    if (version_entries.indexOf(j) === -1) {
-                        if (Array.isArray(download_list_counter[i][0])) {
-                            total_downloads += download_list_counter[i][0][0] + download_list_counter[i][0][1];
+                /** @type {string} */ let $j = '';
+                for (/** @type {number} */ let $i = 0; $i < download_list_counter.length; $i += 1) {
+                    $j = download_list_counter[$i][1];
+                    if (version_entries.indexOf($j) === -1) {
+                        if (Array.isArray(download_list_counter[$i][0])) {
+                            total_downloads += download_list_counter[$i][0][0] + download_list_counter[$i][0][1];
                         } else {
-                            total_downloads += download_list_counter[i][0];
+                            total_downloads += download_list_counter[$i][0];
                         }
                     }
                 }
@@ -201,7 +201,7 @@ $(function () {
             let $md_converter = new showdown.Converter();
             let $show_github_button = ($whats_new_versions === changelog_max);
             try {
-                for (let $i = 0; $i < $whats_new_versions; $i += 1) {
+                for (/** @type {number} */ let $i = 0; $i < $whats_new_versions; $i += 1) {
                     let $version_created_at = $json[$i].created_at.substring(0, 10);
                     $version_created_at = $version_created_at.substring(8, 10) + '/' + $version_created_at.substring(5, 7) + '/' + $version_created_at.substring(0, 4);
                     new_version_entry += `
@@ -240,7 +240,7 @@ $(function () {
      * Se define color de fondo principal antes de carga imagen
      * ------------------------------------------------------------------------
      */
-    let $bgheaderc = $('#background-page-header-colored');
+    const $bgheaderc = $('#background-page-header-colored');
     $bgheaderc.css('background-color', wallpaper_db.color);
     $bgheaderc.show();
 
@@ -479,7 +479,7 @@ $(function () {
         "timeout": 30 * 1000
     });
 
-    let $throwNotification = function ($text, $persistent) {
+    let $throw_notification = function ($text, $persistent) {
         if ($text.length === 0) return;
         setTimeout(function () {
             NotificationJS.other($text, {"persistent": $persistent});
@@ -493,11 +493,11 @@ $(function () {
             let $rand = Object.keys(notification[$c[$i]]).randomElement();
             let $text = `Sabías que <b>#${$rand}</b>:<br>${notification[$c[$i]][$rand]}`;
             $text = $text.replace(':)', '😉');
-            $throwNotification($text, false);
+            $throw_notification($text, false);
             continue;
         }
         if (notification[$c[$i]].content.length === 0) continue;
-        $throwNotification(notification[$c[$i]].content, notification[$c[$i]].persistent);
+        $throw_notification(notification[$c[$i]].content, notification[$c[$i]].persistent);
     }
 
     /**

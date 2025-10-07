@@ -5,8 +5,6 @@
 # Python
 *.pyc
 
-# Jar desarrollo
-res/other/**.jar
-
 # Otros
 *._**
+node_modules/

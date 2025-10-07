@@ -44,47 +44,47 @@ function loadSessionCookies() {
     /**
      * Carga las cookies
      */
-    let c = Cookies.get(cfg_cookie_session_id);
-    if (!notNullUndf(c)) {
+    let $c = Cookies.get(cfg_cookie_session_id);
+    if (!notNullUndf($c)) {
         // Valores por defecto
-        let defvalue = {
+        let $defvalue = {
             encuesta: true, // Carga la encuesta
         };
 
         // Si las cookies no son locales se carga la cookie guardada para verificar errores
-        Cookies.set(cfg_cookie_session_id, defvalue, {
+        Cookies.set(cfg_cookie_session_id, $defvalue, {
             expires: cfg_cookie_expire_days,
             path: '/',
         });
-        c = Cookies.get(cfg_cookie_session_id);
+        $c = Cookies.get(cfg_cookie_session_id);
 
         // No se pueden almacenar cookies en el navegador se utiliza localStorage
-        if (!notNullUndf(c)) {
+        if (!notNullUndf($c)) {
             console.log('Usando localStorage');
             cfg_cookie_local = true;
 
             // Se obtiene las cookies desde la localStorage
             try {
-                c = localStorage.getItem(cfg_cookie_session_id);
+                $c = localStorage.getItem(cfg_cookie_session_id);
             } catch (e) {
                 // Si las cookies de terceros están desactivadas se retorna nulo
-                return defvalue;
+                return $defvalue;
             } finally {
             }
 
-            if (!notNullUndf(c)) {
-                localStorage.setItem(cfg_cookie_session_id, JSON.stringify(defvalue));
-                c = localStorage.getItem(cfg_cookie_session_id);
+            if (!notNullUndf($c)) {
+                localStorage.setItem(cfg_cookie_session_id, JSON.stringify($defvalue));
+                $c = localStorage.getItem(cfg_cookie_session_id);
             }
-            c = JSON.parse(c);
-            return c;
+            $c = JSON.parse($c);
+            return $c;
         }
 
         // Retorna las cookies
         try {
-            return JSON.parse(c);
+            return JSON.parse($c);
         } catch (e) {
-            return defvalue;
+            return $defvalue;
         } finally {
         }
     }
@@ -92,7 +92,7 @@ function loadSessionCookies() {
     /**
      * Fallback, retorna cookies cargadas
      */
-    return JSON.parse(c);
+    return JSON.parse($c);
 }
 
 /**
