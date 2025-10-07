@@ -29,7 +29,7 @@
 function selectAllText($elem) {
     $($elem).on('mouseup', function () {
         let sel, range;
-        let el = $(this)[0];
+        const el = $(this)[0];
         if (window.getSelection && document.createRange) {
             sel = window.getSelection();
             if (sel.toString() === '') {
@@ -61,7 +61,7 @@ function selectAllText($elem) {
  * @return {string}
  */
 function getRandomDarkColor() {
-    let $letters = '012345678';
+    const $letters = '012345678';
     let $color = '#';
     for (let $i = 0; $i < 6; $i++) {
         $color += $letters[Math.floor(Math.random() * $letters.length)];

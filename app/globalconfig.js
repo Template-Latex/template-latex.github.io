@@ -26,12 +26,11 @@
  */
 let backgroundResize;               // Ajuste del fondo
 let blurlimits = [3, 5];            // Límites del blur en px
-let blurprobability = 0;           // Probabilidad de blur
+let blurprobability = 0;            // Probabilidad de blur
 let changelog_max = 10;             // Número máximo de cambios en changelog
 let changelog_show_hr = false;      // Muestra título en changelog
 let changepacecolor = true;         // Cambiar el color de pace
 let enableparallax = true;          // Activa el parallax
-// let gitter_href = 'https://gitter.im/Template-Latex/'; // Página gitter
 let nan_value = 'NaN';              // Valor NaN como string
 let otherdownloadsfadetime = 400;   // Tiempo de fade para descargas
 let parallaxloaded = false;         // Indica que parallax ya se cargó
