@@ -39,12 +39,9 @@ let downloadOtherBackgroundBlur = 1; // Blur del fondo al mostrar cajón de desc
 function afterDocumentReady() {
 }
 
-// noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {
-    // Links de descargas por cada departamento
-    // noinspection JSUnresolvedFunction
-    let $init_action = $.urlParam('action');
-    if ($init_action != null) {
+    const $init_action = $.urlParam('action');
+    if ($init_action !== null) {
         switch ($init_action) {
             case 'download':
                 $('a[name*=leanModal]').leanModal({
@@ -64,7 +61,7 @@ function afterJSONLoad() {
  * @param {string} $verid - ID de la versión
  */
 function writeOtherLinks($verid) {
-    let $deptos = [
+    const $deptos = [
         ['Área de Humanidades', 'adh'],
         ['Departamento de Astronomía', 'das'],
         ['Departamento de Ciencias de la Computación', 'dcc'],
@@ -84,12 +81,10 @@ function writeOtherLinks($verid) {
     ];
 
     // Genera el contenido
-    let $contents = $('#downloadother-contents');
+    const $contents = $('#downloadother-contents');
     $('#downloadtitle-title').html(String.format('Descargas v{0}', $verid));
-    // noinspection HtmlUnknownTarget
     $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Tesis.zip">Descargar</a></div></div>', href_github_project, $verid));
-    for (let $i = 0; $i < $deptos.length; $i += 1) {
-        // noinspection HtmlUnknownTarget
+    for (/** @type {number} */ let $i = 0; $i < $deptos.length; $i += 1) {
         $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Tesis-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', $deptos[$i][0], $deptos[$i][1], $verid, href_github_project));
     }
 

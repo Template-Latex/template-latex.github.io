@@ -163,7 +163,7 @@ $(function () {
                 update_download_counter === 'Template-Tesis'
             ) {
                 // Se carga los elementos
-                let $dlbutton = $('#download-button');
+                const $dlbutton = $('#download-button');
 
                 // Si es Template-Informe se muestra botón otras descargas
                 $('a[name*=leanModal]').leanModal({
@@ -180,8 +180,7 @@ $(function () {
                 writeOtherLinks(last_version);
             } else {
                 // Se carga los elementos
-                let $dlbutton = $('#download-button');
-
+                const $dlbutton = $('#download-button');
                 $dlbutton.attr('href', $normal_link);
                 $dlbutton.append(` <span id="buttonfile1text">(v${last_version}) <i class="fas fa-download"></i></span>`);
             }
@@ -197,9 +196,9 @@ $(function () {
 
             // Se obtiene el what's new
             $('#github-button-header').attr('href', href_github_project_source);
-            let $whats_new_versions = Math.min(changelog_max, $json.length);
-            let $md_converter = new showdown.Converter();
-            let $show_github_button = ($whats_new_versions === changelog_max);
+            const $whats_new_versions = Math.min(changelog_max, $json.length);
+            const $md_converter = new showdown.Converter();
+            const $show_github_button = ($whats_new_versions === changelog_max);
             try {
                 for (/** @type {number} */ let $i = 0; $i < $whats_new_versions; $i += 1) {
                     let $version_created_at = $json[$i].created_at.substring(0, 10);
@@ -296,7 +295,6 @@ $(function () {
     if (wallpaper_db.image !== null) {
         console.log(`Cargando fondo ${wallpaper_db.image} - ID ${wallpaper_db.index} (wallpaper.db)`);
         if (!is_movile_browser && enableparallax) {
-            // noinspection JSUnresolvedFunction
             $('#background-page-header').parallax({
                 src: wallpaper_db.image,
                 posX: 'center',
@@ -310,7 +308,7 @@ $(function () {
                     $('#background-page-header-colored').fadeOut(800);
 
                     // Se muestra el fondo
-                    let $parallax = $('.parallax-mirror');
+                    const $parallax = $('.parallax-mirror');
                     $parallax.fadeIn();
 
                     // Crea un id
@@ -325,7 +323,6 @@ $(function () {
                             $('.parallax-mirror').css('width', $(window).outerWidth() + 'px');
                         }
                     };
-                    // noinspection JSCheckFunctionSignatures
                     $(window).on('resize.parallax', backgroundResize);
                     backgroundResize();
                     parallaxloaded = true;
@@ -333,9 +330,9 @@ $(function () {
             });
         } else {
             try {
-                let $back_img = new Image();
+                const $back_img = new Image();
                 $back_img.onload = function () {
-                    let $bgheader = $('#background-page-header');
+                    const $bgheader = $('#background-page-header');
 
                     // Se carga el css
                     $bgheader.css({
@@ -361,7 +358,6 @@ $(function () {
                             $('#background-page-header').css('width', $(window).width() + 20);
                         }
                     };
-                    // noinspection JSCheckFunctionSignatures
                     $(window).on('resize.backgroundPageHeader', backgroundResize);
 
                     // Aplica blur
@@ -409,7 +405,6 @@ $(function () {
             let $target = $(this.hash);
             $target = $target.length ? $target : $('[name=' + this.hash.slice(1) + ']');
             if ($target.length) {
-                // noinspection JSCheckFunctionSignatures
                 $('html, body').animate({
                     scrollTop: $target.offset().top
                 }, 700);
@@ -479,7 +474,7 @@ $(function () {
         "timeout": 30 * 1000
     });
 
-    let $throw_notification = function ($text, $persistent) {
+    const $throw_notification = function ($text, $persistent) {
         if ($text.length === 0) return;
         setTimeout(function () {
             NotificationJS.other($text, {"persistent": $persistent});
@@ -487,10 +482,10 @@ $(function () {
     };
 
     // Lanza las configuraciones
-    let $c = Object.keys(notification);
-    for (let $i = 0; $i < $c.length; $i++) {
+    const $c = Object.keys(notification);
+    for (/** @type {number} */ let $i = 0; $i < $c.length; $i++) {
         if ($c[$i] === 'sabiasque') {
-            let $rand = Object.keys(notification[$c[$i]]).randomElement();
+            const $rand = Object.keys(notification[$c[$i]]).randomElement();
             let $text = `Sabías que <b>#${$rand}</b>:<br>${notification[$c[$i]][$rand]}`;
             $text = $text.replace(':)', '😉');
             $throw_notification($text, false);

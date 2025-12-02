@@ -1734,7 +1734,6 @@ let cmd_sourcecode = {
         '\\end{sourcecode}'
 };
 
-// noinspection JSUnusedGlobalSymbols
 function afterDocumentReady() {
     /**
      * Escribe número de líneas introducción
@@ -1776,9 +1775,9 @@ function afterDocumentReady() {
      * Galería header-footer
      */
     hfGallery = function () {
-        let $pswp_element = document.querySelectorAll('.pswp')[0];
-        let $items = [];
-        for (let $i = 1; $i <= totalHfStyles; $i += 1) {
+        const $pswp_element = document.querySelectorAll('.pswp')[0];
+        const $items = [];
+        for (/** @type {number} */ let $i = 1; $i <= totalHfStyles; $i += 1) {
             $items.push({
                 src: String.format('res/images/hf{0}.png', $i),
                 w: 544,
@@ -1786,7 +1785,7 @@ function afterDocumentReady() {
                 title: String.format('<b>Header-Footer estilo {0}</b> (<div class="codegallerytitle">\\hfstyle=\{style{0}\}</div>)', $i)
             })
         }
-        let $options = {
+        const $options = {
             counterEl: true,
             fullscreenEl: false,
             hideAnimationDuration: 400,
@@ -1796,7 +1795,7 @@ function afterDocumentReady() {
             showAnimationDuration: 400,
             zoomEl: false
         };
-        let $gallery = new PhotoSwipe($pswp_element, PhotoSwipeUI_Default, $items, $options);
+        const $gallery = new PhotoSwipe($pswp_element, PhotoSwipeUI_Default, $items, $options);
         $gallery.listen('close', function () {
             backToTop.show(true);
         });
@@ -1805,8 +1804,7 @@ function afterDocumentReady() {
         NotificationJS.clearall(); // Oculta las notificaciones
         $gallery.init(); // Inicia la galería
     };
-    let $hftrigger = $('#hfTrigger');
-    // noinspection JSCheckFunctionSignatures
+    const $hftrigger = $('#hfTrigger');
     $hftrigger.on('click', hfGallery);
     $hftrigger.html(String.format('{0} estilos distintos', totalHfStyles));
 
@@ -1814,22 +1812,22 @@ function afterDocumentReady() {
      * Galería portadas
      */
     portraitGallery = function () {
-        let $pswp_element = document.querySelectorAll('.pswp')[0];
-        let $items = [];
+        const $pswp_element = document.querySelectorAll('.pswp')[0];
+        const $items = [];
         let $req_add; // Requerimientos adicionales
-        for (let i = 1; i <= totalPortraitStyles; i += 1) {
+        for (/** @type {number} */ let $i = 1; $i <= totalPortraitStyles; $i += 1) {
             $req_add = '';
-            if (portraitRequiresAdditional[i] !== undefined) {
-                $req_add = '<br>Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[i] + '</div>';
+            if (portraitRequiresAdditional[$i] !== undefined) {
+                $req_add = '<br>Configuraciones adicionales: <div class="codegallerytitle">' + portraitRequiresAdditional[$i] + '</div>';
             }
             $items.push({
-                src: String.format('res/images/portada{0}.png', i),
+                src: String.format('res/images/portada{0}.png', $i),
                 w: 544,
                 h: 704,
-                title: String.format('<b>Portada estilo {0}</b> (<div class="codegallerytitle">\\portraitstyle=\{style{0}\}</div>){1}', i, $req_add)
+                title: String.format('<b>Portada estilo {0}</b> (<div class="codegallerytitle">\\portraitstyle=\{style{0}\}</div>){1}', $i, $req_add)
             })
         }
-        let $options = {
+        const $options = {
             counterEl: true,
             fullscreenEl: false,
             hideAnimationDuration: 400,
@@ -1839,27 +1837,25 @@ function afterDocumentReady() {
             showAnimationDuration: 400,
             zoomEl: false
         };
-        let gallery = new PhotoSwipe($pswp_element, PhotoSwipeUI_Default, $items, $options);
-        gallery.listen('close', function () {
+        const $gallery = new PhotoSwipe($pswp_element, PhotoSwipeUI_Default, $items, $options);
+        $gallery.listen('close', function () {
             backToTop.show(true);
         });
         backToTop.hide(true);
         // noinspection JSUnresolvedReference
         NotificationJS.clearall(); // Oculta las notificaciones
-        gallery.init(); // Inicia la galería
+        $gallery.init(); // Inicia la galería
     };
-    let $portraittrigger = $('#portraitTrigger');
-    // noinspection JSCheckFunctionSignatures
-    $portraittrigger.on('click', portraitGallery);
-    $portraittrigger.html(String.format('{0} estilos distintos', totalPortraitStyles));
+    const $portrait_trigger = $('#portraitTrigger');
+    $portrait_trigger.on('click', portraitGallery);
+    $portrait_trigger.html(String.format('{0} estilos distintos', totalPortraitStyles));
 
-    // noinspection JSUnresolvedFunction
     /**
      * Se lee un acción desde url para cargar una galería
      */
-    let $initAction = $.urlParam('action');
-    if ($initAction != null) {
-        switch ($initAction) {
+    const $init_action = $.urlParam('action');
+    if ($init_action !== null) {
+        switch ($init_action) {
             case 'portraitGallery':
                 portraitGallery();
                 break;
@@ -1872,7 +1868,7 @@ function afterDocumentReady() {
     /**
      * Contenedor de código
      */
-    let triggerShowContainerChangeTrigger = function ($trigger, $container, $onstring, $offstring) {
+    const $trigger_show_container_change = function ($trigger, $container, $onstring, $offstring) {
         $container = $($container);
         $container.attr('show', 'off');
         if ($onstring !== '') {
@@ -1894,58 +1890,57 @@ function afterDocumentReady() {
             }
         })
     };
-    let triggerShowContainer = function ($trigger, $container) {
-        triggerShowContainerChangeTrigger($trigger, $container, '', '');
+    const $trigger_show_container = function ($trigger, $container) {
+        $trigger_show_container_change($trigger, $container, '', '');
     };
 
     /**
      * Imágenes animadas
      */
-    triggerShowContainer('#showAnimatedImageLink', '#showAnimatedImageContainer');
-    triggerShowContainer('#showAddImageAnimated', '#showAddImageAnimatedContainer');
+    $trigger_show_container('#showAnimatedImageLink', '#showAnimatedImageContainer');
+    $trigger_show_container('#showAddImageAnimated', '#showAddImageAnimatedContainer');
 
     /**
      * Código images + link
      */
-    triggerShowContainer('#showImageLink', '#showImageLinkContainer');
-    triggerShowContainer('#showImageAnumLink', '#showImageAnumLinkContainer');
+    $trigger_show_container('#showImageLink', '#showImageLinkContainer');
+    $trigger_show_container('#showImageAnumLink', '#showImageAnumLinkContainer');
 
     /**
      * Imagemc
      */
-    triggerShowContainer('#showCodeImageMc', '#showCodeImageMcContainer');
-    triggerShowContainer('#showCodeBeginImageMc', '#showCodeBeginImageMcContainer');
+    $trigger_show_container('#showCodeImageMc', '#showCodeImageMcContainer');
+    $trigger_show_container('#showCodeBeginImageMc', '#showCodeBeginImageMcContainer');
 
     /**
      * Código imageleft,right
      */
-    triggerShowContainer('#showCodeImageLeft', '#codeImageLeftContainer');
-    triggerShowContainer('#showCodeImageRight', '#codeImageRightContainer');
+    $trigger_show_container('#showCodeImageLeft', '#codeImageLeftContainer');
+    $trigger_show_container('#showCodeImageRight', '#codeImageRightContainer');
 
     /**
      * Código gather,align
      */
-    triggerShowContainer('#showCodeGatherEqn', '#codeGatherEqnContainer');
-    triggerShowContainer('#showCodeAlignEqn', '#codeAlignEqnContainer');
+    $trigger_show_container('#showCodeGatherEqn', '#codeGatherEqnContainer');
+    $trigger_show_container('#showCodeAlignEqn', '#codeAlignEqnContainer');
 
     /**
      * Mostrar imágenes de departamentos
      */
-    triggerShowContainerChangeTrigger('#showImagesContainer', '#dptoImagesContainer', 'Mostrar imágenes disponibles', 'Ocultar imágenes disponibles');
+    $trigger_show_container_change('#showImagesContainer', '#dptoImagesContainer', 'Mostrar imágenes disponibles', 'Ocultar imágenes disponibles');
 
     /**
      * Mostrar librerías cargadas + total
      */
     $('#totalLibCount').html($('#usedLibs').find('li').length);
-    triggerShowContainerChangeTrigger('#showLibsContainer', '#libsUsedContainer', 'Mostrar lista de librerías utilizadas', 'Ocultar lista de librerías');
+    $trigger_show_container_change('#showLibsContainer', '#libsUsedContainer', 'Mostrar lista de librerías utilizadas', 'Ocultar lista de librerías');
 
     /**
      * Motrar funciones matemáticas + total
      */
     $('#mathFunCounter').html($('#mathFunContainer').find('li').length);
-    triggerShowContainerChangeTrigger('#showMathFunContainer', '#mathFunContainer', 'Mostrar lista de funciones', 'Ocultar lista de funciones');
+    $trigger_show_container_change('#showMathFunContainer', '#mathFunContainer', 'Mostrar lista de funciones', 'Ocultar lista de funciones');
 
-    // noinspection JSStringConcatenationToES6Template
     /**
      * Mostrar número de configuraciones totales
      */
@@ -1954,8 +1949,8 @@ function afterDocumentReady() {
     /**
      * Se recorre cada link de lenguaje y se añade evento
      */
-    let $write_source_code = function ($c) {
-        let $container = $('#sourcecode-example');
+    const $write_source_code = function ($c) {
+        const $container = $('#sourcecode-example');
 
         // Se limpia el div
         $container.empty();
@@ -1999,32 +1994,28 @@ function afterDocumentReady() {
         $(lastClickedSourcecode).addClass('sourcecodeTriggerEnabled');
     };
 
-    // noinspection JSStringConcatenationToES6Template
     /**
      * Se añade evento a cada elemento de código fuente
      */
     $('body').find('.sourcecodel').each(function () {
-        let $a = $(this).html();
+        const $a = $(this).html();
         $(this).attr('id', 'sourcecode-' + $(this).html()); // Añade código fuente como atributo
-        let $callback = function () {
+        const $callback = function () {
             $write_source_code($a);
         };
-        // noinspection JSCheckFunctionSignatures
         $(this).on('click', $callback);
     });
 
-    // noinspection JSUnresolvedFunction
     /**
      * Se escribe un lenguaje random al inicio si es que no se pasó uno por $GET
      */
-    let $get_source = $.urlParam('srctype');
+    const $get_source = $.urlParam('srctype');
     if ($get_source !== null && Object.keys(cmd_sourcecode).indexOf($get_source) !== -1) {
         $write_source_code($get_source);
     } else {
         $write_source_code(pickRandomProperty(cmd_sourcecode));
     }
 
-    // noinspection HtmlUnknownTarget
     /**
      * Se añade tooltipster a imágenes ejemplos links de interés
      */
@@ -2036,7 +2027,6 @@ function afterDocumentReady() {
         side: 'bottom',
         theme: 'tooltipster-borderless'
     });
-    // noinspection HtmlUnknownTarget
     $('#example-plugin-config').tooltipster({
         animation: 'grow',
         content: '<img src="res/images/ejemplo-config.PNG" alt="" width="500" height="327" />',
@@ -2050,12 +2040,10 @@ function afterDocumentReady() {
      * Se añade tooltip con imagen en tipo de fuente
      */
     $('.fontsrc').each(function () {
-        let $href = $(this).attr('href');
+        const $href = $(this).attr('href');
         if ($href.indexOf('https://tug.org/') !== -1) {
             let $img = $href.split('/')[4];
             $img = $href + $img + '-1.svg';
-
-            // noinspection HtmlUnknownTarget
             $(this).tooltipster({
                 animation: 'grow',
                 content: String.format('<img src="{0}" alt="" width="500" height="125" class="imgfontexample" />', $img),
@@ -2072,27 +2060,25 @@ function afterDocumentReady() {
     /**
      * Se agrega archivo de ejemplos luego de los bloques de código fuente
      */
-    let $addExample = function ($trigger, $content) {
-
+    /** @type {(function(string, string): void)} */ const $add_example = function ($trigger, $content) {
         // Obtiene el trigger (usualmente un pre o blockquote)
         $trigger = $('#' + $trigger).after();
 
         // Añade bloque oculto con contenido a desbloquear
-        let $contentID = generateID();
-        $trigger.after(String.format('<div class="codeExampleContainer" id="{0}"></div>', $contentID));
+        const $content_id = generateID();
+        $trigger.after(String.format('<div class="codeExampleContainer" id="{0}"></div>', $content_id));
 
         // Agrega un botón para ver un ejemplo
-        let $btnID = generateID();
-        $trigger.after(String.format('<div class="preExampleButton noselect" id="{0}" data-status="hidden" data-write="false">Mostrar ejemplo</div>', $btnID));
+        const $btn_id = generateID();
+        $trigger.after(String.format('<div class="preExampleButton noselect" id="{0}" data-status="hidden" data-write="false">Mostrar ejemplo</div>', $btn_id));
 
         // Añade evento al botón
-        $('#' + $btnID).on('click', function () {
-
+        $('#' + $btn_id).on('click', function () {
             // Obtiene el botón
-            let $btn = $('#' + $btnID);
+            const $btn = $('#' + $btn_id);
 
             // Obtiene el contenido
-            let $cnt = $('#' + $contentID);
+            const $cnt = $('#' + $content_id);
 
             // Si no se ha escrito el contenido se escribe
             if ($btn.attr('data-write') === 'false') {
@@ -2109,49 +2095,48 @@ function afterDocumentReady() {
                 $btn.html('Mostrar ejemplo');
                 $cnt.hide();
             }
-
         });
-
     };
 
     /**
      * Ejemplos de imágenes
      */
-    $addExample('insertimage-example-trigger', '<img src="res/images/ex-insertimage.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
-    $addExample('insertimageboxed-example-trigger', '<img src="res/images/ex-insertimageboxed.PNG" alt="" class="imageCodeExample imageCodeExample-tiny" />');
-    $addExample('images-example-trigger', '<img src="res/images/ex-images.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
-    $addExample('insertanimatedimage-example-trigger', '<img src="res/images/ex_animated.gif" alt="" class="imageCodeExample imageCodeExample-large" />')
-    $addExample('insertanimatedimageboxed-example-trigger', '<img src="res/images/ex_animated_boxed.gif" alt="" class="imageCodeExample imageCodeExample-large" />')
+    $add_example('insertimage-example-trigger', '<img src="res/images/ex-insertimage.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
+    $add_example('insertimageboxed-example-trigger', '<img src="res/images/ex-insertimageboxed.PNG" alt="" class="imageCodeExample imageCodeExample-tiny" />');
+    $add_example('images-example-trigger', '<img src="res/images/ex-images.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
+    $add_example('insertanimatedimage-example-trigger', '<img src="res/images/ex_animated.gif" alt="" class="imageCodeExample imageCodeExample-large" />')
+    $add_example('insertanimatedimageboxed-example-trigger', '<img src="res/images/ex_animated_boxed.gif" alt="" class="imageCodeExample imageCodeExample-large" />')
 
     /**
      * Ejemplo de código fuente
      */
-    $addExample('example-sourcecodep', '<img src="res/images/ex-sourcecodep.PNG" alt="" class="imageCodeExample" />');
+    $add_example('example-sourcecodep', '<img src="res/images/ex-sourcecodep.PNG" alt="" class="imageCodeExample" />');
 
     /**
      * Ejemplo anexo
      */
-    $addExample('example-anexos', '<img src="res/images/ex-anexos.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
+    $add_example('example-anexos', '<img src="res/images/ex-anexos.PNG" alt="" class="imageCodeExample imageCodeExample-large" />');
 
     /**
      * Ejemplos de referencias
      */
-    $addExample('example-references', '<img src="res/images/ex-referencias.PNG" alt="" class="imageCodeExample" />');
+    $add_example('example-references', '<img src="res/images/ex-referencias.PNG" alt="" class="imageCodeExample" />');
 
     /**
      * Ejemplos de tablas
      */
-    $addExample('table-style-c', '<img src="res/images/tabla_c.PNG" alt="" class="imageCodeExample" />');
-    $addExample('table-style-l', '<img src="res/images/tabla_l.PNG" alt="" class="imageCodeExample" />');
-    $addExample('table-style-r', '<img src="res/images/tabla_r.PNG" alt="" class="imageCodeExample" />');
+    $add_example('table-style-c', '<img src="res/images/tabla_c.png" alt="" class="imageCodeExample" />');
+    $add_example('table-style-l', '<img src="res/images/tabla_l.png" alt="" class="imageCodeExample" />');
+    $add_example('table-style-r', '<img src="res/images/tabla_r.png" alt="" class="imageCodeExample" />');
+    $add_example('table-style-j', '<img src="res/images/tabla_j.png" alt="" class="imageCodeExample" />');
 
     /**
      * Columnas
      */
-    $addExample('multicol-createwocolumn', '<img src="res/images/column_two_normal.PNG" alt="" class="imageCodeExample" />');
-    $addExample('multicol-createwocolumn-cfg1', '<img src="res/images/column_two_normal_cfg1.PNG" alt="" class="imageCodeExample" />');
-    $addExample('multicol-createwocolumn-cfg2', '<img src="res/images/column_two_normal_cfg2.PNG" alt="" class="imageCodeExample" />');
-    $addExample('multicol-createthreecolumn', '<img src="res/images/column_three_normal.PNG" alt="" class="imageCodeExample" />');
+    $add_example('multicol-createwocolumn', '<img src="res/images/column_two_normal.PNG" alt="" class="imageCodeExample" />');
+    $add_example('multicol-createwocolumn-cfg1', '<img src="res/images/column_two_normal_cfg1.PNG" alt="" class="imageCodeExample" />');
+    $add_example('multicol-createwocolumn-cfg2', '<img src="res/images/column_two_normal_cfg2.PNG" alt="" class="imageCodeExample" />');
+    $add_example('multicol-createthreecolumn', '<img src="res/images/column_three_normal.PNG" alt="" class="imageCodeExample" />');
 
 }
 
@@ -2159,19 +2144,17 @@ function afterDocumentReady() {
  * Función que se aplica una vez se carga el JSON de las versiones
  */
 function afterJSONLoad() {
-    // noinspection JSUnresolvedFunction
-    let $initAction = $.urlParam('action');
-    if ($initAction != null) {
-        switch ($initAction) {
-            case 'download':
-                $('a[name*=leanModal]').leanModal({
-                    closeButton: '.modal_close'
-                }).click();
-                break;
-            case 'download-normal':
-                $('#download-button')[0].click();
-                break;
-        }
+    const $init_action = $.urlParam('action');
+    if ($init_action === null) return;
+    switch ($init_action) {
+        case 'download':
+            $('a[name*=leanModal]').leanModal({
+                closeButton: '.modal_close'
+            }).click();
+            break;
+        case 'download-normal':
+            $('#download-button')[0].click();
+            break;
     }
 }
 
@@ -2181,7 +2164,7 @@ function afterJSONLoad() {
  * @param {string} $verid - ID de la versión
  */
 function writeOtherLinks($verid) {
-    let $deptos = [
+    const $deptos = [
         ['Área de Humanidades', 'adh'],
         ['Departamento de Astronomía', 'das'],
         ['Departamento de Ciencias de la Computación', 'dcc'],
@@ -2201,12 +2184,10 @@ function writeOtherLinks($verid) {
     ];
 
     // Genera el contenido
-    let $contents = $('#downloadother-contents');
+    const $contents = $('#downloadother-contents');
     $('#downloadtitle-title').html(String.format('Descargas v{0}', $verid));
-    // noinspection HtmlUnknownTarget
     $contents.append(String.format('<div class="downloadother-entry downloadother-compact"><div class="downloadother-name">Versión completa</div><div class="downloadother-link"><a href="{0}download/{1}/Template-Informe.zip">Descargar</a></div></div>', href_github_project, $verid));
-    for (let $i = 0; $i < $deptos.length; $i += 1) {
-        // noinspection HtmlUnknownTarget
+    for (/** @type {number} */ let $i = 0; $i < $deptos.length; $i += 1) {
         $contents.append(String.format('<div id="downloadentry-{1}" class="downloadother-entry"><div class="downloadother-name">{0}</div><div class="downloadother-link"><a href="{3}download/{2}/Template-Informe-{1}.zip" class="otherdownloadclickeable">Descargar</a></div></div>', $deptos[$i][0], $deptos[$i][1], $verid, href_github_project));
     }
 

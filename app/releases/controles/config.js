@@ -37,6 +37,5 @@ let update_download_counter = 'Template-Controles';
 function afterDocumentReady() {
 }
 
-// noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {
 }

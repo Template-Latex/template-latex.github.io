@@ -63,7 +63,7 @@ function selectAllText($elem) {
 function getRandomDarkColor() {
     const $letters = '012345678';
     let $color = '#';
-    for (let $i = 0; $i < 6; $i++) {
+    for (/** @type {number} */ let $i = 0; $i < 6; $i++) {
         $color += $letters[Math.floor(Math.random() * $letters.length)];
     }
     return $color;
@@ -74,7 +74,7 @@ function getRandomDarkColor() {
  */
 if (!String.format) {
     String.format = function ($format) {
-        let $args = Array.prototype.slice.call(arguments, 1);
+        const $args = Array.prototype.slice.call(arguments, 1);
         return $format.replace(/{(\d+)}/g, function (match, number) {
             return typeof $args[number] !== 'undefined' ?
                 $args[number] :
@@ -144,8 +144,8 @@ function throwException($e) {
  * @return {*}
  */
 $.urlParam = function ($name) {
-    let $results = new RegExp('[\?&]' + $name + '=([^&#]*)').exec(window.location.href);
-    if ($results == null) return null;
+    const $results = new RegExp('[\?&]' + $name + '=([^&#]*)').exec(window.location.href);
+    if ($results === null) return null;
     return decodeURI($results[1]) || 0;
 };
 
@@ -215,8 +215,8 @@ function loadInitialPopup() {
  */
 function loadEncuesta() {
     if (initial_encuesta.display && initial_encuesta.link.length > 0 && sessionCookie.encuesta) {
-        let $checkid = generateID();
-        let $content = String.format(initial_encuesta.content, initial_encuesta.link, `
+        const $checkid = generateID();
+        const $content = String.format(initial_encuesta.content, initial_encuesta.link, `
             <br><form action="">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="${$checkid}">
@@ -240,7 +240,7 @@ function loadEncuesta() {
             icon: 'fas fa-chart-bar',
             onClose: function () {
                 // Carga la respuesta si se deja de mostrar el mensaje
-                let $disable = $(String.format('#{0}', $checkid))[0].checked;
+                const $disable = $(String.format('#{0}', $checkid))[0].checked;
                 sessionCookie.encuesta = !$disable;
                 if ($disable) {
                     console.log('Se ha desactivado el mensaje de la encuesta');

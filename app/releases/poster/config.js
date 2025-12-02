@@ -37,6 +37,5 @@ let update_download_counter = 'Template-Poster';
 function afterDocumentReady() {
 }
 
-// noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {
 }

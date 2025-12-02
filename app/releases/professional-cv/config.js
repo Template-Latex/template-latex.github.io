@@ -37,7 +37,6 @@ let update_download_counter = 'Professional-CV';
 function afterDocumentReady() {
 }
 
-// noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {
     $('#exampletablepdfview1').attr('href', pdf_href_lastv);
     $('#exampletablepdfview2').attr('href', pdf_href_lastv);

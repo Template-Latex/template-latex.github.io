@@ -37,6 +37,5 @@ let update_download_counter = '';
 function afterDocumentReady() {
 }
 
-// noinspection JSUnusedGlobalSymbols
 function afterJSONLoad() {
 }

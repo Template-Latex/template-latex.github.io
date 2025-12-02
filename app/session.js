@@ -47,7 +47,7 @@ function loadSessionCookies() {
     let $c = Cookies.get(cfg_cookie_session_id);
     if (!notNullUndf($c)) {
         // Valores por defecto
-        let $defvalue = {
+        const $defvalue = {
             encuesta: true, // Carga la encuesta
         };
 
