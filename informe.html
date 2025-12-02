@@ -30,19 +30,12 @@
 
     <!-- Metadatos -->
     <meta name="author" content="Pablo Pizarro R. @ppizarror"/>
-    <meta name="description"
-          content="Un completo template para crear informes en LaTeX, contiene funciones opcionales, múltiples configuraciones, entre otros"/>
+    <meta name="description" content="Un completo template para crear informes en LaTeX, contiene funciones opcionales, múltiples configuraciones, entre otros"/>
     <meta name="msapplication-TileColor" content="#ffffff"/>
     <meta name="msapplication-TileImage" content="resources/ms-icon-144x144.png"/>
     <meta name="robots" content="noarchive"/>
-    <meta name="twitter:card" content="summary_large_image"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="twitter:description"
-          content="Un completo template para crear informes en LaTeX, contiene funciones opcionales, múltiples configuraciones, entre otros"/>
-    <meta name="twitter:image" content="https://latex.ppizarror.com/res/favicon-informe/icon.png"/>
-    <meta name="twitter:title" content="Template Informe"/>
-    <meta property="og:description"
-          content="Un completo template para crear informes en LaTeX, contiene funciones opcionales, múltiples configuraciones, entre otros"/>
+    <meta property="og:description" content="Un completo template para crear informes en LaTeX, contiene funciones opcionales, múltiples configuraciones, entre otros"/>
     <meta property="og:image" content="https://latex.ppizarror.com/res/favicon-informe/icon.png"/>
     <meta property="og:title" content="Template Informe"/>
     <meta property="og:url" content="https://latex.ppizarror.com/informe"/>
@@ -2180,6 +2173,43 @@ Para usar citas normales se utiliza <span class="pl-c1">\cite</span>{braas}.
                                             class="pl-c1">&</span> 5 <span class="pl-c1">\\</span>
         <span class="pl-c1">\hline</span>
         Derecha sin multi-líneas <span class="pl-c1">&</span> Derecha con ancho fijo <span class="pl-c1">&</span> Derecha con ancho fijo
+        y color <span class="pl-c1">&</span> Tope párrafo alineado con centro de línea <span class="pl-c1">&</span> Piso párrafo alineado
+        con centro de línea <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+    <span class="pl-c1">\end</span>{tabular}
+<span class="pl-c1">\end</span>{table}</pre>
+                            </div>
+                        </blockquote>
+                    </li>
+                </ul>
+                <hr class="style1">
+                <ul>
+                    <li>
+                        <strong>Columnas justificadas</strong>: Se ofrecen los siguientes estilos:
+                        <ul>
+                            <li><strong>Y</strong>: Columna justificada y verticalmente alineada.</li>
+                            <li><strong>K</strong>: Columna justificada y tope de celda alineado verticalmente.
+                            </li>
+                            <li><strong>J</strong>: Columna justificada y piso de celda alineado verticalmente.
+                            </li>
+                        </ul>
+                        <blockquote id="table-style-j">
+                            <div class="highlight highlight-text-tex">
+                                <pre><span class="pl-c1">\begin</span>{table}[H]
+    <span class="pl-c1">\centering</span>
+    <span class="pl-c1">\caption</span>{Columnas con texto justificado.}
+    <span class="pl-c1">\begin</span>{tabular}{| l | <span class="pl-e">Y</span><b>{</b>2cm<b>}</b> | <span
+                                            class="pl-e">\YColor</span><b>{</b>blue!10<b>}{</b>2cm<b>}</b> | <span
+                                            class="pl-e">K</span><b>{</b>2.5cm<b>}</b> | <span
+                                            class="pl-e">J</span><b>{</b>3cm<b>}</b> |}
+        <span class="pl-c1">\hline</span>
+        l <span class="pl-c1">&</span> Y <span class="pl-c1">&</span> YColor <span class="pl-c1">&</span> K <span
+                                            class="pl-c1">&</span> J <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+        1 <span class="pl-c1">&</span> 2 <span class="pl-c1">&</span> 3 <span class="pl-c1">&</span> 4 <span
+                                            class="pl-c1">&</span> 5 <span class="pl-c1">\\</span>
+        <span class="pl-c1">\hline</span>
+        Izquierda sin multi-líneas <span class="pl-c1">&</span> Justificado con ancho fijo <span class="pl-c1">&</span> Justificado con ancho fijo
         y color <span class="pl-c1">&</span> Tope párrafo alineado con centro de línea <span class="pl-c1">&</span> Piso párrafo alineado
         con centro de línea <span class="pl-c1">\\</span>
         <span class="pl-c1">\hline</span>
