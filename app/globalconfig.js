@@ -34,9 +34,9 @@ let enableparallax = true;          // Activa el parallax
 let nan_value = 'NaN';              // Valor NaN como string
 let otherdownloadsfadetime = 400;   // Tiempo de fade para descargas
 let parallaxloaded = false;         // Indica que parallax ya se cargó
-let pdf_js_href = 'https://latex.ppizarror.com/pdf-version/web/viewer?file=';
+let pdf_js_href = 'https://template-latex.github.io/pdf-version/web/viewer?file=';
 let scrollLock = false;             // Indica que la función $.scrollLock se activó
-let stats_href = 'https://latex.ppizarror.com/stats?template=';
+let stats_href = 'https://template-latex.github.io/stats?template=';
 
 /**
  * Aviso inicial

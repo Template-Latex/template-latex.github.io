@@ -75,7 +75,7 @@ notification['sabiasque'] = {
     '22': 'Todos los subtemplates nacen a partir de template-informe',
     '23': 'Template-Informe es usado por personas de más de 30 países en el mundo',
     '24': 'La primera versión pública del template fue la 1.8.5',
-    '25': 'El autor hizo un taller de LaTex? <a href="https://github.ppizarror.com/taller-latex" target="_blank">https://github.ppizarror.com/taller-latex</a>',
+    '25': 'El autor hizo un taller de LaTex? <a href="https://ppizarror.github.io/taller-latex" target="_blank">https://ppizarror.github.io/taller-latex</a>',
     '26': 'La mejor manera de crear tablas en LaTeX es usar Excel2LaTeX',
     '27': 'Si usas TexStudio existe un plugin para autocompletar todas las funciones del template<br><a href="https://github.com/Template-Latex/cwl-docs" target="_blank">https://github.com/Template-Latex/cwl-docs</a>',
     '28': 'El autor @ppizarror recomienda utilizar TexStudio para windows/linux y Overleaf para la web',
@@ -101,7 +101,7 @@ notification['sabiasque'] = {
     '48': 'La diferencia entre las sub-versiones (ejemplo) <i>6.3</i> y <i>6.4</i> son debido a cambios importantes en configuraciones; la diferencia entre versiones (ejemplo) <i>6.0</i> y <i>7.0</i> son cambios notables en la funcionalidad y mecánica de funciones, configuraciones u otros',
     '49': 'El template tiene más de cinco años de desarrollo constante',
     '50': 'La monotonía aburre a cualquiera, prueba a darle sabor al template jugando con las configuraciones, por ejemplo con una portada nueva',
-    '51': 'En cada nueva versión se verifica que el tiempo que tarda en compilar el template no suba, puedes revisar el tiempo promedio de compilación (del archivo de ejemplo) en <a href="https://latex.ppizarror.com/stats/?template=Informe" target="_blank">https://latex.ppizarror.com/stats/?template=Informe</a>',
+    '51': 'En cada nueva versión se verifica que el tiempo que tarda en compilar el template no suba, puedes revisar el tiempo promedio de compilación (del archivo de ejemplo) en <a href="https://template-latex.github.io/stats/?template=Informe" target="_blank">https://template-latex.github.io/stats/?template=Informe</a>',
     '52': 'Si programar no es lo tuyo pero aún así quieres aportar al desarrollo del template puedes sugerir cambios en el manual online, descripción de las configuraciones o notificar errores :)',
 };
 
