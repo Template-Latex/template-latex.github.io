@@ -1,4 +1,5 @@
 # IDE
+.git/
 .idea/
 .vscode/
 
